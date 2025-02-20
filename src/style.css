@@ -1,0 +1,7 @@
+@import "tailwindcss";
+
+.app{
+  h1{
+    color: red;
+  }
+}

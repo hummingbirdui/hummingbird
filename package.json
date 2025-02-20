@@ -1,0 +1,60 @@
+{
+  "name": "hummingbird",
+  "version": "0.0.1",
+  "type": "module",
+  "keywords": [
+    "ui components",
+    "tailwind",
+    "tailwind css",
+    "tailwind components",
+    "tailwind elements",
+    "tailwind library",
+    "tailwind sections",
+    "tailwind ui"
+  ],
+  "license": "MIT",
+  "main": "lib/esm/main.js",
+  "module": "lib/esm/main.js",
+  "types": "lib/esm/main.d.ts",
+  "style": "dist/hummingbird.min.css",
+  "repository": "https://github.com/khayrul-dev/hb-hummingbird",
+  "exports": {
+    "import": "./lib/esm/main.js",
+    "require": "./lib/cjs/main.js",
+    "default": "./lib/esm/main.js"
+  },
+  "files": [
+    "lib",
+    "dist"
+  ],
+  "author": "Hummingbird UI",
+  "contributors": [
+    "Khayrul Islam (https://www.linkedin.com/in/khayrul-developer/)"
+  ],
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "build:css": "cross-env NPM_ENV=development npx @tailwindcss/cli -i src/style.css -o dist/hummingbird.css",
+    "build:css:min": "cross-env NPM_ENV=production npx @tailwindcss/cli -i src/style.css -o dist/hummingbird.min.css --minify",
+    "build:js": "tsc && vite build",
+    "build:dist": "vite build && npm run build:css && npm run build:css:min",
+    "build:lib": "vite build --config vite.lib.config.js"
+  },
+  "devDependencies": {
+    "@rollup/plugin-terser": "^0.4.4",
+    "@tailwindcss/cli": "^4.0.7",
+    "@tailwindcss/vite": "^4.0.7",
+    "@types/bootstrap": "^5.2.10",
+    "@types/node": "^22.13.1",
+    "astro": "^5.1.5",
+    "bootstrap": "^5.3.3",
+    "cross-env": "^7.0.3",
+    "cssnano": "^7.0.6",
+    "tailwindcss": "^4.0.7",
+    "typescript": "~5.7.2",
+    "vite": "^6.1.0",
+    "vite-plugin-dts": "^4.5.0"
+  }
+}

@@ -1,0 +1,10 @@
+node_modules/
+src/
+apps/
+public/
+.vscode/
+.git/
+.gitignore
+.npmignore
+package-lock.json
+
