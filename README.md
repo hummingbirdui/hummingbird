@@ -99,5 +99,5 @@ Hummingbird UI is licensed under the [MIT License](LICENSE).
 
 ---
 
-> Developed by [Hummingbird UI](https://github.com/khayrul-dev/hb-hummingbird)
+> Developed by [Hummingbird UI](https://github.com/hummingbird-ui/hummingbird)
 
