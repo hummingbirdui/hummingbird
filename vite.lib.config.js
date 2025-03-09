@@ -10,7 +10,7 @@ export default defineConfig({
     sourcemap: true,
     lib: {
       entry: {
-        main: resolve(__dirname, "src/main.ts"),
+        index: resolve(__dirname, "src/index.ts"),
         modal: resolve(__dirname, "src/components/modal.ts"),
         global: resolve(__dirname, "src/global.ts"),
       },
