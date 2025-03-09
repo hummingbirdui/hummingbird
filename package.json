@@ -13,19 +13,26 @@
     "tailwind ui"
   ],
   "license": "MIT",
-  "main": "lib/esm/main.js",
-  "module": "lib/esm/main.js",
-  "types": "lib/esm/main.d.ts",
+  "main": "lib/esm/index.js",
+  "module": "lib/esm/index.js",
+  "types": "lib/esm/index.d.ts",
   "style": "dist/hummingbird.min.css",
-  "repository": "https://github.com/khayrul-dev/hb-hummingbird",
+  "repository": "https://github.com/hummingbird-ui/hummingbird",
   "exports": {
-    "import": "./lib/esm/main.js",
-    "require": "./lib/cjs/main.js",
-    "default": "./lib/esm/main.js"
+    ".": {
+      "style": "./src/index.css",
+      "import": "./lib/esm/index.js",
+      "require": "./lib/cjs/index.js",
+      "default": "./lib/esm/index.js"
+    },
+    "./package.json": "./package.json",
+    "./src/index.css": "./src/index.css",
+    "./src/index": "./src/index.css"
   },
   "files": [
     "lib",
-    "dist"
+    "dist",
+    "src/index.css"
   ],
   "author": "Hummingbird UI",
   "contributors": [
@@ -36,25 +43,31 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "build:css": "cross-env NPM_ENV=development npx @tailwindcss/cli -i src/style.css -o dist/hummingbird.css",
-    "build:css:min": "cross-env NPM_ENV=production npx @tailwindcss/cli -i src/style.css -o dist/hummingbird.min.css --minify",
+    "build:css": "cross-env NPM_ENV=development npx @tailwindcss/cli -i src/index.css -o dist/hummingbird.css",
+    "build:css:min": "cross-env NPM_ENV=production npx @tailwindcss/cli -i src/index.css -o dist/hummingbird.min.css --minify",
     "build:js": "tsc && vite build",
     "build:dist": "vite build && npm run build:css && npm run build:css:min",
     "build:lib": "vite build --config vite.lib.config.js"
   },
   "devDependencies": {
+    "@iconify/json": "^2.2.310",
+    "@iconify/tailwind4": "^1.0.3",
     "@rollup/plugin-terser": "^0.4.4",
-    "@tailwindcss/cli": "^4.0.7",
-    "@tailwindcss/vite": "^4.0.7",
+    "@tailwindcss/cli": "^4.0.9",
+    "@tailwindcss/typography": "^0.5.16",
+    "@tailwindcss/vite": "^4.0.9",
     "@types/bootstrap": "^5.2.10",
     "@types/node": "^22.13.1",
-    "astro": "^5.1.5",
+    "astro": "^5.4.1",
     "bootstrap": "^5.3.3",
     "cross-env": "^7.0.3",
     "cssnano": "^7.0.6",
-    "tailwindcss": "^4.0.7",
+    "tailwindcss": "^4.0.9",
     "typescript": "~5.7.2",
     "vite": "^6.1.0",
     "vite-plugin-dts": "^4.5.0"
+  },
+  "dependencies": {
+    "@astrojs/mdx": "^4.1.0"
   }
 }

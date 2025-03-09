@@ -12,7 +12,7 @@ export default defineConfig({
     outDir: "dist",
     minify: false,
     lib: {
-      entry: path.resolve(__dirname, "src/main.ts"),
+      entry: path.resolve(__dirname, "src/index.ts"),
       name: "Hummingbird",
       fileName: "hummingbird",
     },

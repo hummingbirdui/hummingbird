@@ -1,0 +1,65 @@
+---
+// Usage: <GreetingHeadline greeting="Howdy" name="Partner" />
+const { fluid } = Astro.props;
+---
+
+<nav class="bg-base border-border-light border-b fixed top-0 w-full z-20">
+  <div
+    class=`flex flex-wrap items-center justify-between mx-auto px-6 py-2.5 ${!fluid && 'max-w-screen-xl'}`
+  >
+    <div class="flex">
+      <button
+        class=`cursor-pointer lg:hidden ${!fluid && 'hidden'}`
+        data-toggle-sidebar
+      >
+        <span
+          class="icon-[heroicons-solid--menu-alt-1] text-2xl align-middle me-4"
+        ></span>
+      </button>
+      <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
+        <span
+          class="self-center text-xl font-semibold whitespace-nowrap text-highlight-color"
+          >Hummingbird</span
+        >
+      </a>
+    </div>
+    <button class="cursor-pointer md:hidden"
+      ><span
+        class="icon-[material-symbols--menu-rounded] text-2xl align-middle me-4"
+      ></span></button
+    >
+    <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+      <ul class="font-medium flex items-center">
+        <li>
+          <a
+            href="/components/buttons"
+            class="py-2 px-3 text-sm"
+            aria-current="page">Quickstart</a
+          >
+        </li>
+        <li>
+          <a href="#" class="py-2 px-3 text-sm">Store</a>
+        </li>
+        <li>
+          <a href="#" class="py-2 px-3 text-sm">Pricing</a>
+        </li>
+        <li>
+          <a href="#" class="py-2 px-3 text-sm">Blogs</a>
+        </li>
+        <li class="ms-4">
+          <button
+            class="cursor-pointer flex justify-center items-center"
+            data-theme-toggle-btn
+          >
+            <span
+              class="icon-[f7--moon-fill] text-info-light dark:hidden"
+              data-theme-toggle="dark"></span>
+            <span
+              class="icon-[ion--sunny] text-warning hidden dark:block"
+              data-theme-toggle="light"></span>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
