@@ -1,0 +1,36 @@
+---
+import sitemap from "../../sitemap";
+const pathName = Astro.originPathname;
+const path = pathName.split("/").pop();
+console.log(path);
+---
+
+<aside
+  class="fixed z-10 lg:sticky top-14 w-70 h-screen max-h-[calc(100dvh-(var(--spacing)*16))] transition-transform -translate-x-full bg-subtle border-r border-border-light lg:translate-x-0 shrink-0 overflow-y-auto"
+  aria-label="Sidebar"
+  data-sidebar
+>
+  <div class="h-full p-6 pt-8">
+    <div class="space-y-5">
+      {
+        sitemap.map((category) => (
+          <div>
+            <h2 class="text-sm mb-3 font-medium">{category.subHeader}</h2>
+            <ul class="border-l border-border-light ps-3 ms-1.5">
+              {category.items.map((item) => (
+                <li>
+                  <a
+                    href={item.path}
+                    class={`text-highlight-color text-sm py-1.5 block`}
+                  >
+                    <span>{item.name}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</aside>

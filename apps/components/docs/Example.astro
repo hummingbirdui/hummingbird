@@ -1,0 +1,73 @@
+<div class="example-container">
+  <!-- <div class="tabs space-x-2">
+    <button
+      class="tab active py-1 px-2 font-semibold text-highlight-color"
+      data-tab="preview">Preview</button
+    >
+    <button
+      class="tab py-1 px-2 font-semibold text-highlight-color"
+      data-tab="code">HTML</button
+    >
+  </div>
+  <div class="tab-content">
+    <div class="tab-pane preview py-6 active">
+      <slot name="preview" />
+    </div>
+    <div class="tab-pane code">
+      <slot name="code" />
+    </div>
+  </div> -->
+  <div
+    class="dark:bg-subtle border border-border-light rounded-2xl overflow-hidden"
+  >
+    <div class="p-6">
+      <slot name="preview" />
+    </div>
+    <div class="border-y border-border-light p-3 flex justify-between">
+      <button>HTML</button>
+      <button class="cursor-pointer">
+        <span class="icon-[material-symbols--content-copy-outline-rounded]"
+        ></span>
+      </button>
+    </div>
+    <slot name="code" />
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll(".example-container").forEach((example) => {
+      const tabs = example.querySelectorAll(".tab");
+      const panes = example.querySelectorAll(".tab-pane");
+
+      tabs.forEach((tab) => {
+        tab.addEventListener("click", function () {
+          const tabType = tab.getAttribute("data-tab");
+
+          // Remove active class from all tabs & panes inside this specific example-container
+          tabs.forEach((t) => t.classList.remove("active"));
+          panes.forEach((p) => p.classList.remove("active"));
+
+          // Activate the clicked tab and corresponding pane
+          tab.classList.add("active");
+          example
+            .querySelector(`.tab-pane.${tabType}`)
+            ?.classList.add("active");
+        });
+      });
+    });
+  });
+</script>
+
+<style>
+  .tab.active {
+    border-bottom: 2px solid var(--color-primary);
+    color: var(--color-primary);
+  }
+  .tab-pane {
+    display: none;
+  }
+  .tab-pane.active {
+    display: block;
+  }
+</style>
