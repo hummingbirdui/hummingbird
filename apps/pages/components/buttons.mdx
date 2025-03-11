@@ -1,27 +1,327 @@
 ---
 title: Button
 desc: Buttons allow users to take actions, and make choices, with a single tap.
-layout: '../../layouts/LayoutDoc.astro'
+layout: "../../layouts/LayoutDoc.astro"
 ---
 
 import Example from "../../components/docs/Example.astro";
 
+### Basic Buttons
 
-### Basic Buttons 
-The Button comes with different color variants
-<Example title='Basic Button'>
-  <div slot="preview" class='not-prose space-x-3'>
-    <button class='btn-primary'>Click</button>
-    <button class='btn-success'>Click</button>
-    <button class='btn-danger'>Click</button>
+The Button comes with different variants
+
+### Contained button
+
+Contained buttons are high-emphasis, distinguished by their use of elevation and fill. They contain actions that are primary to your app.
+
+<Example>
+  <div slot="preview" class='not-prose space-x-2'>
+    <button class='btn-primary'>Primary</button>
+    <button class='btn-secondary'>Secondary</button>
+    <button class='btn-info'>Info</button>
+    <button class='btn-success'>Success</button>
+    <button class='btn-warning'>Warning</button>
+    <button class='btn-error'>Error</button>
+    <button class='btn-neutral'>Neutral</button>
   </div>
 
   <div slot="code">
   ```html
-  <button class='btn-primary'>Click</button>
-  <button class='btn-success'>Click</button>
-  <button class='btn-danger'>Click</button>
+  <button class='btn-primary'>Primary</button>
+  <button class='btn-secondary'>Secondary</button>
+  <button class='btn-info'>Info</button>
+  <button class='btn-success'>Success</button>
+  <button class='btn-warning'>Warning</button>
+  <button class='btn-error'>Error</button>
+  <button class='btn-neutral'>Neutral</button>
   ```
   </div>
-  <div></div>
+</Example>
+
+### Subtle button
+
+Subtle buttons provide a gentle emphasis with a subtle background and solid text color, ideal for secondary actions that need visual distinction without overpowering the primary content.
+
+<Example>
+  <div slot="preview" class='not-prose space-x-2'>
+    <button class='btn-primary-subtle'>Primary</button>
+    <button class='btn-secondary-subtle'>Secondary</button>
+    <button class='btn-info-subtle'>Info</button>
+    <button class='btn-success-subtle'>Success</button>
+    <button class='btn-warning-subtle'>Warning</button>
+    <button class='btn-error-subtle'>Error</button>
+    <button class='btn-neutral-subtle'>Neutral</button>
+  </div>
+
+  <div slot="code">
+  ```html
+  <button class='btn-primary-subtle'>Primary</button>
+  <button class='btn-secondary-subtle'>Secondary</button>
+  <button class='btn-info-subtle'>Info</button>
+  <button class='btn-success-subtle'>Success</button>
+  <button class='btn-warning-subtle'>Warning</button>
+  <button class='btn-error-subtle'>Error</button>
+  <button class='btn-neutral-subtle'>Neutral</button>
+  ```
+  </div>
+</Example>
+
+### Outlined button
+
+Outlined buttons are medium-emphasis buttons. They contain actions that are important but aren't the primary action in an app.
+
+<Example>
+  <div slot="preview" class='not-prose space-x-2'>
+    <button class='btn-primary-outline'>Primary</button>
+    <button class='btn-secondary-outline'>Secondary</button>
+    <button class='btn-info-outline'>Info</button>
+    <button class='btn-success-outline'>Success</button>
+    <button class='btn-warning-outline'>Warning</button>
+    <button class='btn-error-outline'>Error</button>
+    <button class='btn-neutral-outline'>Neutral</button>
+  </div>
+
+  <div slot="code">
+  ```html
+  <button class='btn-primary-outline'>Primary</button>
+  <button class='btn-secondary-outline'>Secondary</button>
+  <button class='btn-info-outline'>Info</button>
+  <button class='btn-success-outline'>Success</button>
+  <button class='btn-warning-outline'>Warning</button>
+  <button class='btn-error-outline'>Error</button>
+  <button class='btn-neutral-outline'>Neutral</button>
+  ```
+  </div>
+</Example>
+
+### Text button
+
+Text buttons are typically used for less-pronounced actions, including those located: in dialogs, in cards. In cards, text buttons help maintain an emphasis on card content.
+
+<Example>
+  <div slot="preview" class='not-prose space-x-2'>
+    <button class='btn-primary-text'>Primary</button>
+    <button class='btn-secondary-text'>Secondary</button>
+    <button class='btn-info-text'>Info</button>
+    <button class='btn-success-text'>Success</button>
+    <button class='btn-warning-text'>Warning</button>
+    <button class='btn-error-text'>Error</button>
+    <button class='btn-neutral-text'>Neutral</button>
+  </div>
+
+  <div slot="code">
+  ```html
+  <button class='btn-primary-text'>Primary</button>
+  <button class='btn-secondary-text'>Secondary</button>
+  <button class='btn-info-text'>Info</button>
+  <button class='btn-success-text'>Success</button>
+  <button class='btn-warning-text'>Warning</button>
+  <button class='btn-error-text'>Error</button>
+  <button class='btn-neutral-text'>Neutral</button>
+  ```
+  </div>
+</Example>
+
+### Button Sizes
+
+For larger or smaller buttons, use the <code>.btn-lg</code> and <code>.btn-sm</code> class. Default is medium.
+
+<Example>
+  <div slot="preview" class='not-prose space-y-3'>
+    <div class='space-x-2'>
+      <button class='btn-primary btn-sm'>Small</button>
+      <button class='btn-primary'>Medium</button>
+      <button class='btn-primary btn-lg'>Large</button>
+    </div>
+    <div class='space-x-2'>
+      <button class='btn-primary-subtle btn-sm'>Small</button>
+      <button class='btn-primary-subtle'>Medium</button>
+      <button class='btn-primary-subtle btn-lg'>Large</button>
+    </div>
+    <div class='space-x-2'>
+      <button class='btn-primary-outline btn-sm'>Small</button>
+      <button class='btn-primary-outline'>Medium</button>
+      <button class='btn-primary-outline btn-lg'>Large</button>
+    </div>
+    <div class='space-x-2'>
+      <button class='btn-primary-text btn-sm'>Small</button>
+      <button class='btn-primary-text'>Medium</button>
+      <button class='btn-primary-text btn-lg'>Large</button>
+    </div>
+  </div>
+
+  <div slot="code">
+  ```html
+  <button class='btn-primary btn-sm'>Small</button>
+  <button class='btn-primary'>Medium</button>
+  <button class='btn-primary btn-lg'>Large</button>
+  <button class="btn-primary-subtle btn-sm">Small</button>
+  <button class="btn-primary-subtle">Medium</button>
+  <button class="btn-primary-subtle btn-lg">Large</button>
+  <button class='btn-primary-outline btn-sm'>Small</button>
+  <button class='btn-primary-outline'>Medium</button>
+  <button class='btn-primary-outline btn-lg'>Large</button>
+  <button class='btn-primary-text btn-sm'>Small</button>
+  <button class='btn-primary-text'>Medium</button>
+  <button class='btn-primary-text btn-lg'>Large</button>
+  ```
+  </div>
+</Example>
+
+### Button Shape
+
+You can change the shape of the button using the <code>.btn-square</code> and <code>.btn-circle</code> class.
+
+<Example>
+  <div slot="preview" class='not-prose space-y-3'>
+    <div class='space-x-2'>
+      <button class='btn-primary btn-square btn-lg'>
+        <span class='icon-[material-symbols--add-circle-outline-rounded] text-lg'></span>
+      </button>
+      <button class='btn-secondary btn-circle btn-lg'>
+        <span class='icon-[material-symbols--add-circle-outline-rounded] text-lg'></span>
+      </button>
+    </div>
+    <div class='space-x-2'>
+      <button class='btn-primary btn-square'>
+        <span class='icon-[material-symbols--add-circle-outline-rounded] text-lg'></span>
+      </button>
+      <button class='btn-secondary btn-circle'>
+        <span class='icon-[material-symbols--add-circle-outline-rounded] text-lg'></span>
+      </button>
+    </div>
+    <div class='space-x-2'>
+      <button class='btn-primary btn-square btn-sm'>
+        <span class='icon-[material-symbols--add-circle-outline-rounded]'></span>
+      </button>
+      <button class='btn-secondary btn-circle btn-sm'>
+        <span class='icon-[material-symbols--add-circle-outline-rounded]'></span>
+      </button>
+    </div>
+  </div>
+
+  <div slot="code">
+  ```html
+  <button class='btn-primary btn-square btn-lg'>
+    <span class='icon-[material-symbols--add-circle-outline-rounded] text-lg'></span>
+  </button>
+  <button class='btn-secondary btn-circle btn-lg'>
+    <span class='icon-[material-symbols--add-circle-outline-rounded] text-lg'></span>
+  </button>
+  <button class='btn-primary btn-square'>
+    <span class='icon-[material-symbols--add-circle-outline-rounded] text-lg'></span>
+  </button>
+  <button class='btn-secondary btn-circle'>
+    <span class='icon-[material-symbols--add-circle-outline-rounded] text-lg'></span>
+  </button>
+  <button class='btn-primary btn-square btn-sm'>
+    <span class='icon-[material-symbols--add-circle-outline-rounded]'></span>
+  </button>
+  <button class='btn-secondary btn-circle btn-sm'>
+    <span class='icon-[material-symbols--add-circle-outline-rounded]'></span>
+  </button>
+  ```
+  </div>
+</Example>
+
+### Buttons with icons and label
+
+<Example>
+  <div slot="preview" class='not-prose space-x-2'>
+    <button class='btn-error'>
+      <span class='icon-[mingcute--google-fill]'></span>
+      Google
+    </button>
+    <button class='btn-info'>
+      Twitter
+      <span class='icon-[mingcute--twitter-fill]'></span>
+    </button>
+  </div>
+
+  <div slot="code">
+  ```html
+  <button class='btn-error'>
+    <span class='icon-[mingcute--google-fill]'></span>
+    Google
+  </button>
+  <button class='btn-info'>
+    Twitter
+    <span class='icon-[mingcute--twitter-fill]'></span>
+  </button>
+  ```
+  </div>
+</Example>
+
+### Icon button
+
+<Example>
+  <div slot="preview" class='not-prose space-x-2'>
+    <button class='btn-icon'>
+      <span class='icon-[line-md--heart] text-xl'></span>
+    </button>
+    <button class='btn-icon' disabled>
+      <span class='icon-[line-md--heart] text-xl'></span>
+    </button>
+    <button class='btn-icon-primary'>
+      <span class='icon-[tabler--thumb-up] text-xl'></span>
+    </button>
+    <button class='btn-icon-error'>
+      <span class='icon-[line-md--heart] text-xl'></span>
+    </button>
+  </div>
+
+  <div slot="code">
+  ```html
+  <button class='btn-icon'>
+    <span class='icon-[line-md--heart] text-xl'></span>
+  </button>
+  <button class='btn-icon' disabled>
+    <span class='icon-[line-md--heart] text-xl'></span>
+  </button>
+  <button class='btn-icon-primary'>
+    <span class='icon-[tabler--thumb-up] text-xl'></span>
+  </button>
+  <button class='btn-icon-error'>
+    <span class='icon-[line-md--heart] text-xl'></span>
+  </button>
+  ```
+  </div>
+</Example>
+
+### Sizes
+
+For larger or smaller icon buttons, use the <code>.btn-lg</code> and <code>.btn-sm</code> classes. Default is medium.
+
+<Example>
+  <div slot="preview" class='not-prose flex gap-2 items-center'>
+    <button class='btn-icon btn-sm'>
+      <span class='icon-[material-symbols--delete-outline-rounded]'></span>
+    </button>
+    <button class='btn-icon btn-sm'>
+      <span class='icon-[material-symbols--delete-outline-rounded] text-lg'></span>
+    </button>
+    <button class='btn-icon btn-lg'>
+      <span class='icon-[material-symbols--delete-outline-rounded] text-xl'></span>
+    </button>
+    <button class='btn-icon btn-lg'>
+      <span class='icon-[material-symbols--delete-outline-rounded] text-2xl'></span>
+    </button>
+  </div>
+
+  <div slot="code">
+  ```html
+  <button class='btn-icon btn-sm'>
+    <span class='icon-[material-symbols--delete-outline-rounded]'></span>
+  </button>
+  <button class='btn-icon btn-sm'>
+    <span class='icon-[material-symbols--delete-outline-rounded] text-lg'></span>
+  </button>
+  <button class='btn-icon btn-lg'>
+    <span class='icon-[material-symbols--delete-outline-rounded] text-xl'></span>
+  </button>
+  <button class='btn-icon btn-lg'>
+    <span class='icon-[material-symbols--delete-outline-rounded] text-2xl'></span>
+  </button>
+  ```
+  </div>
 </Example>

@@ -1,3 +1,6 @@
+@import '../src/index.css';
+@plugin '@tailwindcss/typography';
+
 .prose {
   --tw-prose-headings: var(--color-base-color);
   --tw-prose-body: var(--color-highlight-color)

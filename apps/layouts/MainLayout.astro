@@ -1,5 +1,4 @@
 ---
-import "../../src/index.css";
 import "../style.css";
 import Navbar from "../components/common/Navbar.astro";
 const { fluid } = Astro.props;
@@ -28,7 +27,7 @@ const { fluid } = Astro.props;
       );
     </script>
   </head>
-  <body class="bg-base text-base-color">
+  <body class="bg-default text-default-color">
     <Navbar fluid={fluid} />
     <slot />
     <script type="module" src="../../src/index.ts"></script>
