@@ -1,0 +1,26 @@
+---
+title: Floating labels
+desc: Create beautifully simple form labels that float over your input fields.
+layout: "../../layouts/LayoutDoc.astro"
+---
+
+import Example from "../../components/docs/Example.astro";
+
+### Basic
+
+<Example>
+  <div slot="preview" class="not-prose">
+    <div class="form-floating">
+      <input type="text" class="form-floating-input" />
+      <label class="form-floating-label">Size Medium</label>
+    </div>
+  </div>
+  <div slot="code">
+    ```html
+    <div class="form-floating">
+      <input type="text" class="form-floating-input" />
+      <label class="form-floating-label">Size Medium</label>
+    </div>
+    ```
+  </div>
+</Example>
