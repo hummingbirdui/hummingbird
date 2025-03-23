@@ -1,6 +1,2 @@
-@import "tailwindcss";
-@import './theme/default.css';
-@import './theme/theme.css';
-@import './styles/component.css';
-@plugin "@iconify/tailwind4";
-@custom-variant dark (&:where(.dark, .dark *));
+@import "./theme/theme.css";
+@import "./styles/component.css";

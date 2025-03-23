@@ -1,0 +1,187 @@
+@utility form-control {
+  @apply relative inline-flex items-center justify-center transition duration-200 gap-2;
+  --input-bg: var(--color-muted);
+  --input-content: var(--color-muted-color);
+  --input-padding-x: calc(var(--hb-spacing) * 4);
+  --input-hover-bg: var(--color-highlight);
+  --input-focus-bg: var(--color-primary-lighter);
+  --input-disabled-bg: var(--color-highlight);
+  line-height: var(--btn-line-height, 1.5);
+  background-color: var(--input-bg);
+  color: var(--input-content);
+  font-size: var(--btn-font-size, var(--text-sm));
+  border-radius: var(--btn-radius, var(--radius-lg));
+  box-shadow: 0 0 0 1px var(--input-border-color);
+  padding-left: var(--input-padding-x);
+  padding-right: var(--input-padding-x);
+  & :where(input) {
+    @apply w-full flex-1;
+    padding: var(--btn-padding-y, calc(var(--hb-spacing) * 2)) 0;
+  }
+  &:not(:has(input)) {
+    padding: var(--btn-padding-y, calc(var(--hb-spacing) * 2))
+      var(--input-padding-x);
+  }
+  &:is(:disabled, [disabled]),
+  &:has(> input[disabled]) {
+    --input-bg: var(--input-disabled-bg);
+    &:hover {
+      --input-bg: var(--input-disabled-bg);
+    }
+  }
+  &:hover {
+    --input-bg: var(--input-hover-bg);
+  }
+  &:focus-within,
+  &:focus {
+    input {
+      @apply outline-0;
+    }
+    @apply outline-0;
+    --input-bg: var(--input-focus-bg);
+    --input-border-color: var(--input-focus-border-color, var(--color-primary));
+  }
+  &.error {
+    --input-bg: var(--color-error-lighter);
+    --input-border-color: var(--color-error);
+  }
+}
+
+@utility form-control-outline {
+  @apply relative inline-flex items-center justify-center transition duration-200 gap-2;
+  --input-content: var(--color-muted-color);
+  --input-padding-x: calc(var(--hb-spacing) * 4);
+  --input-border-color: var(--color-border-base);
+  line-height: var(--btn-line-height, 1.5);
+  color: var(--input-content);
+  font-size: var(--btn-font-size, var(--text-sm));
+  border-radius: var(--btn-radius, var(--radius-lg));
+  box-shadow: 0 0 0 1px var(--input-border-color);
+  padding-left: var(--input-padding-x);
+  padding-right: var(--input-padding-x);
+  & :where(input) {
+    @apply w-full flex-1;
+    padding: var(--btn-padding-y, calc(var(--hb-spacing) * 2)) 0;
+  }
+  &:not(:has(input)) {
+    padding: var(--btn-padding-y, calc(var(--hb-spacing) * 2))
+      var(--input-padding-x);
+  }
+  &:is(:disabled, [disabled]),
+  &:has(> input[disabled]) {
+    /* background: --alpha(var(--color-disabled-bg) / 40%); */
+    /* --input-border-color: --alpha(var(--color-disabled-bg) / 70%); */
+    opacity: 0.5;
+    &:hover {
+      --input-border-color: var(--color-border-base);
+    }
+  }
+  &:hover {
+    --input-border-color: var(--color-emphasis-color);
+  }
+  &:focus-within,
+  &:focus {
+    input {
+      @apply outline-0;
+    }
+    @apply outline-0;
+    --input-border-color: var(--input-focus-border-color, var(--color-primary));
+  }
+  &.error {
+    --input-border-color: var(--color-error);
+  }
+}
+
+@utility adornment-start {
+  font-size: 20px;
+  color: var(--color-active);
+}
+@utility adornment-end {
+  font-size: 20px;
+  color: var(--color-active);
+  &:has(+ input) {
+    padding-right: 0;
+  }
+}
+@utility form-control-sm {
+  --input-padding-x: calc(var(--hb-spacing) * 3);
+  --btn-padding-y: calc(var(--hb-spacing) * 1.5);
+  --btn-radius: var(--radius-sm);
+  --form-field-space-x: 50px;
+  --btn-line-height: 1.25;
+  .adornment-start,
+  .adornment-end {
+    font-size: var(--text-sm);
+  }
+}
+@utility form-control-lg {
+  --btn-padding-y: calc(var(--hb-spacing) * 2.5);
+  --btn-font-size: var(--text-base);
+  .adornment-start,
+  .adornment-end {
+    font-size: var(--text-xl);
+  }
+}
+@utility form-control-secondary {
+  --input-focus-bg: var(--color-secondary-lighter);
+  --input-focus-border-color: var(--color-secondary);
+}
+@utility form-control-info {
+  --input-focus-bg: var(--color-info-lighter);
+  --input-focus-border-color: var(--color-info);
+}
+@utility form-control-success {
+  --input-focus-bg: var(--color-success-lighter);
+  --input-focus-border-color: var(--color-success);
+}
+@utility form-control-warning {
+  --input-focus-bg: var(--color-warning-lighter);
+  --input-focus-border-color: var(--color-warning);
+}
+
+@utility form-label {
+  margin-left: calc(var(--hb-spacing) * 4);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-highlight-color);
+  font-size: var(--text-xs);
+}
+
+@utility form-field {
+  @apply inline-flex flex-col gap-1;
+  &:where(:has(.form-control, .form-control-outline)):focus-within {
+    .form-label {
+      color: var(--color-primary);
+    }
+  }
+  &:where(:has(.form-control-secondary)):focus-within {
+    .form-label {
+      color: var(--color-secondary);
+    }
+  }
+  &:where(:has(.form-control-info)):focus-within {
+    .form-label {
+      color: var(--color-info);
+    }
+  }
+  &:where(:has(.form-control-success)):focus-within {
+    .form-label {
+      color: var(--color-success);
+    }
+  }
+  &:where(:has(.form-control-warning)):focus-within {
+    .form-label {
+      color: var(--color-warning);
+    }
+  }
+  &:where(:has(.error)),
+  &:where(:has(.error)):focus-within {
+    .form-label {
+      color: var(--color-error);
+    }
+  }
+  &:where(:has(.form-control-sm)) {
+    .form-label {
+      margin-left: calc(var(--hb-spacing) * 3);
+    }
+  }
+}
