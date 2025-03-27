@@ -9,17 +9,25 @@ import Example from "../../components/docs/Example.astro";
 ### Basic
 
 <Example>
-  <div slot="preview" class="not-prose">
+  <div slot="preview" class="not-prose grid sm:grid-cols-2 items-center gap-3">
     <div class="form-floating">
-      <input type="text" class="form-floating-input" />
-      <label class="form-floating-label">Size Medium</label>
+      <input type="text" class="form-control-outline form-control-sm" placeholder=' ' />
+      <label class="form-label">Size Small</label>
+    </div>
+    <div class="form-floating">
+      <input type="text" class="form-control-outline" placeholder=' ' />
+      <label class="form-label">Size Medium</label>
+    </div>
+    <div class="form-floating">
+      <input type="text" class="form-control-outline form-control-lg form-control-secondary" placeholder=' ' />
+      <label class="form-label">Size Large</label>
     </div>
   </div>
   <div slot="code">
     ```html
     <div class="form-floating">
-      <input type="text" class="form-floating-input" />
-      <label class="form-floating-label">Size Medium</label>
+      <input type="text" class='form-control-outline' placeholder=' ' />
+      <label class="form-label">Size Medium</label>
     </div>
     ```
   </div>
