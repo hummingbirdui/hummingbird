@@ -1,21 +1,21 @@
 @utility form-control {
-  @apply relative inline-flex items-center justify-center transition duration-200 gap-2;
+  @apply relative inline-flex items-center justify-center transition duration-200 gap-2 appearance-none;
   --input-bg: var(--color-muted);
-  --input-content: var(--color-muted-color);
   --input-padding-x: calc(var(--hb-spacing) * 4);
   --input-hover-bg: var(--color-highlight);
   --input-focus-bg: var(--color-primary-lighter);
   --input-disabled-bg: var(--color-highlight);
+  --input-border-color: none;
   line-height: var(--btn-line-height, 1.5);
   background-color: var(--input-bg);
-  color: var(--input-content);
+  color: var(--input-content, var(--color-default-color));
   font-size: var(--btn-font-size, var(--text-sm));
   border-radius: var(--btn-radius, var(--radius-lg));
   box-shadow: 0 0 0 1px var(--input-border-color);
   padding-left: var(--input-padding-x);
   padding-right: var(--input-padding-x);
   & :where(input) {
-    @apply w-full flex-1;
+    @apply w-full flex-1 appearance-none;
     padding: var(--btn-padding-y, calc(var(--hb-spacing) * 2)) 0;
   }
   &:not(:has(input)) {
@@ -48,19 +48,17 @@
 }
 
 @utility form-control-outline {
-  @apply relative inline-flex items-center justify-center transition duration-200 gap-2;
-  --input-content: var(--color-muted-color);
+  @apply relative inline-flex items-center justify-center transition duration-200 gap-2 appearance-none;
   --input-padding-x: calc(var(--hb-spacing) * 4);
-  --input-border-color: var(--color-border-base);
   line-height: var(--btn-line-height, 1.5);
-  color: var(--input-content);
+  color: var(--input-content, var(--color-default-color));
   font-size: var(--btn-font-size, var(--text-sm));
   border-radius: var(--btn-radius, var(--radius-lg));
-  box-shadow: 0 0 0 1px var(--input-border-color);
+  box-shadow: 0 0 0 1px var(--input-border-color, var(--color-border-base));
   padding-left: var(--input-padding-x);
   padding-right: var(--input-padding-x);
   & :where(input) {
-    @apply w-full flex-1;
+    @apply w-full flex-1 appearance-none;
     padding: var(--btn-padding-y, calc(var(--hb-spacing) * 2)) 0;
   }
   &:not(:has(input)) {
@@ -142,46 +140,50 @@
 @utility form-label {
   margin-left: calc(var(--hb-spacing) * 4);
   font-weight: var(--font-weight-medium);
-  color: var(--color-highlight-color);
+  color: var(--input-label-color, var(--color-highlight-color));
   font-size: var(--text-xs);
 }
-
 @utility form-field {
   @apply inline-flex flex-col gap-1;
+}
+.form-field {
+  &:where(:has(.form-control-sm)) {
+    .form-label {
+      margin-left: calc(var(--hb-spacing) * 3);
+    }
+  }
+}
+.form-field,
+.form-floating {
   &:where(:has(.form-control, .form-control-outline)):focus-within {
     .form-label {
-      color: var(--color-primary);
+      --input-label-color: var(--color-primary);
     }
   }
   &:where(:has(.form-control-secondary)):focus-within {
     .form-label {
-      color: var(--color-secondary);
+      --input-label-color: var(--color-secondary);
     }
   }
   &:where(:has(.form-control-info)):focus-within {
     .form-label {
-      color: var(--color-info);
+      --input-label-color: var(--color-info);
     }
   }
   &:where(:has(.form-control-success)):focus-within {
     .form-label {
-      color: var(--color-success);
+      --input-label-color: var(--color-success);
     }
   }
   &:where(:has(.form-control-warning)):focus-within {
     .form-label {
-      color: var(--color-warning);
+      --input-label-color: var(--color-warning);
     }
   }
   &:where(:has(.error)),
   &:where(:has(.error)):focus-within {
     .form-label {
-      color: var(--color-error);
-    }
-  }
-  &:where(:has(.form-control-sm)) {
-    .form-label {
-      margin-left: calc(var(--hb-spacing) * 3);
+      --input-label-color: var(--color-error);
     }
   }
 }
