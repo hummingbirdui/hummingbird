@@ -67,8 +67,6 @@
   }
   &:is(:disabled, [disabled]),
   &:has(> input[disabled]) {
-    /* background: --alpha(var(--color-disabled-bg) / 40%); */
-    /* --input-border-color: --alpha(var(--color-disabled-bg) / 70%); */
     opacity: 0.5;
     &:hover {
       --input-border-color: var(--color-border-base);
@@ -90,33 +88,25 @@
   }
 }
 
-@utility adornment-start {
+@utility form-control-icon {
   font-size: 20px;
   color: var(--color-active);
 }
-@utility adornment-end {
-  font-size: 20px;
-  color: var(--color-active);
-  &:has(+ input) {
-    padding-right: 0;
-  }
-}
+
 @utility form-control-sm {
   --input-padding-x: calc(var(--hb-spacing) * 3);
   --btn-padding-y: calc(var(--hb-spacing) * 1.5);
   --btn-radius: var(--radius-sm);
   --form-field-space-x: 50px;
   --btn-line-height: 1.25;
-  .adornment-start,
-  .adornment-end {
+  .form-control-icon {
     font-size: var(--text-sm);
   }
 }
 @utility form-control-lg {
   --btn-padding-y: calc(var(--hb-spacing) * 2.5);
   --btn-font-size: var(--text-base);
-  .adornment-start,
-  .adornment-end {
+  .form-control-icon {
     font-size: var(--text-xl);
   }
 }
