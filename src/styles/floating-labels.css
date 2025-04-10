@@ -1,5 +1,5 @@
 @utility form-floating {
-  @apply relative inline-flex flex-col gap-1;
+  @apply relative;
   .form-label {
     @apply absolute top-0 inline-block transition-transform duration-200 cursor-text;
     font-weight: var(--font-weight-normal);
@@ -12,10 +12,11 @@
   }
 
   .form-control-outline {
-    @apply inline-flex w-full;
+    @apply w-full;
     --btn-padding-y: calc(var(--hb-spacing) * 2.5);
-    line-height: 2;
+    --btn-line-height: 2;
     &:focus-within,
+    &:focus,
     &:not(:placeholder-shown) {
       & + .form-label {
         transform: translate(10px, -12px) scale(0.85);
@@ -36,10 +37,9 @@
     }
   }
   .form-control {
-    @apply inline-flex w-full;
+    @apply w-full;
     --floating-label-padding-top: calc(var(--hb-spacing) * 5.5);
     --floating-label-padding-bottom: calc(var(--hb-spacing) * 1.25);
-    line-height: 1.5;
     & + .form-label {
       background-color: transparent;
       padding: 0;
@@ -59,6 +59,7 @@
       --floating-label-padding-bottom: calc(var(--hb-spacing) * 1.75);
     }
     &:focus-within,
+    &:focus,
     input&:not(:placeholder-shown),
     textarea&:not(:placeholder-shown) {
       & + .form-label {
@@ -82,6 +83,7 @@
         transform: translate(52px, 14px) scale(1);
       }
       &:focus-within,
+      &:focus,
       &:has(> input:not(:placeholder-shown)) {
         & + .form-label {
           transform: translate(37px, 4px) scale(0.85);
