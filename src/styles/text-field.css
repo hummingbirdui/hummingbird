@@ -1,43 +1,47 @@
 @utility form-control {
   @apply relative inline-flex items-center justify-center transition duration-200 gap-2 appearance-none;
+  --input-bg: var(--color-muted);
+  --input-padding-x: calc(var(--hb-spacing) * 4);
+  --input-hover-bg: var(--color-highlight);
+  --input-focus-bg: var(--color-primary-lighter);
+  --input-disabled-bg: var(--color-highlight);
+  --input-border-color: none;
   line-height: var(--btn-line-height, 1.5);
-  background-color: var(--input-bg, var(--color-muted));
+  background-color: var(--input-bg);
   color: var(--input-content, var(--color-default-color));
   font-size: var(--btn-font-size, var(--text-sm));
   border-radius: var(--btn-radius, var(--radius-lg));
-  box-shadow: 0 0 0 1px var(--input-border-color, none);
-  padding-left: var(--input-padding-x, calc(var(--hb-spacing) * 4));
-  padding-right: var(--input-padding-x, calc(var(--hb-spacing) * 4));
+  box-shadow: 0 0 0 1px var(--input-border-color);
+  padding-left: var(--input-padding-x);
+  padding-right: var(--input-padding-x);
   & :where(input) {
     @apply w-full flex-1 appearance-none;
     padding: var(--btn-padding-y, calc(var(--hb-spacing) * 2)) 0;
   }
   &:not(:has(input)) {
     padding: var(--btn-padding-y, calc(var(--hb-spacing) * 2))
-      var(--input-padding-x, calc(var(--hb-spacing) * 4));
+      var(--input-padding-x);
   }
   &:is(:disabled, [disabled]),
   &:has(> input[disabled]) {
-    --input-bg: var(--input-disabled-bg, var(--color-highlight));
+    --input-bg: var(--input-disabled-bg);
     &:hover {
-      --input-bg: var(--input-disabled-bg, var(--color-highlight));
+      --input-bg: var(--input-disabled-bg);
     }
   }
-
   &:hover {
-    --input-bg: var(--input-hover-bg, var(--color-highlight));
+    --input-bg: var(--input-hover-bg);
   }
   &:focus-within,
   &:focus {
-    input,
-    textarea {
+    input {
       @apply outline-0;
     }
     @apply outline-0;
-    --input-bg: var(--input-focus-bg, var(--color-primary-lighter));
+    --input-bg: var(--input-focus-bg);
     --input-border-color: var(--input-focus-border-color, var(--color-primary));
   }
-  &.is-invalid {
+  &.error {
     --input-bg: var(--color-error-lighter);
     --input-border-color: var(--color-error);
   }
@@ -45,20 +49,21 @@
 
 @utility form-control-outline {
   @apply relative inline-flex items-center justify-center transition duration-200 gap-2 appearance-none;
+  --input-padding-x: calc(var(--hb-spacing) * 4);
   line-height: var(--btn-line-height, 1.5);
   color: var(--input-content, var(--color-default-color));
   font-size: var(--btn-font-size, var(--text-sm));
   border-radius: var(--btn-radius, var(--radius-lg));
   box-shadow: 0 0 0 1px var(--input-border-color, var(--color-border-base));
-  padding-left: var(--input-padding-x, calc(var(--hb-spacing) * 4));
-  padding-right: var(--input-padding-x, calc(var(--hb-spacing) * 4));
+  padding-left: var(--input-padding-x);
+  padding-right: var(--input-padding-x);
   & :where(input) {
     @apply w-full flex-1 appearance-none;
     padding: var(--btn-padding-y, calc(var(--hb-spacing) * 2)) 0;
   }
   &:not(:has(input)) {
     padding: var(--btn-padding-y, calc(var(--hb-spacing) * 2))
-      var(--input-padding-x, calc(var(--hb-spacing) * 4));
+      var(--input-padding-x);
   }
   &:is(:disabled, [disabled]),
   &:has(> input[disabled]) {
@@ -66,23 +71,19 @@
     &:hover {
       --input-border-color: var(--color-border-base);
     }
-    .form-label {
-      --input-label-color: var(--color-disabled);
-    }
   }
   &:hover {
     --input-border-color: var(--color-emphasis-color);
   }
   &:focus-within,
   &:focus {
-    input,
-    textarea {
+    input {
       @apply outline-0;
     }
     @apply outline-0;
     --input-border-color: var(--input-focus-border-color, var(--color-primary));
   }
-  &.is-invalid {
+  &.error {
     --input-border-color: var(--color-error);
   }
 }
@@ -96,6 +97,7 @@
   --input-padding-x: calc(var(--hb-spacing) * 3);
   --btn-padding-y: calc(var(--hb-spacing) * 1.5);
   --btn-radius: var(--radius-sm);
+  --form-field-space-x: 50px;
   --btn-line-height: 1.25;
   .form-control-icon {
     font-size: var(--text-sm);
@@ -126,54 +128,52 @@
 }
 
 @utility form-label {
+  margin-left: calc(var(--hb-spacing) * 4);
   font-weight: var(--font-weight-medium);
   color: var(--input-label-color, var(--color-highlight-color));
   font-size: var(--text-xs);
 }
-
 @utility form-field {
   @apply inline-flex flex-col gap-1;
-  &:where(
-      :has(
-          .form-control,
-          .form-control-outline,
-          .form-select,
-          .form-select-outline
-        )
-    ):focus-within {
+}
+.form-field {
+  &:where(:has(.form-control-sm)) {
+    .form-label {
+      margin-left: calc(var(--hb-spacing) * 3);
+    }
+  }
+}
+.form-field,
+.form-floating {
+  &:where(:has(.form-control, .form-control-outline)):focus-within {
     .form-label {
       --input-label-color: var(--color-primary);
     }
   }
-  &:where(:has(.form-control-secondary, .form-select-secondary)):focus-within {
+  &:where(:has(.form-control-secondary)):focus-within {
     .form-label {
       --input-label-color: var(--color-secondary);
     }
   }
-  &:where(:has(.form-control-info, .form-select-info)):focus-within {
+  &:where(:has(.form-control-info)):focus-within {
     .form-label {
       --input-label-color: var(--color-info);
     }
   }
-  &:where(:has(.form-control-success, .form-select-success)):focus-within {
+  &:where(:has(.form-control-success)):focus-within {
     .form-label {
       --input-label-color: var(--color-success);
     }
   }
-  &:where(:has(.form-control-warning, .form-select-warning)):focus-within {
+  &:where(:has(.form-control-warning)):focus-within {
     .form-label {
       --input-label-color: var(--color-warning);
     }
   }
-  &:where(:has(.is-invalid)),
-  &:where(:has(.is-invalid)):focus-within {
+  &:where(:has(.error)),
+  &:where(:has(.error)):focus-within {
     .form-label {
       --input-label-color: var(--color-error);
-    }
-  }
-  &:has(input[disabled]) {
-    .form-label {
-      --input-label-color: var(--color-disabled);
     }
   }
 }
