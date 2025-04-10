@@ -1,3 +1,6 @@
 @import "./button.css";
 @import "./text-field.css";
 @import "./floating-labels.css";
+@import "./select.css";
+@import "./floating-label-select.css";
+@import "./form-check.css";
