@@ -2,7 +2,8 @@
 import sitemap from "../../sitemap";
 const pathName = Astro.originPathname;
 const path = pathName.split("/").pop();
-console.log(path);
+const { page } = Astro.props;
+console.log(pathName);
 ---
 
 <aside
@@ -21,7 +22,7 @@ console.log(path);
                 <li>
                   <a
                     href={item.path}
-                    class={`text-highlight-color text-sm py-1.5 block`}
+                    class={`text-sm py-1.5 block ${pathName === item.path ? "text-info" : "text-highlight-color"}`}
                   >
                     <span>{item.name}</span>
                   </a>

@@ -32,6 +32,22 @@ const sitemap: Sitemap[] = [
         path: "/components/buttons",
       },
       {
+        name: "Text Field",
+        path: "/components/text-field",
+      },
+      {
+        name: "Floating labels",
+        path: "/components/floating-labels",
+      },
+      {
+        name: "Select",
+        path: "/components/select",
+      },
+      {
+        name: "Checkbox & Radio",
+        path: "/components/checkbox-radio",
+      },
+      {
         name: "Alert",
         path: "#",
       },
