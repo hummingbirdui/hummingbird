@@ -176,28 +176,28 @@ Different colors become visible while the input is focused. By default, the inpu
 
 ### Validation
 
-Indicate validation states by adding the `.error` class to input fields. This highlights the input field when invalid or requiring user attention.
+Indicate validation states by adding the `.is-invalid` class to input fields. This highlights the input field when invalid or requiring user attention.
 
 <Example>
   <div slot="preview" class="not-prose grid sm:grid-cols-2 items-center gap-3">
     <div class="form-field">
       <label class="form-label">First name</label>
-      <input type="text" class="form-control error" />
+      <input type="text" class="form-control is-invalid" />
     </div>
     <div class="form-field">
       <label class="form-label">Last name</label>
-      <input type="text" class="form-control-outline error" />
+      <input type="text" class="form-control-outline is-invalid" />
     </div>
   </div>
   <div slot="code">
     ```html
     <div class="form-field">
       <label class="form-label">First name</label>
-      <input type="text" class="form-control error" />
+      <input type="text" class="form-control is-invalid" />
     </div>
     <div class="form-field">
       <label class="form-label">Last name</label>
-      <input type="text" class="form-control-outline error" />
+      <input type="text" class="form-control-outline is-invalid" />
     </div>
     ```
   </div>

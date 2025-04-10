@@ -40,6 +40,14 @@ const sitemap: Sitemap[] = [
         path: "/components/floating-labels",
       },
       {
+        name: "Select",
+        path: "/components/select",
+      },
+      {
+        name: "Checkbox & Radio",
+        path: "/components/checkbox-radio",
+      },
+      {
         name: "Alert",
         path: "#",
       },
