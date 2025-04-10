@@ -1,2 +1,6 @@
 @import "./theme/theme.css";
 @import "./styles/component.css";
+
+html {
+  -webkit-font-smoothing: antialiased;
+}
