@@ -11,6 +11,8 @@
 .astro-code {
   margin: 0;
   border-radius: 0;
+  padding: calc(var(--hb-spacing) * 4);
+  font-size: var(--text-xs);
 }
 
 .dark {
