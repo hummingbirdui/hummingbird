@@ -1,5 +1,5 @@
 @utility btn {
-  @apply inline-flex items-center justify-center cursor-pointer transition duration-200 relative gap-1.5;
+  @apply inline-flex items-center justify-center cursor-pointer transition-[background] duration-200 relative gap-1.5;
   --btn-bg: var(--color-highlight);
   --btn-content: var(--color-base-color);
   --btn-font-weight: var(--font-weight-semibold);
@@ -23,8 +23,16 @@
   border-color: var(--btn-border-color);
   @media (hover: hover) {
     &:hover {
-      --btn-bg: var(--btn-hover-bg);
+      background-color: var(--btn-hover-bg);
     }
+  }
+  .btn-check + &:hover {
+    background-color: var(--btn-bg);
+  }
+  &:active,
+  &.active,
+  .btn-check:checked + & {
+    --btn-bg: var(--btn-hover-bg);
   }
   &:is(:disabled, [disabled], .disabled) {
     @apply pointer-events-none;
