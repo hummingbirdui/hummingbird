@@ -41,6 +41,38 @@
     --input-bg: var(--color-error-lighter);
     --input-border-color: var(--color-error);
   }
+  &[type="file"] {
+    overflow: hidden;
+
+    &:not(:disabled):not([readonly]) {
+      cursor: pointer;
+    }
+  }
+  &::file-selector-button {
+    @apply pointer-events-none transition-[background] duration-200;
+    background-color: var(--file-selector-btn-bg, var(--color-highlight));
+    color: var(--file-selector-btn-content, var(--color-default-color));
+    font-weight: var(--font-weight-semibold);
+    padding: var(--btn-padding-y, calc(var(--hb-spacing) * 2))
+      var(--btn-padding-x, calc(var(--hb-spacing) * 4));
+    margin: calc(-1 * var(--btn-padding-y, calc(var(--hb-spacing) * 2)))
+      calc(-1 * var(--btn-padding-x, calc(var(--hb-spacing) * 4)));
+    margin-inline-end: var(--input-padding-x, calc(var(--hb-spacing) * 4));
+  }
+  &:hover:not(:disabled):not([readonly])::file-selector-button {
+    --file-selector-btn-bg: var(
+      --file-selector-btn-hover-bg,
+      var(--color-emphasis)
+    );
+  }
+  &.is-invalid::file-selector-button {
+    --file-selector-btn-bg: var(--color-error);
+    --file-selector-btn-content: var(--color-contrast);
+    --file-selector-btn-hover-bg: var(--color-error-dark);
+  }
+  &:is(:disabled, [disabled])::file-selector-button {
+    --file-selector-btn-bg: var(--color-muted);
+  }
 }
 
 @utility form-control-outline {
@@ -85,6 +117,23 @@
   &.is-invalid {
     --input-border-color: var(--color-error);
   }
+  &[type="file"] {
+    overflow: hidden;
+
+    &:not(:disabled):not([readonly]) {
+      cursor: pointer;
+    }
+  }
+  &::file-selector-button {
+    @apply pointer-events-none transition-[border] duration-200;
+    font-weight: var(--font-weight-semibold);
+    padding: var(--btn-padding-y, calc(var(--hb-spacing) * 2))
+      var(--btn-padding-x, calc(var(--hb-spacing) * 4));
+    margin: calc(-1 * var(--btn-padding-y, calc(var(--hb-spacing) * 2)))
+      calc(-1 * var(--btn-padding-x, calc(var(--hb-spacing) * 4)));
+    margin-inline-end: var(--input-padding-x, calc(var(--hb-spacing) * 4));
+    border-right: 1px solid var(--input-border-color, var(--color-border-base));
+  }
 }
 
 @utility form-control-icon {
@@ -108,21 +157,38 @@
     font-size: var(--text-xl);
   }
 }
+@utility form-control-primary {
+  --file-selector-btn-bg: var(--color-primary);
+  --file-selector-btn-content: var(--color-contrast);
+  --file-selector-btn-hover-bg: var(--color-primary-dark);
+}
 @utility form-control-secondary {
   --input-focus-bg: var(--color-secondary-lighter);
   --input-focus-border-color: var(--color-secondary);
+  --file-selector-btn-bg: var(--color-secondary);
+  --file-selector-btn-content: var(--color-contrast);
+  --file-selector-btn-hover-bg: var(--color-secondary-dark);
 }
 @utility form-control-info {
   --input-focus-bg: var(--color-info-lighter);
   --input-focus-border-color: var(--color-info);
+  --file-selector-btn-bg: var(--color-info);
+  --file-selector-btn-content: var(--color-contrast);
+  --file-selector-btn-hover-bg: var(--color-info-dark);
 }
 @utility form-control-success {
   --input-focus-bg: var(--color-success-lighter);
   --input-focus-border-color: var(--color-success);
+  --file-selector-btn-bg: var(--color-success);
+  --file-selector-btn-content: var(--color-contrast);
+  --file-selector-btn-hover-bg: var(--color-success-dark);
 }
 @utility form-control-warning {
   --input-focus-bg: var(--color-warning-lighter);
   --input-focus-border-color: var(--color-warning);
+  --file-selector-btn-bg: var(--color-warning);
+  --file-selector-btn-content: var(--color-contrast);
+  --file-selector-btn-hover-bg: var(--color-warning-dark);
 }
 
 @utility form-label {
