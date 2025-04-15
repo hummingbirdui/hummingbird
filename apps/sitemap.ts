@@ -44,8 +44,20 @@ const sitemap: Sitemap[] = [
         path: "/components/select",
       },
       {
-        name: "Checkbox & Radio",
-        path: "/components/checkbox-radio",
+        name: "File Input",
+        path: "/components/file-input",
+      },
+      {
+        name: "Checkbox",
+        path: "/components/checkbox",
+      },
+      {
+        name: "Radio",
+        path: "/components/radio",
+      },
+      {
+        name: "Switch",
+        path: "/components/switch",
       },
       {
         name: "Alert",

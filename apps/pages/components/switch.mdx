@@ -1,0 +1,159 @@
+---
+title: Switch
+desc: Switches toggle the state of a single setting on or off.
+layout: "../../layouts/LayoutDoc.astro"
+---
+
+import Example from "../../components/docs/Example.astro";
+
+### Switches
+
+<Example>
+  <div slot='preview' class="flex gap-2">
+    <div for="switchDefault" class="form-switch">
+      <input class="form-check-input" type="checkbox" value="" id="switchDefault" />
+    </div>
+    <div for="switchChecked" class="form-switch">
+      <input class="form-check-input" type="checkbox" value="" id="switchChecked" checked />
+    </div>
+    <div for="switchDisabled" class="form-switch">
+      <input class="form-check-input" type="checkbox" value="" id="switchDisabled" disabled />
+    </div>
+    <div for="switchCheckedDisabled" class="form-switch">
+      <input class="form-check-input" type="checkbox" value="" id="switchCheckedDisabled" disabled checked />
+    </div>
+  </div>
+  <div slot="code">
+    ```html
+    <div for="switchDefault" class="form-switch">
+      <input class="form-check-input" type="checkbox" value="" id="switchDefault" />
+    </div>
+    <div for="switchChecked" class="form-switch">
+      <input class="form-check-input" type="checkbox" value="" id="switchChecked" checked />
+    </div>
+    <div for="switchDisabled" class="form-switch">
+      <input class="form-check-input" type="checkbox" value="" id="switchDisabled" disabled />
+    </div>
+    <div for="switchCheckedDisabled" class="form-switch">
+      <input class="form-check-input" type="checkbox" value="" id="switchCheckedDisabled" disabled checked />
+    </div>
+    ```
+  </div>
+</Example>
+
+### Switches with Label
+
+<Example>
+  <div slot='preview' class="space-y-2">
+    <div for="switchLabel" class="form-check form-switch">
+      <input class="form-check-input" type="checkbox" value="" id="switchLabel" />
+      <label for="switchLabel" class="form-check-label">Default</label>
+    </div>
+    <div for="switchCheckedLabel" class="form-check form-switch">
+      <input class="form-check-input" type="checkbox" value="" id="switchCheckedLabel" checked />
+      <label for="switchCheckedLabel" class="form-check-label">Checked</label>
+    </div>
+    <div for="switchDisabledLabel" class="form-check form-switch">
+      <input class="form-check-input" type="checkbox" value="" id="switchDisabledLabel" disabled />
+      <label for="switchDisabledLabel" class="form-check-label">Disabled</label>
+    </div>
+  </div>
+  <div slot="code">
+    ```html
+    <div for="switchLabel" class="form-check form-switch">
+      <input class="form-check-input" type="checkbox" value="" id="switchLabel" />
+      <label for="switchLabel" class="form-check-label">Default</label>
+    </div>
+    <div for="switchCheckedLabel" class="form-check form-switch">
+      <input class="form-check-input" type="checkbox" value="" id="switchCheckedLabel" checked />
+      <label for="switchCheckedLabel" class="form-check-label">Checked</label>
+    </div>
+    <div for="switchDisabledLabel" class="form-check form-switch">
+      <input class="form-check-input" type="checkbox" value="" id="switchDisabledLabel" disabled />
+      <label for="switchDisabledLabel" class="form-check-label">Disabled</label>
+    </div>
+    ```
+  </div>
+</Example>
+
+### Size
+
+<Example>
+  <div slot='preview' class="flex items-center gap-2">
+    <div for="switchSmall" class="form-switch">
+      <input class="form-check-input form-check-sm" type="checkbox" value="" id="switchSmall" />
+    </div>
+    <div for="switchMedium" class="form-switch">
+      <input class="form-check-input" type="checkbox" value="" id="switchMedium" checked />
+    </div>
+    <div for="switchLarge" class="form-switch">
+      <input class="form-check-input form-check-lg" type="checkbox" value="" id="switchLarge" />
+    </div>
+  </div>
+  <div slot="code">
+    ```html
+    <div for="switchSmall" class="form-switch">
+      <input class="form-check-input form-check-sm" type="checkbox" value="" id="switchSmall" />
+    </div>
+    <div for="switchMedium" class="form-switch">
+      <input class="form-check-input" type="checkbox" value="" id="switchMedium" checked />
+    </div>
+    <div for="switchLarge" class="form-switch">
+      <input class="form-check-input form-check-lg" type="checkbox" value="" id="switchLarge" />
+    </div>
+    ```
+  </div>
+</Example>
+
+### Colors
+
+<Example>
+  <div slot='preview' class="flex gap-2">
+    <div for="switchPrimary" class="form-switch">
+      <input class="form-check-input" type="checkbox" value="" id="switchPrimary" checked />
+    </div>
+    <div for="switchSecondary" class="form-switch">
+      <input class="form-check-input form-check-secondary" type="checkbox" value="" id="switchSecondary" checked />
+    </div>
+    <div for="switchInfo" class="form-switch">
+      <input class="form-check-input form-check-info" type="checkbox" value="" id="switchInfo" checked />
+    </div>
+    <div for="switchSuccess" class="form-switch">
+      <input class="form-check-input form-check-success" type="checkbox" value="" id="switchSuccess" checked />
+    </div>
+    <div for="switchWarning" class="form-switch">
+      <input class="form-check-input form-check-warning" type="checkbox" value="" id="switchWarning" checked />
+    </div>
+    <div for="switchError" class="form-switch">
+      <input class="form-check-input form-check-error" type="checkbox" value="" id="switchError" checked />
+    </div>
+    <div for="switchNeutral" class="form-switch">
+      <input class="form-check-input form-check-neutral" type="checkbox" value="" id="switchNeutral" checked />
+    </div>
+  </div>
+  <div slot="code">
+    ```html
+    <div for="switchPrimary" class="form-switch">
+      <input class="form-check-input" type="checkbox" value="" id="switchPrimary" checked />
+    </div>
+    <div for="switchSecondary" class="form-switch">
+      <input class="form-check-input form-check-secondary" type="checkbox" value="" id="switchSecondary" checked />
+    </div>
+    <div for="switchInfo" class="form-switch">
+      <input class="form-check-input form-check-info" type="checkbox" value="" id="switchInfo" checked />
+    </div>
+    <div for="switchSuccess" class="form-switch">
+      <input class="form-check-input form-check-success" type="checkbox" value="" id="switchSuccess" checked />
+    </div>
+    <div for="switchWarning" class="form-switch">
+      <input class="form-check-input form-check-warning" type="checkbox" value="" id="switchWarning" checked />
+    </div>
+    <div for="switchError" class="form-switch">
+      <input class="form-check-input form-check-error" type="checkbox" value="" id="switchError" checked />
+    </div>
+    <div for="switchNeutral" class="form-switch">
+      <input class="form-check-input form-check-neutral" type="checkbox" value="" id="switchNeutral" checked />
+    </div>
+    ```
+  </div>
+</Example>

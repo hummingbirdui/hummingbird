@@ -1,17 +1,16 @@
 @utility btn {
-  @apply inline-flex items-center justify-center cursor-pointer transition duration-200 relative gap-1.5;
+  @apply inline-flex items-center justify-center cursor-pointer transition-[background] duration-200 relative gap-1.5;
   --btn-bg: var(--color-highlight);
   --btn-content: var(--color-base-color);
   --btn-font-weight: var(--font-weight-semibold);
   --btn-hover-bg: --alpha(var(--btn-bg) / 88%);
   --btn-border-width: 0;
   --btn-border-color: unset;
-  --btn-padding-x: calc(var(--hb-spacing) * 4);
   font-size: var(--btn-font-size, var(--text-sm));
   font-weight: var(--btn-font-weight);
   border-radius: var(--btn-radius, var(--radius-lg));
   padding: var(--btn-padding-y, calc(var(--hb-spacing) * 2))
-    var(--btn-padding-x);
+    var(--btn-padding-x, calc(var(--hb-spacing) * 4));
   background-color: var(--btn-bg);
   color: var(--btn-content);
   line-height: var(--btn-line-height, 1.5);
@@ -23,14 +22,25 @@
   border-color: var(--btn-border-color);
   @media (hover: hover) {
     &:hover {
-      --btn-bg: var(--btn-hover-bg);
+      background-color: var(--btn-hover-bg);
     }
+  }
+  .btn-check + &:hover {
+    background-color: var(--btn-bg);
+  }
+  &:active,
+  &.active,
+  .btn-check:checked + & {
+    --btn-bg: var(--btn-hover-bg);
   }
   &:is(:disabled, [disabled], .disabled) {
     @apply pointer-events-none;
     --btn-bg: var(--btn-disabled-bg, var(--color-disabled-bg));
     --btn-content: var(--btn-disabled-content, var(--color-disabled));
     --btn-border-color: var(--btn-disabled-border);
+  }
+  + input[type="file"] {
+    @apply hidden;
   }
 }
 
@@ -192,12 +202,15 @@
   --btn-disabled-border: var(--color-disabled-bg);
 }
 [class*="btn-outline"] {
-  --btn-padding-y: calc(var(--hb-spacing) * 1.75);
+  padding-top: calc(var(--btn-padding-y, calc(var(--hb-spacing) * 2)) - 1px);
+  padding-bottom: calc(var(--btn-padding-y, calc(var(--hb-spacing) * 2)) - 1px);
   &.btn-sm {
-    --btn-padding-y: calc(var(--hb-spacing) * 1.25);
+    padding-top: calc(var(--btn-padding-y) - 1px);
+    padding-bottom: calc(var(--btn-padding-y) - 1px);
   }
   &.btn-lg {
-    --btn-padding-y: calc(var(--hb-spacing) * 2.25);
+    padding-top: calc(var(--btn-padding-y) - 1px);
+    padding-bottom: calc(var(--btn-padding-y) - 1px);
   }
 }
 

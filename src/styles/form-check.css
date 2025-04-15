@@ -1,7 +1,9 @@
 .form-check {
   @apply flex items-center;
 }
-
+.form-check-inline {
+  @apply inline-flex items-center mr-2;
+}
 .form-check-wrapper {
   @apply relative inline-flex items-center justify-center rounded-full cursor-pointer appearance-none;
   --form-check-wrapper-bg: --alpha(var(--color-primary) / 12%);
@@ -10,18 +12,39 @@
   &:hover {
     background-color: var(--form-check-wrapper-bg);
   }
-  &:has(input[type="checkbox"][disabled]) {
+  &:has(input[type="checkbox"][disabled]),
+  &:has(input[type="radio"][disabled]) {
     @apply cursor-default;
     --form-check-wrapper-bg: transparent;
     ~ .form-check-label {
+      @apply cursor-default;
       color: var(--color-disabled);
     }
   }
+  &:has(.form-check-secondary) {
+    --form-check-wrapper-bg: --alpha(var(--color-secondary) / 12%);
+  }
+  &:has(.form-check-info) {
+    --form-check-wrapper-bg: --alpha(var(--color-info) / 12%);
+  }
+  &:has(.form-check-success) {
+    --form-check-wrapper-bg: --alpha(var(--color-success) / 12%);
+  }
+  &:has(.form-check-warning) {
+    --form-check-wrapper-bg: --alpha(var(--color-warning) / 12%);
+  }
+  &:has(.form-check-error) {
+    --form-check-wrapper-bg: --alpha(var(--color-error) / 12%);
+  }
+  &:has(.form-check-main) {
+    --form-check-wrapper-bg: var(--color-muted);
+  }
 }
 
-.form-check-input {
+@utility form-check-input {
   @apply cursor-pointer;
   --form-check-input-bg: var(--color-default);
+  --form-check-input-checked-bg: var(--color-primary);
   --form-check-input-with: calc(var(--hb-spacing) * 4);
   --form-check-input-height: calc(var(--hb-spacing) * 4);
   --form-check-input-border: var(--color-border-base);
@@ -41,10 +64,6 @@
   print-color-adjust: exact;
   border-radius: var(--form-check-input-radius);
 
-  /* &[type="checkbox"] {
-    border-radius: var(--form-check-input-radius);
-  } */
-
   &[type="radio"] {
     --form-check-input-radius: calc(infinity * 1px);
   }
@@ -58,19 +77,15 @@
   }
 
   &:checked {
-    --form-check-input-bg: var(--color-primary);
-    --form-check-input-border: var(--color-primary);
+    --form-check-input-bg: var(--form-check-input-checked-bg);
+    --form-check-input-border: var(--form-check-input-checked-bg);
     &[type="checkbox"] {
       --form-check-bg-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='%23fff' d='m9.55 15.15l8.475-8.475q.3-.3.7-.3t.7.3t.3.713t-.3.712l-9.175 9.2q-.3.3-.7.3t-.7-.3L4.55 13q-.3-.3-.288-.712t.313-.713t.713-.3t.712.3z'/%3E%3C/svg%3E");
     }
 
-    /* &[type="radio"] {
-      @if $enable-gradients {
-        --#{$prefix}form-check-bg-image: #{escape-svg($form-check-radio-checked-bg-image)}, var(--#{$prefix}gradient);
-      } @else {
-        --#{$prefix}form-check-bg-image: #{escape-svg($form-check-radio-checked-bg-image)};
-      }
-    } */
+    &[type="radio"] {
+      --form-check-bg-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Cpath fill='%23fff' stroke='%23fff' stroke-width='4' d='M24 33a9 9 0 1 0 0-18a9 9 0 0 0 0 18Z'/%3E%3C/svg%3E");
+    }
   }
 
   &[type="checkbox"]:indeterminate {
@@ -89,7 +104,101 @@
     }
   }
 }
+
+@utility form-check-sm {
+  --form-check-input-with: calc(var(--hb-spacing) * 4);
+  --form-check-input-height: calc(var(--hb-spacing) * 4);
+}
+@utility form-check-md {
+  --form-check-input-with: calc(var(--hb-spacing) * 5);
+  --form-check-input-height: calc(var(--hb-spacing) * 5);
+}
+@utility form-check-lg {
+  --form-check-input-with: calc(var(--hb-spacing) * 6);
+  --form-check-input-height: calc(var(--hb-spacing) * 6);
+  &[type="checkbox"] {
+    --form-check-input-radius: var(--radius-md);
+  }
+}
+
+@utility form-check-secondary {
+  --form-check-input-checked-bg: var(--color-secondary);
+}
+@utility form-check-success {
+  --form-check-input-checked-bg: var(--color-success);
+}
+@utility form-check-info {
+  --form-check-input-checked-bg: var(--color-info);
+}
+@utility form-check-warning {
+  --form-check-input-checked-bg: var(--color-warning);
+}
+@utility form-check-error {
+  --form-check-input-checked-bg: var(--color-error);
+}
+@utility form-check-neutral {
+  --form-check-input-checked-bg: var(--color-main);
+}
+
+.form-switch {
+  @apply space-x-2;
+  .form-check-input {
+    @apply transition-[background] duration-150 ease-in-out;
+    --form-check-input-bg: var(--color-emphasis);
+    --form-check-input-with: calc(var(--hb-spacing) * 9);
+    --form-check-input-height: calc(var(--hb-spacing) * 6);
+    --form-check-input-radius: calc(infinity * 1px);
+    border: 0;
+    --form-check-bg-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e");
+    background-position: left center;
+    &:checked {
+      --form-check-input-bg: var(--form-check-input-checked-bg);
+      background-position: right center;
+    }
+    &:disabled {
+      &:checked {
+        --form-check-input-bg: var(--form-check-input-checked-bg);
+      }
+      ~ .form-check-label {
+        @apply cursor-default;
+        color: var(--color-disabled);
+      }
+    }
+    &.form-check-sm {
+      --form-check-input-with: calc(var(--hb-spacing) * 8);
+      --form-check-input-height: calc(var(--hb-spacing) * 5);
+    }
+    &.form-check-lg {
+      --form-check-input-with: calc(var(--hb-spacing) * 10);
+      --form-check-input-height: calc(var(--hb-spacing) * 7);
+    }
+    .dark & {
+      --form-check-bg-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23DBE6EB'/%3e%3c/svg%3e");
+    }
+  }
+}
+
+.btn-check {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  white-space: nowrap;
+  border: 0;
+  clip-path: inset(50%);
+
+  &[disabled],
+  &:disabled {
+    + .btn {
+      pointer-events: none;
+      filter: none;
+      opacity: 0.5;
+    }
+  }
+}
 .form-check-label {
-  @apply cursor-default;
+  @apply cursor-pointer;
   color: var(--color-default-color);
 }
