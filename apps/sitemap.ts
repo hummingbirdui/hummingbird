@@ -44,6 +44,10 @@ const sitemap: Sitemap[] = [
         path: "/components/select",
       },
       {
+        name: "File Input",
+        path: "/components/file-input",
+      },
+      {
         name: "Checkbox",
         path: "/components/checkbox",
       },
