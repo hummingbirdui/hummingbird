@@ -1,5 +1,5 @@
 @import "./theme/theme.css";
-@import "./styles/component.css";
+@import "./styles/components.css";
 
 html {
   -webkit-font-smoothing: antialiased;
