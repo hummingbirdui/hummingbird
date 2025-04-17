@@ -1,10 +1,10 @@
-.form-check {
+@utility form-check {
   @apply flex items-center;
 }
-.form-check-inline {
+@utility form-check-inline {
   @apply inline-flex items-center mr-2;
 }
-.form-check-wrapper {
+@utility form-check-wrapper {
   @apply relative inline-flex items-center justify-center rounded-full cursor-pointer appearance-none;
   --form-check-wrapper-bg: --alpha(var(--color-primary) / 12%);
   padding: calc(var(--hb-spacing) * 2.25);
@@ -36,7 +36,7 @@
   &:has(.form-check-error) {
     --form-check-wrapper-bg: --alpha(var(--color-error) / 12%);
   }
-  &:has(.form-check-main) {
+  &:has(.form-check-neutral) {
     --form-check-wrapper-bg: var(--color-muted);
   }
 }
@@ -140,7 +140,7 @@
   --form-check-input-checked-bg: var(--color-main);
 }
 
-.form-switch {
+@utility form-switch {
   @apply space-x-2;
   .form-check-input {
     @apply transition-[background] duration-150 ease-in-out;
@@ -154,6 +154,9 @@
     &:checked {
       --form-check-input-bg: var(--form-check-input-checked-bg);
       background-position: right center;
+      &[type="checkbox"] {
+        --form-check-bg-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e");
+      }
     }
     &:disabled {
       &:checked {
@@ -178,7 +181,7 @@
   }
 }
 
-.btn-check {
+@utility btn-check {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -198,7 +201,7 @@
     }
   }
 }
-.form-check-label {
+@utility form-check-label {
   @apply cursor-pointer;
   color: var(--color-default-color);
 }
