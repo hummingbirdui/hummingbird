@@ -60,6 +60,10 @@ const sitemap: Sitemap[] = [
         path: "/components/switch",
       },
       {
+        name: "Range",
+        path: "/components/range",
+      },
+      {
         name: "Alert",
         path: "#",
       },
