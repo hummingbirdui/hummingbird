@@ -40,6 +40,8 @@
   ],
   "scripts": {
     "dev": "astro dev",
+    "watch:css": "chokidar 'src/**/*.css' -c 'npm run restart'",
+    "restart": "kill-port 4321 && astro dev",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
@@ -50,6 +52,7 @@
     "build:lib": "vite build --config vite.lib.config.js"
   },
   "devDependencies": {
+    "@astrojs/mdx": "^4.2.0",
     "@iconify/json": "^2.2.310",
     "@iconify/tailwind4": "^1.0.3",
     "@rollup/plugin-terser": "^0.4.4",
@@ -60,14 +63,13 @@
     "@types/node": "^22.13.1",
     "astro": "^5.4.1",
     "bootstrap": "^5.3.3",
+    "chokidar-cli": "^3.0.0",
     "cross-env": "^7.0.3",
     "cssnano": "^7.0.6",
-    "tailwindcss": "^4.0.9",
+    "kill-port": "^2.0.1",
+    "tailwindcss": "^4.0.14",
     "typescript": "~5.7.2",
     "vite": "^6.1.0",
     "vite-plugin-dts": "^4.5.0"
-  },
-  "dependencies": {
-    "@astrojs/mdx": "^4.1.0"
   }
 }

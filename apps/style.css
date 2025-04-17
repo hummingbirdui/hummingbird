@@ -1,15 +1,18 @@
+@import "tailwindcss";
+@import "../src/index.css";
+@plugin '@tailwindcss/typography';
+@plugin "@iconify/tailwind4";
+@custom-variant dark (&:where(.dark, .dark *));
+
 .prose {
-  --tw-prose-headings: var(--color-base-color);
-  --tw-prose-body: var(--color-highlight-color)
+  --tw-prose-headings: var(--color-default-color);
+  --tw-prose-body: var(--color-highlight-color);
 }
-.astro-code{
+.astro-code {
   margin: 0;
   border-radius: 0;
-}
-
-.astro-code,
-.astro-code span {
-  background-color: var(--color-subtle) !important;
+  padding: calc(var(--hb-spacing) * 4);
+  font-size: var(--text-xs);
 }
 
 .dark {

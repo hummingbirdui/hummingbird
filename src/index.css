@@ -1,9 +1,6 @@
-@import "tailwindcss";
-@import './theme/default.css';
-@import './theme/theme.css';
-/* @import './component.css'; */
-@import "./styles/button.css";
-/* @plugin '../plugin.ts'; */
-@plugin '@tailwindcss/typography';
-@plugin "@iconify/tailwind4";
-@custom-variant dark (&:where(.dark, .dark *));
+@import "./theme/theme.css";
+@import "./styles/components.css";
+
+html {
+  -webkit-font-smoothing: antialiased;
+}
