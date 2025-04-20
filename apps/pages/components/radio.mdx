@@ -10,25 +10,25 @@ import Example from "../../components/docs/Example.astro";
 
 <Example>
   <div slot='preview' class="not-prose">
-    <label for="radioDefault" class="form-check-wrapper">
+    <label for="radioDefault" class="form-check-input-wrapper">
       <input class="form-check-input" type="radio" name='radioDefault' value="" id="radioDefault" />
     </label>
-    <label for="radioChecked" class="form-check-wrapper">
+    <label for="radioChecked" class="form-check-input-wrapper">
       <input class="form-check-input" type="radio" name='radioDefault' value="" id="radioChecked" checked />
     </label>
-    <label for="radioDisabled" class="form-check-wrapper">
+    <label for="radioDisabled" class="form-check-input-wrapper">
       <input class="form-check-input" type="radio" name='radioDefault' value="" id="radioDisabled" disabled />
     </label>
   </div>
   <div slot="code">
     ```html
-    <label for="radioDefault" class="form-check-wrapper">
+    <label for="radioDefault" class="form-check-input-wrapper">
       <input class="form-check-input" type="radio" name='radioDefault' value="" id="radioDefault" />
     </label>
-    <label for="radioChecked" class="form-check-wrapper">
+    <label for="radioChecked" class="form-check-input-wrapper">
       <input class="form-check-input" type="radio" name='radioDefault' value="" id="radioChecked" checked />
     </label>
-    <label for="radioDisabled" class="form-check-wrapper">
+    <label for="radioDisabled" class="form-check-input-wrapper">
       <input class="form-check-input" type="radio" name='radioDefault' value="" id="radioDisabled" disabled />
     </label>
     ```
@@ -40,19 +40,19 @@ import Example from "../../components/docs/Example.astro";
 <Example>
   <div slot='preview' class="not-prose">
   <div class="form-check">
-    <label for="radioDefaultLabel" class="form-check-wrapper">
+    <label for="radioDefaultLabel" class="form-check-input-wrapper">
       <input class="form-check-input" type="radio" name="radioDefaultLabel" value="" id="radioDefaultLabel" />
     </label>
     <label for="radioDefaultLabel" class="form-check-label">Basic Checkbox</label>
   </div>
   <div class="form-check">
-    <label for="radioCheckedLabel" class="form-check-wrapper">
+    <label for="radioCheckedLabel" class="form-check-input-wrapper">
       <input class="form-check-input" type="radio" name="radioDefaultLabel" value="" id="radioCheckedLabel" checked />
     </label>
     <label for="radioCheckedLabel" class="form-check-label">Checked</label>
   </div>
   <div class="form-check">
-    <label for="radioDisabledLabel" class="form-check-wrapper">
+    <label for="radioDisabledLabel" class="form-check-input-wrapper">
       <input class="form-check-input" type="radio" name="radioDefaultLabel" value="" id="radioDisabledLabel" disabled />
     </label>
     <label for="radioDisabledLabel" class="form-check-label">Disabled</label>
@@ -61,19 +61,19 @@ import Example from "../../components/docs/Example.astro";
   <div slot="code">
     ```html
     <div class="form-check">
-      <label for="radioDefaultLabel" class="form-check-wrapper">
+      <label for="radioDefaultLabel" class="form-check-input-wrapper">
         <input class="form-check-input" type="radio" name="radioDefaultLabel" value="" id="radioDefaultLabel" />
       </label>
       <label for="radioDefaultLabel" class="form-check-label">Basic Checkbox</label>
     </div>
     <div class="form-check">
-      <label for="radioCheckedLabel" class="form-check-wrapper">
+      <label for="radioCheckedLabel" class="form-check-input-wrapper">
         <input class="form-check-input" type="radio" name="radioDefaultLabel" value="" id="radioCheckedLabel" checked />
       </label>
       <label for="radioCheckedLabel" class="form-check-label">Checked</label>
     </div>
     <div class="form-check">
-      <label for="radioDisabledLabel" class="form-check-wrapper">
+      <label for="radioDisabledLabel" class="form-check-input-wrapper">
         <input class="form-check-input" type="radio" name="radioDefaultLabel" value="" id="radioDisabledLabel" disabled />
       </label>
       <label for="radioDisabledLabel" class="form-check-label">Disabled</label>
@@ -86,25 +86,25 @@ import Example from "../../components/docs/Example.astro";
 
 <Example>
   <div slot='preview' class="not-prose">
-    <label for="radioSmall" class="form-check-wrapper">
+    <label for="radioSmall" class="form-check-input-wrapper">
       <input class="form-check-input" type="radio" name="radioSizes" value="" id="radioSmall" />
     </label>
-    <label for="radioMedium" class="form-check-wrapper">
+    <label for="radioMedium" class="form-check-input-wrapper">
       <input class="form-check-input form-check-md" type="radio" name="radioSizes" value="" id="radioMedium" checked />
     </label>
-    <label for="radioLarge" class="form-check-wrapper">
+    <label for="radioLarge" class="form-check-input-wrapper">
       <input class="form-check-input form-check-lg" type="radio" name="radioSizes" value="" id="radioLarge" />
     </label>
   </div>
   <div slot="code">
     ```html
-    <label for="radioSmall" class="form-check-wrapper">
+    <label for="radioSmall" class="form-check-input-wrapper">
       <input class="form-check-input" type="radio" name="radioSizes" value="" id="radioSmall" />
     </label>
-    <label for="radioMedium" class="form-check-wrapper">
+    <label for="radioMedium" class="form-check-input-wrapper">
       <input class="form-check-input form-check-md" type="radio" name="radioSizes" value="" id="radioMedium" checked />
     </label>
-    <label for="radioLarge" class="form-check-wrapper">
+    <label for="radioLarge" class="form-check-input-wrapper">
       <input class="form-check-input form-check-lg" type="radio" name="radioSizes" value="" id="radioLarge" />
     </label>
     ```
@@ -115,49 +115,49 @@ import Example from "../../components/docs/Example.astro";
 
 <Example>
   <div slot='preview' class="not-prose">
-    <label for="radioPrimary" class="form-check-wrapper">
+    <label for="radioPrimary" class="form-check-input-wrapper">
       <input class="form-check-input" type="radio" name="radioColors" value="" id="radioPrimary" />
     </label>
-    <label for="radioSecondary" class="form-check-wrapper">
+    <label for="radioSecondary" class="form-check-input-wrapper">
       <input class="form-check-input form-check-secondary" type="radio" name="radioColors" value="" id="radioSecondary" checked />
     </label>
-    <label for="radioInfo" class="form-check-wrapper">
+    <label for="radioInfo" class="form-check-input-wrapper">
       <input class="form-check-input form-check-info" type="radio" name="radioColors" value="" id="radioInfo" />
     </label>
-    <label for="radioSuccess" class="form-check-wrapper">
+    <label for="radioSuccess" class="form-check-input-wrapper">
       <input class="form-check-input form-check-success" type="radio" name="radioColors" value="" id="radioSuccess" />
     </label>
-    <label for="radioWarning" class="form-check-wrapper">
+    <label for="radioWarning" class="form-check-input-wrapper">
       <input class="form-check-input form-check-warning" type="radio" name="radioColors" value="" id="radioWarning" />
     </label>
-    <label for="radioError" class="form-check-wrapper">
+    <label for="radioError" class="form-check-input-wrapper">
       <input class="form-check-input form-check-error" type="radio" name="radioColors" value="" id="radioError" />
     </label>
-    <label for="radioNeutral" class="form-check-wrapper">
+    <label for="radioNeutral" class="form-check-input-wrapper">
       <input class="form-check-input form-check-neutral" type="radio" name="radioColors" value="" id="radioNeutral" />
     </label>
   </div>
   <div slot="code">
     ```html
-    <label for="radioPrimary" class="form-check-wrapper">
+    <label for="radioPrimary" class="form-check-input-wrapper">
       <input class="form-check-input" type="radio" name="radioColors" value="" id="radioPrimary" />
     </label>
-    <label for="radioSecondary" class="form-check-wrapper">
+    <label for="radioSecondary" class="form-check-input-wrapper">
       <input class="form-check-input form-check-secondary" type="radio" name="radioColors" value="" id="radioSecondary" checked />
     </label>
-    <label for="radioInfo" class="form-check-wrapper">
+    <label for="radioInfo" class="form-check-input-wrapper">
       <input class="form-check-input form-check-info" type="radio" name="radioColors" value="" id="radioInfo" />
     </label>
-    <label for="radioSuccess" class="form-check-wrapper">
+    <label for="radioSuccess" class="form-check-input-wrapper">
       <input class="form-check-input form-check-success" type="radio" name="radioColors" value="" id="radioSuccess" />
     </label>
-    <label for="radioWarning" class="form-check-wrapper">
+    <label for="radioWarning" class="form-check-input-wrapper">
       <input class="form-check-input form-check-warning" type="radio" name="radioColors" value="" id="radioWarning" />
     </label>
-    <label for="radioError" class="form-check-wrapper">
+    <label for="radioError" class="form-check-input-wrapper">
       <input class="form-check-input form-check-error" type="radio" name="radioColors" value="" id="radioError" />
     </label>
-    <label for="radioNeutral" class="form-check-wrapper">
+    <label for="radioNeutral" class="form-check-input-wrapper">
       <input class="form-check-input form-check-neutral" type="radio" name="radioColors" value="" id="radioNeutral" />
     </label>
     ```
@@ -169,19 +169,19 @@ import Example from "../../components/docs/Example.astro";
 <Example>
   <div slot='preview' class="not-prose">
   <div class="form-check-inline">
-    <label for="radioInline" class="form-check-wrapper">
+    <label for="radioInline" class="form-check-input-wrapper">
       <input class="form-check-input" type="radio" name="inlineRadio" value="" id="radioInline" />
     </label>
     <label for="radioInline" class="form-check-label">Inline Radio</label>
   </div>
   <div class="form-check-inline">
-    <label for="inlineChecked" class="form-check-wrapper">
+    <label for="inlineChecked" class="form-check-input-wrapper">
       <input class="form-check-input" type="radio" name="inlineRadio" value="" id="inlineChecked" checked />
     </label>
     <label for="inlineChecked" class="form-check-label">Checked</label>
   </div>
   <div class="form-check-inline">
-    <label for="inlineDisabled" class="form-check-wrapper">
+    <label for="inlineDisabled" class="form-check-input-wrapper">
       <input class="form-check-input" type="radio" name="inlineRadio" value="" id="inlineDisabled" disabled />
     </label>
     <label for="inlineDisabled" class="form-check-label">Disabled</label>
@@ -190,19 +190,19 @@ import Example from "../../components/docs/Example.astro";
   <div slot="code">
     ```html
     <div class="form-check-inline">
-      <label for="radioInline" class="form-check-wrapper">
+      <label for="radioInline" class="form-check-input-wrapper">
         <input class="form-check-input" type="radio" name="inlineRadio" value="" id="radioInline" />
       </label>
       <label for="radioInline" class="form-check-label">Inline Radio</label>
     </div>
     <div class="form-check-inline">
-      <label for="inlineChecked" class="form-check-wrapper">
+      <label for="inlineChecked" class="form-check-input-wrapper">
         <input class="form-check-input" type="radio" name="inlineRadio" value="" id="inlineChecked" checked />
       </label>
       <label for="inlineChecked" class="form-check-label">Checked</label>
     </div>
     <div class="form-check-inline">
-      <label for="inlineDisabled" class="form-check-wrapper">
+      <label for="inlineDisabled" class="form-check-input-wrapper">
         <input class="form-check-input" type="radio" name="inlineRadio" value="" id="inlineDisabled" disabled />
       </label>
       <label for="inlineDisabled" class="form-check-label">Disabled</label>
