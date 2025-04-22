@@ -3,19 +3,19 @@
 
   .form-select-outline {
     @apply w-full;
-    --btn-padding-y: calc(var(--hb-spacing) * 2.5);
-    --btn-line-height: 2;
+    --input-btn-padding-y: calc(var(--spacing) * 2.5);
+    --input-btn-line-height: 2;
     &:focus-within,
     &:focus,
     &:not(:placeholder-shown) {
       & + .form-label {
-        transform: translate(10px, -12px) scale(0.85);
+        @apply translate-x-[10px] translate-y-[-12px] scale-[0.85];
       }
-      &.form-select-sm + .form-label {
-        transform: translate(8px, -12px) scale(0.85);
+      &.form-control-sm + .form-label {
+        @apply translate-x-[8px] translate-y-[-12px] scale-[0.85];
       }
-      &.form-select-lg + .form-label {
-        transform: translate(10px, -14px) scale(0.75);
+      &.form-control-lg + .form-label {
+        @apply translate-x-[10px] translate-y-[-14px] scale-[0.75];
       }
     }
     &:is(:disabled, [disabled]),
@@ -28,57 +28,31 @@
   }
   .form-select {
     @apply w-full;
-    --floating-label-padding-top: calc(var(--hb-spacing) * 5.5);
-    --floating-label-padding-bottom: calc(var(--hb-spacing) * 1.25);
+    --floating-label-padding-top: calc(var(--spacing) * 5.5);
+    --floating-label-padding-bottom: calc(var(--spacing) * 1.25);
     & + .form-label {
-      background-color: transparent;
-      padding: 0;
-      margin: 0;
+      @apply bg-transparent p-0 m-0;
     }
     &.form-select-sm {
-      --floating-label-padding-top: calc(var(--hb-spacing) * 4.5);
-      --floating-label-padding-bottom: calc(var(--hb-spacing) * 0.75);
+      --floating-label-padding-top: calc(var(--spacing) * 4.5);
+      --floating-label-padding-bottom: calc(var(--spacing) * 0.75);
       --btn-line-height: 1.5;
     }
     &.form-select-lg {
-      --floating-label-padding-top: calc(var(--hb-spacing) * 5.75);
-      --floating-label-padding-bottom: calc(var(--hb-spacing) * 1.75);
+      --floating-label-padding-top: calc(var(--spacing) * 5.75);
+      --floating-label-padding-bottom: calc(var(--spacing) * 1.75);
     }
     &:focus-within,
     &:focus,
     select&:not(:placeholder-shown) {
       & + .form-label {
-        transform: translate(10px, 4px) scale(0.85);
+        @apply translate-x-[10px] translate-y-[4px] scale-[0.85];
       }
       &.form-control-sm + .form-label {
-        transform: translate(6px, 2px) scale(0.85);
+        @apply translate-x-[6px] translate-y-[2px] scale-[0.85];
       }
       &.form-control-lg + .form-label {
-        transform: translate(10px, 4px) scale(0.75);
-      }
-    }
-    &:has(.form-control-icon):not(:has(> * + .form-control-icon)) {
-      + .form-label {
-        transform: translate(43px, 13px) scale(1);
-      }
-      &.form-control-sm + .form-label {
-        transform: translate(34px, 10px) scale(1);
-      }
-      &.form-control-lg + .form-label {
-        transform: translate(52px, 14px) scale(1);
-      }
-      &:focus-within,
-      &:focus,
-      &:has(> select:not(:placeholder-shown)) {
-        & + .form-label {
-          transform: translate(37px, 4px) scale(0.85);
-        }
-        &.form-control-sm + .form-label {
-          transform: translate(27px, 2px) scale(0.85);
-        }
-        &.form-control-lg + .form-label {
-          transform: translate(40px, 4px) scale(0.75);
-        }
+        @apply translate-x-[10px] translate-y-[4px] scale-[0.75];
       }
     }
     &:is(:disabled, [disabled]),
@@ -90,17 +64,16 @@
     }
   }
   .form-select-sm {
-    --btn-padding-y: calc(var(--hb-spacing) * 1.75);
+    --input-btn-padding-y: calc(var(--spacing) * 1.75);
     & + .form-label {
-      transform: translate(12px, 10px) scale(1);
+      @apply translate-x-[12px] translate-y-[10px] scale-[1];
     }
   }
   .form-select-lg {
-    --btn-padding-y: calc(var(--hb-spacing) * 2.75);
-    --input-padding-x: calc(var(--hb-spacing) * 5);
+    --input-btn-padding-y: calc(var(--spacing) * 2.75);
+    --input-btn-padding-x: calc(var(--spacing) * 5);
     & + .form-label {
-      transform: translate(20px, 14px) scale(1);
-      font-size: var(--text-base);
+      @apply text-base translate-x-[20px] translate-y-[14px] scale-[1];
     }
   }
 }
