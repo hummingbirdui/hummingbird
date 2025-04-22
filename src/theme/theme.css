@@ -98,8 +98,16 @@
   --text-5xl: 3rem; /* 48px */
   --text-5xl--line-height: 1.5;
 
-  /* spacing */
-  --hb-spacing: 0.25rem;
+  /* component specific root variables */
+  --input-btn-font-size: var(--text-sm);
+  --input-btn-radius: var(--radius-lg);
+  --input-btn-padding-x: calc(var(--spacing) * 4);
+  --input-btn-padding-y: calc(var(--spacing) * 2);
+  --input-btn-line-height: 1.5;
+  --input-label-color: var(--color-highlight-color);
+  --input-bg: var(--color-muted);
+  --input-content: var(--color-default-color);
+  --input-border-color: none;
 }
 
 @layer {

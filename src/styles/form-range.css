@@ -1,74 +1,71 @@
 @utility form-range {
-  @apply w-full appearance-none;
   --form-range-color: var(--color-primary);
-  --form-range-height: calc(var(--hb-spacing) * 6);
-  --form-range-thumb-width: calc(var(--hb-spacing) * 5);
-  --form-range-thumb-height: calc(var(--hb-spacing) * 5);
+  --form-range-height: calc(var(--spacing) * 6);
+  --form-range-thumb-width: calc(var(--spacing) * 5);
+  --form-range-thumb-height: calc(var(--spacing) * 5);
   --form-range-thumb-border-radius: calc(infinity * 1px);
   --form-range-thumb-box-shadow: --alpha(var(--form-range-color) / 16%) 0px 0px
     0px 8px;
   --form-range-track-width: 100%;
-  --form-range-track-height: calc(var(--hb-spacing) * 1.5);
+  --form-range-track-height: calc(var(--spacing) * 1.5);
   --form-range-track-border-radius: var(--radius-sm);
-  height: var(--form-range-height);
-  padding: 0;
-  background-color: transparent;
+  @apply w-full appearance-none
+  h-[var(--form-range-height)]
+  p-0
+  bg-transparent;
 
   &:hover {
-    outline: 0;
+    @apply outline-0;
     &::-webkit-slider-thumb {
-      box-shadow: var(--form-range-thumb-box-shadow);
+      @apply shadow-[var(--form-range-thumb-box-shadow)];
     }
     &::-moz-range-thumb {
-      box-shadow: var(--form-range-thumb-box-shadow);
+      @apply shadow-[var(--form-range-thumb-box-shadow)];
     }
   }
 
   &::-moz-focus-outer {
-    border: 0;
+    @apply border-0;
   }
 
   &::-webkit-slider-thumb {
-    @apply appearance-none transition duration-200;
-    width: var(--form-range-thumb-width);
-    height: var(--form-range-thumb-height);
-    margin-top: calc(
-      (var(--form-range-track-height) - var(--form-range-thumb-height)) * 0.5
-    );
-    border: 0;
-    border-radius: var(--form-range-thumb-border-radius);
-    background-color: var(--form-range-color);
+    @apply appearance-none transition duration-200
+    w-[var(--form-range-thumb-width)]
+    h-[var(--form-range-thumb-height)]
+    mt-[calc((var(--form-range-track-height)-var(--form-range-thumb-height))*0.5)]
+    border-0
+    rounded-[var(--form-range-thumb-border-radius)]
+    bg-[var(--form-range-color)];
   }
 
   &::-webkit-slider-runnable-track {
-    @apply cursor-pointer;
-    width: var(--form-range-track-width);
-    height: var(--form-range-track-height);
-    color: transparent;
-    background-color: --alpha(var(--form-range-color) / 30%);
-    border-color: transparent;
-    border-radius: var(--form-range-track-border-radius);
+    @apply cursor-pointer
+    w-[var(--form-range-track-width)]
+    h-[var(--form-range-track-height)]
+    bg-[--alpha(var(--form-range-color)/30%)]
+    rounded-[var(--form-range-track-border-radius)];
+    /* text-transparent
+    border-transparent; */
   }
 
   &::-moz-range-thumb {
-    width: var(--form-range-thumb-width);
-    height: var(--form-range-thumb-height);
-    margin-top: calc(
-      (var(--form-range-track-height) - var(--form-range-thumb-height)) * 0.5
-    );
-    border: 0;
-    border-radius: var(--form-range-thumb-border-radius);
-    background-color: var(--form-range-color);
+    @apply appearance-none transition duration-200
+    w-[var(--form-range-thumb-width)]
+    h-[var(--form-range-thumb-height)]
+    mt-[calc((var(--form-range-track-height)-var(--form-range-thumb-height))*0.5)]
+    border-0
+    rounded-[var(--form-range-thumb-border-radius)]
+    bg-[var(--form-range-color)];
   }
 
   &::-moz-range-track {
-    @apply cursor-pointer;
-    width: var(--form-range-track-width);
-    height: var(--form-range-track-height);
-    color: transparent;
-    background-color: --alpha(var(--form-range-color) / 30%);
-    border-color: transparent;
-    border-radius: var(--form-range-track-border-radius);
+    @apply cursor-pointer
+    w-[var(--form-range-track-width)]
+    h-[var(--form-range-track-height)]
+    bg-[--alpha(var(--form-range-color)/30%)]
+    rounded-[var(--form-range-track-border-radius)];
+    /* text-transparent
+    border-transparent; */
   }
 
   &:active {
@@ -89,16 +86,16 @@
 }
 
 @utility form-range-sm {
-  --form-range-height: calc(var(--hb-spacing) * 4);
-  --form-range-thumb-width: calc(var(--hb-spacing) * 3);
-  --form-range-thumb-height: calc(var(--hb-spacing) * 3);
-  --form-range-track-height: calc(var(--hb-spacing) * 0.75);
+  --form-range-height: calc(var(--spacing) * 4);
+  --form-range-thumb-width: calc(var(--spacing) * 3);
+  --form-range-thumb-height: calc(var(--spacing) * 3);
+  --form-range-track-height: calc(var(--spacing) * 0.75);
 }
 @utility form-range-lg {
-  --form-range-height: calc(var(--hb-spacing) * 7);
-  --form-range-thumb-width: calc(var(--hb-spacing) * 6);
-  --form-range-thumb-height: calc(var(--hb-spacing) * 6);
-  --form-range-track-height: calc(var(--hb-spacing) * 2.15);
+  --form-range-height: calc(var(--spacing) * 7);
+  --form-range-thumb-width: calc(var(--spacing) * 6);
+  --form-range-thumb-height: calc(var(--spacing) * 6);
+  --form-range-track-height: calc(var(--spacing) * 2.15);
 }
 @utility form-range-secondary {
   --form-range-color: var(--color-secondary);

@@ -1,20 +1,22 @@
 @utility form-control {
-  @apply relative inline-flex items-center justify-center transition duration-200 gap-2 appearance-none;
-  line-height: var(--btn-line-height, 1.5);
-  background-color: var(--input-bg, var(--color-muted));
-  color: var(--input-content, var(--color-default-color));
-  font-size: var(--btn-font-size, var(--text-sm));
-  border-radius: var(--btn-radius, var(--radius-lg));
-  box-shadow: 0 0 0 1px var(--input-border-color, none);
-  padding-left: var(--input-padding-x, calc(var(--hb-spacing) * 4));
-  padding-right: var(--input-padding-x, calc(var(--hb-spacing) * 4));
+  --file-selector-btn-bg: var(--color-highlight);
+  --file-selector-btn-content: var(--color-default-color);
+  --file-selector-btn-hover-bg: var(--color-emphasis);
+
+  @apply relative inline-flex items-center justify-center transition duration-200 gap-2 appearance-none
+    leading-[var(--input-btn-line-height)]
+    bg-[var(--input-bg)]
+    text-[length:var(--input-btn-font-size)]
+    text-[var(--input-content)]
+    rounded-[var(--input-btn-radius)]
+    shadow-[0_0_0_1px_var(--input-border-color)]
+    px-[var(--input-btn-padding-x)]
+    py-[var(--input-btn-padding-y)];
   & :where(input) {
-    @apply w-full flex-1 appearance-none;
-    padding: var(--btn-padding-y, calc(var(--hb-spacing) * 2)) 0;
+    @apply w-full flex-1 appearance-none pt-0 pb-0 py-[var(--input-btn-padding-y)];
   }
   &:not(:has(input)) {
-    padding: var(--btn-padding-y, calc(var(--hb-spacing) * 2))
-      var(--input-padding-x, calc(var(--hb-spacing) * 4));
+    @apply px-[var(--input-btn-padding-x)] py-[var(--input-btn-padding-y)];
   }
   &:is(:disabled, [disabled]),
   &:has(> input[disabled]) {
@@ -49,21 +51,18 @@
     }
   }
   &::file-selector-button {
-    @apply pointer-events-none transition-[background] duration-200;
-    background-color: var(--file-selector-btn-bg, var(--color-highlight));
-    color: var(--file-selector-btn-content, var(--color-default-color));
-    font-weight: var(--font-weight-semibold);
-    padding: var(--btn-padding-y, calc(var(--hb-spacing) * 2))
-      var(--btn-padding-x, calc(var(--hb-spacing) * 4));
-    margin: calc(-1 * var(--btn-padding-y, calc(var(--hb-spacing) * 2)))
-      calc(-1 * var(--btn-padding-x, calc(var(--hb-spacing) * 4)));
-    margin-inline-end: var(--input-padding-x, calc(var(--hb-spacing) * 4));
+    @apply pointer-events-none transition-[background] duration-200
+      bg-[var(--file-selector-btn-bg)]
+      text-[var(--file-selector-btn-content)]
+      font-semibold
+      px-[var(--input-btn-padding-x)]
+      py-[var(--input-btn-padding-y)]
+      -mx-[var(--input-btn-padding-x)]
+      -my-[var(--input-btn-padding-y)]
+      me-[var(--input-btn-padding-x)];
   }
   &:hover:not(:disabled):not([readonly])::file-selector-button {
-    --file-selector-btn-bg: var(
-      --file-selector-btn-hover-bg,
-      var(--color-emphasis)
-    );
+    --file-selector-btn-bg: var(--file-selector-btn-hover-bg);
   }
   &.is-invalid::file-selector-button {
     --file-selector-btn-bg: var(--color-error);
@@ -76,25 +75,24 @@
 }
 
 @utility form-control-outline {
-  @apply relative inline-flex items-center justify-center transition duration-200 gap-2 appearance-none;
-  line-height: var(--btn-line-height, 1.5);
-  color: var(--input-content, var(--color-default-color));
-  font-size: var(--btn-font-size, var(--text-sm));
-  border-radius: var(--btn-radius, var(--radius-lg));
-  box-shadow: 0 0 0 1px var(--input-border-color, var(--color-border-base));
-  padding-left: var(--input-padding-x, calc(var(--hb-spacing) * 4));
-  padding-right: var(--input-padding-x, calc(var(--hb-spacing) * 4));
+  --input-border-color: var(--color-border-base);
+  @apply relative inline-flex items-center justify-center transition duration-200 gap-2 appearance-none
+    leading-[var(--input-btn-line-height)]
+    text-[length:var(--input-btn-font-size)]
+    text-[var(--input-content)]
+    rounded-[var(--input-btn-radius)]
+    shadow-[0_0_0_1px_var(--input-border-color)]
+    px-[var(--input-btn-padding-x)]
+    py-[var(--input-btn-padding-y)];
   & :where(input) {
-    @apply w-full flex-1 appearance-none;
-    padding: var(--btn-padding-y, calc(var(--hb-spacing) * 2)) 0;
+    @apply w-full flex-1 appearance-none pt-0 pb-0 py-[var(--input-btn-padding-y)];
   }
   &:not(:has(input)) {
-    padding: var(--btn-padding-y, calc(var(--hb-spacing) * 2))
-      var(--input-padding-x, calc(var(--hb-spacing) * 4));
+    @apply px-[var(--input-btn-padding-x)] py-[var(--input-btn-padding-y)];
   }
   &:is(:disabled, [disabled]),
   &:has(> input[disabled]) {
-    opacity: 0.5;
+    @apply opacity-50;
     &:hover {
       --input-border-color: var(--color-border-base);
     }
@@ -125,36 +123,36 @@
     }
   }
   &::file-selector-button {
-    @apply pointer-events-none transition-[border] duration-200;
-    font-weight: var(--font-weight-semibold);
-    padding: var(--btn-padding-y, calc(var(--hb-spacing) * 2))
-      var(--btn-padding-x, calc(var(--hb-spacing) * 4));
-    margin: calc(-1 * var(--btn-padding-y, calc(var(--hb-spacing) * 2)))
-      calc(-1 * var(--btn-padding-x, calc(var(--hb-spacing) * 4)));
-    margin-inline-end: var(--input-padding-x, calc(var(--hb-spacing) * 4));
-    border-right: 1px solid var(--input-border-color, var(--color-border-base));
+    @apply pointer-events-none transition-[border] duration-200
+    font-semibold
+    px-[var(--input-btn-padding-x)]
+    py-[var(--input-btn-padding-y)]
+    -mx-[var(--input-btn-padding-x)]
+    -my-[var(--input-btn-padding-y)]
+    me-[var(--input-btn-padding-x)]
+    border-r
+    border-[var(--input-border-color)];
   }
 }
 
 @utility form-control-icon {
-  font-size: 20px;
-  color: var(--color-active);
+  @apply text-[20px] text-active; /* have to change the font-size */
 }
 
 @utility form-control-sm {
-  --input-padding-x: calc(var(--hb-spacing) * 3);
-  --btn-padding-y: calc(var(--hb-spacing) * 1.5);
-  --btn-radius: var(--radius-sm);
-  --btn-line-height: 1.25;
+  --input-btn-padding-x: calc(var(--spacing) * 3);
+  --input-btn-padding-y: calc(var(--spacing) * 1.5);
+  --input-btn-radius: var(--radius-sm);
+  --input-btn-line-height: 1.25;
   .form-control-icon {
-    font-size: var(--text-sm);
+    @apply text-sm;
   }
 }
 @utility form-control-lg {
-  --btn-padding-y: calc(var(--hb-spacing) * 2.5);
-  --btn-font-size: var(--text-base);
+  --input-btn-padding-y: calc(var(--spacing) * 2.5);
+  --input-btn-font-size: var(--text-base);
   .form-control-icon {
-    font-size: var(--text-xl);
+    @apply text-xl;
   }
 }
 @utility form-control-primary {
@@ -192,9 +190,7 @@
 }
 
 @utility form-label {
-  font-weight: var(--font-weight-medium);
-  color: var(--input-label-color, var(--color-highlight-color));
-  font-size: var(--text-xs);
+  @apply font-semibold text-[var(--input-label-color)] text-xs;
 }
 
 @utility form-field {

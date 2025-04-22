@@ -1,32 +1,31 @@
 @utility btn {
-  @apply inline-flex items-center justify-center cursor-pointer transition-[background] duration-200 relative gap-1.5;
   --btn-bg: var(--color-highlight);
-  --btn-content: var(--color-base-color);
+  --btn-content: var(--color-default-color);
   --btn-font-weight: var(--font-weight-semibold);
   --btn-hover-bg: --alpha(var(--btn-bg) / 88%);
   --btn-border-width: 0;
   --btn-border-color: unset;
-  font-size: var(--btn-font-size, var(--text-sm));
-  font-weight: var(--btn-font-weight);
-  border-radius: var(--btn-radius, var(--radius-lg));
-  padding: var(--btn-padding-y, calc(var(--hb-spacing) * 2))
-    var(--btn-padding-x, calc(var(--hb-spacing) * 4));
-  background-color: var(--btn-bg);
-  color: var(--btn-content);
-  line-height: var(--btn-line-height, 1.5);
-  min-width: calc(var(--hb-spacing) * 4);
-  width: var(--btn-width);
-  height: var(--btn-height);
-  border-width: var(--btn-border-width);
-  border-style: solid;
-  border-color: var(--btn-border-color);
-  @media (hover: hover) {
-    &:hover {
-      background-color: var(--btn-hover-bg);
-    }
-  }
+  --btn-width: unset;
+  --btn-height: unset;
+
+  @apply inline-flex items-center justify-center cursor-pointer transition-[background] duration-200 relative gap-1.5 
+    bg-[var(--btn-bg)]
+    text-[length:var(--input-btn-font-size)]
+    font-[weight:var(--btn-font-weight)]
+    rounded-[var(--input-btn-radius)]
+    px-[var(--input-btn-padding-x)]
+    py-[var(--input-btn-padding-y)]
+    text-[var(--btn-content)]
+    leading-[var(--input-btn-line-height)]
+    min-w-4
+    w-[var(--btn-width)]
+    h-[var(--btn-height)]
+    border-[length:var(--btn-border-width)]
+    border-[var(--btn-border-color)]
+    hover:bg-[var(--btn-hover-bg)];
+
   .btn-check + &:hover {
-    background-color: var(--btn-bg);
+    @apply bg-[var(--btn-bg)];
   }
   &:active,
   &.active,
@@ -34,9 +33,8 @@
     --btn-bg: var(--btn-hover-bg);
   }
   &:is(:disabled, [disabled], .disabled) {
-    @apply pointer-events-none;
+    @apply pointer-events-none text-disabled;
     --btn-bg: var(--btn-disabled-bg, var(--color-disabled-bg));
-    --btn-content: var(--btn-disabled-content, var(--color-disabled));
     --btn-border-color: var(--btn-disabled-border);
   }
   + input[type="file"] {
@@ -45,15 +43,15 @@
 }
 
 @utility btn-sm {
-  --btn-padding-y: calc(var(--hb-spacing) * 1.5);
-  --btn-padding-x: calc(var(--hb-spacing) * 2.5);
-  --btn-radius: var(--radius-sm);
-  --btn-line-height: 1.25;
+  --input-btn-padding-y: calc(var(--spacing) * 1.5);
+  --input-btn-padding-x: calc(var(--spacing) * 2.5);
+  --input-btn-radius: var(--radius-sm);
+  --input-btn-line-height: 1.25;
 }
 @utility btn-lg {
-  --btn-font-size: var(--text-base);
-  --btn-padding-y: calc(var(--hb-spacing) * 2.5);
-  --btn-padding-x: calc(var(--hb-spacing) * 5.5);
+  --input-btn-font-size: var(--text-base);
+  --input-btn-padding-y: calc(var(--spacing) * 2.5);
+  --input-btn-padding-x: calc(var(--spacing) * 5.5);
 }
 
 /* variant contained */
@@ -202,15 +200,12 @@
   --btn-disabled-border: var(--color-disabled-bg);
 }
 [class*="btn-outline"] {
-  padding-top: calc(var(--btn-padding-y, calc(var(--hb-spacing) * 2)) - 1px);
-  padding-bottom: calc(var(--btn-padding-y, calc(var(--hb-spacing) * 2)) - 1px);
+  @apply py-[calc(var(--input-btn-padding-y)_-_1px)];
   &.btn-sm {
-    padding-top: calc(var(--btn-padding-y) - 1px);
-    padding-bottom: calc(var(--btn-padding-y) - 1px);
+    @apply py-[calc(var(--input-btn-padding-y)_-_1px)];
   }
   &.btn-lg {
-    padding-top: calc(var(--btn-padding-y) - 1px);
-    padding-bottom: calc(var(--btn-padding-y) - 1px);
+    @apply py-[calc(var(--input-btn-padding-y)_-_1px)];
   }
 }
 
@@ -262,19 +257,19 @@
 @utility btn-square {
   --btn-width: 2.3125rem;
   --btn-height: 2.3125rem;
-  --btn-padding-y: 0;
-  --btn-padding-x: 0;
+  --input-btn-padding-y: 0;
+  --input-btn-padding-x: 0;
   &.btn-sm {
     --btn-width: 1.84375rem;
     --btn-height: 1.84375rem;
-    --btn-padding-y: 0;
-    --btn-padding-x: 0;
+    --input-btn-padding-y: 0;
+    --input-btn-padding-x: 0;
   }
   &.btn-lg {
     --btn-width: 2.75rem;
     --btn-height: 2.75rem;
-    --btn-padding-y: 0;
-    --btn-padding-x: 0;
+    --input-btn-padding-y: 0;
+    --input-btn-padding-x: 0;
   }
 }
 
@@ -282,21 +277,21 @@
 @utility btn-circle {
   --btn-width: 2.3125rem;
   --btn-height: 2.3125rem;
-  --btn-padding-y: 0;
-  --btn-padding-x: 0;
-  --btn-radius: calc(infinity * 1px);
+  --input-btn-padding-y: 0;
+  --input-btn-padding-x: 0;
+  --input-btn-radius: calc(infinity * 1px);
   &.btn-sm {
     --btn-width: 1.84375rem;
     --btn-height: 1.84375rem;
-    --btn-padding-y: 0;
-    --btn-padding-x: 0;
-    --btn-radius: calc(infinity * 1px);
+    --input-btn-padding-y: 0;
+    --input-btn-padding-x: 0;
+    --input-btn-radius: calc(infinity * 1px);
   }
   &.btn-lg {
     --btn-width: 2.75rem;
     --btn-height: 2.75rem;
-    --btn-padding-y: 0;
-    --btn-padding-x: 0;
+    --input-btn-padding-y: 0;
+    --input-btn-padding-x: 0;
   }
 }
 
@@ -306,18 +301,18 @@
   --btn-content: var(--color-active);
   --btn-hover-bg: --alpha(var(--color-active) / 4%);
   --btn-disabled-bg: transparent;
-  --btn-padding-y: calc(var(--hb-spacing) * 2);
-  --btn-padding-x: calc(var(--hb-spacing) * 2);
-  --btn-radius: calc(infinity * 1px);
+  --input-btn-padding-y: calc(var(--spacing) * 2);
+  --input-btn-padding-x: calc(var(--spacing) * 2);
+  --input-btn-radius: calc(infinity * 1px);
 
   &.btn-sm {
-    --btn-padding-y: calc(var(--hb-spacing) * 1.25);
-    --btn-padding-x: calc(var(--hb-spacing) * 1.25);
-    --btn-radius: calc(infinity * 1px);
+    --input-btn-padding-y: calc(var(--spacing) * 1.25);
+    --input-btn-padding-x: calc(var(--spacing) * 1.25);
+    --input-btn-radius: calc(infinity * 1px);
   }
   &.btn-lg {
-    --btn-padding-y: calc(var(--hb-spacing) * 3);
-    --btn-padding-x: calc(var(--hb-spacing) * 3);
+    --input-btn-padding-y: calc(var(--spacing) * 3);
+    --input-btn-padding-x: calc(var(--spacing) * 3);
   }
 }
 @utility btn-icon-primary {

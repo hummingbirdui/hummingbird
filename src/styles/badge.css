@@ -1,5 +1,4 @@
 @utility badge {
-  @apply inline-flex items-center justify-center gap-1 align-middle transition-[background] duration-200;
   --badge-bg: var(--color-main);
   --badge-content: var(--color-contrast);
   --badge-font-size: var(--text-xs);
@@ -7,14 +6,16 @@
   --badge-padding-x: calc(var(--spacing) * 1.5);
   --badge-border-color: transparent;
   --badge-link-hover-bg: var(--color-dark);
-  background-color: var(--badge-bg);
-  color: var(--badge-content);
-  font-size: var(--badge-font-size);
-  padding: var(--badge-padding-y) var(--badge-padding-x);
-  line-height: 1;
-  font-weight: var(--font-weight-semibold);
-  border-radius: calc(infinity * 1px);
-  border: 1px solid var(--badge-border-color);
+  @apply inline-flex items-center justify-center gap-1 align-middle transition-[background] duration-200
+  bg-[var(--badge-bg)]
+  text-[var(--badge-content)]
+  text-[length:var(--badge-font-size)]
+  p-[var(--badge-padding-y)_var(--badge-padding-x)]
+  leading-[1]
+  font-semibold
+  rounded-full
+  border
+  border-[var(--badge-border-color)];
 }
 
 @utility badge-md {
@@ -28,20 +29,14 @@
 }
 
 @utility badge-link {
-  @apply cursor-pointer;
-  &:hover {
-    background-color: var(--badge-link-hover-bg);
-  }
+  @apply cursor-pointer
+  hover:bg-[var(--badge-link-hover-bg)];
 }
 
 @utility badge-action-btn {
   @apply cursor-pointer flex items-center justify-center rounded-full;
   & > * {
-    @apply transition-colors duration-200;
-    color: --alpha(var(--badge-content) / 60%);
-    &:hover {
-      color: var(--badge-content);
-    }
+    @apply transition-colors duration-200 text-[--alpha(var(--badge-content)/60%)] hover:text-[var(--badge-content)];
   }
 }
 
