@@ -65,44 +65,44 @@
   --badge-link-hover-bg: var(--color-error-dark);
 }
 
-/* soft variant */
-@utility badge-soft {
+/* subtle variant */
+@utility badge-subtle {
   --badge-bg: var(--color-muted);
   --badge-content: var(--color-main);
   --badge-border-color: var(--color-border-base);
   --badge-link-hover-bg: var(--color-highlight);
 }
-@utility badge-soft-primary {
+@utility badge-subtle-primary {
   --badge-bg: --alpha(var(--color-primary) / 15%);
   --badge-content: var(--color-primary);
   --badge-border-color: --alpha(var(--color-primary) / 50%);
   --badge-link-hover-bg: --alpha(var(--color-primary) / 35%);
 }
-@utility badge-soft-secondary {
+@utility badge-subtle-secondary {
   --badge-bg: --alpha(var(--color-secondary) / 15%);
   --badge-content: var(--color-secondary);
   --badge-border-color: --alpha(var(--color-secondary) / 50%);
   --badge-link-hover-bg: --alpha(var(--color-secondary) / 35%);
 }
-@utility badge-soft-info {
+@utility badge-subtle-info {
   --badge-bg: --alpha(var(--color-info) / 15%);
   --badge-content: var(--color-info);
   --badge-border-color: --alpha(var(--color-info) / 50%);
   --badge-link-hover-bg: --alpha(var(--color-info) / 35%);
 }
-@utility badge-soft-success {
+@utility badge-subtle-success {
   --badge-bg: --alpha(var(--color-success) / 15%);
   --badge-content: var(--color-success);
   --badge-border-color: --alpha(var(--color-success) / 50%);
   --badge-link-hover-bg: --alpha(var(--color-success) / 35%);
 }
-@utility badge-soft-warning {
+@utility badge-subtle-warning {
   --badge-bg: --alpha(var(--color-warning) / 15%);
   --badge-content: var(--color-warning);
   --badge-border-color: --alpha(var(--color-warning) / 50%);
   --badge-link-hover-bg: --alpha(var(--color-warning) / 35%);
 }
-@utility badge-soft-error {
+@utility badge-subtle-error {
   --badge-bg: --alpha(var(--color-error) / 15%);
   --badge-content: var(--color-error);
   --badge-border-color: --alpha(var(--color-error) / 50%);

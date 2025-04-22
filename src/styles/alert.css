@@ -41,38 +41,38 @@
   --alert-bg: var(--color-error);
 }
 
-/* soft variant */
-@utility alert-soft {
+/* subtle variant */
+@utility alert-subtle {
   --alert-bg: var(--color-muted);
   --alert-content: var(--color-darker);
   --alert-icon-color: var(--color-main);
 }
-@utility alert-soft-primary {
+@utility alert-subtle-primary {
   --alert-bg: var(--color-primary-lighter);
   --alert-content: var(--color-primary-darker);
   --alert-icon-color: var(--color-primary);
 }
-@utility alert-soft-secondary {
+@utility alert-subtle-secondary {
   --alert-bg: var(--color-secondary-lighter);
   --alert-content: var(--color-secondary-darker);
   --alert-icon-color: var(--color-secondary);
 }
-@utility alert-soft-info {
+@utility alert-subtle-info {
   --alert-bg: var(--color-info-lighter);
   --alert-content: var(--color-info-darker);
   --alert-icon-color: var(--color-info);
 }
-@utility alert-soft-success {
+@utility alert-subtle-success {
   --alert-bg: var(--color-success-lighter);
   --alert-content: var(--color-success-darker);
   --alert-icon-color: var(--color-success);
 }
-@utility alert-soft-warning {
+@utility alert-subtle-warning {
   --alert-bg: var(--color-warning-lighter);
   --alert-content: var(--color-warning-darker);
   --alert-icon-color: var(--color-warning);
 }
-@utility alert-soft-error {
+@utility alert-subtle-error {
   --alert-bg: var(--color-error-lighter);
   --alert-content: var(--color-error-darker);
   --alert-icon-color: var(--color-error);
