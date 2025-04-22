@@ -69,7 +69,7 @@ const sitemap: Sitemap[] = [
       },
       {
         name: "Alert",
-        path: "#",
+        path: "/components/alert",
       },
       {
         name: "Input",
