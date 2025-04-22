@@ -1,0 +1,157 @@
+@utility badge {
+  @apply inline-flex items-center justify-center gap-1 align-middle transition-[background] duration-200;
+  --badge-bg: var(--color-main);
+  --badge-content: var(--color-contrast);
+  --badge-font-size: var(--text-xs);
+  --badge-padding-y: calc(var(--spacing) * 0.75);
+  --badge-padding-x: calc(var(--spacing) * 1.5);
+  --badge-border-color: transparent;
+  --badge-link-hover-bg: var(--color-dark);
+  background-color: var(--badge-bg);
+  color: var(--badge-content);
+  font-size: var(--badge-font-size);
+  padding: var(--badge-padding-y) var(--badge-padding-x);
+  line-height: 1;
+  font-weight: var(--font-weight-semibold);
+  border-radius: calc(infinity * 1px);
+  border: 1px solid var(--badge-border-color);
+}
+
+@utility badge-md {
+  --badge-padding-y: calc(var(--spacing) * 1.25);
+  --badge-padding-x: calc(var(--spacing) * 2);
+}
+@utility badge-lg {
+  --badge-padding-y: calc(var(--spacing) * 2);
+  --badge-padding-x: calc(var(--spacing) * 3);
+  --badge-font-size: var(--text-sm);
+}
+
+@utility badge-link {
+  @apply cursor-pointer;
+  &:hover {
+    background-color: var(--badge-link-hover-bg);
+  }
+}
+
+@utility badge-action-btn {
+  @apply cursor-pointer flex items-center justify-center rounded-full;
+  & > * {
+    @apply transition-colors duration-200;
+    color: --alpha(var(--badge-content) / 60%);
+    &:hover {
+      color: var(--badge-content);
+    }
+  }
+}
+
+@utility badge-primary {
+  --badge-bg: var(--color-primary);
+  --badge-link-hover-bg: var(--color-primary-dark);
+}
+@utility badge-secondary {
+  --badge-bg: var(--color-secondary);
+  --badge-link-hover-bg: var(--color-secondary-dark);
+}
+@utility badge-info {
+  --badge-bg: var(--color-info);
+  --badge-link-hover-bg: var(--color-info-dark);
+}
+@utility badge-success {
+  --badge-bg: var(--color-success);
+  --badge-link-hover-bg: var(--color-success-dark);
+}
+@utility badge-warning {
+  --badge-bg: var(--color-warning);
+  --badge-link-hover-bg: var(--color-warning-dark);
+}
+@utility badge-error {
+  --badge-bg: var(--color-error);
+  --badge-link-hover-bg: var(--color-error-dark);
+}
+
+/* soft variant */
+@utility badge-soft {
+  --badge-bg: var(--color-muted);
+  --badge-content: var(--color-main);
+  --badge-border-color: var(--color-border-base);
+  --badge-link-hover-bg: var(--color-highlight);
+}
+@utility badge-soft-primary {
+  --badge-bg: --alpha(var(--color-primary) / 15%);
+  --badge-content: var(--color-primary);
+  --badge-border-color: --alpha(var(--color-primary) / 50%);
+  --badge-link-hover-bg: --alpha(var(--color-primary) / 35%);
+}
+@utility badge-soft-secondary {
+  --badge-bg: --alpha(var(--color-secondary) / 15%);
+  --badge-content: var(--color-secondary);
+  --badge-border-color: --alpha(var(--color-secondary) / 50%);
+  --badge-link-hover-bg: --alpha(var(--color-secondary) / 35%);
+}
+@utility badge-soft-info {
+  --badge-bg: --alpha(var(--color-info) / 15%);
+  --badge-content: var(--color-info);
+  --badge-border-color: --alpha(var(--color-info) / 50%);
+  --badge-link-hover-bg: --alpha(var(--color-info) / 35%);
+}
+@utility badge-soft-success {
+  --badge-bg: --alpha(var(--color-success) / 15%);
+  --badge-content: var(--color-success);
+  --badge-border-color: --alpha(var(--color-success) / 50%);
+  --badge-link-hover-bg: --alpha(var(--color-success) / 35%);
+}
+@utility badge-soft-warning {
+  --badge-bg: --alpha(var(--color-warning) / 15%);
+  --badge-content: var(--color-warning);
+  --badge-border-color: --alpha(var(--color-warning) / 50%);
+  --badge-link-hover-bg: --alpha(var(--color-warning) / 35%);
+}
+@utility badge-soft-error {
+  --badge-bg: --alpha(var(--color-error) / 15%);
+  --badge-content: var(--color-error);
+  --badge-border-color: --alpha(var(--color-error) / 50%);
+  --badge-link-hover-bg: --alpha(var(--color-error) / 35%);
+}
+@utility badge-outline {
+  --badge-bg: transparent;
+  --badge-content: var(--color-main);
+  --badge-border-color: var(--color-border-base);
+  --badge-link-hover-bg: var(--color-emphasis);
+}
+@utility badge-outline-primary {
+  --badge-bg: transparent;
+  --badge-content: var(--color-primary);
+  --badge-border-color: --alpha(var(--color-primary) / 50%);
+  --badge-link-hover-bg: --alpha(var(--color-primary) / 12%);
+}
+@utility badge-outline-secondary {
+  --badge-bg: transparent;
+  --badge-content: var(--color-secondary);
+  --badge-border-color: --alpha(var(--color-secondary) / 50%);
+  --badge-link-hover-bg: --alpha(var(--color-secondary) / 12%);
+}
+@utility badge-outline-info {
+  --badge-bg: transparent;
+  --badge-content: var(--color-info);
+  --badge-border-color: --alpha(var(--color-info) / 50%);
+  --badge-link-hover-bg: --alpha(var(--color-info) / 12%);
+}
+@utility badge-outline-success {
+  --badge-bg: transparent;
+  --badge-content: var(--color-success);
+  --badge-border-color: --alpha(var(--color-success) / 50%);
+  --badge-link-hover-bg: --alpha(var(--color-success) / 12%);
+}
+@utility badge-outline-warning {
+  --badge-bg: transparent;
+  --badge-content: var(--color-warning);
+  --badge-border-color: --alpha(var(--color-warning) / 50%);
+  --badge-link-hover-bg: --alpha(var(--color-warning) / 12%);
+}
+@utility badge-outline-error {
+  --badge-bg: transparent;
+  --badge-content: var(--color-error);
+  --badge-border-color: --alpha(var(--color-error) / 50%);
+  --badge-link-hover-bg: --alpha(var(--color-error) / 12%);
+}
