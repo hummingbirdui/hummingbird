@@ -1,0 +1,251 @@
+---
+title: Alerts
+desc: Provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages.
+layout: "../../layouts/LayoutDoc.astro"
+---
+
+import Example from "../../components/docs/Example.astro";
+
+### Examples
+
+<Example>
+  <div slot="preview" class='space-y-2'>
+    <div class="alert" role="alert">A simple neutral alert!</div>
+    <div class="alert alert-primary" role="alert">A simple primary alert!</div>
+    <div class="alert alert-secondary" role="alert">A simple secondary alert!</div>
+    <div class="alert alert-info" role="alert">A simple info alert!</div>
+    <div class="alert alert-success" role="alert">A simple success alert!</div>
+    <div class="alert alert-warning" role="alert">A simple warning alert!</div>
+    <div class="alert alert-error" role="alert">A simple error alert!</div>
+  </div>
+
+  <div slot="code">
+    ```html
+    <div class="alert" role="alert">A simple neutral alert!</div>
+    <div class="alert alert-primary" role="alert">A simple primary alert!</div>
+    <div class="alert alert-secondary" role="alert">A simple secondary alert!</div>
+    <div class="alert alert-info" role="alert">A simple info alert!</div>
+    <div class="alert alert-success" role="alert">A simple success alert!</div>
+    <div class="alert alert-warning" role="alert">A simple warning alert!</div>
+    <div class="alert alert-error" role="alert">A simple error alert!</div>
+    ```
+  </div>
+</Example>
+
+### Subtle variant
+
+<Example>
+  <div slot="preview" class='space-y-2'>
+    <div class="alert alert-subtle" role="alert">A simple neutral subtle alert!</div>
+    <div class="alert alert-subtle-primary" role="alert">A simple primary subtle alert!</div>
+    <div class="alert alert-subtle-secondary" role="alert">A simple secondary subtle alert!</div>
+    <div class="alert alert-subtle-info" role="alert">A simple info subtle alert!</div>
+    <div class="alert alert-subtle-success" role="alert">A simple success subtle alert!</div>
+    <div class="alert alert-subtle-warning" role="alert">A simple warning subtle alert!</div>
+    <div class="alert alert-subtle-error" role="alert">A simple error subtle alert!</div>
+  </div>
+
+  <div slot="code">
+    ```html
+    <div class="alert alert-subtle" role="alert">A simple neutral subtle alert!</div>
+    <div class="alert alert-subtle-primary" role="alert">A simple primary subtle alert!</div>
+    <div class="alert alert-subtle-secondary" role="alert">A simple secondary subtle alert!</div>
+    <div class="alert alert-subtle-info" role="alert">A simple info subtle alert!</div>
+    <div class="alert alert-subtle-success" role="alert">A simple success subtle alert!</div>
+    <div class="alert alert-subtle-warning" role="alert">A simple warning subtle alert!</div>
+    <div class="alert alert-subtle-error" role="alert">A simple error subtle alert!</div>
+    ```
+  </div>
+</Example>
+
+### Outlined variant
+
+<Example>
+  <div slot="preview" class='space-y-2'>
+    <div class="alert alert-outline" role="alert">A simple neutral outline alert!</div>
+    <div class="alert alert-outline-primary" role="alert">A simple primary outline alert!</div>
+    <div class="alert alert-outline-secondary" role="alert">A simple secondary outline alert!</div>
+    <div class="alert alert-outline-info" role="alert">A simple info outline alert!</div>
+    <div class="alert alert-outline-success" role="alert">A simple success outline alert!</div>
+    <div class="alert alert-outline-warning" role="alert">A simple warning outline alert!</div>
+    <div class="alert alert-outline-error" role="alert">A simple error outline alert!</div>
+  </div>
+
+  <div slot="code">
+    ```html
+    <div class="alert alert-outline" role="alert">A simple neutral outline alert!</div>
+    <div class="alert alert-outline-primary" role="alert">A simple primary outline alert!</div>
+    <div class="alert alert-outline-secondary" role="alert">A simple secondary outline alert!</div>
+    <div class="alert alert-outline-info" role="alert">A simple info outline alert!</div>
+    <div class="alert alert-outline-success" role="alert">A simple success outline alert!</div>
+    <div class="alert alert-outline-warning" role="alert">A simple warning outline alert!</div>
+    <div class="alert alert-outline-error" role="alert">A simple error outline alert!</div>
+    ```
+  </div>
+</Example>
+
+### Alert with Icon
+
+<Example>
+  <div slot="preview" class='space-y-2'>
+    <div class="alert alert-success" role="alert">
+      <span class="icon-[material-symbols--check-circle-outline] alert-icon"></span>
+      <span>Operation successful — everything is up to date!</span>
+    </div>
+    <div class="alert alert-info" role="alert">
+      <span class="icon-[material-symbols--info-outline] alert-icon"></span>
+      <span>Note the following — changes have been saved.</span>
+    </div>
+    <div class="alert alert-error" role="alert">
+      <span class="icon-[material-symbols--error-outline-rounded] alert-icon"></span>
+      <span>Something went wrong — please try again later.</span>
+    </div>
+    <div class="alert alert-subtle-success" role="alert">
+      <span class="icon-[material-symbols--check-circle-outline] alert-icon"></span>
+      <span>Operation successful — everything is up to date!</span>
+    </div>
+    <div class="alert alert-subtle-info" role="alert">
+      <span class="icon-[material-symbols--info-outline] alert-icon"></span>
+      <span>Note the following — changes have been saved.</span>
+    </div>
+    <div class="alert alert-subtle-error" role="alert">
+      <span class="icon-[material-symbols--error-outline-rounded] alert-icon"></span>
+      <span>Something went wrong — please try again later.</span>
+    </div>
+    <div class="alert alert-outline-success" role="alert">
+      <span class="icon-[material-symbols--check-circle-outline] alert-icon"></span>
+      <span>Operation successful — everything is up to date!</span>
+    </div>
+    <div class="alert alert-outline-info" role="alert">
+      <span class="icon-[material-symbols--info-outline] alert-icon"></span>
+      <span>Note the following — changes have been saved.</span>
+    </div>
+    <div class="alert alert-outline-error" role="alert">
+      <span class="icon-[material-symbols--error-outline-rounded] alert-icon"></span>
+      <span>Something went wrong — please try again later.</span>
+    </div>
+  </div>
+
+  <div slot="code">
+    ```html
+    <div class="alert alert-success" role="alert">
+      <span class="icon-[material-symbols--check-circle-outline] alert-icon"></span>
+      <span>Operation successful — everything is up to date!</span>
+    </div>
+    <div class="alert alert-info" role="alert">
+      <span class="icon-[material-symbols--info-outline] alert-icon"></span>
+      <span>Note the following — changes have been saved.</span>
+    </div>
+    <div class="alert alert-error" role="alert">
+      <span class="icon-[material-symbols--error-outline-rounded] alert-icon"></span>
+      <span>Something went wrong — please try again later.</span>
+    </div>
+
+    <div class="alert alert-subtle-success" role="alert">
+      <span class="icon-[material-symbols--check-circle-outline] alert-icon"></span>
+      <span>Operation successful — everything is up to date!</span>
+    </div>
+    <div class="alert alert-subtle-info" role="alert">
+      <span class="icon-[material-symbols--info-outline] alert-icon"></span>
+      <span>Note the following — changes have been saved.</span>
+    </div>
+    <div class="alert alert-subtle-error" role="alert">
+      <span class="icon-[material-symbols--error-outline-rounded] alert-icon"></span>
+      <span>Something went wrong — please try again later.</span>
+    </div>
+
+    <div class="alert alert-outline-success" role="alert">
+      <span class="icon-[material-symbols--check-circle-outline] alert-icon"></span>
+      <span>Operation successful — everything is up to date!</span>
+    </div>
+    <div class="alert alert-outline-info" role="alert">
+      <span class="icon-[material-symbols--info-outline] alert-icon"></span>
+      <span>Note the following — changes have been saved.</span>
+    </div>
+    <div class="alert alert-outline-error" role="alert">
+      <span class="icon-[material-symbols--error-outline-rounded] alert-icon"></span>
+      <span>Something went wrong — please try again later.</span>
+    </div>
+    ```
+  </div>
+</Example>
+
+### Alert with title
+
+<Example>
+  <div slot="preview" class='space-y-2'>
+    <div class="alert alert-subtle-warning items-start" role="alert">
+      <span class="icon-[material-symbols--warning-outline-rounded] alert-icon"></span>
+      <div>
+        <p>Warning</p>
+        <span>Please be cautious — review your actions.</span>
+      </div>
+    </div>
+  </div>
+
+  <div slot="code">
+    ```html
+    <div class="alert alert-subtle-warning items-start" role="alert">
+      <span class="icon-[material-symbols--warning-outline-rounded] alert-icon"></span>
+      <div>
+        <p>Warning</p>
+        <span>Please be cautious — review your actions.</span>
+      </div>
+    </div>
+    ```
+  </div>
+</Example>
+
+### Alert Actions
+
+<Example>
+  <div slot="preview" class='space-y-2'>
+    <div class="alert alert-subtle-warning" role="alert">
+      <span class="icon-[material-symbols--warning-outline-rounded] alert-icon"></span>
+      <span>This is a generic alert — please take note.</span>
+      <button class='btn btn-icon btn-icon-warning ms-auto shrink-0'>
+        <span class='icon-[material-symbols--close-rounded] text-base'></span>
+      </button>
+    </div>
+    <div class="alert alert-outline-success" role="alert">
+      <span class="icon-[material-symbols--check-circle-outline] alert-icon"></span>
+      <span>This is a success alert — you can continue.</span>
+      <button class='btn btn-sm btn-success ms-auto shrink-0'>
+        Continue
+      </button>
+    </div>
+    <div class="alert alert-error" role="alert">
+      <span class="icon-[material-symbols--error-outline-rounded] alert-icon"></span>
+      <span>Error occurs - Try again.</span>
+      <button class='btn btn-sm btn-text-error text-contrast hover:bg-error-dark ms-auto'>
+        Start
+      </button>
+    </div>
+  </div>
+
+  <div slot="code">
+    ```html
+    <div class="alert alert-subtle-warning" role="alert">
+      <span class="icon-[material-symbols--warning-outline-rounded] alert-icon"></span>
+      <span>This is a generic alert — please take note.</span>
+      <button class='btn btn-icon btn-icon-warning ms-auto shrink-0'>
+        <span class='icon-[material-symbols--close-rounded] text-base'></span>
+      </button>
+    </div>
+    <div class="alert alert-outline-success" role="alert">
+      <span class="icon-[material-symbols--check-circle-outline] alert-icon"></span>
+      <span>This is a success alert — you can continue.</span>
+      <button class='btn btn-sm btn-success ms-auto shrink-0'>
+        Continue
+      </button>
+    </div>
+    <div class="alert alert-error" role="alert">
+      <span class="icon-[material-symbols--error-outline-rounded] alert-icon"></span>
+      <span>Error occurs - Try again.</span>
+      <button class='btn btn-sm btn-text-error text-contrast hover:bg-error-dark ms-auto'>
+        Start
+      </button>
+    </div>
+    ```
+  </div>
+</Example>

@@ -1,0 +1,163 @@
+---
+title: Breadcrumb
+desc: Indicate the current page’s location within a navigational hierarchy that automatically adds separators via CSS.
+layout: "../../layouts/LayoutDoc.astro"
+---
+
+import Example from "../../components/docs/Example.astro";
+
+### Basic Example
+
+<Example>
+  <div slot="preview" class='space-x-2 space-y-2'>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#!" class="link link-hover">Home</a></li>
+        <li class="breadcrumb-item"><a href="#!" class="link link-hover">Components</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Breadcrumb</li>
+      </ol>
+    </nav>
+  </div>
+
+  <div slot="code">
+  ```html
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="#!" class="link link-hover">Home</a></li>
+      <li class="breadcrumb-item"><a href="#!" class="link link-hover">Components</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Breadcrumb</li>
+    </ol>
+  </nav>
+  ```
+  </div>
+</Example>
+
+### Link color
+
+<Example>
+  <div slot="preview" class='space-x-2 space-y-2'>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#!" class="link link-hover link-primary">Home</a></li>
+        <li class="breadcrumb-item"><a href="#!" class="link link-hover link-primary">Components</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Breadcrumb</li>
+      </ol>
+    </nav>
+  </div>
+
+  <div slot="code">
+  ```html
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="#!" class="link link-hover link-primary">Home</a></li>
+      <li class="breadcrumb-item"><a href="#!" class="link link-hover link-primary">Components</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Breadcrumb</li>
+    </ol>
+  </nav>
+  ```
+  </div>
+</Example>
+
+### Icon
+
+<Example>
+  <div slot="preview" class='space-x-2 space-y-2'>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="#!" class="link link-hover"><span class="icon-[material-symbols--home-rounded]"></span>Home</a>
+        </li>
+        <li class="breadcrumb-item">
+          <a href="#!" class="link link-hover"><span class="icon-[material-symbols--dock-to-right]"></span>Components</a>
+        </li>
+        <li class="breadcrumb-item active" aria-current="page">
+          <span><span class="icon-[material-symbols--menu-book-outline]"></span>Breadcrumb</span>
+        </li>
+      </ol>
+    </nav>
+  </div>
+
+  <div slot="code">
+  ```html
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <a href="#!" class="link link-hover"><span class="icon-[material-symbols--home-rounded]"></span>Home</a>
+      </li>
+      <li class="breadcrumb-item">
+        <a href="#!" class="link link-hover"><span class="icon-[material-symbols--dock-to-right]"></span>Components</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">
+        <span><span class="icon-[material-symbols--menu-book-outline]"></span>Breadcrumb</span>
+      </li>
+    </ol>
+  </nav>
+  ```
+  </div>
+</Example>
+
+### Separators
+
+<Example>
+  <div slot="preview" class='space-x-2 space-y-2'>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb breadcrumb-separator-dashed">
+        <li class="breadcrumb-item"><a href="#!" class="link link-hover link-primary">Home</a></li>
+        <li class="breadcrumb-item"><a href="#!" class="link link-hover link-primary">Components</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Breadcrumb</li>
+      </ol>
+    </nav>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb breadcrumb-separator-arrow">
+        <li class="breadcrumb-item"><a href="#!" class="link link-hover link-primary">Home</a></li>
+        <li class="breadcrumb-item"><a href="#!" class="link link-hover link-primary">Components</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Breadcrumb</li>
+      </ol>
+    </nav>
+  </div>
+
+  <div slot="code">
+  ```html
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb breadcrumb-separator-dashed">
+      <li class="breadcrumb-item"><a href="#!" class="link link-hover link-primary">Home</a></li>
+      <li class="breadcrumb-item"><a href="#!" class="link link-hover link-primary">Components</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Breadcrumb</li>
+    </ol>
+  </nav>
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb breadcrumb-separator-arrow">
+      <li class="breadcrumb-item"><a href="#!" class="link link-hover link-primary">Home</a></li>
+      <li class="breadcrumb-item"><a href="#!" class="link link-hover link-primary">Components</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Breadcrumb</li>
+    </ol>
+  </nav>
+  ```
+  </div>
+</Example>
+
+### Badge Breadcrumb
+
+<Example>
+  <div slot="preview" class='space-x-2 space-y-2'>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href='#!' class="badge badge-subtle badge-link">Home</a></li>
+        <li class="breadcrumb-item"><a href='#!' class="badge badge-subtle badge-link">Component</a></li>
+        <li class="breadcrumb-item active" aria-current="page"><span class="badge badge-subtle">Breadcrumb</span></li>
+      </ol>
+    </nav>
+  </div>
+
+  <div slot="code">
+  ```html
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="#!" class="link link-hover">Home</a></li>
+      <li class="breadcrumb-item"><a href="#!" class="link link-hover">Components</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Breadcrumb</li>
+    </ol>
+  </nav>
+  ```
+  </div>
+</Example>

@@ -64,20 +64,20 @@ const sitemap: Sitemap[] = [
         path: "/components/range",
       },
       {
-        name: "Alert",
-        path: "#",
-      },
-      {
         name: "Badge",
-        path: "/docs/components/badge",
+        path: "/components/badge",
       },
       {
-        name: "Input",
-        path: "#",
+        name: "Alert",
+        path: "/components/alert",
       },
       {
-        name: "Dropdown",
-        path: "#",
+        name: "Link",
+        path: "/components/link",
+      },
+      {
+        name: "Breadcrumb",
+        path: "/components/breadcrumb",
       },
     ],
   },
