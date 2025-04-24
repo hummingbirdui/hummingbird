@@ -72,12 +72,12 @@ const sitemap: Sitemap[] = [
         path: "/components/alert",
       },
       {
-        name: "Input",
-        path: "#",
+        name: "Link",
+        path: "/components/link",
       },
       {
-        name: "Dropdown",
-        path: "#",
+        name: "Breadcrumb",
+        path: "/components/breadcrumb",
       },
     ],
   },
