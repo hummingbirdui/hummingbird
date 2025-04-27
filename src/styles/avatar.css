@@ -1,0 +1,70 @@
+.avatar-group {
+  @apply flex;
+  :where(.avatar) {
+    @apply rounded-full border-2 border-contrast -ms-3
+    w-[calc(var(--avatar-width)+4px)]
+    h-[calc(var(--avatar-height)+4px)];
+  }
+}
+@utility avatar {
+  --avatar-width: calc(var(--spacing) * 10);
+  --avatar-height: calc(var(--spacing) * 10);
+  --avatar-bg: var(--color-main);
+  --avatar-content: var(--color-contrast);
+  --avatar-font-weight: var(--font-weight-medium);
+  --avatar-font-size: var(--text-lg);
+  @apply relative inline-block overflow-hidden
+  w-[var(--avatar-width)]
+  h-[var(--avatar-height)];
+  &[class*="avatar-status-"]::before {
+    @apply content-[''] 
+    absolute right-[14%] bottom-[14%] 
+    rounded-full w-2 h-2 
+    scale-100 translate-x-[50%] translate-y-[50%];
+  }
+}
+@utility avatar-name {
+  @apply flex items-center justify-center h-full w-full 
+  font-[var(--avatar-font-weight)] 
+  text-[length:var(--avatar-font-size)] 
+  text-[var(--avatar-content)] 
+  bg-[var(--avatar-bg)];
+}
+@utility avatar-status-online {
+  &::before {
+    @apply bg-success;
+  }
+}
+@utility avatar-status-offline {
+  &::before {
+    @apply bg-main;
+  }
+}
+@utility avatar-status-away {
+  &::before {
+    @apply bg-warning;
+  }
+}
+@utility avatar-status-busy {
+  &::before {
+    @apply bg-error;
+  }
+}
+@utility avatar-xs {
+  --avatar-width: calc(var(--spacing) * 6);
+  --avatar-height: calc(var(--spacing) * 6);
+  --avatar-font-size: var(--text-sm);
+  &[class*="avatar-status-"]::before {
+    @apply w-1.5 h-1.5;
+  }
+}
+@utility avatar-sm {
+  --avatar-width: calc(var(--spacing) * 8);
+  --avatar-height: calc(var(--spacing) * 8);
+  --avatar-font-size: var(--text-base);
+}
+@utility avatar-lg {
+  --avatar-width: calc(var(--spacing) * 12.5);
+  --avatar-height: calc(var(--spacing) * 12.5);
+  --avatar-font-size: var(--text-xl);
+}
