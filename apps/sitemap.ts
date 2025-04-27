@@ -79,6 +79,10 @@ const sitemap: Sitemap[] = [
         name: "Breadcrumb",
         path: "/components/breadcrumb",
       },
+      {
+        name: "Avatar",
+        path: "/components/avatar",
+      },
     ],
   },
 ];
