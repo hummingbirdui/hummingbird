@@ -1,0 +1,70 @@
+@utility card {
+  --card-bg: var(--color-subtle);
+  --card-content: var(--color-highlight-color);
+  --card-border-width: 1px;
+  --card-border-color: var(--color-border-base);
+  --card-border-radius: var(--radius-lg);
+  --card-padding-x: calc(var(--spacing) * 4);
+  --card-padding-y: calc(var(--spacing) * 4);
+  --card-cap-padding-x: calc(var(--spacing) * 2);
+  --card-cap-padding-y: calc(var(--spacing) * 2);
+  --card-cap-bg: transparent;
+  --card-cap-color: null;
+  --card-title-color: var(--color-default-color);
+  --card-title-space-y: calc(var(--spacing) * 2);
+
+  @apply relative flex flex-col min-w-0 wrap-break-word
+  text-base
+  rounded-[var(--card-border-radius)]
+  bg-[var(--card-bg)]
+  text-[var(--card-content)]
+  border-[length:var(--card-border-width)]
+  border-[var(--card-border-color)];
+}
+
+.card-img,
+.card-img-top,
+.card-img-bottom {
+  width: 100%;
+}
+
+.card-img-top {
+  @apply rounded-t-[var(--card-border-radius)];
+}
+
+.card-img-bottom {
+  @apply rounded-b-[var(--card-border-radius)];
+}
+
+@utility card-header {
+  @apply mb-0
+  px-[var(--card-padding-x)] 
+  py-[var(--card-padding-y)]
+  text-[var(--card-cap-color)]
+  bg-[var(--card-cap-bg)]
+  border-b-[length:var(--card-border-width)]
+  border-[var(--card-border-color)];
+}
+
+.card-body {
+  @apply flex-1
+  px-[var(--card-padding-x)] 
+  py-[var(--card-padding-y)];
+}
+
+.card-footer {
+  @apply px-[var(--card-cap-padding-x)] 
+  py-[var(--card-cap-padding-y)]
+  text-[var(--card-cap-color)]
+  bg-[var(--card-cap-bg)];
+}
+
+.card-title {
+  @apply text-xl font-bold
+  text-[var(--card-title-color)]
+  mb-[var(--card-title-space-y)];
+}
+
+.card-text {
+  @apply text-sm;
+}

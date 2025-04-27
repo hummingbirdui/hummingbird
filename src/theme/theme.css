@@ -85,6 +85,8 @@
     "monospace";
 
   /* font size  */
+  --text-sm: 0.875rem; /* 21px */
+  --text-sm--line-height: 1.6;
   --text-lg: 1.3125rem; /* 21px */
   --text-lg--line-height: 1.5;
   --text-xl: 1.5rem; /* 24px */
