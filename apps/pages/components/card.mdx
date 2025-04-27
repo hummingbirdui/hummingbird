@@ -1,0 +1,155 @@
+---
+title: Card
+desc: Cards contain content and actions about a single subject.
+layout: "../../layouts/LayoutDoc.astro"
+---
+
+import Example from "../../components/docs/Example.astro";
+import { Image } from 'astro:assets';
+import hummingbirdImg from '../../assets/images/1.png'
+import hummingbirdImg2 from '../../assets/images/2.png'
+import avatar1 from '../../assets/images/avatar_1.webp'
+
+### Basic Card
+
+<Example>
+  <div slot="preview">
+    <div class="card max-w-[18rem]">
+      <div class="card-header">
+        <p>Basic Card</p>
+      </div>
+      <div class="card-body">
+        <h4 class="card-title">Card Title</h4>
+        <p class="text-sm">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      </div>
+      <div class="card-footer">
+        <button class='btn btn-sm btn-text-primary'>Learn more</button>
+      </div>
+    </div>
+  </div>
+
+  <div slot="code">
+    ```html
+    <div class="card">
+      <div class="card-header">
+        <p>Basic Card</p>
+      </div>
+      <div class="card-body">
+        <h4 class="card-title">Card Title</h4>
+        <p class="text-sm">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      </div>
+      <div class="card-footer">
+        <button class='btn btn-sm btn-text-primary'>Learn more</button>
+      </div>
+    </div>
+    ```
+  </div>
+</Example>
+
+### Media
+
+<Example>
+  <div slot="preview">
+    <div class="card max-w-[22rem]">
+      <Image src={hummingbirdImg} alt="Hummingbird" class='card-img-top' />
+      <div class="card-body">
+        <h4 class="card-title">Hummingbirds</h4>
+        <p class='card-text'>Hummingbirds are birds native to the Americas and comprise the biological family Trochilidae.</p>
+      </div>
+      <div class="card-footer">
+        <button class='btn btn-sm btn-text-primary'>SHARE</button>
+        <button class='btn btn-sm btn-text-primary'>LEARN MORE</button>
+      </div>
+    </div>
+  </div>
+
+  <div slot="code">
+    ```html
+    <div class="card max-w-[22rem]">
+      <img src="assets/images/1.png" class='card-img-top' alt="Hummingbird" />
+      <div class="card-body">
+        <h4 class="card-title">Hummingbirds</h4>
+        <p>Hummingbirds are birds native to the Americas and comprise the biological family Trochilidae.</p>
+      </div>
+      <div class="card-footer">
+        <button class='btn btn-sm btn-text-primary'>SHARE</button>
+        <button class='btn btn-sm btn-text-primary'>LEARN MORE</button>
+      </div>
+    </div>
+    ```
+  </div>
+</Example>
+
+### Complex Interaction
+
+<Example>
+  <div slot="preview">
+    <div class="card max-w-[22rem]">
+      <div class="card-header border-0">
+        <div class="flex items-center">
+          <div class="avatar avatar-lg me-4">
+            <Image src={avatar1} alt="Avatar" class="rounded-full"/>
+          </div>
+          <div>
+            <p class="card-text text-default-color">Black-throated Mango male</p>
+            <p class="card-text">November 10, 2021</p>
+          </div>
+          <button class='btn btn-icon ms-auto self-start -mr-2'>
+            <span class='icon-[fluent--more-vertical-16-regular] text-lg'></span>
+          </button>
+        </div>
+      </div>
+      <Image src={hummingbirdImg2} alt="Hummingbird" class='card-img' />
+      <div class="card-body">
+        <p class="text-sm">The male Black-throated Mango hummingbird has a metallic bronze-green upper body and flanks, a black throat and chest, and white underparts</p>
+      </div>
+      <div class="card-footer flex">
+        <button class='btn btn-icon'>
+          <span class='icon-[line-md--heart] text-lg'></span>
+        </button>
+        <button class='btn btn-icon'>
+          <span class="icon-[material-symbols--share-outline] text-lg"></span>
+        </button>
+        <button class='btn btn-icon ms-auto'>
+          <span class="icon-[material-symbols--expand-all-rounded] text-lg"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div slot="code">
+    ```html
+    <div class="card max-w-[22rem]">
+      <div class="card-header border-0">
+        <div class="flex items-center">
+          <div class="avatar avatar-lg me-4">
+            <img src="assets/images/avatar_1.webp"  alt="Avatar" class="rounded-full" />
+          </div>
+          <div>
+            <p class="card-text text-default-color">Black-throated Mango male</p>
+            <p class="card-text">November 10, 2021</p>
+          </div>
+          <button class='btn btn-icon ms-auto self-start -mr-2'>
+            <span class='icon-[fluent--more-vertical-16-regular] text-lg'></span>
+          </button>
+        </div>
+      </div>
+      <img src="assets/images/2.png" class='card-img' alt="Hummingbird" />
+      <div class="card-body">
+        <p class="text-sm">The male Black-throated Mango hummingbird has a metallic bronze-green upper body and flanks, a black throat and chest, and white underparts</p>
+      </div>
+      <div class="card-footer flex">
+        <button class='btn btn-icon'>
+          <span class='icon-[line-md--heart] text-lg'></span>
+        </button>
+        <button class='btn btn-icon'>
+          <span class="icon-[material-symbols--share-outline] text-lg"></span>
+        </button>
+        <button class='btn btn-icon ms-auto'>
+          <span class="icon-[material-symbols--expand-all-rounded] text-lg"></span>
+        </button>
+      </div>
+    </div>
+    ```
+  </div>
+</Example>
