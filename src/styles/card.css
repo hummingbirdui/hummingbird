@@ -1,0 +1,102 @@
+@utility card {
+  --card-bg: var(--color-subtle);
+  --card-content: var(--color-highlight-color);
+  --card-border-width: 1px;
+  --card-border-color: var(--color-border-base);
+  --card-border-radius: var(--radius-lg);
+  --card-padding-x: calc(var(--spacing) * 4);
+  --card-padding-y: calc(var(--spacing) * 4);
+  --card-cap-padding-x: calc(var(--spacing) * 2);
+  --card-cap-padding-y: calc(var(--spacing) * 2);
+  --card-cap-bg: transparent;
+  --card-cap-color: null;
+  --card-title-color: var(--color-default-color);
+  --card-title-space-y: calc(var(--spacing) * 2);
+
+  @apply relative flex flex-col min-w-0 wrap-break-word
+  text-sm
+  rounded-[var(--card-border-radius)]
+  bg-[var(--card-bg)]
+  text-[var(--card-content)]
+  border-[length:var(--card-border-width)]
+  border-[var(--card-border-color)];
+}
+.card-action {
+  @apply cursor-pointer text-left transition-[background] duration-200;
+  &:hover {
+    --card-bg: var(--color-muted);
+  }
+}
+.card-aside {
+  @apply flex-row;
+}
+
+@utility card-img-top {
+  @apply rounded-t-[var(--card-border-radius)] w-full;
+}
+@utility card-img-bottom {
+  @apply rounded-b-[var(--card-border-radius)] w-full;
+}
+@utility card-img-right {
+  @apply rounded-r-[var(--card-border-radius)] h-full object-cover;
+}
+@utility card-img-left {
+  @apply rounded-l-[var(--card-border-radius)] h-full object-cover;
+}
+@utility card-img {
+  @apply rounded-none w-full;
+}
+
+@utility card-header {
+  @apply mb-0
+  px-[var(--card-padding-x)] 
+  py-[var(--card-padding-y)]
+  text-[var(--card-cap-color)]
+  bg-[var(--card-cap-bg)]
+  border-b-[length:var(--card-border-width)]
+  border-[var(--card-border-color)];
+}
+
+.card-body {
+  @apply flex-1
+  px-[var(--card-padding-x)] 
+  py-[var(--card-padding-y)];
+}
+
+.card-footer {
+  @apply px-[var(--card-cap-padding-x)] 
+  py-[var(--card-cap-padding-y)]
+  text-[var(--card-cap-color)]
+  bg-[var(--card-cap-bg)];
+}
+
+.card-title {
+  @apply text-xl font-bold
+  text-[var(--card-title-color)]
+  mb-[var(--card-title-space-y)];
+  &:has(+ .card-subtitle) {
+    @apply mb-0;
+  }
+}
+.card-subtitle {
+  @apply text-base font-medium
+  mb-[var(--card-title-space-y)];
+}
+.card-text {
+  @apply text-sm;
+}
+.card-img-overlay {
+  --card-border-width: 0px;
+  @apply overflow-hidden rounded-lg;
+  img {
+    @apply brightness-[0.6];
+  }
+  .card-body {
+    @apply absolute top-0 right-0 bottom-0 left-0
+    p-[var(--card-padding-x)]
+    rounded-[var(--card-border-radius)] text-contrast;
+    .card-title {
+      @apply text-contrast;
+    }
+  }
+}

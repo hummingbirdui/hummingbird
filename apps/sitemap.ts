@@ -83,6 +83,10 @@ const sitemap: Sitemap[] = [
         name: "Avatar",
         path: "/components/avatar",
       },
+      {
+        name: "Card",
+        path: "/components/card",
+      },
     ],
   },
 ];

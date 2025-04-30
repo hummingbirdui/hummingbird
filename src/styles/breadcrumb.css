@@ -1,4 +1,4 @@
-.breadcrumb {
+@utility breadcrumb {
   --breadcrumb-font-size: var(--text-sm);
   --breadcrumb-item-active-color: var(--color-default-color);
   --breadcrumb-item-gap: calc(var(--spacing) * 2);
@@ -9,14 +9,14 @@
   list-style: none;
 }
 
-.breadcrumb-separator-dashed {
+@utility breadcrumb-separator-dashed {
   --breadcrumb-item-separator: "-";
 }
-.breadcrumb-separator-arrow {
+@utility breadcrumb-separator-arrow {
   --breadcrumb-item-separator: ">";
 }
 
-.breadcrumb-item {
+@utility breadcrumb-item {
   @apply flex items-center;
   > * {
     @apply flex items-center gap-0.5;

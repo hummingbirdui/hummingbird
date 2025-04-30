@@ -1,4 +1,4 @@
-.avatar-group {
+@utility avatar-group {
   @apply flex;
   :where(.avatar) {
     @apply rounded-full border-2 border-contrast -ms-3
