@@ -8,6 +8,7 @@ import Example from "../../components/docs/Example.astro";
 import { Image } from 'astro:assets';
 import hummingbirdImg from '../../assets/images/1.png'
 import hummingbirdImg2 from '../../assets/images/2.png'
+import hummingbirdImg3 from '../../assets/images/3.png'
 import avatar1 from '../../assets/images/avatar_1.webp'
 
 ### Basic Card
@@ -20,7 +21,8 @@ import avatar1 from '../../assets/images/avatar_1.webp'
       </div>
       <div class="card-body">
         <h4 class="card-title">Card Title</h4>
-        <p class="text-sm">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <p class="card-subtitle">Subtitle</p>
+        <p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
       </div>
       <div class="card-footer">
         <button class='btn btn-sm btn-text-primary'>Learn more</button>
@@ -36,7 +38,8 @@ import avatar1 from '../../assets/images/avatar_1.webp'
       </div>
       <div class="card-body">
         <h4 class="card-title">Card Title</h4>
-        <p class="text-sm">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <p class="card-subtitle">Subtitle</p>
+        <p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
       </div>
       <div class="card-footer">
         <button class='btn btn-sm btn-text-primary'>Learn more</button>
@@ -54,7 +57,7 @@ import avatar1 from '../../assets/images/avatar_1.webp'
       <Image src={hummingbirdImg} alt="Hummingbird" class='card-img-top' />
       <div class="card-body">
         <h4 class="card-title">Hummingbirds</h4>
-        <p class='card-text'>Hummingbirds are birds native to the Americas and comprise the biological family Trochilidae.</p>
+        <p>Hummingbirds belong to the avian family Trochilidae, and their closest relatives are the equally fascinating swifts.</p>
       </div>
       <div class="card-footer">
         <button class='btn btn-sm btn-text-primary'>SHARE</button>
@@ -69,13 +72,39 @@ import avatar1 from '../../assets/images/avatar_1.webp'
       <img src="assets/images/1.png" class='card-img-top' alt="Hummingbird" />
       <div class="card-body">
         <h4 class="card-title">Hummingbirds</h4>
-        <p>Hummingbirds are birds native to the Americas and comprise the biological family Trochilidae.</p>
+        <p>Hummingbirds belong to the avian family Trochilidae, and their closest relatives are the equally fascinating swifts.</p>
       </div>
       <div class="card-footer">
         <button class='btn btn-sm btn-text-primary'>SHARE</button>
         <button class='btn btn-sm btn-text-primary'>LEARN MORE</button>
       </div>
     </div>
+    ```
+  </div>
+</Example>
+
+### Card Action
+
+<Example>
+  <div slot="preview">
+    <a href="#!" class="card card-action max-w-[22rem]">
+      <Image src={hummingbirdImg} alt="Hummingbird" class='card-img-top' />
+      <div class="card-body">
+        <h4 class="card-title">Hummingbirds</h4>
+        <p>Hummingbirds belong to the avian family Trochilidae, and their closest relatives are the equally fascinating swifts.</p>
+      </div>
+    </a>
+  </div>
+
+  <div slot="code">
+    ```html
+    <a href="#!" class="card card-action max-w-[22rem]">
+      <img src="assets/images/1.png" class='card-img-top' alt="Hummingbird" />
+      <div class="card-body">
+        <h4 class="card-title">Hummingbirds</h4>
+        <p>Hummingbirds belong to the avian family Trochilidae, and their closest relatives are the equally fascinating swifts.</p>
+      </div>
+    </a>
     ```
   </div>
 </Example>
@@ -91,8 +120,8 @@ import avatar1 from '../../assets/images/avatar_1.webp'
             <Image src={avatar1} alt="Avatar" class="rounded-full"/>
           </div>
           <div>
-            <p class="card-text text-default-color">Black-throated Mango male</p>
-            <p class="card-text">November 10, 2021</p>
+            <p class="text-default-color">Black-throated Mango male</p>
+            <p>November 10, 2021</p>
           </div>
           <button class='btn btn-icon ms-auto self-start -mr-2'>
             <span class='icon-[fluent--more-vertical-16-regular] text-lg'></span>
@@ -126,8 +155,8 @@ import avatar1 from '../../assets/images/avatar_1.webp'
             <img src="assets/images/avatar_1.webp"  alt="Avatar" class="rounded-full" />
           </div>
           <div>
-            <p class="card-text text-default-color">Black-throated Mango male</p>
-            <p class="card-text">November 10, 2021</p>
+            <p class="text-default-color">Black-throated Mango male</p>
+            <p>November 10, 2021</p>
           </div>
           <button class='btn btn-icon ms-auto self-start -mr-2'>
             <span class='icon-[fluent--more-vertical-16-regular] text-lg'></span>
@@ -148,6 +177,87 @@ import avatar1 from '../../assets/images/avatar_1.webp'
         <button class='btn btn-icon ms-auto'>
           <span class="icon-[material-symbols--expand-all-rounded] text-lg"></span>
         </button>
+      </div>
+    </div>
+    ```
+  </div>
+</Example>
+
+### Card overlay
+
+<Example>
+  <div slot="preview">
+    <div class="card card-img-overlay max-w-[22rem]">
+      <Image src={hummingbirdImg2} alt="Hummingbird" class="card-img-top" />
+      <div class="card-body flex flex-col items-start">
+        <h4 class="card-title">Hummingbirds</h4>
+        <p>Hummingbirds are birds native to the Americas and comprise the biological family Trochilidae.</p>
+        <button class="btn btn-sm btn-primary mt-auto">LEARN MORE</button>
+      </div>
+    </div>
+  </div>
+
+  <div slot="code">
+    ```html
+    <div class="card card-img-overlay max-w-[22rem]">
+      <img src="assets/images/2.png" class='card-img' alt="Hummingbird" />
+      <div class="card-body flex flex-col items-start">
+        <h4 class="card-title">Hummingbirds</h4>
+        <p>Hummingbirds are birds native to the Americas and comprise the biological family Trochilidae.</p>
+        <button class="btn btn-sm btn-primary mt-auto">LEARN MORE</button>
+      </div>
+    </div>
+    ```
+  </div>
+</Example>
+
+### Card Aside
+
+<Example>
+  <div slot="preview" class="space-y-3">
+    <div class="card card-aside max-w-[30rem]">
+      <div class="flex items-center justify-center">
+        <Image src={hummingbirdImg3} alt="Hummingbird" class='card-img-left' />
+      </div>
+      <div class="card-body">
+        <h4 class="card-title">Violetear</h4>
+        <p>The violetears are hummingbirds of the genus Colibri.</p>
+        <button class="btn btn-sm btn-primary mt-4">Continue</button>
+      </div>
+    </div>
+    <div class="card card-aside max-w-[30rem]">
+      <div class="card-body">
+        <h4 class="card-title">Violetear</h4>
+        <p>The violetears are hummingbirds of the genus Colibri.</p>
+        <button class="btn btn-sm btn-primary mt-4">Continue</button>
+      </div>
+      <div class="flex items-center justify-center">
+        <Image src={hummingbirdImg3} alt="Hummingbird" class='card-img-right' />
+      </div>
+    </div>
+  </div>
+
+  <div slot="code">
+    ```html
+    <div class="card card-aside max-w-[30rem]">
+      <div class="flex items-center justify-center">
+        <img src="assets/images/3.png" alt="Violetear" class='card-img-left' />
+      </div>
+      <div class="card-body">
+        <h4 class="card-title">Violetear</h4>
+        <p>The violetears are hummingbirds of the genus Colibri.</p>
+        <button class="btn btn-sm btn-primary mt-4">Continue</button>
+      </div>
+    </div>
+
+    <div class="card card-aside max-w-[30rem]">
+      <div class="card-body">
+        <h4 class="card-title">Violetear</h4>
+        <p>The violetears are hummingbirds of the genus Colibri.</p>
+        <button class="btn btn-sm btn-primary mt-4">Continue</button>
+      </div>
+      <div class="flex items-center justify-center">
+        <img src="assets/images/3.png" alt="Violetear" class='card-img-right' />
       </div>
     </div>
     ```
