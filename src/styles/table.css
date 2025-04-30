@@ -1,0 +1,30 @@
+@utility table {
+  --table-cell-padding-x: calc(var(--spacing) * 4);
+  --table-cell-padding-y: calc(var(--spacing) * 4);
+  --table-cell-border-color: var(--color-border-light);
+  --table-color: var(--color-default-color);
+  @apply w-full text-sm text-left
+  text-[var(--table-color)];
+  th {
+    @apply font-medium;
+  }
+  :where(th, td) {
+    @apply align-middle
+    py-[var(--table-cell-padding-y)]
+    px-[var(--table-cell-padding-x)]
+    border-b
+    border-[var(--table-cell-border-color)];
+  }
+}
+.table-edge-align {
+  tr {
+    th:first-child,
+    td:first-child {
+      @apply pl-0 text-left;
+    }
+    th:last-child,
+    td:last-child {
+      @apply pr-0 text-right;
+    }
+  }
+}
