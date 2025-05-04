@@ -205,3 +205,699 @@ import Example from "../../components/docs/Example.astro";
     ```
   </div>
 </Example>
+
+### Highlight Table
+
+<Example>
+  <div slot="preview">
+    <div class="overflow-x-auto rounded-2xl">
+      <table class="table table-highlight">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">001</th>
+            <td>Alice Johnson</td>
+            <td><a href="#!" class="link link-hover link-primary">`alice.johnson@example.com`</a></td>
+            <td>Active</td>
+          </tr>
+          <tr>
+            <th scope="row">002</th>
+            <td>Bob Smith</td>
+            <td><a href="#!" class="link link-hover link-primary">`bob.smith@example.com`</a></td>
+            <td>Inactive</td>
+          </tr>
+          <tr>
+            <th scope="row">003</th>
+            <td>Charlie Davis</td>
+            <td><a href="#!" class="link link-hover link-primary">`charlie.davis@example.com`</a></td>
+            <td>Pending</td>
+          </tr>
+          <tr>
+            <th scope="row">004</th>
+            <td>Diana Lee</td>
+            <td><a href="#!" class="link link-hover link-primary">`diana.lee@example.com`</a></td>
+            <td>Active</td>
+          </tr>
+          <tr>
+            <th scope="row">005</th>
+            <td>Ethan Brown</td>
+            <td><a href="#!" class="link link-hover link-primary">`ethan.brown@example.com`</a></td>
+            <td>Suspended</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <th scope="row"></th>
+            <td></td>
+            <td>
+              <h5 class="font-semibold">Total count: 5</h5>
+            </td>
+            <td></td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  </div>
+
+  <div slot="code">
+    ```html
+    <div class="overflow-x-auto rounded-2xl">
+      <table class="table table-highlight">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">001</th>
+            <td>Alice Johnson</td>
+            <td><a href="#!" class="link link-hover link-primary">`alice.johnson@example.com`</a></td>
+            <td>Active</td>
+          </tr>
+          <tr>
+            <th scope="row">002</th>
+            <td>Bob Smith</td>
+            <td><a href="#!" class="link link-hover link-primary">`bob.smith@example.com`</a></td>
+            <td>Inactive</td>
+          </tr>
+          <tr>
+            <th scope="row">003</th>
+            <td>Charlie Davis</td>
+            <td><a href="#!" class="link link-hover link-primary">`charlie.davis@example.com`</a></td>
+            <td>Pending</td>
+          </tr>
+          <tr>
+            <th scope="row">004</th>
+            <td>Diana Lee</td>
+            <td><a href="#!" class="link link-hover link-primary">`diana.lee@example.com`</a></td>
+            <td>Active</td>
+          </tr>
+          <tr>
+            <th scope="row">005</th>
+            <td>Ethan Brown</td>
+            <td><a href="#!" class="link link-hover link-primary">`ethan.brown@example.com`</a></td>
+            <td>Suspended</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <th scope="row"></th>
+            <td></td>
+            <td>
+              <h5 class="font-semibold">Total count: 5</h5>
+            </td>
+            <td></td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+    ```
+  </div>
+</Example>
+
+### Dense Table
+
+<Example>
+  <div slot="preview">
+    <div class="overflow-x-auto">
+      <table class="table table-dense">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">001</th>
+            <td>Alice Johnson</td>
+            <td><a href="#!" class="link link-hover link-primary">`alice.johnson@example.com`</a></td>
+            <td>Active</td>
+          </tr>
+          <tr>
+            <th scope="row">002</th>
+            <td>Bob Smith</td>
+            <td><a href="#!" class="link link-hover link-primary">`bob.smith@example.com`</a></td>
+            <td>Inactive</td>
+          </tr>
+          <tr>
+            <th scope="row">003</th>
+            <td>Charlie Davis</td>
+            <td><a href="#!" class="link link-hover link-primary">`charlie.davis@example.com`</a></td>
+            <td>Pending</td>
+          </tr>
+          <tr>
+            <th scope="row">004</th>
+            <td>Diana Lee</td>
+            <td><a href="#!" class="link link-hover link-primary">`diana.lee@example.com`</a></td>
+            <td>Active</td>
+          </tr>
+          <tr>
+            <th scope="row">005</th>
+            <td>Ethan Brown</td>
+            <td><a href="#!" class="link link-hover link-primary">`ethan.brown@example.com`</a></td>
+            <td>Suspended</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div slot="code">
+    ```html
+    <div class="overflow-x-auto">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">001</th>
+            <td>Alice Johnson</td>
+            <td><a href="#!" class="link link-hover link-primary">`alice.johnson@example.com`</a></td>
+            <td>Active</td>
+          </tr>
+          <tr>
+            <th scope="row">002</th>
+            <td>Bob Smith</td>
+            <td><a href="#!" class="link link-hover link-primary">`bob.smith@example.com`</a></td>
+            <td>Inactive</td>
+          </tr>
+          <tr>
+            <th scope="row">003</th>
+            <td>Charlie Davis</td>
+            <td><a href="#!" class="link link-hover link-primary">`charlie.davis@example.com`</a></td>
+            <td>Pending</td>
+          </tr>
+          <tr>
+            <th scope="row">004</th>
+            <td>Diana Lee</td>
+            <td><a href="#!" class="link link-hover link-primary">`diana.lee@example.com`</a></td>
+            <td>Active</td>
+          </tr>
+          <tr>
+            <th scope="row">005</th>
+            <td>Ethan Brown</td>
+            <td><a href="#!" class="link link-hover link-primary">`ethan.brown@example.com`</a></td>
+            <td>Suspended</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    ```
+  </div>
+</Example>
+
+### Hoverable Table
+
+<Example>
+  <div slot="preview">
+    <div class="overflow-x-auto rounded-t-2xl">
+      <table class="table table-highlight table-hover">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">001</th>
+            <td>Alice Johnson</td>
+            <td><a href="#!" class="link link-hover link-primary">`alice.johnson@example.com`</a></td>
+            <td>Active</td>
+          </tr>
+          <tr>
+            <th scope="row">002</th>
+            <td>Bob Smith</td>
+            <td><a href="#!" class="link link-hover link-primary">`bob.smith@example.com`</a></td>
+            <td>Inactive</td>
+          </tr>
+          <tr>
+            <th scope="row">003</th>
+            <td>Charlie Davis</td>
+            <td><a href="#!" class="link link-hover link-primary">`charlie.davis@example.com`</a></td>
+            <td>Pending</td>
+          </tr>
+          <tr>
+            <th scope="row">004</th>
+            <td>Diana Lee</td>
+            <td><a href="#!" class="link link-hover link-primary">`diana.lee@example.com`</a></td>
+            <td>Active</td>
+          </tr>
+          <tr>
+            <th scope="row">005</th>
+            <td>Ethan Brown</td>
+            <td><a href="#!" class="link link-hover link-primary">`ethan.brown@example.com`</a></td>
+            <td>Suspended</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div slot="code">
+    ```html
+    <div class="overflow-x-auto">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">001</th>
+            <td>Alice Johnson</td>
+            <td><a href="#!" class="link link-hover link-primary">`alice.johnson@example.com`</a></td>
+            <td>Active</td>
+          </tr>
+          <tr>
+            <th scope="row">002</th>
+            <td>Bob Smith</td>
+            <td><a href="#!" class="link link-hover link-primary">`bob.smith@example.com`</a></td>
+            <td>Inactive</td>
+          </tr>
+          <tr>
+            <th scope="row">003</th>
+            <td>Charlie Davis</td>
+            <td><a href="#!" class="link link-hover link-primary">`charlie.davis@example.com`</a></td>
+            <td>Pending</td>
+          </tr>
+          <tr>
+            <th scope="row">004</th>
+            <td>Diana Lee</td>
+            <td><a href="#!" class="link link-hover link-primary">`diana.lee@example.com`</a></td>
+            <td>Active</td>
+          </tr>
+          <tr>
+            <th scope="row">005</th>
+            <td>Ethan Brown</td>
+            <td><a href="#!" class="link link-hover link-primary">`ethan.brown@example.com`</a></td>
+            <td>Suspended</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    ```
+  </div>
+</Example>
+
+### Table sticky header
+
+<Example>
+  <div slot="preview">
+    <div class="overflow-auto rounded-t-2xl h-[19rem]">
+      <table class="table table-highlight table-sticky-header">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">001</th>
+            <td>Alice Johnson</td>
+            <td><a href="#!" class="link link-hover link-primary">`alice.johnson@example.com`</a></td>
+            <td>Active</td>
+          </tr>
+          <tr>
+            <th scope="row">002</th>
+            <td>Bob Smith</td>
+            <td><a href="#!" class="link link-hover link-primary">`bob.smith@example.com`</a></td>
+            <td>Inactive</td>
+          </tr>
+          <tr>
+            <th scope="row">003</th>
+            <td>Charlie Davis</td>
+            <td><a href="#!" class="link link-hover link-primary">`charlie.davis@example.com`</a></td>
+            <td>Pending</td>
+          </tr>
+          <tr>
+            <th scope="row">004</th>
+            <td>Diana Lee</td>
+            <td><a href="#!" class="link link-hover link-primary">`diana.lee@example.com`</a></td>
+            <td>Active</td>
+          </tr>
+          <tr>
+            <th scope="row">005</th>
+            <td>Ethan Brown</td>
+            <td><a href="#!" class="link link-hover link-primary">`ethan.brown@example.com`</a></td>
+            <td>Suspended</td>
+          </tr>
+          <tr>
+            <th scope="row">006</th>
+            <td>Fiona Green</td>
+            <td><a href="#!" class="link link-hover link-primary">`fiona.green@example.com`</a></td>
+            <td>Active</td>
+          </tr>
+          <tr>
+            <th scope="row">007</th>
+            <td>George Hill</td>
+            <td><a href="#!" class="link link-hover link-primary">`george.hill@example.com`</a></td>
+            <td>Inactive</td>
+          </tr>
+          <tr>
+            <th scope="row">008</th>
+            <td>Hannah Moore</td>
+            <td><a href="#!" class="link link-hover link-primary">`hannah.moore@example.com`</a></td>
+            <td>Active</td>
+          </tr>
+          <tr>
+            <th scope="row">009</th>
+            <td>Ian Thompson</td>
+            <td><a href="#!" class="link link-hover link-primary">`ian.thompson@example.com`</a></td>
+            <td>Pending</td>
+          </tr>
+          <tr>
+            <th scope="row">010</th>
+            <td>Julia White</td>
+            <td><a href="#!" class="link link-hover link-primary">`julia.white@example.com`</a></td>
+            <td>Active</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div slot="code">
+    ```html
+    <div class="overflow-auto rounded-t-2xl h-[19rem]">
+      <table class="table table-highlight table-sticky-header">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">001</th>
+            <td>Alice Johnson</td>
+            <td><a href="#!" class="link link-hover link-primary">`alice.johnson@example.com`</a></td>
+            <td>Active</td>
+          </tr>
+          <tr>
+            <th scope="row">002</th>
+            <td>Bob Smith</td>
+            <td><a href="#!" class="link link-hover link-primary">`bob.smith@example.com`</a></td>
+            <td>Inactive</td>
+          </tr>
+          <tr>
+            <th scope="row">003</th>
+            <td>Charlie Davis</td>
+            <td><a href="#!" class="link link-hover link-primary">`charlie.davis@example.com`</a></td>
+            <td>Pending</td>
+          </tr>
+          <tr>
+            <th scope="row">004</th>
+            <td>Diana Lee</td>
+            <td><a href="#!" class="link link-hover link-primary">`diana.lee@example.com`</a></td>
+            <td>Active</td>
+          </tr>
+          <tr>
+            <th scope="row">005</th>
+            <td>Ethan Brown</td>
+            <td><a href="#!" class="link link-hover link-primary">`ethan.brown@example.com`</a></td>
+            <td>Suspended</td>
+          </tr>
+          <tr>
+            <th scope="row">006</th>
+            <td>Fiona Green</td>
+            <td><a href="#!" class="link link-hover link-primary">`fiona.green@example.com`</a></td>
+            <td>Active</td>
+          </tr>
+          <tr>
+            <th scope="row">007</th>
+            <td>George Hill</td>
+            <td><a href="#!" class="link link-hover link-primary">`george.hill@example.com`</a></td>
+            <td>Inactive</td>
+          </tr>
+          <tr>
+            <th scope="row">008</th>
+            <td>Hannah Moore</td>
+            <td><a href="#!" class="link link-hover link-primary">`hannah.moore@example.com`</a></td>
+            <td>Active</td>
+          </tr>
+          <tr>
+            <th scope="row">009</th>
+            <td>Ian Thompson</td>
+            <td><a href="#!" class="link link-hover link-primary">`ian.thompson@example.com`</a></td>
+            <td>Pending</td>
+          </tr>
+          <tr>
+            <th scope="row">010</th>
+            <td>Julia White</td>
+            <td><a href="#!" class="link link-hover link-primary">`julia.white@example.com`</a></td>
+            <td>Active</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    ```
+  </div>
+</Example>
+
+### Spanning table
+A simple example with spanning rows & columns.
+
+<Example>
+  <div slot="preview">
+    <div class="overflow-x-auto">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col" colspan="3" class="text-center">Details</th>
+            <th scope="col">Price</th>
+          </tr>
+          <tr>
+            <th scope="col">Desc</th>
+            <th scope="col">Qty.</th>
+            <th scope="col">Unit</th>
+            <th scope="col">Sum</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Notebooks (Pack)</th>
+            <td>50</td>
+            <td>2.50</td>
+            <td>125.00</td>
+          </tr>
+          <tr>
+            <th scope="row">Pens (Dozen)</th>
+            <td>5</td>
+            <td>12.99</td>
+            <td>64.95</td>
+          </tr>
+          <tr>
+            <th scope="row">Desk Organizer</th>
+            <td>3</td>
+            <td>22.49</td>
+            <td>67.47</td>
+          </tr>
+          <tr>
+            <td rowspan="3"></td>
+            <th scope="row" colspan="2">Subtotal</th>
+            <td>257.42</td>
+          </tr>
+          <tr>
+            <th scope="row">Tax</th>
+            <td>6.5%</td>
+            <td>16.73</td>
+          </tr>
+          <tr>
+            <th scope="row" colspan="2">Total</th>
+            <td>274.15</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div slot="code">
+    ```html
+    <div class="overflow-x-auto">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col" colspan="3" class="text-center">Details</th>
+            <th scope="col">Price</th>
+          </tr>
+          <tr>
+            <th scope="col">Desc</th>
+            <th scope="col">Qty.</th>
+            <th scope="col">Unit</th>
+            <th scope="col">Sum</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Notebooks (Pack)</th>
+            <td>50</td>
+            <td>2.50</td>
+            <td>125.00</td>
+          </tr>
+          <tr>
+            <th scope="row">Pens (Dozen)</th>
+            <td>5</td>
+            <td>12.99</td>
+            <td>64.95</td>
+          </tr>
+          <tr>
+            <th scope="row">Desk Organizer</th>
+            <td>3</td>
+            <td>22.49</td>
+            <td>67.47</td>
+          </tr>
+          <tr>
+            <td rowspan="3"></td>
+            <th scope="row" colspan="2">Subtotal</th>
+            <td>257.42</td>
+          </tr>
+          <tr>
+            <th scope="row">Tax</th>
+            <td>6.5%</td>
+            <td>16.73</td>
+          </tr>
+          <tr>
+            <th scope="row" colspan="2">Total</th>
+            <td>274.15</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    ```
+  </div>
+</Example>
+
+
+### Caption
+
+<Example>
+  <div slot="preview">
+    <div class="overflow-x-auto">
+      <table class="table">
+        <caption>A basic table example with a caption</caption>
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">001</th>
+            <td>Alice Johnson</td>
+            <td><a href="#!" class="link link-hover link-primary">`alice.johnson@example.com`</a></td>
+            <td>Active</td>
+          </tr>
+          <tr>
+            <th scope="row">002</th>
+            <td>Bob Smith</td>
+            <td><a href="#!" class="link link-hover link-primary">`bob.smith@example.com`</a></td>
+            <td>Inactive</td>
+          </tr>
+          <tr>
+            <th scope="row">003</th>
+            <td>Charlie Davis</td>
+            <td><a href="#!" class="link link-hover link-primary">`charlie.davis@example.com`</a></td>
+            <td>Pending</td>
+          </tr>
+          <tr>
+            <th scope="row">004</th>
+            <td>Diana Lee</td>
+            <td><a href="#!" class="link link-hover link-primary">`diana.lee@example.com`</a></td>
+            <td>Active</td>
+          </tr>
+          <tr>
+            <th scope="row">005</th>
+            <td>Ethan Brown</td>
+            <td><a href="#!" class="link link-hover link-primary">`ethan.brown@example.com`</a></td>
+            <td>Suspended</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div slot="code">
+    ```html
+    <div class="overflow-x-auto">
+      <table class="table">
+        <caption>A basic table example with a caption</caption>
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">001</th>
+            <td>Alice Johnson</td>
+            <td><a href="#!" class="link link-hover link-primary">`alice.johnson@example.com`</a></td>
+            <td>Active</td>
+          </tr>
+          <tr>
+            <th scope="row">002</th>
+            <td>Bob Smith</td>
+            <td><a href="#!" class="link link-hover link-primary">`bob.smith@example.com`</a></td>
+            <td>Inactive</td>
+          </tr>
+          <tr>
+            <th scope="row">003</th>
+            <td>Charlie Davis</td>
+            <td><a href="#!" class="link link-hover link-primary">`charlie.davis@example.com`</a></td>
+            <td>Pending</td>
+          </tr>
+          <tr>
+            <th scope="row">004</th>
+            <td>Diana Lee</td>
+            <td><a href="#!" class="link link-hover link-primary">`diana.lee@example.com`</a></td>
+            <td>Active</td>
+          </tr>
+          <tr>
+            <th scope="row">005</th>
+            <td>Ethan Brown</td>
+            <td><a href="#!" class="link link-hover link-primary">`ethan.brown@example.com`</a></td>
+            <td>Suspended</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    ```
+  </div>
+</Example>
