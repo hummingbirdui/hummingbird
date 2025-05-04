@@ -2,9 +2,13 @@
   --table-cell-padding-x: calc(var(--spacing) * 4);
   --table-cell-padding-y: calc(var(--spacing) * 4);
   --table-cell-border-color: var(--color-border-light);
-  --table-color: var(--color-default-color);
-  @apply w-full text-sm text-left
-  text-[var(--table-color)];
+  --table-font-size: var(--text-sm);
+  --table-content: var(--color-highlight-color);
+  --table-head-content: var(--color-default-color);
+  @apply w-full text-left
+  text-[length:var(--table-font-size)]
+  text-[var(--table-content)]
+  leading-[1.3];
   th {
     @apply font-medium;
   }
@@ -15,8 +19,22 @@
     border-b
     border-[var(--table-cell-border-color)];
   }
+  thead,
+  tfoot {
+    td,
+    th {
+      --table-cell-padding-y: calc(var(--spacing) * 3);
+    }
+  }
+  thead {
+    td,
+    th {
+      --table-cell-padding-y: calc(var(--spacing) * 3);
+      @apply text-[var(--table-head-content)];
+    }
+  }
 }
-.table-edge-align {
+@utility table-edge-align {
   tr {
     th:first-child,
     td:first-child {
@@ -26,5 +44,56 @@
     td:last-child {
       @apply pr-0 text-right;
     }
+  }
+  caption {
+    @apply pl-0;
+  }
+}
+@utility table-highlight {
+  thead,
+  tfoot {
+    td,
+    th {
+      @apply border-b-0 bg-subtle;
+    }
+  }
+  &:has(tfoot) {
+    tbody {
+      tr:last-child {
+        td,
+        th {
+          @apply border-b-0;
+        }
+      }
+    }
+  }
+}
+@utility table-dense {
+  tbody {
+    td,
+    th {
+      --table-cell-padding-y: calc(var(--spacing) * 1.5);
+    }
+  }
+}
+
+@utility table-hover {
+  > tbody > tr:hover > * {
+    @apply bg-muted;
+  }
+}
+
+@utility table-sticky-header {
+  thead {
+    tr,
+    th {
+      @apply sticky top-0;
+    }
+  }
+}
+
+@layer base {
+  caption {
+    @apply text-left caption-bottom font-medium p-4;
   }
 }
