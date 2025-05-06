@@ -21,13 +21,13 @@
   border-[length:var(--card-border-width)]
   border-[var(--card-border-color)];
 }
-.card-action {
+@utility card-action {
   @apply cursor-pointer text-left transition-[background] duration-200;
   &:hover {
     --card-bg: var(--color-muted);
   }
 }
-.card-aside {
+@utility card-aside {
   @apply flex-row;
 }
 
@@ -57,20 +57,20 @@
   border-[var(--card-border-color)];
 }
 
-.card-body {
+@utility card-body {
   @apply flex-1
   px-[var(--card-padding-x)] 
   py-[var(--card-padding-y)];
 }
 
-.card-footer {
+@utility card-footer {
   @apply px-[var(--card-cap-padding-x)] 
   py-[var(--card-cap-padding-y)]
   text-[var(--card-cap-color)]
   bg-[var(--card-cap-bg)];
 }
 
-.card-title {
+@utility card-title {
   @apply text-xl font-bold
   text-[var(--card-title-color)]
   mb-[var(--card-title-space-y)];
@@ -78,14 +78,14 @@
     @apply mb-0;
   }
 }
-.card-subtitle {
+@utility card-subtitle {
   @apply text-base font-medium
   mb-[var(--card-title-space-y)];
 }
-.card-text {
+@utility card-text {
   @apply text-sm;
 }
-.card-img-overlay {
+@utility card-img-overlay {
   --card-border-width: 0px;
   @apply overflow-hidden rounded-lg;
   img {
