@@ -1,0 +1,180 @@
+@utility table {
+  --table-bg: initial;
+  --table-content: var(--color-highlight-color);
+  --table-cell-padding-x: calc(var(--spacing) * 4);
+  --table-cell-padding-y: calc(var(--spacing) * 4);
+  --table-border-color: var(--color-border-light);
+  --table-font-size: var(--text-sm);
+  --table-head-content: var(--color-default-color);
+  --table-striped-bg: var(--color-muted);
+  --table-striped-content: var(--color-highlight-color);
+  --table-active-bg: var(--color-highlight);
+  --table-active-content: var(--color-default-color);
+  --table-hover-bg: var(--color-highlight);
+  --table-hover-content: var(--color-highlight-color);
+
+  @apply w-full text-left
+  text-[length:var(--table-font-size)]
+  leading-[1.3];
+  th {
+    @apply font-medium;
+  }
+  > :not(caption) > * > * {
+    @apply align-middle
+    py-[var(--table-cell-padding-y)]
+    px-[var(--table-cell-padding-x)]
+    text-[var(--table-content)]
+    bg-[var(--table-bg)]
+    border-b
+    border-[var(--table-border-color)];
+  }
+  thead,
+  tfoot {
+    td,
+    th {
+      --table-cell-padding-y: calc(var(--spacing) * 3);
+    }
+  }
+  thead {
+    td,
+    th {
+      --table-cell-padding-y: calc(var(--spacing) * 3);
+      @apply text-[var(--table-head-content)];
+    }
+  }
+}
+
+@utility table-highlight {
+  thead,
+  tfoot {
+    td,
+    th {
+      @apply border-b-0 bg-subtle;
+    }
+  }
+  &:has(tfoot) {
+    tbody {
+      tr:last-child {
+        td,
+        th {
+          @apply border-b-0;
+        }
+      }
+    }
+  }
+}
+@utility table-sm {
+  tbody {
+    td,
+    th {
+      --table-cell-padding-y: calc(var(--spacing) * 1.5);
+    }
+  }
+}
+
+@utility table-sticky-header {
+  thead {
+    tr,
+    th {
+      @apply sticky top-0;
+    }
+  }
+}
+@utility table-striped {
+  > tbody > tr:nth-of-type(odd) > * {
+    --table-bg: var(--table-striped-bg);
+    --table-content: var(--table-striped-content);
+  }
+}
+@utility table-striped-columns {
+  > :not(caption) > tr > :nth-child(even) {
+    --table-bg: var(--table-striped-bg);
+    --table-content: var(--table-striped-content);
+  }
+}
+
+@utility table-bordered {
+  > :not(caption) > * {
+    @apply border-y border-x-0 border-[var(--table-border-color)];
+    > * {
+      @apply border-y-0 border-x;
+    }
+  }
+}
+@utility table-borderless {
+  > :not(caption) > * > * {
+    @apply border-b-0;
+  }
+}
+
+@utility table-active {
+  --table-bg: var(--table-active-bg);
+  --table-content: var(--table-active-content);
+}
+
+@utility table-hover {
+  > tbody > tr:hover > * {
+    @apply bg-[var(--table-hover-bg)] text-[var(--table-hover-content)];
+  }
+}
+
+@utility table-neutral {
+  --table-bg: var(--color-main);
+  --table-content: var(--color-contrast);
+  --table-head-content: var(--color-contrast);
+  --table-border-color: var(--color-light);
+  --table-striped-bg: --alpha(var(--color-dark) / 100%);
+  --table-striped-content: var(--color-contrast);
+  --table-hover-bg: var(--color-darker);
+  --table-hover-content: var(--color-contrast);
+  --table-active-bg: var(--color-darker);
+  --table-active-content: var(--color-contrast);
+}
+@utility table-primary {
+  --table-bg: var(--color-primary-lighter);
+  --table-striped-bg: --alpha(var(--color-primary-light) / 30%);
+  --table-border-color: --alpha(var(--color-primary) / 20%);
+  --table-hover-bg: --alpha(var(--color-primary-light) / 40%);
+  --table-active-bg: --alpha(var(--color-primary-light) / 40%);
+}
+@utility table-secondary {
+  --table-bg: var(--color-secondary-lighter);
+  --table-striped-bg: --alpha(var(--color-secondary-light) / 30%);
+  --table-border-color: --alpha(var(--color-secondary) / 20%);
+  --table-hover-bg: --alpha(var(--color-secondary-light) / 40%);
+  --table-active-bg: --alpha(var(--color-secondary-light) / 40%);
+}
+@utility table-info {
+  --table-bg: var(--color-info-lighter);
+  --table-striped-bg: --alpha(var(--color-info-light) / 30%);
+  --table-border-color: --alpha(var(--color-info) / 20%);
+  --table-hover-bg: --alpha(var(--color-info-light) / 40%);
+  --table-active-bg: --alpha(var(--color-info-light) / 40%);
+}
+@utility table-success {
+  --table-bg: var(--color-success-lighter);
+  --table-striped-bg: --alpha(var(--color-success-light) / 30%);
+  --table-border-color: --alpha(var(--color-success) / 20%);
+  --table-hover-bg: --alpha(var(--color-success-light) / 40%);
+  --table-active-bg: --alpha(var(--color-success-light) / 40%);
+}
+@utility table-warning {
+  --table-bg: var(--color-warning-lighter);
+  --table-striped-bg: --alpha(var(--color-warning-light) / 30%);
+  --table-border-color: --alpha(var(--color-warning) / 20%);
+  --table-hover-bg: --alpha(var(--color-warning-light) / 40%);
+  --table-active-bg: --alpha(var(--color-warning-light) / 40%);
+}
+@utility table-error {
+  --table-bg: var(--color-error-lighter);
+  --table-striped-bg: --alpha(var(--color-error-light) / 30%);
+  --table-border-color: --alpha(var(--color-error) / 20%);
+  --table-hover-bg: --alpha(var(--color-error-light) / 40%);
+  --table-active-bg: --alpha(var(--color-error-light) / 40%);
+}
+
+@layer base {
+  caption {
+    @apply text-left caption-bottom font-medium p-4;
+  }
+}
