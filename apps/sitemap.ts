@@ -87,6 +87,14 @@ const sitemap: Sitemap[] = [
         name: "Card",
         path: "/components/card",
       },
+      {
+        name: "Table",
+        path: "/components/table",
+      },
+      {
+        name: "List Group",
+        path: "/components/list-group",
+      },
     ],
   },
 ];

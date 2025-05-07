@@ -97,7 +97,7 @@
       --input-border-color: var(--color-border-base);
     }
     .form-label {
-      --input-label-color: var(--color-disabled);
+      --input-label-color: var(--color-disabled-color);
     }
   }
   &:hover {
@@ -235,7 +235,7 @@
   }
   &:has(input[disabled]) {
     .form-label {
-      --input-label-color: var(--color-disabled);
+      --input-label-color: var(--color-disabled-color);
     }
   }
 }
