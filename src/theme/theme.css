@@ -76,8 +76,8 @@
   --color-active: var(--color-gray-500);
   --color-hover: var(--color-gray-100);
   --color-selected: var(--color-gray-100);
-  --color-disabled: var(--color-gray-400);
-  --color-disabled-bg: var(--color-gray-200);
+  --color-disabled-color: var(--color-gray-400);
+  --color-disabled: var(--color-gray-200);
   --color-focus: var(--color-gray-300);
 
   /* font family */
@@ -189,8 +189,8 @@
     --color-active: var(--color-gray-500);
     --color-hover: var(--color-gray-700);
     --color-selected: var(--color-gray-900);
-    --color-disabled: var(--color-gray-500);
-    --color-disabled-bg: var(--color-gray-700);
+    --color-disabled-color: var(--color-gray-500);
+    --color-disabled: var(--color-gray-700);
     --color-focus: var(--color-gray-700);
   }
 }
