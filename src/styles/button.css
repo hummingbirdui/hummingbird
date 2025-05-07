@@ -34,7 +34,7 @@
   }
   &:is(:disabled, [disabled], .disabled) {
     @apply pointer-events-none text-disabled;
-    --btn-bg: var(--btn-disabled-bg, var(--color-disabled-bg));
+    --btn-bg: var(--btn-disabled-bg, var(--color-disabled));
     --btn-border-color: var(--btn-disabled-border);
   }
   + input[type="file"] {
@@ -143,7 +143,7 @@
   --btn-border-width: 1px;
   --btn-border-color: --alpha(var(--color-primary) / 50%);
   --btn-disabled-bg: transparent;
-  --btn-disabled-border: var(--color-disabled-bg);
+  --btn-disabled-border: var(--color-disabled);
 }
 @utility btn-outline-secondary {
   --btn-bg: transparent;
@@ -152,7 +152,7 @@
   --btn-border-width: 1px;
   --btn-border-color: --alpha(var(--color-secondary) / 50%);
   --btn-disabled-bg: transparent;
-  --btn-disabled-border: var(--color-disabled-bg);
+  --btn-disabled-border: var(--color-disabled);
 }
 @utility btn-outline-info {
   --btn-bg: transparent;
@@ -161,7 +161,7 @@
   --btn-border-width: 1px;
   --btn-border-color: --alpha(var(--color-info) / 50%);
   --btn-disabled-bg: transparent;
-  --btn-disabled-border: var(--color-disabled-bg);
+  --btn-disabled-border: var(--color-disabled);
 }
 @utility btn-outline-success {
   --btn-bg: transparent;
@@ -170,7 +170,7 @@
   --btn-border-width: 1px;
   --btn-border-color: --alpha(var(--color-success) / 50%);
   --btn-disabled-bg: transparent;
-  --btn-disabled-border: var(--color-disabled-bg);
+  --btn-disabled-border: var(--color-disabled);
 }
 @utility btn-outline-warning {
   --btn-bg: transparent;
@@ -179,7 +179,7 @@
   --btn-border-width: 1px;
   --btn-border-color: --alpha(var(--color-warning) / 50%);
   --btn-disabled-bg: transparent;
-  --btn-disabled-border: var(--color-disabled-bg);
+  --btn-disabled-border: var(--color-disabled);
 }
 @utility btn-outline-error {
   --btn-bg: transparent;
@@ -188,7 +188,7 @@
   --btn-border-width: 1px;
   --btn-border-color: --alpha(var(--color-error) / 50%);
   --btn-disabled-bg: transparent;
-  --btn-disabled-border: var(--color-disabled-bg);
+  --btn-disabled-border: var(--color-disabled);
 }
 @utility btn-outline-neutral {
   --btn-bg: transparent;
@@ -197,7 +197,7 @@
   --btn-border-width: 1px;
   --btn-border-color: var(--color-emphasis);
   --btn-disabled-bg: transparent;
-  --btn-disabled-border: var(--color-disabled-bg);
+  --btn-disabled-border: var(--color-disabled);
 }
 [class*="btn-outline"] {
   @apply py-[calc(var(--input-btn-padding-y)_-_1px)];

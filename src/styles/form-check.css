@@ -8,7 +8,7 @@
   --form-check-input-wrapper-bg: --alpha(var(--color-primary) / 12%);
   @apply relative inline-flex items-center justify-center rounded-full cursor-pointer 
     appearance-none
-    p-2.25
+    p-2.5
     bg-transparent
     hover:bg-[var(--form-check-input-wrapper-bg)];
   &:has(input[type="checkbox"][disabled]),
@@ -98,8 +98,8 @@
     filter: none;
     --form-check-input-border: var(--color-border-light);
     &:checked {
-      --form-check-input-border: var(--color-disabled);
-      --form-check-input-bg: var(--color-disabled);
+      --form-check-input-border: var(--color-disabled-color);
+      --form-check-input-bg: var(--color-disabled-color);
     }
   }
 }

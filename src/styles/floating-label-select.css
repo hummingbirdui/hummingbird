@@ -22,7 +22,7 @@
     &:has(> select[disabled]) {
       & + .form-label {
         @apply cursor-default;
-        --input-label-color: var(--color-disabled);
+        --input-label-color: var(--color-disabled-color);
       }
     }
   }
@@ -59,7 +59,7 @@
     &:has(> select[disabled]) {
       & + .form-label {
         @apply cursor-default;
-        --input-label-color: var(--color-disabled);
+        --input-label-color: var(--color-disabled-color);
       }
     }
   }
