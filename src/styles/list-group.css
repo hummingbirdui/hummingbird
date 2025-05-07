@@ -1,0 +1,82 @@
+@utility list-group {
+  --list-group-bg: var(--color-subtle);
+  --list-group-content: var(--color-default-color);
+  --list-group-padding-y: calc(var(--spacing) * 2);
+  --list-group-corder-color: var(--color-border-base);
+  --list-group-border-radius: var(--radius-lg);
+  --list-group-item-padding-x: calc(var(--spacing) * 4);
+  --list-group-item-padding-y: calc(var(--spacing) * 2.5);
+  --list-group-action-content: var(--color-highlight-color);
+  --list-group-hover-bg: var(--color-muted);
+  --list-group-hover-content: var(--color-highlight-color);
+  --list-group-active-bg: var(--color-primary-lighter);
+  --list-group-active-content: var(--color-primary);
+  --list-group-disabled-bg: inherit;
+  --list-group-disabled-content: var(--color-disabled-color);
+
+  @apply relative flex flex-col
+  pl-0 mb-0
+  py-[var(--list-group-padding-y)]
+  bg-[var(--list-group-bg)]
+  rounded-[var(--list-group-border-radius)];
+
+  hr {
+    @apply border-[var(--list-group-corder-color)];
+  }
+}
+
+/* @utility list-group-outlined {
+  --list-group-bg: transparent;
+  @apply border border-[var(--list-group-corder-color)];
+} */
+
+@utility list-group-item {
+  @apply px-[var(--list-group-item-padding-x)]
+  py-[var(--list-group-item-padding-y)]
+  text-[var(--list-group-content)]
+  no-underline
+  leading-[1.5];
+  &:is(:disabled, .disabled) {
+    @apply pointer-events-none
+    text-[var(--list-group-disabled-content)]
+    bg-[var(--list-group-disabled-bg)];
+  }
+  &.active {
+    @apply text-[var(--list-group-active-content)]
+    bg-[var(--list-group-active-bg)];
+  }
+}
+
+@utility list-group-item-action {
+  @apply w-full text-left
+  text-[var(--list-group-action-content)];
+  &:not(.active) {
+    &:hover,
+    &:focus {
+      @apply no-underline
+     text-[var(--list-group-hover-content)]
+     bg-[var(--list-group-hover-bg)];
+    }
+    &:active {
+      @apply text-[var(--list-group-active-content)]
+      bg-[var(--list-group-active-bg)];
+    }
+  }
+}
+
+@utility list-group-numbered {
+  counter-reset: section;
+  > .list-group-item::before {
+    content: counters(section, ".") ". ";
+    counter-increment: section;
+  }
+}
+@utility list-group-item-pinned {
+  @apply sticky top-0 font-semibold bg-muted;
+}
+@utility list-text-primary {
+  @apply text-base font-semibold text-default-color;
+}
+@utility list-text-secondary {
+  @apply text-sm font-normal text-highlight-color;
+}
