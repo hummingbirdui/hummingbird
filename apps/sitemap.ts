@@ -91,6 +91,10 @@ const sitemap: Sitemap[] = [
         name: "Table",
         path: "/components/table",
       },
+      {
+        name: "List Group",
+        path: "/components/list-group",
+      },
     ],
   },
 ];
