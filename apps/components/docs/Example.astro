@@ -17,7 +17,7 @@
       <slot name="code" />
     </div>
   </div> -->
-  <div class="border border-border-light rounded-2xl overflow-hidden not-prose">
+  <div class="grid border border-border-light rounded-2xl not-prose">
     <div class="p-6">
       <slot name="preview" />
     </div>
@@ -28,9 +28,9 @@
         ></span>
       </button>
     </div>
-    <!-- <div class="grid"> -->
-    <slot name="code" />
-    <!-- </div> -->
+    <div class="rounded-b-2xl overflow-hidden">
+      <slot name="code" />
+    </div>
   </div>
 </div>
 
