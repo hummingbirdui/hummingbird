@@ -11,11 +11,11 @@ const toggleSidenav = () => {
 };
 
 const toggleTheme = (theme: Theme) => {
-  let html = document.querySelector("html");
+  const html = document.documentElement;
   if (theme === "dark") {
-    html?.classList.add("dark");
+    html.classList.add("dark");
   } else {
-    html?.classList.remove("dark");
+    html.classList.remove("dark");
   }
 };
 
@@ -33,17 +33,21 @@ const updateToggleThemeButton = (theme: Theme) => {
 
 document.addEventListener("DOMContentLoaded", () => {
   toggleSidenav();
+  let savedTheme = localStorage.getItem("theme") as Theme | null;
+  let initialTheme: Theme = savedTheme ?? "light";
 
-  // toggle theme
+  toggleTheme(initialTheme);
+  updateToggleThemeButton(initialTheme);
+  if (!savedTheme) {
+    localStorage.setItem("theme", initialTheme);
+  }
   const toggleThemeBtn = document.querySelector("[data-theme-toggle-btn]");
   toggleThemeBtn?.addEventListener("click", () => {
-    let currentTheme: Theme =
+    const newTheme: Theme =
       localStorage.getItem("theme") === "dark" ? "light" : "dark";
 
-    document.documentElement.classList.toggle("dark", currentTheme === "dark");
-    localStorage.setItem("theme", currentTheme);
-
-    toggleTheme(currentTheme);
-    updateToggleThemeButton(currentTheme);
+    localStorage.setItem("theme", newTheme);
+    toggleTheme(newTheme);
+    updateToggleThemeButton(newTheme);
   });
 });
