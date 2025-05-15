@@ -1,1 +1,1 @@
-export { default as HummingbirdModal } from "./components/modal";
+export { default as HummingbirdDropdown } from "./scripts/dropdown";
