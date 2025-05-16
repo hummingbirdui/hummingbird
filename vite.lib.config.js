@@ -1,6 +1,7 @@
-import path, { resolve } from "path";
-import { defineConfig } from "vite";
-import dts from "vite-plugin-dts";
+/* eslint-disable no-undef */
+import { resolve } from 'path';
+import { defineConfig } from 'vite';
+import dts from 'vite-plugin-dts';
 
 export default defineConfig({
   publicDir: false,
@@ -10,43 +11,44 @@ export default defineConfig({
     sourcemap: true,
     lib: {
       entry: {
-        index: resolve(__dirname, "src/index.ts"),
-        modal: resolve(__dirname, "src/components/modal.ts"),
-        global: resolve(__dirname, "src/global.ts"),
+        index: resolve(__dirname, 'src/index.ts'),
+        modal: resolve(__dirname, 'src/scripts/modal.ts'),
+        dropdown: resolve(__dirname, 'src/scripts/dropdown.ts'),
+        global: resolve(__dirname, 'src/global.ts'),
       },
-      formats: ["cjs", "es"],
+      formats: ['cjs', 'es'],
     },
     rollupOptions: {
       output: [
         {
-          format: "cjs",
-          dir: "lib/cjs",
+          format: 'cjs',
+          dir: 'lib/cjs',
           entryFileNames: (chunkInfo) => {
-            if (chunkInfo.facadeModuleId?.includes("components")) {
-              return "components/[name].js";
+            if (chunkInfo.facadeModuleId?.includes('scripts')) {
+              return 'scripts/[name].js';
             }
-            return "[name].js";
+            return '[name].js';
           },
-          chunkFileNames: "dom/[name].js",
+          chunkFileNames: 'dom/[name].js',
         },
         {
-          format: "es",
-          dir: "lib/esm",
+          format: 'es',
+          dir: 'lib/esm',
           entryFileNames: (chunkInfo) => {
-            if (chunkInfo.facadeModuleId?.includes("components")) {
-              return "components/[name].js";
+            if (chunkInfo.facadeModuleId?.includes('scripts')) {
+              return 'scripts/[name].js';
             }
-            return "[name].js";
+            return '[name].js';
           },
-          chunkFileNames: "dom/[name].js",
+          chunkFileNames: 'dom/[name].js',
         },
       ],
     },
   },
   plugins: [
     dts({
-      outDir: ["lib/cjs", "lib/esm"],
-      include: ["src"],
+      outDir: ['lib/cjs', 'lib/esm'],
+      include: ['src'],
     }),
   ],
 });
