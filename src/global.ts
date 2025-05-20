@@ -1,7 +1,7 @@
-import type HummingbirdDropdown from "./scripts/dropdown";
+import Dropdown from './scripts/dropdown';
 
 declare global {
   interface Window {
-    HummingbirdDropdown: typeof HummingbirdDropdown;
+    Dropdown: typeof Dropdown;
   }
 }
