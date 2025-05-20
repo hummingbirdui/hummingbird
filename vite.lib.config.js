@@ -12,11 +12,8 @@ export default defineConfig({
     lib: {
       entry: {
         index: resolve(__dirname, 'src/index.ts'),
-        modal: resolve(__dirname, 'src/scripts/modal.ts'),
         dropdown: resolve(__dirname, 'src/scripts/dropdown.ts'),
-        global: resolve(__dirname, 'src/global.ts'),
       },
-      formats: ['cjs', 'es'],
     },
     rollupOptions: {
       output: [
@@ -30,6 +27,7 @@ export default defineConfig({
             return '[name].js';
           },
           chunkFileNames: 'dom/[name].js',
+          exports: 'named',
         },
         {
           format: 'es',
@@ -41,6 +39,7 @@ export default defineConfig({
             return '[name].js';
           },
           chunkFileNames: 'dom/[name].js',
+          exports: 'named',
         },
       ],
     },
