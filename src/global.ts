@@ -1,7 +1,7 @@
-import HummingbirdModal from "./components/modal";
+import Dropdown from './scripts/dropdown';
 
 declare global {
   interface Window {
-    HummingbirdModal: typeof HummingbirdModal;
+    Dropdown: typeof Dropdown;
   }
 }

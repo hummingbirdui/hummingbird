@@ -7,18 +7,7 @@ const { fluid } = Astro.props;
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Spline+Sans+Mono:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <title>Hummingbird</title>
-    <script>
+    <script is:inline>
       document.documentElement.classList.toggle(
         "dark",
         localStorage.theme === "dark" ||
@@ -26,11 +15,23 @@ const { fluid } = Astro.props;
             window.matchMedia("(prefers-color-scheme: dark)").matches)
       );
     </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="../style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Spline+Sans+Mono:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Hummingbird</title>
   </head>
   <body class="bg-default text-default-color">
     <Navbar fluid={fluid} />
     <slot />
-    <script type="module" src="../../src/index.ts"></script>
-    <script type="module" src="../../apps/index.ts"></script>
+    <script src="../../static/docs.js"></script>
+    <script src="../../static/hummingbird.js"></script>
   </body>
 </html>

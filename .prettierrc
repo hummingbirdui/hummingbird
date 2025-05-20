@@ -1,0 +1,16 @@
+{
+  "singleQuote": true,
+  "eslintIntegration": true,
+  "plugins": ["prettier-plugin-tailwindcss"],
+  "overrides": [
+    {
+      "files": ["*.mdx", "*.md"],
+      "options": {
+        "singleQuote": false,
+        "parser": "mdx",
+        "proseWrap": "never",
+        "printWidth": 10000
+      }
+    }
+  ]
+}

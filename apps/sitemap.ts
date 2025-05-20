@@ -95,6 +95,10 @@ const sitemap: Sitemap[] = [
         name: "List Group",
         path: "/components/list-group",
       },
+      {
+        name: "Dropdowns",
+        path: "/components/dropdowns",
+      },
     ],
   },
 ];
