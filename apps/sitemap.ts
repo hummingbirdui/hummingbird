@@ -8,96 +8,100 @@ interface Sitemap {
 
 const sitemap: Sitemap[] = [
   {
-    subHeader: "Getting Started",
+    subHeader: 'Getting Started',
     items: [
       {
-        name: "Introduction",
-        path: "#",
+        name: 'Introduction',
+        path: '#',
       },
       {
-        name: "Installation",
-        path: "#",
+        name: 'Installation',
+        path: '#',
       },
       {
-        name: "Tutorial",
-        path: "#",
+        name: 'Tutorial',
+        path: '#',
       },
     ],
   },
   {
-    subHeader: "Components",
+    subHeader: 'Components',
     items: [
       {
-        name: "Buttons",
-        path: "/components/buttons",
+        name: 'Buttons',
+        path: '/components/buttons',
       },
       {
-        name: "Text Field",
-        path: "/components/text-field",
+        name: 'Text Field',
+        path: '/components/text-field',
       },
       {
-        name: "Floating labels",
-        path: "/components/floating-labels",
+        name: 'Floating labels',
+        path: '/components/floating-labels',
       },
       {
-        name: "Select",
-        path: "/components/select",
+        name: 'Select',
+        path: '/components/select',
       },
       {
-        name: "File Input",
-        path: "/components/file-input",
+        name: 'File Input',
+        path: '/components/file-input',
       },
       {
-        name: "Checkbox",
-        path: "/components/checkbox",
+        name: 'Checkbox',
+        path: '/components/checkbox',
       },
       {
-        name: "Radio",
-        path: "/components/radio",
+        name: 'Radio',
+        path: '/components/radio',
       },
       {
-        name: "Switch",
-        path: "/components/switch",
+        name: 'Switch',
+        path: '/components/switch',
       },
       {
-        name: "Range",
-        path: "/components/range",
+        name: 'Range',
+        path: '/components/range',
       },
       {
-        name: "Badge",
-        path: "/components/badge",
+        name: 'Badge',
+        path: '/components/badge',
       },
       {
-        name: "Alert",
-        path: "/components/alert",
+        name: 'Alert',
+        path: '/components/alert',
       },
       {
-        name: "Link",
-        path: "/components/link",
+        name: 'Link',
+        path: '/components/link',
       },
       {
-        name: "Breadcrumb",
-        path: "/components/breadcrumb",
+        name: 'Breadcrumb',
+        path: '/components/breadcrumb',
       },
       {
-        name: "Avatar",
-        path: "/components/avatar",
+        name: 'Avatar',
+        path: '/components/avatar',
       },
       {
-        name: "Card",
-        path: "/components/card",
+        name: 'Card',
+        path: '/components/card',
       },
       {
-        name: "Table",
-        path: "/components/table",
+        name: 'Table',
+        path: '/components/table',
       },
       {
-        name: "List Group",
-        path: "/components/list-group",
+        name: 'List Group',
+        path: '/components/list-group',
       },
       {
-        name: "Dropdowns",
-        path: "/components/dropdowns",
+        name: 'Dropdowns',
+        path: '/components/dropdowns',
+      },
+      {
+        name: 'Tooltip',
+        path: '/components/tooltip',
       },
     ],
   },

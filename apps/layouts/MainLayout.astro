@@ -1,6 +1,6 @@
 ---
-import "../style.css";
-import Navbar from "../components/common/Navbar.astro";
+import '../style.css';
+import Navbar from '../components/common/Navbar.astro';
 const { fluid } = Astro.props;
 ---
 
@@ -9,10 +9,10 @@ const { fluid } = Astro.props;
   <head>
     <script is:inline>
       document.documentElement.classList.toggle(
-        "dark",
-        localStorage.theme === "dark" ||
-          (!("theme" in localStorage) &&
-            window.matchMedia("(prefers-color-scheme: dark)").matches)
+        'dark',
+        localStorage.theme === 'dark' ||
+          (!('theme' in localStorage) &&
+            window.matchMedia('(prefers-color-scheme: dark)').matches)
       );
     </script>
     <meta charset="UTF-8" />
@@ -21,7 +21,7 @@ const { fluid } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="../style.css" />
+
     <link
       href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Spline+Sans+Mono:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
