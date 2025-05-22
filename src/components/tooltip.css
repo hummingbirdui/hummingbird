@@ -1,0 +1,108 @@
+.tooltip {
+  --tooltip-zindex: 1080;
+  --tooltip-max-width: 12.5rem;
+  --tooltip-padding-x: calc(var(--spacing) * 2.5);
+  --tooltip-padding-y: calc(var(--spacing) * 2);
+  --tooltip-bg: var(--color-main);
+  --tooltip-content: var(--color-contrast);
+  --tooltip-font-size: var(--text-xs);
+  --tooltip-margin: calc(var(--spacing) * 2);
+  --tooltip-opacity: 1;
+  --tooltip-border-radius: var(--radius-sm);
+  --tooltip-arrow-width: 0.75rem;
+  --tooltip-arrow-height: 0.53rem;
+  --tooltip-arrow-border-radius: calc(var(--spacing) * 0.5);
+  @apply z-[var(--tooltip-zindex)] block
+  text-[length:var(--tooltip-font-size)]
+  break-words
+  leading-[1.2]
+  opacity-0
+  transition-opacity duration-200;
+  &.show {
+    @apply opacity-[var(--tooltip-opacity)];
+  }
+  .tooltip-arrow {
+    @apply w-[var(--tooltip-arrow-width)]
+    h-[var(--tooltip-arrow-height)]
+    overflow-hidden;
+
+    &::before {
+      @apply content-['']
+      block w-full h-full
+      bg-[var(--tooltip-bg)]
+      rotate-45;
+    }
+  }
+}
+
+@utility bs-tooltip-top {
+  @apply mb-[var(--tooltip-margin)]!;
+  .tooltip-arrow {
+    @apply bottom-0 -mb-[var(--tooltip-arrow-height)];
+    &::before {
+      @apply origin-[100%_0]
+      rounded-br-[var(--tooltip-arrow-border-radius)];
+    }
+  }
+}
+
+@utility bs-tooltip-end {
+  --tooltip-arrow-height: 0.75rem;
+  --tooltip-arrow-width: 0.53rem;
+  @apply ml-[var(--tooltip-margin)]!;
+  .tooltip-arrow {
+    @apply left-0 -ml-[var(--tooltip-arrow-width)];
+    &::before {
+      @apply origin-[100%_100%]
+      rounded-bl-[var(--tooltip-arrow-border-radius)];
+    }
+  }
+}
+
+@utility bs-tooltip-bottom {
+  @apply mt-[var(--tooltip-margin)]!;
+  .tooltip-arrow {
+    @apply top-0 -mt-[var(--tooltip-arrow-height)];
+    &::before {
+      @apply origin-[0px_100%]
+      rounded-tl-[var(--tooltip-arrow-border-radius)];
+    }
+  }
+}
+
+@utility bs-tooltip-start {
+  --tooltip-arrow-height: 0.75rem;
+  --tooltip-arrow-width: 0.53rem;
+  @apply mr-[var(--tooltip-margin)]!;
+  .tooltip-arrow {
+    @apply right-0 -mr-[var(--tooltip-arrow-width)];
+    &::before {
+      @apply origin-[0_0]
+      rounded-tr-[var(--tooltip-arrow-border-radius)];
+    }
+  }
+}
+
+.bs-tooltip-auto {
+  &[data-popper-placement^='top'] {
+    @apply bs-tooltip-top;
+  }
+  &[data-popper-placement^='right'] {
+    @apply bs-tooltip-end;
+  }
+  &[data-popper-placement^='bottom'] {
+    @apply bs-tooltip-bottom;
+  }
+  &[data-popper-placement^='left'] {
+    @apply bs-tooltip-start;
+  }
+}
+
+.tooltip-inner {
+  @apply max-w-[var(--tooltip-max-width)]
+  bg-[var(--tooltip-bg)]
+  px-[var(--tooltip-padding-x)]
+  py-[var(--tooltip-padding-y)]
+  text-center text-[var(--tooltip-content)]
+  rounded-[var(--tooltip-border-radius)];
+}
