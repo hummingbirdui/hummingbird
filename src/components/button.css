@@ -33,11 +33,12 @@
     --btn-bg: var(--btn-hover-bg);
   }
   &:is(:disabled, [disabled], .disabled) {
-    @apply pointer-events-none text-disabled;
+    @apply pointer-events-none;
     --btn-bg: var(--btn-disabled-bg, var(--color-disabled));
+    --btn-content: var(--btn-disabled-content, var(--color-disabled-color));
     --btn-border-color: var(--btn-disabled-border);
   }
-  + input[type="file"] {
+  + input[type='file'] {
     @apply hidden;
   }
 }
@@ -199,7 +200,7 @@
   --btn-disabled-bg: transparent;
   --btn-disabled-border: var(--color-disabled);
 }
-[class*="btn-outline"] {
+[class*='btn-outline'] {
   @apply py-[calc(var(--input-btn-padding-y)_-_1px)];
   &.btn-sm {
     @apply py-[calc(var(--input-btn-padding-y)_-_1px)];

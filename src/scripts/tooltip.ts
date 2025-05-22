@@ -1,4 +1,5 @@
 import * as Popper from '@popperjs/core';
+import BsTooltip from 'bootstrap/js/dist/tooltip';
 
 type PopoverPlacement = 'auto' | 'top' | 'bottom' | 'left' | 'right';
 type Offset = [number, number];
@@ -69,3 +70,18 @@ export enum TooltipEvents {
   HIDDEN = 'hidden.bs.tooltip',
   INSERTED = 'inserted.bs.tooltip',
 }
+
+const Tooltip = BsTooltip as unknown as TooltipStatic;
+
+const tooltipTriggerList = document.querySelectorAll(
+  '[data-bs-toggle="tooltip"]',
+);
+Array.from(tooltipTriggerList).map(
+  (tooltipTriggerEl) => new Tooltip(tooltipTriggerEl),
+);
+
+if (typeof window !== 'undefined') {
+  window.Tooltip = Tooltip;
+}
+
+export default Tooltip;

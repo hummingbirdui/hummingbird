@@ -1,5 +1,5 @@
-@import "tailwindcss";
-@import "../src/index.css";
+@import 'tailwindcss';
+@import '../src/index.css';
 @plugin '@tailwindcss/typography';
 @plugin "@iconify/tailwind4";
 @custom-variant dark (&:where(.dark, .dark *));
@@ -26,4 +26,8 @@
     font-weight: var(--shiki-dark-font-weight) !important;
     text-decoration: var(--shiki-dark-text-decoration) !important;
   }
+}
+.custom-tooltip {
+  --tooltip-bg: var(--color-info);
+  --tooltip-content: var(--color-contrast);
 }
