@@ -11,6 +11,12 @@
         "proseWrap": "never",
         "printWidth": 10000
       }
+    },
+    {
+      "files": ["*.css"],
+      "options": {
+        "plugins": []
+      }
     }
   ]
 }
