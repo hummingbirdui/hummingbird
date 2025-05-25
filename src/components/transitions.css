@@ -1,0 +1,21 @@
+.fade {
+  @apply transition-opacity duration-150 ease-linear;
+  &:not(.show) {
+    @apply opacity-0;
+  }
+}
+.collapse {
+  @apply visible;
+  &:not(.show) {
+    @apply hidden;
+  }
+}
+.collapsing {
+  @apply h-0 overflow-hidden
+  transition-[height] duration-300;
+
+  &.collapse-horizontal {
+    @apply w-0 h-auto
+    transition-[width] duration-300;
+  }
+}
