@@ -10,3 +10,10 @@ export {
   type TooltipInstance,
   type TooltipStatic,
 } from './scripts/tooltip';
+
+export {
+  default as Collapse,
+  type CollapseOptions,
+  type CollapseInstance,
+  type CollapseStatic,
+} from './scripts/collapse';

@@ -1,0 +1,37 @@
+import BsCollapse from 'bootstrap/js/dist/collapse';
+
+export interface CollapseOptions {
+  parent: string | Element;
+  toggle: boolean;
+}
+
+export interface CollapseInstance {
+  toggle(): void;
+  show(): void;
+  hide(): void;
+}
+
+export interface CollapseStatic {
+  new (element: string | Element, options?: CollapseOptions): CollapseInstance;
+  getInstance(element: Element | string): CollapseInstance | null;
+  getOrCreateInstance(
+    element: Element | string,
+    config?: CollapseOptions,
+  ): CollapseInstance;
+  Default: CollapseOptions;
+}
+
+export enum CollapseEvents {
+  show = 'show.bs.collapse',
+  shown = 'shown.bs.collapse',
+  hide = 'hide.bs.collapse',
+  hidden = 'hidden.bs.collapse',
+}
+
+const Collapse = BsCollapse as unknown as CollapseStatic;
+
+if (typeof window !== 'undefined') {
+  window.Collapse = Collapse;
+}
+
+export default Collapse;
