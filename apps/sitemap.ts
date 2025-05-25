@@ -103,6 +103,10 @@ const sitemap: Sitemap[] = [
         name: 'Tooltip',
         path: '/components/tooltip',
       },
+      {
+        name: 'Collapse',
+        path: '/components/collapse',
+      },
     ],
   },
 ];
