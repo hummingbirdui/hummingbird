@@ -107,6 +107,10 @@ const sitemap: Sitemap[] = [
         name: 'Collapse',
         path: '/components/collapse',
       },
+      {
+        name: 'Accordion',
+        path: '/components/accordion',
+      },
     ],
   },
 ];
