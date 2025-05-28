@@ -1,0 +1,382 @@
+---
+title: Offcanvas
+desc: Build hidden sidebars into your project for navigation, shopping carts, and more with a few classes and our JavaScript plugin.
+layout: "../../layouts/LayoutDoc.astro"
+---
+
+import Example from "../../components/docs/Example.astro";
+
+### Example
+
+<Example>
+  <div slot="preview" class='not-prose'>
+    <div class="space-x-2 space-y-2">
+      <a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+        Link with href
+      </a>
+      <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+        Button with data-bs-target
+      </button>
+    </div>
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title font-semibold" id="offcanvasExampleLabel">Offcanvas</h5>
+        <button type="button" class="btn btn-icon ms-auto" data-bs-dismiss="offcanvas" aria-label="Close">
+          <span class="icon-[material-symbols--close-rounded] text-base"></span>
+        </button>
+      </div>
+      <div class="offcanvas-body">
+        <div class="list-group bg-transparent p-0">
+          <a href="#!" class="list-group-item list-group-item-action rounded-md active" aria-current="true">List Item One</a>
+          <a href="#!" class="list-group-item list-group-item-action rounded-md">List Item Two</a>
+          <a href="#!" class="list-group-item list-group-item-action rounded-md">List Item Three</a>
+          <a href="#!" class="list-group-item list-group-item-action rounded-md">List Item Four</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div slot="code">
+    ```html
+    <a class="btn btn-primary me-2" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+      Link with href
+    </a>
+    <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+      Button with data-bs-target
+    </button>
+
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title font-semibold" id="offcanvasExampleLabel">Offcanvas</h5>
+        <button type="button" class="btn btn-icon ms-auto" data-bs-dismiss="offcanvas" aria-label="Close">
+          <span class="icon-[material-symbols--close-rounded] text-base"></span>
+        </button>
+      </div>
+      <div class="offcanvas-body">
+        <div class="list-group bg-transparent p-0">
+          <a href="#!" class="list-group-item list-group-item-action rounded-md active" aria-current="true">List Item One</a>
+          <a href="#!" class="list-group-item list-group-item-action rounded-md">List Item Two</a>
+          <a href="#!" class="list-group-item list-group-item-action rounded-md">List Item Three</a>
+          <a href="#!" class="list-group-item list-group-item-action rounded-md">List Item Four</a>
+        </div>
+      </div>
+    </div>
+    ```
+
+  </div>
+</Example>
+
+### Body scrolling
+
+<Example>
+  <div slot="preview" class='not-prose'>
+    <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">Enable body scrolling</button>
+
+    <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title font-semibold" id="offcanvasScrollingLabel">Offcanvas</h5>
+        <button type="button" class="btn btn-icon ms-auto" data-bs-dismiss="offcanvas" aria-label="Close">
+          <span class="icon-[material-symbols--close-rounded] text-base"></span>
+        </button>
+      </div>
+      <div class="offcanvas-body">
+        <div class="list-group bg-transparent p-0">
+          <a href="#!" class="list-group-item list-group-item-action rounded-md active" aria-current="true">List Item One</a>
+          <a href="#!" class="list-group-item list-group-item-action rounded-md">List Item Two</a>
+          <a href="#!" class="list-group-item list-group-item-action rounded-md">List Item Three</a>
+          <a href="#!" class="list-group-item list-group-item-action rounded-md">List Item Four</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div slot="code">
+    ```html
+    <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">Enable body scrolling</button>
+
+    <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title font-semibold" id="offcanvasScrollingLabel">Offcanvas</h5>
+        <button type="button" class="btn btn-icon ms-auto" data-bs-dismiss="offcanvas" aria-label="Close">
+          <span class="icon-[material-symbols--close-rounded] text-base"></span>
+        </button>
+      </div>
+      <div class="offcanvas-body">
+        <div class="list-group bg-transparent p-0">
+          <a href="#!" class="list-group-item list-group-item-action rounded-md active" aria-current="true">List Item One</a>
+          <a href="#!" class="list-group-item list-group-item-action rounded-md">List Item Two</a>
+          <a href="#!" class="list-group-item list-group-item-action rounded-md">List Item Three</a>
+          <a href="#!" class="list-group-item list-group-item-action rounded-md">List Item Four</a>
+        </div>
+      </div>
+    </div>
+    ```
+
+  </div>
+</Example>
+
+### Body scrolling and backdrop
+
+<Example>
+  <div slot="preview" class='not-prose'>
+    <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">Enable both scrolling & backdrop</button>
+
+    <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title font-semibold" id="offcanvasWithBothOptionsLabel">Offcanvas</h5>
+        <button type="button" class="btn btn-icon ms-auto" data-bs-dismiss="offcanvas" aria-label="Close">
+          <span class="icon-[material-symbols--close-rounded] text-base"></span>
+        </button>
+      </div>
+      <div class="offcanvas-body">
+        <div class="list-group bg-transparent p-0">
+          <a href="#!" class="list-group-item list-group-item-action rounded-md active" aria-current="true">List Item One</a>
+          <a href="#!" class="list-group-item list-group-item-action rounded-md">List Item Two</a>
+          <a href="#!" class="list-group-item list-group-item-action rounded-md">List Item Three</a>
+          <a href="#!" class="list-group-item list-group-item-action rounded-md">List Item Four</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div slot="code">
+    ```html
+    <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">Enable both scrolling & backdrop</button>
+
+    <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title font-semibold" id="offcanvasWithBothOptionsLabel">Offcanvas</h5>
+        <button type="button" class="btn btn-icon ms-auto" data-bs-dismiss="offcanvas" aria-label="Close">
+          <span class="icon-[material-symbols--close-rounded] text-base"></span>
+        </button>
+      </div>
+      <div class="offcanvas-body">
+        <div class="list-group bg-transparent p-0">
+          <a href="#!" class="list-group-item list-group-item-action rounded-md active" aria-current="true">List Item One</a>
+          <a href="#!" class="list-group-item list-group-item-action rounded-md">List Item Two</a>
+          <a href="#!" class="list-group-item list-group-item-action rounded-md">List Item Three</a>
+          <a href="#!" class="list-group-item list-group-item-action rounded-md">List Item Four</a>
+        </div>
+      </div>
+    </div>
+    ```
+
+  </div>
+</Example>
+
+### Static backdrop
+
+<Example>
+  <div slot="preview" class='not-prose'>
+    <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">
+      Toggle static offcanvas
+    </button>
+
+    <div class="offcanvas offcanvas-start" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop" aria-labelledby="staticBackdropLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title font-semibold" id="staticBackdropLabel">Offcanvas</h5>
+        <button type="button" class="btn btn-icon ms-auto" data-bs-dismiss="offcanvas" aria-label="Close">
+          <span class="icon-[material-symbols--close-rounded] text-base"></span>
+        </button>
+      </div>
+      <div class="offcanvas-body">
+        <div class="list-group bg-transparent p-0">
+          <a href="#!" class="list-group-item list-group-item-action rounded-md active" aria-current="true">List Item One</a>
+          <a href="#!" class="list-group-item list-group-item-action rounded-md">List Item Two</a>
+          <a href="#!" class="list-group-item list-group-item-action rounded-md">List Item Three</a>
+          <a href="#!" class="list-group-item list-group-item-action rounded-md">List Item Four</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div slot="code">
+    ```html
+    <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">
+      Toggle static offcanvas
+    </button>
+
+    <div class="offcanvas offcanvas-start" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop" aria-labelledby="staticBackdropLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title font-semibold" id="staticBackdropLabel">Offcanvas</h5>
+        <button type="button" class="btn btn-icon ms-auto" data-bs-dismiss="offcanvas" aria-label="Close">
+          <span class="icon-[material-symbols--close-rounded] text-base"></span>
+        </button>
+      </div>
+      <div class="offcanvas-body">
+        <div class="list-group bg-transparent p-0">
+          <a href="#!" class="list-group-item list-group-item-action rounded-md active" aria-current="true">List Item One</a>
+          <a href="#!" class="list-group-item list-group-item-action rounded-md">List Item Two</a>
+          <a href="#!" class="list-group-item list-group-item-action rounded-md">List Item Three</a>
+          <a href="#!" class="list-group-item list-group-item-action rounded-md">List Item Four</a>
+        </div>
+      </div>
+    </div>
+    ```
+
+  </div>
+</Example>
+
+### Responsive
+
+<Example>
+  <div slot="preview" class='not-prose'>
+    <button class="btn btn-primary lg:hidden" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasResponsive" aria-controls="offcanvasResponsive">Toggle offcanvas</button>
+
+    <div class="alert alert-subtle-info hidden lg:block mb-4">Resize your browser to show the responsive offcanvas toggle.</div>
+
+    <div class="offcanvas lg:offcanvas-static offcanvas-start" tabindex="-1" id="offcanvasResponsive" aria-labelledby="offcanvasResponsiveLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title font-semibold" id="offcanvasResponsiveLabel">Responsive offcanvas</h5>
+        <button type="button" class="btn btn-icon ms-auto" data-bs-dismiss="offcanvas" aria-label="Close">
+          <span class="icon-[material-symbols--close-rounded] text-base"></span>
+        </button>
+      </div>
+      <div class="offcanvas-body">
+        <p>This is content within responsive offcanvas. The Responsive Offcanvas component adapts its behavior based on the screen size. It behaves like a sliding drawer on mobile and a static sidebar on larger breakpoints (lg and up)</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div slot="code">
+    ```html
+    <button class="btn btn-primary lg:hidden" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasResponsive" aria-controls="offcanvasResponsive">Toggle offcanvas</button>
+
+    <div class="alert alert-subtle-info hidden lg:block mb-4">Resize your browser to show the responsive offcanvas toggle.</div>
+
+    <div class="offcanvas lg:offcanvas-static offcanvas-start" tabindex="-1" id="offcanvasResponsive" aria-labelledby="offcanvasResponsiveLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title font-semibold" id="offcanvasResponsiveLabel">Responsive offcanvas</h5>
+        <button type="button" class="btn btn-icon ms-auto" data-bs-dismiss="offcanvas" aria-label="Close">
+          <span class="icon-[material-symbols--close-rounded] text-base"></span>
+        </button>
+      </div>
+      <div class="offcanvas-body">
+        <p>This is content within responsive offcanvas. The Responsive Offcanvas component adapts its behavior based on the screen size. It behaves like a sliding drawer on mobile and a static sidebar on larger breakpoints (lg and up)</p>
+      </div>
+    </div>
+    ```
+
+  </div>
+</Example>
+
+### Placement
+
+<Example>
+  <div slot="preview" class='not-prose'>
+    <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop">Toggle top offcanvas</button>
+
+    <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title font-semibold" id="offcanvasTopLabel">Offcanvas Top</h5>
+        <button type="button" class="btn btn-icon ms-auto" data-bs-dismiss="offcanvas" aria-label="Close">
+          <span class="icon-[material-symbols--close-rounded] text-base"></span>
+        </button>
+      </div>
+      <div class="offcanvas-body">
+        ...
+      </div>
+    </div>
+
+  </div>
+
+  <div slot="code">
+    ```html
+    <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop">Toggle top offcanvas</button>
+
+    <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title font-semibold" id="offcanvasTopLabel">Offcanvas Top</h5>
+        <button type="button" class="btn btn-icon ms-auto" data-bs-dismiss="offcanvas" aria-label="Close">
+          <span class="icon-[material-symbols--close-rounded] text-base"></span>
+        </button>
+      </div>
+      <div class="offcanvas-body">
+        ...
+      </div>
+    </div>
+    ```
+
+  </div>
+</Example>
+
+<Example>
+  <div slot="preview" class='not-prose'>
+    <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Toggle right offcanvas</button>
+
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title font-semibold" id="offcanvasRightLabel">Offcanvas Right</h5>
+        <button type="button" class="btn btn-icon ms-auto" data-bs-dismiss="offcanvas" aria-label="Close">
+          <span class="icon-[material-symbols--close-rounded] text-base"></span>
+        </button>
+      </div>
+      <div class="offcanvas-body">
+        ...
+      </div>
+    </div>
+
+  </div>
+
+  <div slot="code">
+    ```html
+    <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Toggle right offcanvas</button>
+
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title font-semibold" id="offcanvasRightLabel">Offcanvas Right</h5>
+        <button type="button" class="btn btn-icon ms-auto" data-bs-dismiss="offcanvas" aria-label="Close">
+          <span class="icon-[material-symbols--close-rounded] text-base"></span>
+        </button>
+      </div>
+      <div class="offcanvas-body">
+        ...
+      </div>
+    </div>
+    ```
+
+  </div>
+</Example>
+
+<Example>
+  <div slot="preview" class='not-prose'>
+    <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom">Toggle bottom offcanvas</button>
+
+    <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasBottom" aria-labelledby="offcanvasBottomLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title font-semibold" id="offcanvasBottomLabel">Offcanvas Bottom</h5>
+        <button type="button" class="btn btn-icon ms-auto" data-bs-dismiss="offcanvas" aria-label="Close">
+          <span class="icon-[material-symbols--close-rounded] text-base"></span>
+        </button>
+      </div>
+      <div class="offcanvas-body">
+        ...
+      </div>
+    </div>
+
+  </div>
+
+  <div slot="code">
+    ```html
+    <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom">Toggle bottom offcanvas</button>
+
+    <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasBottom" aria-labelledby="offcanvasBottomLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title font-semibold" id="offcanvasBottomLabel">Offcanvas Bottom</h5>
+        <button type="button" class="btn btn-icon ms-auto" data-bs-dismiss="offcanvas" aria-label="Close">
+          <span class="icon-[material-symbols--close-rounded] text-base"></span>
+        </button>
+      </div>
+      <div class="offcanvas-body">
+        ...
+      </div>
+    </div>
+    ```
+
+  </div>
+</Example>

@@ -111,6 +111,10 @@ const sitemap: Sitemap[] = [
         name: 'Accordion',
         path: '/components/accordion',
       },
+      {
+        name: 'Offcanvas',
+        path: '/components/offcanvas',
+      },
     ],
   },
 ];
