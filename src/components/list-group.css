@@ -6,6 +6,7 @@
   --list-group-border-radius: var(--radius-lg);
   --list-group-item-padding-x: calc(var(--spacing) * 4);
   --list-group-item-padding-y: calc(var(--spacing) * 2.5);
+  --list-group-item-font-size: var(--text-base);
   --list-group-action-content: var(--color-highlight-color);
   --list-group-hover-bg: var(--color-muted);
   --list-group-hover-content: var(--color-highlight-color);
@@ -34,6 +35,7 @@
   @apply px-[var(--list-group-item-padding-x)]
   py-[var(--list-group-item-padding-y)]
   text-[var(--list-group-content)]
+  text-[length:var(--list-group-item-font-size)]
   no-underline
   leading-[1.5];
   &:is(:disabled, .disabled) {
@@ -67,7 +69,7 @@
 @utility list-group-numbered {
   counter-reset: section;
   > .list-group-item::before {
-    content: counters(section, ".") ". ";
+    content: counters(section, '.') '. ';
     counter-increment: section;
   }
 }

@@ -17,3 +17,10 @@ export {
   type CollapseInstance,
   type CollapseStatic,
 } from './scripts/collapse';
+
+export {
+  default as Offcanvas,
+  type OffcanvasOptions,
+  type OffcanvasInstance,
+  type OffcanvasStatic,
+} from './scripts/offcanvas';
