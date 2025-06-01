@@ -12,11 +12,14 @@ export interface CollapseInstance {
 }
 
 export interface CollapseStatic {
-  new (element: string | Element, options?: CollapseOptions): CollapseInstance;
+  new (
+    element: string | Element,
+    options?: Partial<CollapseOptions>,
+  ): CollapseInstance;
   getInstance(element: Element | string): CollapseInstance | null;
   getOrCreateInstance(
     element: Element | string,
-    config?: CollapseOptions,
+    config?: Partial<CollapseOptions>,
   ): CollapseInstance;
   Default: CollapseOptions;
 }
