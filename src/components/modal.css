@@ -1,0 +1,196 @@
+@utility modal {
+  --modal-zindex: 1055;
+  --modal-width: 31.25rem;
+  --modal-padding: calc(var(--spacing) * 4);
+  --modal-margin: calc(var(--spacing) * 2);
+  --modal-content: var(--color-default-color);
+  --modal-bg: var(--color-default);
+  --modal-font-size: var(--text-base);
+  --modal-border-color: var(--color-border-light);
+  --modal-border-width: 1px;
+  --modal-border-radius: var(--radius-2xl);
+  --modal-inner-border-radius: calc(
+    var(--modal-border-radius) - var(--modal-border-width)
+  );
+  --modal-header-padding-x: calc(var(--spacing) * 4);
+  --modal-header-padding-y: calc(var(--spacing) * 4);
+  --modal-header-border-color: var(--color-border-light);
+  --modal-header-border-width: 1px;
+  --modal-title-line-height: 1.5;
+  --modal-footer-padding-x: calc(var(--spacing) * 4);
+  --modal-footer-padding-y: calc(var(--spacing) * 4);
+  --modal-footer-bg: unset;
+  --modal-footer-border-color: var(--color-border-light);
+  --modal-footer-border-width: 1px;
+  --modal-fade-transform: translate(0, -50px);
+  --modal-show-transform: none;
+  --modal-scale-transform: scale(1.02);
+  --modal-transition-duration: 0.3s;
+
+  @apply fixed top-0 left-0
+  z-[var(--modal-zindex)]
+  hidden
+  w-full h-full
+  overflow-x-hidden
+  overflow-y-auto
+  outline-0
+  text-[length:var(--modal-font-size)];
+
+  @media (min-width: theme(--breakpoint-sm)) {
+    --modal-margin: calc(var(--spacing) * 7);
+  }
+}
+
+@utility modal-dialog {
+  @apply relative
+  w-auto
+  m-[var(--modal-margin)]
+  pointer-events-none;
+
+  .modal.fade & {
+    @apply transform-[var(--modal-fade-transform)] transition-transform duration-[var(--modal-transition-duration)] ease-out;
+  }
+  .modal.show & {
+    @apply transform-[var(--modal-show-transform)];
+  }
+  .modal.modal-static & {
+    @apply transform-[var(--modal-scale-transform)];
+  }
+
+  @media (min-width: theme(--breakpoint-sm)) {
+    @apply max-w-[var(--modal-width)] mx-auto;
+  }
+}
+
+@utility modal-dialog-scrollable {
+  @apply h-[calc(100%-var(--modal-margin)*2)];
+  .modal-content {
+    @apply max-h-full overflow-hidden;
+  }
+
+  .modal-body {
+    @apply overflow-y-auto;
+  }
+}
+
+@utility modal-dialog-centered {
+  @apply flex items-center
+  min-h-[calc(100%-var(--modal-margin)*2)];
+}
+
+@utility modal-content {
+  @apply relative
+  flex flex-col
+  w-full
+  text-[var(--modal-content)]
+  pointer-events-auto
+  bg-[var(--modal-bg)]
+  bg-clip-padding
+  dark:border-[length:var(--modal-border-width)]
+  border-[var(--modal-border-color)]
+  rounded-[var(--modal-border-radius)]
+  outline-0;
+}
+
+.modal-backdrop {
+  --backdrop-zindex: 1050;
+  --backdrop-bg: --alpha(var(--color-gray-950) / 20%);
+
+  @apply fixed top-0 left-0 z-[var(--backdrop-zindex)] w-screen h-screen bg-[var(--backdrop-bg)];
+
+  &.fade {
+    @apply backdrop-blur-none;
+  }
+  &.show {
+    @apply backdrop-blur-xs;
+  }
+}
+
+@utility modal-header {
+  @apply flex flex-shrink-0 items-center
+  px-[var(--modal-header-padding-x)]
+  py-[var(--modal-header-padding-y)]
+  border-b-[length:var(--modal-header-border-width)]
+  border-[var(--modal-header-border-color)]
+  rounded-t-[var(--modal-inner-border-radius)];
+}
+
+@utility modal-title {
+  @apply mb-0 leading-[var(--modal-title-line-height)];
+}
+
+@utility modal-body {
+  @apply relative flex-[1_1_auto] p-[var(--modal-padding)];
+}
+
+@utility modal-footer {
+  @apply flex flex-shrink-0 flex-wrap items-center justify-end
+  px-[var(--modal-footer-padding-x)]
+  py-[var(--modal-footer-padding-y)]
+  bg-[var(--modal-footer-bg)]
+  border-t-[length:var(--modal-footer-border-width)]
+  border-[var(--modal-footer-border-color)]
+  rounded-b-[var(--modal-inner-border-radius)];
+}
+
+@utility modal-sm {
+  @media (min-width: theme(--breakpoint-sm)) {
+    --modal-width: 18.75rem;
+  }
+}
+@utility modal-lg {
+  @media (min-width: theme(--breakpoint-lg)) {
+    --modal-width: 50rem;
+  }
+}
+@utility modal-xl {
+  @media (min-width: theme(--breakpoint-lg)) {
+    --modal-width: 50rem;
+  }
+  @media (min-width: theme(--breakpoint-xl)) {
+    --modal-width: 71.25rem;
+  }
+}
+
+@utility modal-fullscreen {
+  @apply w-screen max-w-none h-screen m-0;
+
+  .modal-content {
+    @apply h-full border-0 rounded-none;
+  }
+
+  .modal-header,
+  .modal-footer {
+    @apply rounded-none;
+  }
+
+  .modal-body {
+    @apply overflow-y-auto;
+  }
+}
+
+@utility modal-fullscreen-sm-down {
+  @media (max-width: theme(--breakpoint-sm)) {
+    @apply modal-fullscreen;
+  }
+}
+@utility modal-fullscreen-md-down {
+  @media (max-width: theme(--breakpoint-md)) {
+    @apply modal-fullscreen;
+  }
+}
+@utility modal-fullscreen-lg-down {
+  @media (max-width: theme(--breakpoint-lg)) {
+    @apply modal-fullscreen;
+  }
+}
+@utility modal-fullscreen-xl-down {
+  @media (max-width: theme(--breakpoint-xl)) {
+    @apply modal-fullscreen;
+  }
+}
+@utility modal-fullscreen-xxl-down {
+  @media (max-width: theme(--breakpoint-2xl)) {
+    @apply modal-fullscreen;
+  }
+}

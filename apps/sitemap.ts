@@ -115,6 +115,10 @@ const sitemap: Sitemap[] = [
         name: 'Offcanvas',
         path: '/components/offcanvas',
       },
+      {
+        name: 'Modal',
+        path: '/components/modal',
+      },
     ],
   },
 ];

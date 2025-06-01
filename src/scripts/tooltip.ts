@@ -7,17 +7,22 @@ type OffsetFunction = () => Offset;
 type PopperConfigFunction = (
   defaultBsPopperConfig: Popper.Options,
 ) => Partial<Popper.Options>;
+type SetContentFunction = () =>
+  | string
+  | Element
+  | (() => string | Element | null)
+  | null;
 
 export interface TooltipOptions {
-  animation?: boolean;
-  container?: string | Element | false;
-  delay?: number | { show: number; hide: number };
-  html?: boolean;
-  placement?: PopoverPlacement | (() => PopoverPlacement);
-  selector?: string | false;
-  template?: string;
-  title?: string | Element | ((this: HTMLElement) => string | Element);
-  trigger?:
+  animation: boolean;
+  container: string | Element | false;
+  delay: number | { show: number; hide: number };
+  html: boolean;
+  placement: PopoverPlacement | (() => PopoverPlacement);
+  selector: string | false;
+  template: string;
+  title: string | Element | ((this: HTMLElement) => string | Element);
+  trigger:
     | 'click'
     | 'hover'
     | 'focus'
@@ -26,14 +31,14 @@ export interface TooltipOptions {
     | 'click focus'
     | 'hover focus'
     | 'click hover focus';
-  offset?: Offset | string | OffsetFunction;
-  fallbackPlacements?: string[];
-  boundary?: Popper.Boundary;
-  customClass?: string | (() => string);
-  sanitize?: boolean;
-  allowList?: Record<keyof HTMLElementTagNameMap | '*', Array<string | RegExp>>;
-  sanitizeFn?: (() => void) | null;
-  popperConfig?: Partial<Popper.Options> | PopperConfigFunction | null;
+  offset: Offset | string | OffsetFunction;
+  fallbackPlacements: string[];
+  boundary: Popper.Boundary;
+  customClass: string | (() => string);
+  sanitize: boolean;
+  allowList: Record<keyof HTMLElementTagNameMap | '*', Array<string | RegExp>>;
+  sanitizeFn: (() => void) | null;
+  popperConfig: Partial<Popper.Options> | PopperConfigFunction | null;
 }
 
 export interface TooltipInstance {
@@ -45,22 +50,38 @@ export interface TooltipInstance {
   toggleEnabled(): void;
   update(): void;
   setContent(
-    content?: Record<
-      string,
-      string | Element | (() => string | Element | null) | null
-    >,
+    content?: Record<string, string | Element | SetContentFunction | null>,
   ): void;
   dispose(): void;
 }
 
 export interface TooltipStatic {
-  new (element: Element | string, options?: TooltipOptions): TooltipInstance;
+  new (
+    element: Element | string,
+    options?: Partial<TooltipOptions>,
+  ): TooltipInstance;
   getInstance(element: Element | string): TooltipInstance | null;
   getOrCreateInstance(
     element: Element | string,
-    config?: TooltipOptions,
+    config?: Partial<TooltipOptions>,
   ): TooltipInstance;
   Default: TooltipOptions;
+  NAME: 'tooltip';
+  Event: Record<
+    | 'CLICK'
+    | 'FOCUSIN'
+    | 'FOCUSOUT'
+    | 'HIDDEN'
+    | 'HIDE'
+    | 'INSERTED'
+    | 'MOUSEENTER'
+    | 'MOUSELEAVE'
+    | 'SHOW'
+    | 'SHOWN',
+    string
+  >;
+  DefaultType: Record<keyof TooltipOptions, string>;
+  SetContentFunction: SetContentFunction;
 }
 
 export enum TooltipEvents {

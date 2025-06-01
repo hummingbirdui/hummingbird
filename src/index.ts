@@ -24,3 +24,10 @@ export {
   type OffcanvasInstance,
   type OffcanvasStatic,
 } from './scripts/offcanvas';
+
+export {
+  default as Modal,
+  type ModalOptions,
+  type ModalInstance,
+  type ModalStatic,
+} from './scripts/modal';

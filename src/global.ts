@@ -1,5 +1,6 @@
 import Collapse from './scripts/collapse';
 import Dropdown from './scripts/dropdown';
+import Modal from './scripts/modal';
 import Offcanvas from './scripts/offcanvas';
 import Tooltip from './scripts/tooltip';
 
@@ -9,5 +10,6 @@ declare global {
     Tooltip: typeof Tooltip;
     Collapse: typeof Collapse;
     Offcanvas: typeof Offcanvas;
+    Modal: typeof Modal;
   }
 }
