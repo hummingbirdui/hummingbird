@@ -6,11 +6,11 @@ type Offset = [number, number];
 type OffsetFunction = () => Offset;
 
 export interface DropdownOptions extends Pick<TooltipOptions, 'popperConfig'> {
-  offset?: Offset | string | OffsetFunction;
-  boundary?: Popper.Boundary | Element;
-  reference?: 'toggle' | 'parent' | Element | Popper.Rect;
-  display?: 'dynamic' | 'static';
-  autoClose?: boolean | 'inside' | 'outside';
+  offset: Offset | string | OffsetFunction;
+  boundary: Popper.Boundary | Element;
+  reference: 'toggle' | 'parent' | Element | Popper.Rect;
+  display: 'dynamic' | 'static';
+  autoClose: boolean | 'inside' | 'outside';
 }
 
 export interface DropdownInstance {
@@ -22,11 +22,14 @@ export interface DropdownInstance {
 }
 
 export interface DropdownStatic {
-  new (element: Element | string, options?: DropdownOptions): DropdownInstance;
+  new (
+    element: Element | string,
+    options?: Partial<DropdownOptions>,
+  ): DropdownInstance;
   getInstance(element: Element | string): DropdownInstance | null;
   getOrCreateInstance(
     element: Element | string,
-    config?: DropdownOptions,
+    config?: Partial<DropdownOptions>,
   ): DropdownInstance;
   Default: DropdownOptions;
 }

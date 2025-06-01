@@ -43,7 +43,7 @@
     --input-bg: var(--color-error-lighter);
     --input-border-color: var(--color-error);
   }
-  &[type="file"] {
+  &[type='file'] {
     overflow: hidden;
 
     &:not(:disabled):not([readonly]) {
@@ -115,7 +115,7 @@
   &.is-invalid {
     --input-border-color: var(--color-error);
   }
-  &[type="file"] {
+  &[type='file'] {
     overflow: hidden;
 
     &:not(:disabled):not([readonly]) {
@@ -194,14 +194,14 @@
 }
 
 @utility form-field {
-  @apply inline-flex flex-col gap-1;
+  @apply flex flex-col gap-1;
   &:where(
       :has(
-          .form-control,
-          .form-control-outline,
-          .form-select,
-          .form-select-outline
-        )
+        .form-control,
+        .form-control-outline,
+        .form-select,
+        .form-select-outline
+      )
     ):focus-within {
     .form-label {
       --input-label-color: var(--color-primary);

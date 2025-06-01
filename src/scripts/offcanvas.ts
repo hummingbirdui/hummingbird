@@ -17,12 +17,12 @@ export interface OffcanvasInstance {
 export interface OffcanvasStatic {
   new (
     element: string | Element,
-    options?: OffcanvasOptions,
+    options?: Partial<OffcanvasOptions>,
   ): OffcanvasInstance;
   getInstance(element: string | Element): OffcanvasInstance | null;
   getOrCreateInstance(
     element: string | Element,
-    config?: OffcanvasOptions,
+    config?: Partial<OffcanvasOptions>,
   ): OffcanvasInstance;
 }
 

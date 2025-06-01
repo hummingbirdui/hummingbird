@@ -6,7 +6,7 @@
   --offcanvas-padding-y: calc(var(--spacing) * 4);
   --offcanvas-content: var(--color-default-color);
   --offcanvas-bg: var(--color-subtle);
-  --offcanvas-border-width: 0;
+  --offcanvas-border-width: 1px;
   --offcanvas-border-color: var(--color-border-base);
   --offcanvas-box-shadow:
     6px 33px 46px 0px rgba(0, 0, 0, 0.07),
@@ -41,39 +41,48 @@
 }
 
 @utility offcanvas-start {
-  @apply top-0 left-0
-  w-[var(--offcanvas-width)]
-  border-r-[length:var(--offcanvas-border-width)]
-  border-r-[var(--offcanvas-border-color)]
-  -translate-x-full;
+  @layer base {
+    @apply top-0 left-0
+    w-[var(--offcanvas-width)]
+    dark:border-r-[length:var(--offcanvas-border-width)]
+    border-r-[var(--offcanvas-border-color)]
+    -translate-x-full;
+  }
 }
 @utility offcanvas-end {
-  @apply top-0 right-0
-  w-[var(--offcanvas-width)]
-  border-l-[length:var(--offcanvas-border-width)]
-  border-l-[var(--offcanvas-border-color)]
-  translate-x-full;
+  @layer base {
+    @apply top-0 right-0
+    w-[var(--offcanvas-width)]
+    dark:border-l-[length:var(--offcanvas-border-width)]
+    border-l-[var(--offcanvas-border-color)]
+    translate-x-full;
+  }
 }
 @utility offcanvas-top {
-  @apply top-0 right-0 left-0
-  h-[var(--offcanvas-height)]
-  max-h-full
-  border-b-[length:var(--offcanvas-border-width)]
-  border-b-[var(--offcanvas-border-color)]
-  -translate-y-full;
+  @layer base {
+    @apply top-0 right-0 left-0
+    h-[var(--offcanvas-height)]
+    max-h-full
+    dark:border-b-[length:var(--offcanvas-border-width)]
+    border-b-[var(--offcanvas-border-color)]
+    -translate-y-full;
+  }
 }
 @utility offcanvas-bottom {
-  @apply right-0 left-0
-  h-[var(--offcanvas-height)]
-  max-h-full
-  border-t-[length:var(--offcanvas-border-width)]
-  border-t-[var(--offcanvas-border-color)]
-  translate-y-full;
+  @layer base {
+    @apply right-0 left-0
+    h-[var(--offcanvas-height)]
+    max-h-full
+    dark:border-t-[length:var(--offcanvas-border-width)]
+    border-t-[var(--offcanvas-border-color)]
+    translate-y-full;
+  }
 }
 
 .offcanvas-backdrop {
-  --offcanvas-backdrop-bg: --alpha(var(--color-gray-950) / 20%);
-  @apply fixed top-0 left-0 z-[1040] w-screen h-screen bg-[var(--offcanvas-backdrop-bg)];
+  --backdrop-zindex: 1040;
+  --backdrop-bg: --alpha(var(--color-gray-950) / 20%);
+  @apply fixed top-0 left-0 z-[var(--backdrop-zindex)] w-screen h-screen bg-[var(--backdrop-bg)];
   &.fade {
     @apply backdrop-blur-none;
   }
@@ -105,5 +114,50 @@
   }
   .offcanvas-body {
     @apply flex flex-grow-0 overflow-y-visible bg-transparent p-0;
+  }
+}
+
+@utility offcanvas-sm {
+  @media (max-width: theme(--breakpoint-sm)) {
+    @apply offcanvas;
+  }
+  @media (min-width: theme(--breakpoint-sm)) {
+    @apply offcanvas-static;
+  }
+}
+
+@utility offcanvas-md {
+  @media (max-width: theme(--breakpoint-md)) {
+    @apply offcanvas;
+  }
+  @media (min-width: theme(--breakpoint-md)) {
+    @apply offcanvas-static;
+  }
+}
+
+@utility offcanvas-lg {
+  @media (max-width: theme(--breakpoint-lg)) {
+    @apply offcanvas;
+  }
+  @media (min-width: theme(--breakpoint-lg)) {
+    @apply offcanvas-static;
+  }
+}
+
+@utility offcanvas-xl {
+  @media (max-width: theme(--breakpoint-xl)) {
+    @apply offcanvas;
+  }
+  @media (min-width: theme(--breakpoint-xl)) {
+    @apply offcanvas-static;
+  }
+}
+
+@utility offcanvas-xxl {
+  @media (max-width: theme(--breakpoint-2xl)) {
+    @apply offcanvas;
+  }
+  @media (min-width: theme(--breakpoint-2xl)) {
+    @apply offcanvas-static;
   }
 }
