@@ -1,3 +1,4 @@
+import Alert from './scripts/alert';
 import Carousel from './scripts/carousel';
 import Collapse from './scripts/collapse';
 import Dropdown from './scripts/dropdown';
@@ -13,5 +14,6 @@ declare global {
     Offcanvas: typeof Offcanvas;
     Modal: typeof Modal;
     Carousel: typeof Carousel;
+    Alert: typeof Alert;
   }
 }
