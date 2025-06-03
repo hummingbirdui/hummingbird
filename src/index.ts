@@ -7,6 +7,8 @@ export {
 
 export { default as Tooltip, type TooltipOptions, type TooltipInstance, type TooltipStatic } from './scripts/tooltip';
 
+export { default as Alert, type AlertInstance, type AlertStatic } from './scripts/alert';
+
 export {
   default as Collapse,
   type CollapseOptions,
