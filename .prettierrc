@@ -1,6 +1,11 @@
 {
   "singleQuote": true,
-  "eslintIntegration": true,
+  "semi": true,
+  "tabWidth": 2,
+  "trailingComma": "all",
+  "printWidth": 120,
+  "bracketSpacing": true,
+  "arrowParens": "always",
   "plugins": ["prettier-plugin-tailwindcss"],
   "overrides": [
     {
