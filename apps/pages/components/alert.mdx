@@ -167,6 +167,7 @@ import Example from "../../components/docs/Example.astro";
       <span>Something went wrong — please try again later.</span>
     </div>
     ```
+
   </div>
 </Example>
 
@@ -244,6 +245,30 @@ import Example from "../../components/docs/Example.astro";
       <span>Error occurs - Try again.</span>
       <button class='btn btn-sm btn-text-error text-contrast hover:bg-error-dark ms-auto'>
         Start
+      </button>
+    </div>
+    ```
+  </div>
+</Example>
+
+### Dismissing
+
+<Example>
+  <div slot="preview">
+    <div class="alert alert-subtle-warning fade show" role="alert">
+      <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+      <button type="button" class="btn btn-icon btn-icon-warning ms-auto" data-bs-dismiss="alert" aria-label="Close">
+        <span class="icon-[material-symbols--close-rounded] text-base"></span>
+      </button>
+    </div>
+  </div>
+
+  <div slot="code">
+    ```html
+    <div class="alert alert-subtle-warning fade show" role="alert">
+      <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+      <button type="button" class="btn btn-icon btn-icon-warning ms-auto" data-bs-dismiss="alert" aria-label="Close">
+        <span class="icon-[material-symbols--close-rounded] text-base"></span>
       </button>
     </div>
     ```
