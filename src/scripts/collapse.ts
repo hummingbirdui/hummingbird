@@ -9,18 +9,13 @@ export interface CollapseInstance {
   toggle(): void;
   show(): void;
   hide(): void;
+  dispose(): void;
 }
 
 export interface CollapseStatic {
-  new (
-    element: string | Element,
-    options?: Partial<CollapseOptions>,
-  ): CollapseInstance;
+  new (element: string | Element, options?: Partial<CollapseOptions>): CollapseInstance;
   getInstance(element: Element | string): CollapseInstance | null;
-  getOrCreateInstance(
-    element: Element | string,
-    config?: Partial<CollapseOptions>,
-  ): CollapseInstance;
+  getOrCreateInstance(element: Element | string, config?: Partial<CollapseOptions>): CollapseInstance;
   Default: CollapseOptions;
 }
 

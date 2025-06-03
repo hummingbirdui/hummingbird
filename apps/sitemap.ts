@@ -119,6 +119,10 @@ const sitemap: Sitemap[] = [
         name: 'Modal',
         path: '/components/modal',
       },
+      {
+        name: 'Carousel',
+        path: '/components/carousel',
+      },
     ],
   },
 ];
