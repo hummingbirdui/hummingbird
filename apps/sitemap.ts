@@ -123,6 +123,10 @@ const sitemap: Sitemap[] = [
         name: 'Carousel',
         path: '/components/carousel',
       },
+      {
+        name: 'Navs & tabs',
+        path: '/components/navs-tabs',
+      },
     ],
   },
 ];
