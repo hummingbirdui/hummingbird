@@ -4,6 +4,7 @@ import Collapse from './scripts/collapse';
 import Dropdown from './scripts/dropdown';
 import Modal from './scripts/modal';
 import Offcanvas from './scripts/offcanvas';
+import Tab from './scripts/tab';
 import Tooltip from './scripts/tooltip';
 
 declare global {
@@ -15,5 +16,6 @@ declare global {
     Modal: typeof Modal;
     Carousel: typeof Carousel;
     Alert: typeof Alert;
+    Tab: typeof Tab;
   }
 }
