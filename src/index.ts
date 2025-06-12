@@ -31,3 +31,5 @@ export {
   type CarouselInstance,
   type CarouselStatic,
 } from './scripts/carousel';
+
+export { default as Tab, type TabInstance, type TabStatic } from './scripts/tab';

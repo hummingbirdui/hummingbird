@@ -13,6 +13,11 @@ export interface AlertStatic {
   getOrCreateInstance(element: string | Element, config?: ComponentOptions): AlertInstance;
 }
 
+export enum AlertEvents {
+  close = 'close.bs.alert',
+  closed = 'closed.bs.alert',
+}
+
 const Alert = BsAlert as unknown as AlertStatic;
 
 if (typeof window !== 'undefined') {
