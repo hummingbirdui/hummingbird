@@ -54,7 +54,7 @@
     "build:lib": "vite build --config vite.lib.config.js"
   },
   "devDependencies": {
-    "@astrojs/mdx": "^4.2.6",
+    "@astrojs/mdx": "^4.3.0",
     "@eslint/js": "^9.26.0",
     "@iconify/json": "^2.2.310",
     "@iconify/tailwind4": "^1.0.3",
@@ -67,7 +67,7 @@
     "@types/node": "^22.13.1",
     "@typescript-eslint/eslint-plugin": "^8.32.1",
     "@typescript-eslint/parser": "^8.32.1",
-    "astro": "^5.4.1",
+    "astro": "^5.9.2",
     "bootstrap": "^5.3.3",
     "chokidar-cli": "^3.0.0",
     "cross-env": "^7.0.3",

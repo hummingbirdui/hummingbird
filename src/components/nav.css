@@ -1,0 +1,143 @@
+@utility nav {
+  @layer base {
+    --nav-bg: transparent;
+    --nav-link-padding-x: calc(var(--spacing) * 4);
+    --nav-link-padding-y: calc(var(--spacing) * 2);
+    --nav-link-font-weight: var(--font-weight-medium);
+    --nav-link-color: var(--color-highlight-color);
+    --nav-link-font-size: var(--text-sm);
+    --nav-link-disabled-color: var(--color-disabled-color);
+    --nav-link-active-color: unset;
+
+    @apply flex flex-wrap pl-0 mb-0 list-none
+    bg-[var(--nav-bg)];
+  }
+  .nav-link.active,
+  .show > .nav-link {
+    @apply text-[var(--nav-link-active-color)];
+  }
+}
+
+@utility nav-link {
+  @apply block
+  px-[var(--nav-link-padding-x)]
+  py-[var(--nav-link-padding-y)]
+  text-[length:var(--nav-link-font-size)]
+  font-[var(--nav-link-font-weight)]
+  text-[var(--nav-link-color)]
+  no-underline
+  bg-none
+  border-0
+  cursor-pointer
+  transition-colors duration-150 ease-in-out;
+
+  &:focus-visible {
+    @apply outline-0;
+  }
+
+  &.disabled,
+  &:disabled {
+    @apply text-[var(--nav-link-disabled-color)]
+    pointer-events-none cursor-default;
+  }
+}
+
+@utility nav-underline {
+  --nav-underline-gap: 0;
+  --nav-underline-border-width: 2;
+  --nav-link-active-color: var(--color-primary);
+
+  @apply gap-[var(--nav-underline-gap)];
+
+  .nav-link {
+    @apply border-b-[length:var(--nav-underline-border-width)] border-transparent;
+  }
+
+  .nav-link.active,
+  .show > .nav-link {
+    @apply border-b-current;
+  }
+}
+
+@utility nav-tabs {
+  --nav-link-active-color: var(--color-primary);
+  --nav-tabs-border-width: 1px;
+  --nav-tabs-border-color: var(--color-border-base);
+  --nav-tabs-border-radius: var(--radius-md);
+  --nav-tabs-link-hover-border-color: var(--color-border-light);
+  --nav-tabs-link-active-bg: var(--color-default);
+  --nav-tabs-link-active-border-color: var(--color-border-base) var(--color-border-base) var(--nav-tabs-link-active-bg);
+
+  @apply border-b-[length:var(--nav-tabs-border-width)] border-[var(--nav-tabs-border-color)];
+
+  .nav-link {
+    @apply mb-[length:calc(-1*var(--nav-tabs-border-width))]
+    border-[length:var(--nav-tabs-border-width)]
+    border-transparent
+    rounded-t-[var(--nav-tabs-border-radius)];
+
+    &:hover,
+    &:focus {
+      @apply isolate
+      border-[var(--nav-tabs-link-hover-border-color)];
+    }
+  }
+
+  .nav-link.active,
+  .show > .nav-link {
+    @apply border-[var(--nav-tabs-link-active-border-color)]
+    bg-[var(--nav-tabs-link-active-bg)];
+  }
+}
+
+@utility tab-pane {
+  display: none;
+}
+@utility tab-content {
+  > .tab-pane.active {
+    display: block;
+  }
+}
+
+@utility nav-primary {
+  --nav-bg: var(--color-primary);
+  --nav-link-color: --alpha(var(--color-contrast) / 50%);
+  --nav-link-disabled-color: --alpha(var(--color-contrast) / 30%);
+  --nav-link-active-color: var(--color-contrast);
+}
+@utility nav-secondary {
+  --nav-bg: var(--color-secondary);
+  --nav-link-color: --alpha(var(--color-contrast) / 50%);
+  --nav-link-disabled-color: --alpha(var(--color-contrast) / 30%);
+  --nav-link-active-color: var(--color-contrast);
+}
+@utility nav-info {
+  --nav-bg: var(--color-info);
+  --nav-link-color: --alpha(var(--color-contrast) / 50%);
+  --nav-link-disabled-color: --alpha(var(--color-contrast) / 30%);
+  --nav-link-active-color: var(--color-contrast);
+}
+@utility nav-success {
+  --nav-bg: var(--color-success);
+  --nav-link-color: --alpha(var(--color-contrast) / 50%);
+  --nav-link-disabled-color: --alpha(var(--color-contrast) / 30%);
+  --nav-link-active-color: var(--color-contrast);
+}
+@utility nav-warning {
+  --nav-bg: var(--color-warning);
+  --nav-link-color: --alpha(var(--color-contrast) / 50%);
+  --nav-link-disabled-color: --alpha(var(--color-contrast) / 30%);
+  --nav-link-active-color: var(--color-contrast);
+}
+@utility nav-error {
+  --nav-bg: var(--color-error);
+  --nav-link-color: --alpha(var(--color-contrast) / 50%);
+  --nav-link-disabled-color: --alpha(var(--color-contrast) / 30%);
+  --nav-link-active-color: var(--color-contrast);
+}
+@utility nav-neutral {
+  --nav-bg: var(--color-main);
+  --nav-link-color: --alpha(var(--color-contrast) / 50%);
+  --nav-link-disabled-color: --alpha(var(--color-contrast) / 30%);
+  --nav-link-active-color: var(--color-contrast);
+}
