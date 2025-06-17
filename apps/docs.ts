@@ -43,11 +43,18 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   const toggleThemeBtn = document.querySelector('[data-theme-toggle-btn]');
   toggleThemeBtn?.addEventListener('click', () => {
-    const newTheme: Theme =
-      localStorage.getItem('theme') === 'dark' ? 'light' : 'dark';
+    const newTheme: Theme = localStorage.getItem('theme') === 'dark' ? 'light' : 'dark';
 
     localStorage.setItem('theme', newTheme);
     toggleTheme(newTheme);
     updateToggleThemeButton(newTheme);
+  });
+
+  // preventing browser default scroll to top behavior for a tag
+  document.addEventListener('click', function (event) {
+    const target = event.target instanceof Element ? event.target.closest('a') : null;
+    if (target && target.getAttribute('href') === '#') {
+      event.preventDefault();
+    }
   });
 });

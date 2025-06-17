@@ -127,6 +127,10 @@ const sitemap: Sitemap[] = [
         name: 'Navs & tabs',
         path: '/components/navs-tabs',
       },
+      {
+        name: 'Navbar',
+        path: '/components/navbar',
+      },
     ],
   },
 ];

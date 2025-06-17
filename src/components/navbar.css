@@ -1,0 +1,144 @@
+@utility navbar {
+  --navbar-padding-x: calc(var(--spacing) * 3);
+  --navbar-padding-y: calc(var(--spacing) * 2);
+  --navbar-color: var(--color-highlight-color);
+  --navbar-hover-color: var(--color-default-color);
+  --navbar-disabled-color: var(--color-disabled-color);
+  --navbar-active-color: var(--color-default-color);
+  --navbar-brand-padding-y: calc(var(--spacing) * 1.25);
+  --navbar-brand-margin-end: calc(var(--spacing) * 4);
+  --navbar-brand-font-size: var(--text-lg);
+  --navbar-brand-color: var(--color-default-color);
+  --navbar-brand-hover-color: var(--color-default-color);
+  --navbar-nav-link-padding-x: calc(var(--spacing) * 2);
+
+  @apply relative
+  flex flex-wrap items-center justify-between
+  px-[var(--navbar-padding-x)]
+  py-[var(--navbar-padding-y)];
+
+  > .container,
+  > .sm\:container,
+  > .md\:container,
+  > .lg\:container,
+  > .xl\:container,
+  > .\32xl\:container {
+    @apply flex flex-wrap items-center justify-between;
+  }
+}
+
+@utility navbar-brand {
+  @apply pt-[var(--navbar-brand-padding-y)]
+   pb-[var(--navbar-brand-padding-y)]
+   mr-[var(--navbar-brand-margin-end)]
+   text-[length:var(--navbar-brand-font-size)]
+   text-[var(--navbar-brand-color)]
+   no-underline
+   whitespace-nowrap leading-[1.5];
+
+  &:hover,
+  &:focus {
+    @apply text-[var(--navbar-brand-hover-color)]
+    no-underline;
+  }
+}
+
+@utility navbar-nav {
+  --nav-link-padding-x: 0;
+  --nav-link-padding-y: calc(var(--spacing) * 2);
+  --nav-link-font-weight: var(--font-weight-medium);
+  --nav-link-color: var(--color-highlight-color);
+  --nav-link-font-size: var(--text-base);
+  --nav-link-line-height: 1.5;
+  --nav-link-disabled-color: var(--color-disabled-color);
+  --nav-link-active-color: unset;
+
+  @apply flex flex-col
+  pl-0 mb-0
+  list-none;
+
+  .nav-link {
+    &.active,
+    &.show {
+      @apply text-[var(--navbar-active-color)];
+    }
+  }
+
+  .dropdown-menu {
+    @apply static;
+  }
+}
+
+@utility navbar-text {
+  @apply pt-[var(--navbar-padding-y)]
+  pb-[var(--navbar-padding-y)]
+  text-[var(--navbar-color)];
+
+  a,
+  a:hover,
+  a:focus {
+    @apply text-[var(--navbar-active-color)];
+  }
+}
+
+@utility navbar-collapse {
+  @apply grow basis-full items-center;
+}
+
+@utility navbar-nav-scroll {
+  @apply max-h-[var(--scroll-height,_75vh)] overflow-y-auto;
+}
+
+@utility navbar-expand {
+  @apply flex-nowrap justify-start;
+
+  .navbar-nav {
+    @apply flex-row;
+
+    .dropdown-menu {
+      @apply absolute;
+    }
+
+    .nav-link {
+      @apply pl-[var(--navbar-nav-link-padding-x)] pr-[var(--navbar-nav-link-padding-x)];
+    }
+  }
+
+  .navbar-nav-scroll {
+    @apply overflow-visible;
+  }
+
+  .navbar-collapse {
+    @apply flex! basis-auto;
+  }
+
+  .navbar-toggler {
+    @apply hidden;
+  }
+}
+
+@utility navbar-expand-sm {
+  @media (min-width: theme(--breakpoint-sm)) {
+    @apply navbar-expand;
+  }
+}
+@utility navbar-expand-md {
+  @media (min-width: theme(--breakpoint-md)) {
+    @apply navbar-expand;
+  }
+}
+@utility navbar-expand-lg {
+  @media (min-width: theme(--breakpoint-lg)) {
+    @apply navbar-expand;
+  }
+}
+@utility navbar-expand-xl {
+  @media (min-width: theme(--breakpoint-xl)) {
+    @apply navbar-expand;
+  }
+}
+@utility navbar-expand-2xl {
+  @media (min-width: theme(--breakpoint-2xl)) {
+    @apply navbar-expand;
+  }
+}
