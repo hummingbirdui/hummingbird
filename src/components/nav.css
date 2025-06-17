@@ -5,7 +5,8 @@
     --nav-link-padding-y: calc(var(--spacing) * 2);
     --nav-link-font-weight: var(--font-weight-medium);
     --nav-link-color: var(--color-highlight-color);
-    --nav-link-font-size: var(--text-sm);
+    --nav-link-font-size: var(--text-base);
+    --nav-link-line-height: 1.5;
     --nav-link-disabled-color: var(--color-disabled-color);
     --nav-link-active-color: unset;
 
@@ -25,6 +26,7 @@
   text-[length:var(--nav-link-font-size)]
   font-[var(--nav-link-font-weight)]
   text-[var(--nav-link-color)]
+  leading-[var(--nav-link-line-height)]
   no-underline
   bg-none
   border-0
@@ -44,7 +46,7 @@
 
 @utility nav-underline {
   --nav-underline-gap: 0;
-  --nav-underline-border-width: 2;
+  --nav-underline-border-width: 2px;
   --nav-link-active-color: var(--color-primary);
 
   @apply gap-[var(--nav-underline-gap)];
