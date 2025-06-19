@@ -2,24 +2,22 @@
   --file-selector-btn-bg: var(--color-highlight);
   --file-selector-btn-content: var(--color-default-color);
   --file-selector-btn-hover-bg: var(--color-emphasis);
+  --input-icon-spacing: calc(var(--spacing) * 11);
 
-  @apply relative inline-flex items-center justify-center transition duration-200 gap-2 appearance-none
-    leading-[var(--input-btn-line-height)]
-    bg-[var(--input-bg)]
-    text-[length:var(--input-btn-font-size)]
-    text-[var(--input-content)]
-    rounded-[var(--input-btn-radius)]
-    shadow-[0_0_0_1px_var(--input-border-color)]
-    px-[var(--input-btn-padding-x)]
-    py-[var(--input-btn-padding-y)];
-  & :where(input) {
-    @apply w-full flex-1 appearance-none pt-0 pb-0 py-[var(--input-btn-padding-y)];
-  }
-  &:not(:has(input)) {
-    @apply px-[var(--input-btn-padding-x)] py-[var(--input-btn-padding-y)];
-  }
-  &:is(:disabled, [disabled]),
-  &:has(> input[disabled]) {
+  @apply relative w-full
+  appearance-none
+  inline-flex items-center justify-center
+  transition duration-200
+  leading-[var(--input-btn-line-height)]
+  bg-[var(--input-bg)]
+  text-[length:var(--input-btn-font-size)]
+  text-[var(--input-content)]
+  rounded-[var(--input-btn-radius)]
+  shadow-[0_0_0_1px_var(--input-border-color)]
+  px-[var(--input-btn-padding-x)]
+  py-[var(--input-btn-padding-y)];
+
+  &:is(:disabled, [disabled]) {
     --input-bg: var(--input-disabled-bg, var(--color-highlight));
     &:hover {
       --input-bg: var(--input-disabled-bg, var(--color-highlight));
@@ -76,28 +74,24 @@
 
 @utility form-control-outline {
   --input-border-color: var(--color-border-base);
-  @apply relative inline-flex items-center justify-center transition duration-200 gap-2 appearance-none
-    leading-[var(--input-btn-line-height)]
-    text-[length:var(--input-btn-font-size)]
-    text-[var(--input-content)]
-    rounded-[var(--input-btn-radius)]
-    shadow-[0_0_0_1px_var(--input-border-color)]
-    px-[var(--input-btn-padding-x)]
-    py-[var(--input-btn-padding-y)];
-  & :where(input) {
-    @apply w-full flex-1 appearance-none pt-0 pb-0 py-[var(--input-btn-padding-y)];
-  }
-  &:not(:has(input)) {
-    @apply px-[var(--input-btn-padding-x)] py-[var(--input-btn-padding-y)];
-  }
-  &:is(:disabled, [disabled]),
-  &:has(> input[disabled]) {
+  --input-icon-spacing: calc(var(--spacing) * 11);
+
+  @apply relative w-full
+  inline-flex items-center justify-center gap-2
+  appearance-none
+  transition duration-200
+  leading-[var(--input-btn-line-height)]
+  text-[length:var(--input-btn-font-size)]
+  text-[var(--input-content)]
+  rounded-[var(--input-btn-radius)]
+  shadow-[0_0_0_1px_var(--input-border-color)]
+  px-[var(--input-btn-padding-x)]
+  py-[var(--input-btn-padding-y)];
+
+  &:is(:disabled, [disabled]) {
     @apply opacity-50;
     &:hover {
       --input-border-color: var(--color-border-base);
-    }
-    .form-label {
-      --input-label-color: var(--color-disabled-color);
     }
   }
   &:hover {
@@ -135,8 +129,49 @@
   }
 }
 
-@utility form-control-icon {
-  @apply text-[20px] text-active; /* have to change the font-size */
+@utility input-group-icon {
+  --input-icon-color: var(--color-active);
+  --input-icon-font-size: 20px; /* TODO: Change hardcode font size */
+
+  @apply relative;
+
+  &:has(> .form-control-icon-start) {
+    .form-control,
+    .form-control-outline {
+      @apply pl-[var(--input-icon-spacing)];
+    }
+  }
+  &:has(> .form-control-icon-end) {
+    .form-control,
+    .form-control-outline {
+      @apply pr-[var(--input-icon-spacing)];
+    }
+  }
+
+  &:has(.form-control-sm) {
+    .form-control-icon-start,
+    .form-control-icon-end {
+      --input-btn-padding-x: calc(var(--spacing) * 3);
+      --input-icon-font-size: var(--text-sm);
+    }
+  }
+  &:has(.form-control-lg) {
+    .form-control-icon-start,
+    .form-control-icon-end {
+      --input-icon-font-size: var(--text-xl);
+    }
+  }
+}
+
+@utility form-control-icon-start {
+  @apply absolute z-1 top-[50%] left-[var(--input-btn-padding-x)] translate-y-[-50%]
+  text-[length:var(--input-icon-font-size)]
+  text-[var(--input-icon-color)];
+}
+@utility form-control-icon-end {
+  @apply absolute z-1 top-[50%] right-[var(--input-btn-padding-x)] translate-y-[-50%]
+  text-[length:var(--input-icon-font-size)]
+  text-[var(--input-icon-color)];
 }
 
 @utility form-control-sm {
@@ -144,16 +179,13 @@
   --input-btn-padding-y: calc(var(--spacing) * 1.5);
   --input-btn-radius: var(--radius-sm);
   --input-btn-line-height: 1.25;
-  .form-control-icon {
-    @apply text-sm;
-  }
+  --input-icon-spacing: calc(var(--spacing) * 8.5);
 }
+
 @utility form-control-lg {
   --input-btn-padding-y: calc(var(--spacing) * 2.5);
   --input-btn-font-size: var(--text-base);
-  .form-control-icon {
-    @apply text-xl;
-  }
+  --input-icon-spacing: calc(var(--spacing) * 12);
 }
 @utility form-control-primary {
   --file-selector-btn-bg: var(--color-primary);
@@ -190,19 +222,20 @@
 }
 
 @utility form-label {
-  @apply font-semibold text-[var(--input-label-color)] text-xs;
+  @apply font-[var(--input-label-font-weight)]
+  text-[var(--input-label-color)]
+  text-[length:var(--input-label-font-size)]
+  bg-[var(--input-label-bg)];
 }
 
 @utility form-field {
+  --input-label-color: var(--color-highlight-color);
+  --input-label-font-size: var(--text-xs);
+  --input-label-font-weight: 600;
+  --input-label-bg: transparent;
+
   @apply flex flex-col gap-1;
-  &:where(
-      :has(
-        .form-control,
-        .form-control-outline,
-        .form-select,
-        .form-select-outline
-      )
-    ):focus-within {
+  &:where(:has(.form-control, .form-control-outline, .form-select, .form-select-outline)):focus-within {
     .form-label {
       --input-label-color: var(--color-primary);
     }
@@ -236,6 +269,8 @@
   &:has(input[disabled]) {
     .form-label {
       --input-label-color: var(--color-disabled-color);
+
+      @apply cursor-default;
     }
   }
 }

@@ -1,42 +1,20 @@
 @utility form-floating {
   @apply relative;
 
-  .form-select-outline {
-    @apply w-full;
-    --input-btn-padding-y: calc(var(--spacing) * 2.5);
-    --input-btn-line-height: 2;
-    &:focus-within,
-    &:focus,
-    &:not(:placeholder-shown) {
-      & + .form-label {
-        @apply translate-x-[10px] translate-y-[-12px] scale-[0.85];
-      }
-      &.form-control-sm + .form-label {
-        @apply translate-x-[8px] translate-y-[-12px] scale-[0.85];
-      }
-      &.form-control-lg + .form-label {
-        @apply translate-x-[10px] translate-y-[-14px] scale-[0.75];
-      }
-    }
-    &:is(:disabled, [disabled]),
-    &:has(> select[disabled]) {
-      & + .form-label {
-        @apply cursor-default;
-        --input-label-color: var(--color-disabled-color);
-      }
-    }
-  }
   .form-select {
-    @apply w-full;
     --floating-label-padding-top: calc(var(--spacing) * 5.5);
     --floating-label-padding-bottom: calc(var(--spacing) * 1.25);
-    & + .form-label {
-      @apply bg-transparent p-0 m-0;
+
+    @apply pt-[var(--floating-label-padding-top)] pb-[var(--floating-label-padding-bottom)];
+
+    &::placeholder {
+      @apply text-transparent;
     }
+
     &.form-select-sm {
       --floating-label-padding-top: calc(var(--spacing) * 4.5);
       --floating-label-padding-bottom: calc(var(--spacing) * 0.75);
-      --btn-line-height: 1.5;
+      --input-btn-line-height: 1.5;
     }
     &.form-select-lg {
       --floating-label-padding-top: calc(var(--spacing) * 5.75);
@@ -46,23 +24,45 @@
     &:focus,
     select&:not(:placeholder-shown) {
       & + .form-label {
-        @apply translate-x-[10px] translate-y-[4px] scale-[0.85];
+        @apply translate-x-[12px] translate-y-[4px] scale-[0.85];
       }
-      &.form-control-sm + .form-label {
+      &.form-select-sm + .form-label {
         @apply translate-x-[6px] translate-y-[2px] scale-[0.85];
       }
-      &.form-control-lg + .form-label {
-        @apply translate-x-[10px] translate-y-[4px] scale-[0.75];
-      }
-    }
-    &:is(:disabled, [disabled]),
-    &:has(> select[disabled]) {
-      & + .form-label {
-        @apply cursor-default;
-        --input-label-color: var(--color-disabled-color);
+      &.form-select-lg + .form-label {
+        @apply translate-x-[9px] translate-y-[4px] scale-[0.75];
       }
     }
   }
+
+  .form-select-outline {
+    --input-btn-padding-y: calc(var(--spacing) * 2.5);
+    --input-btn-line-height: 2;
+
+    & ~ .form-label {
+      --input-label-bg: var(--color-default);
+      @apply -ms-2 px-2;
+    }
+
+    &::placeholder {
+      @apply text-transparent;
+    }
+
+    &:focus-within,
+    &:focus,
+    &:not(:placeholder-shown) {
+      & + .form-label {
+        @apply translate-x-[12px] translate-y-[-12px] scale-[0.85];
+      }
+      &.form-select-sm + .form-label {
+        @apply translate-x-[6px] translate-y-[-12px] scale-[0.85];
+      }
+      &.form-select-lg + .form-label {
+        @apply translate-x-[9px] translate-y-[-14px] scale-[0.75];
+      }
+    }
+  }
+
   .form-select-sm {
     --input-btn-padding-y: calc(var(--spacing) * 1.75);
     & + .form-label {
