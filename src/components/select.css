@@ -2,23 +2,24 @@
   --form-select-padding-right: calc(var(--spacing) * 9);
   --form-select-bg-size: calc(var(--spacing) * 4) calc(var(--spacing) * 3);
   --form-select-indicator: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='none' stroke='%231B2124' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/></svg>");
-  @apply relative inline-flex items-center justify-center transition duration-200 gap-2 appearance-none
-    leading-[var(--input-btn-line-height)]
-    bg-[var(--input-bg)]
-    text-[length:var(--input-btn-font-size)]
-    text-[var(--input-content)]
-    rounded-[var(--input-btn-radius)]
-    shadow-[0_0_0_1px_var(--input-border-color)]
-    pl-[var(--input-btn-padding-x)]
-    pr-[var(--form-select-padding-right)]
-    pt-[var(--floating-label-padding-top,_var(--input-btn-padding-y))]
-    pb-[var(--floating-label-padding-bottom,_var(--input-btn-padding-y))]
-    bg-[image:var(--form-select-indicator)]
-    bg-no-repeat
-    bg-[position:right_var(--input-btn-padding-x)_center]
-    bg-[length:var(--form-select-bg-size)];
-  &:is(:disabled, [disabled]),
-  &:has(> select[disabled]) {
+  @apply relative inline-flex gap-2 items-center justify-center 
+  transition duration-200
+  appearance-none
+  leading-[var(--input-btn-line-height)]
+  bg-[var(--input-bg)]
+  text-[length:var(--input-btn-font-size)]
+  text-[var(--input-content)]
+  rounded-[var(--input-btn-radius)]
+  shadow-[0_0_0_1px_var(--input-border-color)]
+  pl-[var(--input-btn-padding-x)]
+  pr-[var(--form-select-padding-right)]
+  py-[var(--input-btn-padding-y)]
+  bg-[image:var(--form-select-indicator)]
+  bg-no-repeat
+  bg-[position:right_var(--input-btn-padding-x)_center]
+  bg-[length:var(--form-select-bg-size)];
+
+  &:is(:disabled, [disabled]) {
     --input-bg: var(--input-disabled-bg, var(--color-highlight));
     &:hover {
       --input-bg: var(--input-disabled-bg, var(--color-highlight));
@@ -47,21 +48,22 @@
   --form-select-padding-right: calc(var(--spacing) * 9);
   --form-select-bg-size: calc(var(--spacing) * 4) calc(var(--spacing) * 3);
   --form-select-indicator: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='none' stroke='%231B2124' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/></svg>");
-  @apply relative inline-flex items-center justify-center transition duration-200 gap-2 appearance-none
-    leading-[var(--input-btn-line-height)]
-    text-[length:var(--input-btn-font-size)]
-    text-[var(--input-content)]
-    rounded-[var(--input-btn-radius)]
-    shadow-[0_0_0_1px_var(--input-border-color)]
-    pl-[var(--input-btn-padding-x)]
-    pr-[var(--form-select-padding-right)]
-    py-[var(--input-btn-padding-y)]
-    bg-[image:var(--form-select-indicator)]
-    bg-no-repeat
-    bg-[position:right_var(--input-btn-padding-x)_center]
-    bg-[length:var(--form-select-bg-size)];
-  &:is(:disabled, [disabled]),
-  &:has(> select[disabled]) {
+  @apply relative inline-flex gap-2 items-center justify-center 
+  transition duration-200
+  appearance-none
+  leading-[var(--input-btn-line-height)]
+  text-[length:var(--input-btn-font-size)]
+  text-[var(--input-content)]
+  rounded-[var(--input-btn-radius)]
+  shadow-[0_0_0_1px_var(--input-border-color)]
+  pl-[var(--input-btn-padding-x)]
+  pr-[var(--form-select-padding-right)]
+  py-[var(--input-btn-padding-y)]
+  bg-[image:var(--form-select-indicator)]
+  bg-no-repeat
+  bg-[position:right_var(--input-btn-padding-x)_center]
+  bg-[length:var(--form-select-bg-size)];
+  &:is(:disabled, [disabled]) {
     @apply opacity-50;
     &:hover {
       --input-border-color: var(--color-border-base);

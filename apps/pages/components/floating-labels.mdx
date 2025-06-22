@@ -7,96 +7,122 @@ layout: "../../layouts/LayoutDoc.astro"
 import Example from "../../components/docs/Example.astro";
 
 ### Basic Floating Label
+
 The Floating Label component comes with two variations: Filled and Outlined
 
 <Example>
-  <div slot="preview" class="not-prose grid sm:grid-cols-2 items-center gap-3">
+  <div slot="preview" class="not-prose grid items-center gap-3 sm:grid-cols-2">
     <div class="form-floating form-field">
-      <input type="text" id="floatingInput" class="form-control" placeholder=' ' />
-      <label class="form-label" for="floatingInput">Size Medium</label>
+      <input type="text" id="floatingInput" class="form-control" placeholder=" " />
+      <label class="form-label" for="floatingInput">
+        User Name
+      </label>
     </div>
     <div class="form-floating form-field">
-      <input type="text" id="floatingInputOutline" class="form-control-outline" placeholder=' ' />
-      <label class="form-label" for="floatingInputOutline">Size Medium</label>
+      <input type="text" id="floatingInputOutline" class="form-control-outline" placeholder=" " />
+      <label class="form-label" for="floatingInputOutline">
+        User Name
+      </label>
     </div>
   </div>
   <div slot="code">
     ```html
     <div class="form-floating form-field">
-      <input type="text" id="floatingInput" class="form-control" placeholder=' ' />
-      <label class="form-label" for="floatingInput">Size Small</label>
+      <input type="text" id="floatingInput" class="form-control" placeholder=" " />
+      <label class="form-label" for="floatingInput">
+        Size Small
+      </label>
     </div>
     <div class="form-floating form-field">
-      <input type="text" id="floatingInputOutline" class="form-control-outline" placeholder=' ' />
-      <label class="form-label" for="floatingInputOutline">Size Small</label>
+      <input type="text" id="floatingInputOutline" class="form-control-outline" placeholder=" " />
+      <label class="form-label" for="floatingInputOutline">
+        Size Small
+      </label>
     </div>
     ```
   </div>
 </Example>
 
 ### Floating label with icon
+
 Icons can be placed at the **start** or **end** of the input field. Use `.form-control-icon` class to the icon.
 
 <Example>
-  <div slot="preview" class="not-prose grid sm:grid-cols-2 items-center gap-3">
-    <div class="form-floating form-field">
-      <label class="form-control">
-        <span class="icon-[material-symbols--calendar-today-outline-rounded] form-control-icon"></span>
-        <input type="text" id="floatingLabelIcon" placeholder=' ' />
-      </label>
-      <label class="form-label" for="floatingLabelIcon">Size Medium</label>
+  <div slot="preview" class="not-prose grid items-center gap-3 sm:grid-cols-2">
+    <div class="input-group-icon">
+      <span class="icon-[material-symbols--calendar-today-outline-rounded] form-control-icon-start"></span>
+      <div class="form-floating form-field">
+        <input type="text" class="form-control" id="floatingLabelIcon" placeholder=" " />
+        <label class="form-label" for="floatingLabelIcon">
+          User Name
+        </label>
+      </div>
     </div>
-    <div class="form-floating form-field">
-      <label class="form-control-outline">
-        <span class="icon-[material-symbols--calendar-today-outline-rounded] form-control-icon"></span>
-        <input type="text" id="floatingLabelOutlineIcon" placeholder=' ' />
-      </label>
-      <label class="form-label" for="floatingLabelOutlineIcon">Size Medium</label>
+    <div class="input-group-icon">
+      <span class="icon-[material-symbols--calendar-today-outline-rounded] form-control-icon-start"></span>
+      <div class="form-floating form-field">
+        <input type="text" class="form-control-outline" id="floatingLabelOutlineIcon" />
+        <label class="form-label" for="floatingLabelOutlineIcon">
+          User Name
+        </label>
+      </div>
     </div>
-    <div class="form-floating form-field">
-      <label class="form-control">
-        <input type="text" id="floatingLabelIconEnd" placeholder=' ' />
-        <span class="icon-[material-symbols--calendar-today-outline-rounded] form-control-icon"></span>
-      </label>
-      <label class="form-label" for="floatingLabelIconEnd">Size Medium</label>
+    <div class="input-group-icon">
+      <span class="icon-[material-symbols--calendar-today-outline-rounded] form-control-icon-end"></span>
+      <div class="form-floating form-field">
+        <input type="text" class="form-control" id="floatingLabelIconEnd" placeholder=" " />
+        <label class="form-label" for="floatingLabelIconEnd">
+          User Name
+        </label>
+      </div>
     </div>
-    <div class="form-floating form-field">
-      <label class="form-control-outline">
-        <input type="text" id="floatingLabelOutlineIconEnd" placeholder=' ' />
-        <span class="icon-[material-symbols--calendar-today-outline-rounded] form-control-icon"></span>
-      </label>
-      <label class="form-label" for="floatingLabelOutlineIconEnd">Size Medium</label>
+    <div class="input-group-icon">
+      <span class="icon-[material-symbols--calendar-today-outline-rounded] form-control-icon-end"></span>
+      <div class="form-floating form-field">
+        <input type="text" class="form-control-outline" id="floatingLabelOutlineIconEnd" placeholder=" " />
+        <label class="form-label" for="floatingLabelOutlineIconEnd">
+          User Name
+        </label>
+      </div>
     </div>
   </div>
   <div slot="code">
     ```html
-    <div class="form-floating form-field">
-      <label class="form-control">
-        <span class="icon-[material-symbols--calendar-today-outline-rounded] form-control-icon"></span>
-        <input type="text" id="floatingLabelIcon" placeholder=' ' />
-      </label>
-      <label class="form-label" for="floatingLabelIcon">Size Medium</label>
+    <div class="input-group-icon">
+      <span class="icon-[material-symbols--calendar-today-outline-rounded] form-control-icon-start"></span>
+      <div class="form-floating form-field">
+        <input type="text" class="form-control" id="floatingLabelIcon" placeholder=" " />
+        <label class="form-label" for="floatingLabelIcon">
+          User Name
+        </label>
+      </div>
     </div>
-    <div class="form-floating form-field">
-      <label class="form-control-outline">
-        <span class="icon-[material-symbols--calendar-today-outline-rounded] form-control-icon"></span>
-        <input type="text" id="floatingLabelOutlineIcon" placeholder=' ' />
-      </label>
-      <label class="form-label" for="floatingLabelOutlineIcon">Size Medium</label>
+    <div class="input-group-icon">
+      <span class="icon-[material-symbols--calendar-today-outline-rounded] form-control-icon-start"></span>
+      <div class="form-floating form-field">
+        <input type="text" class="form-control-outline" id="floatingLabelOutlineIcon" />
+        <label class="form-label" for="floatingLabelOutlineIcon">
+          User Name
+        </label>
+      </div>
     </div>
-    <div class="form-floating form-field">
-      <label class="form-control">
-        <input type="text" id="floatingLabelIconEnd" placeholder=' ' />
-        <span class="icon-[material-symbols--calendar-today-outline-rounded] form-control-icon"></span>
-      </label>
-      <label class="form-label" for="floatingLabelIconEnd">Size Medium</label>
+    <div class="input-group-icon">
+      <span class="icon-[material-symbols--calendar-today-outline-rounded] form-control-icon-end"></span>
+      <div class="form-floating form-field">
+        <input type="text" class="form-control" id="floatingLabelIconEnd" placeholder=" " />
+        <label class="form-label" for="floatingLabelIconEnd">
+          User Name
+        </label>
+      </div>
     </div>
-    <div class="form-floating form-field">
-      <label class="form-control-outline">
-        <input type="text" id="floatingLabelOutlineIconEnd" placeholder=' ' />
-        <span class="icon-[material-symbols--calendar-today-outline-rounded] form-control-icon"></span>
-      </label>
-      <label class="form-label" for="floatingLabelOutlineIconEnd">Size Medium</label>
+    <div class="input-group-icon">
+      <span class="icon-[material-symbols--calendar-today-outline-rounded] form-control-icon-end"></span>
+      <div class="form-floating form-field">
+        <input type="text" class="form-control-outline" id="floatingLabelOutlineIconEnd" placeholder=" " />
+        <label class="form-label" for="floatingLabelOutlineIconEnd">
+          User Name
+        </label>
+      </div>
     </div>
     ```
   </div>
@@ -105,85 +131,118 @@ Icons can be placed at the **start** or **end** of the input field. Use `.form-c
 ### Textarea
 
 <Example>
-  <div slot="preview" class="not-prose grid sm:grid-cols-2 items-center gap-3">
+  <div slot="preview" class="not-prose grid items-center gap-3 sm:grid-cols-2">
     <div class="form-floating form-field">
       <textarea type="text" class="form-control" id="floatingTextarea" placeholder=" " />
-      <label class="form-label" for="floatingTextarea">Size Medium</label>
+      <label class="form-label" for="floatingTextarea">
+        Message
+      </label>
     </div>
     <div class="form-floating form-field">
       <textarea type="text" class="form-control-outline" id="floatingTextareaOutline" placeholder=" " />
-      <label class="form-label" for="floatingTextareaOutline">Size Medium</label>
+      <label class="form-label" for="floatingTextareaOutline">
+        Message
+      </label>
     </div>
   </div>
   <div slot="code">
     ```html
     <div class="form-floating form-field">
       <textarea type="text" class="form-control" id="floatingTextarea" placeholder=" " />
-      <label class="form-label" for="floatingTextarea">Size Medium</label>
+      <label class="form-label" for="floatingTextarea">
+        Message
+      </label>
     </div>
     <div class="form-floating form-field">
       <textarea type="text" class="form-control-outline" id="floatingTextareaOutline" placeholder=" " />
-      <label class="form-label" for="floatingTextareaOutline">Size Medium</label>
+      <label class="form-label" for="floatingTextareaOutline">
+        Message
+      </label>
     </div>
     ```
   </div>
 </Example>
 
 ### Sizing
+
 Set heights using classes like <code>.form-control-sm</code> and <code>.form-control-lg</code> for small and large input field. Default is medium.
 
 <Example>
-  <div slot="preview" class="not-prose grid sm:grid-cols-3 items-center gap-3">
+  <div slot="preview" class="not-prose grid items-center gap-3 sm:grid-cols-3">
     <div class="form-floating form-field">
-      <input type="text" id="floatingInputSmall" class="form-control form-control-sm" placeholder=' ' />
-      <label class="form-label" for="floatingInputSmall">Size Medium</label>
+      <input type="text" id="floatingInputSmall" class="form-control form-control-sm" placeholder=" " />
+      <label class="form-label" for="floatingInputSmall">
+        Size Small
+      </label>
     </div>
     <div class="form-floating form-field">
-      <input type="text" id="floatingInputMedium" class="form-control" placeholder=' ' />
-      <label class="form-label" for="floatingInputMedium">Size Medium</label>
+      <input type="text" id="floatingInputMedium" class="form-control" placeholder=" " />
+      <label class="form-label" for="floatingInputMedium">
+        Size Medium
+      </label>
     </div>
     <div class="form-floating form-field">
-      <input type="text" id="floatingInputLarge" class="form-control form-control-lg" placeholder=' ' />
-      <label class="form-label" for="floatingInputLarge">Size Medium</label>
+      <input type="text" id="floatingInputLarge" class="form-control form-control-lg" placeholder=" " />
+      <label class="form-label" for="floatingInputLarge">
+        Size Large
+      </label>
     </div>
     <div class="form-floating form-field">
-      <input type="text" id="floatingInputOutlineSmall" class="form-control-outline form-control-sm" placeholder=' ' />
-      <label class="form-label" for="floatingInputOutlineSmall">Size Medium</label>
+      <input type="text" id="floatingInputOutlineSmall" class="form-control-outline form-control-sm" placeholder=" " />
+      <label class="form-label" for="floatingInputOutlineSmall">
+        Size Small
+      </label>
     </div>
     <div class="form-floating form-field">
-      <input type="text" id="floatingInputOutlineMedium" class="form-control-outline" placeholder=' ' />
-      <label class="form-label" for="floatingInputOutlineMedium">Size Medium</label>
+      <input type="text" id="floatingInputOutlineMedium" class="form-control-outline" placeholder=" " />
+      <label class="form-label" for="floatingInputOutlineMedium">
+        Size Medium
+      </label>
     </div>
     <div class="form-floating form-field">
-      <input type="text" id="floatingInputOutlineLarge" class="form-control-outline form-control-lg" placeholder=' ' />
-      <label class="form-label" for="floatingInputOutlineLarge">Size Medium</label>
+      <input type="text" id="floatingInputOutlineLarge" class="form-control-outline form-control-lg" placeholder=" " />
+      <label class="form-label" for="floatingInputOutlineLarge">
+        Size Large
+      </label>
     </div>
   </div>
   <div slot="code">
     ```html
     <div class="form-floating form-field">
-      <input type="text" id="floatingInputSmall" class="form-control form-control-sm" placeholder=' ' />
-      <label class="form-label" for="floatingInputSmall">Size Medium</label>
+      <input type="text" id="floatingInputSmall" class="form-control form-control-sm" placeholder=" " />
+      <label class="form-label" for="floatingInputSmall">
+        Size Small
+      </label>
     </div>
     <div class="form-floating form-field">
-      <input type="text" id="floatingInputMedium" class="form-control" placeholder=' ' />
-      <label class="form-label" for="floatingInputMedium">Size Medium</label>
+      <input type="text" id="floatingInputMedium" class="form-control" placeholder=" " />
+      <label class="form-label" for="floatingInputMedium">
+        Size Medium
+      </label>
     </div>
     <div class="form-floating form-field">
-      <input type="text" id="floatingInputLarge" class="form-control form-control-lg" placeholder=' ' />
-      <label class="form-label" for="floatingInputLarge">Size Medium</label>
+      <input type="text" id="floatingInputLarge" class="form-control form-control-lg" placeholder=" " />
+      <label class="form-label" for="floatingInputLarge">
+        Size Large
+      </label>
     </div>
     <div class="form-floating form-field">
-      <input type="text" id="floatingInputOutlineSmall" class="form-control-outline form-control-sm" placeholder=' ' />
-      <label class="form-label" for="floatingInputOutlineSmall">Size Medium</label>
+      <input type="text" id="floatingInputOutlineSmall" class="form-control-outline form-control-sm" placeholder=" " />
+      <label class="form-label" for="floatingInputOutlineSmall">
+        Size Small
+      </label>
     </div>
     <div class="form-floating form-field">
-      <input type="text" id="floatingInputOutlineMedium" class="form-control-outline" placeholder=' ' />
-      <label class="form-label" for="floatingInputOutlineMedium">Size Medium</label>
+      <input type="text" id="floatingInputOutlineMedium" class="form-control-outline" placeholder=" " />
+      <label class="form-label" for="floatingInputOutlineMedium">
+        Size Medium
+      </label>
     </div>
     <div class="form-floating form-field">
-      <input type="text" id="floatingInputOutlineLarge" class="form-control-outline form-control-lg" placeholder=' ' />
-      <label class="form-label" for="floatingInputOutlineLarge">Size Medium</label>
+      <input type="text" id="floatingInputOutlineLarge" class="form-control-outline form-control-lg" placeholder=" " />
+      <label class="form-label" for="floatingInputOutlineLarge">
+        Size Large
+      </label>
     </div>
     ```
   </div>
@@ -197,41 +256,57 @@ Different colors become visible while the input is focused. By default, the inpu
 - **`.form-control-success`**
 
 <Example>
-  <div slot="preview" class="not-prose grid sm:grid-cols-2 items-center gap-3">
+  <div slot="preview" class="not-prose grid items-center gap-3 sm:grid-cols-2">
     <div class="form-floating form-field">
-      <input type="text" id="floatingInputSecondary" class="form-control form-control-secondary" placeholder=' ' />
-      <label class="form-label" for="floatingInputSecondary">Size Medium</label>
+      <input type="text" id="floatingInputSecondary" class="form-control form-control-secondary" placeholder=" " />
+      <label class="form-label" for="floatingInputSecondary">
+        User Name
+      </label>
     </div>
     <div class="form-floating form-field">
-      <input type="text" id="floatingInputSuccess" class="form-control form-control-success" placeholder=' ' />
-      <label class="form-label" for="floatingInputSuccess">Size Medium</label>
+      <input type="text" id="floatingInputSuccess" class="form-control form-control-success" placeholder=" " />
+      <label class="form-label" for="floatingInputSuccess">
+        User Name
+      </label>
     </div>
     <div class="form-floating form-field">
-      <input type="text" id="outlineSecondary" class="form-control-outline form-control-secondary" placeholder=' ' />
-      <label class="form-label" for="outlineSecondary">Size Medium</label>
+      <input type="text" id="outlineSecondary" class="form-control-outline form-control-secondary" placeholder=" " />
+      <label class="form-label" for="outlineSecondary">
+        User Name
+      </label>
     </div>
     <div class="form-floating form-field">
-      <input type="text" id="outlineSuccess" class="form-control-outline form-control-success" placeholder=' ' />
-      <label class="form-label" for="outlineSuccess">Size Medium</label>
+      <input type="text" id="outlineSuccess" class="form-control-outline form-control-success" placeholder=" " />
+      <label class="form-label" for="outlineSuccess">
+        User Name
+      </label>
     </div>
   </div>
   <div slot="code">
     ```html
     <div class="form-floating form-field">
-      <input type="text" id="floatingInputSecondary" class="form-control form-control-secondary" placeholder=' ' />
-      <label class="form-label" for="floatingInputSecondary">Size Medium</label>
+      <input type="text" id="floatingInputSecondary" class="form-control form-control-secondary" placeholder=" " />
+      <label class="form-label" for="floatingInputSecondary">
+        User Name
+      </label>
     </div>
     <div class="form-floating form-field">
-      <input type="text" id="floatingInputSuccess" class="form-control form-control-success" placeholder=' ' />
-      <label class="form-label" for="floatingInputSuccess">Size Medium</label>
+      <input type="text" id="floatingInputSuccess" class="form-control form-control-success" placeholder=" " />
+      <label class="form-label" for="floatingInputSuccess">
+        User Name
+      </label>
     </div>
     <div class="form-floating form-field">
-      <input type="text" id="outlineSecondary" class="form-control-outline form-control-secondary" placeholder=' ' />
-      <label class="form-label" for="outlineSecondary">Size Medium</label>
+      <input type="text" id="outlineSecondary" class="form-control-outline form-control-secondary" placeholder=" " />
+      <label class="form-label" for="outlineSecondary">
+        User Name
+      </label>
     </div>
     <div class="form-floating form-field">
-      <input type="text" id="outlineSuccess" class="form-control-outline form-control-success" placeholder=' ' />
-      <label class="form-label" for="outlineSuccess">Size Medium</label>
+      <input type="text" id="outlineSuccess" class="form-control-outline form-control-success" placeholder=" " />
+      <label class="form-label" for="outlineSuccess">
+        User Name
+      </label>
     </div>
     ```
   </div>
@@ -240,25 +315,33 @@ Different colors become visible while the input is focused. By default, the inpu
 ### Disabled
 
 <Example>
-  <div slot="preview" class="not-prose grid sm:grid-cols-2 items-center gap-3">
+  <div slot="preview" class="not-prose grid items-center gap-3 sm:grid-cols-2">
     <div class="form-floating form-field">
-      <input type="text" id="floatingInputDisabled" class="form-control" placeholder=' ' disabled />
-      <label class="form-label" for="floatingInputDisabled">Size Medium</label>
+      <input type="text" id="floatingInputDisabled" class="form-control" placeholder=" " disabled />
+      <label class="form-label" for="floatingInputDisabled">
+        User Name
+      </label>
     </div>
     <div class="form-floating form-field">
-      <input type="text" id="inputOutlineDisabled" class="form-control-outline" placeholder=' ' disabled />
-      <label class="form-label" for="inputOutlineDisabled">Size Medium</label>
+      <input type="text" id="inputOutlineDisabled" class="form-control-outline" placeholder=" " disabled />
+      <label class="form-label" for="inputOutlineDisabled">
+        User Name
+      </label>
     </div>
   </div>
   <div slot="code">
     ```html
     <div class="form-floating form-field">
-      <input type="text" id="floatingInputDisabled" class="form-control" placeholder=' ' disabled />
-      <label class="form-label" for="floatingInputDisabled">Size Medium</label>
+      <input type="text" id="floatingInputDisabled" class="form-control" placeholder=" " disabled />
+      <label class="form-label" for="floatingInputDisabled">
+        User Name
+      </label>
     </div>
     <div class="form-floating form-field">
-      <input type="text" id="inputOutlineDisabled" class="form-control-outline" placeholder=' ' disabled />
-      <label class="form-label" for="inputOutlineDisabled">Size Medium</label>
+      <input type="text" id="inputOutlineDisabled" class="form-control-outline" placeholder=" " disabled />
+      <label class="form-label" for="inputOutlineDisabled">
+        User Name
+      </label>
     </div>
     ```
   </div>
@@ -269,25 +352,33 @@ Different colors become visible while the input is focused. By default, the inpu
 Indicate validation states by adding the `.is-invalid` class to input fields. This highlights the input field when invalid or requiring user attention.
 
 <Example>
-  <div slot="preview" class="not-prose grid sm:grid-cols-2 items-center gap-3">
+  <div slot="preview" class="not-prose grid items-center gap-3 sm:grid-cols-2">
     <div class="form-floating form-field">
-      <input type="text" id="floatingInput" class="form-control is-invalid" value="Hello world" placeholder=' ' />
-      <label class="form-label" for="floatingInput">Size Medium</label>
+      <input type="text" id="floatingInput" class="form-control is-invalid" value="Hello world" placeholder=" " />
+      <label class="form-label" for="floatingInput">
+        User Name
+      </label>
     </div>
     <div class="form-floating form-field">
-      <input type="text" id="floatingInputOutline" class="form-control-outline is-invalid" value="Hello world" placeholder=' ' />
-      <label class="form-label" for="floatingInputOutline">Size Medium</label>
+      <input type="text" id="floatingInputOutline" class="form-control-outline is-invalid" value="Hello world" placeholder=" " />
+      <label class="form-label" for="floatingInputOutline">
+        User Name
+      </label>
     </div>
   </div>
   <div slot="code">
     ```html
     <div class="form-floating form-field">
-      <input type="text" id="floatingInput" class="form-control is-invalid" value="Hello world" placeholder=' ' />
-      <label class="form-label" for="floatingInput">Size Medium</label>
+      <input type="text" id="floatingInput" class="form-control is-invalid" value="Hello world" placeholder=" " />
+      <label class="form-label" for="floatingInput">
+        User Name
+      </label>
     </div>
     <div class="form-floating form-field">
-      <input type="text" id="floatingInputOutline" class="form-control-outline is-invalid" value="Hello world" placeholder=' ' />
-      <label class="form-label" for="floatingInputOutline">Size Medium</label>
+      <input type="text" id="floatingInputOutline" class="form-control-outline is-invalid" value="Hello world" placeholder=" " />
+      <label class="form-label" for="floatingInputOutline">
+        User Name
+      </label>
     </div>
     ```
   </div>

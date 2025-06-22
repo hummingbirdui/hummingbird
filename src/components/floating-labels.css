@@ -1,55 +1,27 @@
 @utility form-floating {
   @apply relative;
-  .form-label {
-    @apply absolute top-0 inline-block transition-transform duration-200 cursor-text
-      font-normal
-      text-sm
-      leading-[1.5]
-      -ms-2
-      px-2
-      bg-default
-      translate-x-[16px] translate-y-[13px] scale-[1];
+  > .form-label {
+    --input-label-font-weight: 400;
+    --input-label-font-size: var(--text-sm);
+
+    @apply absolute top-0
+    inline-block 
+    transition-transform duration-200
+    cursor-text
+    leading-[1.5]
+    translate-x-[16px] translate-y-[13px] scale-[1];
   }
 
-  .form-control-outline {
-    @apply w-full;
-    --input-btn-padding-y: calc(var(--spacing) * 2.5);
-    --input-btn-line-height: 2;
-    &:focus-within,
-    &:focus,
-    &:not(:placeholder-shown) {
-      & + .form-label {
-        @apply translate-x-[10px] translate-y-[-12px] scale-[0.85];
-      }
-      &.form-control-sm + .form-label {
-        @apply translate-x-[8px] translate-y-[-12px] scale-[0.85];
-      }
-      &.form-control-lg + .form-label {
-        @apply translate-x-[10px] translate-y-[-14px] scale-[0.75];
-      }
-    }
-    &:is(:disabled, [disabled]),
-    &:has(> input[disabled]) {
-      & + .form-label {
-        @apply cursor-default;
-        --input-label-color: var(--color-disabled-color);
-      }
-    }
-  }
   .form-control {
-    @apply w-full;
     --floating-label-padding-top: calc(var(--spacing) * 5.5);
     --floating-label-padding-bottom: calc(var(--spacing) * 1.25);
-    & + .form-label {
-      @apply bg-transparent p-0 m-0;
+
+    @apply pt-[var(--floating-label-padding-top)] pb-[var(--floating-label-padding-bottom)];
+
+    &::placeholder {
+      @apply text-transparent;
     }
-    &:has(input) {
-      @apply py-0;
-    }
-    & :where(input),
-    &:not(:has(input)) {
-      @apply pt-[var(--floating-label-padding-top)] pb-[var(--floating-label-padding-bottom)];
-    }
+
     &.form-control-sm {
       --floating-label-padding-top: calc(var(--spacing) * 4.5);
       --floating-label-padding-bottom: calc(var(--spacing) * 0.75);
@@ -61,61 +33,88 @@
     }
     &:focus-within,
     &:focus,
-    input&:not(:placeholder-shown),
-    textarea&:not(:placeholder-shown) {
-      & + .form-label {
+    &:not(:placeholder-shown) {
+      & ~ .form-label {
         @apply translate-x-[10px] translate-y-[4px] scale-[0.85];
       }
-      &.form-control-sm + .form-label {
+      &.form-control-sm ~ .form-label {
         @apply translate-x-[6px] translate-y-[2px] scale-[0.85];
       }
-      &.form-control-lg + .form-label {
+      &.form-control-lg ~ .form-label {
         @apply translate-x-[10px] translate-y-[4px] scale-[0.75];
       }
     }
-    &:has(.form-control-icon):not(:has(> * + .form-control-icon)) {
-      + .form-label {
-        @apply translate-x-[43px] translate-y-[13px] scale-[1];
-      }
-      &.form-control-sm + .form-label {
-        @apply translate-x-[34px] translate-y-[10px] scale-[1];
-      }
-      &.form-control-lg + .form-label {
-        @apply translate-x-[52px] translate-y-[15px] scale-[1];
-      }
-      &:focus-within,
-      &:focus,
-      &:has(> input:not(:placeholder-shown)) {
-        & + .form-label {
-          @apply translate-x-[37px] translate-y-[4px] scale-[0.85];
-        }
-        &.form-control-sm + .form-label {
-          @apply translate-x-[27px] translate-y-[2px] scale-[0.85];
-        }
-        &.form-control-lg + .form-label {
-          @apply translate-x-[40px] translate-y-[4px] scale-[0.75];
-        }
-      }
+  }
+
+  .form-control-outline {
+    --input-btn-padding-y: calc(var(--spacing) * 2.5);
+    --input-btn-line-height: 2;
+
+    & ~ .form-label {
+      --input-label-bg: var(--color-default);
+      @apply -ms-2 px-2;
     }
-    &:is(:disabled, [disabled]),
-    &:has(> input[disabled]) {
-      & + .form-label {
-        @apply cursor-default;
-        --input-label-color: var(--color-disabled-color);
+
+    &::placeholder {
+      @apply text-transparent;
+    }
+    &:focus-within,
+    &:focus,
+    &:not(:placeholder-shown) {
+      & ~ .form-label {
+        @apply translate-x-[10px] translate-y-[-12px] scale-[0.85];
+      }
+      &.form-control-sm ~ .form-label {
+        @apply translate-x-[7px] translate-y-[-12px] scale-[0.85];
+      }
+      &.form-control-lg ~ .form-label {
+        @apply translate-x-[10px] translate-y-[-14px] scale-[0.75];
       }
     }
   }
+
   .form-control-sm {
     --input-btn-padding-y: calc(var(--spacing) * 1.75);
-    & + .form-label {
+    & ~ .form-label {
       @apply translate-x-[12px] translate-y-[10px] scale-[1];
     }
   }
   .form-control-lg {
     --input-btn-padding-y: calc(var(--spacing) * 2.75);
     --input-btn-padding-x: calc(var(--spacing) * 5);
-    & + .form-label {
+    & ~ .form-label {
       @apply text-base translate-x-[20px] translate-y-[14px] scale-[1];
+    }
+  }
+}
+
+@utility input-group-icon {
+  .form-control-icon-start {
+    ~ .form-floating {
+      .form-control {
+        ~ .form-label {
+          @apply translate-x-[43px] translate-y-[13px] scale-[1];
+        }
+        &.form-control-sm ~ .form-label {
+          @apply translate-x-[34px] translate-y-[10px] scale-[1];
+        }
+        &.form-control-lg ~ .form-label {
+          @apply translate-x-[52px] translate-y-[15px] scale-[1];
+        }
+        &:focus-within,
+        &:focus,
+        &:not(:placeholder-shown) {
+          ~ .form-label {
+            @apply translate-x-[37px] translate-y-[4px] scale-[0.85];
+          }
+          &.form-control-sm ~ .form-label {
+            @apply translate-x-[28px] translate-y-[2px] scale-[0.85];
+          }
+          &.form-control-lg ~ .form-label {
+            @apply translate-x-[38px] translate-y-[4px] scale-[0.75];
+          }
+        }
+      }
     }
   }
 }
