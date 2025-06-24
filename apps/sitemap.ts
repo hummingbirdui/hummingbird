@@ -32,8 +32,8 @@ const sitemap: Sitemap[] = [
         path: '/components/buttons',
       },
       {
-        name: 'Text Field',
-        path: '/components/text-field',
+        name: 'Form Control',
+        path: '/components/form-control',
       },
       {
         name: 'Floating labels',
