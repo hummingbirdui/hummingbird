@@ -1,10 +1,11 @@
 @import './button.css';
-@import './text-field.css';
+@import './form-control.css';
 @import './floating-labels.css';
 @import './select.css';
 @import './floating-label-select.css';
 @import './form-check.css';
 @import './form-range.css';
+@import './input-group.css';
 @import './badge.css';
 @import './alert.css';
 @import './link.css';
