@@ -9,14 +9,14 @@ import Example from "../../components/docs/Example.astro";
 ### File Input
 
 <Example>
-  <div slot="preview" class="not-prose grid sm:grid-cols-2 items-center gap-3">
+  <div slot="preview" class="not-prose grid items-center gap-3 sm:grid-cols-2">
+    <input type="file" class="form-control-fill" />
     <input type="file" class="form-control" />
-    <input type="file" class="form-control-outline" />
   </div>
   <div slot="code">
     ```html
+    <input type="file" class="form-control-fill" />
     <input type="file" class="form-control" />
-    <input type="file" class="form-control-outline" />
     ```
   </div>
 </Example>
@@ -24,25 +24,25 @@ import Example from "../../components/docs/Example.astro";
 ### File Input with label
 
 <Example>
-  <div slot="preview" class="not-prose grid sm:grid-cols-2 items-center gap-3">
+  <div slot="preview" class="not-prose grid items-center gap-3 sm:grid-cols-2">
     <div class="form-field">
       <label class="form-label">Avatar</label>
-      <input type="file" class="form-control" />
+      <input type="file" class="form-control-fill" />
     </div>
     <div class="form-field">
       <label class="form-label">Avatar</label>
-      <input type="file" class="form-control-outline" />
+      <input type="file" class="form-control" />
     </div>
   </div>
   <div slot="code">
     ```html
     <div class="form-field">
       <label class="form-label">Avatar</label>
-      <input type="file" class="form-control" />
+      <input type="file" class="form-control-fill" />
     </div>
     <div class="form-field">
       <label class="form-label">Avatar</label>
-      <input type="file" class="form-control-outline" />
+      <input type="file" class="form-control" />
     </div>
     ```
   </div>
@@ -54,21 +54,21 @@ Set heights using classes like <code>.form-control-sm</code> and <code>.form-con
 
 <Example>
   <div slot="preview" class="not-prose grid gap-3">
+    <input type="file" class="form-control-fill form-control-sm" />
+    <input type="file" class="form-control-fill" />
+    <input type="file" class="form-control-fill form-control-lg" />
     <input type="file" class="form-control form-control-sm" />
     <input type="file" class="form-control" />
     <input type="file" class="form-control form-control-lg" />
-    <input type="file" class="form-control-outline form-control-sm" />
-    <input type="file" class="form-control-outline" />
-    <input type="file" class="form-control-outline form-control-lg" />
   </div>
   <div slot="code">
     ```html
+    <input type="file" class="form-control-fill form-control-sm" />
+    <input type="file" class="form-control-fill" />
+    <input type="file" class="form-control-fill form-control-lg" />
     <input type="file" class="form-control form-control-sm" />
     <input type="file" class="form-control" />
     <input type="file" class="form-control form-control-lg" />
-    <input type="file" class="form-control-outline form-control-sm" />
-    <input type="file" class="form-control-outline" />
-    <input type="file" class="form-control-outline form-control-lg" />
     ```
   </div>
 </Example>
@@ -81,18 +81,18 @@ Different colors become visible while the input is focused. By default, the file
 - **`.form-control-success`**
 
 <Example>
-  <div slot="preview" class="not-prose grid sm:grid-cols-2 items-center gap-3">
+  <div slot="preview" class="not-prose grid items-center gap-3 sm:grid-cols-2">
+    <input type="file" class="form-control-fill form-control-secondary" />
+    <input type="file" class="form-control-fill form-control-success" />
     <input type="file" class="form-control form-control-secondary" />
     <input type="file" class="form-control form-control-success" />
-    <input type="file" class="form-control-outline form-control-secondary" />
-    <input type="file" class="form-control-outline form-control-success" />
   </div>
   <div slot="code">
     ```html
+    <input type="file" class="form-control-fill form-control-secondary" />
+    <input type="file" class="form-control-fill form-control-success" />
     <input type="file" class="form-control form-control-secondary" />
     <input type="file" class="form-control form-control-success" />
-    <input type="file" class="form-control-outline form-control-secondary" />
-    <input type="file" class="form-control-outline form-control-success" />
     ```
   </div>
 </Example>
@@ -100,14 +100,14 @@ Different colors become visible while the input is focused. By default, the file
 ### Disabled
 
 <Example>
-  <div slot="preview" class="not-prose grid sm:grid-cols-2 items-center gap-3">
+  <div slot="preview" class="not-prose grid items-center gap-3 sm:grid-cols-2">
+    <input type="file" class="form-control-fill" placeholder="Disabled" disabled />
     <input type="file" class="form-control" placeholder="Disabled" disabled />
-    <input type="file" class="form-control-outline" placeholder="Disabled" disabled />
   </div>
   <div slot="code">
     ```html
+    <input type="file" class="form-control-fill" placeholder="Disabled" disabled />
     <input type="file" class="form-control" placeholder="Disabled" disabled />
-    <input type="file" class="form-control-outline" placeholder="Disabled" disabled />
     ```
   </div>
 </Example>
@@ -117,25 +117,25 @@ Different colors become visible while the input is focused. By default, the file
 Indicate validation states by adding the `.is-invalid` class to file input. This highlights the input field when invalid or requiring user attention.
 
 <Example>
-  <div slot="preview" class="not-prose grid sm:grid-cols-2 items-center gap-3">
+  <div slot="preview" class="not-prose grid items-center gap-3 sm:grid-cols-2">
     <div class="form-field">
       <label class="form-label">Avatar</label>
-      <input type="file" class="form-control is-invalid" />
+      <input type="file" class="form-control-fill is-invalid" />
     </div>
     <div class="form-field">
       <label class="form-label">Avatar</label>
-      <input type="file" class="form-control-outline is-invalid" />
+      <input type="file" class="form-control is-invalid" />
     </div>
   </div>
   <div slot="code">
     ```html
     <div class="form-field">
       <label class="form-label">Avatar</label>
-      <input type="file" class="form-control is-invalid" />
+      <input type="file" class="form-control-fill is-invalid" />
     </div>
     <div class="form-field">
       <label class="form-label">Avatar</label>
-      <input type="file" class="form-control-outline is-invalid" />
+      <input type="file" class="form-control is-invalid" />
     </div>
     ```
   </div>
@@ -175,11 +175,11 @@ Indicate validation states by adding the `.is-invalid` class to file input. This
   </label>
   <input type='file' id='btnFileUpload' />
 
-  <label class='btn btn-secondary' for="btnFileUploadSecondary">
-    <span class='icon-[material-symbols--cloud-upload] text-base'></span>
-    Upload file
-  </label>
-  <input type='file' id='btnFileUploadSecondary' />
+<label class="btn btn-secondary" for="btnFileUploadSecondary">
+  <span class="icon-[material-symbols--cloud-upload] text-base"></span>
+  Upload file
+</label>
+<input type="file" id="btnFileUploadSecondary" />
 
   <label class='btn btn-outline-primary' for="btnFileUploadOutlined">
     <span class='icon-[material-symbols--cloud-upload] text-base'></span>

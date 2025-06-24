@@ -12,13 +12,13 @@ The Basic Text Field component provides a simple input field with two variations
 
 <Example>
   <div slot="preview" class="not-prose grid items-center gap-3 sm:grid-cols-2">
+    <input type="text" class="form-control-fill" />
     <input type="text" class="form-control" />
-    <input type="text" class="form-control-outline" />
   </div>
   <div slot="code">
     ```html
+    <input type="text" class="form-control-fill" />
     <input type="text" class="form-control" />
-    <input type="text" class="form-control-outline" />
     ```
   </div>
 </Example>
@@ -29,22 +29,22 @@ The Basic Text Field component provides a simple input field with two variations
   <div slot="preview" class="not-prose grid items-center gap-3 sm:grid-cols-2">
     <div class="form-field">
       <label class="form-label">User Name</label>
-      <input type="text" class="form-control" />
+      <input type="text" class="form-control-fill" />
     </div>
     <div class="form-field">
       <label class="form-label">User Name</label>
-      <input type="text" class="form-control-outline" />
+      <input type="text" class="form-control" />
     </div>
   </div>
   <div slot="code">
     ```html
     <div class="form-field">
       <label class="form-label">User Name</label>
-      <input type="text" class="form-control" />
+      <input type="text" class="form-control-fill" />
     </div>
     <div class="form-field">
       <label class="form-label">User Name</label>
-      <input type="text" class="form-control-outline" />
+      <input type="text" class="form-control" />
     </div>
     ```
   </div>
@@ -58,18 +58,18 @@ Icons can be placed at the **start** or **end** of the input field. Use `.form-c
   <div slot="preview" class="not-prose grid items-center gap-3 sm:grid-cols-2">
     <div class="input-group-icon">
       <span class="icon-[material-symbols--calendar-today-outline-rounded] form-control-icon-start"></span>
-      <input type="text" class="form-control" />
+      <input type="text" class="form-control-fill" />
     </div>
     <div class="input-group-icon">
       <span class="icon-[material-symbols--calendar-today-outline-rounded] form-control-icon-start"></span>
-      <input type="text" class="form-control-outline" />
+      <input type="text" class="form-control" />
     </div>
     <div class="input-group-icon">
-      <input type="text" class="form-control" />
+      <input type="text" class="form-control-fill" />
       <span class="icon-[material-symbols--calendar-today-outline-rounded] form-control-icon-end"></span>
     </div>
     <div class="input-group-icon">
-      <input type="text" class="form-control-outline" />
+      <input type="text" class="form-control" />
       <span class="icon-[material-symbols--calendar-today-outline-rounded] form-control-icon-end"></span>
     </div>
   </div>
@@ -77,18 +77,18 @@ Icons can be placed at the **start** or **end** of the input field. Use `.form-c
     ```html
     <div class="input-group-icon">
       <span class="icon-[material-symbols--calendar-today-outline-rounded] form-control-icon-start"></span>
-      <input type="text" class="form-control" />
+      <input type="text" class="form-control-fill" />
     </div>
     <div class="input-group-icon">
       <span class="icon-[material-symbols--calendar-today-outline-rounded] form-control-icon-start"></span>
-      <input type="text" class="form-control-outline" />
+      <input type="text" class="form-control" />
     </div>
     <div class="input-group-icon">
-      <input type="text" class="form-control" />
+      <input type="text" class="form-control-fill" />
       <span class="icon-[material-symbols--calendar-today-outline-rounded] form-control-icon-end"></span>
     </div>
     <div class="input-group-icon">
-      <input type="text" class="form-control-outline" />
+      <input type="text" class="form-control" />
       <span class="icon-[material-symbols--calendar-today-outline-rounded] form-control-icon-end"></span>
     </div>
     ```
@@ -99,13 +99,13 @@ Icons can be placed at the **start** or **end** of the input field. Use `.form-c
 
 <Example>
   <div slot="preview" class="not-prose grid items-center gap-3 sm:grid-cols-2">
+    <textarea type="text" class="form-control-fill" placeholder="Message" />
     <textarea type="text" class="form-control" placeholder="Message" />
-    <textarea type="text" class="form-control-outline" placeholder="Message" />
   </div>
   <div slot="code">
     ```html
+    <textarea type="text" class="form-control-fill" placeholder="Message"></textarea>
     <textarea type="text" class="form-control" placeholder="Message"></textarea>
-    <textarea type="text" class="form-control-outline" placeholder="Message"></textarea>
     ```
   </div>
 </Example>
@@ -116,21 +116,21 @@ Set heights using classes like <code>.form-control-sm</code> and <code>.form-con
 
 <Example>
   <div slot="preview" class="not-prose grid items-center gap-3 sm:grid-cols-3">
+    <input type="text" class="form-control-fill form-control-sm" />
+    <input type="text" class="form-control-fill" />
+    <input type="text" class="form-control-fill form-control-lg" />
     <input type="text" class="form-control form-control-sm" />
     <input type="text" class="form-control" />
     <input type="text" class="form-control form-control-lg" />
-    <input type="text" class="form-control-outline form-control-sm" />
-    <input type="text" class="form-control-outline" />
-    <input type="text" class="form-control-outline form-control-lg" />
   </div>
   <div slot="code">
     ```html
+    <input type="text" class="form-control-fill form-control-sm" />
+    <input type="text" class="form-control-fill" />
+    <input type="text" class="form-control-fill form-control-lg" />
     <input type="text" class="form-control form-control-sm" />
     <input type="text" class="form-control" />
     <input type="text" class="form-control form-control-lg" />
-    <input type="text" class="form-control-outline form-control-sm" />
-    <input type="text" class="form-control-outline" />
-    <input type="text" class="form-control-outline form-control-lg" />
     ```
   </div>
 </Example>
@@ -144,17 +144,17 @@ Different colors become visible while the input is focused. By default, the inpu
 
 <Example>
   <div slot="preview" class="not-prose grid items-center gap-3 sm:grid-cols-2">
+    <input type="text" class="form-control-fill form-control-secondary" />
+    <input type="text" class="form-control-fill form-control-success" />
     <input type="text" class="form-control form-control-secondary" />
     <input type="text" class="form-control form-control-success" />
-    <input type="text" class="form-control-outline form-control-secondary" />
-    <input type="text" class="form-control-outline form-control-success" />
   </div>
   <div slot="code">
     ```html
+    <input type="text" class="form-control-fill form-control-secondary" />
+    <input type="text" class="form-control-fill form-control-success" />
     <input type="text" class="form-control form-control-secondary" />
     <input type="text" class="form-control form-control-success" />
-    <input type="text" class="form-control-outline form-control-secondary" />
-    <input type="text" class="form-control-outline form-control-success" />
     ```
   </div>
 </Example>
@@ -163,13 +163,13 @@ Different colors become visible while the input is focused. By default, the inpu
 
 <Example>
   <div slot="preview" class="not-prose grid items-center gap-3 sm:grid-cols-2">
+    <input type="text" class="form-control-fill" placeholder="Disabled" disabled />
     <input type="text" class="form-control" placeholder="Disabled" disabled />
-    <input type="text" class="form-control-outline" placeholder="Disabled" disabled />
   </div>
   <div slot="code">
     ```html
+    <input type="text" class="form-control-fill" placeholder="Disabled" disabled />
     <input type="text" class="form-control" placeholder="Disabled" disabled />
-    <input type="text" class="form-control-outline" placeholder="Disabled" disabled />
     ```
   </div>
 </Example>
@@ -182,22 +182,22 @@ Indicate validation states by adding the `.is-invalid` class to input fields. Th
   <div slot="preview" class="not-prose grid items-center gap-3 sm:grid-cols-2">
     <div class="form-field">
       <label class="form-label">First name</label>
-      <input type="text" class="form-control is-invalid" />
+      <input type="text" class="form-control-fill is-invalid" />
     </div>
     <div class="form-field">
       <label class="form-label">Last name</label>
-      <input type="text" class="form-control-outline is-invalid" />
+      <input type="text" class="form-control is-invalid" />
     </div>
   </div>
   <div slot="code">
     ```html
     <div class="form-field">
       <label class="form-label">First name</label>
-      <input type="text" class="form-control is-invalid" />
+      <input type="text" class="form-control-fill is-invalid" />
     </div>
     <div class="form-field">
       <label class="form-label">Last name</label>
-      <input type="text" class="form-control-outline is-invalid" />
+      <input type="text" class="form-control is-invalid" />
     </div>
     ```
   </div>
