@@ -131,6 +131,10 @@ const sitemap: Sitemap[] = [
         name: 'Navbar',
         path: '/components/navbar',
       },
+      {
+        name: 'Input Group',
+        path: '/components/input-group',
+      },
     ],
   },
 ];
