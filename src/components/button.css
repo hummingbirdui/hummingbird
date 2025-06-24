@@ -3,8 +3,8 @@
   --btn-content: var(--color-default-color);
   --btn-font-weight: var(--font-weight-semibold);
   --btn-hover-bg: --alpha(var(--btn-bg) / 88%);
-  --btn-border-width: 0;
-  --btn-border-color: unset;
+  --btn-border-color: transparent;
+  --btn-disabled-border: transparent;
   --btn-width: unset;
   --btn-height: unset;
 
@@ -20,7 +20,7 @@
     min-w-4
     w-[var(--btn-width)]
     h-[var(--btn-height)]
-    border-[length:var(--btn-border-width)]
+    border-[length:var(--input-btn-border-width)]
     border-[var(--btn-border-color)]
     hover:bg-[var(--btn-hover-bg)];
 
@@ -41,17 +41,22 @@
   + input[type='file'] {
     @apply hidden;
   }
+  .input-group & {
+    + input[type='file'] {
+      @apply block;
+    }
+  }
 }
 
 @utility btn-sm {
-  --input-btn-padding-y: calc(var(--spacing) * 1.5);
+  --input-btn-padding-y: calc(var(--spacing) * 1.25);
   --input-btn-padding-x: calc(var(--spacing) * 2.5);
   --input-btn-radius: var(--radius-sm);
   --input-btn-line-height: 1.25;
 }
 @utility btn-lg {
   --input-btn-font-size: var(--text-base);
-  --input-btn-padding-y: calc(var(--spacing) * 2.5);
+  --input-btn-padding-y: calc(var(--spacing) * 2.25);
   --input-btn-padding-x: calc(var(--spacing) * 5.5);
 }
 
@@ -200,7 +205,7 @@
   --btn-disabled-bg: transparent;
   --btn-disabled-border: var(--color-disabled);
 }
-[class*='btn-outline'] {
+/* [class*='btn-outline'] {
   @apply py-[calc(var(--input-btn-padding-y)_-_1px)];
   &.btn-sm {
     @apply py-[calc(var(--input-btn-padding-y)_-_1px)];
@@ -208,7 +213,7 @@
   &.btn-lg {
     @apply py-[calc(var(--input-btn-padding-y)_-_1px)];
   }
-}
+} */
 
 /* variant text */
 @utility btn-text-primary {
