@@ -1,9 +1,9 @@
 @utility form-floating {
   @apply relative;
 
-  .form-select {
-    --floating-label-padding-top: calc(var(--spacing) * 5.5);
-    --floating-label-padding-bottom: calc(var(--spacing) * 1.25);
+  .form-select-fill {
+    --floating-label-padding-top: calc(var(--spacing) * 5.25);
+    --floating-label-padding-bottom: calc(var(--spacing) * 1);
 
     @apply pt-[var(--floating-label-padding-top)] pb-[var(--floating-label-padding-bottom)];
 
@@ -12,13 +12,13 @@
     }
 
     &.form-select-sm {
-      --floating-label-padding-top: calc(var(--spacing) * 4.5);
-      --floating-label-padding-bottom: calc(var(--spacing) * 0.75);
+      --floating-label-padding-top: calc(var(--spacing) * 4.25);
+      --floating-label-padding-bottom: calc(var(--spacing) * 0.5);
       --input-btn-line-height: 1.5;
     }
     &.form-select-lg {
-      --floating-label-padding-top: calc(var(--spacing) * 5.75);
-      --floating-label-padding-bottom: calc(var(--spacing) * 1.75);
+      --floating-label-padding-top: calc(var(--spacing) * 5.5);
+      --floating-label-padding-bottom: calc(var(--spacing) * 1.5);
     }
     &:focus-within,
     &:focus,
@@ -35,8 +35,8 @@
     }
   }
 
-  .form-select-outline {
-    --input-btn-padding-y: calc(var(--spacing) * 2.5);
+  .form-select {
+    --input-btn-padding-y: calc(var(--spacing) * 2.25);
     --input-btn-line-height: 2;
 
     & ~ .form-label {
@@ -64,13 +64,13 @@
   }
 
   .form-select-sm {
-    --input-btn-padding-y: calc(var(--spacing) * 1.75);
+    --input-btn-padding-y: calc(var(--spacing) * 1.5);
     & + .form-label {
       @apply translate-x-[12px] translate-y-[10px] scale-[1];
     }
   }
   .form-select-lg {
-    --input-btn-padding-y: calc(var(--spacing) * 2.75);
+    --input-btn-padding-y: calc(var(--spacing) * 2.5);
     --input-btn-padding-x: calc(var(--spacing) * 5);
     & + .form-label {
       @apply text-base translate-x-[20px] translate-y-[14px] scale-[1];

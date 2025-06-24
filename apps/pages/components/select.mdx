@@ -12,13 +12,13 @@ The Floating Label component comes with two variations: Filled and Outlined
 
 <Example>
   <div slot="preview" class="not-prose grid items-center gap-3 sm:grid-cols-2">
-    <select class="form-select" aria-label="Default filled example">
+    <select class="form-select-fill" aria-label="Default filled example">
       <option selected>Select option</option>
       <option value="1">One</option>
       <option value="2">Two</option>
       <option value="3">Three</option>
     </select>
-    <select class="form-select-outline" aria-label="Default outlined example">
+    <select class="form-select" aria-label="Default outlined example">
       <option selected>Select option</option>
       <option value="1">One</option>
       <option value="2">Two</option>
@@ -27,13 +27,13 @@ The Floating Label component comes with two variations: Filled and Outlined
   </div>
   <div slot="code">
     ```html
-    <select class="form-select" aria-label="Default filled example">
+    <select class="form-select-fill" aria-label="Default filled example">
       <option selected>Select option</option>
       <option value="1">One</option>
       <option value="2">Two</option>
       <option value="3">Three</option>
     </select>
-    <select class="form-select-outline" aria-label="Default outlined example">
+    <select class="form-select" aria-label="Default outlined example">
       <option selected>Select option</option>
       <option value="1">One</option>
       <option value="2">Two</option>
@@ -49,7 +49,7 @@ The Floating Label component comes with two variations: Filled and Outlined
   <div slot='preview' class="not-prose grid sm:grid-cols-2 items-center gap-3">
     <div class="form-field">
       <label class="form-label">Options</label>
-      <select class="form-select" aria-label="Filled example with label">
+      <select class="form-select-fill" aria-label="Filled example with label">
         <option selected>Select option</option>
         <option value="1">One</option>
         <option value="2">Two</option>
@@ -58,7 +58,7 @@ The Floating Label component comes with two variations: Filled and Outlined
     </div>
     <div class="form-field">
       <label class="form-label">Options</label>
-      <select class="form-select-outline" aria-label="Outlined example with label">
+      <select class="form-select" aria-label="Outlined example with label">
         <option selected>Select option</option>
         <option value="1">One</option>
         <option value="2">Two</option>
@@ -70,7 +70,7 @@ The Floating Label component comes with two variations: Filled and Outlined
     ```html
     <div class="form-field">
       <label class="form-label">Options</label>
-      <select class="form-select" aria-label="Filled example with label">
+      <select class="form-select-fill" aria-label="Filled example with label">
         <option selected>Select option</option>
         <option value="1">One</option>
         <option value="2">Two</option>
@@ -80,7 +80,7 @@ The Floating Label component comes with two variations: Filled and Outlined
 
     <div class="form-field">
       <label class="form-label">Options</label>
-      <select class="form-select-outline" aria-label="Outlined example with label">
+      <select class="form-select" aria-label="Outlined example with label">
         <option selected>Select option</option>
         <option value="1">One</option>
         <option value="2">Two</option>
@@ -97,7 +97,7 @@ The Floating Label component comes with two variations: Filled and Outlined
 <Example>
   <div slot='preview' class="not-prose grid sm:grid-cols-2 items-center gap-3">
     <div class="form-floating form-field">
-      <select class="form-select" aria-label="Filled floating label example">
+      <select class="form-select-fill" aria-label="Filled floating label example">
         <option selected>Select option</option>
         <option value="1">One</option>
         <option value="2">Two</option>
@@ -106,7 +106,7 @@ The Floating Label component comes with two variations: Filled and Outlined
       <label class="form-label" for="floatingInput">Options</label>
     </div>
     <div class="form-floating form-field">
-      <select class="form-select-outline" aria-label="Outlined floating label example">
+      <select class="form-select" aria-label="Outlined floating label example">
         <option selected>Select option</option>
         <option value="1">One</option>
         <option value="2">Two</option>
@@ -118,7 +118,7 @@ The Floating Label component comes with two variations: Filled and Outlined
   <div slot="code">
     ```html
     <div class="form-floating form-field">
-      <select class="form-select" aria-label="Filled floating label example">
+      <select class="form-select-fill" aria-label="Filled floating label example">
         <option selected>Select option</option>
         <option value="1">One</option>
         <option value="2">Two</option>
@@ -128,7 +128,7 @@ The Floating Label component comes with two variations: Filled and Outlined
     </div>
 
     <div class="form-floating form-field">
-      <select class="form-select-outline" aria-label="Outlined floating label example">
+      <select class="form-select" aria-label="Outlined floating label example">
         <option selected>Select option</option>
         <option value="1">One</option>
         <option value="2">Two</option>
@@ -147,37 +147,37 @@ Set heights using classes like .form-select-sm and .form-select-lg for small and
 
 <Example>
   <div slot="preview" class="not-prose grid items-center gap-3 sm:grid-cols-3">
-    <select class="form-select form-select-sm" aria-label="Filled small">
+    <select class="form-select-fill form-select-sm" aria-label="Filled small">
       <option selected>Select option</option>
       <option value="1">One</option>
       <option value="2">Two</option>
       <option value="3">Three</option>
     </select>
-    <select class="form-select" aria-label="Filled medium">
+    <select class="form-select-fill" aria-label="Filled medium">
       <option selected>Select option</option>
       <option value="1">One</option>
       <option value="2">Two</option>
       <option value="3">Three</option>
     </select>
-    <select class="form-select form-select-lg" aria-label="Filled large">
+    <select class="form-select-fill form-select-lg" aria-label="Filled large">
       <option selected>Select option</option>
       <option value="1">One</option>
       <option value="2">Two</option>
       <option value="3">Three</option>
     </select>
-    <select class="form-select-outline form-select-sm" aria-label="Outlined small">
+    <select class="form-select form-select-sm" aria-label="Outlined small">
       <option selected>Select option</option>
       <option value="1">One</option>
       <option value="2">Two</option>
       <option value="3">Three</option>
     </select>
-    <select class="form-select-outline" aria-label="Outlined medium">
+    <select class="form-select" aria-label="Outlined medium">
       <option selected>Select option</option>
       <option value="1">One</option>
       <option value="2">Two</option>
       <option value="3">Three</option>
     </select>
-    <select class="form-select-outline form-select-lg" aria-label="Outlined large">
+    <select class="form-select form-select-lg" aria-label="Outlined large">
       <option selected>Select option</option>
       <option value="1">One</option>
       <option value="2">Two</option>
@@ -186,37 +186,37 @@ Set heights using classes like .form-select-sm and .form-select-lg for small and
   </div>
   <div slot="code">
     ```html
-    <select class="form-select form-select-sm" aria-label="Filled small">
+    <select class="form-select-fill form-select-sm" aria-label="Filled small">
       <option selected>Select option</option>
       <option value="1">One</option>
       <option value="2">Two</option>
       <option value="3">Three</option>
     </select>
-    <select class="form-select" aria-label="Filled medium">
+    <select class="form-select-fill" aria-label="Filled medium">
       <option selected>Select option</option>
       <option value="1">One</option>
       <option value="2">Two</option>
       <option value="3">Three</option>
     </select>
-    <select class="form-select form-select-lg" aria-label="Filled large">
+    <select class="form-select-fill form-select-lg" aria-label="Filled large">
       <option selected>Select option</option>
       <option value="1">One</option>
       <option value="2">Two</option>
       <option value="3">Three</option>
     </select>
-    <select class="form-select-outline form-select-sm" aria-label="Outlined small">
+    <select class="form-select form-select-sm" aria-label="Outlined small">
       <option selected>Select option</option>
       <option value="1">One</option>
       <option value="2">Two</option>
       <option value="3">Three</option>
     </select>
-    <select class="form-select-outline" aria-label="Outlined medium">
+    <select class="form-select" aria-label="Outlined medium">
       <option selected>Select option</option>
       <option value="1">One</option>
       <option value="2">Two</option>
       <option value="3">Three</option>
     </select>
-    <select class="form-select-outline form-select-lg" aria-label="Outlined large">
+    <select class="form-select form-select-lg" aria-label="Outlined large">
       <option selected>Select option</option>
       <option value="1">One</option>
       <option value="2">Two</option>
@@ -235,25 +235,25 @@ Different colors become visible while the select is focused. By default, the sel
 
 <Example>
   <div slot="preview" class="not-prose grid items-center gap-3 sm:grid-cols-2">
-    <select class="form-select form-select-secondary" aria-label="Filled secondary">
+    <select class="form-select-fill form-select-secondary" aria-label="Filled secondary">
       <option selected>Select option</option>
       <option value="1">One</option>
       <option value="2">Two</option>
       <option value="3">Three</option>
     </select>
-    <select class="form-select form-select-success" aria-label="Filled success">
+    <select class="form-select-fill form-select-success" aria-label="Filled success">
       <option selected>Select option</option>
       <option value="1">One</option>
       <option value="2">Two</option>
       <option value="3">Three</option>
     </select>
-    <select class="form-select-outline form-select-secondary" aria-label="Outlined secondary">
+    <select class="form-select form-select-secondary" aria-label="Outlined secondary">
       <option selected>Select option</option>
       <option value="1">One</option>
       <option value="2">Two</option>
       <option value="3">Three</option>
     </select>
-    <select class="form-select-outline form-select-success" aria-label="Outlined success">
+    <select class="form-select form-select-success" aria-label="Outlined success">
       <option selected>Select option</option>
       <option value="1">One</option>
       <option value="2">Two</option>
@@ -262,25 +262,25 @@ Different colors become visible while the select is focused. By default, the sel
   </div>
   <div slot="code">
     ```html
-    <select class="form-select form-select-secondary" aria-label="Filled secondary">
+    <select class="form-select-fill form-select-secondary" aria-label="Filled secondary">
       <option selected>Select option</option>
       <option value="1">One</option>
       <option value="2">Two</option>
       <option value="3">Three</option>
     </select>
-    <select class="form-select form-select-success" aria-label="Filled success">
+    <select class="form-select-fill form-select-success" aria-label="Filled success">
       <option selected>Select option</option>
       <option value="1">One</option>
       <option value="2">Two</option>
       <option value="3">Three</option>
     </select>
-    <select class="form-select-outline form-select-secondary" aria-label="Outlined secondary">
+    <select class="form-select form-select-secondary" aria-label="Outlined secondary">
       <option selected>Select option</option>
       <option value="1">One</option>
       <option value="2">Two</option>
       <option value="3">Three</option>
     </select>
-    <select class="form-select-outline form-select-success" aria-label="Outlined success">
+    <select class="form-select form-select-success" aria-label="Outlined success">
       <option selected>Select option</option>
       <option value="1">One</option>
       <option value="2">Two</option>
@@ -296,13 +296,13 @@ The Floating Label component comes with two variations: Filled and Outlined
 
 <Example>
   <div slot="preview" class="not-prose grid items-center gap-3 sm:grid-cols-2">
-    <select class="form-select" aria-label="Filled disabled" disabled>
+    <select class="form-select-fill" aria-label="Filled disabled" disabled>
       <option selected>Select option</option>
       <option value="1">One</option>
       <option value="2">Two</option>
       <option value="3">Three</option>
     </select>
-    <select class="form-select-outline" aria-label="Outlined disabled" disabled>
+    <select class="form-select" aria-label="Outlined disabled" disabled>
       <option selected>Select option</option>
       <option value="1">One</option>
       <option value="2">Two</option>
@@ -311,13 +311,13 @@ The Floating Label component comes with two variations: Filled and Outlined
   </div>
   <div slot="code">
     ```html
-    <select class="form-select" aria-label="Filled disabled" disabled>
+    <select class="form-select-fill" aria-label="Filled disabled" disabled>
       <option selected>Select option</option>
       <option value="1">One</option>
       <option value="2">Two</option>
       <option value="3">Three</option>
     </select>
-    <select class="form-select-outline" aria-label="Outlined disabled" disabled>
+    <select class="form-select" aria-label="Outlined disabled" disabled>
       <option selected>Select option</option>
       <option value="1">One</option>
       <option value="2">Two</option>
@@ -333,13 +333,13 @@ Indicate validation states by adding the `.is-invalid` class to select fields. T
 
 <Example>
   <div slot="preview" class="not-prose grid items-center gap-3 sm:grid-cols-2">
-    <select class="form-select is-invalid" aria-label="Filled invalid">
+    <select class="form-select-fill is-invalid" aria-label="Filled invalid">
       <option selected>Select option</option>
       <option value="1">One</option>
       <option value="2">Two</option>
       <option value="3">Three</option>
     </select>
-    <select class="form-select-outline is-invalid" aria-label="Outlined invalid">
+    <select class="form-select is-invalid" aria-label="Outlined invalid">
       <option selected>Select option</option>
       <option value="1">One</option>
       <option value="2">Two</option>
@@ -348,13 +348,13 @@ Indicate validation states by adding the `.is-invalid` class to select fields. T
   </div>
   <div slot="code">
     ```html
-    <select class="form-select is-invalid" aria-label="Filled invalid">
+    <select class="form-select-fill is-invalid" aria-label="Filled invalid">
       <option selected>Select option</option>
       <option value="1">One</option>
       <option value="2">Two</option>
       <option value="3">Three</option>
     </select>
-    <select class="form-select-outline is-invalid" aria-label="Outlined invalid">
+    <select class="form-select is-invalid" aria-label="Outlined invalid">
       <option selected>Select option</option>
       <option value="1">One</option>
       <option value="2">Two</option>
