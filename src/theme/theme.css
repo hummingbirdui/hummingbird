@@ -83,22 +83,6 @@
   /* font family */
   --font-sans: 'Plus Jakarta Sans', 'sans-serif', 'Spline Sans Mono', 'monospace';
 
-  /* font size  */
-  --text-sm: 0.875rem; /* 14px */
-  --text-sm--line-height: 1.6;
-  --text-lg: 1.3125rem; /* 21px */
-  --text-lg--line-height: 1.5;
-  --text-xl: 1.5rem; /* 24px */
-  --text-xl--line-height: 1.5;
-  --text-2xl: 1.75rem; /* 28px */
-  --text-2xl--line-height: 1.5;
-  --text-3xl: 2rem; /* 32px */
-  --text-3xl--line-height: 1.5;
-  --text-4xl: 2.625rem; /* 42px */
-  --text-4xl--line-height: 1.5;
-  --text-5xl: 3rem; /* 48px */
-  --text-5xl--line-height: 1.5;
-
   /* component specific root variables */
   --input-btn-font-size: var(--text-sm);
   --input-btn-radius: var(--radius-lg);

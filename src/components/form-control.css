@@ -134,7 +134,7 @@
 
 @utility input-group-icon {
   --input-icon-color: var(--color-active);
-  --input-icon-font-size: 20px; /* TODO: Change hardcode font size */
+  --input-icon-font-size: var(--text-xl);
 
   @apply relative;
 
