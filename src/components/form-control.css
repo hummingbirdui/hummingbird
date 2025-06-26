@@ -1,6 +1,6 @@
 @utility form-control-fill {
   --file-selector-btn-bg: var(--color-highlight);
-  --file-selector-btn-content: var(--color-default-color);
+  --file-selector-btn-color: var(--color-default-color);
   --file-selector-btn-hover-bg: var(--color-emphasis);
   --input-icon-spacing: calc(var(--spacing) * 11);
   --input-border-color: transparent;
@@ -12,7 +12,7 @@
   leading-[var(--input-btn-line-height)]
   bg-[var(--input-bg)]
   text-[length:var(--input-btn-font-size)]
-  text-[var(--input-content)]
+  text-[var(--input-color)]
   rounded-[var(--input-btn-radius)]
   border-[length:var(--input-btn-border-width)]
   border-[var(--input-border-color)]
@@ -53,7 +53,7 @@
   &::file-selector-button {
     @apply pointer-events-none transition-[background] duration-200
       bg-[var(--file-selector-btn-bg)]
-      text-[var(--file-selector-btn-content)]
+      text-[var(--file-selector-btn-color)]
       font-semibold
       px-[var(--input-btn-padding-x)]
       py-[var(--input-btn-padding-y)]
@@ -66,7 +66,7 @@
   }
   &.is-invalid::file-selector-button {
     --file-selector-btn-bg: var(--color-error);
-    --file-selector-btn-content: var(--color-contrast);
+    --file-selector-btn-color: var(--color-contrast);
     --file-selector-btn-hover-bg: var(--color-error-dark);
   }
   &:is(:disabled, [disabled])::file-selector-button {
@@ -84,7 +84,7 @@
   transition duration-200
   leading-[var(--input-btn-line-height)]
   text-[length:var(--input-btn-font-size)]
-  text-[var(--input-content)]
+  text-[var(--input-color)]
   rounded-[var(--input-btn-radius)]
   border-[length:var(--input-btn-border-width)]
   border-[var(--input-border-color)]
@@ -192,35 +192,35 @@
 }
 @utility form-control-primary {
   --file-selector-btn-bg: var(--color-primary);
-  --file-selector-btn-content: var(--color-contrast);
+  --file-selector-btn-color: var(--color-contrast);
   --file-selector-btn-hover-bg: var(--color-primary-dark);
 }
 @utility form-control-secondary {
   --input-focus-bg: var(--color-secondary-lighter);
   --input-focus-border-color: var(--color-secondary);
   --file-selector-btn-bg: var(--color-secondary);
-  --file-selector-btn-content: var(--color-contrast);
+  --file-selector-btn-color: var(--color-contrast);
   --file-selector-btn-hover-bg: var(--color-secondary-dark);
 }
 @utility form-control-info {
   --input-focus-bg: var(--color-info-lighter);
   --input-focus-border-color: var(--color-info);
   --file-selector-btn-bg: var(--color-info);
-  --file-selector-btn-content: var(--color-contrast);
+  --file-selector-btn-color: var(--color-contrast);
   --file-selector-btn-hover-bg: var(--color-info-dark);
 }
 @utility form-control-success {
   --input-focus-bg: var(--color-success-lighter);
   --input-focus-border-color: var(--color-success);
   --file-selector-btn-bg: var(--color-success);
-  --file-selector-btn-content: var(--color-contrast);
+  --file-selector-btn-color: var(--color-contrast);
   --file-selector-btn-hover-bg: var(--color-success-dark);
 }
 @utility form-control-warning {
   --input-focus-bg: var(--color-warning-lighter);
   --input-focus-border-color: var(--color-warning);
   --file-selector-btn-bg: var(--color-warning);
-  --file-selector-btn-content: var(--color-contrast);
+  --file-selector-btn-color: var(--color-contrast);
   --file-selector-btn-hover-bg: var(--color-warning-dark);
 }
 

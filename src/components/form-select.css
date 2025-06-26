@@ -10,7 +10,7 @@
   leading-[var(--input-btn-line-height)]
   bg-[var(--input-bg)]
   text-[length:var(--input-btn-font-size)]
-  text-[var(--input-content)]
+  text-[var(--input-color)]
   rounded-[var(--input-btn-radius)]
     border-[length:var(--input-btn-border-width)]
   border-[var(--input-border-color)]
@@ -56,7 +56,7 @@
   appearance-none
   leading-[var(--input-btn-line-height)]
   text-[length:var(--input-btn-font-size)]
-  text-[var(--input-content)]
+  text-[var(--input-color)]
   rounded-[var(--input-btn-radius)]
     border-[length:var(--input-btn-border-width)]
   border-[var(--input-border-color)]

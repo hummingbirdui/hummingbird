@@ -1,6 +1,6 @@
 @utility card {
   --card-bg: var(--color-subtle);
-  --card-content: var(--color-highlight-color);
+  --card-color: var(--color-highlight-color);
   --card-border-width: 1px;
   --card-border-color: var(--color-border-base);
   --card-border-radius: var(--radius-lg);
@@ -17,7 +17,7 @@
   text-sm
   rounded-[var(--card-border-radius)]
   bg-[var(--card-bg)]
-  text-[var(--card-content)]
+  text-[var(--card-color)]
   border-[length:var(--card-border-width)]
   border-[var(--card-border-color)];
 }

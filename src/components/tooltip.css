@@ -4,7 +4,7 @@
   --tooltip-padding-x: calc(var(--spacing) * 2.5);
   --tooltip-padding-y: calc(var(--spacing) * 2);
   --tooltip-bg: var(--color-main);
-  --tooltip-content: var(--color-contrast);
+  --tooltip-color: var(--color-contrast);
   --tooltip-font-size: var(--text-xs);
   --tooltip-margin: calc(var(--spacing) * 2);
   --tooltip-opacity: 1;
@@ -103,6 +103,6 @@
   bg-[var(--tooltip-bg)]
   px-[var(--tooltip-padding-x)]
   py-[var(--tooltip-padding-y)]
-  text-center text-[var(--tooltip-content)]
+  text-center text-[var(--tooltip-color)]
   rounded-[var(--tooltip-border-radius)];
 }

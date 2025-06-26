@@ -91,7 +91,7 @@
   --input-btn-line-height: 1.5;
   --input-label-color: var(--color-highlight-color);
   --input-bg: var(--color-muted);
-  --input-content: var(--color-default-color);
+  --input-color: var(--color-default-color);
   --input-btn-border-width: 1px;
   --input-border-color: none;
 }

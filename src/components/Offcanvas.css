@@ -4,7 +4,7 @@
   --offcanvas-height: 30vh;
   --offcanvas-padding-x: calc(var(--spacing) * 4);
   --offcanvas-padding-y: calc(var(--spacing) * 4);
-  --offcanvas-content: var(--color-default-color);
+  --offcanvas-color: var(--color-default-color);
   --offcanvas-bg: var(--color-subtle);
   --offcanvas-border-width: 1px;
   --offcanvas-border-color: var(--color-border-base);
@@ -18,7 +18,7 @@
   z-[var(--offcanvas-zindex)]
   flex flex-col
   max-w-full
-  text-[var(--offcanvas-content)]
+  text-[var(--offcanvas-color)]
   invisible
   bg-[var(--offcanvas-bg)]
   bg-clip-padding

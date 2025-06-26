@@ -1,6 +1,6 @@
 @utility btn {
   --btn-bg: var(--color-highlight);
-  --btn-content: var(--color-default-color);
+  --btn-color: var(--color-default-color);
   --btn-font-weight: var(--font-weight-semibold);
   --btn-hover-bg: --alpha(var(--btn-bg) / 88%);
   --btn-border-color: transparent;
@@ -15,7 +15,7 @@
     rounded-[var(--input-btn-radius)]
     px-[var(--input-btn-padding-x)]
     py-[var(--input-btn-padding-y)]
-    text-[var(--btn-content)]
+    text-[var(--btn-color)]
     leading-[var(--input-btn-line-height)]
     min-w-4
     w-[var(--btn-width)]
@@ -35,7 +35,7 @@
   &:is(:disabled, [disabled], .disabled) {
     @apply pointer-events-none;
     --btn-bg: var(--btn-disabled-bg, var(--color-disabled));
-    --btn-content: var(--btn-disabled-content, var(--color-disabled-color));
+    --btn-color: var(--btn-disabled-color, var(--color-disabled-color));
     --btn-border-color: var(--btn-disabled-border);
   }
   + input[type='file'] {
@@ -63,80 +63,80 @@
 /* variant contained */
 @utility btn-primary {
   --btn-bg: var(--color-primary);
-  --btn-content: var(--color-contrast);
+  --btn-color: var(--color-contrast);
   --btn-hover-bg: var(--color-primary-dark);
 }
 @utility btn-secondary {
   --btn-bg: var(--color-secondary);
-  --btn-content: var(--color-contrast);
+  --btn-color: var(--color-contrast);
   --btn-hover-bg: var(--color-secondary-dark);
 }
 @utility btn-info {
   --btn-bg: var(--color-info);
-  --btn-content: var(--color-contrast);
+  --btn-color: var(--color-contrast);
   --btn-hover-bg: var(--color-info-dark);
 }
 @utility btn-success {
   --btn-bg: var(--color-success);
-  --btn-content: var(--color-contrast);
+  --btn-color: var(--color-contrast);
   --btn-hover-bg: var(--color-success-dark);
 }
 @utility btn-warning {
   --btn-bg: var(--color-warning);
-  --btn-content: var(--color-contrast);
+  --btn-color: var(--color-contrast);
   --btn-hover-bg: var(--color-warning-dark);
 }
 @utility btn-error {
   --btn-bg: var(--color-error);
-  --btn-content: var(--color-contrast);
+  --btn-color: var(--color-contrast);
   --btn-hover-bg: var(--color-error-dark);
 }
 @utility btn-neutral {
   --btn-bg: var(--color-main);
-  --btn-content: var(--color-contrast);
+  --btn-color: var(--color-contrast);
   --btn-hover-bg: var(--color-dark);
 }
 
 /* variant subtle */
 @utility btn-subtle-primary {
   --btn-bg: --alpha(var(--color-primary) / 15%);
-  --btn-content: var(--color-primary-dark);
+  --btn-color: var(--color-primary-dark);
   --btn-hover-bg: --alpha(var(--color-primary) / 20%);
   --btn-disabled-bg: --alpha(var(--color-primary) / 15%);
 }
 @utility btn-subtle-secondary {
   --btn-bg: --alpha(var(--color-secondary) / 15%);
-  --btn-content: var(--color-secondary-dark);
+  --btn-color: var(--color-secondary-dark);
   --btn-hover-bg: --alpha(var(--color-secondary) / 20%);
   --btn-disabled-bg: --alpha(var(--color-secondary) / 15%);
 }
 @utility btn-subtle-info {
   --btn-bg: --alpha(var(--color-info) / 15%);
-  --btn-content: var(--color-info-dark);
+  --btn-color: var(--color-info-dark);
   --btn-hover-bg: --alpha(var(--color-info) / 20%);
   --btn-disabled-bg: --alpha(var(--color-info) / 15%);
 }
 @utility btn-subtle-success {
   --btn-bg: --alpha(var(--color-success) / 15%);
-  --btn-content: var(--color-success-dark);
+  --btn-color: var(--color-success-dark);
   --btn-hover-bg: --alpha(var(--color-success) / 20%);
   --btn-disabled-bg: --alpha(var(--color-success) / 15%);
 }
 @utility btn-subtle-warning {
   --btn-bg: --alpha(var(--color-warning) / 15%);
-  --btn-content: var(--color-warning-dark);
+  --btn-color: var(--color-warning-dark);
   --btn-hover-bg: --alpha(var(--color-warning) / 20%);
   --btn-disabled-bg: --alpha(var(--color-warning) / 15%);
 }
 @utility btn-subtle-error {
   --btn-bg: --alpha(var(--color-error) / 15%);
-  --btn-content: var(--color-error-dark);
+  --btn-color: var(--color-error-dark);
   --btn-hover-bg: --alpha(var(--color-error) / 20%);
   --btn-disabled-bg: --alpha(var(--color-error) / 15%);
 }
 @utility btn-subtle-neutral {
   --btn-bg: var(--color-muted);
-  --btn-content: var(--color-dark);
+  --btn-color: var(--color-dark);
   --btn-hover-bg: var(--color-highlight);
   --btn-disabled-bg: var(--color-lighter);
 }
@@ -144,7 +144,7 @@
 /* variant outline */
 @utility btn-outline-primary {
   --btn-bg: transparent;
-  --btn-content: var(--color-primary);
+  --btn-color: var(--color-primary);
   --btn-hover-bg: --alpha(var(--color-primary) / 12%);
   --btn-border-width: 1px;
   --btn-border-color: --alpha(var(--color-primary) / 50%);
@@ -153,7 +153,7 @@
 }
 @utility btn-outline-secondary {
   --btn-bg: transparent;
-  --btn-content: var(--color-secondary);
+  --btn-color: var(--color-secondary);
   --btn-hover-bg: --alpha(var(--color-secondary) / 12%);
   --btn-border-width: 1px;
   --btn-border-color: --alpha(var(--color-secondary) / 50%);
@@ -162,7 +162,7 @@
 }
 @utility btn-outline-info {
   --btn-bg: transparent;
-  --btn-content: var(--color-info);
+  --btn-color: var(--color-info);
   --btn-hover-bg: --alpha(var(--color-info) / 12%);
   --btn-border-width: 1px;
   --btn-border-color: --alpha(var(--color-info) / 50%);
@@ -171,7 +171,7 @@
 }
 @utility btn-outline-success {
   --btn-bg: transparent;
-  --btn-content: var(--color-success);
+  --btn-color: var(--color-success);
   --btn-hover-bg: --alpha(var(--color-success) / 12%);
   --btn-border-width: 1px;
   --btn-border-color: --alpha(var(--color-success) / 50%);
@@ -180,7 +180,7 @@
 }
 @utility btn-outline-warning {
   --btn-bg: transparent;
-  --btn-content: var(--color-warning);
+  --btn-color: var(--color-warning);
   --btn-hover-bg: --alpha(var(--color-warning) / 12%);
   --btn-border-width: 1px;
   --btn-border-color: --alpha(var(--color-warning) / 50%);
@@ -189,7 +189,7 @@
 }
 @utility btn-outline-error {
   --btn-bg: transparent;
-  --btn-content: var(--color-error);
+  --btn-color: var(--color-error);
   --btn-hover-bg: --alpha(var(--color-error) / 12%);
   --btn-border-width: 1px;
   --btn-border-color: --alpha(var(--color-error) / 50%);
@@ -198,7 +198,7 @@
 }
 @utility btn-outline-neutral {
   --btn-bg: transparent;
-  --btn-content: var(--color-main);
+  --btn-color: var(--color-main);
   --btn-hover-bg: var(--color-muted);
   --btn-border-width: 1px;
   --btn-border-color: var(--color-emphasis);
@@ -218,43 +218,43 @@
 /* variant text */
 @utility btn-text-primary {
   --btn-bg: transparent;
-  --btn-content: var(--color-primary);
+  --btn-color: var(--color-primary);
   --btn-hover-bg: --alpha(var(--color-primary) / 12%);
   --btn-disabled-bg: transparent;
 }
 @utility btn-text-secondary {
   --btn-bg: transparent;
-  --btn-content: var(--color-secondary);
+  --btn-color: var(--color-secondary);
   --btn-hover-bg: --alpha(var(--color-secondary) / 12%);
   --btn-disabled-bg: transparent;
 }
 @utility btn-text-info {
   --btn-bg: transparent;
-  --btn-content: var(--color-info);
+  --btn-color: var(--color-info);
   --btn-hover-bg: --alpha(var(--color-info) / 12%);
   --btn-disabled-bg: transparent;
 }
 @utility btn-text-success {
   --btn-bg: transparent;
-  --btn-content: var(--color-success);
+  --btn-color: var(--color-success);
   --btn-hover-bg: --alpha(var(--color-success) / 12%);
   --btn-disabled-bg: transparent;
 }
 @utility btn-text-warning {
   --btn-bg: transparent;
-  --btn-content: var(--color-warning);
+  --btn-color: var(--color-warning);
   --btn-hover-bg: --alpha(var(--color-warning) / 12%);
   --btn-disabled-bg: transparent;
 }
 @utility btn-text-error {
   --btn-bg: transparent;
-  --btn-content: var(--color-error);
+  --btn-color: var(--color-error);
   --btn-hover-bg: --alpha(var(--color-error) / 12%);
   --btn-disabled-bg: transparent;
 }
 @utility btn-text-neutral {
   --btn-bg: transparent;
-  --btn-content: var(--color-main);
+  --btn-color: var(--color-main);
   --btn-hover-bg: var(--color-muted);
   --btn-disabled-bg: transparent;
 }
@@ -304,7 +304,7 @@
 /* icon button */
 @utility btn-icon {
   --btn-bg: transparent;
-  --btn-content: var(--color-active);
+  --btn-color: var(--color-active);
   --btn-hover-bg: --alpha(var(--color-active) / 4%);
   --btn-disabled-bg: transparent;
   --input-btn-padding-y: calc(var(--spacing) * 2);
@@ -322,26 +322,26 @@
   }
 }
 @utility btn-icon-primary {
-  --btn-content: var(--color-primary);
+  --btn-color: var(--color-primary);
   --btn-hover-bg: --alpha(var(--color-primary) / 4%);
 }
 @utility btn-icon-secondary {
-  --btn-content: var(--color-secondary);
+  --btn-color: var(--color-secondary);
   --btn-hover-bg: --alpha(var(--color-secondary) / 4%);
 }
 @utility btn-icon-info {
-  --btn-content: var(--color-info);
+  --btn-color: var(--color-info);
   --btn-hover-bg: --alpha(var(--color-info) / 4%);
 }
 @utility btn-icon-success {
-  --btn-content: var(--color-success);
+  --btn-color: var(--color-success);
   --btn-hover-bg: --alpha(var(--color-success) / 4%);
 }
 @utility btn-icon-warning {
-  --btn-content: var(--color-warning);
+  --btn-color: var(--color-warning);
   --btn-hover-bg: --alpha(var(--color-warning) / 4%);
 }
 @utility btn-icon-error {
-  --btn-content: var(--color-error);
+  --btn-color: var(--color-error);
   --btn-hover-bg: --alpha(var(--color-error) / 4%);
 }
