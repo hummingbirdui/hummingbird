@@ -40,8 +40,8 @@
     --input-border-color: var(--input-focus-border-color, var(--color-primary));
   }
   &.is-invalid {
-    --input-bg: var(--color-error-lighter);
-    --input-border-color: var(--color-error);
+    --input-bg: var(--color-danger-lighter);
+    --input-border-color: var(--color-danger);
   }
   &[type='file'] {
     overflow: hidden;
@@ -65,9 +65,9 @@
     --file-selector-btn-bg: var(--file-selector-btn-hover-bg);
   }
   &.is-invalid::file-selector-button {
-    --file-selector-btn-bg: var(--color-error);
+    --file-selector-btn-bg: var(--color-danger);
     --file-selector-btn-color: var(--color-contrast);
-    --file-selector-btn-hover-bg: var(--color-error-dark);
+    --file-selector-btn-hover-bg: var(--color-danger-dark);
   }
   &:is(:disabled, [disabled])::file-selector-button {
     --file-selector-btn-bg: var(--color-muted);
@@ -110,7 +110,7 @@
     --input-border-color: var(--input-focus-border-color, var(--color-primary));
   }
   &.is-invalid {
-    --input-border-color: var(--color-error);
+    --input-border-color: var(--color-danger);
   }
   &[type='file'] {
     overflow: hidden;
@@ -266,7 +266,7 @@
   &:where(:has(.is-invalid)),
   &:where(:has(.is-invalid)):focus-within {
     .form-label {
-      --input-label-color: var(--color-error);
+      --input-label-color: var(--color-danger);
     }
   }
   &:has(input[disabled]) {

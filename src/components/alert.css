@@ -37,8 +37,8 @@
 @utility alert-warning {
   --alert-bg: var(--color-warning);
 }
-@utility alert-error {
-  --alert-bg: var(--color-error);
+@utility alert-danger {
+  --alert-bg: var(--color-danger);
 }
 
 /* subtle variant */
@@ -72,10 +72,10 @@
   --alert-color: var(--color-warning-darker);
   --alert-icon-color: var(--color-warning);
 }
-@utility alert-subtle-error {
-  --alert-bg: var(--color-error-lighter);
-  --alert-color: var(--color-error-darker);
-  --alert-icon-color: var(--color-error);
+@utility alert-subtle-danger {
+  --alert-bg: var(--color-danger-lighter);
+  --alert-color: var(--color-danger-darker);
+  --alert-icon-color: var(--color-danger);
 }
 
 /* outlined variant */
@@ -115,9 +115,9 @@
   --alert-icon-color: var(--color-warning);
   --alert-border-color: var(--color-warning);
 }
-@utility alert-outline-error {
+@utility alert-outline-danger {
   --alert-bg: transparent;
-  --alert-color: var(--color-error);
-  --alert-icon-color: var(--color-error);
-  --alert-border-color: var(--color-error);
+  --alert-color: var(--color-danger);
+  --alert-icon-color: var(--color-danger);
+  --alert-border-color: var(--color-danger);
 }

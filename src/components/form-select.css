@@ -41,8 +41,8 @@
     --input-border-color: var(--input-focus-border-color, var(--color-primary));
   }
   &.is-invalid {
-    --input-bg: var(--color-error-lighter);
-    --input-border-color: var(--color-error);
+    --input-bg: var(--color-danger-lighter);
+    --input-border-color: var(--color-danger);
   }
 }
 
@@ -85,7 +85,7 @@
     --input-border-color: var(--input-focus-border-color, var(--color-primary));
   }
   &.is-invalid {
-    --input-border-color: var(--color-error);
+    --input-border-color: var(--color-danger);
   }
 }
 

@@ -86,10 +86,10 @@
   --btn-color: var(--color-contrast);
   --btn-hover-bg: var(--color-warning-dark);
 }
-@utility btn-error {
-  --btn-bg: var(--color-error);
+@utility btn-danger {
+  --btn-bg: var(--color-danger);
   --btn-color: var(--color-contrast);
-  --btn-hover-bg: var(--color-error-dark);
+  --btn-hover-bg: var(--color-danger-dark);
 }
 @utility btn-neutral {
   --btn-bg: var(--color-main);
@@ -128,11 +128,11 @@
   --btn-hover-bg: --alpha(var(--color-warning) / 20%);
   --btn-disabled-bg: --alpha(var(--color-warning) / 15%);
 }
-@utility btn-subtle-error {
-  --btn-bg: --alpha(var(--color-error) / 15%);
-  --btn-color: var(--color-error-dark);
-  --btn-hover-bg: --alpha(var(--color-error) / 20%);
-  --btn-disabled-bg: --alpha(var(--color-error) / 15%);
+@utility btn-subtle-danger {
+  --btn-bg: --alpha(var(--color-danger) / 15%);
+  --btn-color: var(--color-danger-dark);
+  --btn-hover-bg: --alpha(var(--color-danger) / 20%);
+  --btn-disabled-bg: --alpha(var(--color-danger) / 15%);
 }
 @utility btn-subtle-neutral {
   --btn-bg: var(--color-muted);
@@ -187,12 +187,12 @@
   --btn-disabled-bg: transparent;
   --btn-disabled-border: var(--color-disabled);
 }
-@utility btn-outline-error {
+@utility btn-outline-danger {
   --btn-bg: transparent;
-  --btn-color: var(--color-error);
-  --btn-hover-bg: --alpha(var(--color-error) / 12%);
+  --btn-color: var(--color-danger);
+  --btn-hover-bg: --alpha(var(--color-danger) / 12%);
   --btn-border-width: 1px;
-  --btn-border-color: --alpha(var(--color-error) / 50%);
+  --btn-border-color: --alpha(var(--color-danger) / 50%);
   --btn-disabled-bg: transparent;
   --btn-disabled-border: var(--color-disabled);
 }
@@ -246,10 +246,10 @@
   --btn-hover-bg: --alpha(var(--color-warning) / 12%);
   --btn-disabled-bg: transparent;
 }
-@utility btn-text-error {
+@utility btn-text-danger {
   --btn-bg: transparent;
-  --btn-color: var(--color-error);
-  --btn-hover-bg: --alpha(var(--color-error) / 12%);
+  --btn-color: var(--color-danger);
+  --btn-hover-bg: --alpha(var(--color-danger) / 12%);
   --btn-disabled-bg: transparent;
 }
 @utility btn-text-neutral {
@@ -341,7 +341,7 @@
   --btn-color: var(--color-warning);
   --btn-hover-bg: --alpha(var(--color-warning) / 4%);
 }
-@utility btn-icon-error {
-  --btn-color: var(--color-error);
-  --btn-hover-bg: --alpha(var(--color-error) / 4%);
+@utility btn-icon-danger {
+  --btn-color: var(--color-danger);
+  --btn-hover-bg: --alpha(var(--color-danger) / 4%);
 }

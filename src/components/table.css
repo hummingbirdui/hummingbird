@@ -165,12 +165,12 @@
   --table-hover-bg: --alpha(var(--color-warning-light) / 40%);
   --table-active-bg: --alpha(var(--color-warning-light) / 40%);
 }
-@utility table-error {
-  --table-bg: var(--color-error-lighter);
-  --table-striped-bg: --alpha(var(--color-error-light) / 30%);
-  --table-border-color: --alpha(var(--color-error) / 20%);
-  --table-hover-bg: --alpha(var(--color-error-light) / 40%);
-  --table-active-bg: --alpha(var(--color-error-light) / 40%);
+@utility table-danger {
+  --table-bg: var(--color-danger-lighter);
+  --table-striped-bg: --alpha(var(--color-danger-light) / 30%);
+  --table-border-color: --alpha(var(--color-danger) / 20%);
+  --table-hover-bg: --alpha(var(--color-danger-light) / 40%);
+  --table-active-bg: --alpha(var(--color-danger-light) / 40%);
 }
 
 @layer base {

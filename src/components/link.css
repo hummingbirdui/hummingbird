@@ -29,9 +29,9 @@
   --link-color: var(--color-warning);
   --link-hover-color: var(--color-warning-dark);
 }
-@utility link-error {
-  --link-color: var(--color-error);
-  --link-hover-color: var(--color-error-dark);
+@utility link-danger {
+  --link-color: var(--color-danger);
+  --link-hover-color: var(--color-danger-dark);
 }
 @utility link-neutral {
   --link-color: var(--color-main);

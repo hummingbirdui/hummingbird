@@ -60,9 +60,9 @@
   --badge-bg: var(--color-warning);
   --badge-link-hover-bg: var(--color-warning-dark);
 }
-@utility badge-error {
-  --badge-bg: var(--color-error);
-  --badge-link-hover-bg: var(--color-error-dark);
+@utility badge-danger {
+  --badge-bg: var(--color-danger);
+  --badge-link-hover-bg: var(--color-danger-dark);
 }
 
 /* subtle variant */
@@ -102,11 +102,11 @@
   --badge-border-color: --alpha(var(--color-warning) / 50%);
   --badge-link-hover-bg: --alpha(var(--color-warning) / 35%);
 }
-@utility badge-subtle-error {
-  --badge-bg: --alpha(var(--color-error) / 15%);
-  --badge-color: var(--color-error);
-  --badge-border-color: --alpha(var(--color-error) / 50%);
-  --badge-link-hover-bg: --alpha(var(--color-error) / 35%);
+@utility badge-subtle-danger {
+  --badge-bg: --alpha(var(--color-danger) / 15%);
+  --badge-color: var(--color-danger);
+  --badge-border-color: --alpha(var(--color-danger) / 50%);
+  --badge-link-hover-bg: --alpha(var(--color-danger) / 35%);
 }
 @utility badge-outline {
   --badge-bg: transparent;
@@ -144,9 +144,9 @@
   --badge-border-color: --alpha(var(--color-warning) / 50%);
   --badge-link-hover-bg: --alpha(var(--color-warning) / 12%);
 }
-@utility badge-outline-error {
+@utility badge-outline-danger {
   --badge-bg: transparent;
-  --badge-color: var(--color-error);
-  --badge-border-color: --alpha(var(--color-error) / 50%);
-  --badge-link-hover-bg: --alpha(var(--color-error) / 12%);
+  --badge-color: var(--color-danger);
+  --badge-border-color: --alpha(var(--color-danger) / 50%);
+  --badge-link-hover-bg: --alpha(var(--color-danger) / 12%);
 }

@@ -131,8 +131,8 @@
   --nav-link-disabled-color: --alpha(var(--color-contrast) / 30%);
   --nav-link-active-color: var(--color-contrast);
 }
-@utility nav-error {
-  --nav-bg: var(--color-error);
+@utility nav-danger {
+  --nav-bg: var(--color-danger);
   --nav-link-color: --alpha(var(--color-contrast) / 50%);
   --nav-link-disabled-color: --alpha(var(--color-contrast) / 30%);
   --nav-link-active-color: var(--color-contrast);

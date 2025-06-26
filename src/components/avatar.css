@@ -47,7 +47,7 @@
 }
 @utility avatar-status-busy {
   &::before {
-    @apply bg-error;
+    @apply bg-danger;
   }
 }
 @utility avatar-xs {

@@ -39,12 +39,12 @@
   --color-secondary-dark: var(--color-purple-700);
   --color-secondary-darker: var(--color-purple-900);
 
-  /* error */
-  --color-error-lighter: var(--color-red-50);
-  --color-error-light: var(--color-red-300);
-  --color-error: var(--color-red-500);
-  --color-error-dark: var(--color-red-600);
-  --color-error-darker: var(--color-red-900);
+  /* danger */
+  --color-danger-lighter: var(--color-red-50);
+  --color-danger-light: var(--color-red-300);
+  --color-danger: var(--color-red-500);
+  --color-danger-dark: var(--color-red-600);
+  --color-danger-darker: var(--color-red-900);
 
   /* warning */
   --color-warning-lighter: var(--color-orange-50);
@@ -136,12 +136,12 @@
     --color-secondary-dark: var(--color-purple-300);
     --color-secondary-darker: var(--color-purple-100);
 
-    /* error */
-    --color-error-lighter: var(--color-red-950);
-    --color-error-light: var(--color-red-600);
-    --color-error: var(--color-red-400);
-    --color-error-dark: var(--color-red-300);
-    --color-error-darker: var(--color-red-200);
+    /* danger */
+    --color-danger-lighter: var(--color-red-950);
+    --color-danger-light: var(--color-red-600);
+    --color-danger: var(--color-red-400);
+    --color-danger-dark: var(--color-red-300);
+    --color-danger-darker: var(--color-red-200);
 
     /* warning */
     --color-warning-lighter: var(--color-orange-950);

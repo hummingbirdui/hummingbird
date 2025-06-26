@@ -4,8 +4,7 @@
   --form-range-thumb-width: calc(var(--spacing) * 5);
   --form-range-thumb-height: calc(var(--spacing) * 5);
   --form-range-thumb-border-radius: calc(infinity * 1px);
-  --form-range-thumb-box-shadow: --alpha(var(--form-range-color) / 16%) 0px 0px
-    0px 8px;
+  --form-range-thumb-box-shadow: --alpha(var(--form-range-color) / 16%) 0px 0px 0px 8px;
   --form-range-track-width: 100%;
   --form-range-track-height: calc(var(--spacing) * 1.5);
   --form-range-track-border-radius: var(--radius-sm);
@@ -70,12 +69,10 @@
 
   &:active {
     &::-webkit-slider-thumb {
-      --form-range-thumb-box-shadow: --alpha(var(--form-range-color) / 16%) 0px
-        0px 0px 14px;
+      --form-range-thumb-box-shadow: --alpha(var(--form-range-color) / 16%) 0px 0px 0px 14px;
     }
     &::-moz-range-thumb {
-      --form-range-thumb-box-shadow: --alpha(var(--form-range-color) / 16%) 0px
-        0px 0px 14px;
+      --form-range-thumb-box-shadow: --alpha(var(--form-range-color) / 16%) 0px 0px 0px 14px;
     }
   }
 
@@ -109,8 +106,8 @@
 @utility form-range-warning {
   --form-range-color: var(--color-warning);
 }
-@utility form-range-error {
-  --form-range-color: var(--color-error);
+@utility form-range-danger {
+  --form-range-color: var(--color-danger);
 }
 @utility form-range-neutral {
   --form-range-color: var(--color-main);
