@@ -13,6 +13,9 @@ export interface CollapseInstance {
 }
 
 export interface CollapseStatic {
+  readonly VERSION: string;
+  readonly DATA_KEY: string;
+  readonly EVENT_KEY: string;
   new (element: string | Element, options?: Partial<CollapseOptions>): CollapseInstance;
   getInstance(element: Element | string): CollapseInstance | null;
   getOrCreateInstance(element: Element | string, config?: Partial<CollapseOptions>): CollapseInstance;

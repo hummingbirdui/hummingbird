@@ -22,15 +22,12 @@ export interface DropdownInstance {
 }
 
 export interface DropdownStatic {
-  new (
-    element: Element | string,
-    options?: Partial<DropdownOptions>,
-  ): DropdownInstance;
+  readonly VERSION: string;
+  readonly DATA_KEY: string;
+  readonly EVENT_KEY: string;
+  new (element: Element | string, options?: Partial<DropdownOptions>): DropdownInstance;
   getInstance(element: Element | string): DropdownInstance | null;
-  getOrCreateInstance(
-    element: Element | string,
-    config?: Partial<DropdownOptions>,
-  ): DropdownInstance;
+  getOrCreateInstance(element: Element | string, config?: Partial<DropdownOptions>): DropdownInstance;
   Default: DropdownOptions;
 }
 

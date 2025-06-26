@@ -15,15 +15,12 @@ export interface ModalInstance {
 }
 
 export interface ModalStatic {
-  new (
-    element: string | Element,
-    options?: Partial<ModalOptions>,
-  ): ModalInstance;
+  readonly VERSION: string;
+  readonly DATA_KEY: string;
+  readonly EVENT_KEY: string;
+  new (element: string | Element, options?: Partial<ModalOptions>): ModalInstance;
   getInstance(element: string | Element): ModalInstance | null;
-  getOrCreateInstance(
-    element: string | Element,
-    config?: Partial<ModalOptions>,
-  ): ModalInstance;
+  getOrCreateInstance(element: string | Element, config?: Partial<ModalOptions>): ModalInstance;
   Default: ModalOptions;
 }
 

@@ -22,6 +22,9 @@ export interface CarouselInstance {
 type GetOrCreateInstance = (element: Element | string, config?: Partial<CarouselOptions>) => CarouselInstance;
 
 export interface CarouselStatic {
+  readonly VERSION: string;
+  readonly DATA_KEY: string;
+  readonly EVENT_KEY: string;
   new (element: Element | string, options?: Partial<CarouselOptions>): CarouselInstance;
   getInstance(element: Element | string): CarouselInstance | null;
   getOrCreateInstance: GetOrCreateInstance;

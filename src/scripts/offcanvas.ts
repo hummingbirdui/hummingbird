@@ -11,19 +11,15 @@ export interface OffcanvasInstance {
   show(relatedTarget?: HTMLElement): void;
   hide(): void;
   dispose(): void;
-  // TODO: Add dispose to all component
 }
 
 export interface OffcanvasStatic {
-  new (
-    element: string | Element,
-    options?: Partial<OffcanvasOptions>,
-  ): OffcanvasInstance;
+  readonly VERSION: string;
+  readonly DATA_KEY: string;
+  readonly EVENT_KEY: string;
+  new (element: string | Element, options?: Partial<OffcanvasOptions>): OffcanvasInstance;
   getInstance(element: string | Element): OffcanvasInstance | null;
-  getOrCreateInstance(
-    element: string | Element,
-    config?: Partial<OffcanvasOptions>,
-  ): OffcanvasInstance;
+  getOrCreateInstance(element: string | Element, config?: Partial<OffcanvasOptions>): OffcanvasInstance;
 }
 
 export enum OffcanvasEvents {
