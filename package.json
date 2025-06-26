@@ -42,7 +42,7 @@
     "start": "cross-env NODE_ENV=development run-p start:*",
     "start:js": "vite build --outDir=static --emptyOutDir=false --watch",
     "start:docs-js": "esbuild apps/docs.ts --bundle --outfile=static/docs.js --watch",
-    "start:astro": "astro dev",
+    "start:astro": "astro dev --host",
     "watch:css": "chokidar 'src/**/*.css' -c 'npm start'",
     "restart": "kill-port 4321 && astro dev",
     "build:docs": "astro build",
