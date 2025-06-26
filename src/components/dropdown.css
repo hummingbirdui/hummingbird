@@ -18,9 +18,9 @@
   --dropdown-padding-x: 0;
   --dropdown-padding-y: calc(var(--spacing) * 2);
   --dropdown-font-size: var(--text-sm);
-  --dropdown-box-shadow:
-    6px 33px 46px 0px rgba(0, 0, 0, 0.07), 1px 20px 19px 0px rgba(0, 0, 0, 0.03), 2px 10px 10px 0px rgba(0, 0, 0, 0.01),
-    0px -2px 6px 0px rgba(0, 0, 0, 0.03);
+  --dropdown-border-width: 1px;
+  --dropdown-border-color: transparent;
+  --dropdown-box-shadow: var(--shadow-xl);
   --dropdown-border-radius: var(--radius-lg);
   --dropdown-link-color: var(--color-default-color);
   --dropdown-link-hover-color: var(--color-default-color);
@@ -43,6 +43,8 @@
   px-[var(--dropdown-padding-x)]
   py-[var(--dropdown-padding-y)]
   m-0
+  border-[length:var(--dropdown-border-width)]
+  border-[var(--dropdown-border-color)]
   text-[length:var(--dropdown-font-size)]
   bg-[var(--dropdown-bg)]
   bg-clip-padding
@@ -51,6 +53,10 @@
   /* TODO: Update data-bs-popper to data-popper-placement, need to check */
   &[data-popper-placement] {
     @apply top-full left-0 mt-[var(--dropdown-spacer)];
+  }
+
+  .dark & {
+    --dropdown-border-color: var(--color-border-base);
   }
 }
 

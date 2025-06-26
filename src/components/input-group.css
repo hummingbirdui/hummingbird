@@ -63,11 +63,6 @@
     @apply rounded-l-none -ml-[var(--input-btn-border-width)];
   }
 
-  /* > :not(.form-control-fill):not(.form-select-fill):not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(
-      .valid-feedback
-    ):not(.invalid-tooltip):not(.invalid-feedback) {
-  } */
-
   > .form-floating:not(:first-child) {
     > .form-control-fill,
     > .form-control,
@@ -97,7 +92,6 @@
   bg-[var(--input-group-addon-bg)]
   border-[length:var(--input-btn-border-width)]
   border-[var(--input-group-addon-border-color)]
-  /* shadow-[0_0_0_var(--input-btn-border-width)_var(--input-group-addon-border-color)] */
   rounded-[var(--input-btn-radius)];
 }
 
