@@ -135,6 +135,10 @@ const sitemap: Sitemap[] = [
         name: 'Input Group',
         path: '/components/input-group',
       },
+      {
+        name: 'Button Group',
+        path: '/components/button-group',
+      },
     ],
   },
 ];
