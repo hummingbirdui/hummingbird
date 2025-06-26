@@ -29,5 +29,5 @@
 }
 .custom-tooltip {
   --tooltip-bg: var(--color-info);
-  --tooltip-content: var(--color-contrast);
+  --tooltip-color: var(--color-contrast);
 }
