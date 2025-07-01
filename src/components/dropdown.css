@@ -7,9 +7,7 @@
 @utility dropup-center {
   @apply relative;
 }
-/* @utility dropdown-toggle {
-  @apply whitespace-nowrap;
-} */
+
 @utility dropdown-menu {
   --dropdown-zindex: 1000;
   --dropdown-bg: var(--color-default);
@@ -50,9 +48,13 @@
   bg-clip-padding
   shadow-[var(--dropdown-box-shadow)]
   rounded-[var(--dropdown-border-radius)];
-  /* TODO: Update data-bs-popper to data-popper-placement, need to check */
-  &[data-popper-placement] {
+
+  &[data-bs-popper] {
     @apply top-full left-0 mt-[var(--dropdown-spacer)];
+  }
+
+  &.show {
+    @apply block;
   }
 
   .dark & {
@@ -61,32 +63,34 @@
 }
 
 @utility dropdown-menu-start {
-  &[data-popper-placement] {
+  --bs-position: start;
+  &[data-bs-popper] {
     @apply right-auto left-0;
   }
 }
 @utility dropdown-menu-end {
-  &[data-popper-placement] {
-    @apply right-0! left-auto!;
+  --bs-position: end;
+  &[data-bs-popper] {
+    @apply right-0 left-auto;
   }
 }
 
 @utility dropup {
   @apply relative;
-  .dropdown-menu[data-popper-placement] {
+  .dropdown-menu[data-bs-popper] {
     @apply top-auto bottom-full mt-0 mb-[var(--dropdown-spacer)];
   }
 }
 @utility dropend {
   @apply relative;
-  .dropdown-menu[data-popper-placement] {
+  .dropdown-menu[data-bs-popper] {
     @apply top-0 right-auto left-full mt-0 ml-[var(--dropdown-spacer)];
   }
 }
 @utility dropstart {
   @apply relative;
-  .dropdown-menu[data-popper-placement] {
-    @apply top-0 right-full left-auto mt-0 mr-[var(--dropdown-spacer)] hidden;
+  .dropdown-menu[data-bs-popper] {
+    @apply top-0 right-full left-auto mt-0 mr-[var(--dropdown-spacer)];
   }
 }
 
@@ -119,12 +123,6 @@
   &:disabled {
     @apply text-[var(--dropdown-link-disabled-color)]
     pointer-events-none;
-  }
-}
-
-.dropdown-menu {
-  &.show {
-    @apply block scale-100;
   }
 }
 
