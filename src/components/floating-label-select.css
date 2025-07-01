@@ -14,7 +14,7 @@
     &.form-select-sm {
       --floating-label-padding-top: calc(var(--spacing) * 4.25);
       --floating-label-padding-bottom: calc(var(--spacing) * 0.5);
-      --input-btn-line-height: 1.5;
+      --form-select-line-height: 1.5;
     }
     &.form-select-lg {
       --floating-label-padding-top: calc(var(--spacing) * 5.5);
@@ -36,8 +36,8 @@
   }
 
   .form-select {
-    --input-btn-padding-y: calc(var(--spacing) * 2.25);
-    --input-btn-line-height: 2;
+    --form-select-padding-y: calc(var(--spacing) * 2.25);
+    --form-select-line-height: 2;
 
     & ~ .form-label {
       --input-label-bg: var(--color-default);
@@ -64,14 +64,14 @@
   }
 
   .form-select-sm {
-    --input-btn-padding-y: calc(var(--spacing) * 1.5);
+    --form-select-padding-y: calc(var(--spacing) * 1.5);
     & + .form-label {
       @apply translate-x-[12px] translate-y-[10px] scale-[1];
     }
   }
   .form-select-lg {
-    --input-btn-padding-y: calc(var(--spacing) * 2.5);
-    --input-btn-padding-x: calc(var(--spacing) * 5);
+    --form-select-padding-y: calc(var(--spacing) * 2.5);
+    --form-select-padding-x: calc(var(--spacing) * 5);
     & + .form-label {
       @apply text-base translate-x-[20px] translate-y-[14px] scale-[1];
     }

@@ -1,43 +1,42 @@
 @utility form-control-fill {
+  --input-font-size: var(--input-btn-font-size);
+  --input-radius: var(--input-btn-radius);
+  --input-padding-x: var(--input-btn-padding-x);
+  --input-padding-y: var(--input-btn-padding-y);
+  --input-line-height: var(--input-btn-line-height);
+  --input-border-width: var(--input-btn-border-width);
+  --input-border-color: transparent;
   --file-selector-btn-bg: var(--color-highlight);
   --file-selector-btn-color: var(--color-default-color);
   --file-selector-btn-hover-bg: var(--color-emphasis);
   --input-icon-spacing: calc(var(--spacing) * 11);
-  --input-border-color: transparent;
 
   @apply relative w-full
   appearance-none
   inline-flex items-center justify-center
   transition duration-200
-  leading-[var(--input-btn-line-height)]
+  leading-[var(--input-line-height)]
   bg-[var(--input-bg)]
-  text-[length:var(--input-btn-font-size)]
+  text-[length:var(--input-font-size)]
   text-[var(--input-color)]
-  rounded-[var(--input-btn-radius)]
-  border-[length:var(--input-btn-border-width)]
+  rounded-[var(--input-radius)]
+  border-[length:var(--input-border-width)]
   border-[var(--input-border-color)]
-  px-[var(--input-btn-padding-x)]
-  py-[var(--input-btn-padding-y)];
+  px-[var(--input-padding-x)]
+  py-[var(--input-padding-y)];
 
   &:is(:disabled, [disabled]) {
-    --input-bg: var(--input-disabled-bg, var(--color-highlight));
-    &:hover {
-      --input-bg: var(--input-disabled-bg, var(--color-highlight));
-    }
+    @apply bg-[var(--input-disabled-bg)];
   }
 
   &:hover {
-    --input-bg: var(--input-hover-bg, var(--color-highlight));
+    @apply bg-[var(--input-hover-bg)];
   }
   &:focus-within,
   &:focus {
-    input,
-    textarea {
-      @apply outline-0;
-    }
-    @apply outline-0;
-    --input-bg: var(--input-focus-bg, var(--color-primary-lighter));
-    --input-border-color: var(--input-focus-border-color, var(--color-primary));
+    @apply outline-0
+    bg-[var(--input-focus-bg)]
+    border-[var(--input-focus-border-color)];
   }
   &.is-invalid {
     --input-bg: var(--color-danger-lighter);
@@ -55,11 +54,11 @@
       bg-[var(--file-selector-btn-bg)]
       text-[var(--file-selector-btn-color)]
       font-semibold
-      px-[var(--input-btn-padding-x)]
-      py-[var(--input-btn-padding-y)]
-      -mx-[var(--input-btn-padding-x)]
-      -my-[var(--input-btn-padding-y)]
-      me-[var(--input-btn-padding-x)];
+      px-[var(--input-padding-x)]
+      py-[var(--input-padding-y)]
+      -mx-[var(--input-padding-x)]
+      -my-[var(--input-padding-y)]
+      me-[var(--input-padding-x)];
   }
   &:hover:not(:disabled):not([readonly])::file-selector-button {
     --file-selector-btn-bg: var(--file-selector-btn-hover-bg);
@@ -75,40 +74,43 @@
 }
 
 @utility form-control {
-  --input-border-color: var(--color-border-base);
+  --input-font-size: var(--input-btn-font-size);
+  --input-radius: var(--input-btn-radius);
+  --input-padding-x: var(--input-btn-padding-x);
+  --input-padding-y: var(--input-btn-padding-y);
+  --input-line-height: var(--input-btn-line-height);
+  --input-border-width: var(--input-btn-border-width);
   --input-icon-spacing: calc(var(--spacing) * 11);
 
   @apply relative w-full
   inline-flex items-center justify-center gap-2
   appearance-none
   transition duration-200
-  leading-[var(--input-btn-line-height)]
-  text-[length:var(--input-btn-font-size)]
+  leading-[var(--input-line-height)]
+  text-[length:var(--input-font-size)]
   text-[var(--input-color)]
-  rounded-[var(--input-btn-radius)]
-  border-[length:var(--input-btn-border-width)]
+  rounded-[var(--input-radius)]
+  border-[length:var(--input-border-width)]
   border-[var(--input-border-color)]
-  px-[var(--input-btn-padding-x)]
-  py-[var(--input-btn-padding-y)];
+  px-[var(--input-padding-x)]
+  py-[var(--input-padding-y)];
+
+  &:hover {
+    @apply border-[var(--input-hover-border-color)];
+  }
+
+  &:focus-within,
+  &:focus {
+    @apply outline-0 border-[var(--input-focus-border-color)];
+  }
 
   &:is(:disabled, [disabled]) {
     @apply opacity-50;
     &:hover {
-      --input-border-color: var(--color-border-base);
+      @apply border-[var(--input-disabled-border-color)];
     }
   }
-  &:hover {
-    --input-border-color: var(--color-emphasis-color);
-  }
-  &:focus-within,
-  &:focus {
-    input,
-    textarea {
-      @apply outline-0;
-    }
-    @apply outline-0;
-    --input-border-color: var(--input-focus-border-color, var(--color-primary));
-  }
+
   &.is-invalid {
     --input-border-color: var(--color-danger);
   }
@@ -122,11 +124,11 @@
   &::file-selector-button {
     @apply pointer-events-none transition-[border] duration-200
     font-semibold
-    px-[var(--input-btn-padding-x)]
-    py-[var(--input-btn-padding-y)]
-    -mx-[var(--input-btn-padding-x)]
-    -my-[var(--input-btn-padding-y)]
-    me-[var(--input-btn-padding-x)]
+    px-[var(--input-padding-x)]
+    py-[var(--input-padding-y)]
+    -mx-[var(--input-padding-x)]
+    -my-[var(--input-padding-y)]
+    me-[var(--input-padding-x)]
     border-r
     border-[var(--input-border-color)];
   }
@@ -135,6 +137,7 @@
 @utility input-group-icon {
   --input-icon-color: var(--color-active);
   --input-icon-font-size: var(--text-xl);
+  --input-padding-x: var(--input-btn-padding-x);
 
   @apply relative;
 
@@ -154,7 +157,7 @@
   &:has(.form-control-sm) {
     .form-control-icon-start,
     .form-control-icon-end {
-      --input-btn-padding-x: calc(var(--spacing) * 3);
+      --input-padding-x: calc(var(--spacing) * 3);
       --input-icon-font-size: var(--text-sm);
     }
   }
@@ -167,27 +170,27 @@
 }
 
 @utility form-control-icon-start {
-  @apply absolute z-1 top-[50%] left-[var(--input-btn-padding-x)] translate-y-[-50%]
+  @apply absolute z-1 top-[50%] left-[var(--input-padding-x)] translate-y-[-50%]
   text-[length:var(--input-icon-font-size)]
   text-[var(--input-icon-color)];
 }
 @utility form-control-icon-end {
-  @apply absolute z-1 top-[50%] right-[var(--input-btn-padding-x)] translate-y-[-50%]
+  @apply absolute z-1 top-[50%] right-[var(--input-padding-x)] translate-y-[-50%]
   text-[length:var(--input-icon-font-size)]
   text-[var(--input-icon-color)];
 }
 
 @utility form-control-sm {
-  --input-btn-padding-x: calc(var(--spacing) * 3);
-  --input-btn-padding-y: calc(var(--spacing) * 1.25);
-  --input-btn-radius: var(--radius-sm);
-  --input-btn-line-height: 1.25;
+  --input-padding-x: calc(var(--spacing) * 3);
+  --input-padding-y: calc(var(--spacing) * 1.25);
+  --input-radius: var(--radius-sm);
+  --input-line-height: 1.25;
   --input-icon-spacing: calc(var(--spacing) * 8.5);
 }
 
 @utility form-control-lg {
-  --input-btn-padding-y: calc(var(--spacing) * 2.25);
-  --input-btn-font-size: var(--text-base);
+  --input-padding-y: calc(var(--spacing) * 2.25);
+  --input-font-size: var(--text-base);
   --input-icon-spacing: calc(var(--spacing) * 12);
 }
 @utility form-control-primary {
