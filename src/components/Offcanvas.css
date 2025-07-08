@@ -89,8 +89,10 @@
 }
 
 @utility offcanvas-header {
-  @apply flex items-center
-  px-[var(--offcanvas-padding-x)] py-[var(--offcanvas-padding-y)];
+  @layer base {
+    @apply flex items-center
+    px-[var(--offcanvas-padding-x)] py-[var(--offcanvas-padding-y)];
+  }
 }
 
 @utility offcanvas-title {
@@ -106,11 +108,13 @@
 
 @utility offcanvas-static {
   @apply static translate-none visible border-0 shadow-none bg-transparent w-auto h-auto;
-  .offcanvas-header {
-    @apply hidden;
-  }
-  .offcanvas-body {
-    @apply flex grow-0 overflow-y-visible bg-transparent p-0;
+  @layer base {
+    .offcanvas-header {
+      @apply hidden;
+    }
+    .offcanvas-body {
+      @apply flex grow-0 overflow-y-visible bg-transparent p-0;
+    }
   }
 }
 

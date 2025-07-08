@@ -5,7 +5,9 @@
     --floating-label-padding-top: calc(var(--spacing) * 5.25);
     --floating-label-padding-bottom: calc(var(--spacing) * 1);
 
-    @apply pt-[var(--floating-label-padding-top)] pb-[var(--floating-label-padding-bottom)];
+    @layer components {
+      @apply pt-[var(--floating-label-padding-top)] pb-[var(--floating-label-padding-bottom)];
+    }
 
     &::placeholder {
       @apply text-transparent;

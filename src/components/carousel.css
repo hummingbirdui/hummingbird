@@ -160,25 +160,27 @@
   ml-[var(--carousel-control-width)];
 
   [data-bs-target] {
-    @apply box-content
-    flex-[0_1_auto]
-    w-[var(--carousel-indicator-width)]
-    h-[var(--carousel-indicator-height)]
-    p-0
-    mr-[var(--carousel-indicator-spacer)]
-    ml-[var(--carousel-indicator-spacer)]
-    -indent-[999px]
-    cursor-pointer
-    bg-[var(--carousel-indicator-active-bg)]
-    bg-clip-padding
-    border-0
-    border-transparent
-    border-solid
-    border-t-[var(--carousel-indicator-hit-area-height)]
-    border-b-[var(--carousel-indicator-hit-area-height)]
-    opacity-[var(--carousel-indicator-opacity)]
-    transition-opacity
-    duration-[var(--carousel-transition-duration)];
+    @layer base {
+      @apply box-content
+      flex-[0_1_auto]
+      w-[var(--carousel-indicator-width)]
+      h-[var(--carousel-indicator-height)]
+      p-0
+      mr-[var(--carousel-indicator-spacer)]
+      ml-[var(--carousel-indicator-spacer)]
+      -indent-[999px]
+      cursor-pointer
+      bg-[var(--carousel-indicator-active-bg)]
+      bg-clip-padding
+      border-0
+      border-transparent
+      border-solid
+      border-t-[var(--carousel-indicator-hit-area-height)]
+      border-b-[var(--carousel-indicator-hit-area-height)]
+      opacity-[var(--carousel-indicator-opacity)]
+      transition-opacity
+      duration-[var(--carousel-transition-duration)];
+    }
   }
 
   .active {

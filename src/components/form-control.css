@@ -11,19 +11,21 @@
   --file-selector-btn-hover-bg: var(--color-emphasis);
   --input-icon-spacing: calc(var(--spacing) * 11);
 
-  @apply relative w-full
-  appearance-none
-  inline-flex items-center justify-center
-  transition duration-200
-  leading-[var(--input-line-height)]
-  bg-[var(--input-bg)]
-  text-[length:var(--input-font-size)]
-  text-[var(--input-color)]
-  rounded-[var(--input-radius)]
-  border-[length:var(--input-border-width)]
-  border-[var(--input-border-color)]
-  px-[var(--input-padding-x)]
-  py-[var(--input-padding-y)];
+  @layer base {
+    @apply w-full
+    appearance-none
+    inline-flex items-center justify-center
+    transition duration-200
+    leading-[var(--input-line-height)]
+    bg-[var(--input-bg)]
+    text-[length:var(--input-font-size)]
+    text-[var(--input-color)]
+    rounded-[var(--input-radius)]
+    border-[length:var(--input-border-width)]
+    border-[var(--input-border-color)]
+    px-[var(--input-padding-x)]
+    py-[var(--input-padding-y)];
+  }
 
   &:is(:disabled, [disabled]) {
     @apply bg-[var(--input-disabled-bg)];
@@ -39,8 +41,7 @@
     border-[var(--input-focus-border-color)];
   }
   &.is-invalid {
-    --input-bg: var(--color-danger-lighter);
-    --input-border-color: var(--color-danger);
+    @apply bg-[var(--color-danger-lighter)] border-[var(--color-danger)];
   }
   &[type='file'] {
     overflow: hidden;
@@ -82,18 +83,20 @@
   --input-border-width: var(--input-btn-border-width);
   --input-icon-spacing: calc(var(--spacing) * 11);
 
-  @apply relative w-full
-  inline-flex items-center justify-center gap-2
-  appearance-none
-  transition duration-200
-  leading-[var(--input-line-height)]
-  text-[length:var(--input-font-size)]
-  text-[var(--input-color)]
-  rounded-[var(--input-radius)]
-  border-[length:var(--input-border-width)]
-  border-[var(--input-border-color)]
-  px-[var(--input-padding-x)]
-  py-[var(--input-padding-y)];
+  @layer base {
+    @apply w-full
+    inline-flex items-center justify-center gap-2
+    appearance-none
+    transition duration-200
+    leading-[var(--input-line-height)]
+    text-[length:var(--input-font-size)]
+    text-[var(--input-color)]
+    rounded-[var(--input-radius)]
+    border-[length:var(--input-border-width)]
+    border-[var(--input-border-color)]
+    px-[var(--input-padding-x)]
+    py-[var(--input-padding-y)];
+  }
 
   &:hover {
     @apply border-[var(--input-hover-border-color)];
@@ -112,7 +115,7 @@
   }
 
   &.is-invalid {
-    --input-border-color: var(--color-danger);
+    @apply border-[var(--color-danger)];
   }
   &[type='file'] {
     overflow: hidden;

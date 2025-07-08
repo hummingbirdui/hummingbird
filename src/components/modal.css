@@ -46,7 +46,9 @@
   pointer-events-none;
 
   .modal.fade & {
-    @apply transform-[var(--modal-fade-transform)] transition-transform duration-[var(--modal-transition-duration)] ease-out;
+    @layer base {
+      @apply transform-[var(--modal-fade-transform)] transition-transform duration-[var(--modal-transition-duration)] ease-out;
+    }
   }
   .modal.show & {
     @apply transform-[var(--modal-show-transform)];

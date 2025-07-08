@@ -23,13 +23,14 @@
   > .lg\:container,
   > .xl\:container,
   > .\32xl\:container {
-    @apply flex flex-wrap items-center justify-between;
+    @layer base {
+      @apply flex flex-wrap items-center justify-between mx-auto;
+    }
   }
 }
 
 @utility navbar-brand {
-  @apply pt-[var(--navbar-brand-padding-y)]
-   pb-[var(--navbar-brand-padding-y)]
+  @apply py-[var(--navbar-brand-padding-y)]
    mr-[var(--navbar-brand-margin-end)]
    text-[length:var(--navbar-brand-font-size)]
    text-[var(--navbar-brand-color)]
@@ -70,8 +71,7 @@
 }
 
 @utility navbar-text {
-  @apply pt-[var(--navbar-padding-y)]
-  pb-[var(--navbar-padding-y)]
+  @apply py-[var(--navbar-padding-y)]
   text-[var(--navbar-color)];
 
   a,
@@ -100,7 +100,9 @@
     }
 
     .nav-link {
-      @apply pl-[var(--navbar-nav-link-padding-x)] pr-[var(--navbar-nav-link-padding-x)];
+      @layer base {
+        @apply px-[var(--navbar-nav-link-padding-x)];
+      }
     }
   }
 

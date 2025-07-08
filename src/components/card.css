@@ -1,25 +1,27 @@
 @utility card {
-  --card-bg: var(--color-subtle);
-  --card-color: var(--color-highlight-color);
-  --card-border-width: 1px;
-  --card-border-color: var(--color-border-base);
-  --card-border-radius: var(--radius-lg);
-  --card-padding-x: calc(var(--spacing) * 4);
-  --card-padding-y: calc(var(--spacing) * 4);
-  --card-cap-padding-x: calc(var(--spacing) * 2);
-  --card-cap-padding-y: calc(var(--spacing) * 2);
-  --card-cap-bg: transparent;
-  --card-cap-color: null;
-  --card-title-color: var(--color-default-color);
-  --card-title-space-y: calc(var(--spacing) * 2);
+  @layer base {
+    --card-bg: var(--color-subtle);
+    --card-color: var(--color-highlight-color);
+    --card-border-width: 1px;
+    --card-border-color: var(--color-border-base);
+    --card-border-radius: var(--radius-lg);
+    --card-padding-x: calc(var(--spacing) * 4);
+    --card-padding-y: calc(var(--spacing) * 4);
+    --card-cap-padding-x: calc(var(--spacing) * 2);
+    --card-cap-padding-y: calc(var(--spacing) * 2);
+    --card-cap-bg: transparent;
+    --card-cap-color: null;
+    --card-title-color: var(--color-default-color);
+    --card-title-space-y: calc(var(--spacing) * 2);
 
-  @apply relative flex flex-col min-w-0 wrap-break-word
-  text-sm
-  rounded-[var(--card-border-radius)]
-  bg-[var(--card-bg)]
-  text-[var(--card-color)]
-  border-[length:var(--card-border-width)]
-  border-[var(--card-border-color)];
+    @apply relative flex flex-col min-w-0 wrap-break-word
+    text-sm
+    rounded-[var(--card-border-radius)]
+    bg-[var(--card-bg)]
+    text-[var(--card-color)]
+    border-[length:var(--card-border-width)]
+    border-[var(--card-border-color)];
+  }
 }
 @utility card-action {
   @apply cursor-pointer text-left transition-[background] duration-200;
@@ -78,25 +80,28 @@
     @apply mb-0;
   }
 }
+
 @utility card-subtitle {
   @apply text-base font-medium
   mb-[var(--card-title-space-y)];
 }
+
 @utility card-text {
   @apply text-sm;
 }
+
 @utility card-img-overlay {
+  --card-title-color: var(--color-contrast);
   --card-border-width: 0px;
-  @apply overflow-hidden rounded-lg;
-  img {
-    @apply brightness-[0.6];
-  }
-  .card-body {
-    @apply absolute top-0 right-0 bottom-0 left-0
+  @layer base {
+    @apply overflow-hidden rounded-lg;
+    img {
+      @apply brightness-[0.6];
+    }
+    .card-body {
+      @apply absolute top-0 right-0 bottom-0 left-0
     p-[var(--card-padding-x)]
     rounded-[var(--card-border-radius)] text-contrast;
-    .card-title {
-      @apply text-contrast;
     }
   }
 }
