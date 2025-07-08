@@ -10,14 +10,14 @@
   --carousel-control-next-icon-bg: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ffffff'><path d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708'/></svg>");
   --carousel-indicator-width: 1.875rem;
   --carousel-indicator-height: 0.1875rem;
-  --carousel-indicator-spacer: calc(var(--spacing) * 0.75);
+  --carousel-indicator-spacer: --spacing(0.75);
   --carousel-indicator-active-bg: var(--color-contrast);
   --carousel-indicator-hit-area-height: 0.625rem;
   --carousel-indicator-opacity: 0.5;
   --carousel-indicator-active-opacity: 1;
   --carousel-caption-width: 70%;
-  --carousel-caption-spacer: calc(var(--spacing) * 5);
-  --carousel-caption-padding-y: calc(var(--spacing) * 5);
+  --carousel-caption-spacer: --spacing(5);
+  --carousel-caption-padding-y: --spacing(5);
   --carousel-caption-color: var(--color-contrast);
 
   @apply relative;
@@ -160,25 +160,27 @@
   ml-[var(--carousel-control-width)];
 
   [data-bs-target] {
-    @apply box-content
-    flex-[0_1_auto]
-    w-[var(--carousel-indicator-width)]
-    h-[var(--carousel-indicator-height)]
-    p-0
-    mr-[var(--carousel-indicator-spacer)]
-    ml-[var(--carousel-indicator-spacer)]
-    -indent-[999px]
-    cursor-pointer
-    bg-[var(--carousel-indicator-active-bg)]
-    bg-clip-padding
-    border-0
-    border-transparent
-    border-solid
-    border-t-[var(--carousel-indicator-hit-area-height)]
-    border-b-[var(--carousel-indicator-hit-area-height)]
-    opacity-[var(--carousel-indicator-opacity)]
-    transition-opacity
-    duration-[var(--carousel-transition-duration)];
+    @layer base {
+      @apply box-content
+      flex-[0_1_auto]
+      w-[var(--carousel-indicator-width)]
+      h-[var(--carousel-indicator-height)]
+      p-0
+      mr-[var(--carousel-indicator-spacer)]
+      ml-[var(--carousel-indicator-spacer)]
+      -indent-[999px]
+      cursor-pointer
+      bg-[var(--carousel-indicator-active-bg)]
+      bg-clip-padding
+      border-0
+      border-transparent
+      border-solid
+      border-t-[var(--carousel-indicator-hit-area-height)]
+      border-b-[var(--carousel-indicator-hit-area-height)]
+      opacity-[var(--carousel-indicator-opacity)]
+      transition-opacity
+      duration-[var(--carousel-transition-duration)];
+    }
   }
 
   .active {

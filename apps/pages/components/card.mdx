@@ -5,11 +5,11 @@ layout: "../../layouts/LayoutDoc.astro"
 ---
 
 import Example from "../../components/docs/Example.astro";
-import { Image } from 'astro:assets';
-import hummingbirdImg from '../../assets/images/1.png'
-import hummingbirdImg2 from '../../assets/images/2.png'
-import hummingbirdImg3 from '../../assets/images/3.png'
-import avatar1 from '../../assets/images/avatar_1.webp'
+import { Image } from "astro:assets";
+import hummingbirdImg from "../../assets/images/1.png";
+import hummingbirdImg2 from "../../assets/images/2.png";
+import hummingbirdImg3 from "../../assets/images/3.png";
+import avatar1 from "../../assets/images/avatar_1.webp";
 
 ### Basic Card
 
@@ -87,7 +87,7 @@ import avatar1 from '../../assets/images/avatar_1.webp'
 
 <Example>
   <div slot="preview">
-    <a href="#!" class="card card-action max-w-[22rem]">
+    <a href="#" class="card card-action max-w-[22rem]">
       <Image src={hummingbirdImg} alt="Hummingbird" class='card-img-top' />
       <div class="card-body">
         <h4 class="card-title">Hummingbirds</h4>
@@ -98,7 +98,7 @@ import avatar1 from '../../assets/images/avatar_1.webp'
 
   <div slot="code">
     ```html
-    <a href="#!" class="card card-action">
+    <a href="#" class="card card-action">
       <img src="assets/images/1.png" class='card-img-top' alt="Hummingbird" />
       <div class="card-body">
         <h4 class="card-title">Hummingbirds</h4>
@@ -261,5 +261,6 @@ import avatar1 from '../../assets/images/avatar_1.webp'
       </div>
     </div>
     ```
+
   </div>
 </Example>

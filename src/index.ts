@@ -1,3 +1,4 @@
+export { default as Button, type ButtonInstance, type ButtonStatic } from './scripts/button';
 export {
   default as Dropdown,
   type DropdownOptions,

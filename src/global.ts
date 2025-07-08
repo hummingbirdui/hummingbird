@@ -6,9 +6,11 @@ import Modal from './scripts/modal';
 import Offcanvas from './scripts/offcanvas';
 import Tab from './scripts/tab';
 import Tooltip from './scripts/tooltip';
+import Button from './scripts/button';
 
 declare global {
   interface Window {
+    Button: typeof Button;
     Dropdown: typeof Dropdown;
     Tooltip: typeof Tooltip;
     Collapse: typeof Collapse;

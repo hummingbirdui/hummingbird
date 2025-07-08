@@ -4,14 +4,8 @@ import BsTooltip from 'bootstrap/js/dist/tooltip';
 type PopoverPlacement = 'auto' | 'top' | 'bottom' | 'left' | 'right';
 type Offset = [number, number];
 type OffsetFunction = () => Offset;
-type PopperConfigFunction = (
-  defaultBsPopperConfig: Popper.Options,
-) => Partial<Popper.Options>;
-type SetContentFunction = () =>
-  | string
-  | Element
-  | (() => string | Element | null)
-  | null;
+type PopperConfigFunction = (defaultBsPopperConfig: Popper.Options) => Partial<Popper.Options>;
+type SetContentFunction = () => string | Element | (() => string | Element | null) | null;
 
 export interface TooltipOptions {
   animation: boolean;
@@ -22,15 +16,7 @@ export interface TooltipOptions {
   selector: string | false;
   template: string;
   title: string | Element | ((this: HTMLElement) => string | Element);
-  trigger:
-    | 'click'
-    | 'hover'
-    | 'focus'
-    | 'manual'
-    | 'click hover'
-    | 'click focus'
-    | 'hover focus'
-    | 'click hover focus';
+  trigger: 'click' | 'hover' | 'focus' | 'manual' | 'click hover' | 'click focus' | 'hover focus' | 'click hover focus';
   offset: Offset | string | OffsetFunction;
   fallbackPlacements: string[];
   boundary: Popper.Boundary;
@@ -49,35 +35,21 @@ export interface TooltipInstance {
   disable(): void;
   toggleEnabled(): void;
   update(): void;
-  setContent(
-    content?: Record<string, string | Element | SetContentFunction | null>,
-  ): void;
+  setContent(content?: Record<string, string | Element | SetContentFunction | null>): void;
   dispose(): void;
 }
 
 export interface TooltipStatic {
-  new (
-    element: Element | string,
-    options?: Partial<TooltipOptions>,
-  ): TooltipInstance;
+  readonly VERSION: string;
+  readonly DATA_KEY: string;
+  readonly EVENT_KEY: string;
+  new (element: Element | string, options?: Partial<TooltipOptions>): TooltipInstance;
   getInstance(element: Element | string): TooltipInstance | null;
-  getOrCreateInstance(
-    element: Element | string,
-    config?: Partial<TooltipOptions>,
-  ): TooltipInstance;
+  getOrCreateInstance(element: Element | string, config?: Partial<TooltipOptions>): TooltipInstance;
   Default: TooltipOptions;
   NAME: 'tooltip';
   Event: Record<
-    | 'CLICK'
-    | 'FOCUSIN'
-    | 'FOCUSOUT'
-    | 'HIDDEN'
-    | 'HIDE'
-    | 'INSERTED'
-    | 'MOUSEENTER'
-    | 'MOUSELEAVE'
-    | 'SHOW'
-    | 'SHOWN',
+    'CLICK' | 'FOCUSIN' | 'FOCUSOUT' | 'HIDDEN' | 'HIDE' | 'INSERTED' | 'MOUSEENTER' | 'MOUSELEAVE' | 'SHOW' | 'SHOWN',
     string
   >;
   DefaultType: Record<keyof TooltipOptions, string>;
@@ -94,12 +66,8 @@ export enum TooltipEvents {
 
 const Tooltip = BsTooltip as unknown as TooltipStatic;
 
-const tooltipTriggerList = document.querySelectorAll(
-  '[data-bs-toggle="tooltip"]',
-);
-Array.from(tooltipTriggerList).map(
-  (tooltipTriggerEl) => new Tooltip(tooltipTriggerEl),
-);
+const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+Array.from(tooltipTriggerList).map((tooltipTriggerEl) => new Tooltip(tooltipTriggerEl));
 
 if (typeof window !== 'undefined') {
   window.Tooltip = Tooltip;

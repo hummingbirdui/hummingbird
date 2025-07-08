@@ -8,6 +8,10 @@ export interface TabInstance {
 export type ComponentOptions = Record<string, any>;
 
 export interface TabStatic {
+  readonly VERSION: string;
+  readonly DATA_KEY: string;
+  readonly EVENT_KEY: string;
+  new (element: string | Element): TabInstance;
   getInstance(element: string | Element): TabInstance | null;
   getOrCreateInstance(element: string | Element, config?: ComponentOptions): TabInstance;
 }

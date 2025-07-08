@@ -1,47 +1,47 @@
 @utility form-control-fill {
-  --file-selector-btn-bg: var(--color-highlight);
-  --file-selector-btn-content: var(--color-default-color);
-  --file-selector-btn-hover-bg: var(--color-emphasis);
-  --input-icon-spacing: calc(var(--spacing) * 11);
+  --input-font-size: var(--input-btn-font-size);
+  --input-radius: var(--input-btn-radius);
+  --input-padding-x: var(--input-btn-padding-x);
+  --input-padding-y: var(--input-btn-padding-y);
+  --input-line-height: var(--input-btn-line-height);
+  --input-border-width: var(--input-btn-border-width);
   --input-border-color: transparent;
+  --file-selector-btn-bg: var(--color-highlight);
+  --file-selector-btn-color: var(--color-default-color);
+  --file-selector-btn-hover-bg: var(--color-emphasis);
+  --input-icon-spacing: --spacing(11);
 
-  @apply relative w-full
-  appearance-none
-  inline-flex items-center justify-center
-  transition duration-200
-  leading-[var(--input-btn-line-height)]
-  bg-[var(--input-bg)]
-  text-[length:var(--input-btn-font-size)]
-  text-[var(--input-content)]
-  rounded-[var(--input-btn-radius)]
-  border-[length:var(--input-btn-border-width)]
-  border-[var(--input-border-color)]
-  px-[var(--input-btn-padding-x)]
-  py-[var(--input-btn-padding-y)];
+  @layer base {
+    @apply w-full
+    appearance-none
+    inline-flex items-center justify-center
+    transition duration-200
+    leading-[var(--input-line-height)]
+    bg-[var(--input-bg)]
+    text-[length:var(--input-font-size)]
+    text-[var(--input-color)]
+    rounded-[var(--input-radius)]
+    border-[length:var(--input-border-width)]
+    border-[var(--input-border-color)]
+    px-[var(--input-padding-x)]
+    py-[var(--input-padding-y)];
+  }
 
   &:is(:disabled, [disabled]) {
-    --input-bg: var(--input-disabled-bg, var(--color-highlight));
-    &:hover {
-      --input-bg: var(--input-disabled-bg, var(--color-highlight));
-    }
+    @apply bg-[var(--input-disabled-bg)];
   }
 
   &:hover {
-    --input-bg: var(--input-hover-bg, var(--color-highlight));
+    @apply bg-[var(--input-hover-bg)];
   }
   &:focus-within,
   &:focus {
-    input,
-    textarea {
-      @apply outline-0;
-    }
-    @apply outline-0;
-    --input-bg: var(--input-focus-bg, var(--color-primary-lighter));
-    --input-border-color: var(--input-focus-border-color, var(--color-primary));
+    @apply outline-0
+    bg-[var(--input-focus-bg)]
+    border-[var(--input-focus-border-color)];
   }
   &.is-invalid {
-    --input-bg: var(--color-error-lighter);
-    --input-border-color: var(--color-error);
+    @apply bg-[var(--color-danger-lighter)] border-[var(--color-danger)];
   }
   &[type='file'] {
     overflow: hidden;
@@ -53,21 +53,21 @@
   &::file-selector-button {
     @apply pointer-events-none transition-[background] duration-200
       bg-[var(--file-selector-btn-bg)]
-      text-[var(--file-selector-btn-content)]
+      text-[var(--file-selector-btn-color)]
       font-semibold
-      px-[var(--input-btn-padding-x)]
-      py-[var(--input-btn-padding-y)]
-      -mx-[var(--input-btn-padding-x)]
-      -my-[var(--input-btn-padding-y)]
-      me-[var(--input-btn-padding-x)];
+      px-[var(--input-padding-x)]
+      py-[var(--input-padding-y)]
+      -mx-[var(--input-padding-x)]
+      -my-[var(--input-padding-y)]
+      me-[var(--input-padding-x)];
   }
   &:hover:not(:disabled):not([readonly])::file-selector-button {
     --file-selector-btn-bg: var(--file-selector-btn-hover-bg);
   }
   &.is-invalid::file-selector-button {
-    --file-selector-btn-bg: var(--color-error);
-    --file-selector-btn-content: var(--color-contrast);
-    --file-selector-btn-hover-bg: var(--color-error-dark);
+    --file-selector-btn-bg: var(--color-danger);
+    --file-selector-btn-color: var(--color-contrast);
+    --file-selector-btn-hover-bg: var(--color-danger-dark);
   }
   &:is(:disabled, [disabled])::file-selector-button {
     --file-selector-btn-bg: var(--color-muted);
@@ -75,42 +75,47 @@
 }
 
 @utility form-control {
-  --input-border-color: var(--color-border-base);
-  --input-icon-spacing: calc(var(--spacing) * 11);
+  --input-font-size: var(--input-btn-font-size);
+  --input-radius: var(--input-btn-radius);
+  --input-padding-x: var(--input-btn-padding-x);
+  --input-padding-y: var(--input-btn-padding-y);
+  --input-line-height: var(--input-btn-line-height);
+  --input-border-width: var(--input-btn-border-width);
+  --input-icon-spacing: --spacing(11);
 
-  @apply relative w-full
-  inline-flex items-center justify-center gap-2
-  appearance-none
-  transition duration-200
-  leading-[var(--input-btn-line-height)]
-  text-[length:var(--input-btn-font-size)]
-  text-[var(--input-content)]
-  rounded-[var(--input-btn-radius)]
-  border-[length:var(--input-btn-border-width)]
-  border-[var(--input-border-color)]
-  px-[var(--input-btn-padding-x)]
-  py-[var(--input-btn-padding-y)];
+  @layer base {
+    @apply w-full
+    inline-flex items-center justify-center gap-2
+    appearance-none
+    transition duration-200
+    leading-[var(--input-line-height)]
+    text-[length:var(--input-font-size)]
+    text-[var(--input-color)]
+    rounded-[var(--input-radius)]
+    border-[length:var(--input-border-width)]
+    border-[var(--input-border-color)]
+    px-[var(--input-padding-x)]
+    py-[var(--input-padding-y)];
+  }
+
+  &:hover {
+    @apply border-[var(--input-hover-border-color)];
+  }
+
+  &:focus-within,
+  &:focus {
+    @apply outline-0 border-[var(--input-focus-border-color)];
+  }
 
   &:is(:disabled, [disabled]) {
     @apply opacity-50;
     &:hover {
-      --input-border-color: var(--color-border-base);
+      @apply border-[var(--input-disabled-border-color)];
     }
   }
-  &:hover {
-    --input-border-color: var(--color-emphasis-color);
-  }
-  &:focus-within,
-  &:focus {
-    input,
-    textarea {
-      @apply outline-0;
-    }
-    @apply outline-0;
-    --input-border-color: var(--input-focus-border-color, var(--color-primary));
-  }
+
   &.is-invalid {
-    --input-border-color: var(--color-error);
+    @apply border-[var(--color-danger)];
   }
   &[type='file'] {
     overflow: hidden;
@@ -122,11 +127,11 @@
   &::file-selector-button {
     @apply pointer-events-none transition-[border] duration-200
     font-semibold
-    px-[var(--input-btn-padding-x)]
-    py-[var(--input-btn-padding-y)]
-    -mx-[var(--input-btn-padding-x)]
-    -my-[var(--input-btn-padding-y)]
-    me-[var(--input-btn-padding-x)]
+    px-[var(--input-padding-x)]
+    py-[var(--input-padding-y)]
+    -mx-[var(--input-padding-x)]
+    -my-[var(--input-padding-y)]
+    me-[var(--input-padding-x)]
     border-r
     border-[var(--input-border-color)];
   }
@@ -134,7 +139,8 @@
 
 @utility input-group-icon {
   --input-icon-color: var(--color-active);
-  --input-icon-font-size: 20px; /* TODO: Change hardcode font size */
+  --input-icon-font-size: var(--text-xl);
+  --input-padding-x: var(--input-btn-padding-x);
 
   @apply relative;
 
@@ -154,7 +160,7 @@
   &:has(.form-control-sm) {
     .form-control-icon-start,
     .form-control-icon-end {
-      --input-btn-padding-x: calc(var(--spacing) * 3);
+      --input-padding-x: --spacing(3);
       --input-icon-font-size: var(--text-sm);
     }
   }
@@ -167,60 +173,60 @@
 }
 
 @utility form-control-icon-start {
-  @apply absolute z-1 top-[50%] left-[var(--input-btn-padding-x)] translate-y-[-50%]
+  @apply absolute z-1 top-[50%] left-[var(--input-padding-x)] translate-y-[-50%]
   text-[length:var(--input-icon-font-size)]
   text-[var(--input-icon-color)];
 }
 @utility form-control-icon-end {
-  @apply absolute z-1 top-[50%] right-[var(--input-btn-padding-x)] translate-y-[-50%]
+  @apply absolute z-1 top-[50%] right-[var(--input-padding-x)] translate-y-[-50%]
   text-[length:var(--input-icon-font-size)]
   text-[var(--input-icon-color)];
 }
 
 @utility form-control-sm {
-  --input-btn-padding-x: calc(var(--spacing) * 3);
-  --input-btn-padding-y: calc(var(--spacing) * 1.25);
-  --input-btn-radius: var(--radius-sm);
-  --input-btn-line-height: 1.25;
-  --input-icon-spacing: calc(var(--spacing) * 8.5);
+  --input-padding-x: --spacing(3);
+  --input-padding-y: --spacing(1.25);
+  --input-radius: var(--radius-sm);
+  --input-line-height: 1.25;
+  --input-icon-spacing: --spacing(8.5);
 }
 
 @utility form-control-lg {
-  --input-btn-padding-y: calc(var(--spacing) * 2.25);
-  --input-btn-font-size: var(--text-base);
-  --input-icon-spacing: calc(var(--spacing) * 12);
+  --input-padding-y: --spacing(2.25);
+  --input-font-size: var(--text-base);
+  --input-icon-spacing: --spacing(12);
 }
 @utility form-control-primary {
   --file-selector-btn-bg: var(--color-primary);
-  --file-selector-btn-content: var(--color-contrast);
+  --file-selector-btn-color: var(--color-contrast);
   --file-selector-btn-hover-bg: var(--color-primary-dark);
 }
 @utility form-control-secondary {
   --input-focus-bg: var(--color-secondary-lighter);
   --input-focus-border-color: var(--color-secondary);
   --file-selector-btn-bg: var(--color-secondary);
-  --file-selector-btn-content: var(--color-contrast);
+  --file-selector-btn-color: var(--color-contrast);
   --file-selector-btn-hover-bg: var(--color-secondary-dark);
 }
 @utility form-control-info {
   --input-focus-bg: var(--color-info-lighter);
   --input-focus-border-color: var(--color-info);
   --file-selector-btn-bg: var(--color-info);
-  --file-selector-btn-content: var(--color-contrast);
+  --file-selector-btn-color: var(--color-contrast);
   --file-selector-btn-hover-bg: var(--color-info-dark);
 }
 @utility form-control-success {
   --input-focus-bg: var(--color-success-lighter);
   --input-focus-border-color: var(--color-success);
   --file-selector-btn-bg: var(--color-success);
-  --file-selector-btn-content: var(--color-contrast);
+  --file-selector-btn-color: var(--color-contrast);
   --file-selector-btn-hover-bg: var(--color-success-dark);
 }
 @utility form-control-warning {
   --input-focus-bg: var(--color-warning-lighter);
   --input-focus-border-color: var(--color-warning);
   --file-selector-btn-bg: var(--color-warning);
-  --file-selector-btn-content: var(--color-contrast);
+  --file-selector-btn-color: var(--color-contrast);
   --file-selector-btn-hover-bg: var(--color-warning-dark);
 }
 
@@ -266,7 +272,7 @@
   &:where(:has(.is-invalid)),
   &:where(:has(.is-invalid)):focus-within {
     .form-label {
-      --input-label-color: var(--color-error);
+      --input-label-color: var(--color-danger);
     }
   }
   &:has(input[disabled]) {
@@ -279,7 +285,7 @@
 }
 
 @utility form-text {
-  --form-text-margin-top: calc(var(--spacing) * 1);
+  --form-text-margin-top: --spacing(1);
   --form-text-font-size: var(--text-xs);
   --form-text-font-weight: 400;
   --form-text-color: var(--color-highlight-color);

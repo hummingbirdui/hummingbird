@@ -1,22 +1,22 @@
 @utility modal {
   --modal-zindex: 1055;
   --modal-width: 31.25rem;
-  --modal-padding: calc(var(--spacing) * 4);
-  --modal-margin: calc(var(--spacing) * 2);
-  --modal-content: var(--color-default-color);
+  --modal-padding: --spacing(4);
+  --modal-margin: --spacing(2);
+  --modal-color: var(--color-default-color);
   --modal-bg: var(--color-default);
   --modal-font-size: var(--text-base);
   --modal-border-color: var(--color-border-light);
   --modal-border-width: 1px;
   --modal-border-radius: var(--radius-2xl);
   --modal-inner-border-radius: calc(var(--modal-border-radius) - var(--modal-border-width));
-  --modal-header-padding-x: calc(var(--spacing) * 4);
-  --modal-header-padding-y: calc(var(--spacing) * 4);
+  --modal-header-padding-x: --spacing(4);
+  --modal-header-padding-y: --spacing(4);
   --modal-header-border-color: var(--color-border-light);
   --modal-header-border-width: 1px;
   --modal-title-line-height: 1.5;
-  --modal-footer-padding-x: calc(var(--spacing) * 4);
-  --modal-footer-padding-y: calc(var(--spacing) * 4);
+  --modal-footer-padding-x: --spacing(4);
+  --modal-footer-padding-y: --spacing(4);
   --modal-footer-bg: unset;
   --modal-footer-border-color: var(--color-border-light);
   --modal-footer-border-width: 1px;
@@ -35,7 +35,7 @@
   text-[length:var(--modal-font-size)];
 
   @media (min-width: theme(--breakpoint-sm)) {
-    --modal-margin: calc(var(--spacing) * 7);
+    --modal-margin: --spacing(7);
   }
 }
 
@@ -46,7 +46,9 @@
   pointer-events-none;
 
   .modal.fade & {
-    @apply transform-[var(--modal-fade-transform)] transition-transform duration-[var(--modal-transition-duration)] ease-out;
+    @layer base {
+      @apply transform-[var(--modal-fade-transform)] transition-transform duration-[var(--modal-transition-duration)] ease-out;
+    }
   }
   .modal.show & {
     @apply transform-[var(--modal-show-transform)];
@@ -80,7 +82,7 @@
   @apply relative
   flex flex-col
   w-full
-  text-[var(--modal-content)]
+  text-[var(--modal-color)]
   pointer-events-auto
   bg-[var(--modal-bg)]
   bg-clip-padding
@@ -118,7 +120,7 @@
 }
 
 @utility modal-body {
-  @apply relative flex-1 p-[var(--modal-padding)];
+  @apply relative flex-[1_1_auto] p-[var(--modal-padding)];
 }
 
 @utility modal-footer {
