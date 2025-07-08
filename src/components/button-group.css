@@ -16,18 +16,24 @@
 
   > :not(.btn-check:first-child) + .btn,
   > .btn-group:not(:first-child) {
-    @apply -ml-[var(--input-btn-border-width)];
+    @layer base {
+      @apply -ml-[var(--input-btn-border-width)];
+    }
   }
 
   > .btn:not(:last-child):not([data-bs-toggle='dropdown']),
   > .btn-group:not(:last-child) > .btn {
-    @apply rounded-r-none;
+    @layer base {
+      @apply rounded-r-none;
+    }
   }
 
   > .btn:nth-child(n + 3),
   > :not(.btn-check) + .btn,
   > .btn-group:not(:first-child) > .btn {
-    @apply rounded-l-none;
+    @layer base {
+      @apply rounded-l-none;
+    }
   }
 }
 
@@ -54,18 +60,24 @@
 
   > .btn:not(:first-child),
   > .btn-group:not(:first-child) {
-    @apply -mt-[var(--input-btn-border-width)];
+    @layer base {
+      @apply -mt-[var(--input-btn-border-width)];
+    }
   }
 
   > .btn:not(:last-child):not([data-bs-toggle='dropdown']),
   > .btn-group:not(:last-child) > .btn {
-    @apply rounded-b-none;
+    @layer base {
+      @apply rounded-b-none;
+    }
   }
 
   > .btn:nth-child(n + 3),
   > :not(.btn-check) + .btn,
   > .btn-group:not(:first-child) > .btn {
-    @apply rounded-t-none;
+    @layer base {
+      @apply rounded-t-none;
+    }
   }
 }
 
@@ -73,7 +85,9 @@
   @apply flex flex-wrap justify-start;
 
   .input-group {
-    @apply w-auto;
+    @layer base {
+      @apply w-auto;
+    }
   }
 }
 
