@@ -14,9 +14,11 @@
   > .form-select-fill,
   > .form-select,
   > .form-floating {
-    @apply relative
-    flex-1
-    w-[1%] min-w-0;
+    @layer components {
+      @apply relative
+      flex-[1_1_auto]
+      w-[1%] min-w-0;
+    }
   }
 
   > .form-control-fill:focus,
@@ -42,7 +44,9 @@
     > .form-floating:not(:last-child) > .form-control,
     > .form-floating:not(:last-child) > .form-select-fill,
     > .form-floating:not(:last-child) > .form-select {
-      @apply rounded-r-none;
+      @layer base {
+        @apply rounded-r-none;
+      }
     }
   }
 
@@ -53,27 +57,28 @@
     > .form-floating:nth-last-child(n + 3) > .form-control,
     > .form-floating:nth-last-child(n + 3) > .form-select-fill,
     > .form-floating:nth-last-child(n + 3) > .form-select {
-      @apply rounded-r-none;
+      @layer base {
+        @apply rounded-r-none;
+      }
     }
   }
 
   > :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(
       .invalid-feedback
     ) {
-    @apply rounded-l-none -ml-[var(--input-btn-border-width)];
+    @layer base {
+      @apply rounded-l-none -ml-[var(--input-btn-border-width)];
+    }
   }
-
-  /* > :not(.form-control-fill):not(.form-select-fill):not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(
-      .valid-feedback
-    ):not(.invalid-tooltip):not(.invalid-feedback) {
-  } */
 
   > .form-floating:not(:first-child) {
     > .form-control-fill,
     > .form-control,
     > .form-select-fill,
     > .form-select {
-      @apply rounded-l-none;
+      @layer base {
+        @apply rounded-l-none;
+      }
     }
   }
 }
@@ -83,22 +88,26 @@
   --input-group-addon-padding-y: var(--input-btn-padding-y);
   --input-group-addon-font-weight: var(--input-font-weight, 400);
   --input-group-addon-bg: var(--color-subtle);
-  --input-group-addon-color: var(--input-content);
+  --input-group-addon-color: var(--input-color);
   --input-group-addon-border-color: var(--color-border-base);
+  --input-group-addon-radius: var(--input-btn-radius);
+  --input-group-addon-font-size: var(--input-btn-font-size);
+  --input-group-addon-line-height: var(--input-btn-line-height);
 
-  @apply flex items-center
-  py-[var(--input-group-addon-padding-y)] px-[var(--input-group-addon-padding-x)]
-  text-[length:var(--input-btn-font-size)]
-  font-[var(--input-group-addon-font-weight)]
-  leading-[var(--input-btn-line-height)]
-  text-[var(--input-group-addon-color)]
-  text-center
-  whitespace-nowrap
-  bg-[var(--input-group-addon-bg)]
-  border-[length:var(--input-btn-border-width)]
-  border-[var(--input-group-addon-border-color)]
-  /* shadow-[0_0_0_var(--input-btn-border-width)_var(--input-group-addon-border-color)] */
-  rounded-[var(--input-btn-radius)];
+  @layer base {
+    @apply flex items-center
+    py-[var(--input-group-addon-padding-y)] px-[var(--input-group-addon-padding-x)]
+    text-[length:var(--input-group-addon-font-size)]
+    font-[var(--input-group-addon-font-weight)]
+    leading-[var(--input-group-addon-line-height)]
+    text-[var(--input-group-addon-color)]
+    text-center
+    whitespace-nowrap
+    bg-[var(--input-group-addon-bg)]
+    border-[length:var(--input-btn-border-width)]
+    border-[var(--input-group-addon-border-color)]
+    rounded-[var(--input-group-addon-radius)];
+  }
 }
 
 @utility input-group-lg {
@@ -106,9 +115,12 @@
   > .form-control,
   > .form-select-fill,
   > .form-select,
-  > .input-group-text,
   > .btn {
     @apply form-control-lg;
+  }
+  > .input-group-text {
+    --input-group-addon-padding-y: --spacing(2.25);
+    --input-group-addon-font-size: var(--text-base);
   }
 }
 
@@ -117,9 +129,14 @@
   > .form-control,
   > .form-select-fill,
   > .form-select,
-  > .input-group-text,
   > .btn {
     @apply form-control-sm;
+  }
+  > .input-group-text {
+    --input-group-addon-padding-x: --spacing(3);
+    --input-group-addon-padding-y: --spacing(1.25);
+    --input-group-addon-radius: var(--radius-sm);
+    --input-group-addon-line-height: 1.25;
   }
 }
 

@@ -39,7 +39,7 @@ import Example from "../../components/docs/Example.astro";
               <a class="nav-link disabled" aria-disabled="true">Disabled</a>
             </li>
           </ul>
-          <form role="search">
+          <form class="flex" role="search">
             <input class="form-control-fill me-2" type="search" placeholder="Search" aria-label="Search"/>
             <button class="btn btn-outline-success" type="submit">Search</button>
           </form>
@@ -79,7 +79,7 @@ import Example from "../../components/docs/Example.astro";
               <a class="nav-link disabled" aria-disabled="true">Disabled</a>
             </li>
           </ul>
-          <form role="search">
+          <form class="flex" role="search">
             <input class="form-control-fill me-2" type="search" placeholder="Search" aria-label="Search"/>
             <button class="btn btn-outline-success" type="submit">Search</button>
           </form>
@@ -208,7 +208,7 @@ Place various form controls and components within a navbar:
   <div slot="preview">
     <nav class="navbar bg-subtle">
       <div class="container">
-        <form role="search">
+        <form class="flex" role="search">
           <input class="form-control-fill me-2" type="search" placeholder="Search" aria-label="Search"/>
           <button class="btn btn-outline-success" type="submit">Search</button>
         </form>
@@ -220,7 +220,7 @@ Place various form controls and components within a navbar:
     ```html
     <nav class="navbar bg-subtle">
       <div class="container">
-        <form role="search">
+        <form class="flex" role="search">
           <input class="form-control-fill me-2" type="search" placeholder="Search" aria-label="Search"/>
           <button class="btn btn-outline-success" type="submit">Search</button>
         </form>
@@ -237,7 +237,7 @@ Immediate child elements of .navbar use flex layout and will default to justify-
     <nav class="navbar bg-subtle">
       <div class="container">
         <a class="navbar-brand">Navbar</a>
-        <form role="search">
+        <form class="flex" role="search">
           <input class="form-control-fill me-2" type="search" placeholder="Search" aria-label="Search"/>
           <button class="btn btn-outline-success" type="submit">Search</button>
         </form>
@@ -250,7 +250,7 @@ Immediate child elements of .navbar use flex layout and will default to justify-
     <nav class="navbar bg-subtle">
       <div class="container">
         <a class="navbar-brand">Navbar</a>
-        <form role="search">
+        <form class="flex" role="search">
           <input class="form-control-fill me-2" type="search" placeholder="Search" aria-label="Search"/>
           <button class="btn btn-outline-success" type="submit">Search</button>
         </form>
@@ -407,7 +407,7 @@ Here’s an example navbar using `.navbar-nav-scroll` with `style="--bs-scroll-h
               <a class="nav-link" href="#">Link</a>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Link
               </a>
               <ul class="dropdown-menu">
@@ -421,7 +421,7 @@ Here’s an example navbar using `.navbar-nav-scroll` with `style="--bs-scroll-h
               <a class="nav-link disabled" aria-disabled="true">Link</a>
             </li>
           </ul>
-          <form role="search">
+          <form class="flex" role="search">
             <input class="form-control-fill me-2" type="search" placeholder="Search" aria-label="Search"/>
             <button class="btn btn-outline-success" type="submit">Search</button>
           </form>
@@ -519,7 +519,7 @@ In the example below, to create an offcanvas navbar that is always collapsed acr
                 <a class="nav-link" href="#">Link</a>
               </li>
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Dropdown
                 </a>
                 <ul class="dropdown-menu">
@@ -532,7 +532,7 @@ In the example below, to create an offcanvas navbar that is always collapsed acr
                 </ul>
               </li>
             </ul>
-            <form class="mt-3" role="search">
+            <form class="flex mt-3"role="search">
               <input class="form-control-fill me-2" type="search" placeholder="Search" aria-label="Search"/>
               <button class="btn btn-outline-success" type="submit">Search</button>
             </form>
@@ -566,7 +566,7 @@ In the example below, to create an offcanvas navbar that is always collapsed acr
                 <a class="nav-link" href="#">Link</a>
               </li>
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Dropdown
                 </a>
                 <ul class="dropdown-menu">
@@ -579,7 +579,7 @@ In the example below, to create an offcanvas navbar that is always collapsed acr
                 </ul>
               </li>
             </ul>
-            <form class="mt-3" role="search">
+            <form class="flex mt-3" role="search">
               <input class="form-control-fill me-2" type="search" placeholder="Search" aria-label="Search"/>
               <button class="btn btn-outline-success" type="submit">Search</button>
             </form>

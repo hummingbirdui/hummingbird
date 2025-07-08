@@ -21,7 +21,7 @@ Contained buttons are high-emphasis, distinguished by their use of elevation and
     <button class='btn btn-info'>Info</button>
     <button class='btn btn-success'>Success</button>
     <button class='btn btn-warning'>Warning</button>
-    <button class='btn btn-error'>Error</button>
+    <button class='btn btn-danger'>Danger</button>
     <button class='btn btn-neutral'>Neutral</button>
   </div>
 
@@ -32,7 +32,7 @@ Contained buttons are high-emphasis, distinguished by their use of elevation and
   <button class='btn btn-info'>Info</button>
   <button class='btn btn-success'>Success</button>
   <button class='btn btn-warning'>Warning</button>
-  <button class='btn btn-error'>Error</button>
+  <button class='btn btn-danger'>Danger</button>
   <button class='btn btn-neutral'>Neutral</button>
   ```
   </div>
@@ -49,7 +49,7 @@ Subtle buttons provide a gentle emphasis with a subtle background and solid text
     <button class='btn btn-subtle-info'>Info</button>
     <button class='btn btn-subtle-success'>Success</button>
     <button class='btn btn-subtle-warning'>Warning</button>
-    <button class='btn btn-subtle-error'>Error</button>
+    <button class='btn btn-subtle-danger'>Danger</button>
     <button class='btn btn-subtle-neutral'>Neutral</button>
   </div>
 
@@ -60,7 +60,7 @@ Subtle buttons provide a gentle emphasis with a subtle background and solid text
   <button class='btn btn-subtle-info'>Info</button>
   <button class='btn btn-subtle-success'>Success</button>
   <button class='btn btn-subtle-warning'>Warning</button>
-  <button class='btn btn-subtle-error'>Error</button>
+  <button class='btn btn-subtle-danger'>Danger</button>
   <button class='btn btn-subtle-neutral'>Neutral</button>
   ```
   </div>
@@ -77,7 +77,7 @@ Outlined buttons are medium-emphasis buttons. They contain actions that are impo
     <button class='btn btn-outline-info'>Info</button>
     <button class='btn btn-outline-success'>Success</button>
     <button class='btn btn-outline-warning'>Warning</button>
-    <button class='btn btn-outline-error'>Error</button>
+    <button class='btn btn-outline-danger'>Danger</button>
     <button class='btn btn-outline-neutral'>Neutral</button>
   </div>
 
@@ -88,7 +88,7 @@ Outlined buttons are medium-emphasis buttons. They contain actions that are impo
   <button class='btn btn-outline-info'>Info</button>
   <button class='btn btn-outline-success'>Success</button>
   <button class='btn btn-outline-warning'>Warning</button>
-  <button class='btn btn-outline-error'>Error</button>
+  <button class='btn btn-outline-danger'>Danger</button>
   <button class='btn btn-outline-neutral'>Neutral</button>
   ```
   </div>
@@ -105,7 +105,7 @@ Text buttons are typically used for less-pronounced actions, including those loc
     <button class='btn btn-text-info'>Info</button>
     <button class='btn btn-text-success'>Success</button>
     <button class='btn btn-text-warning'>Warning</button>
-    <button class='btn btn-text-error'>Error</button>
+    <button class='btn btn-text-danger'>Danger</button>
     <button class='btn btn-text-neutral'>Neutral</button>
   </div>
 
@@ -116,7 +116,7 @@ Text buttons are typically used for less-pronounced actions, including those loc
   <button class='btn btn-text-info'>Info</button>
   <button class='btn btn-text-success'>Success</button>
   <button class='btn btn-text-warning'>Warning</button>
-  <button class='btn btn-text-error'>Error</button>
+  <button class='btn btn-text-danger'>Danger</button>
   <button class='btn btn-text-neutral'>Neutral</button>
   ```
   </div>
@@ -151,20 +151,24 @@ For larger or smaller buttons, use the <code>.btn-lg</code> and <code>.btn-sm</c
   </div>
 
   <div slot="code">
-  ```html
-  <button class='btn btn-primary btn-sm'>Small</button>
-  <button class='btn btn-primary'>Medium</button>
-  <button class='btn btn-primary btn-lg'>Large</button>
-  <button class="btn btn-subtle-primary btn-sm">Small</button>
-  <button class="btn btn-subtle-primary">Medium</button>
-  <button class="btn btn-subtle-primary btn-lg">Large</button>
-  <button class='btn btn-outline-primary btn-sm'>Small</button>
-  <button class='btn btn-outline-primary'>Medium</button>
-  <button class='btn btn-outline-primary btn-lg'>Large</button>
-  <button class='btn btn-text-primary btn-sm'>Small</button>
-  <button class='btn btn-text-primary'>Medium</button>
-  <button class='btn btn-text-primary btn-lg'>Large</button>
-  ```
+    ```html
+    <button class='btn btn-primary btn-sm'>Small</button>
+    <button class='btn btn-primary'>Medium</button>
+    <button class='btn btn-primary btn-lg'>Large</button>
+
+    <button class="btn btn-subtle-primary btn-sm">Small</button>
+    <button class="btn btn-subtle-primary">Medium</button>
+    <button class="btn btn-subtle-primary btn-lg">Large</button>
+
+    <button class='btn btn-outline-primary btn-sm'>Small</button>
+    <button class='btn btn-outline-primary'>Medium</button>
+    <button class='btn btn-outline-primary btn-lg'>Large</button>
+
+    <button class='btn btn-text-primary btn-sm'>Small</button>
+    <button class='btn btn-text-primary'>Medium</button>
+    <button class='btn btn-text-primary btn-lg'>Large</button>
+    ```
+
   </div>
 </Example>
 
@@ -176,26 +180,26 @@ You can change the shape of the button using the <code>.btn-square</code> and <c
   <div slot="preview" class='not-prose space-y-3'>
     <div class='space-x-2'>
       <button class='btn btn-primary btn-square btn-lg'>
-        <span class='icon-[material-symbols--add-circle-outline-rounded] text-lg'></span>
+        <span class='icon-[material-symbols--add-circle-outline-rounded] text-2xl'></span>
       </button>
       <button class='btn btn-secondary btn-circle btn-lg'>
-        <span class='icon-[material-symbols--add-circle-outline-rounded] text-lg'></span>
+        <span class='icon-[material-symbols--add-circle-outline-rounded] text-2xl'></span>
       </button>
     </div>
     <div class='space-x-2'>
       <button class='btn btn-primary btn-square'>
-        <span class='icon-[material-symbols--add-circle-outline-rounded] text-lg'></span>
+        <span class='icon-[material-symbols--add-circle-outline-rounded] text-xl'></span>
       </button>
       <button class='btn btn-secondary btn-circle'>
-        <span class='icon-[material-symbols--add-circle-outline-rounded] text-lg'></span>
+        <span class='icon-[material-symbols--add-circle-outline-rounded] text-xl'></span>
       </button>
     </div>
     <div class='space-x-2'>
       <button class='btn btn-primary btn-square btn-sm'>
-        <span class='icon-[material-symbols--add-circle-outline-rounded]'></span>
+        <span class='icon-[material-symbols--add-circle-outline-rounded] text-lg'></span>
       </button>
       <button class='btn btn-secondary btn-circle btn-sm'>
-        <span class='icon-[material-symbols--add-circle-outline-rounded]'></span>
+        <span class='icon-[material-symbols--add-circle-outline-rounded] text-lg'></span>
       </button>
     </div>
   </div>
@@ -228,7 +232,7 @@ You can change the shape of the button using the <code>.btn-square</code> and <c
 
 <Example>
   <div slot="preview" class='not-prose space-x-2'>
-    <button class='btn btn-error'>
+    <button class='btn btn-danger'>
       <span class='icon-[mingcute--google-fill]'></span>
       Google
     </button>
@@ -240,7 +244,7 @@ You can change the shape of the button using the <code>.btn-square</code> and <c
 
   <div slot="code">
   ```html
-  <button class='btn btn-error'>
+  <button class='btn btn-danger'>
     <span class='icon-[mingcute--google-fill]'></span>
     Google
   </button>
@@ -257,32 +261,32 @@ You can change the shape of the button using the <code>.btn-square</code> and <c
 <Example>
   <div slot="preview" class='not-prose space-x-2'>
     <button class='btn btn-icon'>
-      <span class='icon-[line-md--heart] text-xl'></span>
+      <span class='icon-[line-md--heart] text-2xl'></span>
     </button>
     <button class='btn btn-icon' disabled>
-      <span class='icon-[line-md--heart] text-xl'></span>
+      <span class='icon-[line-md--heart] text-2xl'></span>
     </button>
     <button class='btn btn-icon btn-icon-primary'>
-      <span class='icon-[tabler--thumb-up] text-xl'></span>
+      <span class='icon-[tabler--thumb-up] text-2xl'></span>
     </button>
-    <button class='btn btn-icon btn-icon-error'>
-      <span class='icon-[line-md--heart] text-xl'></span>
+    <button class='btn btn-icon btn-icon-danger'>
+      <span class='icon-[line-md--heart] text-2xl'></span>
     </button>
   </div>
 
   <div slot="code">
   ```html
   <button class='btn btn-icon'>
-    <span class='icon-[line-md--heart] text-xl'></span>
+    <span class='icon-[line-md--heart] text-2xl'></span>
   </button>
   <button class='btn btn-icon' disabled>
-    <span class='icon-[line-md--heart] text-xl'></span>
+    <span class='icon-[line-md--heart] text-2xl'></span>
   </button>
   <button class='btn btn-icon btn-icon-primary'>
-    <span class='icon-[tabler--thumb-up] text-xl'></span>
+    <span class='icon-[tabler--thumb-up] text-2xl'></span>
   </button>
-  <button class='btn btn-icon btn-icon-error'>
-    <span class='icon-[line-md--heart] text-xl'></span>
+  <button class='btn btn-icon btn-icon-danger'>
+    <span class='icon-[line-md--heart] text-2xl'></span>
   </button>
   ```
   </div>
@@ -295,32 +299,32 @@ For larger or smaller icon buttons, use the <code>.btn-lg</code> and <code>.btn-
 <Example>
   <div slot="preview" class='not-prose flex gap-2 items-center'>
     <button class='btn btn-icon btn-sm'>
-      <span class='icon-[material-symbols--delete-outline-rounded]'></span>
-    </button>
-    <button class='btn btn-icon btn-sm'>
       <span class='icon-[material-symbols--delete-outline-rounded] text-lg'></span>
     </button>
-    <button class='btn btn-icon btn-lg'>
+    <button class='btn btn-icon btn-sm'>
       <span class='icon-[material-symbols--delete-outline-rounded] text-xl'></span>
     </button>
     <button class='btn btn-icon btn-lg'>
       <span class='icon-[material-symbols--delete-outline-rounded] text-2xl'></span>
+    </button>
+    <button class='btn btn-icon btn-lg'>
+      <span class='icon-[material-symbols--delete-outline-rounded] text-3xl'></span>
     </button>
   </div>
 
   <div slot="code">
   ```html
   <button class='btn btn-icon btn-sm'>
-    <span class='icon-[material-symbols--delete-outline-rounded]'></span>
-  </button>
-  <button class='btn btn-icon btn-sm'>
     <span class='icon-[material-symbols--delete-outline-rounded] text-lg'></span>
   </button>
-  <button class='btn btn-icon btn-lg'>
+  <button class='btn btn-icon btn-sm'>
     <span class='icon-[material-symbols--delete-outline-rounded] text-xl'></span>
   </button>
   <button class='btn btn-icon btn-lg'>
     <span class='icon-[material-symbols--delete-outline-rounded] text-2xl'></span>
+  </button>
+  <button class='btn btn-icon btn-lg'>
+    <span class='icon-[material-symbols--delete-outline-rounded] text-3xl'></span>
   </button>
   ```
   </div>

@@ -1,10 +1,9 @@
 @utility link {
   --link-color: var(--color-default-color);
   --link-hover-color: var(--color-default-color);
-  @apply cursor-pointer underline
+  @apply cursor-pointer underline appearance-none
   text-[var(--link-color)]
-  hover:text-[var(--link-hover-color)]
-  focus:outline-hidden;
+  hover:text-[var(--link-hover-color)];
 }
 @utility link-hover {
   @apply no-underline hover:underline;
@@ -29,9 +28,9 @@
   --link-color: var(--color-warning);
   --link-hover-color: var(--color-warning-dark);
 }
-@utility link-error {
-  --link-color: var(--color-error);
-  --link-hover-color: var(--color-error-dark);
+@utility link-danger {
+  --link-color: var(--color-danger);
+  --link-hover-color: var(--color-danger-dark);
 }
 @utility link-neutral {
   --link-color: var(--color-main);
