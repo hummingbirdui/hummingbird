@@ -109,6 +109,7 @@
   text-left
   text-[var(--dropdown-link-color)]
   whitespace-nowrap;
+
   &:hover,
   &:focus {
     @apply text-[var(--dropdown-link-hover-color)]
@@ -119,8 +120,7 @@
     @apply text-[var(--dropdown-link-active-color)]
     bg-[var(--dropdown-link-active-bg)];
   }
-  &.disabled,
-  &:disabled {
+  &:is(:disabled, [disabled], .disabled) {
     @apply text-[var(--dropdown-link-disabled-color)]
     pointer-events-none;
   }
