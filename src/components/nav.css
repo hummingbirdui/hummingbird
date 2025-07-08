@@ -20,22 +20,24 @@
 }
 
 @utility nav-link {
-  @apply block
-  px-[var(--nav-link-padding-x)]
-  py-[var(--nav-link-padding-y)]
-  text-[length:var(--nav-link-font-size)]
-  font-[var(--nav-link-font-weight)]
-  text-[var(--nav-link-color)]
-  leading-[var(--nav-link-line-height)]
-  no-underline
-  bg-none
-  border-0
-  cursor-pointer
-  transition-colors duration-150 ease-in-out;
-
-  &:focus-visible {
-    @apply outline-0;
+  @layer base {
+    @apply block
+    px-[var(--nav-link-padding-x)]
+    py-[var(--nav-link-padding-y)]
+    text-[length:var(--nav-link-font-size)]
+    font-[var(--nav-link-font-weight)]
+    text-[var(--nav-link-color)]
+    leading-[var(--nav-link-line-height)]
+    no-underline
+    bg-none
+    border-0
+    cursor-pointer
+    transition-colors duration-150 ease-in-out;
   }
+
+  /* &:focus-visible {
+    @apply outline-0;
+  } */
 
   &.disabled,
   &:disabled {
@@ -52,7 +54,9 @@
   @apply gap-[var(--nav-underline-gap)];
 
   .nav-link {
-    @apply border-b-[length:var(--nav-underline-border-width)] border-transparent;
+    @layer base {
+      @apply border-b-[length:var(--nav-underline-border-width)] border-transparent;
+    }
   }
 
   .nav-link.active,
@@ -73,15 +77,19 @@
   @apply border-b-[length:var(--nav-tabs-border-width)] border-[var(--nav-tabs-border-color)];
 
   .nav-link {
-    @apply mb-[length:calc(-1*var(--nav-tabs-border-width))]
-    border-[length:var(--nav-tabs-border-width)]
-    border-transparent
-    rounded-t-[var(--nav-tabs-border-radius)];
+    @layer base {
+      @apply -mb-[length:var(--nav-tabs-border-width)]
+      border-[length:var(--nav-tabs-border-width)]
+      border-transparent
+      rounded-t-[var(--nav-tabs-border-radius)];
+    }
 
     &:hover,
     &:focus {
-      @apply isolate
-      border-[var(--nav-tabs-link-hover-border-color)];
+      @layer base {
+        @apply isolate
+        border-[var(--nav-tabs-link-hover-border-color)];
+      }
     }
   }
 

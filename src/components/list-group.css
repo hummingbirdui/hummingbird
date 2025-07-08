@@ -26,11 +26,6 @@
   }
 }
 
-/* @utility list-group-outlined {
-  --list-group-bg: transparent;
-  @apply border border-[var(--list-group-corder-color)];
-} */
-
 @utility list-group-item {
   @apply px-[var(--list-group-item-padding-x)]
   py-[var(--list-group-item-padding-y)]
@@ -38,7 +33,8 @@
   text-[length:var(--list-group-item-font-size)]
   no-underline
   leading-[1.5];
-  &:is(:disabled, .disabled) {
+
+  &:is(:disabled, [disabled], .disabled) {
     @apply pointer-events-none
     text-[var(--list-group-disabled-color)]
     bg-[var(--list-group-disabled-bg)];
@@ -52,12 +48,15 @@
 @utility list-group-item-action {
   @apply w-full text-left
   text-[var(--list-group-action-color)];
+
   &:not(.active) {
     &:hover,
     &:focus {
-      @apply no-underline
-     text-[var(--list-group-hover-color)]
-     bg-[var(--list-group-hover-bg)];
+      @layer base {
+        @apply no-underline
+        text-[var(--list-group-hover-color)]
+        bg-[var(--list-group-hover-bg)];
+      }
     }
     &:active {
       @apply text-[var(--list-group-active-color)]
