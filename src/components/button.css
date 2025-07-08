@@ -44,6 +44,18 @@
     @apply bg-[var(--btn-bg)];
   }
 
+  &:focus-visible {
+    @apply outline-0 
+    text-[var(--btn-hover-color)]
+    bg-[var(--btn-hover-bg)]
+    ring-4 ring-[--alpha(var(--btn-hover-bg)/50%)];
+  }
+
+  .btn-check:focus-visible + & {
+    @apply outline-0
+    ring-4 ring-[--alpha(var(--btn-hover-bg)/50%)];
+  }
+
   .btn-check:checked + &,
   :not(.btn-check) + &:active,
   &:active,
@@ -358,7 +370,7 @@
   @apply underline;
 
   &:focus-visible {
-    @apply text-[var(--btn-color)];
+    @apply ring-[--alpha(var(--btn-color)/50%)];
   }
 }
 
