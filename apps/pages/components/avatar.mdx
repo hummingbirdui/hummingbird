@@ -9,20 +9,20 @@ import avatarImage1 from "../../assets/images/avatar_1.webp";
 import avatarImage2 from "../../assets/images/avatar_2.webp";
 import avatarImage3 from "../../assets/images/avatar_3.webp";
 import avatarImage4 from "../../assets/images/avatar_4.webp";
-import { Image } from 'astro:assets';
+import { Image } from "astro:assets";
 
 ### Image Avatar
 
 <Example>
   <div slot="preview">
     <div class="avatar">
-      <Image src={avatarImage1} alt="Avatar" class='rounded-full' />
+      <Image src={avatarImage1} alt="Avatar" class="rounded-full" />
     </div>
   </div>
   <div slot="code">
     ```html
     <div class="avatar">
-      <img src="assets/images/avatar_1.webp" alt="Avatar" class='rounded-full' />
+      <img src="assets/images/avatar_1.webp" alt="Avatar" class="rounded-full" />
     </div>
     ```
   </div>
@@ -31,39 +31,59 @@ import { Image } from 'astro:assets';
 ### Letter Avatar
 
 <Example>
-  <div slot="preview" class='space-x-2'>
+  <div slot="preview" class="space-x-2">
     <div class="avatar">
-      <div class='avatar-name rounded-full'><span>A</span></div>
+      <div class="avatar-name rounded-full">
+        <span>A</span>
+      </div>
     </div>
     <div class="avatar">
-      <div class='avatar-name rounded-full bg-primary'><span>B</span></div>
+      <div class="avatar-name bg-primary rounded-full">
+        <span>B</span>
+      </div>
     </div>
     <div class="avatar">
-      <div class='avatar-name rounded-full bg-secondary'><span>C</span></div>
+      <div class="avatar-name bg-secondary rounded-full">
+        <span>C</span>
+      </div>
     </div>
     <div class="avatar">
-      <div class='avatar-name rounded-full bg-info'><span>D</span></div>
+      <div class="avatar-name bg-info rounded-full">
+        <span>D</span>
+      </div>
     </div>
     <div class="avatar">
-      <div class='avatar-name rounded-full bg-warning'><span>E</span></div>
+      <div class="avatar-name bg-warning rounded-full">
+        <span>E</span>
+      </div>
     </div>
   </div>
   <div slot="code">
     ```html
     <div class="avatar">
-      <div class='avatar-name rounded-full'><span>A</span></div>
+      <div class="avatar-name rounded-full">
+        <span>A</span>
+      </div>
     </div>
     <div class="avatar">
-      <div class='avatar-name rounded-full bg-primary'><span>B</span></div>
+      <div class="avatar-name bg-primary rounded-full">
+        <span>B</span>
+      </div>
     </div>
     <div class="avatar">
-      <div class='avatar-name rounded-full bg-secondary'><span>C</span></div>
+      <div class="avatar-name bg-secondary rounded-full">
+        <span>C</span>
+      </div>
     </div>
     <div class="avatar">
-      <div class='avatar-name rounded-full bg-info'><span>D</span></div>
+      <div class="avatar-name bg-info rounded-full">
+        <span>D</span>
+      </div>
     </div>
     <div class="avatar">
-      <div class='avatar-name rounded-full bg-warning'><span>E</span></div>
+      <div class="avatar-name bg-warning rounded-full">
+        <span>E</span>
+      </div>
     </div>
     ```
   </div>
@@ -74,25 +94,37 @@ import { Image } from 'astro:assets';
 <Example>
   <div slot="preview" class="space-x-2">
     <div class="avatar">
-      <div class='avatar-name rounded-full bg-warning'><span class="icon-[material-symbols--docs]"></span></div>
+      <div class="avatar-name bg-warning rounded-full">
+        <span class="icon-[material-symbols--docs]"></span>
+      </div>
     </div>
     <div class="avatar">
-      <div class='avatar-name rounded-full bg-info'><span class="icon-[material-symbols--account-circle]"></span></div>
+      <div class="avatar-name bg-info rounded-full">
+        <span class="icon-[material-symbols--account-circle]"></span>
+      </div>
     </div>
     <div class="avatar">
-      <div class='avatar-name rounded-full bg-success'><span class="icon-[material-symbols--mark-chat-unread-rounded]"></span></div>
+      <div class="avatar-name bg-success rounded-full">
+        <span class="icon-[material-symbols--mark-chat-unread-rounded]"></span>
+      </div>
     </div>
   </div>
   <div slot="code">
     ```html
     <div class="avatar">
-      <div class='avatar-name rounded-full bg-warning'><span class="icon-[material-symbols--docs]"></span></div>
+      <div class="avatar-name bg-warning rounded-full">
+        <span class="icon-[material-symbols--docs]"></span>
+      </div>
     </div>
     <div class="avatar">
-      <div class='avatar-name rounded-full bg-info'><span class="icon-[material-symbols--account-circle]"></span></div>
+      <div class="avatar-name bg-info rounded-full">
+        <span class="icon-[material-symbols--account-circle]"></span>
+      </div>
     </div>
     <div class="avatar">
-      <div class='avatar-name rounded-full bg-success'><span class="icon-[material-symbols--mark-chat-unread-rounded]"></span></div>
+      <div class="avatar-name bg-success rounded-full">
+        <span class="icon-[material-symbols--mark-chat-unread-rounded]"></span>
+      </div>
     </div>
     ```
   </div>
@@ -103,31 +135,31 @@ import { Image } from 'astro:assets';
 <Example>
   <div slot="preview" class="space-x-2">
     <div class="avatar avatar-xs">
-      <Image src={avatarImage1} alt="Avatar" class='rounded-full' />
+      <Image src={avatarImage1} alt="Avatar" class="rounded-full" />
     </div>
     <div class="avatar avatar-sm">
-      <Image src={avatarImage2} alt="Avatar" class='rounded-full' />
+      <Image src={avatarImage2} alt="Avatar" class="rounded-full" />
     </div>
     <div class="avatar">
-      <Image src={avatarImage3} alt="Avatar" class='rounded-full' />
+      <Image src={avatarImage3} alt="Avatar" class="rounded-full" />
     </div>
     <div class="avatar avatar-lg">
-      <Image src={avatarImage4} alt="Avatar" class='rounded-full' />
+      <Image src={avatarImage4} alt="Avatar" class="rounded-full" />
     </div>
   </div>
   <div slot="code">
     ```html
     <div class="avatar avatar-xs">
-      <img src="assets/images/avatar_1.webp" alt="Avatar" class='rounded-full' />
+      <img src="assets/images/avatar_1.webp" alt="Avatar" class="rounded-full" />
     </div>
     <div class="avatar avatar-sm">
-      <img src="assets/images/avatar_2.webp" alt="Avatar" class='rounded-full' />
+      <img src="assets/images/avatar_2.webp" alt="Avatar" class="rounded-full" />
     </div>
     <div class="avatar">
-      <img src="assets/images/avatar_3.webp" alt="Avatar" class='rounded-full' />
+      <img src="assets/images/avatar_3.webp" alt="Avatar" class="rounded-full" />
     </div>
     <div class="avatar avatar-lg">
-      <img src="assets/images/avatar_4.webp" alt="Avatar" class='rounded-full' />
+      <img src="assets/images/avatar_4.webp" alt="Avatar" class="rounded-full" />
     </div>
     ```
   </div>
@@ -182,6 +214,7 @@ import { Image } from 'astro:assets';
       <div class='avatar-name bg-secondary'><span>C</span></div>
     </div>
     ```
+
   </div>
 </Example>
 
@@ -203,7 +236,9 @@ import { Image } from 'astro:assets';
         <Image src={avatarImage4} alt="Avatar" />
       </div>
       <div class="avatar">
-        <div class='avatar-name bg-primary text-base'><span>+99</span></div>
+        <div class="avatar-name bg-primary text-base">
+          <span>+99</span>
+        </div>
       </div>
     </div>
   </div>
@@ -223,7 +258,9 @@ import { Image } from 'astro:assets';
         <img src="assets/images/avatar_4.webp" alt="Avatar" />
       </div>
       <div class="avatar">
-        <div class='avatar-name bg-primary text-base'><span>+99</span></div>
+        <div class="avatar-name bg-primary text-base">
+          <span>+99</span>
+        </div>
       </div>
     </div>
     ```
@@ -235,31 +272,31 @@ import { Image } from 'astro:assets';
 <Example>
   <div slot="preview" class="space-x-2">
     <div class="avatar avatar-status-online">
-      <Image src={avatarImage1} alt="Avatar" class='rounded-full' />
+      <Image src={avatarImage1} alt="Avatar" class="rounded-full" />
     </div>
     <div class="avatar avatar-status-offline">
-      <Image src={avatarImage3} alt="Avatar" class='rounded-full' />
+      <Image src={avatarImage3} alt="Avatar" class="rounded-full" />
     </div>
     <div class="avatar avatar-status-away">
-      <Image src={avatarImage4} alt="Avatar" class='rounded-full' />
+      <Image src={avatarImage4} alt="Avatar" class="rounded-full" />
     </div>
     <div class="avatar avatar-status-busy">
-      <Image src={avatarImage2} alt="Avatar" class='rounded-full' />
+      <Image src={avatarImage2} alt="Avatar" class="rounded-full" />
     </div>
   </div>
   <div slot="code">
     ```html
     <div class="avatar avatar-status-online">
-      <img src="assets/images/avatar_1.webp" alt="Avatar" class='rounded-full' />
+      <img src="assets/images/avatar_1.webp" alt="Avatar" class="rounded-full" />
     </div>
     <div class="avatar avatar-status-offline">
-      <img src="assets/images/avatar_3.webp" alt="Avatar" class='rounded-full' />
+      <img src="assets/images/avatar_3.webp" alt="Avatar" class="rounded-full" />
     </div>
     <div class="avatar avatar-status-away">
-      <img src="assets/images/avatar_4.webp" alt="Avatar" class='rounded-full' />
+      <img src="assets/images/avatar_4.webp" alt="Avatar" class="rounded-full" />
     </div>
     <div class="avatar avatar-status-busy">
-      <img src="assets/images/avatar_2.webp" alt="Avatar" class='rounded-full' />
+      <img src="assets/images/avatar_2.webp" alt="Avatar" class="rounded-full" />
     </div>
     ```
   </div>
