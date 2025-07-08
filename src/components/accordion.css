@@ -51,6 +51,9 @@
     bg-size-[var(--accordion-btn-icon-width)]
     transition-[var(--accordion-btn-icon-transition)];
   }
+  &:focus {
+    @apply outline-0 bg-[var(--accordion-hover-bg)];
+  }
 }
 
 @utility accordion-header {
@@ -68,5 +71,7 @@
   }
 }
 @utility accordion-body {
-  @apply px-[var(--accordion-body-padding-x)] pb-[var(--accordion-body-padding-y)];
+  @layer base {
+    @apply px-[var(--accordion-body-padding-x)] pb-[var(--accordion-body-padding-y)];
+  }
 }
