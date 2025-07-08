@@ -120,7 +120,7 @@
 }
 
 @utility modal-body {
-  @apply relative flex-1 p-[var(--modal-padding)];
+  @apply relative flex-[1_1_auto] p-[var(--modal-padding)];
 }
 
 @utility modal-footer {

@@ -60,7 +60,7 @@
 }
 
 @utility card-body {
-  @apply flex-1
+  @apply flex-[1_1_auto]
   px-[var(--card-padding-x)] 
   py-[var(--card-padding-y)];
 }

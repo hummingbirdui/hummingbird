@@ -16,7 +16,7 @@
   > .form-floating {
     @layer components {
       @apply relative
-      flex-1
+      flex-[1_1_auto]
       w-[1%] min-w-0;
     }
   }
