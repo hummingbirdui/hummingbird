@@ -13,7 +13,8 @@
   p-0
   bg-transparent;
 
-  &:hover {
+  &:hover,
+  &:focus {
     @apply outline-0;
     &::-webkit-slider-thumb {
       @apply shadow-[var(--form-range-thumb-box-shadow)];
@@ -43,8 +44,6 @@
     h-[var(--form-range-track-height)]
     bg-[--alpha(var(--form-range-color)/30%)]
     rounded-[var(--form-range-track-border-radius)];
-    /* text-transparent
-    border-transparent; */
   }
 
   &::-moz-range-thumb {
@@ -63,8 +62,6 @@
     h-[var(--form-range-track-height)]
     bg-[--alpha(var(--form-range-color)/30%)]
     rounded-[var(--form-range-track-border-radius)];
-    /* text-transparent
-    border-transparent; */
   }
 
   &:active {

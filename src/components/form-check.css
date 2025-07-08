@@ -6,11 +6,17 @@
 }
 @utility form-check-input-wrapper {
   --form-check-input-wrapper-bg: --alpha(var(--color-primary) / 12%);
+
   @apply relative inline-flex items-center justify-center rounded-full cursor-pointer 
-    appearance-none
-    p-2.5
-    bg-transparent
-    hover:bg-[var(--form-check-input-wrapper-bg)];
+  appearance-none
+  p-2.5
+  bg-transparent
+  hover:bg-[var(--form-check-input-wrapper-bg)];
+
+  &:focus-within {
+    @apply bg-[var(--form-check-input-wrapper-bg)];
+  }
+
   &:has(input[type='checkbox'][disabled]),
   &:has(input[type='radio'][disabled]) {
     @apply cursor-default;
@@ -61,7 +67,6 @@
   border
   border-[var(--form-check-input-border)]
   rounded-[var(--form-check-input-radius)];
-  /* print-color-adjust: exact; */
 
   &[type='radio'] {
     --form-check-input-radius: calc(infinity * 1px);
