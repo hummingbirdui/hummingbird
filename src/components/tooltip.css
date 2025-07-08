@@ -1,17 +1,17 @@
 .tooltip {
   --tooltip-zindex: 1080;
   --tooltip-max-width: 12.5rem;
-  --tooltip-padding-x: calc(var(--spacing) * 2.5);
-  --tooltip-padding-y: calc(var(--spacing) * 2);
+  --tooltip-padding-x: --spacing(2.5);
+  --tooltip-padding-y: --spacing(2);
   --tooltip-bg: var(--color-main);
   --tooltip-color: var(--color-contrast);
   --tooltip-font-size: var(--text-xs);
-  --tooltip-margin: calc(var(--spacing) * 2);
+  --tooltip-margin: --spacing(2);
   --tooltip-opacity: 1;
   --tooltip-border-radius: var(--radius-sm);
   --tooltip-arrow-width: 0.75rem;
   --tooltip-arrow-height: 0.53rem;
-  --tooltip-arrow-border-radius: calc(var(--spacing) * 0.5);
+  --tooltip-arrow-border-radius: --spacing(0.5);
   @apply z-[var(--tooltip-zindex)] block
   text-[length:var(--tooltip-font-size)]
   break-words

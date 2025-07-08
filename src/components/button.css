@@ -65,15 +65,15 @@
 }
 
 @utility btn-sm {
-  --btn-padding-y: calc(var(--spacing) * 1.25);
-  --btn-padding-x: calc(var(--spacing) * 2.5);
+  --btn-padding-y: --spacing(1.25);
+  --btn-padding-x: --spacing(2.5);
   --btn-radius: var(--radius-sm);
   --btn-line-height: 1.25;
 }
 @utility btn-lg {
   --btn-font-size: var(--text-base);
-  --btn-padding-y: calc(var(--spacing) * 2.25);
-  --btn-padding-x: calc(var(--spacing) * 5.5);
+  --btn-padding-y: --spacing(2.25);
+  --btn-padding-x: --spacing(5.5);
 }
 
 /* variant contained */
@@ -314,18 +314,18 @@
   --btn-color: var(--color-active);
   --btn-hover-bg: --alpha(var(--color-active) / 4%);
   --btn-disabled-bg: transparent;
-  --btn-padding-y: calc(var(--spacing) * 2);
-  --btn-padding-x: calc(var(--spacing) * 2);
+  --btn-padding-y: --spacing(2);
+  --btn-padding-x: --spacing(2);
   --btn-radius: calc(infinity * 1px);
 
   &.btn-sm {
-    --btn-padding-y: calc(var(--spacing) * 1.25);
-    --btn-padding-x: calc(var(--spacing) * 1.25);
+    --btn-padding-y: --spacing(1.25);
+    --btn-padding-x: --spacing(1.25);
     --btn-radius: calc(infinity * 1px);
   }
   &.btn-lg {
-    --btn-padding-y: calc(var(--spacing) * 3);
-    --btn-padding-x: calc(var(--spacing) * 3);
+    --btn-padding-y: --spacing(3);
+    --btn-padding-x: --spacing(3);
   }
 }
 @utility btn-icon-primary {

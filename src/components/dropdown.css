@@ -11,10 +11,10 @@
 @utility dropdown-menu {
   --dropdown-zindex: 1000;
   --dropdown-bg: var(--color-default);
-  --dropdown-spacer: calc(var(--spacing) * 0.5);
+  --dropdown-spacer: --spacing(0.5);
   --dropdown-min-width: 10rem;
   --dropdown-padding-x: 0;
-  --dropdown-padding-y: calc(var(--spacing) * 2);
+  --dropdown-padding-y: --spacing(2);
   --dropdown-font-size: var(--text-sm);
   --dropdown-border-width: 1px;
   --dropdown-border-color: transparent;
@@ -26,12 +26,12 @@
   --dropdown-link-disabled-color: var(--color-disabled-color);
   --dropdown-link-active-color: var(--color-primary);
   --dropdown-link-active-bg: var(--color-primary-lighter);
-  --dropdown-item-padding-x: calc(var(--spacing) * 4);
-  --dropdown-item-padding-y: calc(var(--spacing) * 1.5);
+  --dropdown-item-padding-x: --spacing(4);
+  --dropdown-item-padding-y: --spacing(1.5);
   --dropdown-divider-bg: var(--color-border-base);
-  --dropdown-divider-margin-y: calc(var(--spacing) * 2);
-  --dropdown-header-padding-y: calc(var(--spacing) * 2);
-  --dropdown-header-padding-x: calc(var(--spacing) * 4);
+  --dropdown-divider-margin-y: --spacing(2);
+  --dropdown-header-padding-y: --spacing(2);
+  --dropdown-header-padding-x: --spacing(4);
   --dropdown-header-color: var(--color-highlight-color);
 
   @apply absolute 

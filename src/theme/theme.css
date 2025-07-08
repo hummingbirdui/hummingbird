@@ -108,8 +108,8 @@
 :root {
   --input-btn-font-size: var(--text-sm);
   --input-btn-radius: var(--radius-lg);
-  --input-btn-padding-x: calc(var(--spacing) * 4);
-  --input-btn-padding-y: calc(var(--spacing) * 1.75);
+  --input-btn-padding-x: --spacing(4);
+  --input-btn-padding-y: --spacing(1.75);
   --input-btn-line-height: 1.5;
   --input-btn-border-width: 1px;
 

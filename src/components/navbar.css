@@ -1,16 +1,16 @@
 @utility navbar {
-  --navbar-padding-x: calc(var(--spacing) * 3);
-  --navbar-padding-y: calc(var(--spacing) * 2);
+  --navbar-padding-x: --spacing(3);
+  --navbar-padding-y: --spacing(2);
   --navbar-color: var(--color-highlight-color);
   --navbar-hover-color: var(--color-default-color);
   --navbar-disabled-color: var(--color-disabled-color);
   --navbar-active-color: var(--color-default-color);
-  --navbar-brand-padding-y: calc(var(--spacing) * 1.25);
-  --navbar-brand-margin-end: calc(var(--spacing) * 4);
+  --navbar-brand-padding-y: --spacing(1.25);
+  --navbar-brand-margin-end: --spacing(4);
   --navbar-brand-font-size: var(--text-lg);
   --navbar-brand-color: var(--color-default-color);
   --navbar-brand-hover-color: var(--color-default-color);
-  --navbar-nav-link-padding-x: calc(var(--spacing) * 2);
+  --navbar-nav-link-padding-x: --spacing(2);
 
   @apply relative
   flex flex-wrap items-center justify-between
@@ -46,7 +46,7 @@
 
 @utility navbar-nav {
   --nav-link-padding-x: 0;
-  --nav-link-padding-y: calc(var(--spacing) * 2);
+  --nav-link-padding-y: --spacing(2);
   --nav-link-font-weight: var(--font-weight-medium);
   --nav-link-color: var(--color-highlight-color);
   --nav-link-font-size: var(--text-base);

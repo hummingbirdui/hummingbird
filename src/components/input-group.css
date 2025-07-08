@@ -119,7 +119,7 @@
     @apply form-control-lg;
   }
   > .input-group-text {
-    --input-group-addon-padding-y: calc(var(--spacing) * 2.25);
+    --input-group-addon-padding-y: --spacing(2.25);
     --input-group-addon-font-size: var(--text-base);
   }
 }
@@ -133,8 +133,8 @@
     @apply form-control-sm;
   }
   > .input-group-text {
-    --input-group-addon-padding-x: calc(var(--spacing) * 3);
-    --input-group-addon-padding-y: calc(var(--spacing) * 1.25);
+    --input-group-addon-padding-x: --spacing(3);
+    --input-group-addon-padding-y: --spacing(1.25);
     --input-group-addon-radius: var(--radius-sm);
     --input-group-addon-line-height: 1.25;
   }

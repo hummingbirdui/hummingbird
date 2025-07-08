@@ -2,8 +2,8 @@
   --badge-bg: var(--color-main);
   --badge-color: var(--color-contrast);
   --badge-font-size: var(--text-xs);
-  --badge-padding-y: calc(var(--spacing) * 0.75);
-  --badge-padding-x: calc(var(--spacing) * 1.5);
+  --badge-padding-y: --spacing(0.75);
+  --badge-padding-x: --spacing(1.5);
   --badge-border-color: transparent;
   --badge-link-hover-bg: var(--color-dark);
   @apply inline-flex items-center justify-center gap-1 align-middle transition-[background] duration-200
@@ -19,12 +19,12 @@
 }
 
 @utility badge-md {
-  --badge-padding-y: calc(var(--spacing) * 1.25);
-  --badge-padding-x: calc(var(--spacing) * 2);
+  --badge-padding-y: --spacing(1.25);
+  --badge-padding-x: --spacing(2);
 }
 @utility badge-lg {
-  --badge-padding-y: calc(var(--spacing) * 2);
-  --badge-padding-x: calc(var(--spacing) * 3);
+  --badge-padding-y: --spacing(2);
+  --badge-padding-x: --spacing(3);
   --badge-font-size: var(--text-sm);
 }
 

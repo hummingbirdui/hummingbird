@@ -2,8 +2,8 @@
   --offcanvas-zindex: 1045;
   --offcanvas-width: 20rem;
   --offcanvas-height: 30vh;
-  --offcanvas-padding-x: calc(var(--spacing) * 4);
-  --offcanvas-padding-y: calc(var(--spacing) * 4);
+  --offcanvas-padding-x: --spacing(4);
+  --offcanvas-padding-y: --spacing(4);
   --offcanvas-color: var(--color-default-color);
   --offcanvas-bg: var(--color-subtle);
   --offcanvas-border-width: 1px;

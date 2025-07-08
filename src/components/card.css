@@ -5,14 +5,14 @@
     --card-border-width: 1px;
     --card-border-color: var(--color-border-base);
     --card-border-radius: var(--radius-lg);
-    --card-padding-x: calc(var(--spacing) * 4);
-    --card-padding-y: calc(var(--spacing) * 4);
-    --card-cap-padding-x: calc(var(--spacing) * 2);
-    --card-cap-padding-y: calc(var(--spacing) * 2);
+    --card-padding-x: --spacing(4);
+    --card-padding-y: --spacing(4);
+    --card-cap-padding-x: --spacing(2);
+    --card-cap-padding-y: --spacing(2);
     --card-cap-bg: transparent;
     --card-cap-color: null;
     --card-title-color: var(--color-default-color);
-    --card-title-space-y: calc(var(--spacing) * 2);
+    --card-title-space-y: --spacing(2);
 
     @apply relative flex flex-col min-w-0 wrap-break-word
     text-sm

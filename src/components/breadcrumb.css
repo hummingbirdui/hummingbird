@@ -1,8 +1,8 @@
 @utility breadcrumb {
   --breadcrumb-font-size: var(--text-sm);
   --breadcrumb-item-active-color: var(--color-default-color);
-  --breadcrumb-item-gap: calc(var(--spacing) * 2);
-  --breadcrumb-item-separator: "/";
+  --breadcrumb-item-gap: --spacing(2);
+  --breadcrumb-item-separator: '/';
   --breadcrumb-separator-color: var(--color-highlight-color);
   @apply flex flex-wrap 
   text-[length:var(--breadcrumb-font-size)];
@@ -10,10 +10,10 @@
 }
 
 @utility breadcrumb-separator-dashed {
-  --breadcrumb-item-separator: "-";
+  --breadcrumb-item-separator: '-';
 }
 @utility breadcrumb-separator-arrow {
-  --breadcrumb-item-separator: ">";
+  --breadcrumb-item-separator: '>';
 }
 
 @utility breadcrumb-item {

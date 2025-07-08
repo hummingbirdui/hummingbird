@@ -48,8 +48,8 @@
 @utility form-check-input {
   --form-check-input-bg: var(--color-default);
   --form-check-input-checked-bg: var(--color-primary);
-  --form-check-input-with: calc(var(--spacing) * 4);
-  --form-check-input-height: calc(var(--spacing) * 4);
+  --form-check-input-with: --spacing(4);
+  --form-check-input-height: --spacing(4);
   --form-check-input-border: var(--color-border-base);
   --form-check-input-radius: var(--radius-sm);
   --form-check-bg-image: none;
@@ -110,16 +110,16 @@
 }
 
 @utility form-check-sm {
-  --form-check-input-with: calc(var(--spacing) * 4);
-  --form-check-input-height: calc(var(--spacing) * 4);
+  --form-check-input-with: --spacing(4);
+  --form-check-input-height: --spacing(4);
 }
 @utility form-check-md {
-  --form-check-input-with: calc(var(--spacing) * 5);
-  --form-check-input-height: calc(var(--spacing) * 5);
+  --form-check-input-with: --spacing(5);
+  --form-check-input-height: --spacing(5);
 }
 @utility form-check-lg {
-  --form-check-input-with: calc(var(--spacing) * 6);
-  --form-check-input-height: calc(var(--spacing) * 6);
+  --form-check-input-with: --spacing(6);
+  --form-check-input-height: --spacing(6);
   &[type='checkbox'] {
     --form-check-input-radius: var(--radius-md);
   }
@@ -148,8 +148,8 @@
   @apply space-x-2;
   .form-check-input {
     --form-check-input-bg: var(--color-emphasis);
-    --form-check-input-with: calc(var(--spacing) * 9);
-    --form-check-input-height: calc(var(--spacing) * 6);
+    --form-check-input-with: --spacing(9);
+    --form-check-input-height: --spacing(6);
     --form-check-input-radius: calc(infinity * 1px);
     --form-check-bg-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e");
     @apply transition-[background] duration-150 ease-in-out border-0 bg-[position:left_center];
@@ -169,12 +169,12 @@
       }
     }
     &.form-check-sm {
-      --form-check-input-with: calc(var(--spacing) * 8);
-      --form-check-input-height: calc(var(--spacing) * 5);
+      --form-check-input-with: --spacing(8);
+      --form-check-input-height: --spacing(5);
     }
     &.form-check-lg {
-      --form-check-input-with: calc(var(--spacing) * 10);
-      --form-check-input-height: calc(var(--spacing) * 7);
+      --form-check-input-with: --spacing(10);
+      --form-check-input-height: --spacing(7);
       &[type='checkbox'] {
         --form-check-input-radius: calc(infinity * 1px);
       }

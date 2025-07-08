@@ -1,7 +1,7 @@
 @utility alert {
   --alert-bg: var(--color-main);
-  --alert-padding-x: calc(var(--spacing) * 4);
-  --alert-padding-y: calc(var(--spacing) * 3.5);
+  --alert-padding-x: --spacing(4);
+  --alert-padding-y: --spacing(3.5);
   --alert-color: var(--color-contrast);
   --alert-border-color: transparent;
   --alert-border-radius: var(--radius-lg);

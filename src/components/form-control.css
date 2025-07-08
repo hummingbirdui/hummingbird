@@ -9,7 +9,7 @@
   --file-selector-btn-bg: var(--color-highlight);
   --file-selector-btn-color: var(--color-default-color);
   --file-selector-btn-hover-bg: var(--color-emphasis);
-  --input-icon-spacing: calc(var(--spacing) * 11);
+  --input-icon-spacing: --spacing(11);
 
   @layer base {
     @apply w-full
@@ -81,7 +81,7 @@
   --input-padding-y: var(--input-btn-padding-y);
   --input-line-height: var(--input-btn-line-height);
   --input-border-width: var(--input-btn-border-width);
-  --input-icon-spacing: calc(var(--spacing) * 11);
+  --input-icon-spacing: --spacing(11);
 
   @layer base {
     @apply w-full
@@ -160,7 +160,7 @@
   &:has(.form-control-sm) {
     .form-control-icon-start,
     .form-control-icon-end {
-      --input-padding-x: calc(var(--spacing) * 3);
+      --input-padding-x: --spacing(3);
       --input-icon-font-size: var(--text-sm);
     }
   }
@@ -184,17 +184,17 @@
 }
 
 @utility form-control-sm {
-  --input-padding-x: calc(var(--spacing) * 3);
-  --input-padding-y: calc(var(--spacing) * 1.25);
+  --input-padding-x: --spacing(3);
+  --input-padding-y: --spacing(1.25);
   --input-radius: var(--radius-sm);
   --input-line-height: 1.25;
-  --input-icon-spacing: calc(var(--spacing) * 8.5);
+  --input-icon-spacing: --spacing(8.5);
 }
 
 @utility form-control-lg {
-  --input-padding-y: calc(var(--spacing) * 2.25);
+  --input-padding-y: --spacing(2.25);
   --input-font-size: var(--text-base);
-  --input-icon-spacing: calc(var(--spacing) * 12);
+  --input-icon-spacing: --spacing(12);
 }
 @utility form-control-primary {
   --file-selector-btn-bg: var(--color-primary);
@@ -285,7 +285,7 @@
 }
 
 @utility form-text {
-  --form-text-margin-top: calc(var(--spacing) * 1);
+  --form-text-margin-top: --spacing(1);
   --form-text-font-size: var(--text-xs);
   --form-text-font-weight: 400;
   --form-text-color: var(--color-highlight-color);
