@@ -1,9 +1,15 @@
 @utility link {
   --link-color: var(--color-default-color);
   --link-hover-color: var(--color-default-color);
+  --link-active-color: var(--link-hover-color);
   @apply cursor-pointer underline appearance-none
   text-[var(--link-color)]
   hover:text-[var(--link-hover-color)];
+
+  &.active,
+  &.show {
+    @apply text-[var(--link-active-color)];
+  }
 }
 @utility link-hover {
   @apply no-underline hover:underline;
