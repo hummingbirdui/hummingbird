@@ -6,8 +6,10 @@
     }
   }
 
-  @apply relative w-full
-  flex flex-wrap items-stretch;
+  @layer base {
+    @apply relative w-full
+    flex flex-wrap items-stretch;
+  }
 
   > .form-control-fill,
   > .form-control,
