@@ -1,38 +1,44 @@
 {
-  "name": "hummingbird",
-  "version": "0.0.1",
-  "type": "module",
+  "name": "@hummingbirdui/hummingbird",
+  "version": "0.0.0-insiders.0.1",
+  "description": "An open-source system designed for rapid development, without sacrificing the granular control of utility-first CSS.",
   "keywords": [
-    "ui components",
+    "hummingbird",
     "tailwind",
+    "tailwindcss",
     "tailwind css",
-    "tailwind components",
-    "tailwind elements",
-    "tailwind library",
-    "tailwind sections",
-    "tailwind ui"
+    "tailwind component",
+    "component library",
+    "css library",
+    "tailwind ui",
+    "tailwind react",
+    "tailwind next",
+    "tailwind vue",
+    "tailwind nuxt",
+    "tailwind angular",
+    "tailwind svelte",
+    "tailwind django",
+    "tailwind laravel",
+    "tailwind astro",
+    "typescript",
+    "javascript",
+    "cjs",
+    "esm",
+    "umd"
   ],
   "license": "MIT",
-  "main": "lib/esm/index.js",
+  "main": "lib/cjs/index.js",
   "module": "lib/esm/index.js",
   "types": "lib/esm/index.d.ts",
-  "style": "dist/hummingbird.min.css",
-  "repository": "https://github.com/hummingbird-ui/hummingbird",
-  "exports": {
-    ".": {
-      "style": "./src/index.css",
-      "import": "./lib/esm/index.js",
-      "require": "./lib/cjs/index.js",
-      "default": "./lib/esm/index.js"
-    },
-    "./package.json": "./package.json",
-    "./src/index.css": "./src/index.css",
-    "./src/index": "./src/index.css"
-  },
+  "style": "src/index.css",
+  "repository": "https://github.com/hummingbirdui/hummingbird",
+  "bugs": "https://github.com/hummingbirdui/hummingbird/issues",
   "files": [
     "lib",
     "dist",
-    "src/index.css"
+    "src/index.css",
+    "src/components",
+    "src/theme"
   ],
   "author": "Hummingbird UI",
   "contributors": [
@@ -40,18 +46,22 @@
   ],
   "scripts": {
     "start": "cross-env NODE_ENV=development run-p start:*",
-    "start:js": "vite build --outDir=static --emptyOutDir=false --watch",
+    "start:js": "vite build --mode bundle --outDir=static --emptyOutDir=false --watch",
     "start:docs-js": "esbuild apps/docs.ts --bundle --outfile=static/docs.js --watch",
     "start:astro": "astro dev --host",
-    "watch:css": "chokidar 'src/**/*.css' -c 'npm start'",
-    "restart": "kill-port 4321 && astro dev",
+    "build:css": "cross-env NPM_ENV=production npx @tailwindcss/cli -i src/index.css -o dist/hummingbird.css",
+    "build:css:min": "cross-env NPM_ENV=production npx @tailwindcss/cli -i src/index.css -o dist/hummingbird.min.css --minify",
+    "build:styles": "run-s build:css build:css:min",
+    "build:dist": "run-s build:dist:default build:dist:bundle build:styles",
+    "build:dist:default": "vite build",
+    "build:dist:bundle": "vite build --mode bundle",
+    "build:lib": "vite build --config vite.lib.config.js",
+    "clean:lib": "shx rm -rf lib",
+    "clean:dist": "shx rm -rf dist",
+    "build:npm": "run-s clean:lib build:lib clean:dist build:dist",
     "build:docs": "astro build",
     "preview": "astro preview",
-    "astro": "astro",
-    "build:css": "cross-env NPM_ENV=development npx @tailwindcss/cli -i src/index.css -o dist/hummingbird.css",
-    "build:css:min": "cross-env NPM_ENV=production npx @tailwindcss/cli -i src/index.css -o dist/hummingbird.min.css --minify",
-    "build:dist": "vite build && npm run build:css && npm run build:css:min",
-    "build:lib": "vite build --config vite.lib.config.js"
+    "astro": "astro"
   },
   "devDependencies": {
     "@astrojs/mdx": "^4.3.0",
@@ -69,16 +79,14 @@
     "@typescript-eslint/parser": "^8.32.1",
     "astro": "^5.9.2",
     "bootstrap": "^5.3.3",
-    "chokidar-cli": "^3.0.0",
     "cross-env": "^7.0.3",
-    "cssnano": "^7.0.6",
     "esbuild": "^0.25.4",
     "eslint": "^9.26.0",
     "globals": "^16.1.0",
-    "kill-port": "^2.0.1",
     "npm-run-all": "^4.1.5",
     "prettier": "^3.5.3",
     "prettier-plugin-tailwindcss": "^0.6.11",
+    "shx": "^0.4.0",
     "tailwindcss": "^4.1.11",
     "typescript": "~5.7.2",
     "typescript-eslint": "^8.32.1",
@@ -87,5 +95,9 @@
   },
   "peerDependencies": {
     "@popperjs/core": "^2.11.8"
-  }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "type": "module"
 }
