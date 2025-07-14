@@ -32,6 +32,7 @@
   text-[length:var(--accordion-btn-font-size)]
   text-[var(--accordion-btn-color)]
   bg-[var(--accordion-btn-bg)]
+  rounded-[var(--accordion-border-radius)]
   text-left font-semibold;
   overflow-anchor: none;
   &:not(.collapsed) {
