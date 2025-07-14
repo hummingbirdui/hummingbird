@@ -11,9 +11,10 @@
   --input-border-color: transparent;
 
   @layer base {
-    @apply relative inline-flex gap-2 items-center justify-center 
-    transition duration-200
+    @apply w-full
     appearance-none
+    inline-flex items-center justify-center 
+    transition duration-200
     leading-[var(--form-select-line-height)]
     bg-[var(--input-bg)]
     text-[length:var(--form-select-font-size)]
@@ -65,9 +66,10 @@
   --form-select-indicator: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='none' stroke='%231B2124' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/></svg>");
 
   @layer base {
-    @apply relative inline-flex gap-2 items-center justify-center 
-    transition duration-200
+    @apply w-full
     appearance-none
+    inline-flex items-center justify-center
+    transition duration-200
     leading-[var(--form-select-line-height)]
     text-[length:var(--form-select-font-size)]
     text-[var(--input-color)]
