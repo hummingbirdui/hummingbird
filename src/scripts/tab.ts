@@ -25,8 +25,4 @@ export enum TabEvents {
 
 const Tab = BsTab as unknown as TabStatic;
 
-if (typeof window !== 'undefined') {
-  window.Tab = Tab;
-}
-
 export default Tab;

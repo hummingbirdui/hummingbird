@@ -69,8 +69,4 @@ const Tooltip = BsTooltip as unknown as TooltipStatic;
 const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
 Array.from(tooltipTriggerList).map((tooltipTriggerEl) => new Tooltip(tooltipTriggerEl));
 
-if (typeof window !== 'undefined') {
-  window.Tooltip = Tooltip;
-}
-
 export default Tooltip;

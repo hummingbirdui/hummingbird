@@ -31,8 +31,4 @@ export enum CollapseEvents {
 
 const Collapse = BsCollapse as unknown as CollapseStatic;
 
-if (typeof window !== 'undefined') {
-  window.Collapse = Collapse;
-}
-
 export default Collapse;

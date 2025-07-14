@@ -24,8 +24,4 @@ export enum AlertEvents {
 
 const Alert = BsAlert as unknown as AlertStatic;
 
-if (typeof window !== 'undefined') {
-  window.Alert = Alert;
-}
-
 export default Alert;

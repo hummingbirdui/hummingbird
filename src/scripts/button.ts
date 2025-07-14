@@ -18,8 +18,4 @@ export interface ButtonStatic {
 
 const Button = BsButton as unknown as ButtonStatic;
 
-if (typeof window !== 'undefined') {
-  window.Button = Button;
-}
-
 export default Button;

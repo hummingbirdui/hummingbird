@@ -48,8 +48,4 @@ export interface Event {
 
 const Carousel = BsCarousel as unknown as CarouselStatic;
 
-if (typeof window !== 'undefined') {
-  window.Carousel = Carousel;
-}
-
 export default Carousel;

@@ -1,6 +1,6 @@
 import BsDropdown from 'bootstrap/js/dist/dropdown';
 import * as Popper from '@popperjs/core';
-import { TooltipOptions } from './tooltip';
+import { type TooltipOptions } from './tooltip';
 
 type Offset = [number, number];
 type OffsetFunction = () => Offset;
@@ -39,9 +39,5 @@ export enum DropdownEvents {
 }
 
 const Dropdown = BsDropdown as unknown as DropdownStatic;
-
-if (typeof window !== 'undefined') {
-  window.Dropdown = Dropdown;
-}
 
 export default Dropdown;

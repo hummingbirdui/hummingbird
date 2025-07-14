@@ -30,8 +30,5 @@ export enum OffcanvasEvents {
 }
 
 const Offcanvas = BsOffcanvas as unknown as OffcanvasStatic;
-if (typeof window !== 'undefined') {
-  window.Offcanvas = Offcanvas;
-}
 
 export default Offcanvas;

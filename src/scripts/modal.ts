@@ -34,8 +34,4 @@ export enum ModalEvents {
 
 const Modal = BsModal as unknown as ModalStatic;
 
-if (typeof window !== 'undefined') {
-  window.Modal = Modal;
-}
-
 export default Modal;
