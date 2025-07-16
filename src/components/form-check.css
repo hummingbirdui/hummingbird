@@ -17,7 +17,7 @@
     @apply bg-[var(--form-check-input-wrapper-bg)];
   }
 
-  input:focus {
+  input:focus-visible {
     @apply ring-0;
   }
 
@@ -73,7 +73,7 @@
   border-[var(--form-check-input-border-color)]
   rounded-[var(--form-check-input-radius)];
 
-  &:focus {
+  &:focus-visible {
     @apply outline-0 ring-4 ring-[--alpha(var(--form-check-input-checked-bg)/50%)] border-[var(--form-check-input-checked-bg)];
   }
 

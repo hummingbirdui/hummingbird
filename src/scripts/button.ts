@@ -7,7 +7,7 @@ export interface ButtonInstance {
 
 export type ComponentOptions = Record<string, any>;
 
-export interface ButtonStatic {
+export interface ButtonClass {
   readonly VERSION: string;
   readonly DATA_KEY: string;
   readonly EVENT_KEY: string;
@@ -16,10 +16,6 @@ export interface ButtonStatic {
   getOrCreateInstance(element: string | Element, config?: ComponentOptions): ButtonInstance;
 }
 
-const Button = BsButton as unknown as ButtonStatic;
-
-if (typeof window !== 'undefined') {
-  window.Button = Button;
-}
+const Button = BsButton as unknown as ButtonClass;
 
 export default Button;

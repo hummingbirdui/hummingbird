@@ -1,9 +1,5 @@
 {
-  // "extends": "astro/tsconfigs/strict",
+  "extends": "astro/tsconfigs/strict",
   "include": [".astro/types.d.ts", "**/*"],
-  "exclude": ["dist", "lib", "static"],
-  "compilerOptions": {
-    "module": "ESNext",
-    "moduleResolution": "bundler"
-  },
+  "exclude": ["dist", "lib", "static", "build"],
 }

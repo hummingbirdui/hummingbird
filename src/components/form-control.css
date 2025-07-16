@@ -85,7 +85,7 @@
 
   @layer base {
     @apply w-full
-    inline-flex items-center justify-center gap-2
+    inline-flex items-center justify-center
     appearance-none
     transition duration-200
     leading-[var(--input-line-height)]

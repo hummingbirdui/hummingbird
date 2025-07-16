@@ -13,25 +13,25 @@ export interface OffcanvasInstance {
   dispose(): void;
 }
 
-export interface OffcanvasStatic {
-  readonly VERSION: string;
-  readonly DATA_KEY: string;
-  readonly EVENT_KEY: string;
-  new (element: string | Element, options?: Partial<OffcanvasOptions>): OffcanvasInstance;
-  getInstance(element: string | Element): OffcanvasInstance | null;
-  getOrCreateInstance(element: string | Element, config?: Partial<OffcanvasOptions>): OffcanvasInstance;
-}
-
-export enum OffcanvasEvents {
+enum OffcanvasEvents {
   show = 'show.bs.offcanvas',
   shown = 'shown.bs.offcanvas',
   hide = 'hide.bs.offcanvas',
   hidden = 'hidden.bs.offcanvas',
 }
 
-const Offcanvas = BsOffcanvas as unknown as OffcanvasStatic;
-if (typeof window !== 'undefined') {
-  window.Offcanvas = Offcanvas;
+export interface OffcanvasClass {
+  readonly VERSION: string;
+  readonly DATA_KEY: string;
+  readonly EVENT_KEY: string;
+  new (element: string | Element, options?: Partial<OffcanvasOptions>): OffcanvasInstance;
+  getInstance(element: string | Element): OffcanvasInstance | null;
+  getOrCreateInstance(element: string | Element, config?: Partial<OffcanvasOptions>): OffcanvasInstance;
+  Events: typeof OffcanvasEvents;
 }
+
+const Offcanvas = BsOffcanvas as unknown as OffcanvasClass;
+
+Offcanvas.Events = OffcanvasEvents;
 
 export default Offcanvas;

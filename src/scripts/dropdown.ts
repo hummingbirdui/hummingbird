@@ -1,6 +1,6 @@
 import BsDropdown from 'bootstrap/js/dist/dropdown';
 import * as Popper from '@popperjs/core';
-import { TooltipOptions } from './tooltip';
+import { type TooltipOptions } from './tooltip';
 
 type Offset = [number, number];
 type OffsetFunction = () => Offset;
@@ -21,7 +21,14 @@ export interface DropdownInstance {
   dispose(): void;
 }
 
-export interface DropdownStatic {
+enum DropdownEvents {
+  SHOW = 'show.bs.dropdown',
+  SHOWN = 'shown.bs.dropdown',
+  HIDE = 'hide.bs.dropdown',
+  HIDDEN = 'hidden.bs.dropdown',
+}
+
+export interface DropdownClass {
   readonly VERSION: string;
   readonly DATA_KEY: string;
   readonly EVENT_KEY: string;
@@ -29,19 +36,11 @@ export interface DropdownStatic {
   getInstance(element: Element | string): DropdownInstance | null;
   getOrCreateInstance(element: Element | string, config?: Partial<DropdownOptions>): DropdownInstance;
   Default: DropdownOptions;
+  Events: typeof DropdownEvents;
 }
 
-export enum DropdownEvents {
-  SHOW = 'show.bs.dropdown',
-  SHOWN = 'shown.bs.dropdown',
-  HIDE = 'hide.bs.dropdown',
-  HIDDEN = 'hidden.bs.dropdown',
-}
+const Dropdown = BsDropdown as unknown as DropdownClass;
 
-const Dropdown = BsDropdown as unknown as DropdownStatic;
-
-if (typeof window !== 'undefined') {
-  window.Dropdown = Dropdown;
-}
+Dropdown.Events = DropdownEvents;
 
 export default Dropdown;

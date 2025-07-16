@@ -7,7 +7,12 @@ export interface AlertInstance {
 
 export type ComponentOptions = Record<string, any>;
 
-export interface AlertStatic {
+enum AlertEvents {
+  close = 'close.bs.alert',
+  closed = 'closed.bs.alert',
+}
+
+export interface AlertClass {
   readonly VERSION: string;
   readonly DATA_KEY: string;
   readonly EVENT_KEY: string;
@@ -15,17 +20,11 @@ export interface AlertStatic {
   new (element: string | Element): AlertInstance;
   getInstance(element: string | Element): AlertInstance | null;
   getOrCreateInstance(element: string | Element, config?: ComponentOptions): AlertInstance;
+  Events: typeof AlertEvents;
 }
 
-export enum AlertEvents {
-  close = 'close.bs.alert',
-  closed = 'closed.bs.alert',
-}
+const Alert = BsAlert as unknown as AlertClass;
 
-const Alert = BsAlert as unknown as AlertStatic;
-
-if (typeof window !== 'undefined') {
-  window.Alert = Alert;
-}
+Alert.Events = AlertEvents;
 
 export default Alert;

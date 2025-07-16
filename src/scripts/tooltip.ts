@@ -39,7 +39,15 @@ export interface TooltipInstance {
   dispose(): void;
 }
 
-export interface TooltipStatic {
+enum TooltipEvents {
+  SHOW = 'show.bs.tooltip',
+  SHOWN = 'shown.bs.tooltip',
+  HIDE = 'hide.bs.tooltip',
+  HIDDEN = 'hidden.bs.tooltip',
+  INSERTED = 'inserted.bs.tooltip',
+}
+
+export interface TooltipClass {
   readonly VERSION: string;
   readonly DATA_KEY: string;
   readonly EVENT_KEY: string;
@@ -54,23 +62,14 @@ export interface TooltipStatic {
   >;
   DefaultType: Record<keyof TooltipOptions, string>;
   SetContentFunction: SetContentFunction;
+  Events: typeof TooltipEvents;
 }
 
-export enum TooltipEvents {
-  SHOW = 'show.bs.tooltip',
-  SHOWN = 'shown.bs.tooltip',
-  HIDE = 'hide.bs.tooltip',
-  HIDDEN = 'hidden.bs.tooltip',
-  INSERTED = 'inserted.bs.tooltip',
-}
+const Tooltip = BsTooltip as unknown as TooltipClass;
 
-const Tooltip = BsTooltip as unknown as TooltipStatic;
+Tooltip.Events = TooltipEvents;
 
 const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
 Array.from(tooltipTriggerList).map((tooltipTriggerEl) => new Tooltip(tooltipTriggerEl));
-
-if (typeof window !== 'undefined') {
-  window.Tooltip = Tooltip;
-}
 
 export default Tooltip;
