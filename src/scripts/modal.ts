@@ -14,17 +14,7 @@ export interface ModalInstance {
   dispose(): void;
 }
 
-export interface ModalStatic {
-  readonly VERSION: string;
-  readonly DATA_KEY: string;
-  readonly EVENT_KEY: string;
-  new (element: string | Element, options?: Partial<ModalOptions>): ModalInstance;
-  getInstance(element: string | Element): ModalInstance | null;
-  getOrCreateInstance(element: string | Element, config?: Partial<ModalOptions>): ModalInstance;
-  Default: ModalOptions;
-}
-
-export enum ModalEvents {
+enum ModalEvents {
   show = 'show.bs.modal',
   shown = 'shown.bs.modal',
   hide = 'hide.bs.modal',
@@ -32,6 +22,24 @@ export enum ModalEvents {
   hidePrevented = 'hidePrevented.bs.modal',
 }
 
-const Modal = BsModal as unknown as ModalStatic;
+export interface ModalClass {
+  readonly VERSION: string;
+  readonly DATA_KEY: string;
+  readonly EVENT_KEY: string;
+  new (element: string | Element, options?: Partial<ModalOptions>): ModalInstance;
+  getInstance(element: string | Element): ModalInstance | null;
+  getOrCreateInstance(element: string | Element, config?: Partial<ModalOptions>): ModalInstance;
+  Default: ModalOptions;
+  Events: typeof ModalEvents;
+}
+
+export interface ModalEvent extends CustomEvent {
+  target: HTMLElement;
+  relatedTarget?: HTMLElement;
+}
+
+const Modal = BsModal as unknown as ModalClass;
+
+Modal.Events = ModalEvents;
 
 export default Modal;

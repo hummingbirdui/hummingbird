@@ -12,7 +12,14 @@ export interface CollapseInstance {
   dispose(): void;
 }
 
-export interface CollapseStatic {
+enum CollapseEvents {
+  show = 'show.bs.collapse',
+  shown = 'shown.bs.collapse',
+  hide = 'hide.bs.collapse',
+  hidden = 'hidden.bs.collapse',
+}
+
+export interface CollapseClass {
   readonly VERSION: string;
   readonly DATA_KEY: string;
   readonly EVENT_KEY: string;
@@ -20,15 +27,11 @@ export interface CollapseStatic {
   getInstance(element: Element | string): CollapseInstance | null;
   getOrCreateInstance(element: Element | string, config?: Partial<CollapseOptions>): CollapseInstance;
   Default: CollapseOptions;
+  Events: typeof CollapseEvents;
 }
 
-export enum CollapseEvents {
-  show = 'show.bs.collapse',
-  shown = 'shown.bs.collapse',
-  hide = 'hide.bs.collapse',
-  hidden = 'hidden.bs.collapse',
-}
+const Collapse = BsCollapse as unknown as CollapseClass;
 
-const Collapse = BsCollapse as unknown as CollapseStatic;
+Collapse.Events = CollapseEvents;
 
 export default Collapse;

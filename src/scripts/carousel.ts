@@ -21,7 +21,12 @@ export interface CarouselInstance {
 
 type GetOrCreateInstance = (element: Element | string, config?: Partial<CarouselOptions>) => CarouselInstance;
 
-export interface CarouselStatic {
+enum CarouselEvents {
+  slide = 'slide.bs.carousel',
+  slid = 'slid.bs.carousel',
+}
+
+export interface CarouselClass {
   readonly VERSION: string;
   readonly DATA_KEY: string;
   readonly EVENT_KEY: string;
@@ -30,22 +35,20 @@ export interface CarouselStatic {
   getOrCreateInstance: GetOrCreateInstance;
   carouselInstance: GetOrCreateInstance;
   Default: CarouselOptions;
-}
-
-export enum CarouselEvents {
-  slide = 'slide.bs.carousel',
-  slid = 'slid.bs.carousel',
+  Events: typeof CarouselEvents;
 }
 
 type Direction = 'left' | 'right';
 
-export interface Event {
+export interface CarouselEvent {
   readonly direction: Direction;
   readonly relatedTarget: Element;
   readonly from: number;
   readonly to: number;
 }
 
-const Carousel = BsCarousel as unknown as CarouselStatic;
+const Carousel = BsCarousel as unknown as CarouselClass;
+
+Carousel.Events = CarouselEvents;
 
 export default Carousel;
