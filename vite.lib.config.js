@@ -10,6 +10,7 @@ const scriptsDir = resolve(srcDir, 'scripts');
 // root-level entries
 const rootEntries = {
   index: resolve(srcDir, 'index.ts'),
+  'index.umd': resolve(srcDir, 'index.umd.ts'),
 };
 
 // component entries

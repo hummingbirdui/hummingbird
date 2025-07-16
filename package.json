@@ -1,6 +1,6 @@
 {
   "name": "@hummingbirdui/hummingbird",
-  "version": "0.0.0-insiders.0.1",
+  "version": "0.0.0-insiders.1.3",
   "description": "An open-source system designed for rapid development, without sacrificing the granular control of utility-first CSS.",
   "keywords": [
     "hummingbird",
@@ -34,16 +34,14 @@
   "repository": "https://github.com/hummingbirdui/hummingbird",
   "bugs": "https://github.com/hummingbirdui/hummingbird/issues",
   "files": [
-    "lib",
-    "dist",
+    "dist/*.{js,css,js.map,css.map}",
+    "lib/esm/**/*.{js,js.map,d.ts}",
+    "lib/cjs/**/*.{js,js.map,d.ts}",
     "src/index.css",
-    "src/components",
-    "src/theme"
+    "src/components/**/*.css",
+    "src/theme/**/*.css"
   ],
   "author": "Hummingbird UI",
-  "contributors": [
-    "Khayrul Islam (https://www.linkedin.com/in/khayrul-developer/)"
-  ],
   "scripts": {
     "start": "cross-env NODE_ENV=development run-p start:*",
     "start:js": "vite build --mode bundle --outDir=static --emptyOutDir=false --watch",

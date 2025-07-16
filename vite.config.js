@@ -10,21 +10,19 @@ export default defineConfig(({ mode }) => {
   return {
     publicDir: false,
     build: {
-      emptyOutDir: !isBundle, // Only empty on first build
+      emptyOutDir: !isBundle,
       sourcemap: true,
       outDir: 'dist',
       minify: false,
       lib: {
-        entry: path.resolve(__dirname, 'src/index.ts'),
+        entry: path.resolve(__dirname, isBundle ? 'src/index.umd.ts' : 'src/index.ts'),
         name: 'Hummingbird',
         fileName: 'hummingbird',
       },
       rollupOptions: {
-        // Only externalize dependencies for non-bundle builds
         external: isBundle ? [] : ['@popperjs/core'],
         output: isBundle
           ? [
-              // Bundle builds - include all dependencies
               {
                 format: 'umd',
                 entryFileNames: 'hummingbird.bundle.js',
@@ -38,7 +36,6 @@ export default defineConfig(({ mode }) => {
               },
             ]
           : [
-              // Regular builds - external dependencies
               {
                 format: 'umd',
                 entryFileNames: 'hummingbird.js',
