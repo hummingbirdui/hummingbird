@@ -22,6 +22,30 @@ const sitemap: Sitemap[] = [
         name: 'Tutorial',
         path: '#',
       },
+      {
+        name: 'React',
+        path: '/docs/react',
+      },
+      {
+        name: 'Next',
+        path: '/docs/next',
+      },
+      {
+        name: 'Vue',
+        path: '/docs/vue',
+      },
+      {
+        name: 'Nuxt',
+        path: '/docs/nuxt',
+      },
+      {
+        name: 'Angular',
+        path: '/docs/angular',
+      },
+      {
+        name: 'Svelte',
+        path: '/docs/svelte',
+      },
     ],
   },
   {
