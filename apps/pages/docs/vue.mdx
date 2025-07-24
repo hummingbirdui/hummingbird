@@ -1,0 +1,112 @@
+---
+title: Vue
+layout: "../../layouts/LayoutDoc.astro"
+---
+
+import Example from "../../components/docs/Example.astro";
+
+## Getting Started
+
+Integrating Hummingbird UI with your Vue project is simple and flexible. Below are examples of how to initialize the library and optimize performance by only importing the components you need.
+
+---
+
+### Initialization
+
+To use Hummingbird in a Vue 3 project, start by importing the full library. You can do this in the `onMounted` lifecycle hook within your `App.vue` or a layout component to ensure it only runs on the client side.
+
+<Example>
+  <div slot="code">
+    ```vue
+    <script setup>
+    import { onMounted } from 'vue';
+
+    // Initialize Hummingbird
+    onMounted(() => {
+      import('@hummingbirdui/hummingbird')
+    })
+    </script>
+
+    <template>
+      ...
+    </template>
+    ```
+
+  </div>
+</Example>
+
+This approach is useful during development or when you want to include the entire JavaScript bundle. However, for better performance in production, consider importing only the modules you need.
+
+---
+
+### Optimize
+
+To optimize your app's performance, selectively import only the JavaScript modules for the components you're actually using. This reduces bundle size and speeds up loading.
+
+Below is an example where only the `modal` component is included:
+
+<Example>
+  <div slot="code">
+    ```vue
+    <script setup>
+    import { onMounted } from 'vue';
+
+    onMounted(() => {
+      // import('@hummingbirdui/hummingbird/lib/esm/scripts/alert');
+      // import('@hummingbirdui/hummingbird/lib/esm/scripts/button');
+      // import('@hummingbirdui/hummingbird/lib/esm/scripts/carousel');
+      // import('@hummingbirdui/hummingbird/lib/esm/scripts/collapse');
+      // import('@hummingbirdui/hummingbird/lib/esm/scripts/dropdown');
+      import('@hummingbirdui/hummingbird/lib/esm/scripts/modal');
+      // import('@hummingbirdui/hummingbird/lib/esm/scripts/offcanvas');
+      // import('@hummingbirdui/hummingbird/lib/esm/scripts/popover');
+      // import('@hummingbirdui/hummingbird/lib/esm/scripts/scrollspy');
+      // import('@hummingbirdui/hummingbird/lib/esm/scripts/tab');
+      // import('@hummingbirdui/hummingbird/lib/esm/scripts/toast');
+      // import('@hummingbirdui/hummingbird/lib/esm/scripts/tooltip');
+    })
+    </script>
+
+    <template>
+      ...
+    </template>
+    ```
+
+  </div>
+</Example>
+
+---
+
+### JavaScript API
+
+Hummingbird also provides a JavaScript API for programmatic control of components. For example, you can toggle an modal manually using the API.
+
+Here’s how to initialize and use the `Modal` component:
+
+<Example>
+  <div slot="code">
+    ```vue
+    <script>
+    import { Modal } from '@hummingbirdui/hummingbird';
+    import { onMounted } from 'vue';
+
+    onMounted(() => {
+      const myModal = new Modal('.modal');
+      const openBtn = document.querySelector('[data-open-demo-modal]');
+
+      openBtn.addEventListener('click', () => {
+        myModal.toggle();
+      })
+    })
+    </script>
+
+    <template>
+      <button class="btn btn-primary" data-open-demo-modal>Toggle Modal</button>
+      <div class="modal"> ... </div>
+    </template>
+    ```
+
+  </div>
+</Example>
+
+This method gives you full control over when and how the component is shown or hidden, which is especially useful in dynamic interfaces.
