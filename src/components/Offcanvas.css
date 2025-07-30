@@ -119,46 +119,46 @@
 }
 
 @utility offcanvas-sm {
-  @media (max-width: theme(--breakpoint-sm)) {
+  @variant max-sm {
     @apply offcanvas;
   }
-  @media (min-width: theme(--breakpoint-sm)) {
+  @variant sm {
     @apply offcanvas-static;
   }
 }
 
 @utility offcanvas-md {
-  @media (max-width: theme(--breakpoint-md)) {
+  @variant max-md {
     @apply offcanvas;
   }
-  @media (min-width: theme(--breakpoint-md)) {
+  @variant md {
     @apply offcanvas-static;
   }
 }
 
 @utility offcanvas-lg {
-  @media (max-width: theme(--breakpoint-lg)) {
+  @variant max-lg {
     @apply offcanvas;
   }
-  @media (min-width: theme(--breakpoint-lg)) {
+  @variant lg {
     @apply offcanvas-static;
   }
 }
 
 @utility offcanvas-xl {
-  @media (max-width: theme(--breakpoint-xl)) {
+  @variant max-xl {
     @apply offcanvas;
   }
-  @media (min-width: theme(--breakpoint-xl)) {
+  @variant xl {
     @apply offcanvas-static;
   }
 }
 
 @utility offcanvas-2xl {
-  @media (max-width: theme(--breakpoint-2xl)) {
+  @variant max-2xl {
     @apply offcanvas;
   }
-  @media (min-width: theme(--breakpoint-2xl)) {
+  @variant 2xl {
     @apply offcanvas-static;
   }
 }

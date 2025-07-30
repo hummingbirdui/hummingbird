@@ -34,7 +34,7 @@
   outline-0
   text-[length:var(--modal-font-size)];
 
-  @media (min-width: theme(--breakpoint-sm)) {
+  @variant sm {
     --modal-margin: --spacing(7);
   }
 }
@@ -57,7 +57,7 @@
     @apply transform-[var(--modal-scale-transform)];
   }
 
-  @media (min-width: theme(--breakpoint-sm)) {
+  @variant sm {
     @apply max-w-[var(--modal-width)] mx-auto;
   }
 }
@@ -134,20 +134,20 @@
 }
 
 @utility modal-sm {
-  @media (min-width: theme(--breakpoint-sm)) {
+  @variant sm {
     --modal-width: 18.75rem;
   }
 }
 @utility modal-lg {
-  @media (min-width: theme(--breakpoint-lg)) {
+  @variant lg {
     --modal-width: 50rem;
   }
 }
 @utility modal-xl {
-  @media (min-width: theme(--breakpoint-lg)) {
+  @variant lg {
     --modal-width: 50rem;
   }
-  @media (min-width: theme(--breakpoint-xl)) {
+  @variant xl {
     --modal-width: 71.25rem;
   }
 }
@@ -170,27 +170,27 @@
 }
 
 @utility modal-fullscreen-sm-down {
-  @media (max-width: theme(--breakpoint-sm)) {
+  @variant max-sm {
     @apply modal-fullscreen;
   }
 }
 @utility modal-fullscreen-md-down {
-  @media (max-width: theme(--breakpoint-md)) {
+  @variant max-md {
     @apply modal-fullscreen;
   }
 }
 @utility modal-fullscreen-lg-down {
-  @media (max-width: theme(--breakpoint-lg)) {
+  @variant max-lg {
     @apply modal-fullscreen;
   }
 }
 @utility modal-fullscreen-xl-down {
-  @media (max-width: theme(--breakpoint-xl)) {
+  @variant max-xl {
     @apply modal-fullscreen;
   }
 }
-@utility modal-fullscreen-xxl-down {
-  @media (max-width: theme(--breakpoint-2xl)) {
+@utility modal-fullscreen-2xl-down {
+  @variant max-2xl {
     @apply modal-fullscreen;
   }
 }
