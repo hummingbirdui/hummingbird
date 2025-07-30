@@ -46,6 +46,10 @@ const sitemap: Sitemap[] = [
         name: 'Svelte',
         path: '/docs/svelte',
       },
+      {
+        name: 'Gatsby',
+        path: '/docs/gatsby',
+      },
     ],
   },
   {
