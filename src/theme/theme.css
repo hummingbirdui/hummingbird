@@ -126,7 +126,7 @@
 }
 
 @layer {
-  .dark {
+  @variant dark {
     /* base colors */
     --color-default: var(--color-gray-950);
     --color-default-color: var(--color-gray-100);

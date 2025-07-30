@@ -57,7 +57,7 @@
     @apply block;
   }
 
-  .dark & {
+  @variant dark {
     --dropdown-border-color: var(--color-border-base);
   }
 }
