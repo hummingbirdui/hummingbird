@@ -25,7 +25,7 @@
 }
 @utility card-action {
   @apply cursor-pointer text-left transition-[background] duration-200;
-  &:hover {
+  @variant hover {
     --card-bg: var(--color-muted);
   }
 }

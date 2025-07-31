@@ -35,7 +35,7 @@
     @apply bg-[var(--input-disabled-bg)];
   }
 
-  &:hover {
+  @variant hover {
     @apply bg-[var(--input-hover-bg)];
   }
 
@@ -87,12 +87,12 @@
 
   &:is(:disabled, [disabled]) {
     @apply opacity-50;
-    &:hover {
+    @variant hover {
       @apply border-[var(--input-disabled-border-color)];
     }
   }
 
-  &:hover {
+  @variant hover {
     @apply border-[var(--input-hover-border-color)];
   }
 

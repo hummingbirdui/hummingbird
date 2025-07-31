@@ -67,7 +67,7 @@
   border-[length:var(--accordion-border-width)]
   border-[var(--accordion-border-color)]
   rounded-[var(--accordion-border-radius)];
-  &:hover {
+  @variant hover {
     @apply text-[var(--accordion-hover-color)] bg-[var(--accordion-hover-bg)];
   }
 }
