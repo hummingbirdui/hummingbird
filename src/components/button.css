@@ -44,7 +44,7 @@
     @apply bg-[var(--btn-bg)];
   }
 
-  &:focus-visible {
+  @variant focus-visible {
     @apply outline-0 
     text-[var(--btn-hover-color)]
     bg-[var(--btn-hover-bg)]
@@ -369,7 +369,7 @@
 
   @apply underline;
 
-  &:focus-visible {
+  @variant focus-visible {
     @apply ring-[--alpha(var(--btn-color)/50%)];
   }
 }

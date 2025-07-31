@@ -9,6 +9,7 @@
     --nav-link-line-height: 1.5;
     --nav-link-disabled-color: var(--color-disabled-color);
     --nav-link-active-color: unset;
+    --nav-link-focus-ring-color: --alpha(var(--nav-link-active-color) / 30%);
 
     @apply flex flex-wrap pl-0 mb-0 list-none
     bg-[var(--nav-bg)];
@@ -35,9 +36,9 @@
     transition-colors duration-150 ease-in-out;
   }
 
-  /* &:focus-visible {
-    @apply outline-0;
-  } */
+  @variant focus-visible {
+    @apply outline-0 ring-4 ring-[var(--nav-link-focus-ring-color)];
+  }
 
   &.disabled,
   &:disabled {
@@ -114,40 +115,47 @@
   --nav-link-color: --alpha(var(--color-contrast) / 50%);
   --nav-link-disabled-color: --alpha(var(--color-contrast) / 30%);
   --nav-link-active-color: var(--color-contrast);
+  --nav-link-focus-ring-color: --alpha(var(--color-primary-dark) / 30%);
 }
 @utility nav-secondary {
   --nav-bg: var(--color-secondary);
   --nav-link-color: --alpha(var(--color-contrast) / 50%);
   --nav-link-disabled-color: --alpha(var(--color-contrast) / 30%);
   --nav-link-active-color: var(--color-contrast);
+  --nav-link-focus-ring-color: --alpha(var(--color-secondary-dark) / 30%);
 }
 @utility nav-info {
   --nav-bg: var(--color-info);
   --nav-link-color: --alpha(var(--color-contrast) / 50%);
   --nav-link-disabled-color: --alpha(var(--color-contrast) / 30%);
   --nav-link-active-color: var(--color-contrast);
+  --nav-link-focus-ring-color: --alpha(var(--color-info-dark) / 30%);
 }
 @utility nav-success {
   --nav-bg: var(--color-success);
   --nav-link-color: --alpha(var(--color-contrast) / 50%);
   --nav-link-disabled-color: --alpha(var(--color-contrast) / 30%);
   --nav-link-active-color: var(--color-contrast);
+  --nav-link-focus-ring-color: --alpha(var(--color-success-dark) / 30%);
 }
 @utility nav-warning {
   --nav-bg: var(--color-warning);
   --nav-link-color: --alpha(var(--color-contrast) / 50%);
   --nav-link-disabled-color: --alpha(var(--color-contrast) / 30%);
   --nav-link-active-color: var(--color-contrast);
+  --nav-link-focus-ring-color: --alpha(var(--color-warning-dark) / 30%);
 }
 @utility nav-danger {
   --nav-bg: var(--color-danger);
   --nav-link-color: --alpha(var(--color-contrast) / 50%);
   --nav-link-disabled-color: --alpha(var(--color-contrast) / 30%);
   --nav-link-active-color: var(--color-contrast);
+  --nav-link-focus-ring-color: --alpha(var(--color-danger-dark) / 30%);
 }
 @utility nav-neutral {
   --nav-bg: var(--color-main);
   --nav-link-color: --alpha(var(--color-contrast) / 50%);
   --nav-link-disabled-color: --alpha(var(--color-contrast) / 30%);
   --nav-link-active-color: var(--color-contrast);
+  --nav-link-focus-ring-color: --alpha(var(--color-neutral-dark) / 30%);
 }

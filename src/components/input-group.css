@@ -34,7 +34,7 @@
   .btn {
     @apply relative z-2;
 
-    &:focus {
+    @variant focus {
       @apply z-5;
     }
   }

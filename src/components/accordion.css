@@ -52,7 +52,7 @@
     bg-size-[var(--accordion-btn-icon-width)]
     transition-[var(--accordion-btn-icon-transition)];
   }
-  &:focus {
+  @variant focus {
     @apply outline-0 bg-[var(--accordion-hover-bg)];
   }
 }
