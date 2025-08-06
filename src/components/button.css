@@ -1,27 +1,27 @@
 @utility btn {
-  --btn-font-size: var(--input-btn-font-size);
-  --btn-radius: var(--input-btn-radius);
-  --btn-padding-x: var(--input-btn-padding-x);
-  --btn-padding-y: var(--input-btn-padding-y);
-  --btn-line-height: var(--input-btn-line-height);
-  --btn-border-width: var(--input-btn-border-width);
-  --btn-bg: var(--color-highlight);
-  --btn-color: var(--color-default-color);
-  --btn-font-weight: var(--font-weight-semibold);
-  --btn-hover-bg: --alpha(var(--btn-bg) / 88%);
-  --btn-hover-color: var(--btn-color);
-  --btn-border-color: transparent;
-  --btn-disabled-border-color: transparent;
-  --btn-disabled-bg: var(--color-disabled);
-  --btn-disabled-color: var(--color-disabled-color);
-  --btn-active-bg: var(--btn-hover-bg);
-  --btn-active-color: var(--btn-color);
-  --btn-width: unset;
-  --btn-height: unset;
-
   @layer base {
+    --btn-font-size: var(--input-btn-font-size);
+    --btn-radius: var(--input-btn-radius);
+    --btn-padding-x: var(--input-btn-padding-x);
+    --btn-padding-y: var(--input-btn-padding-y);
+    --btn-line-height: var(--input-btn-line-height);
+    --btn-border-width: var(--input-btn-border-width);
+    --btn-bg: var(--color-highlight);
+    --btn-color: var(--color-default-color);
+    --btn-font-weight: var(--font-weight-semibold);
+    --btn-hover-bg: --alpha(var(--btn-bg) / 88%);
+    --btn-hover-color: var(--btn-color);
+    --btn-border-color: transparent;
+    --btn-disabled-border-color: transparent;
+    --btn-disabled-bg: var(--color-disabled);
+    --btn-disabled-color: var(--color-disabled-color);
+    --btn-active-bg: var(--btn-hover-bg);
+    --btn-active-color: var(--btn-color);
+    --btn-width: unset;
+    --btn-height: unset;
+
     @apply inline-flex items-center justify-center gap-1.5
-    transition-[background] duration-200 relative
+    transition-[background] duration-200
     cursor-pointer
     bg-[var(--btn-bg)]
     text-[length:var(--btn-font-size)]
@@ -38,44 +38,44 @@
     border-[var(--btn-border-color)]
     hover:bg-[var(--btn-hover-bg)]
     hover:text-[var(--btn-hover-color)];
-  }
 
-  .btn-check + &:hover {
-    @apply bg-[var(--btn-bg)];
-  }
+    .btn-check + &:hover {
+      @apply bg-[var(--btn-bg)];
+    }
 
-  @variant focus-visible {
-    @apply outline-0 
-    text-[var(--btn-hover-color)]
-    bg-[var(--btn-hover-bg)]
-    ring-4 ring-[--alpha(var(--btn-hover-bg)/50%)];
-  }
+    @variant focus-visible {
+      @apply outline-0 
+      text-[var(--btn-hover-color)]
+      bg-[var(--btn-hover-bg)]
+      ring-4 ring-[--alpha(var(--btn-hover-bg)/50%)];
+    }
 
-  .btn-check:focus-visible + & {
-    @apply outline-0
-    ring-4 ring-[--alpha(var(--btn-hover-bg)/50%)];
-  }
+    .btn-check:focus-visible + & {
+      @apply outline-0
+      ring-4 ring-[--alpha(var(--btn-hover-bg)/50%)];
+    }
 
-  .btn-check:checked + &,
-  :not(.btn-check) + &:active,
-  &:active,
-  &.active,
-  &.show {
-    @apply bg-[var(--btn-active-bg)] text-[var(--btn-active-color)];
-  }
+    .btn-check:checked + &,
+    :not(.btn-check) + &:active,
+    &:active,
+    &.active,
+    &.show {
+      @apply bg-[var(--btn-active-bg)] text-[var(--btn-active-color)];
+    }
 
-  &:is(:disabled, [disabled], .disabled) {
-    @apply pointer-events-none
-    bg-[var(--btn-disabled-bg)]
-    text-[var(--btn-disabled-color)]
-    border-[var(--btn-disabled-border-color)];
-  }
-  + input[type='file'] {
-    @apply hidden;
-  }
-  .input-group & {
+    &:is(:disabled, [disabled], .disabled) {
+      @apply pointer-events-none
+      bg-[var(--btn-disabled-bg)]
+      text-[var(--btn-disabled-color)]
+      border-[var(--btn-disabled-border-color)];
+    }
     + input[type='file'] {
-      @apply block;
+      @apply hidden;
+    }
+    .input-group & {
+      + input[type='file'] {
+        @apply block;
+      }
     }
   }
 }

@@ -1,31 +1,29 @@
 @utility table {
-  --table-bg: initial;
-  --table-color: var(--color-highlight-color);
-  --table-cell-padding-x: --spacing(4);
-  --table-cell-padding-y: --spacing(4);
-  --table-border-color: var(--color-border-light);
-  --table-font-size: var(--text-sm);
-  --table-head-bg: var(--color-subtle);
-  --table-head-color: var(--color-default-color);
-  --table-striped-bg: var(--color-muted);
-  --table-striped-color: var(--color-highlight-color);
-  --table-active-bg: var(--color-highlight);
-  --table-active-color: var(--color-default-color);
-  --table-hover-bg: var(--color-highlight);
-  --table-hover-color: var(--color-highlight-color);
+  @layer base {
+    --table-bg: initial;
+    --table-color: var(--color-highlight-color);
+    --table-cell-padding-x: --spacing(4);
+    --table-cell-padding-y: --spacing(4);
+    --table-border-color: var(--color-border-light);
+    --table-font-size: var(--text-sm);
+    --table-head-bg: var(--color-subtle);
+    --table-head-color: var(--color-default-color);
+    --table-striped-bg: var(--color-muted);
+    --table-striped-color: var(--color-highlight-color);
+    --table-active-bg: var(--color-highlight);
+    --table-active-color: var(--color-default-color);
+    --table-hover-bg: var(--color-highlight);
+    --table-hover-color: var(--color-highlight-color);
 
-  @apply w-full text-left
-  text-[length:var(--table-font-size)]
-  leading-[1.3];
+    @apply w-full text-left
+    text-[length:var(--table-font-size)]
+    leading-[1.3];
 
-  th {
-    @layer base {
+    th {
       @apply font-medium;
     }
-  }
 
-  > :not(caption) > * > * {
-    @layer base {
+    > :not(caption) > * > * {
       @apply align-middle
       py-[var(--table-cell-padding-y)]
       px-[var(--table-cell-padding-x)]
@@ -34,20 +32,18 @@
       border-b
       border-[var(--table-border-color)];
     }
-  }
 
-  thead,
-  tfoot {
-    td,
-    th {
-      --table-cell-padding-y: --spacing(3);
+    thead,
+    tfoot {
+      td,
+      th {
+        --table-cell-padding-y: --spacing(3);
+      }
     }
-  }
 
-  thead {
-    td,
-    th {
-      @layer base {
+    thead {
+      td,
+      th {
         @apply text-[var(--table-head-color)];
       }
     }
@@ -55,21 +51,19 @@
 }
 
 @utility table-highlight {
-  thead,
-  tfoot {
-    td,
-    th {
-      @layer base {
+  @layer base {
+    thead,
+    tfoot {
+      td,
+      th {
         @apply border-b-0 bg-[var(--table-head-bg)];
       }
     }
-  }
-  &:has(tfoot) {
-    tbody {
-      tr:last-child {
-        td,
-        th {
-          @layer base {
+    &:has(tfoot) {
+      tbody {
+        tr:last-child {
+          td,
+          th {
             @apply border-b-0;
           }
         }
@@ -130,8 +124,8 @@
 }
 
 @utility table-hover {
-  > tbody > tr:hover > * {
-    @layer base {
+  @layer base {
+    > tbody > tr:hover > * {
       @apply bg-[var(--table-hover-bg)] text-[var(--table-hover-color)];
     }
   }
@@ -192,6 +186,7 @@
   --table-active-bg: --alpha(var(--color-danger-light) / 40%);
 }
 
+/* TODO: Move to base styles */
 @layer base {
   caption {
     @apply text-left caption-bottom font-medium p-4;
