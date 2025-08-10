@@ -1,152 +1,205 @@
 @utility badge {
-  --badge-bg: var(--color-main);
-  --badge-color: var(--color-contrast);
-  --badge-font-size: var(--text-xs);
-  --badge-padding-y: --spacing(0.75);
-  --badge-padding-x: --spacing(1.5);
-  --badge-border-color: transparent;
-  --badge-link-hover-bg: var(--color-dark);
-  @apply inline-flex items-center justify-center gap-1 align-middle transition-[background] duration-200
-  bg-[var(--badge-bg)]
-  text-[var(--badge-color)]
-  text-[length:var(--badge-font-size)]
-  p-[var(--badge-padding-y)_var(--badge-padding-x)]
-  leading-[1]
-  font-semibold
-  rounded-full
-  border
-  border-[var(--badge-border-color)];
+  @layer base {
+    --badge-bg: var(--color-main);
+    --badge-color: var(--color-contrast);
+    --badge-font-size: var(--text-xs);
+    --badge-padding-y: --spacing(0.75);
+    --badge-padding-x: --spacing(1.5);
+    --badge-border-color: transparent;
+    --badge-link-hover-bg: var(--color-dark);
+
+    @apply inline-flex items-center justify-center gap-1 align-middle transition-[background] duration-200
+    bg-[var(--badge-bg)]
+    text-[var(--badge-color)]
+    text-[length:var(--badge-font-size)]
+    p-[var(--badge-padding-y)_var(--badge-padding-x)]
+    leading-[1]
+    font-semibold
+    rounded-full
+    border
+    border-[var(--badge-border-color)];
+  }
 }
 
 @utility badge-md {
-  --badge-padding-y: --spacing(1.25);
-  --badge-padding-x: --spacing(2);
+  @layer base {
+    --badge-padding-y: --spacing(1.25);
+    --badge-padding-x: --spacing(2);
+  }
 }
 @utility badge-lg {
-  --badge-padding-y: --spacing(2);
-  --badge-padding-x: --spacing(3);
-  --badge-font-size: var(--text-sm);
+  @layer base {
+    --badge-padding-y: --spacing(2);
+    --badge-padding-x: --spacing(3);
+    --badge-font-size: var(--text-sm);
+  }
 }
 
 @utility badge-link {
-  @apply cursor-pointer
-  hover:bg-[var(--badge-link-hover-bg)];
+  @layer base {
+    @apply cursor-pointer
+    hover:bg-[var(--badge-link-hover-bg)];
+  }
 }
 
 @utility badge-action-btn {
-  @apply cursor-pointer flex items-center justify-center rounded-full;
-  & > * {
-    @apply transition-colors duration-200 text-[--alpha(var(--badge-color)/60%)] hover:text-[var(--badge-color)];
+  @layer base {
+    @apply cursor-pointer flex items-center justify-center rounded-full;
+    & > * {
+      @apply transition-colors duration-200 text-[--alpha(var(--badge-color)/60%)] hover:text-[var(--badge-color)];
+    }
   }
 }
 
 @utility badge-primary {
-  --badge-bg: var(--color-primary);
-  --badge-link-hover-bg: var(--color-primary-dark);
+  @layer base {
+    --badge-bg: var(--color-primary);
+    --badge-link-hover-bg: var(--color-primary-dark);
+  }
 }
 @utility badge-secondary {
-  --badge-bg: var(--color-secondary);
-  --badge-link-hover-bg: var(--color-secondary-dark);
+  @layer base {
+    --badge-bg: var(--color-secondary);
+    --badge-link-hover-bg: var(--color-secondary-dark);
+  }
 }
 @utility badge-info {
-  --badge-bg: var(--color-info);
-  --badge-link-hover-bg: var(--color-info-dark);
+  @layer base {
+    --badge-bg: var(--color-info);
+    --badge-link-hover-bg: var(--color-info-dark);
+  }
 }
 @utility badge-success {
-  --badge-bg: var(--color-success);
-  --badge-link-hover-bg: var(--color-success-dark);
+  @layer base {
+    --badge-bg: var(--color-success);
+    --badge-link-hover-bg: var(--color-success-dark);
+  }
 }
 @utility badge-warning {
-  --badge-bg: var(--color-warning);
-  --badge-link-hover-bg: var(--color-warning-dark);
+  @layer base {
+    --badge-bg: var(--color-warning);
+    --badge-link-hover-bg: var(--color-warning-dark);
+  }
 }
 @utility badge-danger {
-  --badge-bg: var(--color-danger);
-  --badge-link-hover-bg: var(--color-danger-dark);
+  @layer base {
+    --badge-bg: var(--color-danger);
+    --badge-link-hover-bg: var(--color-danger-dark);
+  }
 }
 
 /* subtle variant */
 @utility badge-subtle {
-  --badge-bg: var(--color-muted);
-  --badge-color: var(--color-main);
-  --badge-border-color: var(--color-border-base);
-  --badge-link-hover-bg: var(--color-highlight);
+  @layer base {
+    --badge-bg: var(--color-muted);
+    --badge-color: var(--color-main);
+    --badge-border-color: var(--color-border-base);
+    --badge-link-hover-bg: var(--color-highlight);
+  }
 }
 @utility badge-subtle-primary {
-  --badge-bg: --alpha(var(--color-primary) / 15%);
-  --badge-color: var(--color-primary);
-  --badge-border-color: --alpha(var(--color-primary) / 50%);
-  --badge-link-hover-bg: --alpha(var(--color-primary) / 35%);
+  @layer base {
+    --badge-bg: --alpha(var(--color-primary) / 15%);
+    --badge-color: var(--color-primary);
+    --badge-border-color: --alpha(var(--color-primary) / 50%);
+    --badge-link-hover-bg: --alpha(var(--color-primary) / 35%);
+  }
 }
 @utility badge-subtle-secondary {
-  --badge-bg: --alpha(var(--color-secondary) / 15%);
-  --badge-color: var(--color-secondary);
-  --badge-border-color: --alpha(var(--color-secondary) / 50%);
-  --badge-link-hover-bg: --alpha(var(--color-secondary) / 35%);
+  @layer base {
+    --badge-bg: --alpha(var(--color-secondary) / 15%);
+    --badge-color: var(--color-secondary);
+    --badge-border-color: --alpha(var(--color-secondary) / 50%);
+    --badge-link-hover-bg: --alpha(var(--color-secondary) / 35%);
+  }
 }
 @utility badge-subtle-info {
-  --badge-bg: --alpha(var(--color-info) / 15%);
-  --badge-color: var(--color-info);
-  --badge-border-color: --alpha(var(--color-info) / 50%);
-  --badge-link-hover-bg: --alpha(var(--color-info) / 35%);
+  @layer base {
+    --badge-bg: --alpha(var(--color-info) / 15%);
+    --badge-color: var(--color-info);
+    --badge-border-color: --alpha(var(--color-info) / 50%);
+    --badge-link-hover-bg: --alpha(var(--color-info) / 35%);
+  }
 }
 @utility badge-subtle-success {
-  --badge-bg: --alpha(var(--color-success) / 15%);
-  --badge-color: var(--color-success);
-  --badge-border-color: --alpha(var(--color-success) / 50%);
-  --badge-link-hover-bg: --alpha(var(--color-success) / 35%);
+  @layer base {
+    --badge-bg: --alpha(var(--color-success) / 15%);
+    --badge-color: var(--color-success);
+    --badge-border-color: --alpha(var(--color-success) / 50%);
+    --badge-link-hover-bg: --alpha(var(--color-success) / 35%);
+  }
 }
 @utility badge-subtle-warning {
-  --badge-bg: --alpha(var(--color-warning) / 15%);
-  --badge-color: var(--color-warning);
-  --badge-border-color: --alpha(var(--color-warning) / 50%);
-  --badge-link-hover-bg: --alpha(var(--color-warning) / 35%);
+  @layer base {
+    --badge-bg: --alpha(var(--color-warning) / 15%);
+    --badge-color: var(--color-warning);
+    --badge-border-color: --alpha(var(--color-warning) / 50%);
+    --badge-link-hover-bg: --alpha(var(--color-warning) / 35%);
+  }
 }
 @utility badge-subtle-danger {
-  --badge-bg: --alpha(var(--color-danger) / 15%);
-  --badge-color: var(--color-danger);
-  --badge-border-color: --alpha(var(--color-danger) / 50%);
-  --badge-link-hover-bg: --alpha(var(--color-danger) / 35%);
+  @layer base {
+    --badge-bg: --alpha(var(--color-danger) / 15%);
+    --badge-color: var(--color-danger);
+    --badge-border-color: --alpha(var(--color-danger) / 50%);
+    --badge-link-hover-bg: --alpha(var(--color-danger) / 35%);
+  }
 }
+
+/* outline variant */
 @utility badge-outline {
-  --badge-bg: transparent;
-  --badge-color: var(--color-main);
-  --badge-border-color: var(--color-border-base);
-  --badge-link-hover-bg: var(--color-emphasis);
+  @layer base {
+    --badge-bg: transparent;
+    --badge-color: var(--color-main);
+    --badge-border-color: var(--color-border-base);
+    --badge-link-hover-bg: var(--color-emphasis);
+  }
 }
 @utility badge-outline-primary {
-  --badge-bg: transparent;
-  --badge-color: var(--color-primary);
-  --badge-border-color: --alpha(var(--color-primary) / 50%);
-  --badge-link-hover-bg: --alpha(var(--color-primary) / 12%);
+  @layer base {
+    --badge-bg: transparent;
+    --badge-color: var(--color-primary);
+    --badge-border-color: --alpha(var(--color-primary) / 50%);
+    --badge-link-hover-bg: --alpha(var(--color-primary) / 12%);
+  }
 }
 @utility badge-outline-secondary {
-  --badge-bg: transparent;
-  --badge-color: var(--color-secondary);
-  --badge-border-color: --alpha(var(--color-secondary) / 50%);
-  --badge-link-hover-bg: --alpha(var(--color-secondary) / 12%);
+  @layer base {
+    --badge-bg: transparent;
+    --badge-color: var(--color-secondary);
+    --badge-border-color: --alpha(var(--color-secondary) / 50%);
+    --badge-link-hover-bg: --alpha(var(--color-secondary) / 12%);
+  }
 }
 @utility badge-outline-info {
-  --badge-bg: transparent;
-  --badge-color: var(--color-info);
-  --badge-border-color: --alpha(var(--color-info) / 50%);
-  --badge-link-hover-bg: --alpha(var(--color-info) / 12%);
+  @layer base {
+    --badge-bg: transparent;
+    --badge-color: var(--color-info);
+    --badge-border-color: --alpha(var(--color-info) / 50%);
+    --badge-link-hover-bg: --alpha(var(--color-info) / 12%);
+  }
 }
 @utility badge-outline-success {
-  --badge-bg: transparent;
-  --badge-color: var(--color-success);
-  --badge-border-color: --alpha(var(--color-success) / 50%);
-  --badge-link-hover-bg: --alpha(var(--color-success) / 12%);
+  @layer base {
+    --badge-bg: transparent;
+    --badge-color: var(--color-success);
+    --badge-border-color: --alpha(var(--color-success) / 50%);
+    --badge-link-hover-bg: --alpha(var(--color-success) / 12%);
+  }
 }
 @utility badge-outline-warning {
-  --badge-bg: transparent;
-  --badge-color: var(--color-warning);
-  --badge-border-color: --alpha(var(--color-warning) / 50%);
-  --badge-link-hover-bg: --alpha(var(--color-warning) / 12%);
+  @layer base {
+    --badge-bg: transparent;
+    --badge-color: var(--color-warning);
+    --badge-border-color: --alpha(var(--color-warning) / 50%);
+    --badge-link-hover-bg: --alpha(var(--color-warning) / 12%);
+  }
 }
 @utility badge-outline-danger {
-  --badge-bg: transparent;
-  --badge-color: var(--color-danger);
-  --badge-border-color: --alpha(var(--color-danger) / 50%);
-  --badge-link-hover-bg: --alpha(var(--color-danger) / 12%);
+  @layer base {
+    --badge-bg: transparent;
+    --badge-color: var(--color-danger);
+    --badge-border-color: --alpha(var(--color-danger) / 50%);
+    --badge-link-hover-bg: --alpha(var(--color-danger) / 12%);
+  }
 }

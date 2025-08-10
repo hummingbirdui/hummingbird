@@ -1,16 +1,16 @@
 @utility form-select-fill {
-  --form-select-font-size: var(--input-btn-font-size);
-  --form-select-radius: var(--input-btn-radius);
-  --form-select-padding-x: var(--input-btn-padding-x);
-  --form-select-padding-y: var(--input-btn-padding-y);
-  --form-select-line-height: var(--input-btn-line-height);
-  --form-select-border-width: var(--input-btn-border-width);
-  --form-select-padding-right: --spacing(9);
-  --form-select-bg-size: --spacing(4) --spacing(3);
-  --form-select-indicator: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='none' stroke='%231B2124' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/></svg>");
-  --input-border-color: transparent;
-
   @layer base {
+    --form-select-font-size: var(--input-btn-font-size);
+    --form-select-radius: var(--input-btn-radius);
+    --form-select-padding-x: var(--input-btn-padding-x);
+    --form-select-padding-y: var(--input-btn-padding-y);
+    --form-select-line-height: var(--input-btn-line-height);
+    --form-select-border-width: var(--input-btn-border-width);
+    --form-select-padding-right: --spacing(9);
+    --form-select-bg-size: --spacing(4) --spacing(3);
+    --form-select-indicator: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='none' stroke='%231B2124' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/></svg>");
+    --input-border-color: transparent;
+
     @apply w-full
     appearance-none
     inline-flex items-center justify-center 
@@ -29,43 +29,43 @@
     bg-no-repeat
     bg-[position:right_var(--form-select-padding-x)_center]
     bg-[length:var(--form-select-bg-size)];
-  }
 
-  &:is(:disabled, [disabled]) {
-    @apply bg-[var(--input-disabled-bg)];
-  }
+    &:is(:disabled, [disabled]) {
+      @apply bg-[var(--input-disabled-bg)];
+    }
 
-  @variant hover {
-    @apply bg-[var(--input-hover-bg)];
-  }
+    @variant hover {
+      @apply bg-[var(--input-hover-bg)];
+    }
 
-  &:focus-within,
-  &:focus {
-    @apply outline-0
-    bg-[var(--input-focus-bg)]
-    border-[var(--input-focus-border-color)];
-  }
-  &.is-invalid {
-    @apply bg-[var(--color-danger-lighter)] border-[var(--color-danger)];
-  }
+    &:focus-within,
+    &:focus {
+      @apply outline-0
+      bg-[var(--input-focus-bg)]
+      border-[var(--input-focus-border-color)];
+    }
+    &.is-invalid {
+      @apply bg-[var(--color-danger-lighter)] border-[var(--color-danger)];
+    }
 
-  @variant dark {
-    --form-select-indicator: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='none' stroke='%23EBF2F5' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/></svg>");
+    @variant dark {
+      --form-select-indicator: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='none' stroke='%23EBF2F5' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/></svg>");
+    }
   }
 }
 
 @utility form-select {
-  --form-select-font-size: var(--input-btn-font-size);
-  --form-select-radius: var(--input-btn-radius);
-  --form-select-padding-x: var(--input-btn-padding-x);
-  --form-select-padding-y: var(--input-btn-padding-y);
-  --form-select-line-height: var(--input-btn-line-height);
-  --form-select-border-width: var(--input-btn-border-width);
-  --form-select-padding-right: --spacing(9);
-  --form-select-bg-size: --spacing(4) --spacing(3);
-  --form-select-indicator: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='none' stroke='%231B2124' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/></svg>");
-
   @layer base {
+    --form-select-font-size: var(--input-btn-font-size);
+    --form-select-radius: var(--input-btn-radius);
+    --form-select-padding-x: var(--input-btn-padding-x);
+    --form-select-padding-y: var(--input-btn-padding-y);
+    --form-select-line-height: var(--input-btn-line-height);
+    --form-select-border-width: var(--input-btn-border-width);
+    --form-select-padding-right: --spacing(9);
+    --form-select-bg-size: --spacing(4) --spacing(3);
+    --form-select-indicator: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='none' stroke='%231B2124' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/></svg>");
+
     @apply w-full
     appearance-none
     inline-flex items-center justify-center
@@ -83,60 +83,72 @@
     bg-no-repeat
     bg-[position:right_var(--form-select-padding-x)_center]
     bg-[length:var(--form-select-bg-size)];
-  }
 
-  &:is(:disabled, [disabled]) {
-    @apply opacity-50;
-    @variant hover {
-      @apply border-[var(--input-disabled-border-color)];
+    &:is(:disabled, [disabled]) {
+      @apply opacity-50;
+      @variant hover {
+        @apply border-[var(--input-disabled-border-color)];
+      }
     }
-  }
 
-  @variant hover {
-    @apply border-[var(--input-hover-border-color)];
-  }
+    @variant hover {
+      @apply border-[var(--input-hover-border-color)];
+    }
 
-  &:focus-within,
-  &:focus {
-    @apply outline-0;
-    @apply border-[var(--input-focus-border-color)];
-  }
+    &:focus-within,
+    &:focus {
+      @apply outline-0;
+      @apply border-[var(--input-focus-border-color)];
+    }
 
-  &.is-invalid {
-    @apply border-[var(--color-danger)];
-  }
+    &.is-invalid {
+      @apply border-[var(--color-danger)];
+    }
 
-  @variant dark {
-    --form-select-indicator: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='none' stroke='%23EBF2F5' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/></svg>");
+    @variant dark {
+      --form-select-indicator: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='none' stroke='%23EBF2F5' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/></svg>");
+    }
   }
 }
 
 @utility form-select-sm {
-  --form-select-padding-x: --spacing(3);
-  --form-select-padding-y: --spacing(1.25);
-  --form-select-radius: var(--radius-sm);
-  --form-select-line-height: 1.25;
-  --form-select-bg-size: --spacing(3.5) --spacing(2.5);
+  @layer base {
+    --form-select-padding-x: --spacing(3);
+    --form-select-padding-y: --spacing(1.25);
+    --form-select-radius: var(--radius-sm);
+    --form-select-line-height: 1.25;
+    --form-select-bg-size: --spacing(3.5) --spacing(2.5);
+  }
 }
 @utility form-select-lg {
-  --form-select-padding-y: --spacing(2.25);
-  --form-select-font-size: var(--text-base);
-  --form-select-bg-size: --spacing(4.5) --spacing(3.5);
+  @layer base {
+    --form-select-padding-y: --spacing(2.25);
+    --form-select-font-size: var(--text-base);
+    --form-select-bg-size: --spacing(4.5) --spacing(3.5);
+  }
 }
 
 @utility form-select-secondary {
-  --input-focus-bg: var(--color-secondary-lighter);
-  --input-focus-border-color: var(--color-secondary);
+  @layer base {
+    --input-focus-bg: var(--color-secondary-lighter);
+    --input-focus-border-color: var(--color-secondary);
+  }
 }
 @utility form-select-info {
-  --input-focus-bg: var(--color-info-lighter);
-  --input-focus-border-color: var(--color-info);
+  @layer base {
+    --input-focus-bg: var(--color-info-lighter);
+    --input-focus-border-color: var(--color-info);
+  }
 }
 @utility form-select-success {
-  --input-focus-bg: var(--color-success-lighter);
-  --input-focus-border-color: var(--color-success);
+  @layer base {
+    --input-focus-bg: var(--color-success-lighter);
+    --input-focus-border-color: var(--color-success);
+  }
 }
 @utility form-select-warning {
-  --input-focus-bg: var(--color-warning-lighter);
-  --input-focus-border-color: var(--color-warning);
+  @layer base {
+    --input-focus-bg: var(--color-warning-lighter);
+    --input-focus-border-color: var(--color-warning);
+  }
 }

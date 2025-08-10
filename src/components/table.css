@@ -72,33 +72,41 @@
   }
 }
 @utility table-sm {
-  tbody {
-    td,
-    th {
-      --table-cell-padding-y: --spacing(1.5);
+  @layer base {
+    tbody {
+      td,
+      th {
+        --table-cell-padding-y: --spacing(1.5);
+      }
     }
   }
 }
 
 @utility table-sticky-header {
-  thead {
-    tr,
-    th {
-      @apply sticky top-0;
+  @layer base {
+    thead {
+      tr,
+      th {
+        @apply sticky top-0;
+      }
     }
   }
 }
 
 @utility table-striped {
-  > tbody > tr:nth-of-type(odd) > * {
-    --table-bg: var(--table-striped-bg);
-    --table-color: var(--table-striped-color);
+  @layer base {
+    > tbody > tr:nth-of-type(odd) > * {
+      --table-bg: var(--table-striped-bg);
+      --table-color: var(--table-striped-color);
+    }
   }
 }
 @utility table-striped-columns {
-  > :not(caption) > tr > :nth-child(even) {
-    --table-bg: var(--table-striped-bg);
-    --table-color: var(--table-striped-color);
+  @layer base {
+    > :not(caption) > tr > :nth-child(even) {
+      --table-bg: var(--table-striped-bg);
+      --table-color: var(--table-striped-color);
+    }
   }
 }
 
@@ -113,14 +121,18 @@
   }
 }
 @utility table-borderless {
-  > :not(caption) > * > * {
-    @apply border-b-0;
+  @layer base {
+    > :not(caption) > * > * {
+      @apply border-b-0;
+    }
   }
 }
 
 @utility table-active {
-  --table-bg: var(--table-active-bg);
-  --table-color: var(--table-active-color);
+  @layer base {
+    --table-bg: var(--table-active-bg);
+    --table-color: var(--table-active-color);
+  }
 }
 
 @utility table-hover {
@@ -132,58 +144,72 @@
 }
 
 @utility table-neutral {
-  --table-bg: var(--color-main);
-  --table-color: var(--color-contrast);
-  --table-head-color: var(--color-contrast);
-  --table-border-color: var(--color-light);
-  --table-striped-bg: --alpha(var(--color-dark) / 100%);
-  --table-striped-color: var(--color-contrast);
-  --table-hover-bg: var(--color-darker);
-  --table-hover-color: var(--color-contrast);
-  --table-active-bg: var(--color-darker);
-  --table-active-color: var(--color-contrast);
+  @layer base {
+    --table-bg: var(--color-main);
+    --table-color: var(--color-contrast);
+    --table-head-color: var(--color-contrast);
+    --table-border-color: var(--color-light);
+    --table-striped-bg: --alpha(var(--color-dark) / 100%);
+    --table-striped-color: var(--color-contrast);
+    --table-hover-bg: var(--color-darker);
+    --table-hover-color: var(--color-contrast);
+    --table-active-bg: var(--color-darker);
+    --table-active-color: var(--color-contrast);
+  }
 }
 @utility table-primary {
-  --table-bg: var(--color-primary-lighter);
-  --table-striped-bg: --alpha(var(--color-primary-light) / 30%);
-  --table-border-color: --alpha(var(--color-primary) / 20%);
-  --table-hover-bg: --alpha(var(--color-primary-light) / 40%);
-  --table-active-bg: --alpha(var(--color-primary-light) / 40%);
+  @layer base {
+    --table-bg: var(--color-primary-lighter);
+    --table-striped-bg: --alpha(var(--color-primary-light) / 30%);
+    --table-border-color: --alpha(var(--color-primary) / 20%);
+    --table-hover-bg: --alpha(var(--color-primary-light) / 40%);
+    --table-active-bg: --alpha(var(--color-primary-light) / 40%);
+  }
 }
 @utility table-secondary {
-  --table-bg: var(--color-secondary-lighter);
-  --table-striped-bg: --alpha(var(--color-secondary-light) / 30%);
-  --table-border-color: --alpha(var(--color-secondary) / 20%);
-  --table-hover-bg: --alpha(var(--color-secondary-light) / 40%);
-  --table-active-bg: --alpha(var(--color-secondary-light) / 40%);
+  @layer base {
+    --table-bg: var(--color-secondary-lighter);
+    --table-striped-bg: --alpha(var(--color-secondary-light) / 30%);
+    --table-border-color: --alpha(var(--color-secondary) / 20%);
+    --table-hover-bg: --alpha(var(--color-secondary-light) / 40%);
+    --table-active-bg: --alpha(var(--color-secondary-light) / 40%);
+  }
 }
 @utility table-info {
-  --table-bg: var(--color-info-lighter);
-  --table-striped-bg: --alpha(var(--color-info-light) / 30%);
-  --table-border-color: --alpha(var(--color-info) / 20%);
-  --table-hover-bg: --alpha(var(--color-info-light) / 40%);
-  --table-active-bg: --alpha(var(--color-info-light) / 40%);
+  @layer base {
+    --table-bg: var(--color-info-lighter);
+    --table-striped-bg: --alpha(var(--color-info-light) / 30%);
+    --table-border-color: --alpha(var(--color-info) / 20%);
+    --table-hover-bg: --alpha(var(--color-info-light) / 40%);
+    --table-active-bg: --alpha(var(--color-info-light) / 40%);
+  }
 }
 @utility table-success {
-  --table-bg: var(--color-success-lighter);
-  --table-striped-bg: --alpha(var(--color-success-light) / 30%);
-  --table-border-color: --alpha(var(--color-success) / 20%);
-  --table-hover-bg: --alpha(var(--color-success-light) / 40%);
-  --table-active-bg: --alpha(var(--color-success-light) / 40%);
+  @layer base {
+    --table-bg: var(--color-success-lighter);
+    --table-striped-bg: --alpha(var(--color-success-light) / 30%);
+    --table-border-color: --alpha(var(--color-success) / 20%);
+    --table-hover-bg: --alpha(var(--color-success-light) / 40%);
+    --table-active-bg: --alpha(var(--color-success-light) / 40%);
+  }
 }
 @utility table-warning {
-  --table-bg: var(--color-warning-lighter);
-  --table-striped-bg: --alpha(var(--color-warning-light) / 30%);
-  --table-border-color: --alpha(var(--color-warning) / 20%);
-  --table-hover-bg: --alpha(var(--color-warning-light) / 40%);
-  --table-active-bg: --alpha(var(--color-warning-light) / 40%);
+  @layer base {
+    --table-bg: var(--color-warning-lighter);
+    --table-striped-bg: --alpha(var(--color-warning-light) / 30%);
+    --table-border-color: --alpha(var(--color-warning) / 20%);
+    --table-hover-bg: --alpha(var(--color-warning-light) / 40%);
+    --table-active-bg: --alpha(var(--color-warning-light) / 40%);
+  }
 }
 @utility table-danger {
-  --table-bg: var(--color-danger-lighter);
-  --table-striped-bg: --alpha(var(--color-danger-light) / 30%);
-  --table-border-color: --alpha(var(--color-danger) / 20%);
-  --table-hover-bg: --alpha(var(--color-danger-light) / 40%);
-  --table-active-bg: --alpha(var(--color-danger-light) / 40%);
+  @layer base {
+    --table-bg: var(--color-danger-lighter);
+    --table-striped-bg: --alpha(var(--color-danger-light) / 30%);
+    --table-border-color: --alpha(var(--color-danger) / 20%);
+    --table-hover-bg: --alpha(var(--color-danger-light) / 40%);
+    --table-active-bg: --alpha(var(--color-danger-light) / 40%);
+  }
 }
 
 /* TODO: Move to base styles */

@@ -1,84 +1,74 @@
 @utility input-group {
-  &:has(.form-control-fill, .form-select-fill) {
-    .input-group-text {
-      --input-group-addon-border-color: transparent;
-      --input-group-addon-bg: --alpha(var(--color-emphasis) / 0.8);
-    }
-  }
-
   @layer base {
+    &:has(.form-control-fill, .form-select-fill) {
+      .input-group-text {
+        --input-group-addon-border-color: transparent;
+        --input-group-addon-bg: --alpha(var(--color-emphasis) / 0.8);
+      }
+    }
+
     @apply relative w-full
     flex flex-wrap items-stretch;
-  }
 
-  > .form-control-fill,
-  > .form-control,
-  > .form-select-fill,
-  > .form-select,
-  > .form-floating {
-    @layer components {
+    > .form-control-fill,
+    > .form-control,
+    > .form-select-fill,
+    > .form-select,
+    > .form-floating {
       @apply relative
       flex-[1_1_auto]
       w-[1%] min-w-0;
     }
-  }
 
-  > .form-control-fill:focus,
-  > .form-control:focus,
-  > .form-select-fill:focus,
-  > .form-select:focus,
-  > .form-floating:focus-within {
-    @apply z-5;
-  }
-
-  .btn {
-    @apply relative z-2;
-
-    @variant focus {
+    > .form-control-fill:focus,
+    > .form-control:focus,
+    > .form-select-fill:focus,
+    > .form-select:focus,
+    > .form-floating:focus-within {
       @apply z-5;
     }
-  }
 
-  &:not(.has-validation) {
-    > :not(:last-child):not([data-bs-toggle='dropdown']):not(.dropdown-menu):not(.form-floating),
-    > [data-bs-toggle='dropdown']:nth-last-child(n + 3),
-    > .form-floating:not(:last-child) > .form-control-fill,
-    > .form-floating:not(:last-child) > .form-control,
-    > .form-floating:not(:last-child) > .form-select-fill,
-    > .form-floating:not(:last-child) > .form-select {
-      @layer base {
+    .btn {
+      @apply relative z-2;
+
+      @variant focus {
+        @apply z-5;
+      }
+    }
+
+    &:not(.has-validation) {
+      > :not(:last-child):not([data-bs-toggle='dropdown']):not(.dropdown-menu):not(.form-floating),
+      > [data-bs-toggle='dropdown']:nth-last-child(n + 3),
+      > .form-floating:not(:last-child) > .form-control-fill,
+      > .form-floating:not(:last-child) > .form-control,
+      > .form-floating:not(:last-child) > .form-select-fill,
+      > .form-floating:not(:last-child) > .form-select {
         @apply rounded-r-none;
       }
     }
-  }
 
-  &.has-validation {
-    > :nth-last-child(n + 3):not([data-bs-toggle='dropdown']):not(.dropdown-menu):not(.form-floating),
-    > [data-bs-toggle='dropdown']:nth-last-child(n + 4),
-    > .form-floating:nth-last-child(n + 3) > .form-control-fill,
-    > .form-floating:nth-last-child(n + 3) > .form-control,
-    > .form-floating:nth-last-child(n + 3) > .form-select-fill,
-    > .form-floating:nth-last-child(n + 3) > .form-select {
-      @layer base {
+    &.has-validation {
+      > :nth-last-child(n + 3):not([data-bs-toggle='dropdown']):not(.dropdown-menu):not(.form-floating),
+      > [data-bs-toggle='dropdown']:nth-last-child(n + 4),
+      > .form-floating:nth-last-child(n + 3) > .form-control-fill,
+      > .form-floating:nth-last-child(n + 3) > .form-control,
+      > .form-floating:nth-last-child(n + 3) > .form-select-fill,
+      > .form-floating:nth-last-child(n + 3) > .form-select {
         @apply rounded-r-none;
       }
     }
-  }
 
-  > :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(
-      .invalid-feedback
-    ) {
-    @layer base {
+    > :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(
+        .invalid-feedback
+      ) {
       @apply rounded-l-none -ml-[var(--input-btn-border-width)];
     }
-  }
 
-  > .form-floating:not(:first-child) {
-    > .form-control-fill,
-    > .form-control,
-    > .form-select-fill,
-    > .form-select {
-      @layer base {
+    > .form-floating:not(:first-child) {
+      > .form-control-fill,
+      > .form-control,
+      > .form-select-fill,
+      > .form-select {
         @apply rounded-l-none;
       }
     }
@@ -86,17 +76,17 @@
 }
 
 @utility input-group-text {
-  --input-group-addon-padding-x: var(--input-btn-padding-x);
-  --input-group-addon-padding-y: var(--input-btn-padding-y);
-  --input-group-addon-font-weight: var(--input-font-weight, 400);
-  --input-group-addon-bg: var(--color-subtle);
-  --input-group-addon-color: var(--input-color);
-  --input-group-addon-border-color: var(--color-border-base);
-  --input-group-addon-radius: var(--input-btn-radius);
-  --input-group-addon-font-size: var(--input-btn-font-size);
-  --input-group-addon-line-height: var(--input-btn-line-height);
-
   @layer base {
+    --input-group-addon-padding-x: var(--input-btn-padding-x);
+    --input-group-addon-padding-y: var(--input-btn-padding-y);
+    --input-group-addon-font-weight: var(--input-font-weight, 400);
+    --input-group-addon-bg: var(--color-subtle);
+    --input-group-addon-color: var(--input-color);
+    --input-group-addon-border-color: var(--color-border-base);
+    --input-group-addon-radius: var(--input-btn-radius);
+    --input-group-addon-font-size: var(--input-btn-font-size);
+    --input-group-addon-line-height: var(--input-btn-line-height);
+
     @apply flex items-center
     py-[var(--input-group-addon-padding-y)] px-[var(--input-group-addon-padding-x)]
     text-[length:var(--input-group-addon-font-size)]
@@ -114,37 +104,42 @@
 
 @utility input-group-lg {
   > .form-control-fill,
-  > .form-control,
-  > .form-select-fill,
-  > .form-select,
-  > .btn {
+  > .form-control {
     @apply form-control-lg;
   }
-  > .input-group-text {
-    --input-group-addon-padding-y: --spacing(2.25);
-    --input-group-addon-font-size: var(--text-base);
+  > .form-select-fill,
+  > .form-select {
+    @apply form-select-lg;
+  }
+  > .btn {
+    @apply btn-lg;
+  }
+  @layer base {
+    > .input-group-text {
+      --input-group-addon-padding-y: --spacing(2.25);
+      --input-group-addon-font-size: var(--text-base);
+    }
   }
 }
 
 @utility input-group-sm {
   > .form-control-fill,
-  > .form-control,
-  > .form-select-fill,
-  > .form-select,
-  > .btn {
+  > .form-control {
     @apply form-control-sm;
   }
-  > .input-group-text {
-    --input-group-addon-padding-x: --spacing(3);
-    --input-group-addon-padding-y: --spacing(1.25);
-    --input-group-addon-radius: var(--radius-sm);
-    --input-group-addon-line-height: 1.25;
+  > .form-select-fill,
+  > .form-select {
+    @apply form-select-sm;
   }
-}
-
-.input-group-lg > .form-select-fill,
-.input-group-sm > .form-select-fill,
-.input-group-lg > .form-select,
-.input-group-sm > .form-select {
-  @apply pr-[var(--form-select-padding-right)];
+  > .btn {
+    @apply btn-sm;
+  }
+  @layer base {
+    > .input-group-text {
+      --input-group-addon-padding-x: --spacing(3);
+      --input-group-addon-padding-y: --spacing(1.25);
+      --input-group-addon-radius: var(--radius-sm);
+      --input-group-addon-line-height: 1.25;
+    }
+  }
 }

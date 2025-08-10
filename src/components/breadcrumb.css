@@ -1,33 +1,40 @@
 @utility breadcrumb {
-  --breadcrumb-font-size: var(--text-sm);
-  --breadcrumb-item-active-color: var(--color-default-color);
-  --breadcrumb-item-gap: --spacing(2);
-  --breadcrumb-item-separator: '/';
-  --breadcrumb-separator-color: var(--color-highlight-color);
-  @apply flex flex-wrap 
-  text-[length:var(--breadcrumb-font-size)];
-  list-style: none;
+  @layer base {
+    --breadcrumb-font-size: var(--text-sm);
+    --breadcrumb-item-active-color: var(--color-default-color);
+    --breadcrumb-item-gap: --spacing(2);
+    --breadcrumb-item-separator: '/';
+    --breadcrumb-separator-color: var(--color-highlight-color);
+    @apply flex flex-wrap 
+    text-[length:var(--breadcrumb-font-size)];
+  }
 }
 
 @utility breadcrumb-separator-dashed {
-  --breadcrumb-item-separator: '-';
+  @layer base {
+    --breadcrumb-item-separator: '-';
+  }
 }
 @utility breadcrumb-separator-arrow {
-  --breadcrumb-item-separator: '>';
+  @layer base {
+    --breadcrumb-item-separator: '>';
+  }
 }
 
 @utility breadcrumb-item {
-  @apply flex items-center;
-  > * {
-    @apply flex items-center gap-0.5;
-  }
-  + .breadcrumb-item {
-    @apply before:content-[var(--breadcrumb-item-separator)]
-    before:text-[var(--breadcrumb-separator-color)]
-    before:mx-[var(--breadcrumb-item-gap)];
-  }
+  @layer base {
+    @apply flex items-center;
+    > * {
+      @apply flex items-center gap-0.5;
+    }
+    + .breadcrumb-item {
+      @apply before:content-[var(--breadcrumb-item-separator)]
+      before:text-[var(--breadcrumb-separator-color)]
+      before:mx-[var(--breadcrumb-item-gap)];
+    }
 
-  &.active {
-    @apply text-[var(--breadcrumb-item-active-color)];
+    &.active {
+      @apply text-[var(--breadcrumb-item-active-color)];
+    }
   }
 }
