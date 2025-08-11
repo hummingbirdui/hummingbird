@@ -35,7 +35,7 @@
     --dropdown-link-active-bg: var(--color-primary-lighter);
     --dropdown-item-padding-x: --spacing(4);
     --dropdown-item-padding-y: --spacing(1.5);
-    --dropdown-divider-bg: var(--color-border-base);
+    --dropdown-divider-bg: var(--border-color-base);
     --dropdown-divider-margin-y: --spacing(2);
     --dropdown-header-padding-y: --spacing(2);
     --dropdown-header-padding-x: --spacing(4);
@@ -65,7 +65,7 @@
     }
 
     @variant dark {
-      --dropdown-border-color: var(--color-border-base);
+      --dropdown-border-color: var(--border-color-base);
     }
   }
 }

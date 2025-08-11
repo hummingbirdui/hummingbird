@@ -4,7 +4,7 @@
     --table-color: var(--color-highlight-color);
     --table-cell-padding-x: --spacing(4);
     --table-cell-padding-y: --spacing(4);
-    --table-border-color: var(--color-border-light);
+    --table-border-color: var(--border-color-light);
     --table-font-size: var(--text-sm);
     --table-head-bg: var(--color-subtle);
     --table-head-color: var(--color-default-color);

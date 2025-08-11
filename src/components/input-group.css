@@ -82,7 +82,7 @@
     --input-group-addon-font-weight: var(--input-font-weight, 400);
     --input-group-addon-bg: var(--color-subtle);
     --input-group-addon-color: var(--input-color);
-    --input-group-addon-border-color: var(--color-border-base);
+    --input-group-addon-border-color: var(--border-color-base);
     --input-group-addon-radius: var(--input-btn-radius);
     --input-group-addon-font-size: var(--input-btn-font-size);
     --input-group-addon-line-height: var(--input-btn-line-height);

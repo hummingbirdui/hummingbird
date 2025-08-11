@@ -3,7 +3,7 @@
     --card-bg: var(--color-subtle);
     --card-color: var(--color-highlight-color);
     --card-border-width: 1px;
-    --card-border-color: var(--color-border-base);
+    --card-border-color: var(--border-color-base);
     --card-border-radius: var(--radius-lg);
     --card-padding-x: --spacing(4);
     --card-padding-y: --spacing(4);

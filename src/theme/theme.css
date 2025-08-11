@@ -68,9 +68,9 @@
   --color-info-darker: var(--color-sky-900);
 
   /* borders */
-  --color-border-light: --alpha(var(--color-gray-300) / 60%);
-  --color-border-base: var(--color-gray-300);
-  --color-border-dark: --alpha(var(--color-gray-700) / 0%);
+  --border-color-light: --alpha(var(--color-gray-300) / 60%);
+  --border-color-base: var(--color-gray-300);
+  --border-color-dark: --alpha(var(--color-gray-700) / 0%);
 
   /* actions */
   --color-active: var(--color-gray-500);
@@ -81,7 +81,9 @@
   --color-focus: var(--color-gray-300);
 
   /* font family */
-  --font-sans: 'Plus Jakarta Sans', 'sans-serif', 'Spline Sans Mono', 'monospace';
+  --font-sans:
+    'Figtree', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+    'Noto Color Emoji';
 
   /* Shadows */
   --shadow-2xs: 2px 2px 10px 0px rgba(0, 0, 0, 0.09), 0px 1px 1px 0px rgba(0, 0, 0, 0.03);
@@ -116,13 +118,13 @@
   --input-label-color: var(--color-highlight-color);
   --input-bg: var(--color-muted);
   --input-color: var(--color-default-color);
-  --input-border-color: var(--color-border-base);
+  --input-border-color: var(--border-color-base);
   --input-disabled-bg: var(--color-highlight);
   --input-hover-bg: var(--color-highlight);
   --input-focus-bg: var(--color-primary-lighter);
   --input-hover-border-color: var(--color-emphasis-color);
   --input-focus-border-color: var(--color-primary);
-  --input-disabled-border-color: var(--color-border-base);
+  --input-disabled-border-color: var(--border-color-base);
 }
 
 @layer {
@@ -194,9 +196,9 @@
     --color-info-darker: var(--color-sky-200);
 
     /* borders */
-    --color-border-light: var(--color-gray-800);
-    --color-border-base: var(--color-gray-700);
-    --color-border-dark: var(--color-gray-700);
+    --border-color-light: var(--color-gray-800);
+    --border-color-base: var(--color-gray-700);
+    --border-color-dark: var(--color-gray-700);
 
     /* actions */
     --color-active: var(--color-gray-500);

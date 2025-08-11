@@ -70,11 +70,11 @@
   @layer components {
     --nav-link-active-color: var(--color-primary);
     --nav-tabs-border-width: 1px;
-    --nav-tabs-border-color: var(--color-border-base);
+    --nav-tabs-border-color: var(--border-color-base);
     --nav-tabs-border-radius: var(--radius-md);
-    --nav-tabs-link-hover-border-color: var(--color-border-light);
+    --nav-tabs-link-hover-border-color: var(--border-color-light);
     --nav-tabs-link-active-bg: var(--color-default);
-    --nav-tabs-link-active-border-color: var(--color-border-base) var(--color-border-base)
+    --nav-tabs-link-active-border-color: var(--border-color-base) var(--border-color-base)
       var(--nav-tabs-link-active-bg);
 
     @apply border-b-[length:var(--nav-tabs-border-width)] border-[var(--nav-tabs-border-color)];

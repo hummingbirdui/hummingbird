@@ -93,7 +93,7 @@
   @layer base {
     --badge-bg: var(--color-muted);
     --badge-color: var(--color-main);
-    --badge-border-color: var(--color-border-base);
+    --badge-border-color: var(--border-color-base);
     --badge-link-hover-bg: var(--color-highlight);
   }
 }
@@ -151,7 +151,7 @@
   @layer base {
     --badge-bg: transparent;
     --badge-color: var(--color-main);
-    --badge-border-color: var(--color-border-base);
+    --badge-border-color: var(--border-color-base);
     --badge-link-hover-bg: var(--color-emphasis);
   }
 }

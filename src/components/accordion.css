@@ -2,7 +2,7 @@
   @layer base {
     --accordion-color: var(--color-default-color);
     --accordion-bg: var(--color-default);
-    --accordion-border-color: var(--color-border-base);
+    --accordion-border-color: var(--border-color-base);
     --accordion-border-width: 0;
     --accordion-border-radius: var(--radius-lg);
     --accordion-btn-padding-x: --spacing(6);
