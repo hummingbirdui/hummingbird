@@ -1,0 +1,21 @@
+---
+import { type CollectionEntry, getCollection } from 'astro:content';
+import { render } from 'astro:content';
+import DocsLayout from '@layouts/DocsLayout.astro';
+
+export async function getStaticPaths() {
+  const allDocs = await getCollection('docs');
+  return allDocs.map((docs) => ({
+    params: { slug: docs.id },
+    props: docs,
+  }));
+}
+type Props = CollectionEntry<'docs'>;
+
+const docs = Astro.props;
+const { Content, headings, remarkPluginFrontmatter } = await render(docs);
+---
+
+<DocsLayout {...docs.data}>
+  <Content />
+</DocsLayout>

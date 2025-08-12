@@ -24,31 +24,40 @@ const sitemap: Sitemap[] = [
       },
       {
         name: 'React',
-        path: '/docs/react',
+        path: '/docs/getting-started/react',
       },
       {
         name: 'Next',
-        path: '/docs/next',
+        path: '/docs/getting-started/next',
       },
       {
         name: 'Vue',
-        path: '/docs/vue',
+        path: '/docs/getting-started/vue',
       },
       {
         name: 'Nuxt',
-        path: '/docs/nuxt',
+        path: '/docs/getting-started/nuxt',
       },
       {
         name: 'Angular',
-        path: '/docs/angular',
+        path: '/docs/getting-started/angular',
       },
       {
         name: 'Svelte',
-        path: '/docs/svelte',
+        path: '/docs/getting-started/svelte',
       },
       {
         name: 'Gatsby',
-        path: '/docs/gatsby',
+        path: '/docs/getting-started/gatsby',
+      },
+    ],
+  },
+  {
+    subHeader: 'Customize',
+    items: [
+      {
+        name: 'Colors',
+        path: '/docs/customize/colors',
       },
     ],
   },
@@ -57,115 +66,115 @@ const sitemap: Sitemap[] = [
     items: [
       {
         name: 'Buttons',
-        path: '/components/buttons',
+        path: '/docs/components/buttons',
       },
       {
         name: 'Form Control',
-        path: '/components/form-control',
+        path: '/docs/components/form-control',
       },
       {
         name: 'Floating labels',
-        path: '/components/floating-labels',
+        path: '/docs/components/floating-labels',
       },
       {
         name: 'Select',
-        path: '/components/select',
+        path: '/docs/components/select',
       },
       {
         name: 'File Input',
-        path: '/components/file-input',
+        path: '/docs/components/file-input',
       },
       {
         name: 'Checkbox',
-        path: '/components/checkbox',
+        path: '/docs/components/checkbox',
       },
       {
         name: 'Radio',
-        path: '/components/radio',
+        path: '/docs/components/radio',
       },
       {
         name: 'Switch',
-        path: '/components/switch',
+        path: '/docs/components/switch',
       },
       {
         name: 'Range',
-        path: '/components/range',
+        path: '/docs/components/range',
       },
       {
         name: 'Badge',
-        path: '/components/badge',
+        path: '/docs/components/badge',
       },
       {
         name: 'Alert',
-        path: '/components/alert',
+        path: '/docs/components/alert',
       },
       {
         name: 'Link',
-        path: '/components/link',
+        path: '/docs/components/link',
       },
       {
         name: 'Breadcrumb',
-        path: '/components/breadcrumb',
+        path: '/docs/components/breadcrumb',
       },
       {
         name: 'Avatar',
-        path: '/components/avatar',
+        path: '/docs/components/avatar',
       },
       {
         name: 'Card',
-        path: '/components/card',
+        path: '/docs/components/card',
       },
       {
         name: 'Table',
-        path: '/components/table',
+        path: '/docs/components/table',
       },
       {
         name: 'List Group',
-        path: '/components/list-group',
+        path: '/docs/components/list-group',
       },
       {
         name: 'Dropdowns',
-        path: '/components/dropdowns',
+        path: '/docs/components/dropdowns',
       },
       {
         name: 'Tooltip',
-        path: '/components/tooltip',
+        path: '/docs/components/tooltip',
       },
       {
         name: 'Collapse',
-        path: '/components/collapse',
+        path: '/docs/components/collapse',
       },
       {
         name: 'Accordion',
-        path: '/components/accordion',
+        path: '/docs/components/accordion',
       },
       {
         name: 'Offcanvas',
-        path: '/components/offcanvas',
+        path: '/docs/components/offcanvas',
       },
       {
         name: 'Modal',
-        path: '/components/modal',
+        path: '/docs/components/modal',
       },
       {
         name: 'Carousel',
-        path: '/components/carousel',
+        path: '/docs/components/carousel',
       },
       {
         name: 'Navs & tabs',
-        path: '/components/navs-tabs',
+        path: '/docs/components/navs-tabs',
       },
       {
         name: 'Navbar',
-        path: '/components/navbar',
+        path: '/docs/components/navbar',
       },
       {
         name: 'Input Group',
-        path: '/components/input-group',
+        path: '/docs/components/input-group',
       },
       {
         name: 'Button Group',
-        path: '/components/button-group',
+        path: '/docs/components/button-group',
       },
     ],
   },

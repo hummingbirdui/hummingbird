@@ -1,211 +1,240 @@
 @utility form-check {
-  @apply flex items-center;
+  @layer base {
+    @apply flex items-center;
+  }
 }
 @utility form-check-inline {
-  @apply inline-flex items-center mr-2;
+  @layer base {
+    @apply inline-flex items-center mr-2;
+  }
 }
 @utility form-check-input-wrapper {
-  --form-check-input-wrapper-bg: --alpha(var(--color-primary) / 12%);
+  @layer base {
+    --form-check-input-wrapper-bg: --alpha(var(--color-primary) / 12%);
 
-  @apply relative inline-flex items-center justify-center rounded-full cursor-pointer 
-  appearance-none
-  p-2.5
-  bg-transparent
-  hover:bg-[var(--form-check-input-wrapper-bg)];
+    @apply relative inline-flex items-center justify-center rounded-full cursor-pointer 
+    appearance-none
+    p-2.5
+    bg-transparent
+    hover:bg-[var(--form-check-input-wrapper-bg)];
 
-  &:focus-within {
-    @apply bg-[var(--form-check-input-wrapper-bg)];
-  }
-
-  input:focus-visible {
-    @apply ring-0;
-  }
-
-  &:has(input[type='checkbox'][disabled]),
-  &:has(input[type='radio'][disabled]) {
-    @apply cursor-default;
-    --form-check-input-wrapper-bg: transparent;
-    ~ .form-check-label {
-      @apply cursor-default text-disabled;
-    }
-  }
-  &:has(.form-check-secondary) {
-    --form-check-input-wrapper-bg: --alpha(var(--color-secondary) / 12%);
-  }
-  &:has(.form-check-info) {
-    --form-check-input-wrapper-bg: --alpha(var(--color-info) / 12%);
-  }
-  &:has(.form-check-success) {
-    --form-check-input-wrapper-bg: --alpha(var(--color-success) / 12%);
-  }
-  &:has(.form-check-warning) {
-    --form-check-input-wrapper-bg: --alpha(var(--color-warning) / 12%);
-  }
-  &:has(.form-check-danger) {
-    --form-check-input-wrapper-bg: --alpha(var(--color-danger) / 12%);
-  }
-  &:has(.form-check-neutral) {
-    --form-check-input-wrapper-bg: var(--color-muted);
-  }
-}
-
-@utility form-check-input {
-  --form-check-input-bg: var(--color-default);
-  --form-check-input-checked-bg: var(--color-primary);
-  --form-check-input-with: --spacing(4);
-  --form-check-input-height: --spacing(4);
-  --form-check-input-border-width: 1px;
-  --form-check-input-border-color: var(--color-border-base);
-  --form-check-input-radius: var(--radius-sm);
-  --form-check-bg-image: none;
-  @apply cursor-pointer 
-  shrink-0
-  appearance-none
-  w-[var(--form-check-input-with)]
-  h-[var(--form-check-input-height)]
-  align-top
-  bg-[var(--form-check-input-bg)]
-  bg-[image:var(--form-check-bg-image)]
-  bg-no-repeat
-  bg-center
-  bg-contain
-  border-[length:var(--form-check-input-border-width)]
-  border-[var(--form-check-input-border-color)]
-  rounded-[var(--form-check-input-radius)];
-
-  &:focus-visible {
-    @apply outline-0 ring-4 ring-[--alpha(var(--form-check-input-checked-bg)/50%)] border-[var(--form-check-input-checked-bg)];
-  }
-
-  &[type='radio'] {
-    --form-check-input-radius: calc(infinity * 1px);
-  }
-
-  &:active {
-    @apply brightness-90;
-  }
-
-  &:focus {
-    @apply outline-0;
-  }
-
-  &:checked {
-    --form-check-input-bg: var(--form-check-input-checked-bg);
-    --form-check-input-border-color: var(--form-check-input-checked-bg);
-    &[type='checkbox'] {
-      --form-check-bg-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='%23fff' d='m9.55 15.15l8.475-8.475q.3-.3.7-.3t.7.3t.3.713t-.3.712l-9.175 9.2q-.3.3-.7.3t-.7-.3L4.55 13q-.3-.3-.288-.712t.313-.713t.713-.3t.712.3z'/%3E%3C/svg%3E");
+    @variant focus-within {
+      @apply bg-[var(--form-check-input-wrapper-bg)];
     }
 
-    &[type='radio'] {
-      --form-check-bg-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Cpath fill='%23fff' stroke='%23fff' stroke-width='4' d='M24 33a9 9 0 1 0 0-18a9 9 0 0 0 0 18Z'/%3E%3C/svg%3E");
-    }
-  }
-
-  &[type='checkbox']:indeterminate {
-    --form-check-input-bg: var(--color-primary);
-    --form-check-input-border-color: var(--color-primary);
-    --form-check-bg-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='%23fff' d='M6 13q-.425 0-.712-.288T5 12t.288-.712T6 11h12q.425 0 .713.288T19 12t-.288.713T18 13z' stroke-width='0.5' stroke='%23fff'/%3E%3C/svg%3E");
-  }
-
-  &:disabled {
-    @apply pointer-events-none;
-    filter: none;
-    --form-check-input-border-color: var(--color-border-light);
-    &:checked {
-      --form-check-input-border-color: var(--color-disabled-color);
-      --form-check-input-bg: var(--color-disabled-color);
-    }
-  }
-}
-
-@utility form-check-sm {
-  --form-check-input-with: --spacing(4);
-  --form-check-input-height: --spacing(4);
-}
-@utility form-check-md {
-  --form-check-input-with: --spacing(5);
-  --form-check-input-height: --spacing(5);
-}
-@utility form-check-lg {
-  --form-check-input-with: --spacing(6);
-  --form-check-input-height: --spacing(6);
-  &[type='checkbox'] {
-    --form-check-input-radius: var(--radius-md);
-  }
-}
-
-@utility form-check-secondary {
-  --form-check-input-checked-bg: var(--color-secondary);
-}
-@utility form-check-success {
-  --form-check-input-checked-bg: var(--color-success);
-}
-@utility form-check-info {
-  --form-check-input-checked-bg: var(--color-info);
-}
-@utility form-check-warning {
-  --form-check-input-checked-bg: var(--color-warning);
-}
-@utility form-check-danger {
-  --form-check-input-checked-bg: var(--color-danger);
-}
-@utility form-check-neutral {
-  --form-check-input-checked-bg: var(--color-main);
-}
-
-@utility form-switch {
-  @apply space-x-2;
-  .form-check-input {
-    --form-check-input-bg: var(--color-emphasis);
-    --form-check-input-with: --spacing(9);
-    --form-check-input-height: --spacing(6);
-    --form-check-input-radius: calc(infinity * 1px);
-    --form-check-bg-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e");
-    @apply transition-[background] duration-150 ease-in-out border-0 bg-[position:left_center];
-    &:checked {
-      --form-check-input-bg: var(--form-check-input-checked-bg);
-      @apply bg-[position:right_center];
-      &[type='checkbox'] {
-        --form-check-bg-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e");
+    input {
+      @variant focus-visible {
+        @apply ring-0;
       }
     }
-    &:disabled {
-      &:checked {
-        --form-check-input-bg: var(--form-check-input-checked-bg);
-      }
+
+    &:has(input[type='checkbox'][disabled]),
+    &:has(input[type='radio'][disabled]) {
+      @apply cursor-default;
+      --form-check-input-wrapper-bg: transparent;
       ~ .form-check-label {
         @apply cursor-default text-disabled;
       }
     }
-    &.form-check-sm {
-      --form-check-input-with: --spacing(8);
-      --form-check-input-height: --spacing(5);
+    &:has(.form-check-secondary) {
+      --form-check-input-wrapper-bg: --alpha(var(--color-secondary) / 12%);
     }
-    &.form-check-lg {
-      --form-check-input-with: --spacing(10);
-      --form-check-input-height: --spacing(7);
+    &:has(.form-check-info) {
+      --form-check-input-wrapper-bg: --alpha(var(--color-info) / 12%);
+    }
+    &:has(.form-check-success) {
+      --form-check-input-wrapper-bg: --alpha(var(--color-success) / 12%);
+    }
+    &:has(.form-check-warning) {
+      --form-check-input-wrapper-bg: --alpha(var(--color-warning) / 12%);
+    }
+    &:has(.form-check-danger) {
+      --form-check-input-wrapper-bg: --alpha(var(--color-danger) / 12%);
+    }
+    &:has(.form-check-neutral) {
+      --form-check-input-wrapper-bg: var(--color-muted);
+    }
+  }
+}
+
+@utility form-check-input {
+  @layer base {
+    --form-check-input-bg: var(--color-default);
+    --form-check-input-checked-bg: var(--color-primary);
+    --form-check-input-with: --spacing(4);
+    --form-check-input-height: --spacing(4);
+    --form-check-input-border-width: 1px;
+    --form-check-input-border-color: var(--border-color-base);
+    --form-check-input-radius: var(--radius-sm);
+    --form-check-bg-image: none;
+    @apply cursor-pointer 
+    shrink-0
+    appearance-none
+    w-[var(--form-check-input-with)]
+    h-[var(--form-check-input-height)]
+    align-top
+    bg-[var(--form-check-input-bg)]
+    bg-[image:var(--form-check-bg-image)]
+    bg-no-repeat
+    bg-center
+    bg-contain
+    border-[length:var(--form-check-input-border-width)]
+    border-[var(--form-check-input-border-color)]
+    rounded-[var(--form-check-input-radius)];
+
+    @variant focus-visible {
+      @apply outline-0 ring-4 ring-[--alpha(var(--form-check-input-checked-bg)/50%)] border-[var(--form-check-input-checked-bg)];
+    }
+
+    &[type='radio'] {
+      --form-check-input-radius: calc(infinity * 1px);
+    }
+
+    &:active {
+      @apply brightness-90;
+    }
+
+    @variant focus {
+      @apply outline-0;
+    }
+
+    &:checked {
+      --form-check-input-bg: var(--form-check-input-checked-bg);
+      --form-check-input-border-color: var(--form-check-input-checked-bg);
       &[type='checkbox'] {
-        --form-check-input-radius: calc(infinity * 1px);
+        --form-check-bg-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='%23fff' d='m9.55 15.15l8.475-8.475q.3-.3.7-.3t.7.3t.3.713t-.3.712l-9.175 9.2q-.3.3-.7.3t-.7-.3L4.55 13q-.3-.3-.288-.712t.313-.713t.713-.3t.712.3z'/%3E%3C/svg%3E");
+      }
+
+      &[type='radio'] {
+        --form-check-bg-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Cpath fill='%23fff' stroke='%23fff' stroke-width='4' d='M24 33a9 9 0 1 0 0-18a9 9 0 0 0 0 18Z'/%3E%3C/svg%3E");
       }
     }
-    .dark & {
-      --form-check-bg-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23DBE6EB'/%3e%3c/svg%3e");
+
+    &[type='checkbox']:indeterminate {
+      --form-check-input-bg: var(--color-primary);
+      --form-check-input-border-color: var(--color-primary);
+      --form-check-bg-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='%23fff' d='M6 13q-.425 0-.712-.288T5 12t.288-.712T6 11h12q.425 0 .713.288T19 12t-.288.713T18 13z' stroke-width='0.5' stroke='%23fff'/%3E%3C/svg%3E");
+    }
+
+    &:disabled {
+      @apply pointer-events-none;
+      filter: none;
+      --form-check-input-border-color: var(--border-color-light);
+      &:checked {
+        --form-check-input-border-color: var(--color-disabled-color);
+        --form-check-input-bg: var(--color-disabled-color);
+      }
+    }
+  }
+}
+
+@utility form-check-md {
+  @layer base {
+    --form-check-input-with: --spacing(5);
+    --form-check-input-height: --spacing(5);
+  }
+}
+@utility form-check-lg {
+  @layer base {
+    --form-check-input-with: --spacing(6);
+    --form-check-input-height: --spacing(6);
+    &[type='checkbox'] {
+      --form-check-input-radius: var(--radius-md);
+    }
+  }
+}
+
+@utility form-check-secondary {
+  @layer base {
+    --form-check-input-checked-bg: var(--color-secondary);
+  }
+}
+@utility form-check-success {
+  @layer base {
+    --form-check-input-checked-bg: var(--color-success);
+  }
+}
+@utility form-check-info {
+  @layer base {
+    --form-check-input-checked-bg: var(--color-info);
+  }
+}
+@utility form-check-warning {
+  @layer base {
+    --form-check-input-checked-bg: var(--color-warning);
+  }
+}
+@utility form-check-danger {
+  @layer base {
+    --form-check-input-checked-bg: var(--color-danger);
+  }
+}
+@utility form-check-neutral {
+  @layer base {
+    --form-check-input-checked-bg: var(--color-main);
+  }
+}
+
+@utility form-switch {
+  @layer base {
+    @apply space-x-2;
+    .form-check-input {
+      --form-check-input-bg: var(--color-emphasis);
+      --form-check-input-with: --spacing(9);
+      --form-check-input-height: --spacing(6);
+      --form-check-input-radius: calc(infinity * 1px);
+      --form-check-bg-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e");
+      @apply transition-[background] duration-150 ease-in-out border-0 bg-[position:left_center];
+      &:checked {
+        --form-check-input-bg: var(--form-check-input-checked-bg);
+        @apply bg-[position:right_center];
+        &[type='checkbox'] {
+          --form-check-bg-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e");
+        }
+      }
+      &:disabled {
+        @apply opacity-75;
+        &:checked {
+          --form-check-input-bg: var(--form-check-input-checked-bg);
+        }
+        ~ .form-check-label {
+          @apply cursor-default text-disabled;
+        }
+      }
+      &.form-check-sm {
+        --form-check-input-with: --spacing(8);
+        --form-check-input-height: --spacing(5);
+      }
+      &.form-check-lg {
+        --form-check-input-with: --spacing(10);
+        --form-check-input-height: --spacing(7);
+        &[type='checkbox'] {
+          --form-check-input-radius: calc(infinity * 1px);
+        }
+      }
+      @variant dark {
+        --form-check-bg-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23DBE6EB'/%3e%3c/svg%3e");
+      }
     }
   }
 }
 
 @utility btn-check {
-  @apply absolute w-[1px] h-[1px] p-0 -m-[1px] overflow-hidden whitespace-nowrap border-0;
-  clip-path: inset(50%);
+  @layer base {
+    @apply absolute w-[1px] h-[1px] p-0 -m-[1px] overflow-hidden whitespace-nowrap border-0;
+    clip-path: inset(50%);
 
-  &[disabled],
-  &:disabled {
-    + .btn {
-      @apply pointer-events-none opacity-50;
-      filter: none;
+    &[disabled],
+    &:disabled {
+      + .btn {
+        @apply pointer-events-none opacity-50;
+        filter: none;
+      }
     }
   }
 }
 @utility form-check-label {
-  @apply cursor-pointer text-default-color;
+  @layer base {
+    @apply cursor-pointer text-default-color;
+  }
 }

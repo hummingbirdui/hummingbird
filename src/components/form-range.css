@@ -1,111 +1,130 @@
 @utility form-range {
-  --form-range-color: var(--color-primary);
-  --form-range-height: --spacing(6);
-  --form-range-thumb-width: --spacing(5);
-  --form-range-thumb-height: --spacing(5);
-  --form-range-thumb-border-radius: calc(infinity * 1px);
-  --form-range-thumb-box-shadow: --alpha(var(--form-range-color) / 16%) 0px 0px 0px 8px;
-  --form-range-track-width: 100%;
-  --form-range-track-height: --spacing(1.5);
-  --form-range-track-border-radius: var(--radius-sm);
-  @apply w-full appearance-none
-  h-[var(--form-range-height)]
-  p-0
-  bg-transparent;
+  @layer base {
+    --form-range-color: var(--color-primary);
+    --form-range-height: --spacing(6);
+    --form-range-thumb-width: --spacing(5);
+    --form-range-thumb-height: --spacing(5);
+    --form-range-thumb-border-radius: calc(infinity * 1px);
+    --form-range-thumb-box-shadow: --alpha(var(--form-range-color) / 16%) 0px 0px 0px 8px;
+    --form-range-track-width: 100%;
+    --form-range-track-height: --spacing(1.5);
+    --form-range-track-border-radius: var(--radius-sm);
 
-  &:hover,
-  &:focus {
-    @apply outline-0;
+    @apply w-full appearance-none
+    h-[var(--form-range-height)]
+    p-0
+    bg-transparent;
+
+    &:hover,
+    &:focus {
+      @apply outline-0;
+      &::-webkit-slider-thumb {
+        @apply shadow-[var(--form-range-thumb-box-shadow)];
+      }
+      &::-moz-range-thumb {
+        @apply shadow-[var(--form-range-thumb-box-shadow)];
+      }
+    }
+
+    &::-moz-focus-outer {
+      @apply border-0;
+    }
+
     &::-webkit-slider-thumb {
-      @apply shadow-[var(--form-range-thumb-box-shadow)];
-    }
-    &::-moz-range-thumb {
-      @apply shadow-[var(--form-range-thumb-box-shadow)];
-    }
-  }
-
-  &::-moz-focus-outer {
-    @apply border-0;
-  }
-
-  &::-webkit-slider-thumb {
-    @apply appearance-none transition duration-200
+      @apply appearance-none transition duration-200
     w-[var(--form-range-thumb-width)]
     h-[var(--form-range-thumb-height)]
     mt-[calc((var(--form-range-track-height)-var(--form-range-thumb-height))*0.5)]
     border-0
     rounded-[var(--form-range-thumb-border-radius)]
     bg-[var(--form-range-color)];
-  }
+    }
 
-  &::-webkit-slider-runnable-track {
-    @apply cursor-pointer
+    &::-webkit-slider-runnable-track {
+      @apply cursor-pointer
     w-[var(--form-range-track-width)]
     h-[var(--form-range-track-height)]
     bg-[--alpha(var(--form-range-color)/30%)]
     rounded-[var(--form-range-track-border-radius)];
-  }
+    }
 
-  &::-moz-range-thumb {
-    @apply appearance-none transition duration-200
+    &::-moz-range-thumb {
+      @apply appearance-none transition duration-200
     w-[var(--form-range-thumb-width)]
     h-[var(--form-range-thumb-height)]
     mt-[calc((var(--form-range-track-height)-var(--form-range-thumb-height))*0.5)]
     border-0
     rounded-[var(--form-range-thumb-border-radius)]
     bg-[var(--form-range-color)];
-  }
+    }
 
-  &::-moz-range-track {
-    @apply cursor-pointer
+    &::-moz-range-track {
+      @apply cursor-pointer
     w-[var(--form-range-track-width)]
     h-[var(--form-range-track-height)]
     bg-[--alpha(var(--form-range-color)/30%)]
     rounded-[var(--form-range-track-border-radius)];
-  }
-
-  &:active {
-    &::-webkit-slider-thumb {
-      --form-range-thumb-box-shadow: --alpha(var(--form-range-color) / 16%) 0px 0px 0px 14px;
     }
-    &::-moz-range-thumb {
-      --form-range-thumb-box-shadow: --alpha(var(--form-range-color) / 16%) 0px 0px 0px 14px;
-    }
-  }
 
-  &:disabled {
-    @apply pointer-events-none;
-    --form-range-color: var(--color-disabled-color);
+    &:active {
+      &::-webkit-slider-thumb {
+        --form-range-thumb-box-shadow: --alpha(var(--form-range-color) / 16%) 0px 0px 0px 14px;
+      }
+      &::-moz-range-thumb {
+        --form-range-thumb-box-shadow: --alpha(var(--form-range-color) / 16%) 0px 0px 0px 14px;
+      }
+    }
+
+    &:disabled {
+      @apply pointer-events-none;
+      --form-range-color: var(--color-disabled-color);
+    }
   }
 }
 
 @utility form-range-sm {
-  --form-range-height: --spacing(4);
-  --form-range-thumb-width: --spacing(3);
-  --form-range-thumb-height: --spacing(3);
-  --form-range-track-height: --spacing(0.75);
+  @layer base {
+    --form-range-height: --spacing(4);
+    --form-range-thumb-width: --spacing(3);
+    --form-range-thumb-height: --spacing(3);
+    --form-range-track-height: --spacing(0.75);
+  }
 }
 @utility form-range-lg {
-  --form-range-height: --spacing(7);
-  --form-range-thumb-width: --spacing(6);
-  --form-range-thumb-height: --spacing(6);
-  --form-range-track-height: --spacing(2.15);
+  @layer base {
+    --form-range-height: --spacing(7);
+    --form-range-thumb-width: --spacing(6);
+    --form-range-thumb-height: --spacing(6);
+    --form-range-track-height: --spacing(2.15);
+  }
 }
 @utility form-range-secondary {
-  --form-range-color: var(--color-secondary);
+  @layer base {
+    --form-range-color: var(--color-secondary);
+  }
 }
 @utility form-range-info {
-  --form-range-color: var(--color-info);
+  @layer base {
+    --form-range-color: var(--color-info);
+  }
 }
 @utility form-range-success {
-  --form-range-color: var(--color-success);
+  @layer base {
+    --form-range-color: var(--color-success);
+  }
 }
 @utility form-range-warning {
-  --form-range-color: var(--color-warning);
+  @layer base {
+    --form-range-color: var(--color-warning);
+  }
 }
 @utility form-range-danger {
-  --form-range-color: var(--color-danger);
+  @layer base {
+    --form-range-color: var(--color-danger);
+  }
 }
 @utility form-range-neutral {
-  --form-range-color: var(--color-main);
+  @layer base {
+    --form-range-color: var(--color-main);
+  }
 }

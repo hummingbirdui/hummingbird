@@ -35,66 +35,50 @@
   }
 }
 
-@utility bs-tooltip-top {
-  @apply mb-[var(--tooltip-margin)]!;
-  .tooltip-arrow {
-    @apply bottom-0 -mb-[var(--tooltip-arrow-height)];
-    &::before {
-      @apply origin-[100%_0]
-      rounded-br-[var(--tooltip-arrow-border-radius)];
-    }
-  }
-}
-
-@utility bs-tooltip-end {
-  --tooltip-arrow-height: 0.75rem;
-  --tooltip-arrow-width: 0.53rem;
-  @apply ml-[var(--tooltip-margin)]!;
-  .tooltip-arrow {
-    @apply left-0 -ml-[var(--tooltip-arrow-width)];
-    &::before {
-      @apply origin-[100%_100%]
-      rounded-bl-[var(--tooltip-arrow-border-radius)];
-    }
-  }
-}
-
-@utility bs-tooltip-bottom {
-  @apply mt-[var(--tooltip-margin)]!;
-  .tooltip-arrow {
-    @apply top-0 -mt-[var(--tooltip-arrow-height)];
-    &::before {
-      @apply origin-[0px_100%]
-      rounded-tl-[var(--tooltip-arrow-border-radius)];
-    }
-  }
-}
-
-@utility bs-tooltip-start {
-  --tooltip-arrow-height: 0.75rem;
-  --tooltip-arrow-width: 0.53rem;
-  @apply mr-[var(--tooltip-margin)]!;
-  .tooltip-arrow {
-    @apply right-0 -mr-[var(--tooltip-arrow-width)];
-    &::before {
-      @apply origin-[0_0]
-      rounded-tr-[var(--tooltip-arrow-border-radius)];
-    }
-  }
-}
-
 .bs-tooltip-auto {
   &[data-popper-placement^='top'] {
-    @apply bs-tooltip-top;
+    @apply mb-[var(--tooltip-margin)]!;
+    .tooltip-arrow {
+      @apply bottom-0 -mb-[var(--tooltip-arrow-height)];
+      &::before {
+        @apply origin-[100%_0]
+        rounded-br-[var(--tooltip-arrow-border-radius)];
+      }
+    }
   }
   &[data-popper-placement^='right'] {
-    @apply bs-tooltip-end;
+    --tooltip-arrow-height: 0.75rem;
+    --tooltip-arrow-width: 0.53rem;
+    @apply ml-[var(--tooltip-margin)]!;
+    .tooltip-arrow {
+      @apply left-0 -ml-[var(--tooltip-arrow-width)];
+      &::before {
+        @apply origin-[100%_100%]
+        rounded-bl-[var(--tooltip-arrow-border-radius)];
+      }
+    }
   }
   &[data-popper-placement^='bottom'] {
-    @apply bs-tooltip-bottom;
+    @apply mt-[var(--tooltip-margin)]!;
+    .tooltip-arrow {
+      @apply top-0 -mt-[var(--tooltip-arrow-height)];
+      &::before {
+        @apply origin-[0px_100%]
+        rounded-tl-[var(--tooltip-arrow-border-radius)];
+      }
+    }
   }
   &[data-popper-placement^='left'] {
-    @apply bs-tooltip-start;
+    --tooltip-arrow-height: 0.75rem;
+    --tooltip-arrow-width: 0.53rem;
+    @apply mr-[var(--tooltip-margin)]!;
+    .tooltip-arrow {
+      @apply right-0 -mr-[var(--tooltip-arrow-width)];
+      &::before {
+        @apply origin-[0_0]
+        rounded-tr-[var(--tooltip-arrow-border-radius)];
+      }
+    }
   }
 }
 

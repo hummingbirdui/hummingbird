@@ -1,0 +1,29 @@
+---
+import '../style.css';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../const';
+import Navbar from '../components/common/Navbar.astro';
+import Head from '../components/Head.astro';
+const { frontmatter, fluid } = Astro.props;
+const title = Astro.props.title ?? frontmatter?.title ?? SITE_TITLE;
+const description = frontmatter?.description ? frontmatter.description : SITE_DESCRIPTION;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <script is:inline>
+      document.documentElement.classList.toggle(
+        'dark',
+        localStorage.theme === 'dark' ||
+          (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches),
+      );
+    </script>
+    <Head title={title} description={description} />
+  </head>
+  <body>
+    <Navbar fluid={fluid} />
+    <slot />
+    <script src="../../static/docs.js"></script>
+    <script src="../../static/hummingbird.bundle.min.js"></script>
+  </body>
+</html>

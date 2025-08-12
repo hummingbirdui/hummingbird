@@ -1,6 +1,3 @@
 @import './theme/theme.css';
+@import './reboot.css';
 @import './components/components.css';
-
-html {
-  -webkit-font-smoothing: antialiased;
-}

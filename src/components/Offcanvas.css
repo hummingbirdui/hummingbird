@@ -1,39 +1,41 @@
 @utility offcanvas {
-  --offcanvas-zindex: 1045;
-  --offcanvas-width: 20rem;
-  --offcanvas-height: 30vh;
-  --offcanvas-padding-x: --spacing(4);
-  --offcanvas-padding-y: --spacing(4);
-  --offcanvas-color: var(--color-default-color);
-  --offcanvas-bg: var(--color-subtle);
-  --offcanvas-border-width: 1px;
-  --offcanvas-border-color: var(--color-border-base);
-  --offcanvas-box-shadow: var(--shadow-xl);
-  --offcanvas-transition-duration: 0.3s;
-  --offcanvas-title-line-height: 1.5;
+  @layer base {
+    --offcanvas-zindex: 1045;
+    --offcanvas-width: 20rem;
+    --offcanvas-height: 30vh;
+    --offcanvas-padding-x: --spacing(4);
+    --offcanvas-padding-y: --spacing(4);
+    --offcanvas-color: var(--color-default-color);
+    --offcanvas-bg: var(--color-subtle);
+    --offcanvas-border-width: 1px;
+    --offcanvas-border-color: var(--border-color-base);
+    --offcanvas-box-shadow: var(--shadow-xl);
+    --offcanvas-transition-duration: 0.3s;
+    --offcanvas-title-line-height: 1.5;
 
-  @apply fixed bottom-0
-  z-[var(--offcanvas-zindex)]
-  flex flex-col
-  max-w-full
-  text-[var(--offcanvas-color)]
-  invisible
-  bg-[var(--offcanvas-bg)]
-  bg-clip-padding
-  outline-0
-  shadow-[var(--offcanvas-box-shadow)]
-  transition-transform
-  duration-[var(--offcanvas-transition-duration)];
+    @apply fixed bottom-0
+    z-[var(--offcanvas-zindex)]
+    flex flex-col
+    max-w-full
+    text-[var(--offcanvas-color)]
+    invisible
+    bg-[var(--offcanvas-bg)]
+    bg-clip-padding
+    outline-0
+    shadow-[var(--offcanvas-box-shadow)]
+    transition-transform
+    duration-[var(--offcanvas-transition-duration)];
 
-  &.showing,
-  &.show:not(.hiding) {
-    @apply translate-none;
-  }
+    &.showing,
+    &.show:not(.hiding) {
+      @apply translate-none;
+    }
 
-  &.showing,
-  &.hiding,
-  &.show {
-    @apply visible;
+    &.showing,
+    &.hiding,
+    &.show {
+      @apply visible;
+    }
   }
 }
 
@@ -96,19 +98,23 @@
 }
 
 @utility offcanvas-title {
-  @apply mb-0 leading-[var(--offcanvas-title-line-height)];
+  @layer base {
+    @apply mb-0 leading-[var(--offcanvas-title-line-height)];
+  }
 }
 
 @utility offcanvas-body {
-  @apply grow 
-  px-[var(--offcanvas-padding-x)] 
-  py-[var(--offcanvas-padding-y)]
-  overflow-y-auto;
+  @layer base {
+    @apply grow 
+    px-[var(--offcanvas-padding-x)] 
+    py-[var(--offcanvas-padding-y)]
+    overflow-y-auto;
+  }
 }
 
 @utility offcanvas-static {
-  @apply static translate-none visible border-0 shadow-none bg-transparent w-auto h-auto;
-  @layer base {
+  @layer components {
+    @apply static translate-none visible border-0 shadow-none bg-transparent w-auto h-auto;
     .offcanvas-header {
       @apply hidden;
     }
@@ -119,46 +125,46 @@
 }
 
 @utility offcanvas-sm {
-  @media (max-width: theme(--breakpoint-sm)) {
+  @variant max-sm {
     @apply offcanvas;
   }
-  @media (min-width: theme(--breakpoint-sm)) {
+  @variant sm {
     @apply offcanvas-static;
   }
 }
 
 @utility offcanvas-md {
-  @media (max-width: theme(--breakpoint-md)) {
+  @variant max-md {
     @apply offcanvas;
   }
-  @media (min-width: theme(--breakpoint-md)) {
+  @variant md {
     @apply offcanvas-static;
   }
 }
 
 @utility offcanvas-lg {
-  @media (max-width: theme(--breakpoint-lg)) {
+  @variant max-lg {
     @apply offcanvas;
   }
-  @media (min-width: theme(--breakpoint-lg)) {
+  @variant lg {
     @apply offcanvas-static;
   }
 }
 
 @utility offcanvas-xl {
-  @media (max-width: theme(--breakpoint-xl)) {
+  @variant max-xl {
     @apply offcanvas;
   }
-  @media (min-width: theme(--breakpoint-xl)) {
+  @variant xl {
     @apply offcanvas-static;
   }
 }
 
 @utility offcanvas-2xl {
-  @media (max-width: theme(--breakpoint-2xl)) {
+  @variant max-2xl {
     @apply offcanvas;
   }
-  @media (min-width: theme(--breakpoint-2xl)) {
+  @variant 2xl {
     @apply offcanvas-static;
   }
 }

@@ -1,0 +1,117 @@
+---
+title: Collapse
+desc: Toggle the visibility of content across your project with a few classes and our JavaScript plugins.
+---
+
+###### Example
+
+<Example>
+  <div slot="preview" class='not-prose'>
+    <div class="inline-flex gap-2 mb-3">
+      <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">Link with href</a>
+      <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">Button with data-bs-target</button>
+    </div>
+    <div class="collapse" id="collapseExample">
+      <div class="card card-body">
+        {`Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.`}
+      </div>
+    </div>
+  </div>
+
+  <div slot="code">
+    ```html
+    <div class="inline-flex gap-2 mb-3">
+      <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+        Link with href
+      </a>
+      <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+        Button with data-bs-target
+      </button>
+    </div>
+    <div class="collapse" id="collapseExample">
+      <div class="card card-body">
+        Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+      </div>
+    </div>
+    ```
+  </div>
+</Example>
+
+###### Horizontal
+
+<Example>
+  <div slot="preview" class='not-prose'>
+    <div class='mb-3'>
+      <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample" aria-expanded="false" aria-controls="collapseWidthExample">Toggle width collapse</button>
+    </div>
+    <div style="min-height: 120px;">
+      <div class="collapse collapse-horizontal" id="collapseWidthExample">
+        <div class="card card-body" style="width: 300px;">
+          {`This is some placeholder content for a horizontal collapse. It’s hidden by default and shown when triggered.`}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div slot="code">
+    ```html
+    <div class='mb-3'>
+      <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample" aria-expanded="false" aria-controls="collapseWidthExample">
+        Toggle width collapse
+      </button>
+    </div>
+    <div style="min-height: 120px;">
+      <div class="collapse collapse-horizontal" id="collapseWidthExample">
+        <div class="card card-body" style="width: 300px;">
+          This is some placeholder content for a horizontal collapse. It’s hidden by default and shown when triggered.
+        </div>
+      </div>
+    </div>
+    ```
+  </div>
+</Example>
+
+###### Multiple toggles and targets
+
+<Example>
+  <div slot="preview" class='not-prose'>
+    <div class="inline-flex gap-1 mb-3">
+      <a class="btn btn-primary" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Toggle first element</a>
+      <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">Toggle second element</button>
+      <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target=".multi-collapse" aria-expanded="false" aria-controls="multiCollapseExample1 multiCollapseExample2">Toggle both elements</button>
+    </div>
+    <div class="grid grid-cols-2 gap-3">
+      <div>
+        <div class="collapse multi-collapse" id="multiCollapseExample1">
+          <div class="card card-body">
+            {`Some placeholder content for first collapse component of this multi-collapse example. This panel is hidden by default but revealed when the user activates the relevant trigger.`}
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="collapse multi-collapse" id="multiCollapseExample2">
+          <div class="card card-body">
+            {`Some placeholder content for second collapse component of this multi-collapse example. This panel is hidden by default but revealed when the user activates the relevant trigger.`}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div slot="code">
+    ```html
+    <div class='mb-3'>
+      <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample" aria-expanded="false" aria-controls="collapseWidthExample">
+        Toggle width collapse
+      </button>
+    </div>
+    <div style="min-height: 120px;">
+      <div class="collapse collapse-horizontal" id="collapseWidthExample">
+        <div class="card card-body" style="width: 300px;">
+          This is some placeholder content for a horizontal collapse. It’s hidden by default and shown when triggered.
+        </div>
+      </div>
+    </div>
+    ```
+  </div>
+</Example>
