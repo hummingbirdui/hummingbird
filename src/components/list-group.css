@@ -17,13 +17,16 @@
     --list-group-disabled-color: var(--color-disabled-color);
 
     @apply relative flex flex-col
-    pl-0 mb-0
+    pl-0 mb-0 list-none
     py-[var(--list-group-padding-y)]
     bg-[var(--list-group-bg)]
     rounded-[var(--list-group-border-radius)];
 
     hr {
       @apply border-[var(--list-group-corder-color)];
+    }
+    ul {
+      @apply list-none p-0 m-0;
     }
   }
 }
@@ -85,11 +88,11 @@
 }
 @utility list-text-primary {
   @layer base {
-    @apply text-base font-semibold text-default-color;
+    @apply text-base font-semibold text-default-color mb-0;
   }
 }
 @utility list-text-secondary {
   @layer base {
-    @apply text-sm font-normal text-highlight-color;
+    @apply text-sm font-normal text-highlight-color mb-0;
   }
 }

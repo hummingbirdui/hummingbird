@@ -23,6 +23,7 @@
     @apply inline-flex items-center justify-center gap-1.5
     transition-[background] duration-200
     cursor-pointer
+    no-underline
     bg-[var(--btn-bg)]
     text-[length:var(--btn-font-size)]
     font-[weight:var(--btn-font-weight)]

@@ -37,7 +37,7 @@
 
 @utility badge-link {
   @layer base {
-    @apply cursor-pointer
+    @apply cursor-pointer no-underline
     hover:bg-[var(--badge-link-hover-bg)];
   }
 }

@@ -211,10 +211,3 @@
     --table-active-bg: --alpha(var(--color-danger-light) / 40%);
   }
 }
-
-/* TODO: Move to base styles */
-@layer base {
-  caption {
-    @apply text-left caption-bottom font-medium p-4;
-  }
-}

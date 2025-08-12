@@ -40,6 +40,7 @@
     --dropdown-header-padding-y: --spacing(2);
     --dropdown-header-padding-x: --spacing(4);
     --dropdown-header-color: var(--color-highlight-color);
+    --dropdown-header-font-size: var(--text-base);
 
     @apply absolute 
     z-[var(--dropdown-zindex)]
@@ -48,6 +49,7 @@
     px-[var(--dropdown-padding-x)]
     py-[var(--dropdown-padding-y)]
     m-0
+    list-none
     border-[length:var(--dropdown-border-width)]
     border-[var(--dropdown-border-color)]
     text-[length:var(--dropdown-font-size)]
@@ -129,7 +131,8 @@
     clear-both
     text-left
     text-[var(--dropdown-link-color)]
-    whitespace-nowrap;
+    whitespace-nowrap
+    no-underline;
 
     &:hover,
     &:focus {
@@ -154,7 +157,9 @@
     px-[var(--dropdown-header-padding-x)]
     py-[var(--dropdown-header-padding-y)]
     text-[var(--dropdown-header-color)]
-    whitespace-nowrap;
+    text-[length:var(--dropdown-header-font-size)]
+    whitespace-nowrap
+    mb-0;
   }
 }
 
