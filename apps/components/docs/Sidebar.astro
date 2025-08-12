@@ -1,13 +1,12 @@
 ---
-import sitemap from "../../sitemap";
+import sitemap from '../../sitemap';
 const pathName = Astro.originPathname;
-const path = pathName.split("/").pop();
+const path = pathName.split('/').pop();
 const { page } = Astro.props;
-console.log(pathName);
 ---
 
 <aside
-  class="fixed z-10 lg:sticky top-14 w-70 h-screen max-h-[calc(100dvh-(var(--spacing)*16))] transition-transform -translate-x-full bg-subtle border-r border-border-light lg:translate-x-0 shrink-0 overflow-y-auto"
+  class="fixed z-10 lg:sticky top-14 w-70 h-screen max-h-[calc(100dvh-(var(--spacing)*16))] transition-transform -translate-x-full bg-subtle border-r border-light lg:translate-x-0 shrink-0 overflow-y-auto"
   aria-label="Sidebar"
   data-sidebar
 >
@@ -17,12 +16,12 @@ console.log(pathName);
         sitemap.map((category) => (
           <div>
             <h2 class="text-sm mb-3 font-medium">{category.subHeader}</h2>
-            <ul class="border-l border-border-light ps-3 ms-1.5">
+            <ul class="border-l border-light ps-3 ms-1.5 list-none">
               {category.items.map((item) => (
                 <li>
                   <a
                     href={item.path}
-                    class={`text-sm py-1.5 block ${pathName === item.path ? "text-info" : "text-highlight-color"}`}
+                    class={`text-sm py-1.5 block no-underline ${pathName === item.path ? 'text-info' : 'text-highlight-color'}`}
                   >
                     <span>{item.name}</span>
                   </a>

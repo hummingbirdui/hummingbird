@@ -1,0 +1,245 @@
+---
+title: Badges
+desc: Documentation and examples for badges, our small count and labeling component.
+---
+
+###### Basic Badges
+
+<Example>
+  <div slot="preview" class='not-prose space-y-1'>
+    <div class='space-x-2'>
+      <span class="badge">Neutral</span>
+      <span class="badge badge-primary">Primary</span>
+      <span class="badge badge-secondary">Secondary</span>
+      <span class="badge badge-info">Info</span>
+      <span class="badge badge-success">Success</span>
+      <span class="badge badge-warning">Warning</span>
+      <span class="badge badge-danger">Danger</span>
+    </div>
+    <div class='space-x-2'>
+      <span class="badge badge-subtle">Neutral</span>
+      <span class="badge badge-subtle-primary">Primary</span>
+      <span class="badge badge-subtle-secondary">Secondary</span>
+      <span class="badge badge-subtle-info">Info</span>
+      <span class="badge badge-subtle-success">Success</span>
+      <span class="badge badge-subtle-warning">Warning</span>
+      <span class="badge badge-subtle-danger">Danger</span>
+    </div>
+    <div class='space-x-2'>
+      <span class="badge badge-outline">Neutral</span>
+      <span class="badge badge-outline-primary">Primary</span>
+      <span class="badge badge-outline-secondary">Secondary</span>
+      <span class="badge badge-outline-info">Info</span>
+      <span class="badge badge-outline-success">Success</span>
+      <span class="badge badge-outline-warning">Warning</span>
+      <span class="badge badge-outline-danger">Danger</span>
+    </div>
+  </div>
+
+  <div slot="code">
+  ```html
+  <span class="badge">Neutral</span>
+  <span class="badge badge-primary">Primary</span>
+  <span class="badge badge-secondary">Secondary</span>
+  <span class="badge badge-info">Info</span>
+  <span class="badge badge-success">Success</span>
+  <span class="badge badge-warning">Warning</span>
+  <span class="badge badge-danger">Danger</span>
+
+<span class="badge badge-subtle">Neutral</span>
+<span class="badge badge-subtle-primary">Primary</span>
+<span class="badge badge-subtle-secondary">Secondary</span>
+<span class="badge badge-subtle-info">Info</span>
+<span class="badge badge-subtle-success">Success</span>
+<span class="badge badge-subtle-warning">Warning</span>
+<span class="badge badge-subtle-danger">Danger</span>
+
+  <span class="badge badge-outline">Neutral</span>
+  <span class="badge badge-outline-primary">Primary</span>
+  <span class="badge badge-outline-secondary">Secondary</span>
+  <span class="badge badge-outline-info">Info</span>
+  <span class="badge badge-outline-success">Success</span>
+  <span class="badge badge-outline-warning">Warning</span>
+  <span class="badge badge-outline-danger">Danger</span>
+  ```
+  </div>
+</Example>
+
+###### Sizes
+
+<Example>
+  <div slot="preview" class='not-prose space-y-2'>
+    <div class='space-x-2'>
+      <span class="badge badge-primary">Primary</span>
+      <span class="badge badge-primary badge-md">Primary</span>
+      <span class="badge badge-primary badge-lg">Primary</span>
+    </div>
+    <div class='space-x-2'>
+      <span class="badge badge-subtle-primary">Primary</span>
+      <span class="badge badge-subtle-primary badge-md">Primary</span>
+      <span class="badge badge-subtle-primary badge-lg">Primary</span>
+    </div>
+    <div class='space-x-2'>
+      <span class="badge badge-outline-primary">Primary</span>
+      <span class="badge badge-outline-primary badge-md">Primary</span>
+      <span class="badge badge-outline-primary badge-lg">Primary</span>
+    </div>
+  </div>
+
+  <div slot="code">
+  ```html
+  <span class="badge badge-primary">Primary</span>
+  <span class="badge badge-primary badge-md">Primary</span>
+  <span class="badge badge-primary badge-lg">Primary</span>
+
+<span class="badge badge-subtle-primary">Primary</span>
+<span class="badge badge-subtle-primary badge-md">Primary</span>
+<span class="badge badge-subtle-primary badge-lg">Primary</span>
+
+  <span class="badge badge-outline-primary">Primary</span>
+  <span class="badge badge-outline-primary badge-md">Primary</span>
+  <span class="badge badge-outline-primary badge-lg">Primary</span>
+  ```
+  </div>
+</Example>
+
+###### Badge with Icon
+
+<Example>
+  <div slot="preview" class='not-prose space-x-2'>
+    <div class="badge badge-primary badge-md"><span class="icon-[material-symbols--account-circle-outline]"></span>With Icon</div>
+    <div class="badge badge-subtle-primary badge-md"><span class="icon-[material-symbols--account-circle-outline]"></span>With Icon</div>
+    <div class="badge badge-outline-primary badge-md"><span class="icon-[material-symbols--account-circle-outline]"></span>With Icon</div>
+  </div>
+
+  <div slot="code">
+    ```html
+    <div class="badge badge-primary badge-md">
+      <span class="icon-[material-symbols--account-circle-outline]"></span>
+      With Icon
+    </div>
+    <div class="badge badge-subtle-primary badge-md">
+      <span class="icon-[material-symbols--account-circle-outline]"></span>
+      With Icon
+    </div>
+    <div class="badge badge-outline-primary badge-md">
+      <span class="icon-[material-symbols--account-circle-outline]"></span>
+      With Icon
+    </div>
+    ```
+  </div>
+</Example>
+
+###### Clickable link
+
+<Example>
+  <div slot="preview" class='not-prose space-x-2'>
+    <a href='#' class="badge badge-primary badge-link">Clickable</a>
+    <a href='#' class="badge badge-subtle-primary badge-link">Clickable</a>
+    <a href='#' class="badge badge-outline-primary badge-link">Clickable</a>
+  </div>
+
+  <div slot="code">
+    ```html
+    <a href='#' class="badge badge-primary badge-link">Clickable</a>
+    <a href='#' class="badge badge-subtle-primary badge-link">Clickable</a>
+    <a href='#' class="badge badge-outline-primary badge-link">Clickable</a>
+    ```
+  </div>
+</Example>
+
+###### Deletable
+
+<Example>
+  <div slot="preview" class='not-prose space-x-2'>
+    <div class="badge badge-primary">
+      {`Deletable`}
+      <button class="badge-action-btn">
+        <span class="icon-[line-md--close-circle-filled]"></span>
+      </button>
+    </div>
+    <div class="badge badge-subtle-primary">
+      {`Deletable`}
+      <button class="badge-action-btn">
+        <span class="icon-[line-md--close-circle-filled]"></span>
+      </button>
+    </div>
+    <div class="badge badge-outline-primary">
+      {`Deletable`}
+      <button class="badge-action-btn">
+        <span class="icon-[line-md--close-circle-filled]"></span>
+      </button>
+    </div>
+  </div>
+
+  <div slot="code">
+    ```html
+    <div class="badge badge-primary">
+      Deletable
+      <button class="badge-action-btn">
+        <span class="icon-[line-md--close-circle-filled]"></span>
+      </button>
+    </div>
+    <div class="badge badge-subtle-primary">
+      Deletable
+      <button class="badge-action-btn">
+        <span class="icon-[line-md--close-circle-filled]"></span>
+      </button>
+    </div>
+    <div class="badge badge-outline-primary">
+      Deletable
+      <button class="badge-action-btn">
+        <span class="icon-[line-md--close-circle-filled]"></span>
+      </button>
+    </div>
+    ```
+  </div>
+</Example>
+
+###### Clickable & Deletable
+
+<Example>
+  <div slot="preview" class='not-prose space-x-2'>
+    <a href="#" class="badge badge-primary badge-link">
+      {`Deletable`}
+      <button class="badge-action-btn">
+        <span class="icon-[line-md--close-circle-filled]"></span>
+      </button>
+    </a>
+    <a href="#" class="badge badge-subtle-primary badge-link">
+      {`Deletable`}
+      <button class="badge-action-btn">
+        <span class="icon-[line-md--close-circle-filled]"></span>
+      </button>
+    </a>
+    <a href="#" class="badge badge-outline-primary badge-link">
+      {`Deletable`}
+      <button class="badge-action-btn">
+        <span class="icon-[line-md--close-circle-filled]"></span>
+      </button>
+    </a>
+  </div>
+
+  <div slot="code">
+    ```html
+    <a href="#" class="badge badge-primary badge-link">
+      Deletable
+      <button class="badge-action-btn">
+        <span class="icon-[line-md--close-circle-filled]"></span>
+      </button>
+    </a>
+    <a href="#" class="badge badge-subtle-primary badge-link">
+      Deletable
+      <button class="badge-action-btn">
+        <span class="icon-[line-md--close-circle-filled]"></span>
+      </button>
+    </a>
+    <a href="#" class="badge badge-outline-primary badge-link">
+      Deletable
+      <button class="badge-action-btn">
+        <span class="icon-[line-md--close-circle-filled]"></span>
+      </button>
+    </a>
+    ```
+  </div>
+</Example>

@@ -21,14 +21,14 @@ const { code = true } = Astro.props;
       <slot name="code" />
     </div>
   </div> -->
-  <div class="grid border border-border-light rounded-2xl not-prose">
+  <div class="grid border border-light rounded-2xl not-prose">
     <div class="p-6">
       <slot name="preview" />
     </div>
     {
       code && (
         <>
-          <div class="border-y border-border-light p-3 flex justify-between">
+          <div class="border-y border-light p-3 flex justify-between">
             <button>HTML</button>
             <button class="cursor-pointer">
               <span class="icon-[material-symbols--content-copy-outline-rounded]" />
@@ -59,9 +59,7 @@ const { code = true } = Astro.props;
 
           // Activate the clicked tab and corresponding pane
           tab.classList.add('active');
-          example
-            .querySelector(`.tab-pane.${tabType}`)
-            ?.classList.add('active');
+          example.querySelector(`.tab-pane.${tabType}`)?.classList.add('active');
         });
       });
     });
