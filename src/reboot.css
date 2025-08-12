@@ -1,0 +1,133 @@
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    @apply bg-default text-default-color text-base font-normal;
+  }
+
+  hr {
+    @apply my-4 mx-0 border-base;
+  }
+
+  h1 {
+    @apply mb-2 font-bold text-[48px] leading-[1];
+  }
+
+  h2 {
+    @apply mb-2 font-bold text-[42px] leading-[1];
+  }
+
+  h3 {
+    @apply mb-2 font-bold text-[32px] leading-[1.1];
+  }
+
+  h4 {
+    @apply mb-2 font-bold text-[28px] leading-[1.1];
+  }
+
+  h5 {
+    @apply mb-2 font-bold text-[24px] leading-[1.15];
+  }
+
+  h6 {
+    @apply mb-2 font-bold text-[20px] leading-[1.2];
+  }
+
+  p {
+    @apply mb-4 mt-0;
+  }
+
+  address {
+    @apply mb-4;
+  }
+
+  /* list */
+  ul {
+    @apply list-disc;
+  }
+
+  ol {
+    @apply list-decimal;
+  }
+
+  ol,
+  ul {
+    @apply pl-8;
+  }
+
+  ol,
+  ul,
+  dl {
+    @apply mt-0 mb-4;
+  }
+
+  ol ol,
+  ul ul,
+  ol ul,
+  ul ol {
+    @apply mb-0;
+  }
+
+  dt {
+    @apply font-bold;
+  }
+
+  blockquote {
+    @apply mb-4;
+  }
+
+  mark {
+    @apply p-0.75;
+  }
+
+  a {
+    @apply underline text-primary;
+
+    &:hover {
+      @apply text-primary-dark;
+    }
+  }
+
+  a:not([href]):not([class]) {
+    &,
+    &:hover {
+      @apply no-underline text-inherit;
+    }
+  }
+
+  code {
+    @apply text-pink-500;
+    a > & {
+      @apply text-inherit;
+    }
+  }
+
+  figure {
+    @apply mb-4;
+  }
+
+  caption {
+    @apply text-left caption-bottom font-medium p-4;
+  }
+
+  label {
+    @apply inline-block;
+  }
+
+  button {
+    @apply cursor-pointer;
+    &:disabled {
+      @apply cursor-default;
+    }
+  }
+
+  legend {
+    @apply float-left w-full p-0 mb-2 font-medium leading-normal text-xl;
+  }
+
+  output {
+    @apply inline-block;
+  }
+}
