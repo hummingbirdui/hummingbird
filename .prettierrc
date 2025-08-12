@@ -13,8 +13,7 @@
       "options": {
         "singleQuote": false,
         "parser": "mdx",
-        "proseWrap": "never",
-        "printWidth": 10000
+        "embeddedLanguageFormatting": "off"
       }
     },
     {
