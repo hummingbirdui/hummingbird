@@ -1,21 +1,19 @@
 @import './default.css';
 
 @theme {
-  /* base colors */
-  --color-default: var(--color-white);
-  --color-default-color: var(--color-gray-800);
+  /* Background colors */
+  --background-color-subtle: var(--color-gray-50);
+  --background-color-muted: var(--color-gray-100);
+  --background-color-default: var(--color-white);
+  --background-color-highlight: var(--color-gray-200);
+  --background-color-emphasis: var(--color-gray-300);
 
-  --color-subtle: var(--color-gray-50);
-  --color-subtle-color: var(--color-gray-800);
-
-  --color-muted: var(--color-gray-100);
-  --color-muted-color: var(--color-gray-800);
-
-  --color-highlight: var(--color-gray-200);
-  --color-highlight-color: var(--color-gray-600);
-
-  --color-emphasis: var(--color-gray-300);
-  --color-emphasis-color: var(--color-gray-400);
+  /* Text colors */
+  --text-color-subtle: var(--color-gray-950);
+  --text-color-muted: var(--color-gray-900);
+  --text-color-default: var(--color-gray-800);
+  --text-color-highlight: var(--color-gray-600);
+  --text-color-emphasis: var(--color-gray-400);
 
   /* neutral */
   --color-lighter: var(--color-gray-100);
@@ -115,35 +113,33 @@
   --input-btn-line-height: 1.5;
   --input-btn-border-width: 1px;
 
-  --input-label-color: var(--color-highlight-color);
-  --input-bg: var(--color-muted);
-  --input-color: var(--color-default-color);
+  --input-label-color: var(--text-color-highlight);
+  --input-bg: var(--background-color-muted);
+  --input-color: var(--text-color-default);
   --input-border-color: var(--border-color-base);
-  --input-disabled-bg: var(--color-highlight);
-  --input-hover-bg: var(--color-highlight);
+  --input-disabled-bg: var(--background-color-highlight);
+  --input-hover-bg: var(--background-color-highlight);
   --input-focus-bg: var(--color-primary-lighter);
-  --input-hover-border-color: var(--color-emphasis-color);
+  --input-hover-border-color: var(--text-color-emphasis);
   --input-focus-border-color: var(--color-primary);
   --input-disabled-border-color: var(--border-color-base);
 }
 
 @layer {
   @variant dark {
-    /* base colors */
-    --color-default: var(--color-gray-950);
-    --color-default-color: var(--color-gray-100);
+    /* Background colors */
+    --background-color-subtle: var(--color-gray-900);
+    --background-color-muted: var(--color-gray-800);
+    --background-color-default: var(--color-gray-950);
+    --background-color-highlight: var(--color-gray-700);
+    --background-color-emphasis: var(--color-gray-600);
 
-    --color-subtle: var(--color-gray-900);
-    --color-subtle-color: var(--color-gray-100);
-
-    --color-muted: var(--color-gray-800);
-    --color-muted-color: var(--color-gray-100);
-
-    --color-highlight: var(--color-gray-700);
-    --color-highlight-color: var(--color-gray-400);
-
-    --color-emphasis: var(--color-gray-600);
-    --color-emphasis-color: var(--color-gray-500);
+    /* Text colors */
+    --text-color-subtle: var(--color-gray-100);
+    --text-color-muted: var(--color-gray-100);
+    --text-color-default: var(--color-gray-100);
+    --text-color-highlight: var(--color-gray-400);
+    --text-color-emphasis: var(--color-gray-500);
 
     /* neutral */
     --color-lighter: var(--color-gray-900);

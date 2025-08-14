@@ -7,9 +7,9 @@
     --input-line-height: var(--input-btn-line-height);
     --input-border-width: var(--input-btn-border-width);
     --input-border-color: transparent;
-    --file-selector-btn-bg: var(--color-highlight);
-    --file-selector-btn-color: var(--color-default-color);
-    --file-selector-btn-hover-bg: var(--color-emphasis);
+    --file-selector-btn-bg: var(--background-color-highlight);
+    --file-selector-btn-color: var(--text-color-default);
+    --file-selector-btn-hover-bg: var(--background-color-emphasis);
     --input-icon-spacing: --spacing(11);
 
     @apply w-full
@@ -69,7 +69,7 @@
       --file-selector-btn-hover-bg: var(--color-danger-dark);
     }
     &:is(:disabled, [disabled])::file-selector-button {
-      --file-selector-btn-bg: var(--color-muted);
+      --file-selector-btn-bg: var(--background-color-muted);
     }
   }
 }
@@ -261,7 +261,7 @@
 
 @utility form-field {
   @layer base {
-    --input-label-color: var(--color-highlight-color);
+    --input-label-color: var(--text-color-highlight);
     --input-label-font-size: var(--text-xs);
     --input-label-font-weight: 600;
     --input-label-bg: transparent;
@@ -313,7 +313,7 @@
     --form-text-margin-top: --spacing(1);
     --form-text-font-size: var(--text-xs);
     --form-text-font-weight: 400;
-    --form-text-color: var(--color-highlight-color);
+    --form-text-color: var(--text-color-highlight);
 
     @apply mt-[var(--form-text-margin-top)]
     text-[length:var(--form-text-font-size)]

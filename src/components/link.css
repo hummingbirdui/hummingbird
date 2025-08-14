@@ -1,7 +1,7 @@
 @utility link {
   @layer base {
-    --link-color: var(--color-default-color);
-    --link-hover-color: var(--color-default-color);
+    --link-color: var(--text-color-default);
+    --link-hover-color: var(--text-color-default);
     --link-active-color: var(--link-hover-color);
 
     @apply cursor-pointer underline appearance-none

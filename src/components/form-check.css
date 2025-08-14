@@ -52,14 +52,14 @@
       --form-check-input-wrapper-bg: --alpha(var(--color-danger) / 12%);
     }
     &:has(.form-check-neutral) {
-      --form-check-input-wrapper-bg: var(--color-muted);
+      --form-check-input-wrapper-bg: var(--background-color-muted);
     }
   }
 }
 
 @utility form-check-input {
   @layer base {
-    --form-check-input-bg: var(--color-default);
+    --form-check-input-bg: var(--background-color-default);
     --form-check-input-checked-bg: var(--color-primary);
     --form-check-input-with: --spacing(4);
     --form-check-input-height: --spacing(4);
@@ -179,7 +179,7 @@
   @layer base {
     @apply space-x-2;
     .form-check-input {
-      --form-check-input-bg: var(--color-emphasis);
+      --form-check-input-bg: var(--background-color-emphasis);
       --form-check-input-with: --spacing(9);
       --form-check-input-height: --spacing(6);
       --form-check-input-radius: calc(infinity * 1px);
@@ -235,6 +235,6 @@
 }
 @utility form-check-label {
   @layer base {
-    @apply cursor-pointer text-default-color;
+    @apply cursor-pointer text-default;
   }
 }

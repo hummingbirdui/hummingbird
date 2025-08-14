@@ -53,7 +53,7 @@
       --input-line-height: 2;
 
       & ~ .form-label {
-        --input-label-bg: var(--color-default);
+        --input-label-bg: var(--background-color-default);
         @apply -ms-2 px-2;
       }
 
@@ -129,7 +129,7 @@
       --form-select-line-height: 2;
 
       & ~ .form-label {
-        --input-label-bg: var(--color-default);
+        --input-label-bg: var(--background-color-default);
         @apply -ms-2 px-2;
       }
 

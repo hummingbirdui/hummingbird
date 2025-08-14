@@ -61,7 +61,7 @@
 /* subtle variant */
 @utility alert-subtle {
   @layer base {
-    --alert-bg: var(--color-muted);
+    --alert-bg: var(--background-color-muted);
     --alert-color: var(--color-darker);
     --alert-icon-color: var(--color-main);
   }

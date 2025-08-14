@@ -1,16 +1,16 @@
 @utility list-group {
   @layer base {
-    --list-group-bg: var(--color-subtle);
-    --list-group-color: var(--color-default-color);
+    --list-group-bg: var(--background-color-subtle);
+    --list-group-color: var(--text-color-default);
     --list-group-padding-y: --spacing(2);
     --list-group-corder-color: var(--border-color-base);
     --list-group-border-radius: var(--radius-lg);
     --list-group-item-padding-x: --spacing(4);
     --list-group-item-padding-y: --spacing(2.5);
     --list-group-item-font-size: var(--text-base);
-    --list-group-action-color: var(--color-highlight-color);
-    --list-group-hover-bg: var(--color-muted);
-    --list-group-hover-color: var(--color-highlight-color);
+    --list-group-action-color: var(--text-color-highlight);
+    --list-group-hover-bg: var(--color-hover);
+    --list-group-hover-color: var(--text-color-highlight);
     --list-group-active-bg: var(--color-primary-lighter);
     --list-group-active-color: var(--color-primary);
     --list-group-disabled-bg: inherit;
@@ -88,11 +88,11 @@
 }
 @utility list-text-primary {
   @layer base {
-    @apply text-base font-semibold text-default-color mb-0;
+    @apply text-base font-semibold text-default mb-0;
   }
 }
 @utility list-text-secondary {
   @layer base {
-    @apply text-sm font-normal text-highlight-color mb-0;
+    @apply text-sm font-normal text-highlight mb-0;
   }
 }

@@ -1,7 +1,7 @@
 @utility card {
   @layer base {
-    --card-bg: var(--color-subtle);
-    --card-color: var(--color-highlight-color);
+    --card-bg: var(--background-color-subtle);
+    --card-color: var(--text-color-highlight);
     --card-border-width: 1px;
     --card-border-color: var(--border-color-base);
     --card-border-radius: var(--radius-lg);
@@ -11,7 +11,7 @@
     --card-cap-padding-y: --spacing(2);
     --card-cap-bg: transparent;
     --card-cap-color: null;
-    --card-title-color: var(--color-default-color);
+    --card-title-color: var(--text-color-default);
     --card-title-space-y: --spacing(2);
 
     @apply relative flex flex-col min-w-0 wrap-break-word
@@ -27,7 +27,7 @@
   @layer base {
     @apply cursor-pointer text-left transition-[background] duration-200 no-underline;
     @variant hover {
-      --card-bg: var(--color-muted);
+      --card-bg: var(--background-color-muted);
     }
   }
 }

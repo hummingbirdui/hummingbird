@@ -6,10 +6,10 @@
     --btn-padding-y: var(--input-btn-padding-y);
     --btn-line-height: var(--input-btn-line-height);
     --btn-border-width: var(--input-btn-border-width);
-    --btn-bg: var(--color-highlight);
-    --btn-color: var(--color-default-color);
+    --btn-bg: var(--background-color-highlight);
+    --btn-color: var(--text-color-default);
     --btn-font-weight: var(--font-weight-semibold);
-    --btn-hover-bg: --alpha(var(--btn-bg) / 88%);
+    --btn-hover-bg: var(--color-hover);
     --btn-hover-color: var(--btn-color);
     --btn-border-color: transparent;
     --btn-disabled-border-color: transparent;
@@ -183,10 +183,10 @@
 }
 @utility btn-subtle-neutral {
   @layer base {
-    --btn-bg: var(--color-muted);
+    --btn-bg: var(--background-color-muted);
     --btn-color: var(--color-dark);
-    --btn-hover-bg: var(--color-highlight);
-    --btn-disabled-bg: var(--color-lighter);
+    --btn-hover-bg: var(--background-color-highlight);
+    --btn-disabled-bg: var(--background-color-muted);
   }
 }
 
@@ -261,9 +261,9 @@
   @layer base {
     --btn-bg: transparent;
     --btn-color: var(--color-main);
-    --btn-hover-bg: var(--color-muted);
+    --btn-hover-bg: var(--color-hover);
     --btn-border-width: 1px;
-    --btn-border-color: var(--color-emphasis);
+    --btn-border-color: var(--background-color-emphasis);
     --btn-disabled-bg: transparent;
     --btn-disabled-border-color: var(--color-disabled);
   }
@@ -322,7 +322,7 @@
   @layer base {
     --btn-bg: transparent;
     --btn-color: var(--color-main);
-    --btn-hover-bg: var(--color-muted);
+    --btn-hover-bg: var(--color-hover);
     --btn-disabled-bg: transparent;
   }
 }
@@ -442,6 +442,7 @@
     --btn-active-color: var(--color-primary-dark);
     --btn-disabled-color: var(--color-disabled);
     --btn-disabled-border-color: transparent;
+    --btn-hover-bg: transparent;
 
     @apply underline;
 

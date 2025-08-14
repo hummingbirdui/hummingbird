@@ -5,8 +5,8 @@
     --offcanvas-height: 30vh;
     --offcanvas-padding-x: --spacing(4);
     --offcanvas-padding-y: --spacing(4);
-    --offcanvas-color: var(--color-default-color);
-    --offcanvas-bg: var(--color-subtle);
+    --offcanvas-color: var(--text-color-default);
+    --offcanvas-bg: var(--background-color-subtle);
     --offcanvas-border-width: 1px;
     --offcanvas-border-color: var(--border-color-base);
     --offcanvas-box-shadow: var(--shadow-xl);
