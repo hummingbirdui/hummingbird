@@ -5,11 +5,7 @@ const path = pathName.split('/').pop();
 const { page } = Astro.props;
 ---
 
-<aside
-  class="fixed z-10 lg:sticky top-14 w-70 h-screen max-h-[calc(100dvh-(var(--spacing)*16))] transition-transform -translate-x-full bg-subtle border-r border-light lg:translate-x-0 shrink-0 overflow-y-auto"
-  aria-label="Sidebar"
-  data-sidebar
->
+<!-- <aside class="" aria-label="Sidebar">
   <div class="h-full p-6 pt-8">
     <div class="space-y-5">
       {
@@ -21,7 +17,7 @@ const { page } = Astro.props;
                 <li>
                   <a
                     href={item.path}
-                    class={`text-sm py-1.5 block no-underline ${pathName === item.path ? 'text-info' : 'text-highlight-color'}`}
+                    class={`text-sm py-1.5 block no-underline ${pathName === item.path ? 'text-info' : 'text-highlight'}`}
                   >
                     <span>{item.name}</span>
                   </a>
@@ -33,4 +29,38 @@ const { page } = Astro.props;
       }
     </div>
   </div>
-</aside>
+</aside> -->
+<div
+  class="offcanvas-lg offcanvas-start w-[240px]"
+  tabindex="-1"
+  id="sidebarOffcanvas"
+  aria-labelledby="sidebarOffcanvasLabel"
+>
+  <div class="offcanvas-header">
+    <h6 class="offcanvas-title font-semibold" id="sidebarOffcanvasLabel">Hummingbird</h6>
+    <button type="button" class="btn btn-icon ms-auto" data-bs-dismiss="offcanvas" aria-label="Close">
+      <span class="icon-[material-symbols--close-rounded] text-base"></span>
+    </button>
+  </div>
+  <div class="offcanvas-body pt-8 pb-6">
+    <div class="h-full w-full">
+      {
+        sitemap.map((category) => (
+          <div>
+            <h2 class="text-xs mb-2 text-emphasis uppercase">{category.subHeader}</h2>
+            <div class="list-group w-full bg-default">
+              {category.items.map((item) => (
+                <a
+                  href={item.path}
+                  class={`list-group-item list-group-item-action rounded-lg text-sm py-2 ${pathName === item.path ? 'text-primary-dark bg-primary-lighter' : 'text-default'}`}
+                >
+                  <span>{item.name}</span>
+                </a>
+              ))}
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</div>

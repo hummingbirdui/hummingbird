@@ -5,6 +5,11 @@
 @plugin "@iconify/tailwind4";
 @custom-variant dark (&:where(.dark, .dark *));
 
+@theme {
+  --container-8xl: 95rem;
+  --navbar-height: --spacing(20.5);
+}
+
 .prose {
   --tw-prose-headings: var(--color-default-color);
   --tw-prose-body: var(--color-highlight-color);
