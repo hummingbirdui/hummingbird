@@ -17,7 +17,7 @@
 @utility dropdown-menu {
   @layer base {
     --dropdown-zindex: 1000;
-    --dropdown-bg: var(--color-default);
+    --dropdown-bg: var(--background-color-default);
     --dropdown-spacer: --spacing(0.5);
     --dropdown-min-width: 10rem;
     --dropdown-padding-x: 0;
@@ -27,9 +27,9 @@
     --dropdown-border-color: transparent;
     --dropdown-box-shadow: var(--shadow-xl);
     --dropdown-border-radius: var(--radius-lg);
-    --dropdown-link-color: var(--color-default-color);
-    --dropdown-link-hover-color: var(--color-default-color);
-    --dropdown-link-hover-bg: var(--color-subtle);
+    --dropdown-link-color: var(--text-color-default);
+    --dropdown-link-hover-color: var(--text-color-default);
+    --dropdown-link-hover-bg: var(--background-color-subtle);
     --dropdown-link-disabled-color: var(--color-disabled-color);
     --dropdown-link-active-color: var(--color-primary);
     --dropdown-link-active-bg: var(--color-primary-lighter);
@@ -39,7 +39,7 @@
     --dropdown-divider-margin-y: --spacing(2);
     --dropdown-header-padding-y: --spacing(2);
     --dropdown-header-padding-x: --spacing(4);
-    --dropdown-header-color: var(--color-highlight-color);
+    --dropdown-header-color: var(--text-color-highlight);
     --dropdown-header-font-size: var(--text-base);
 
     @apply absolute 

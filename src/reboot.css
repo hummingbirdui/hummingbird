@@ -4,7 +4,7 @@
   }
 
   body {
-    @apply bg-default text-default-color text-base font-normal;
+    @apply bg-default text-default text-base font-normal;
   }
 
   hr {

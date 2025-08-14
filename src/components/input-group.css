@@ -3,7 +3,7 @@
     &:has(.form-control-fill, .form-select-fill) {
       .input-group-text {
         --input-group-addon-border-color: transparent;
-        --input-group-addon-bg: --alpha(var(--color-emphasis) / 0.8);
+        --input-group-addon-bg: --alpha(var(--background-color-emphasis) / 0.8);
       }
     }
 
@@ -80,7 +80,7 @@
     --input-group-addon-padding-x: var(--input-btn-padding-x);
     --input-group-addon-padding-y: var(--input-btn-padding-y);
     --input-group-addon-font-weight: var(--input-font-weight, 400);
-    --input-group-addon-bg: var(--color-subtle);
+    --input-group-addon-bg: var(--background-color-subtle);
     --input-group-addon-color: var(--input-color);
     --input-group-addon-border-color: var(--border-color-base);
     --input-group-addon-radius: var(--input-btn-radius);

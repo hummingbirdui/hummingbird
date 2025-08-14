@@ -1,19 +1,19 @@
 @utility table {
   @layer base {
     --table-bg: initial;
-    --table-color: var(--color-highlight-color);
+    --table-color: var(--text-color-highlight);
     --table-cell-padding-x: --spacing(4);
     --table-cell-padding-y: --spacing(4);
     --table-border-color: var(--border-color-light);
     --table-font-size: var(--text-sm);
-    --table-head-bg: var(--color-subtle);
-    --table-head-color: var(--color-default-color);
-    --table-striped-bg: var(--color-muted);
-    --table-striped-color: var(--color-highlight-color);
-    --table-active-bg: var(--color-highlight);
-    --table-active-color: var(--color-default-color);
-    --table-hover-bg: var(--color-highlight);
-    --table-hover-color: var(--color-highlight-color);
+    --table-head-bg: var(--background-color-subtle);
+    --table-head-color: var(--text-color-default);
+    --table-striped-bg: var(--background-color-muted);
+    --table-striped-color: var(--text-color-highlight);
+    --table-active-bg: var(--background-color-highlight);
+    --table-active-color: var(--text-color-default);
+    --table-hover-bg: var(--background-color-highlight);
+    --table-hover-color: var(--text-color-highlight);
 
     @apply w-full text-left
     text-[length:var(--table-font-size)]

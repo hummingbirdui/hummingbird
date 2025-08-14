@@ -4,8 +4,8 @@
     --modal-width: 31.25rem;
     --modal-padding: --spacing(4);
     --modal-margin: --spacing(2);
-    --modal-color: var(--color-default-color);
-    --modal-bg: var(--color-default);
+    --modal-color: var(--text-color-default);
+    --modal-bg: var(--background-color-default);
     --modal-font-size: var(--text-base);
     --modal-border-color: var(--border-color-light);
     --modal-border-width: 1px;

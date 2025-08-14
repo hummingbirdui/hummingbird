@@ -1,5 +1,6 @@
 dist/
 lib/
+build/
 static/
 _gh_pages/
 .astro/
