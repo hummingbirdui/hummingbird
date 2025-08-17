@@ -1,0 +1,34 @@
+---
+import heroBg from '@assets/images/landing/hero-bg.png';
+---
+
+<section id="hero" class="w-full bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${heroBg.src})` }}>
+  <div class="flex mx-auto max-w-8xl items-center justify-between">
+    <div class="py-46">
+      <h1 class="my-5 text-[88px] font-normal tracking-tighter">
+        <span class="italic bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent"> Simple </span>
+        <span class="text-default"> like Bootstrap</span><br />
+        <span class="italic bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent"> Strong </span>
+        <span class="text-default"> like Tailwind</span>
+      </h1>
+      <p class="mt-6 text-lg leading-[1.2] text-gray-600 max-w-2xl">
+        An open-source system sensibly designed for rapid development, without sacrificing the granular control of
+        utility-first CSS.
+      </p>
+      <section id="links" class="mt-16 flex items-center gap-4">
+        <a href="/docs/components/buttons" type="button" class="btn btn-primary btn-lg">Get Started</a>
+        <div class="flex items-center gap-1 bg-gray-100 text-sm font-mono px-4 py-1.5 rounded-lg">
+          <span class="text-gray-900 select-none mr-1.25">$</span>
+          <span class="text-gray-900">npm i @hummingbirdui/hummingbird@latest</span>
+          <button
+            class="btn btn-icon btn-sm -mr-2"
+            aria-label="Copy command"
+            onclick="navigator.clipboard.writeText('npm i @hummingbirdui/hummingbird@latest')"
+          >
+            <span class="icon-[material-symbols--content-copy-outline-rounded] text-xl text-gray-900"></span>
+          </button>
+        </div>
+      </section>
+    </div>
+  </div>
+</section>

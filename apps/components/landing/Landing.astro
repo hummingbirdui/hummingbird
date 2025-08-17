@@ -1,0 +1,12 @@
+---
+import ComparisonTable from './comparison-table/ComparisonTable.astro';
+import Features from './features/Features.astro';
+import Hero from './hero/Hero.astro';
+import bgImage from '@assets/images/landing/default-bg.png';
+---
+
+<div class="bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${bgImage.src})` }}>
+  <Hero />
+  <Features />
+  <ComparisonTable />
+</div>

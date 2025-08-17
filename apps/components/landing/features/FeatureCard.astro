@@ -1,0 +1,37 @@
+---
+import GradientBorderBox from '../common/GradientBorderBox.astro';
+import type { Feature } from '../data/features.astro';
+
+interface Props {
+  feature: Feature;
+}
+
+const { feature } = Astro.props;
+const { icon: Icon, color, title, description } = feature;
+
+const iconStyleMap: Record<string, { icon: string; wrapper: string }> = {
+  primary: { icon: 'text-primary-dark', wrapper: 'border-primary-dark bg-primary-lighter' },
+  secondary: { icon: 'text-secondary-dark', wrapper: 'border-secondary-dark bg-secondary-lighter' },
+  error: { icon: 'text-danger-dark', wrapper: 'border-danger-dark bg-danger-lighter' },
+  warning: { icon: 'text-warning-dark', wrapper: 'border-warning-dark bg-warning-lighter' },
+  info: { icon: 'text-info-dark', wrapper: 'border-info-dark bg-info-lighter' },
+  success: { icon: 'text-success-dark', wrapper: 'border-success-dark bg-success-lighter' },
+};
+
+const { icon: iconStyle, wrapper: wrapperStyle } = iconStyleMap[color];
+---
+
+<GradientBorderBox color={color}>
+  <div class="p-6 relative">
+    <box class="h-full w-full absolute top-0 right-0 bg-red-100 transform translate-x-20 -translate-y-20">
+      <Icon class={`${iconStyle} h-16 w-16 opacity-10 absolute top-1/2 left-1/2 translate-x-2 -translate-y-2`} />
+    </box>
+
+    <div class={`mb-7 h-10 w-10 flex items-center justify-center border ${wrapperStyle} rounded-full`}>
+      <Icon class={iconStyle} />
+    </div>
+
+    <h3 class="text-base font-semibold">{title}</h3>
+    <p class="text-sm text-gray-600">{description}</p>
+  </div>
+</GradientBorderBox>

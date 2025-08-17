@@ -1,0 +1,17 @@
+---
+import SectionHeader from '../common/SectionHeader.astro';
+import FeatureCard from './FeatureCard.astro';
+
+import { features } from '../data/features.astro';
+---
+
+<section id="features" class="px-6 pt-16 pb-20">
+  <SectionHeader
+    title="Every detail, considered."
+    subtitle="We built the UI system we always wanted - one that prioritizes clean code, a minimal footprint, and a developer experience that's a joy, not a chore."
+  />
+
+  <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 max-w-5xl mx-auto">
+    {features.map((item) => <FeatureCard feature={item} />)}
+  </div>
+</section>

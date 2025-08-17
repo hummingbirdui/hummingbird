@@ -1,0 +1,32 @@
+---
+interface Props {
+  color: string;
+}
+
+const { color } = Astro.props;
+
+export const getColor = (color: string) => {
+  switch (color) {
+    case 'primary':
+      return `bg-[linear-gradient(white,white),linear-gradient(118.65deg,var(--color-primary-lighter)_0.36%,var(--color-primary-light)_99.64%)]`;
+    case 'secondary':
+      return `bg-[linear-gradient(white,white),linear-gradient(118.65deg,var(--color-secondary-lighter)_0.36%,var(--color-secondary-light)_99.64%)]`;
+    case 'error':
+      return `bg-[linear-gradient(white,white),linear-gradient(118.65deg,var(--color-danger-lighter)_0.36%,var(--color-danger-light)_99.64%)]`;
+    case 'warning':
+      return `bg-[linear-gradient(white,white),linear-gradient(118.65deg,var(--color-warning-lighter)_0.36%,var(--color-warning-light)_99.64%)]`;
+    case 'info':
+      return `bg-[linear-gradient(white,white),linear-gradient(118.65deg,var(--color-info-lighter)_0.36%,var(--color-info-light)_99.64%)]`;
+    case 'success':
+      return `bg-[linear-gradient(white,white),linear-gradient(118.65deg,var(--color-success-lighter)_0.36%,var(--color-success-light)_99.64%)]`;
+  }
+};
+
+const bgColor = getColor(color);
+---
+
+<div
+  class={`rounded-2xl overflow-hidden transition border-[1.5px] border-transparent ${bgColor} [background-origin:border-box] [background-clip:padding-box,border-box]`}
+>
+  <slot />
+</div>

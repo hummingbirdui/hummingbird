@@ -1,0 +1,65 @@
+---
+import SectionHeader from '../common/SectionHeader.astro';
+
+const features = [
+  { label: 'Ready-to-use components', hummingbird: '✔', tailwind: '!', bootstrap: '✔' },
+  { label: 'Clean, semantic HTML', hummingbird: '✔', tailwind: '!', bootstrap: '✔' },
+  { label: 'Pre-built dark mode', hummingbird: '✔', tailwind: '!', bootstrap: '✖' },
+  { label: 'Utility-first approach', hummingbird: '★', tailwind: '✔', bootstrap: '✖' },
+  { label: 'Advanced customization', hummingbird: '★', tailwind: '✖', bootstrap: '!' },
+  { label: 'Accessibility-first design', hummingbird: '✔', tailwind: '!', bootstrap: '✔' },
+  { label: 'Zero unused CSS', hummingbird: '✔', tailwind: '✔', bootstrap: '✖' },
+];
+---
+
+<section class="w-full py-20 bg-gradient-to-b from-white to-blue-50">
+  <SectionHeader
+    title="An evolved approach"
+    subtitle={`Hummingbird's utility-first approach delivers smaller bundles, better performance, 
+      and advanced customization by eliminating unused CSS.`}
+  />
+
+  <!-- Table -->
+  <div class="mt-12 overflow-x-auto">
+    <table class="w-full border-separate border-spacing-y-3">
+      <!-- Table Head -->
+      <thead>
+        <tr class="bg-white shadow rounded-xl text-gray-700">
+          <th class="text-left p-4"></th>
+          <th class="p-4">
+            <div class="flex flex-col items-center">
+              <img src="/icons/hummingbird.svg" alt="Hummingbird" class="w-6 h-6 mb-1" />
+              <span class="font-semibold">Hummingbird</span>
+            </div>
+          </th>
+          <th class="p-4">
+            <div class="flex flex-col items-center">
+              <img src="/icons/tailwind.svg" alt="Tailwind" class="w-6 h-6 mb-1" />
+              <span class="font-semibold">tailwindcss</span>
+            </div>
+          </th>
+          <th class="p-4">
+            <div class="flex flex-col items-center">
+              <img src="/icons/bootstrap.svg" alt="Bootstrap" class="w-6 h-6 mb-1" />
+              <span class="font-semibold">Bootstrap</span>
+            </div>
+          </th>
+        </tr>
+      </thead>
+
+      <!-- Table Body -->
+      <tbody>
+        {
+          features.map((row) => (
+            <tr class="bg-white shadow-sm rounded-xl">
+              <td class="text-left px-4 py-3 text-gray-700">{row.label}</td>
+              <td class="text-center px-4 py-3 text-blue-500 font-semibold">{row.hummingbird}</td>
+              <td class="text-center px-4 py-3 text-blue-500 font-semibold">{row.tailwind}</td>
+              <td class="text-center px-4 py-3 text-blue-500 font-semibold">{row.bootstrap}</td>
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
+  </div>
+</section>
