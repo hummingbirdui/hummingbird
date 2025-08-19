@@ -1,9 +1,10 @@
 ---
 interface Props {
   color: string;
+  class?: string;
 }
 
-const { color } = Astro.props;
+const { color, class: className = '' } = Astro.props;
 
 export const getColor = (color: string) => {
   switch (color) {
@@ -19,6 +20,14 @@ export const getColor = (color: string) => {
       return `bg-[linear-gradient(white,white),linear-gradient(118.65deg,var(--color-info-lighter)_0.36%,var(--color-info-light)_99.64%)]`;
     case 'success':
       return `bg-[linear-gradient(white,white),linear-gradient(118.65deg,var(--color-success-lighter)_0.36%,var(--color-success-light)_99.64%)]`;
+    case 'secondary-dark':
+      return `bg-[linear-gradient(white,white),linear-gradient(118.65deg,var(--color-secondary-lighter)_0.36%,var(--color-secondary-dark)_99.64%)]`;
+    case 'success-dark':
+      return `bg-[linear-gradient(white,white),linear-gradient(118.65deg,var(--color-success-lighter)_0.36%,var(--color-success-dark)_99.64%)]`;
+    case 'primary-dark':
+      return `bg-[linear-gradient(white,white),linear-gradient(118.65deg,var(--color-primary-lighter)_0.36%,var(--color-primary-dark)_99.64%)]`;
+    case 'info-main':
+      return `bg-[linear-gradient(white,white),linear-gradient(118.65deg,var(--color-info-lighter)_0.36%,var(--color-info)_99.64%)]`;
   }
 };
 
@@ -26,7 +35,7 @@ const bgColor = getColor(color);
 ---
 
 <div
-  class={`rounded-2xl overflow-hidden transition border-[1.5px] border-transparent ${bgColor} [background-origin:border-box] [background-clip:padding-box,border-box]`}
+  class={`rounded-2xl overflow-hidden transition border border-transparent ${bgColor} [background-origin:border-box] [background-clip:padding-box,border-box] ${className}`}
 >
   <slot />
 </div>

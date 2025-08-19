@@ -1,0 +1,99 @@
+---
+const { img1, img2, width = '600px', height = '400px' } = Astro.props;
+---
+
+<style>
+  .img-comp-container {
+    @apply relative;
+    width: 100%;
+    max-width: var(--cmp-width);
+    height: var(--cmp-height);
+  }
+  .img-comp-img {
+    @apply absolute overflow-hidden;
+    width: 100%;
+    height: 100%;
+  }
+  .img-comp-img img {
+    @apply block w-full h-full object-cover;
+  }
+  .img-comp-overlay {
+    width: 50%;
+  }
+  .img-comp-slider {
+    @apply absolute z-10 opacity-70 rounded-full cursor-ew-resize;
+    width: 2.5rem; /* 40px */
+    height: 2.5rem; /* 40px */
+    transform: translateX(-50%);
+  }
+</style>
+
+<div
+  class="img-comp-container"
+  style={`--cmp-width: ${width}; --cmp-height: ${height};`}
+>
+  <div class="img-comp-img">
+    <img src={img1} alt="First image" />
+  </div>
+  <div class="img-comp-img img-comp-overlay">
+    <img src={img2} alt="Second image" />
+  </div>
+</div>
+
+<script is:inline>
+  function initComparisons() {
+    const overlays = document.querySelectorAll('.img-comp-overlay');
+    overlays.forEach((overlay) => compareImages(overlay));
+
+    function compareImages(img) {
+      let clicked = false;
+      const { width: w, height: h } = img.getBoundingClientRect();
+
+      img.style.width = `${w / 2}px`;
+
+      const slider = document.createElement('div');
+      slider.className = 'img-comp-slider';
+      img.parentElement.insertBefore(slider, img);
+
+      slider.style.top = `${h / 2}px`;
+      slider.style.left = `${w / 2}px`;
+
+      slider.addEventListener('mousedown', slideReady);
+      window.addEventListener('mouseup', slideFinish);
+      slider.addEventListener('touchstart', slideReady);
+      window.addEventListener('touchend', slideFinish);
+
+      function slideReady(e) {
+        e.preventDefault();
+        clicked = true;
+        window.addEventListener('mousemove', slideMove);
+        window.addEventListener('touchmove', slideMove);
+      }
+
+      function slideFinish() {
+        clicked = false;
+      }
+
+      function slideMove(e) {
+        if (!clicked) return false;
+        const pos = getCursorPos(e, img);
+        const clamped = Math.min(Math.max(pos, 0), w);
+        slide(clamped);
+      }
+
+      function getCursorPos(e, img) {
+        const rect = img.getBoundingClientRect();
+        const pageX = e.changedTouches ? e.changedTouches[0].pageX : e.pageX;
+        return pageX - rect.left - window.pageXOffset;
+      }
+
+      function slide(x) {
+        img.style.width = `${x}px`;
+        slider.style.left = `${x}px`;
+      }
+    }
+  }
+
+  // ✅ run after page loads
+  window.addEventListener("DOMContentLoaded", initComparisons);
+</script>

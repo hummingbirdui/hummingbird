@@ -1,63 +1,82 @@
 ---
+import { frameworks, featureComparisons } from '../data/featureComparisons';
 import SectionHeader from '../common/SectionHeader.astro';
+import CheckIcon from '@components/icons/CheckIcon.astro';
+import CloseIcon from '@components/icons/CloseIcon.astro';
+import ErrorIcon from '@components/icons/ErrorIcon.astro';
+import StarIcon from '@components/icons/StarIcon.astro';
+import Image from 'astro/components/Image.astro';
 
-const features = [
-  { label: 'Ready-to-use components', hummingbird: '✔', tailwind: '!', bootstrap: '✔' },
-  { label: 'Clean, semantic HTML', hummingbird: '✔', tailwind: '!', bootstrap: '✔' },
-  { label: 'Pre-built dark mode', hummingbird: '✔', tailwind: '!', bootstrap: '✖' },
-  { label: 'Utility-first approach', hummingbird: '★', tailwind: '✔', bootstrap: '✖' },
-  { label: 'Advanced customization', hummingbird: '★', tailwind: '✖', bootstrap: '!' },
-  { label: 'Accessibility-first design', hummingbird: '✔', tailwind: '!', bootstrap: '✔' },
-  { label: 'Zero unused CSS', hummingbird: '✔', tailwind: '✔', bootstrap: '✖' },
-];
+const getIcon = (featureState: string) => {
+  switch (featureState) {
+    case 'yes':
+      return { icon: CheckIcon, color: 'text-primary-light' };
+    case 'no':
+      return { icon: CloseIcon, color: 'text-[var(--color-gray-300)]' };
+    case 'partial':
+      return { icon: ErrorIcon, color: 'text-[var(--color-blue-200)]' };
+    case 'highlight':
+      return { icon: StarIcon, color: 'text-primary-light' };
+  }
+};
 ---
 
-<section class="w-full py-20 bg-gradient-to-b from-white to-blue-50">
+<section class="mx-auto py-20 w-full max-w-[950px]">
   <SectionHeader
     title="An evolved approach"
-    subtitle={`Hummingbird's utility-first approach delivers smaller bundles, better performance, 
-      and advanced customization by eliminating unused CSS.`}
+    subtitle="Hummingbird's utility-first approach delivers smaller bundles, better performance, and advanced customization by eliminating unused CSS."
+    class="mb-14"
   />
 
-  <!-- Table -->
-  <div class="mt-12 overflow-x-auto">
-    <table class="w-full border-separate border-spacing-y-3">
-      <!-- Table Head -->
+  <div class="overflow-x-auto">
+    <table class="w-full table-fixed rounded-3xl">
       <thead>
-        <tr class="bg-white shadow rounded-xl text-gray-700">
+        <tr class="border-b border-black/4">
           <th class="text-left p-4"></th>
-          <th class="p-4">
-            <div class="flex flex-col items-center">
-              <img src="/icons/hummingbird.svg" alt="Hummingbird" class="w-6 h-6 mb-1" />
-              <span class="font-semibold">Hummingbird</span>
-            </div>
-          </th>
-          <th class="p-4">
-            <div class="flex flex-col items-center">
-              <img src="/icons/tailwind.svg" alt="Tailwind" class="w-6 h-6 mb-1" />
-              <span class="font-semibold">tailwindcss</span>
-            </div>
-          </th>
-          <th class="p-4">
-            <div class="flex flex-col items-center">
-              <img src="/icons/bootstrap.svg" alt="Bootstrap" class="w-6 h-6 mb-1" />
-              <span class="font-semibold">Bootstrap</span>
-            </div>
-          </th>
+          {
+            frameworks.map(({ name, logo }, i) => (
+              <th class={`p-4  ${i === 0 ? 'bg-subtle rounded-t-2xl' : ''}`}>
+                <div class={`flex flex-col items-center ${i === 0 ? 'gap-0' : 'gap-2'}`}>
+                  <Image src={logo} alt="Logo" class="mx-auto w-10 object-contain" />
+                  <span class="text-sm font-medium">{name}</span>
+                </div>
+              </th>
+            ))
+          }
         </tr>
       </thead>
 
-      <!-- Table Body -->
       <tbody>
         {
-          features.map((row) => (
-            <tr class="bg-white shadow-sm rounded-xl">
-              <td class="text-left px-4 py-3 text-gray-700">{row.label}</td>
-              <td class="text-center px-4 py-3 text-blue-500 font-semibold">{row.hummingbird}</td>
-              <td class="text-center px-4 py-3 text-blue-500 font-semibold">{row.tailwind}</td>
-              <td class="text-center px-4 py-3 text-blue-500 font-semibold">{row.bootstrap}</td>
-            </tr>
-          ))
+          featureComparisons.map(({ feature, hummingbird, tailwindcss, bootstrap }, i, features) => {
+            const frameworkStates = [{ value: hummingbird }, { value: tailwindcss }, { value: bootstrap }];
+
+            return (
+              <tr class="border-b border-black/4 last:border-b-0">
+                <td class="text-sm text-left px-6 py-4.5 text-gray-700">{feature}</td>
+
+                {frameworkStates.map(({ value }, j) => {
+                  const data = getIcon(value);
+                  const Icon = data?.icon;
+                  const color = data?.color;
+
+                  return (
+                    <td
+                      class={[
+                        'text-center px-6 py-4.5',
+                        j === 0 && 'bg-subtle',
+                        i === features.length - 1 && j === 0 && 'rounded-b-2xl',
+                      ]
+                        .filter(Boolean)
+                        .join(' ')}
+                    >
+                      {Icon && <Icon class={`mx-auto ${color}`} />}
+                    </td>
+                  );
+                })}
+              </tr>
+            );
+          })
         }
       </tbody>
     </table>
