@@ -37,3 +37,11 @@
   --tooltip-bg: var(--color-info);
   --tooltip-color: var(--color-contrast);
 }
+
+.cm-editor {
+  @apply h-full text-sm bg-transparent;
+}
+
+.cm-editor .cm-gutters {
+  @apply hidden;
+}

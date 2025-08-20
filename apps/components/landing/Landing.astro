@@ -8,15 +8,17 @@ import Hero from './hero/Hero.astro';
 import bgImage from '@assets/images/landing/default-bg.png';
 import JsShowcase from './js-showcase/JsShowcase.astro';
 import StyleSystems from './style-system/StyleSystems.astro';
+import EditorPreview from './editor-preview/EditorPreview.astro';
 ---
 
-<div class="px-6 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${bgImage.src})` }}>
-  <Hero />
-  <Features />
-  <ComparisonTable />
-  <Components />
-  <StyleSystems />
-  <JsShowcase />
-  <CTA />
-  <Footer />
-</div>
+<main class="bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${bgImage.src})` }}>
+  <!-- <Hero /> -->
+  <!-- <Features /> -->
+  <!-- <ComparisonTable /> -->
+  <EditorPreview />
+  <!-- <Components /> -->
+  <!-- <StyleSystems /> -->
+  <!-- <JsShowcase /> -->
+  <!-- <CTA /> -->
+  <!-- <Footer /> -->
+</main>
