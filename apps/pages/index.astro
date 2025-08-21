@@ -1,8 +1,20 @@
 ---
 import Layout from '@layouts/Layout.astro';
-import Landing from '@components/sections/landing/index.astro';
+import Features from '@components/sections/landing/features/Features.astro';
+import EditorPreview from '@components/sections/landing/EditorPreview.astro';
+import bgImage from '@assets/images/landing/default-bg.png';
 ---
 
 <Layout>
-  <Landing />
+  <main class="bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${bgImage.src})` }}>
+    <!-- <Hero /> -->
+    <Features />
+    <!-- <ComparisonTable /> -->
+    <EditorPreview />
+    <!-- <Components /> -->
+    <!-- <StyleSystems /> -->
+    <!-- <JsShowcase /> -->
+    <!-- <CTA /> -->
+    <!-- <Footer /> -->
+  </main>
 </Layout>
