@@ -4,7 +4,7 @@ export interface StyleSystem {
   code: string;
 }
 
-export const styleSystems: StyleSystem[] = [
+export const globalStyles: StyleSystem[] = [
   {
     title: 'Global CSS Core',
     description:
