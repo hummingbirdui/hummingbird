@@ -1,11 +1,12 @@
 ---
+import bgImage from '@assets/images/landing/editor-preview-light.png';
+import RefreshIcon from '@components/icons/RefreshIcon.astro';
+import CheckIcon from '@components/icons/CheckIcon.astro';
+import CopyIcon from '@components/icons/CopyIcon.astro';
+import cardImage from '@assets/images/hamster.webp';
 import SectionHeader from '../common/SectionHeader.astro';
 import SectionWrapper from '../common/SectionWrapper.astro';
 import GradientBorderBox from '../common/GradientBorderBox.astro';
-import bgImage from '@assets/images/landing/editor-preview/preview-light.png';
-import RefreshIcon from '@components/icons/RefreshIcon.astro';
-import CopyIcon from '@components/icons/CopyIcon.astro';
-import cardImage from '@assets/images/hamster.webp';
 ---
 
 <SectionWrapper class="max-w-[1320px]">
@@ -19,11 +20,12 @@ import cardImage from '@assets/images/hamster.webp';
     <div class="p-6 flex flex-col h-100 md:h-138 w-full rounded-2xl bg-darker overflow-hidden">
       <div class="mb-4 flex items-center justify-between gap-2 border-b border-[#C3D3DB]/60">
         <h6 class="text-highlight font-bold">Edit the Code Sample</h6>
-        <button class="ml-auto text-emphasis">
+        <button id="resetBtn" class="ml-auto text-emphasis">
           <RefreshIcon />
         </button>
-        <button class="text-emphasis">
-          <CopyIcon />
+        <button id="copyBtn" class="text-emphasis flex items-center justify-center w-8">
+          <CopyIcon id="copyIcon" />
+          <CheckIcon id="checkIcon" class="hidden text-success" />
         </button>
       </div>
       <div id="editor" class="grow"></div>
@@ -51,6 +53,11 @@ import cardImage from '@assets/images/hamster.webp';
   import { html } from '@codemirror/lang-html';
 
   const preview = document.getElementById('preview') as HTMLDivElement;
+  const resetButton = document.getElementById('resetBtn') as HTMLButtonElement;
+  const copyButton = document.getElementById('copyBtn') as HTMLButtonElement;
+  const copyIcon = document.getElementById('copyIcon') as HTMLElement;
+  const checkIcon = document.getElementById('checkIcon') as HTMLElement;
+
   const previewImage = preview.dataset.previewImg;
 
   const startCode = `<div class="card p-2 shadow-lg rounded-2xl max-w-64">
@@ -91,4 +98,28 @@ from creatures big and small.</p>
   });
 
   updatePreview(startCode);
+
+  resetButton.addEventListener('click', () => {
+    editor.dispatch({
+      changes: { from: 0, to: editor.state.doc.length, insert: startCode },
+    });
+    updatePreview(startCode);
+  });
+
+  copyButton.addEventListener('click', async () => {
+    const code = editor.state.doc.toString();
+    try {
+      await navigator.clipboard.writeText(code);
+
+      copyIcon.classList.add('hidden');
+      checkIcon.classList.remove('hidden');
+
+      setTimeout(() => {
+        checkIcon.classList.add('hidden');
+        copyIcon.classList.remove('hidden');
+      }, 1200);
+    } catch (err) {
+      console.error('Failed to copy: ', err);
+    }
+  });
 </script>

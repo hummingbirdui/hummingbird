@@ -1,6 +1,6 @@
 ---
 import GradientBorderBox from '../common/GradientBorderBox.astro';
-import type { Feature } from '../data/features.astro';
+import type { Feature } from '../../../../data/features.astro';
 import primary from '@assets/images/landing/overlays/primary.png';
 import secondary from '@assets/images/landing/overlays/secondary.png';
 import error from '@assets/images/landing/overlays/error.png';
@@ -29,7 +29,10 @@ const { icon: iconStyle, wrapper: wrapperStyle } = iconStyleMap[color];
 
 <GradientBorderBox color={color}>
   <div class="p-6 relative bg-subtle">
-    <box class="h-full w-full absolute -top-0 -right-0 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${error.src})` }}>
+    <box
+      class="h-full w-full absolute -top-0 -right-0 bg-cover bg-center bg-no-repeat"
+      style={{ backgroundImage: `url(${error.src})` }}
+    >
       <Icon class={`${iconStyle} h-16 w-16 opacity-10 absolute top-1/2 left-1/2 translate-x-2 -translate-y-2`} />
     </box>
 
