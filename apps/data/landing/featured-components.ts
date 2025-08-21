@@ -15,7 +15,7 @@ export interface Component {
   url: string;
 }
 
-export const components: Component[] = [
+export const featuredComponents: Component[] = [
   { image: accordion, name: 'Accordion', count: 2, url: '#' },
   { image: alert, name: 'Alert', count: 3, url: '#' },
   { image: avatar, name: 'Avatar', count: 14, url: '#' },

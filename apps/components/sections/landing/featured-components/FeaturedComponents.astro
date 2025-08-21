@@ -1,0 +1,28 @@
+---
+import { featuredComponents } from 'apps/data/landing/featured-components';
+import SectionWrapper from '../common/SectionWrapper.astro';
+import ComponentCard from './ComponentCard.astro';
+---
+
+<SectionWrapper
+  id="featured-components"
+  class="pt-35 pb-20 xl:px-10 mx-auto max-w-350 flex flex-col xl:flex-row items-center justify-between gap-10 lg:gap-15 xl:gap-6"
+>
+  <div class="flex-1 flex flex-col max-w-[580px] lg:max-w-[500px]">
+    <h1 class="mb-4 text-[28px] md:text-[32px] lg:text-[42px] text-center xl:text-left font-medium tracking-tighter">
+      Production-ready UIs,<br class="md:hidden lg:flex" /> out of the box
+    </h1>
+    <p class="mb-8 text-center xl:text-left text-highlight">
+      Hummingbird provides production-ready components. Filter by category or use-case to find what you need.
+    </p>
+    <a href="/docs/components/buttons" type="button" class="self-center xl:self-start btn btn-subtle-primary"
+      >Browse components</a
+    >
+  </div>
+
+  <div
+    class="flex-2 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 max-w-65 sm:max-w-134 md:max-w-172 lg:max-w-203 xl:max-w-188 2xl:max-w-203"
+  >
+    {featuredComponents.map((item) => <ComponentCard component={item} />)}
+  </div>
+</SectionWrapper>

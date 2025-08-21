@@ -1,0 +1,19 @@
+---
+import type { Component } from 'apps/data/landing/featured-components';
+import Image from 'astro/components/Image.astro';
+
+interface Props {
+  component: Component;
+}
+
+const { component } = Astro.props;
+const { url, image, name, count } = component;
+---
+
+<a href={url} class="card card-action w-full rounded-2xl bg-default overflow-hidden hover:border-primary">
+  <Image src={image} alt="Logo" class="h-full w-full object-cover" />
+  <div class="px-4 py-2">
+    <h6 class="card-title mb-0.5 text-base font-semibold">{name}</h6>
+    <p class="mb-0 text-xs text-highlight">{count} components</p>
+  </div>
+</a>
