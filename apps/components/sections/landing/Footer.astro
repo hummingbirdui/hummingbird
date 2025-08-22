@@ -1,79 +1,41 @@
 ---
-import hummingbird from '@assets/images/logos/hummingbird.png';
 import Image from 'astro/components/Image.astro';
-
-const columns = [
-  {
-    title: 'Hummingbird',
-    links: [
-      { label: 'About Us', href: '#' },
-      { label: 'Documentation', href: '#' },
-      { label: 'Components', href: '#' },
-      { label: 'Examples', href: '#' },
-    ],
-  },
-  {
-    title: 'Get involved',
-    links: [
-      { label: 'Contact us', href: '#' },
-      { label: 'Support us', href: '#' },
-      { label: 'Hire us', href: '#' },
-    ],
-  },
-  {
-    title: 'Community',
-    links: [
-      { label: 'Github', href: '#' },
-      { label: 'Discord', href: '#' },
-      { label: 'Twitter', href: '#' },
-    ],
-  },
-  {
-    title: 'Legal',
-    links: [
-      { label: 'License (EULA)', href: '#' },
-      { label: 'Privacy policy', href: '#' },
-      { label: 'Terms & conditions', href: '#' },
-      { label: 'Brand guideline', href: '#' },
-    ],
-  },
-];
+import hummingbird from '@assets/images/logos/hummingbird.png';
+import { footerLinks } from 'apps/data/landing/footer-links';
 ---
 
-<footer class="">
-  <div class="max-w-8xl mx-auto">
-    <div class="grid grid-cols-1 md:grid-cols-6 gap-8 py-12">
-      <div class="md:col-span-2">
-        <div class="mb-4 flex items-center gap-2">
-          <Image src={hummingbird} alt="Logo" class="w-10 h-10" />
-          <span class="text-2xl font-semibold text-highlight">hummingbird</span>
-        </div>
-        <p class="mb-4 text-sm text-highlight max-w-[300px]">
-          Crafted with care, caffeine, and clean code by ThemeWagon – 2M+ dev Stong, topping Bootstrap Marketplace.
-        </p>
-        <p class="text-sm text-highlight">MIT for code, CC BY 4.0 for docs.</p>
+<footer class="mx-auto px-6 lg:px-10 max-w-390">
+  <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-7 gap-8 gap-y-12 py-12">
+    <div class="col-span-2 md:col-span-4 lg:col-span-2 xl:col-span-3">
+      <div class="mb-4 flex items-center gap-2">
+        <Image src={hummingbird} alt="Logo" class="w-10 h-10" />
+        <span class="text-2xl font-semibold text-highlight">hummingbird</span>
       </div>
-
-      {
-        columns.map(({ title, links }) => (
-          <div class="md:col-span-1">
-            <h3 class="mb-3.75 text-sm font-bold text-emphasis">{title}</h3>
-            <ul class="list-none p-0 space-y-3.75">
-              {links.map(({ label, href }) => (
-                <li class="text-sm">
-                  <a href={href} class="no-underline text-default">
-                    {label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))
-      }
+      <p class="mb-4 text-sm text-highlight lg:max-w-75">
+        Crafted with care, caffeine, and clean code by ThemeWagon – 2M+ dev Stong, topping Bootstrap Marketplace.
+      </p>
+      <p class="text-sm text-highlight">MIT for code, CC BY 4.0 for docs.</p>
     </div>
 
-    <div class="border-t border-light py-5">
-      <p class="mb-0 text-center text-sm text-highlight">hummingbird Ltd &copy; 2025, all rights reserved</p>
-    </div>
+    {
+      footerLinks.map(({ title, links }) => (
+        <div class="col-span-1">
+          <h3 class="mb-3.75 text-sm font-bold text-emphasis">{title}</h3>
+          <ul class="list-none p-0 space-y-3.75">
+            {links.map(({ label, url }) => (
+              <li class="text-sm">
+                <a href={url} class="no-underline text-default">
+                  {label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))
+    }
+  </div>
+
+  <div class="border-t border-light py-5">
+    <p class="mb-0 text-center text-sm text-highlight">hummingbird Ltd &copy; 2025, all rights reserved</p>
   </div>
 </footer>
