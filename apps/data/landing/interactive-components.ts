@@ -1,19 +1,22 @@
----
-import Image from 'astro/components/Image.astro';
 import alert from '@assets/images/landing/js-showcase/alert.png';
 import button from '@assets/images/landing/js-showcase/button.png';
+import tooltip from '@assets/images/landing/js-showcase/tooltip.png';
 import carousel from '@assets/images/landing/js-showcase/carousel.png';
 import collapse from '@assets/images/landing/js-showcase/collapse.png';
 import dropdown from '@assets/images/landing/js-showcase/dropdown.png';
-import modal from '@assets/images/landing/js-showcase/modal.png';
 import offcanvas from '@assets/images/landing/js-showcase/offcanvas.png';
+import modal from '@assets/images/landing/js-showcase/modal.png';
 import tab from '@assets/images/landing/js-showcase/tab.png';
-import tooltip from '@assets/images/landing/js-showcase/tooltip.png';
-import ArrowIcon from '@components/icons/ArrowIcon.astro';
-import GradientBorderBox from '../common/GradientBorderBox.astro';
-import ChevronIcon from '@components/icons/ChevronIcon.astro';
 
-const features = [
+export interface Component {
+  image: ImageMetadata;
+  title: string;
+  description: string;
+  color: string;
+  link: string;
+}
+
+export const interactiveComponents: Component[] = [
   {
     image: alert,
     title: 'Alert',
@@ -78,38 +81,3 @@ const features = [
     link: '#',
   },
 ];
----
-
-<section class="pt-40 pb-20 mx-auto max-w-[1182px] flex items-center justify-between">
-  <div class="max-w-[420px]">
-    <h1 class="mb-4 text-[42px] font-medium tracking-tighter">Modern JavaScript,<br /> built to perform</h1>
-    <p class="mb-6 text-highlight">
-      We revamped Bootstrap's JavaScript for the modern web with TypeScript support and zero dependencies.
-    </p>
-    <a href="/docs/components/buttons" type="button" class="-ml-4 btn btn-text-primary hover:bg-transparent"
-      >Learn more about JavaScript <ChevronIcon />
-    </a>
-  </div>
-
-  <div class="grid grid-cols-3 gap-4">
-    {
-      features.map((item, i) => (
-        <GradientBorderBox
-          color={item.color}
-          class={`${i === 1 || i === 4 || i === 7 ? 'transform -translate-y-20' : ''}`}
-        >
-          <div class="card card-img-overlay h-50 w-50">
-            <Image src={item.image} class="card-img brightness-100" alt={item.title} />
-            <div class="p-6 card-body flex flex-col items-start">
-              <h4 class="mb-4 card-title text-[21px] text-default font-medium">{item.title}</h4>
-              <p class="mb-0 text-highlight">{item.description}</p>
-              <button class="mt-auto self-end">
-                <ArrowIcon class="text-default" />
-              </button>
-            </div>
-          </div>
-        </GradientBorderBox>
-      ))
-    }
-  </div>
-</section>
