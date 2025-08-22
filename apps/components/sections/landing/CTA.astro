@@ -1,19 +1,19 @@
-<section class="pt-18 pb-28 relative">
-  <div class="mx-auto px-6 text-center">
-    <h1 class="mb-4 text-5xl font-medium -tracking-[3.5px]">
-      Beautiful UI or Cleaner Code?
-      <span
-        class="pr-2 font-semibold italic bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent"
-      >
-        Both!
-      </span>
-    </h1>
+---
+import SectionWrapper from './common/SectionWrapper.astro';
+---
 
-    <p class="mb-8 mx-auto text-base text-highlight max-w-[550px]">
-      Spend less time on boilerplate and more time on the features that matter. Start your next project with Hummingbird
-      to finally have it all.
-    </p>
+<SectionWrapper class="pt-18 pb-28 flex flex-col">
+  <h1 class="mb-4 text-[32px] md:text-[42px] lg:text-5xl text-center font-medium tracking-tighter lg:-tracking-[3.5px]">
+    Beautiful UI or Cleaner Code?
+    <span class="pr-2 font-semibold italic bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">
+      Both!
+    </span>
+  </h1>
 
-    <a href="/docs/components/buttons" type="button" class="btn btn-primary">Explore Hummingbird</a>
-  </div>
-</section>
+  <p class="mb-8 mx-auto text-base text-center text-highlight max-w-138">
+    Spend less time on boilerplate and more time on the features that matter. Start your next project with Hummingbird
+    to finally have it all.
+  </p>
+
+  <a href="/docs/components/buttons" type="button" class="mx-auto btn btn-primary">Explore Hummingbird</a>
+</SectionWrapper>
