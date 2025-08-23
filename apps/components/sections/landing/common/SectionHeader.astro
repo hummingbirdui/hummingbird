@@ -8,7 +8,7 @@ interface Props {
 const { title, subtitle, class: className = '' } = Astro.props;
 ---
 
-<div class={`mx-auto mb-10 max-w-[600px] text-center ${className}`}>
+<div class={`mx-auto mb-10 max-w-150 text-center ${className}`}>
   <h1 class="mb-4 text-[28px] md:text-[32px] lg:text-[42px] font-medium -tracking-[2.25px]">{title}</h1>
   <p class="text-gray-600 text-base leading-[1.2]">{subtitle}</p>
 </div>

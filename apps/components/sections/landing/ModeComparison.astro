@@ -1,33 +1,35 @@
 ---
-import SectionHeader from '../common/SectionHeader.astro';
-import SectionWrapper from '../common/SectionWrapper.astro';
+import SectionHeader from './common/SectionHeader.astro';
+import SectionWrapper from './common/SectionWrapper.astro';
+import ArrowRangeIcon from '@components/icons/ArrowRangeIcon.astro';
 import lightImage from '@assets/images/landing/theme-light.png';
 import darkImage from '@assets/images/landing/theme-dark.png';
-import ArrowRangeIcon from '@components/icons/ArrowRangeIcon.astro';
 ---
 
-<SectionWrapper class="max-w-[1024px]">
+<SectionWrapper id="mode-comparison" class="max-w-5xl">
   <SectionHeader
     title="Dark mode, perfected."
     subtitle="Hummingbird's dark mode offers automatic detection or manual toggle, ensuring optimal contrast and a sleek appearance."
   />
 
-  <div id="imgComp" class="relative w-full h-[560px] overflow-hidden select-none">
-    <img src={lightImage.src} class="absolute inset-0 h-full w-full object-cover" />
+  <div
+    id="slider-container"
+    class="relative w-full select-none aspect-[946/565] rounded-3xl border-2 border-light overflow-hidden"
+  >
+    <img src={lightImage.src} class="absolute inset-0 h-full w-full object-contain object-center" />
 
     <img
-      id="overlayImg"
+      id="overlay-img"
       src={darkImage.src}
-      class="absolute inset-0 h-full w-full object-cover"
+      class="absolute inset-0 h-full w-full object-contain object-center"
       style="clip-path: inset(0 0 0 50%);"
     />
 
     <div
       id="slider"
-      class="absolute top-0 left-1/2 h-full w-[3px] bg-primary cursor-col-resize flex items-center justify-center"
+      class="absolute top-0 left-1/2 h-full w-0.75 bg-primary cursor-col-resize flex items-center justify-center"
     >
-      <button
-        class="absolute btn btn-primary btn-icon text-white rounded-full border border-white cursor-ew-resize shadow-md"
+      <button class="absolute btn btn-primary btn-icon rounded-full border border-white cursor-ew-resize shadow-md"
         ><ArrowRangeIcon /></button
       >
     </div>
@@ -35,8 +37,8 @@ import ArrowRangeIcon from '@components/icons/ArrowRangeIcon.astro';
 </SectionWrapper>
 
 <script>
-  const container = document.getElementById('imgComp') as HTMLDivElement;
-  const overlayImg = document.getElementById('overlayImg') as HTMLImageElement;
+  const container = document.getElementById('slider-container') as HTMLDivElement;
+  const overlayImg = document.getElementById('overlay-img') as HTMLImageElement;
   const slider = document.getElementById('slider') as HTMLElement;
 
   let isDragging = false;
@@ -64,7 +66,7 @@ import ArrowRangeIcon from '@components/icons/ArrowRangeIcon.astro';
     }
 
     if (x < 0) x = 0;
-    if (x > rect.width) x = rect.width;
+    if (x > rect.width) x = rect.width - 7;
 
     overlayImg.style.clipPath = `inset(0 0 0 ${x}px)`;
     slider.style.left = `${x}px`;
