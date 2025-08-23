@@ -1,0 +1,81 @@
+---
+import SectionHeader from '../common/SectionHeader.astro';
+import SectionWrapper from '../common/SectionWrapper.astro';
+import lightImage from '@assets/images/landing/theme-light.png';
+import darkImage from '@assets/images/landing/theme-dark.png';
+import ArrowRangeIcon from '@components/icons/ArrowRangeIcon.astro';
+---
+
+<SectionWrapper class="max-w-[1024px]">
+  <SectionHeader
+    title="Dark mode, perfected."
+    subtitle="Hummingbird's dark mode offers automatic detection or manual toggle, ensuring optimal contrast and a sleek appearance."
+  />
+
+  <div id="imgComp" class="relative w-full h-[560px] overflow-hidden select-none">
+    <img src={lightImage.src} class="absolute inset-0 h-full w-full object-cover" />
+
+    <img
+      id="overlayImg"
+      src={darkImage.src}
+      class="absolute inset-0 h-full w-full object-cover"
+      style="clip-path: inset(0 0 0 50%);"
+    />
+
+    <div
+      id="slider"
+      class="absolute top-0 left-1/2 h-full w-[3px] bg-primary cursor-col-resize flex items-center justify-center"
+    >
+      <button
+        class="absolute btn btn-primary btn-icon text-white rounded-full border border-white cursor-ew-resize shadow-md"
+        ><ArrowRangeIcon /></button
+      >
+    </div>
+  </div>
+</SectionWrapper>
+
+<script>
+  const container = document.getElementById('imgComp') as HTMLDivElement;
+  const overlayImg = document.getElementById('overlayImg') as HTMLImageElement;
+  const slider = document.getElementById('slider') as HTMLElement;
+
+  let isDragging = false;
+
+  const startDrag = (e: MouseEvent | TouchEvent) => {
+    e.preventDefault();
+    isDragging = true;
+  };
+
+  const stopDrag = () => {
+    isDragging = false;
+  };
+
+  const onDrag = (e: MouseEvent | TouchEvent) => {
+    if (!isDragging) return;
+    e.preventDefault();
+
+    const rect = container.getBoundingClientRect();
+    let x: number;
+
+    if (e instanceof TouchEvent) {
+      x = e.touches[0].clientX - rect.left;
+    } else {
+      x = e.clientX - rect.left;
+    }
+
+    if (x < 0) x = 0;
+    if (x > rect.width) x = rect.width;
+
+    overlayImg.style.clipPath = `inset(0 0 0 ${x}px)`;
+    slider.style.left = `${x}px`;
+  };
+
+  slider.addEventListener('mousedown', startDrag);
+  slider.addEventListener('touchstart', startDrag);
+
+  window.addEventListener('mouseup', stopDrag);
+  window.addEventListener('touchend', stopDrag);
+
+  window.addEventListener('mousemove', onDrag);
+  window.addEventListener('touchmove', onDrag, { passive: false });
+</script>
