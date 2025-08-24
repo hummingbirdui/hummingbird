@@ -8,6 +8,7 @@
       "@assets/*": ["apps/assets/*"],
       "@components/*": ["apps/components/*"],
       "@layouts/*": ["apps/layouts/*"],
+      "@libs/*": ["apps/libs/*"],
     }
   }
 }
