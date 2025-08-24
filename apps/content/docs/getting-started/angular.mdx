@@ -2,7 +2,7 @@
 title: Angular
 ---
 
-###### Initialization
+##### Initialization
 
 This example demonstrates a basic setup for initializing the **Hummingbird UI** library in an Angular app. The `import()` statement inside `ngOnInit` ensures that the library is loaded once the root component is initialized. This works in client-only environments.
 
@@ -30,7 +30,7 @@ This example demonstrates a basic setup for initializing the **Hummingbird UI** 
 
 ---
 
-###### Optimize
+##### Optimize
 
 To improve performance and reduce bundle size, import only the required component scripts from the Hummingbird library. This helps avoid loading unnecessary code. Simply uncomment the components you need in your app.
 
@@ -69,7 +69,7 @@ To improve performance and reduce bundle size, import only the required componen
 
 ---
 
-###### JavaScript API
+##### JavaScript API
 
 This section shows how to manually interact with Hummingbird UI components using the JavaScript API in Angular. You can directly create instances like `Modal` and use methods such as `toggle()` for programmatic control. Event listeners are added via `querySelector` just like in vanilla JavaScript.
 
@@ -102,7 +102,7 @@ This section shows how to manually interact with Hummingbird UI components using
 
 ---
 
-###### Angular SSR
+##### Angular SSR
 
 If your app uses **Angular Universal** for **Server-Side Rendering**, it’s important to only load Hummingbird on the client side. This example provides a service that checks if the current platform is the browser, using Angular's `PLATFORM_ID` and `isPlatformBrowser()` utility.
 

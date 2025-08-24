@@ -1,10 +1,20 @@
 ---
 title: Collapse
-desc: Toggle the visibility of content across your project with a few classes and our JavaScript plugins.
+description: Toggle the visibility of content across your project with a few classes and our JavaScript plugins.
 ---
 
-###### Example
+##### Example
 
+<Example code={`<div class="inline-flex gap-2 mb-3">
+    <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">Link with href</a>
+    <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">Button with data-bs-target</button>
+  </div>
+  <div class="collapse" id="collapseExample">
+    <div class="card card-body">
+      Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+    </div>
+  </div>`
+}/>
 <Example>
   <div slot="preview" class='not-prose'>
     <div class="inline-flex gap-2 mb-3">
@@ -37,7 +47,7 @@ desc: Toggle the visibility of content across your project with a few classes an
   </div>
 </Example>
 
-###### Horizontal
+##### Horizontal
 
 <Example>
   <div slot="preview" class='not-prose'>
@@ -71,7 +81,7 @@ desc: Toggle the visibility of content across your project with a few classes an
   </div>
 </Example>
 
-###### Multiple toggles and targets
+##### Multiple toggles and targets
 
 <Example>
   <div slot="preview" class='not-prose'>

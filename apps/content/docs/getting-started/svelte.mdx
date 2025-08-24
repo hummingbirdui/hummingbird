@@ -2,7 +2,7 @@
 title: Svelte
 ---
 
-###### Initialization
+##### Initialization
 
 This example demonstrates how to initialize the **Hummingbird UI** library in a SvelteKit project. The `afterNavigate` lifecycle hook from `$app/navigation` ensures that the library is loaded on the client after each route navigation.
 
@@ -29,7 +29,7 @@ This setup is typically used in `+layout.svelte`, which wraps all routes in your
 
 ---
 
-###### Optimize
+##### Optimize
 
 To reduce bundle size and improve performance, you can selectively import only the Hummingbird components you need. Instead of importing the entire library, use specific paths to load individual modules like `modal`, `dropdown`, etc.
 
@@ -67,7 +67,7 @@ This example shows how to import only the `modal` script. Other components are c
 
 ---
 
-###### JavaScript API
+##### JavaScript API
 
 This section demonstrates how to interact with Hummingbird UI components using their JavaScript API inside a Svelte component. Here, a `Modal` instance is created using a DOM selector, and a button click toggles its visibility.
 

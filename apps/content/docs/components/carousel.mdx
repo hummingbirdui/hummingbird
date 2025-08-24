@@ -1,6 +1,6 @@
 ---
 title: Carousel
-desc: A slideshow component for cycling through elements—images or slides of text—like a carousel.
+description: A slideshow component for cycling through elements—images or slides of text—like a carousel.
 ---
 
 import { Image } from "astro:assets";
@@ -8,7 +8,29 @@ import img1 from "@assets/images/carousel-1.png";
 import img2 from "@assets/images/carousel-2.png";
 import img3 from "@assets/images/carousel-3.png";
 
-###### Basic examples
+##### Basic examples
+
+<Example code={`<div id="carouselExample" class="carousel slide">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <Image src={img1} class="block w-full" alt="slide-1" />
+      </div>
+      <div class="carousel-item">
+        <Image src={img2} class="block w-full" alt="slide-2" />
+      </div>
+      <div class="carousel-item">
+        <Image src={img3} class="block w-full" alt="slide-3" />
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="hidden">Next</span>
+    </button>
+  </div>`} />
 
 <Example>
   <div slot="preview">
@@ -62,7 +84,7 @@ import img3 from "@assets/images/carousel-3.png";
   </div>
 </Example>
 
-###### Indicators
+##### Indicators
 
 <Example>
   <div slot="preview">
@@ -126,7 +148,7 @@ import img3 from "@assets/images/carousel-3.png";
   </div>
 </Example>
 
-###### Captions
+##### Captions
 
 <Example>
   <div slot="preview">
@@ -214,7 +236,7 @@ import img3 from "@assets/images/carousel-3.png";
   </div>
 </Example>
 
-###### Crossfade
+##### Crossfade
 
 <Example>
   <div slot="preview">
@@ -268,7 +290,7 @@ import img3 from "@assets/images/carousel-3.png";
   </div>
 </Example>
 
-###### Autoplaying carousels
+##### Autoplaying carousels
 
 <Example>
   <div slot="preview">
@@ -376,7 +398,7 @@ When the `ride` option is set to `true`, rather than `carousel`, the carousel wo
   </div>
 </Example>
 
-###### Individual `.carousel-item` interva
+##### Individual `.carousel-item` interva
 
 Add `data-bs-interval=""` to a `.carousel-item` to change the amount of time to delay between automatically cycling to the next item.
 
@@ -432,7 +454,7 @@ Add `data-bs-interval=""` to a `.carousel-item` to change the amount of time to 
   </div>
 </Example>
 
-###### Autoplaying carousels without controls
+##### Autoplaying carousels without controls
 
 <Example>
   <div slot="preview">
@@ -470,7 +492,7 @@ Add `data-bs-interval=""` to a `.carousel-item` to change the amount of time to 
   </div>
 </Example>
 
-###### Disable touch swiping
+##### Disable touch swiping
 
 Carousels support swiping left/right on touchscreen devices to move between slides. This can be disabled by setting the `touch` option to `false`.
 
