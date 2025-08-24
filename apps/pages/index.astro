@@ -9,16 +9,15 @@ import Footer from '@components/sections/landing/Footer.astro';
 import CTA from '@components/sections/landing/CTA.astro';
 import bgImage from '@assets/images/landing/default-bg.png';
 import ModeComparison from '@components/sections/landing/ModeComparison.astro';
-import ComparisonTable from '@components/sections/landing/comparison-table/ComparisonTable.astro';
-import Hero from '@components/sections/landing/hero/Hero.astro';
 import CleanMarkup from '@components/sections/landing/CleanMarkup.astro';
+import Comparison from '@components/sections/landing/comparison/Comparison.astro';
 ---
 
 <Layout>
   <main class="bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${bgImage.src})` }}>
     <!-- <Hero /> -->
     <Features />
-    <!-- <ComparisonTable /> -->
+    <Comparison />
     <EditorPreview />
     <CleanMarkup />
     <ModeComparison />
