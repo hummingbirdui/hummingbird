@@ -3,6 +3,7 @@
 @import '../src/index.css';
 @plugin '@tailwindcss/typography';
 @plugin "@iconify/tailwind4";
+@import 'tailwind-scrollbar-hide/v4';
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
@@ -44,15 +45,4 @@
 
 .cm-editor .cm-gutters {
   @apply hidden;
-}
-
-.img-comp-slider {
-  position: absolute;
-  z-index:9;
-  cursor: ew-resize;
-  width: 40px;
-  height: 40px;
-  background-color: #2196F3;
-  opacity: 0.7;
-  border-radius: 50%;
 }
