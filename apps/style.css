@@ -3,6 +3,7 @@
 @import '../src/index.css';
 @plugin '@tailwindcss/typography';
 @plugin "@iconify/tailwind4";
+@import 'tailwind-scrollbar-hide/v4';
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
@@ -69,4 +70,18 @@
 .custom-tooltip {
   --tooltip-bg: var(--color-info);
   --tooltip-color: var(--color-contrast);
+}
+
+.cm-editor {
+  @apply h-full text-sm bg-transparent;
+}
+
+.cm-editor .cm-gutters {
+  @apply hidden;
+}
+
+.dz-default {
+  margin: 0 !important;
+  display: flex;
+  align-items: center;
 }

@@ -1,4 +1,8 @@
 @layer base {
+  :root {
+    font-family: 'Figtree', sans-serif;
+  }
+
   html {
     -webkit-font-smoothing: antialiased;
   }

@@ -1,0 +1,41 @@
+---
+import Image from 'astro/components/Image.astro';
+import hummingbird from '@assets/images/logos/hummingbird.png';
+import { footerLinks } from 'apps/data/landing/footer-links';
+---
+
+<footer class="mx-auto px-6 lg:px-10 max-w-390">
+  <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-7 gap-8 gap-y-12 py-12">
+    <div class="col-span-2 md:col-span-4 lg:col-span-2 xl:col-span-3">
+      <div class="mb-4 flex items-center gap-2">
+        <Image src={hummingbird} alt="Logo" class="w-10 h-10" />
+        <span class="text-2xl font-semibold text-highlight">hummingbird</span>
+      </div>
+      <p class="mb-4 text-sm text-highlight lg:max-w-75">
+        Crafted with care, caffeine, and clean code by ThemeWagon – 2M+ dev Stong, topping Bootstrap Marketplace.
+      </p>
+      <p class="text-sm text-highlight">MIT for code, CC BY 4.0 for docs.</p>
+    </div>
+
+    {
+      footerLinks.map(({ title, links }) => (
+        <div class="col-span-1">
+          <h3 class="mb-3.75 text-sm font-bold text-emphasis">{title}</h3>
+          <ul class="list-none p-0 space-y-3.75">
+            {links.map(({ label, url }) => (
+              <li class="text-sm">
+                <a href={url} class="no-underline text-default">
+                  {label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))
+    }
+  </div>
+
+  <div class="border-t border-light py-5">
+    <p class="mb-0 text-center text-sm text-highlight">hummingbird Ltd &copy; 2025, all rights reserved</p>
+  </div>
+</footer>

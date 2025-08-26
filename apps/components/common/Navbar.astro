@@ -1,6 +1,6 @@
 ---
 import Image from 'astro/components/Image.astro';
-import logo from '@assets/images/logos/logo.png';
+import logo from '@assets/images/logos/hummingbird.png';
 
 const menuItems = [
   {
@@ -26,9 +26,7 @@ const menuItems = [
 ];
 ---
 
-<nav
-  class="navbar navbar-expand-xl border-b border-light bg-default sticky top-0 w-full min-h-[var(--navbar-height)] z-10 px-6 sm:px-10"
->
+<nav class="navbar navbar-expand-xl border-b border-light bg-default sticky top-0 w-full z-10">
   <div class="flex flex-wrap items-center mx-auto w-full max-w-8xl">
     <a class="navbar-brand flex items-center gap-2" href="/">
       <Image src={logo} alt="Logo" class="w-10 h-10" />

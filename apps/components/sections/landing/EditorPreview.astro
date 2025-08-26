@@ -1,0 +1,125 @@
+---
+import GradientBorderBox from './common/GradientBorderBox.astro';
+import SectionWrapper from './common/SectionWrapper.astro';
+import SectionHeader from './common/SectionHeader.astro';
+import cardImage from '@assets/images/hamster.webp';
+import CopyIcon from '@components/icons/CopyIcon.astro';
+import CheckIcon from '@components/icons/CheckIcon.astro';
+import RefreshIcon from '@components/icons/RefreshIcon.astro';
+import bgImage from '@assets/images/landing/editor-preview-light.png';
+---
+
+<SectionWrapper id="editor-preview" class="max-w-340">
+  <SectionHeader
+    title="Extend, don’t eject"
+    subtitle="Hummingbird offers layered control. Use our global variables for broad changes or a utility class for precise tweaks. It's designed to be easily extended."
+  />
+
+  <div class="flex flex-col md:flex-row items-center gap-6">
+    <!-- editor -->
+    <div class="p-6 flex flex-col h-100 md:h-138 w-full rounded-2xl bg-darker overflow-hidden">
+      <div class="mb-4 flex items-center justify-between gap-2 border-b border-[#C3D3DB]/60">
+        <h6 class="text-highlight font-bold">Edit the Code Sample</h6>
+        <button id="resetBtn" class="ml-auto text-emphasis">
+          <RefreshIcon />
+        </button>
+        <button id="copyBtn" class="text-emphasis flex items-center justify-center w-8">
+          <CopyIcon id="copyIcon" />
+          <CheckIcon id="checkIcon" class="hidden text-success" />
+        </button>
+      </div>
+      <div id="editor" class="grow overflow-auto"></div>
+    </div>
+
+    <!-- preview -->
+    <GradientBorderBox color="warning" class="h-100 md:h-138 w-full rounded-2xl">
+      <div
+        id="preview"
+        class="flex items-center h-full w-full justify-center bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${bgImage.src})` }}
+        data-preview-img={cardImage.src}
+      >
+      </div>
+    </GradientBorderBox>
+  </div>
+</SectionWrapper>
+
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+<script>
+  import { oneDark } from '@codemirror/theme-one-dark';
+  import { basicSetup, EditorView } from 'codemirror';
+  import { EditorState } from '@codemirror/state';
+  import { html } from '@codemirror/lang-html';
+
+  const preview = document.getElementById('preview') as HTMLDivElement;
+  const resetButton = document.getElementById('resetBtn') as HTMLButtonElement;
+  const copyButton = document.getElementById('copyBtn') as HTMLButtonElement;
+  const copyIcon = document.getElementById('copyIcon') as HTMLElement;
+  const checkIcon = document.getElementById('checkIcon') as HTMLElement;
+
+  const previewImage = preview.dataset.previewImg;
+
+  const startCode = `<div class="card p-2 shadow-lg rounded-2xl max-w-64">
+  <img src="${previewImage}" class='card-img-top pb-4' alt="Hummingbird" />
+  <div class="card-body p-1">
+    <h4 class="card-title text-base">10 Fascinating Animal Facts</h4>
+    <p class='text-xs'>Discover surprising traits and behaviors
+from creatures big and small.</p>
+  </div>
+  <div class="card-footer flex items-center justify-between">
+    <p class="text-sm m-0">12 min read</p>
+    <button class='btn btn-icon btn-sm'>
+      <span class='icon-[material-symbols--bookmark-outline] text-lg text-default'></span>
+    </button>
+  </div>
+</div>`;
+
+  const updatePreview = (code: string) => {
+    preview.innerHTML = code;
+  };
+
+  const editor = new EditorView({
+    state: EditorState.create({
+      doc: startCode,
+      extensions: [
+        html(),
+        basicSetup,
+        oneDark,
+        EditorView.updateListener.of((update) => {
+          if (update.docChanged) {
+            const code = update.state.doc.toString();
+            updatePreview(code);
+          }
+        }),
+      ],
+    }),
+    parent: document.getElementById('editor') as HTMLElement,
+  });
+
+  updatePreview(startCode);
+
+  resetButton.addEventListener('click', () => {
+    editor.dispatch({
+      changes: { from: 0, to: editor.state.doc.length, insert: startCode },
+    });
+    updatePreview(startCode);
+  });
+
+  copyButton.addEventListener('click', async () => {
+    const code = editor.state.doc.toString();
+    try {
+      await navigator.clipboard.writeText(code);
+
+      copyIcon.classList.add('hidden');
+      checkIcon.classList.remove('hidden');
+
+      setTimeout(() => {
+        checkIcon.classList.add('hidden');
+        copyIcon.classList.remove('hidden');
+      }, 1200);
+    } catch (err) {
+      console.error('Failed to copy: ', err);
+    }
+  });
+</script>
