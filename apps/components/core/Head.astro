@@ -2,7 +2,9 @@
 // Import the global.css file here so that it is included on
 // all pages through the use of the <BaseHead /> component.
 // import "../styles/global.css";
-import { SITE_TITLE, SITE_DESCRIPTION } from '../const';
+
+import { SITE_DESCRIPTION, SITE_TITLE } from 'apps/const';
+import Favicons from './Favicons.astro';
 
 interface Props {
   title: string;
@@ -32,6 +34,7 @@ const pageTitle = isHome ? `${SITE_TITLE} · ${SITE_DESCRIPTION}` : `${title} ·
 <title>{pageTitle}</title>
 <meta name="title" content={title} />
 <meta name="description" content={description} />
+<Favicons />
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website" />

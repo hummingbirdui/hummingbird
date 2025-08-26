@@ -22,6 +22,11 @@ const sitemap: Sitemap[] = [
         name: 'Tutorial',
         path: '#',
       },
+    ],
+  },
+  {
+    subHeader: 'Integration guides',
+    items: [
       {
         name: 'React',
         path: '/docs/getting-started/react',
@@ -56,18 +61,22 @@ const sitemap: Sitemap[] = [
     subHeader: 'Customize',
     items: [
       {
+        name: 'Theming',
+        path: '#',
+      },
+      {
+        name: 'Dark mode',
+        path: '#',
+      },
+      {
         name: 'Colors',
         path: '/docs/customize/colors',
       },
     ],
   },
   {
-    subHeader: 'Components',
+    subHeader: 'Forms',
     items: [
-      {
-        name: 'Buttons',
-        path: '/docs/components/buttons',
-      },
       {
         name: 'Form Control',
         path: '/docs/components/form-control',
@@ -101,80 +110,89 @@ const sitemap: Sitemap[] = [
         path: '/docs/components/range',
       },
       {
-        name: 'Badge',
-        path: '/docs/components/badge',
+        name: 'Input Group',
+        path: '/docs/components/input-group',
+      },
+    ],
+  },
+  {
+    subHeader: 'Components',
+    items: [
+      {
+        name: 'Accordion',
+        path: '/docs/components/accordion',
       },
       {
         name: 'Alert',
         path: '/docs/components/alert',
       },
       {
-        name: 'Link',
-        path: '/docs/components/link',
+        name: 'Avatar',
+        path: '/docs/components/avatar',
+      },
+      {
+        name: 'Badge',
+        path: '/docs/components/badge',
       },
       {
         name: 'Breadcrumb',
         path: '/docs/components/breadcrumb',
       },
       {
-        name: 'Avatar',
-        path: '/docs/components/avatar',
+        name: 'Buttons',
+        path: '/docs/components/buttons',
+      },
+      {
+        name: 'Button Group',
+        path: '/docs/components/button-group',
       },
       {
         name: 'Card',
         path: '/docs/components/card',
       },
       {
-        name: 'Table',
-        path: '/docs/components/table',
-      },
-      {
-        name: 'List Group',
-        path: '/docs/components/list-group',
-      },
-      {
-        name: 'Dropdowns',
-        path: '/docs/components/dropdowns',
-      },
-      {
-        name: 'Tooltip',
-        path: '/docs/components/tooltip',
+        name: 'Carousel',
+        path: '/docs/components/carousel',
       },
       {
         name: 'Collapse',
         path: '/docs/components/collapse',
       },
       {
-        name: 'Accordion',
-        path: '/docs/components/accordion',
+        name: 'Dropdowns',
+        path: '/docs/components/dropdowns',
       },
       {
-        name: 'Offcanvas',
-        path: '/docs/components/offcanvas',
+        name: 'List Group',
+        path: '/docs/components/list-group',
+      },
+      {
+        name: 'Link',
+        path: '/docs/components/link',
       },
       {
         name: 'Modal',
         path: '/docs/components/modal',
       },
       {
-        name: 'Carousel',
-        path: '/docs/components/carousel',
+        name: 'Navbar',
+        path: '/docs/components/navbar',
       },
       {
         name: 'Navs & tabs',
         path: '/docs/components/navs-tabs',
       },
       {
-        name: 'Navbar',
-        path: '/docs/components/navbar',
+        name: 'Offcanvas',
+        path: '/docs/components/offcanvas',
       },
       {
-        name: 'Input Group',
-        path: '/docs/components/input-group',
+        name: 'Table',
+        path: '/docs/components/table',
       },
       {
-        name: 'Button Group',
-        path: '/docs/components/button-group',
+        name: 'Tooltip',
+        path: '/docs/components/tooltip',
       },
     ],
   },

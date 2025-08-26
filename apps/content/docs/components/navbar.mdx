@@ -1,9 +1,9 @@
 ---
 title: Navs and tabs
-desc: Documentation and examples for how to use Bootstrap’s included navigation components.
+description: Documentation and examples for how to use Bootstrap’s included navigation components.
 ---
 
-###### Basic Example
+##### Basic Example
 
 <Example>
   <div slot="preview">
@@ -85,7 +85,7 @@ desc: Documentation and examples for how to use Bootstrap’s included navigatio
   </div>
 </Example>
 
-###### Nav
+##### Nav
 
 Navbar navigation links build on our `.nav` options with their own modifier class and require the use of toggler classes for proper responsive styling. Navigation in navbars will also grow to occupy as much horizontal space as possible to keep your navbar contents securely aligned.
 
@@ -195,7 +195,7 @@ And because we use classes for our navs, you can avoid the list-based approach e
   </div>
 </Example>
 
-###### Form
+##### Form
 
 Place various form controls and components within a navbar:
 
@@ -255,7 +255,7 @@ Immediate child elements of .navbar use flex layout and will default to justify-
   </div>
 </Example>
 
-###### Text
+##### Text
 
 Navbars may contain bits of text with the help of `.navbar-text`. This class adjusts vertical alignment and horizontal spacing for strings of text.
 
@@ -281,7 +281,7 @@ Navbars may contain bits of text with the help of `.navbar-text`. This class adj
   </div>
 </Example>
 
-###### Color schemes
+##### Color schemes
 
 <Example>
   <div slot="preview" class="space-y-3">
@@ -353,7 +353,7 @@ Navbars may contain bits of text with the help of `.navbar-text`. This class adj
   </div>
 </Example>
 
-###### Containers
+##### Containers
 
 Use any of the responsive containers such as `.sm:container`, `.md:container`, `.lg:container`, `.xl:container`, `.2xl:container` to change how wide the content in your navbar is presented.
 
@@ -377,7 +377,7 @@ Use any of the responsive containers such as `.sm:container`, `.md:container`, `
   </div>
 </Example>
 
-###### Scrolling
+##### Scrolling
 
 Add `.navbar-nav-scroll` to a `.navbar-nav` (or other navbar sub-component) to enable vertical scrolling within the toggleable contents of a collapsed navbar. By default, scrolling kicks in at `75vh` (or 75% of the viewport height), but you can override that with the local CSS custom property `--navbar-height` or custom styles. At larger viewports when the navbar is expanded, content will appear as it does in a default navbar.
 
@@ -465,13 +465,13 @@ Here’s an example navbar using `.navbar-nav-scroll` with `style="--bs-scroll-h
   </div>
 </Example>
 
-###### Responsive behaviors
+##### Responsive behaviors
 
 Navbars can use `.navbar-toggler`, `.navbar-collapse`, and `.navbar-expand{-sm|-md|-lg|-xl|-xxl}` classes to determine when their content collapses behind a button. In combination with other utilities, you can easily choose when to show or hide particular elements.
 
 For navbars that never collapse, add the `.navbar-expand` class on the navbar. For navbars that always collapse, don’t add any `.navbar-expand` class.
 
-###### External content
+##### External content
 
 Sometimes you want to use the collapse plugin to trigger a container element for content that structurally sits outside of the `.navbar` . Because our plugin works on the `id` and `data-bs-target` matching, that’s easily done!
 
@@ -513,7 +513,7 @@ Sometimes you want to use the collapse plugin to trigger a container element for
 
 When you do this, we recommend including additional JavaScript to move the focus programmatically to the container when it is opened. Otherwise, keyboard users and users of assistive technologies will likely have a hard time finding the newly revealed content - particularly if the container that was opened comes before the toggler in the document’s structure. We also recommend making sure that the toggler has the `aria-controls` attribute, pointing to the id of the content container. In theory, this allows assistive technology users to jump directly from the toggler to the container it controls–but support for this is currently quite patchy.
 
-###### Offcanvas
+##### Offcanvas
 
 Transform your expanding and collapsing navbar into an offcanvas drawer with the offcanvas component. We extend both the offcanvas default styles and use our `.navbar-expand-*` classes to create a dynamic and flexible navigation sidebar.
 

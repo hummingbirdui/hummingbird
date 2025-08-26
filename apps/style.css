@@ -3,37 +3,85 @@
 @import '../src/index.css';
 @plugin '@tailwindcss/typography';
 @plugin "@iconify/tailwind4";
+@import 'tailwind-scrollbar-hide/v4';
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
   --container-8xl: 95rem;
   --navbar-height: --spacing(20.5);
+  --anchor-header-offset: 95px;
 }
 
-.prose {
-  --tw-prose-headings: var(--color-default-color);
-  --tw-prose-body: var(--color-highlight-color);
+.docs-sidebar {
+  ~ .offcanvas-backdrop {
+    @apply z-8;
+  }
 }
-.astro-code {
-  margin: 0;
-  border-radius: 0;
-  padding: --spacing(4);
-  font-size: var(--text-xs);
-  max-height: 30rem;
+.docs-content {
+  :where(h2, h3, h4, h5, h6)[id] {
+    @apply scroll-mt-[var(--anchor-header-offset)] font-medium;
+  }
+
+  > h5:not(:first-child) {
+    @apply mt-12;
+  }
+  > h5 {
+    &:has(+ :not(p)) {
+      @apply mb-4;
+    }
+  }
+  > h6 {
+    @apply mt-8;
+    &:has(+ :not(p)) {
+      @apply mb-4;
+    }
+  }
+
+  .heading-anchor {
+    @apply opacity-0 transition-opacity duration-200;
+    &::after {
+      @apply relative top-1 left-1;
+      content: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiMxRTkwRkYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIyIiBkPSJtOS4xNzIgMTQuODI5bDUuNjU3LTUuNjU3TTcuMDUgMTEuMjkzbC0xLjQxNCAxLjQxNGE0IDQgMCAxIDAgNS42NTcgNS42NTdsMS40MTItMS40MTRtLTEuNDEzLTkuOWwxLjQxNC0xLjQxNGE0IDQgMCAxIDEgNS42NTcgNS42NTdsLTEuNDE0IDEuNDE0Ii8+PC9zdmc+);
+    }
+
+    &:focus,
+    &:hover,
+    :hover > &,
+    :target > & {
+      @apply opacity-100;
+    }
+  }
 }
 
 .dark {
   .astro-code,
   .astro-code span {
-    color: var(--shiki-dark) !important;
-    background-color: var(--shiki-dark-bg) !important;
-    /* Optional, if you also want font styles */
+    @apply text-[var(--shiki-dark)]! font-[var(--shiki-dark-font-weight)]!;
+    /* background-color: var(--shiki-dark-bg) !important; */
     font-style: var(--shiki-dark-font-style) !important;
-    font-weight: var(--shiki-dark-font-weight) !important;
     text-decoration: var(--shiki-dark-text-decoration) !important;
   }
 }
+
+.astro-code {
+  @apply overflow-hidden bg-muted! text-sm p-4 rounded-lg;
+}
+
 .custom-tooltip {
   --tooltip-bg: var(--color-info);
   --tooltip-color: var(--color-contrast);
+}
+
+.cm-editor {
+  @apply h-full text-sm bg-transparent;
+}
+
+.cm-editor .cm-gutters {
+  @apply hidden;
+}
+
+.dz-default {
+  margin: 0 !important;
+  display: flex;
+  align-items: center;
 }

@@ -1,323 +1,343 @@
 ---
 title: Button
-desc: Buttons allow users to take actions, and make choices, with a single tap.
+description: Buttons allow users to trigger an action or event with a single click. They are a core interactive element in any application interface.
+toc: true
+classNames:
+  component:
+  - class: 'btn'
+    desc: Button
+  color:
+  - class: btn-primary
+    desc: Primary color
+  - class: btn-secondary
+    desc: Secondary color
+  - class: btn-info
+    desc: Info color
+  - class: btn-success
+    desc: Success color
+  - class: btn-warning
+    desc: Warning color
+  - class: btn-danger
+    desc: Danger color
+  - class: btn-neutral
+    desc: Neutral color
+  style:
+  - class: btn-subtle
+    desc: Subtle style
+  - class: btn-outline
+    desc: Outline style
+  - class: btn-text
+    desc: Without a background or border
+  - class: btn-link
+    desc: looks like a link
+  size:
+  - class: btn-sm
+    desc: Small size
+  - class: default
+    desc: Medium size (default)
+  - class: btn-lg
+    desc: Large size
+  modifier:
+  - class: btn-square
+    desc: Square shape
+  - class: btn-circle
+    desc: Circle shape
+  - class: btn-square
+    desc: Square shape (1:1 ratio)
+  - class: btn-circle
+    desc: Circle shape (1:1 ratio)
 ---
 
-###### Basic Buttons
+##### Base button
 
-The Button comes with different variants
+The `.btn` class defines the base button styles, including padding, alignment, and overall structure. It ensures consistent spacing and content alignment across all button types.
 
-###### Contained button
+<Example class="text-center" 
+  code={`<button class='btn'>Base button</button>`} 
+/>
 
-Contained buttons are high-emphasis, distinguished by their use of elevation and fill. They contain actions that are primary to your app.
+##### Contained button
 
-<Example>
-  <div slot="preview" class='not-prose space-x-2 space-y-2'>
-    <button class='btn btn-primary'>Primary</button>
-    <button class='btn btn-secondary'>Secondary</button>
-    <button class='btn btn-info'>Info</button>
-    <button class='btn btn-success'>Success</button>
-    <button class='btn btn-warning'>Warning</button>
-    <button class='btn btn-danger'>Danger</button>
-    <button class='btn btn-neutral'>Neutral</button>
-    <button class='btn btn-link'>Link</button>
-  </div>
+Contained buttons use a filled style with elevation to give strong emphasis. They are intended for primary actions in an application.
 
-  <div slot="code">
-  ```html
-  <button class='btn btn-primary'>Primary</button>
+<Example class="flex flex-wrap gap-2 justify-center" 
+  code={`<button class='btn btn-primary'>Primary</button>
   <button class='btn btn-secondary'>Secondary</button>
   <button class='btn btn-info'>Info</button>
   <button class='btn btn-success'>Success</button>
   <button class='btn btn-warning'>Warning</button>
   <button class='btn btn-danger'>Danger</button>
   <button class='btn btn-neutral'>Neutral</button>
-  ```
-  </div>
-</Example>
+  <button class='btn btn-link'>Link</button>`} 
+/>
 
-###### Subtle button
+##### Subtle button
 
-Subtle buttons provide a gentle emphasis with a subtle background and solid text color, ideal for secondary actions that need visual distinction without overpowering the primary content.
+Subtle buttons use a light background with clear text color, giving gentle emphasis. They are suitable for secondary actions that should remain visible without drawing too much attention.
 
-<Example>
-  <div slot="preview" class='not-prose space-x-2 space-y-2'>
-    <button class='btn btn-subtle-primary'>Primary</button>
-    <button class='btn btn-subtle-secondary'>Secondary</button>
-    <button class='btn btn-subtle-info'>Info</button>
-    <button class='btn btn-subtle-success'>Success</button>
-    <button class='btn btn-subtle-warning'>Warning</button>
-    <button class='btn btn-subtle-danger'>Danger</button>
-    <button class='btn btn-subtle-neutral'>Neutral</button>
-  </div>
-
-  <div slot="code">
-  ```html
-  <button class='btn btn-subtle-primary'>Primary</button>
+<Example class="flex flex-wrap gap-2 justify-center" 
+  code={`<button class='btn btn-subtle-primary'>Primary</button>
   <button class='btn btn-subtle-secondary'>Secondary</button>
   <button class='btn btn-subtle-info'>Info</button>
   <button class='btn btn-subtle-success'>Success</button>
   <button class='btn btn-subtle-warning'>Warning</button>
   <button class='btn btn-subtle-danger'>Danger</button>
-  <button class='btn btn-subtle-neutral'>Neutral</button>
-  ```
-  </div>
-</Example>
+  <button class='btn btn-subtle-neutral'>Neutral</button>`} 
+/>
 
-###### Outlined button
+##### Outlined button
 
-Outlined buttons are medium-emphasis buttons. They contain actions that are important but aren't the primary action in an app.
+Outlined buttons provide medium emphasis for actions that are important but not primary.
 
-<Example>
-  <div slot="preview" class='not-prose space-x-2 space-y-2'>
-    <button class='btn btn-outline-primary'>Primary</button>
-    <button class='btn btn-outline-secondary'>Secondary</button>
-    <button class='btn btn-outline-info'>Info</button>
-    <button class='btn btn-outline-success'>Success</button>
-    <button class='btn btn-outline-warning'>Warning</button>
-    <button class='btn btn-outline-danger'>Danger</button>
-    <button class='btn btn-outline-neutral'>Neutral</button>
-  </div>
+They serve as a lower emphasis alternative to contained buttons, and a higher emphasis option compared to text buttons.
 
-  <div slot="code">
-  ```html
-  <button class='btn btn-outline-primary'>Primary</button>
+<Example class="flex flex-wrap gap-2 justify-center" 
+  code={`<button class='btn btn-outline-primary'>Primary</button>
   <button class='btn btn-outline-secondary'>Secondary</button>
   <button class='btn btn-outline-info'>Info</button>
   <button class='btn btn-outline-success'>Success</button>
   <button class='btn btn-outline-warning'>Warning</button>
   <button class='btn btn-outline-danger'>Danger</button>
-  <button class='btn btn-outline-neutral'>Neutral</button>
-  ```
-  </div>
-</Example>
+  <button class='btn btn-outline-neutral'>Neutral</button>`} 
+/>
 
-###### Text button
+##### Text button
 
-Text buttons are typically used for less-pronounced actions, including those located: in dialogs, in cards. In cards, text buttons help maintain an emphasis on card content.
+Text buttons are low-emphasis buttons without a background or border. They are best used for less prominent actions, such as those in dialogs or cards, where the focus should remain on the content.
 
-<Example>
-  <div slot="preview" class='not-prose space-x-2 space-y-2'>
-    <button class='btn btn-text-primary'>Primary</button>
-    <button class='btn btn-text-secondary'>Secondary</button>
-    <button class='btn btn-text-info'>Info</button>
-    <button class='btn btn-text-success'>Success</button>
-    <button class='btn btn-text-warning'>Warning</button>
-    <button class='btn btn-text-danger'>Danger</button>
-    <button class='btn btn-text-neutral'>Neutral</button>
-  </div>
-
-  <div slot="code">
-  ```html
-  <button class='btn btn-text-primary'>Primary</button>
+<Example class="flex flex-wrap gap-2 justify-center" 
+  code={`<button class='btn btn-text-primary'>Primary</button>
   <button class='btn btn-text-secondary'>Secondary</button>
   <button class='btn btn-text-info'>Info</button>
   <button class='btn btn-text-success'>Success</button>
   <button class='btn btn-text-warning'>Warning</button>
   <button class='btn btn-text-danger'>Danger</button>
-  <button class='btn btn-text-neutral'>Neutral</button>
-  ```
-  </div>
-</Example>
+  <button class='btn btn-text-neutral'>Neutral</button>`}
+/>
 
-###### Button Sizes
+##### Button Sizes
 
 For larger or smaller buttons, use the <code>.btn-lg</code> and <code>.btn-sm</code> class. Default is medium.
 
-<Example>
-  <div slot="preview" class='not-prose space-y-3'>
-    <div class='space-x-2'>
-      <button class='btn btn-primary btn-sm'>Small</button>
-      <button class='btn btn-primary'>Medium</button>
-      <button class='btn btn-primary btn-lg'>Large</button>
-    </div>
-    <div class='space-x-2'>
-      <button class='btn btn-subtle-primary btn-sm'>Small</button>
-      <button class='btn btn-subtle-primary'>Medium</button>
-      <button class='btn btn-subtle-primary btn-lg'>Large</button>
-    </div>
-    <div class='space-x-2'>
-      <button class='btn btn-outline-primary btn-sm'>Small</button>
-      <button class='btn btn-outline-primary'>Medium</button>
-      <button class='btn btn-outline-primary btn-lg'>Large</button>
-    </div>
-    <div class='space-x-2'>
-      <button class='btn btn-text-primary btn-sm'>Small</button>
-      <button class='btn btn-text-primary'>Medium</button>
-      <button class='btn btn-text-primary btn-lg'>Large</button>
-    </div>
-  </div>
+<Example class="flex flex-wrap gap-2 justify-center items-center" 
+  code={`<button class='btn btn-primary btn-sm'>Small</button>
+  <button class='btn btn-primary'>Medium</button>
+  <button class='btn btn-primary btn-lg'>Large</button>`}
+/>
 
-  <div slot="code">
-    ```html
-    <button class='btn btn-primary btn-sm'>Small</button>
-    <button class='btn btn-primary'>Medium</button>
-    <button class='btn btn-primary btn-lg'>Large</button>
-
-    <button class="btn btn-subtle-primary btn-sm">Small</button>
-    <button class="btn btn-subtle-primary">Medium</button>
-    <button class="btn btn-subtle-primary btn-lg">Large</button>
-
-    <button class='btn btn-outline-primary btn-sm'>Small</button>
-    <button class='btn btn-outline-primary'>Medium</button>
-    <button class='btn btn-outline-primary btn-lg'>Large</button>
-
-    <button class='btn btn-text-primary btn-sm'>Small</button>
-    <button class='btn btn-text-primary'>Medium</button>
-    <button class='btn btn-text-primary btn-lg'>Large</button>
-    ```
-
-  </div>
-</Example>
-
-###### Button Shape
+##### Button Shape
 
 You can change the shape of the button using the <code>.btn-square</code> and <code>.btn-circle</code> class.
 
-<Example>
-  <div slot="preview" class='not-prose space-y-3'>
-    <div class='space-x-2'>
-      <button class='btn btn-primary btn-square btn-lg'>
-        <span class='icon-[material-symbols--add-circle-outline-rounded] text-2xl'></span>
-      </button>
-      <button class='btn btn-secondary btn-circle btn-lg'>
-        <span class='icon-[material-symbols--add-circle-outline-rounded] text-2xl'></span>
-      </button>
-    </div>
-    <div class='space-x-2'>
-      <button class='btn btn-primary btn-square'>
-        <span class='icon-[material-symbols--add-circle-outline-rounded] text-xl'></span>
-      </button>
-      <button class='btn btn-secondary btn-circle'>
-        <span class='icon-[material-symbols--add-circle-outline-rounded] text-xl'></span>
-      </button>
-    </div>
-    <div class='space-x-2'>
-      <button class='btn btn-primary btn-square btn-sm'>
-        <span class='icon-[material-symbols--add-circle-outline-rounded] text-lg'></span>
-      </button>
-      <button class='btn btn-secondary btn-circle btn-sm'>
-        <span class='icon-[material-symbols--add-circle-outline-rounded] text-lg'></span>
-      </button>
-    </div>
+<Example class="flex flex-col items-center gap-2" 
+  code={`<div class='space-x-2'>
+    <button class='btn btn-primary btn-square btn-sm'>
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M11 13v3q0 .425.288.713T12 17t.713-.288T13 16v-3h3q.425 0 .713-.288T17 12t-.288-.712T16 11h-3V8q0-.425-.288-.712T12 7t-.712.288T11 8v3H8q-.425 0-.712.288T7 12t.288.713T8 13zm1 9q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22m0-2q3.35 0 5.675-2.325T20 12t-2.325-5.675T12 4T6.325 6.325T4 12t2.325 5.675T12 20m0-8"/>
+      </svg>
+    </button>
+    <button class='btn btn-primary btn-square'>
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M11 13v3q0 .425.288.713T12 17t.713-.288T13 16v-3h3q.425 0 .713-.288T17 12t-.288-.712T16 11h-3V8q0-.425-.288-.712T12 7t-.712.288T11 8v3H8q-.425 0-.712.288T7 12t.288.713T8 13zm1 9q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22m0-2q3.35 0 5.675-2.325T20 12t-2.325-5.675T12 4T6.325 6.325T4 12t2.325 5.675T12 20m0-8"/>
+      </svg>
+    </button>
+    <button class='btn btn-primary btn-square btn-lg'>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M11 13v3q0 .425.288.713T12 17t.713-.288T13 16v-3h3q.425 0 .713-.288T17 12t-.288-.712T16 11h-3V8q0-.425-.288-.712T12 7t-.712.288T11 8v3H8q-.425 0-.712.288T7 12t.288.713T8 13zm1 9q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22m0-2q3.35 0 5.675-2.325T20 12t-2.325-5.675T12 4T6.325 6.325T4 12t2.325 5.675T12 20m0-8"/>
+      </svg>
+    </button>
   </div>
+  <div class='space-x-2'>
+    <button class='btn btn-secondary btn-circle btn-sm'>
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M11 13v3q0 .425.288.713T12 17t.713-.288T13 16v-3h3q.425 0 .713-.288T17 12t-.288-.712T16 11h-3V8q0-.425-.288-.712T12 7t-.712.288T11 8v3H8q-.425 0-.712.288T7 12t.288.713T8 13zm1 9q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22m0-2q3.35 0 5.675-2.325T20 12t-2.325-5.675T12 4T6.325 6.325T4 12t2.325 5.675T12 20m0-8"/>
+      </svg>
+    </button>
+    <button class='btn btn-secondary btn-circle'>
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M11 13v3q0 .425.288.713T12 17t.713-.288T13 16v-3h3q.425 0 .713-.288T17 12t-.288-.712T16 11h-3V8q0-.425-.288-.712T12 7t-.712.288T11 8v3H8q-.425 0-.712.288T7 12t.288.713T8 13zm1 9q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22m0-2q3.35 0 5.675-2.325T20 12t-2.325-5.675T12 4T6.325 6.325T4 12t2.325 5.675T12 20m0-8"/>
+      </svg>
+    </button>
+    <button class='btn btn-secondary btn-circle btn-lg'>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M11 13v3q0 .425.288.713T12 17t.713-.288T13 16v-3h3q.425 0 .713-.288T17 12t-.288-.712T16 11h-3V8q0-.425-.288-.712T12 7t-.712.288T11 8v3H8q-.425 0-.712.288T7 12t.288.713T8 13zm1 9q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22m0-2q3.35 0 5.675-2.325T20 12t-2.325-5.675T12 4T6.325 6.325T4 12t2.325 5.675T12 20m0-8"/>
+      </svg>
+    </button>
+  </div>`}
+/>
 
-  <div slot="code">
-  ```html
-  <button class='btn btn-primary btn-square btn-lg'>
-    <span class='icon-[material-symbols--add-circle-outline-rounded] text-lg'></span>
-  </button>
-  <button class='btn btn-secondary btn-circle btn-lg'>
-    <span class='icon-[material-symbols--add-circle-outline-rounded] text-lg'></span>
-  </button>
-  <button class='btn btn-primary btn-square'>
-    <span class='icon-[material-symbols--add-circle-outline-rounded] text-lg'></span>
-  </button>
-  <button class='btn btn-secondary btn-circle'>
-    <span class='icon-[material-symbols--add-circle-outline-rounded] text-lg'></span>
-  </button>
-  <button class='btn btn-primary btn-square btn-sm'>
-    <span class='icon-[material-symbols--add-circle-outline-rounded]'></span>
-  </button>
-  <button class='btn btn-secondary btn-circle btn-sm'>
-    <span class='icon-[material-symbols--add-circle-outline-rounded]'></span>
-  </button>
-  ```
-  </div>
-</Example>
+##### Buttons with icons and label
 
-###### Buttons with icons and label
+Buttons can include icons alongside text to improve usability and recognition. Icons help users quickly identify the purpose of an action, such as using a trash icon for a delete button.
 
-<Example>
-  <div slot="preview" class='not-prose space-x-2 flex'>
-    <button class='btn btn-danger'><span class='icon-[mingcute--google-fill]'></span>Google</button>
-    <button class='btn btn-info'>Twitter<span class='icon-[mingcute--twitter-fill]'></span></button>
-  </div>
-
-  <div slot="code">
-  ```html
-  <button class='btn btn-danger'>
-    <span class='icon-[mingcute--google-fill]'></span>
+<Example class="flex flex-wrap gap-2 justify-center items-center" 
+  code={`<button class='btn btn-danger'>
     Google
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><g fill="none" fill-rule="evenodd">
+      <path d="m12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035q-.016-.005-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093q.019.005.029-.008l.004-.014l-.034-.614q-.005-.018-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z"/>
+      <path fill="currentColor" d="M12 5.5a6.5 6.5 0 1 0 6.326 8H13a1.5 1.5 0 0 1 0-3h7a1.5 1.5 0 0 1 1.5 1.5a9.5 9.5 0 1 1-2.801-6.736a1.5 1.5 0 1 1-2.116 2.127A6.48 6.48 0 0 0 12 5.5"/></g>
+    </svg>
   </button>
   <button class='btn btn-info'>
     Twitter
-    <span class='icon-[mingcute--twitter-fill]'></span>
-  </button>
-  ```
-  </div>
-</Example>
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><g fill="none">
+      <path d="m12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035q-.016-.005-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093q.019.005.029-.008l.004-.014l-.034-.614q-.005-.018-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z"/>
+      <path fill="currentColor" d="M4.594 4.984a1 1 0 0 1 .941.429C7.011 7.572 8.783 8.47 10.75 8.674c.096-.841.323-1.672.75-2.404c.626-1.074 1.644-1.864 3.098-2.156c2.01-.404 3.54.324 4.427 1.215l1.792-.335a1 1 0 0 1 1.053 1.478l-1.72 3.022c.157 4.361-1.055 7.405-3.639 9.502c-1.37 1.112-3.332 1.743-5.485 1.938c-2.17.196-4.623-.041-7.061-.753a1 1 0 0 1 .007-1.922c1.226-.349 2.16-.65 3.003-1.177c-1.199-.636-2.082-1.468-2.707-2.416c-.868-1.318-1.19-2.788-1.254-4.113S3.141 8 3.343 7.115c.115-.505.249-1.011.434-1.495a1 1 0 0 1 .818-.636Z"/></g>
+    </svg>
+  </button>`}
+/>
 
-###### Icon button
+##### Icon button
 
-<Example>
-  <div slot="preview" class='not-prose space-x-2'>
-    <button class='btn btn-icon'>
-      <span class='icon-[line-md--heart] text-2xl'></span>
-    </button>
-    <button class='btn btn-icon' disabled>
-      <span class='icon-[line-md--heart] text-2xl'></span>
-    </button>
-    <button class='btn btn-icon btn-icon-primary'>
-      <span class='icon-[tabler--thumb-up] text-2xl'></span>
-    </button>
-    <button class='btn btn-icon btn-icon-danger'>
-      <span class='icon-[line-md--heart] text-2xl'></span>
-    </button>
-  </div>
+Icon buttons display only an icon and are often used in app bars and toolbars. They are also suitable for toggle actions, such as marking an item as favorite with a star.
 
-  <div slot="code">
-  ```html
-  <button class='btn btn-icon'>
-    <span class='icon-[line-md--heart] text-2xl'></span>
+<Example class="flex flex-wrap gap-2 justify-center items-center" 
+  code={`<button class='btn btn-icon'>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+      <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 0 0 0 6.364L12 20.364l7.682-7.682a4.5 4.5 0 0 0-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 0 0-6.364 0"/>
+    </svg>
   </button>
   <button class='btn btn-icon' disabled>
-    <span class='icon-[line-md--heart] text-2xl'></span>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+      <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 0 0 0 6.364L12 20.364l7.682-7.682a4.5 4.5 0 0 0-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 0 0-6.364 0"/>
+    </svg>
   </button>
   <button class='btn btn-icon btn-icon-primary'>
-    <span class='icon-[tabler--thumb-up] text-2xl'></span>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+    <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 11v8a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-7a1 1 0 0 1 1-1za4 4 0 0 0 4-4V6a2 2 0 0 1 4 0v5h3a2 2 0 0 1 2 2l-1 5a2 3 0 0 1-2 2h-7a3 3 0 0 1-3-3"/>
+  </svg>
   </button>
   <button class='btn btn-icon btn-icon-danger'>
-    <span class='icon-[line-md--heart] text-2xl'></span>
-  </button>
-  ```
-  </div>
-</Example>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+      <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 0 0 0 6.364L12 20.364l7.682-7.682a4.5 4.5 0 0 0-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 0 0-6.364 0"/>
+    </svg>
+  </button>`}
+/>
 
-###### Sizes
+##### Sizes
 
 For larger or smaller icon buttons, use the <code>.btn-lg</code> and <code>.btn-sm</code> classes. Default is medium.
 
-<Example>
-  <div slot="preview" class='not-prose flex gap-2 items-center'>
-    <button class='btn btn-icon btn-sm'>
-      <span class='icon-[material-symbols--delete-outline-rounded] text-lg'></span>
-    </button>
-    <button class='btn btn-icon btn-sm'>
-      <span class='icon-[material-symbols--delete-outline-rounded] text-xl'></span>
-    </button>
-    <button class='btn btn-icon btn-lg'>
-      <span class='icon-[material-symbols--delete-outline-rounded] text-2xl'></span>
-    </button>
-    <button class='btn btn-icon btn-lg'>
-      <span class='icon-[material-symbols--delete-outline-rounded] text-3xl'></span>
-    </button>
-  </div>
+<Example class="flex flex-wrap gap-2 justify-center items-center" 
+  code={`<button class='btn btn-icon btn-sm'>
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M7 21q-.825 0-1.412-.587T5 19V6q-.425 0-.712-.288T4 5t.288-.712T5 4h4q0-.425.288-.712T10 3h4q.425 0 .713.288T15 4h4q.425 0 .713.288T20 5t-.288.713T19 6v13q0 .825-.587 1.413T17 21zM17 6H7v13h10zm-7 11q.425 0 .713-.288T11 16V9q0-.425-.288-.712T10 8t-.712.288T9 9v7q0 .425.288.713T10 17m4 0q.425 0 .713-.288T15 16V9q0-.425-.288-.712T14 8t-.712.288T13 9v7q0 .425.288.713T14 17M7 6v13z"/>
+    </svg>
+  </button>
+  <button class='btn btn-icon btn-sm'>
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M7 21q-.825 0-1.412-.587T5 19V6q-.425 0-.712-.288T4 5t.288-.712T5 4h4q0-.425.288-.712T10 3h4q.425 0 .713.288T15 4h4q.425 0 .713.288T20 5t-.288.713T19 6v13q0 .825-.587 1.413T17 21zM17 6H7v13h10zm-7 11q.425 0 .713-.288T11 16V9q0-.425-.288-.712T10 8t-.712.288T9 9v7q0 .425.288.713T10 17m4 0q.425 0 .713-.288T15 16V9q0-.425-.288-.712T14 8t-.712.288T13 9v7q0 .425.288.713T14 17M7 6v13z"/>
+    </svg>
+  </button>
+  <button class='btn btn-icon btn-lg'>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M7 21q-.825 0-1.412-.587T5 19V6q-.425 0-.712-.288T4 5t.288-.712T5 4h4q0-.425.288-.712T10 3h4q.425 0 .713.288T15 4h4q.425 0 .713.288T20 5t-.288.713T19 6v13q0 .825-.587 1.413T17 21zM17 6H7v13h10zm-7 11q.425 0 .713-.288T11 16V9q0-.425-.288-.712T10 8t-.712.288T9 9v7q0 .425.288.713T10 17m4 0q.425 0 .713-.288T15 16V9q0-.425-.288-.712T14 8t-.712.288T13 9v7q0 .425.288.713T14 17M7 6v13z"/>
+    </svg>
+  </button>
+  <button class='btn btn-icon btn-lg'>
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M7 21q-.825 0-1.412-.587T5 19V6q-.425 0-.712-.288T4 5t.288-.712T5 4h4q0-.425.288-.712T10 3h4q.425 0 .713.288T15 4h4q.425 0 .713.288T20 5t-.288.713T19 6v13q0 .825-.587 1.413T17 21zM17 6H7v13h10zm-7 11q.425 0 .713-.288T11 16V9q0-.425-.288-.712T10 8t-.712.288T9 9v7q0 .425.288.713T10 17m4 0q.425 0 .713-.288T15 16V9q0-.425-.288-.712T14 8t-.712.288T13 9v7q0 .425.288.713T14 17M7 6v13z"/>
+    </svg>
+  </button>`}
+/>
 
-  <div slot="code">
-  ```html
-  <button class='btn btn-icon btn-sm'>
-    <span class='icon-[material-symbols--delete-outline-rounded] text-lg'></span>
-  </button>
-  <button class='btn btn-icon btn-sm'>
-    <span class='icon-[material-symbols--delete-outline-rounded] text-xl'></span>
-  </button>
-  <button class='btn btn-icon btn-lg'>
-    <span class='icon-[material-symbols--delete-outline-rounded] text-2xl'></span>
-  </button>
-  <button class='btn btn-icon btn-lg'>
-    <span class='icon-[material-symbols--delete-outline-rounded] text-3xl'></span>
-  </button>
-  ```
-  </div>
-</Example>
+##### Button plugin
+
+The button plugin uses the **Bootstrap Button plugin** which provides an easy way to create toggle buttons that switch between on and off states.
+
+###### Toggle states
+
+Use `data-bs-toggle="button"` to enable a button’s toggle behavior. To set a button as active by default, add the `.active` class and `aria-pressed="true"` to ensure proper accessibility support.
+
+<Example class="flex flex-wrap gap-2 justify-center" 
+  code={`<button type="button" class="btn btn-primary" data-bs-toggle="button">Toggle button</button>
+  <button type="button" class="btn btn-primary active" data-bs-toggle="button" aria-pressed="true">Active toggle button</button>
+  <button type="button" class="btn btn-primary" disabled data-bs-toggle="button">Disabled toggle button</button>`} 
+/>
+
+###### Methods
+
+You can create a button instance with the button constructor, for example:
+
+<Example showPreview={false} lang='js' code={`const myButton = new hummingbird.Button('#myButton')`} />
+
+<HbTable>
+  <thead>
+    <tr>
+      <th scope="col">Method</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">`dispose`</th>
+      <td>Destroys an element’s button. (Removes stored data on the DOM element)</td>
+    </tr>
+    <tr>
+      <th scope="row">`getInstance`</th>
+      <td>Static method which allows you to get the button instance associated with a DOM element, you can use it like this: `hummingbird.Button.getInstance(element)`.</td>
+    </tr>
+    <tr>
+      <th scope="row">`getOrCreateInstance`</th>
+      <td>Static method which returns a button instance associated with a DOM element or creates a new one in case it wasn’t initialized. You can use it like this: `hummingbird.Button.getOrCreateInstance(element)`.</td>
+    </tr>
+    <tr>
+      <th scope="row">`toggle`</th>
+      <td>Toggles push state. Gives the button the appearance that it has been activated.</td>
+    </tr>
+  </tbody>
+</HbTable>
+
+For example, to toggle all buttons
+
+<Example showPreview={false} lang='js'
+  code={`document.querySelectorAll('.btn').forEach(buttonElement => {
+    const button = hummingbird.Button.getOrCreateInstance(buttonElement)
+    button.toggle()
+  })`} 
+/>
+
+##### CSS Variables
+
+The button component is built using a set of CSS variables. These variables provide flexibility for customizing styles globally or locally.
+
+###### Global variables
+
+Global variables apply shared styles across buttons, inputs, and selects. Updating these will affect all related components.
+
+<Example lang='sass' showPreview={false}
+  code={`--input-btn-font-size: var(--text-sm);
+  --input-btn-radius: var(--radius-lg);
+  --input-btn-padding-x: --spacing(4);
+  --input-btn-padding-y: --spacing(1.75);
+  --input-btn-line-height: 1.5;
+  --input-btn-border-width: 1px;`}
+/>
+
+###### Local variables
+
+Local variables apply only to buttons, allowing fine-grained control over their appearance without affecting other elements.
+
+<Example lang='sass' showPreview={false}
+  code={`.btn {
+    --btn-font-size: var(--input-btn-font-size);
+    --btn-radius: var(--input-btn-radius);
+    --btn-padding-x: var(--input-btn-padding-x);
+    --btn-padding-y: var(--input-btn-padding-y);
+    --btn-line-height: var(--input-btn-line-height);
+    --btn-border-width: var(--input-btn-border-width);
+    --btn-bg: var(--background-color-highlight);
+    --btn-color: var(--text-color-default);
+    --btn-font-weight: var(--font-weight-semibold);
+    --btn-hover-bg: var(--color-hover);
+    --btn-hover-color: var(--btn-color);
+    --btn-border-color: transparent;
+    --btn-disabled-border-color: transparent;
+    --btn-disabled-bg: var(--color-disabled);
+    --btn-disabled-color: var(--color-disabled-color);
+    --btn-active-bg: var(--btn-hover-bg);
+    --btn-active-color: var(--btn-color);
+    --btn-width: unset;
+    --btn-height: unset;
+  }`}
+/>

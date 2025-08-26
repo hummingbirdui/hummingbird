@@ -1,0 +1,26 @@
+---
+import Image from 'astro/components/Image.astro';
+import SectionHeader from '../common/SectionHeader.astro';
+import SectionWrapper from '../common/SectionWrapper.astro';
+import ComparisonTable from './ComparisonTable.astro';
+import overlay from '@assets/images/landing/table-overlay.png';
+---
+
+<SectionWrapper id="comparison">
+  <SectionHeader
+    title="An evolved approach"
+    subtitle="Hummingbird's utility-first approach delivers smaller bundles, better performance, and advanced customization by eliminating unused CSS."
+    class="mb-14"
+  />
+
+  <div class="overflow-hidden overflow-x-auto">
+    <div class="relative w-238 mx-auto">
+      <Image
+        src={overlay}
+        alt="table-overlay"
+        class="absolute top-0 left-[238px] w-[238px] h-142 pointer-events-none rounded-2xl z-10"
+      />
+      <ComparisonTable />
+    </div>
+  </div>
+</SectionWrapper>

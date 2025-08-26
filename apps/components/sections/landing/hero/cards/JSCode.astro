@@ -1,0 +1,24 @@
+---
+import Code from 'astro/components/Code.astro';
+---
+
+<div class="p-6 rounded-2xl border border-gray-200">
+  <h3 class="mb-4 font-bold">JavaScript</h3>
+
+  <Code
+    class="!text-sm h-full !bg-muted !rounded-lg"
+    data-astro-code
+    code={`btn.addEventListener('click', async () => {
+      const code = btn.dataset.code;
+      if (!code) return;
+
+      try {
+        await navigator.clipboard.writeText(code);
+
+        if (copyIcon && checkIcon) {
+          copyIcon.classList.add('hidden');
+          checkIcon.classList.remove('hidden');`}
+    themes={{ light: 'github-light', dark: 'github-dark' }}
+    lang="javascript"
+  />
+</div>

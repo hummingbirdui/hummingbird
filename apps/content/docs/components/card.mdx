@@ -1,6 +1,29 @@
 ---
 title: Card
-desc: Cards contain content and actions about a single subject.
+description: Cards are a flexible container that group related content and actions together.
+toc: true
+classNames:
+  component:
+  - class: card
+    desc: Card
+  inner:
+  - class: card-header
+    desc: Card header component
+  - class: card-body
+    desc: Card body component
+  - class: card-footer
+    desc: Card footer component
+  - class: card-title
+    desc: Card title
+  - class: card-subtitle
+    desc: Card subtitle
+  modifier:
+  - class: card-action
+    desc: Clickable card
+  - class: card-img-overlay
+    desc: Card overlay
+  - class: card-aside
+    desc: Card Aside
 ---
 
 import { Image } from "astro:assets";
@@ -9,256 +32,149 @@ import hummingbirdImg2 from "@assets/images/2.png";
 import hummingbirdImg3 from "@assets/images/3.png";
 import avatar1 from "@assets/images/avatar_1.webp";
 
-###### Basic Card
+##### Basic Card
 
-<Example>
-  <div slot="preview">
-    <div class="card max-w-[18rem]">
-      <div class="card-header">
-        <p class='mb-0'>Basic Card</p>
-      </div>
-      <div class="card-body">
-        <h4 class="card-title">Card Title</h4>
-        <p class="card-subtitle">Subtitle</p>
-        <p class='mb-0'>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      </div>
-      <div class="card-footer">
-        <button class='btn btn-sm btn-text-primary'>Learn more</button>
-      </div>
+The basic card component provides a flexible and structured container for displaying content. It consists of a header, body, and footer, allowing you to present information with a clear hierarchy.
+
+- **Header:** Used for titles or categories.
+- **Body:** Contains the main content, such as text and images.
+- **Footer:** Ideal for actions, like buttons or links.
+
+<Example class='flex justify-center' code={`<div class="card max-w-[18rem]">
+    <div class="card-header">
+      <p class='mb-0'>Basic Card</p>
     </div>
-  </div>
-
-  <div slot="code">
-    ```html
-    <div class="card max-w-[18rem]">
-      <div class="card-header">
-        <p class='mb-0'>Basic Card</p>
-      </div>
-      <div class="card-body">
-        <h4 class="card-title">Card Title</h4>
-        <p class="card-subtitle">Subtitle</p>
-        <p class='mb-0'>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      </div>
-      <div class="card-footer">
-        <button class='btn btn-sm btn-text-primary'>Learn more</button>
-      </div>
+    <div class="card-body">
+      <h4 class="card-title">Card Title</h4>
+      <p class="card-subtitle">Subtitle</p>
+      <p class='mb-0'>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
     </div>
-    ```
-  </div>
-</Example>
-
-###### Media
-
-<Example>
-  <div slot="preview">
-    <div class="card max-w-[22rem]">
-      <Image src={hummingbirdImg} alt="Hummingbird" class='card-img-top' />
-      <div class="card-body">
-        <h4 class="card-title">Hummingbirds</h4>
-        <p class='mb-0'>Hummingbirds belong to the avian family Trochilidae, and their closest relatives are the equally fascinating swifts.</p>
-      </div>
-      <div class="card-footer">
-        <button class='btn btn-sm btn-text-primary'>SHARE</button>
-        <button class='btn btn-sm btn-text-primary'>LEARN MORE</button>
-      </div>
+    <div class="card-footer">
+      <button class='btn btn-sm btn-text-primary'>Learn more</button>
     </div>
-  </div>
+  </div>`} />
 
-  <div slot="code">
-    ```html
-    <div class="card">
-      <img src="assets/images/1.png" class='card-img-top' alt="Hummingbird" />
-      <div class="card-body">
-        <h4 class="card-title">Hummingbirds</h4>
-        <p class='mb-0'>Hummingbirds belong to the avian family Trochilidae, and their closest relatives are the equally fascinating swifts.</p>
-      </div>
-      <div class="card-footer">
-        <button class='btn btn-sm btn-text-primary'>SHARE</button>
-        <button class='btn btn-sm btn-text-primary'>LEARN MORE</button>
-      </div>
+##### Media
+
+Cards support flexible image placement using utility classes.
+
+Use `.card-img-top`, `.card-img-bottom`, `.card-img-left`, or `.card-img-right` to place images on any side of the card.
+
+<Example class='flex justify-center' code={`<div class="card max-w-[22rem]">
+    <img src="/images/1.png" alt="Hummingbird" class='card-img-top' />
+    <div class="card-body">
+      <h4 class="card-title">Hummingbirds</h4>
+      <p class='mb-0'>Hummingbirds belong to the avian family Trochilidae, and their closest relatives are the equally fascinating swifts.</p>
     </div>
-    ```
-  </div>
-</Example>
+    <div class="card-footer">
+      <button class='btn btn-sm btn-text-primary'>SHARE</button>
+      <button class='btn btn-sm btn-text-primary'>LEARN MORE</button>
+    </div>
+  </div>`} />
 
-###### Card Action
+##### Card Action
 
-<Example>
-  <div slot="preview">
-    <a href="#" class="card card-action max-w-[22rem]">
-      <Image src={hummingbirdImg} alt="Hummingbird" class='card-img-top' />
-      <div class="card-body">
-        <h4 class="card-title">Hummingbirds</h4>
-        <p class="mb-0">Hummingbirds belong to the avian family Trochilidae, and their closest relatives are the equally fascinating swifts.</p>
-      </div>
-    </a>
-  </div>
+A card action turns the entire card into a clickable element, allowing navigation or interaction when selected. Use `.card-action` along with `.card`.
 
-  <div slot="code">
-    ```html
-    <a href="#" class="card card-action">
-      <img src="assets/images/1.png" class='card-img-top' alt="Hummingbird" />
-      <div class="card-body">
-        <h4 class="card-title">Hummingbirds</h4>
-        <p class="mb-0">Hummingbirds belong to the avian family Trochilidae, and their closest relatives are the equally fascinating swifts.</p>
-      </div>
-    </a>
-    ```
-  </div>
-</Example>
+<Example class='flex justify-center' code={`<a href="#" class="card card-action max-w-[22rem]">
+    <img src="/images/1.png" alt="Hummingbird" class='card-img-top' />
+    <div class="card-body">
+      <h4 class="card-title">Hummingbirds</h4>
+      <p class="mb-0">Hummingbirds belong to the avian family Trochilidae, and their closest relatives are the equally fascinating swifts.</p>
+    </div>
+  </a>`} />
 
-###### Complex Interaction
+##### Complex Interaction
 
-<Example>
-  <div slot="preview">
-    <div class="card max-w-[22rem]">
-      <div class="card-header border-0">
-        <div class="flex items-center">
-          <div class="avatar avatar-lg me-4">
-            <Image src={avatar1} alt="Avatar" class="rounded-full"/>
-          </div>
-          <div>
-            <p class="text-default mb-0">Black-throated Mango male</p>
-            <p class="mb-0">November 10, 2021</p>
-          </div>
-          <button class='btn btn-icon ms-auto self-start -mr-2'>
-            <span class='icon-[fluent--more-vertical-16-regular] text-lg'></span>
-          </button>
+Combine components and utility classes to create richer layouts with customized spacing, alignment, and behavior.
+
+<Example class='flex justify-center' code={`<div class="card max-w-[22rem]">
+    <div class="card-header border-0">
+      <div class="flex items-center">
+        <div class="avatar avatar-lg me-4">
+          <img src="/images/avatar_1.webp" alt="Avatar" class="rounded-full"/>
         </div>
-      </div>
-      <Image src={hummingbirdImg2} alt="Hummingbird" class='card-img' />
-      <div class="card-body">
-        <p class="text-sm mb-0">The male Black-throated Mango hummingbird has a metallic bronze-green upper body and flanks, a black throat and chest, and white underparts</p>
-      </div>
-      <div class="card-footer flex">
-        <button class='btn btn-icon'>
-          <span class='icon-[line-md--heart] text-lg'></span>
-        </button>
-        <button class='btn btn-icon'>
-          <span class="icon-[material-symbols--share-outline] text-lg"></span>
-        </button>
-        <button class='btn btn-icon ms-auto'>
-          <span class="icon-[material-symbols--expand-all-rounded] text-lg"></span>
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <div slot="code">
-    ```html
-    <div class="card max-w-[22rem]">
-      <div class="card-header border-0">
-        <div class="flex items-center">
-          <div class="avatar avatar-lg me-4">
-            <img src="assets/images/avatar_1.webp"  alt="Avatar" class="rounded-full" />
-          </div>
-          <div>
-            <p class="text-default mb-0">Black-throated Mango male</p>
-            <p class="mb-0">November 10, 2021</p>
-          </div>
-          <button class='btn btn-icon ms-auto self-start -mr-2'>
-            <span class='icon-[fluent--more-vertical-16-regular] text-lg'></span>
-          </button>
+        <div>
+          <p class="text-default mb-0">Black-throated Mango male</p>
+          <p class="mb-0">November 10, 2021</p>
         </div>
-      </div>
-      <img src="assets/images/2.png" class='card-img' alt="Hummingbird" />
-      <div class="card-body">
-        <p class="text-sm mb-0">The male Black-throated Mango hummingbird has a metallic bronze-green upper body and flanks, a black throat and chest, and white underparts</p>
-      </div>
-      <div class="card-footer flex">
-        <button class='btn btn-icon'>
-          <span class='icon-[line-md--heart] text-lg'></span>
-        </button>
-        <button class='btn btn-icon'>
-          <span class="icon-[material-symbols--share-outline] text-lg"></span>
-        </button>
-        <button class='btn btn-icon ms-auto'>
-          <span class="icon-[material-symbols--expand-all-rounded] text-lg"></span>
+        <button class='btn btn-icon ms-auto self-start -mr-2'>
+          <span class='icon-[fluent--more-vertical-16-regular] text-lg'></span>
         </button>
       </div>
     </div>
-    ```
-  </div>
-</Example>
+    <img src="/images/2.png" alt="Hummingbird" class='card-img' />
+    <div class="card-body">
+      <p class="text-sm mb-0">The male Black-throated Mango hummingbird has a metallic bronze-green upper body and flanks, a black throat and chest, and white underparts</p>
+    </div>
+    <div class="card-footer flex">
+      <button class='btn btn-icon'>
+        <span class='icon-[line-md--heart] text-lg'></span>
+      </button>
+      <button class='btn btn-icon'>
+        <span class="icon-[material-symbols--share-outline] text-lg"></span>
+      </button>
+      <button class='btn btn-icon ms-auto'>
+        <span class="icon-[material-symbols--expand-all-rounded] text-lg"></span>
+      </button>
+    </div>
+  </div>`} />
 
-###### Card overlay
+##### Card overlay
 
-<Example>
-  <div slot="preview">
-    <div class="card card-img-overlay max-w-[22rem]">
-      <Image src={hummingbirdImg2} alt="Hummingbird" class="card-img-top" />
-      <div class="card-body flex flex-col items-start">
-        <h4 class="card-title">Hummingbirds</h4>
-        <p class="mb-0">Hummingbirds are birds native to the Americas and comprise the biological family Trochilidae.</p>
-        <button class="btn btn-sm btn-primary mt-auto">LEARN MORE</button>
-      </div>
+Place content over an image using the `.card-img-overlay` class.
+
+<Example class='flex justify-center' code={`<div class="card card-img-overlay max-w-[22rem]">
+    <img src="/images/2.png" alt="Hummingbird" class="card-img-top" />
+    <div class="card-body flex flex-col items-start">
+      <h4 class="card-title">Hummingbirds</h4>
+      <p class="mb-0">Hummingbirds are birds native to the Americas and comprise the biological family Trochilidae.</p>
+      <button class="btn btn-sm btn-primary mt-auto">LEARN MORE</button>
+    </div>
+  </div>`} />
+
+##### Card Aside
+
+Use the `.card-aside` layout to place images or media alongside card content, either on the left or right.
+
+<Example class='flex flex-col items-center gap-3' code={`<div class="card card-aside max-w-[30rem]">
+    <div class="flex items-center justify-center">
+      <img src="/images/3.png" alt="Hummingbird" class='card-img-left' />
+    </div>
+    <div class="card-body">
+      <h4 class="card-title">Violetear</h4>
+      <p class="mb-0">The violetears are hummingbirds of the genus Colibri.</p>
+      <button class="btn btn-sm btn-primary mt-4">Continue</button>
     </div>
   </div>
 
-  <div slot="code">
-    ```html
-    <div class="card card-img-overlay">
-      <img src="assets/images/2.png" class='card-img' alt="Hummingbird" />
-      <div class="card-body flex flex-col items-start">
-        <h4 class="card-title">Hummingbirds</h4>
-        <p class="mb-0">Hummingbirds are birds native to the Americas and comprise the biological family Trochilidae.</p>
-        <button class="btn btn-sm btn-primary mt-auto">LEARN MORE</button>
-      </div>
+  <div class="card card-aside max-w-[30rem]">
+    <div class="card-body">
+      <h4 class="card-title">Violetear</h4>
+      <p class="mb-0">The violetears are hummingbirds of the genus Colibri.</p>
+      <button class="btn btn-sm btn-primary mt-4">Continue</button>
     </div>
-    ```
-  </div>
-</Example>
-
-###### Card Aside
-
-<Example>
-  <div slot="preview" class="space-y-3">
-    <div class="card card-aside max-w-[30rem]">
-      <div class="flex items-center justify-center">
-        <Image src={hummingbirdImg3} alt="Hummingbird" class='card-img-left' />
-      </div>
-      <div class="card-body">
-        <h4 class="card-title">Violetear</h4>
-        <p class="mb-0">The violetears are hummingbirds of the genus Colibri.</p>
-        <button class="btn btn-sm btn-primary mt-4">Continue</button>
-      </div>
+    <div class="flex items-center justify-center">
+      <img src="/images/3.png" alt="Hummingbird" class='card-img-right' />
     </div>
-    <div class="card card-aside max-w-[30rem]">
-      <div class="card-body">
-        <h4 class="card-title">Violetear</h4>
-        <p class="mb-0">The violetears are hummingbirds of the genus Colibri.</p>
-        <button class="btn btn-sm btn-primary mt-4">Continue</button>
-      </div>
-      <div class="flex items-center justify-center">
-        <Image src={hummingbirdImg3} alt="Hummingbird" class='card-img-right' />
-      </div>
-    </div>
-  </div>
+  </div>`} />
 
-  <div slot="code">
-    ```html
-    <div class="card card-aside">
-      <div class="flex items-center justify-center">
-        <img src="assets/images/3.png" alt="Violetear" class='card-img-left' />
-      </div>
-      <div class="card-body">
-        <h4 class="card-title">Violetear</h4>
-        <p class="mb-0">The violetears are hummingbirds of the genus Colibri.</p>
-        <button class="btn btn-sm btn-primary mt-4">Continue</button>
-      </div>
-    </div>
+##### CSS variables
 
-    <div class="card card-aside">
-      <div class="card-body">
-        <h4 class="card-title">Violetear</h4>
-        <p class="mb-0">The violetears are hummingbirds of the genus Colibri.</p>
-        <button class="btn btn-sm btn-primary mt-4">Continue</button>
-      </div>
-      <div class="flex items-center justify-center">
-        <img src="assets/images/3.png" alt="Violetear" class='card-img-right' />
-      </div>
-    </div>
-    ```
+The card component is built using a set of CSS variables. These variables provide flexibility for customizing styles.
 
-  </div>
-</Example>
+<Example lang='sass' showPreview={false}
+  code={`--card-bg: var(--background-color-subtle);
+  --card-color: var(--text-color-highlight);
+  --card-border-width: 1px;
+  --card-border-color: var(--border-color-base);
+  --card-border-radius: var(--radius-lg);
+  --card-padding-x: --spacing(4);
+  --card-padding-y: --spacing(4);
+  --card-cap-padding-x: --spacing(2);
+  --card-cap-padding-y: --spacing(2);
+  --card-cap-bg: transparent;
+  --card-cap-color: null;
+  --card-title-color: var(--text-color-default);
+  --card-title-space-y: --spacing(2);`}
+/>
