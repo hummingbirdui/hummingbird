@@ -1,8 +1,8 @@
 ---
-import heroBg from '@assets/images/landing/hero-bg.png';
+import HeroComponents from './HeroComponents.astro';
 ---
 
-<section id="hero" class="w-full bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${heroBg.src})` }}>
+<section id="hero" class="w-full bg-cover bg-center bg-no-repeat">
   <div class="flex mx-auto max-w-8xl items-center justify-between">
     <div class="py-46">
       <h1 class="my-5 text-[88px] font-normal -tracking-[5.25px]">
@@ -31,4 +31,5 @@ import heroBg from '@assets/images/landing/hero-bg.png';
       </section>
     </div>
   </div>
+  <HeroComponents />
 </section>

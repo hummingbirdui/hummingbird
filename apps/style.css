@@ -46,3 +46,9 @@
 .cm-editor .cm-gutters {
   @apply hidden;
 }
+
+.dz-default {
+  margin: 0 !important;
+  display: flex;
+  align-items: center;
+}
