@@ -1,4 +1,10 @@
 ---
+import CardWrapper from './CardWrapper.astro';
+
+interface Props {
+  class?: string;
+}
+
 const colors = [
   '--color-blue-50',
   '--color-blue-100',
@@ -12,9 +18,11 @@ const colors = [
   '--color-blue-900',
   '--color-blue-950',
 ];
+
+const { class: className = '' } = Astro.props;
 ---
 
-<div class="p-6 rounded-2xl border border-gray-200">
+<CardWrapper color="primary" class={className}>
   <h3 class="mb-4 font-bold">Blue Palette</h3>
 
   <div class="grid grid-cols-11 gap-1">
@@ -30,4 +38,4 @@ const colors = [
       })
     }
   </div>
-</div>
+</CardWrapper>

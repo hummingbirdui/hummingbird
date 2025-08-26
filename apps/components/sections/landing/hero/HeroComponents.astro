@@ -1,29 +1,72 @@
 ---
-import BluePalette from './cards/BluePalette.astro';
-import Checkbox from './cards/Checkbox.astro';
-import CSSVariables from './cards/CSSVariables.astro';
-import DarkLightCard from './cards/DarkLightCard.astro';
+import EventList from './cards/EventList.astro';
+import Uploader from './cards/Uploader.astro';
 import EcoCard from './cards/EcoCard.astro';
-import InputFileds from './cards/InputFileds.astro';
+import HoursChart from './cards/HoursChart.astro';
+import TimePicker from './cards/TimePicker.astro';
 import JSCode from './cards/JSCode.astro';
-import Members from './cards/Members.astro';
+import MonthlyProfitChart from './cards/MonthlyProfitChart.astro';
 import ProfileCard from './cards/ProfileCard.astro';
 import Switch from './cards/Switch.astro';
-import TimePicker from './cards/TimePicker.astro';
-import Uploader from './cards/Uploader.astro';
+import BluePalette from './cards/BluePalette.astro';
+import InputFileds from './cards/InputFileds.astro';
+import Members from './cards/Members.astro';
+import DarkLightCard from './cards/DarkLightCard.astro';
+import CSSVariables from './cards/CSSVariables.astro';
+import ActivityChart from './cards/ActivityChart.astro';
 ---
 
-<div class="max-w-[800px] space-y-4">
-  <TimePicker />
-  <Checkbox />
-  <Uploader />
-  <EcoCard />
-  <ProfileCard />
-  <Switch />
-  <InputFileds />
-  <Members />
-  <DarkLightCard />
-  <BluePalette />
-  <JSCode />
-  <CSSVariables />
+<div class="overflow-hidden w-[678px] h-full relative">
+  <div class="cols relative space-y-4 mb-4">
+    <div class="grid grid-cols-3 gap-4 col">
+      <EventList class="col-span-1" />
+      <Uploader class="col-span-2" />
+    </div>
+    <div class="grid grid-cols-3 gap-4 col">
+      <EcoCard class="col-span-2" />
+      <HoursChart class="col-span-1" />
+    </div>
+    <div class="grid grid-cols-3 gap-4 col">
+      <TimePicker class="col-span-1" />
+      <JSCode class="col-span-2" />
+    </div>
+    <div class="grid grid-cols-3 gap-4 col">
+      <MonthlyProfitChart class="col-span-1" />
+      <ProfileCard class="col-span-1" />
+      <Switch class="col-span-1" />
+    </div>
+    <div class="grid grid-cols-3 gap-4 col">
+      <BluePalette class="col-span-2" />
+      <InputFileds class="col-span-1" />
+    </div>
+    <div class="grid grid-cols-3 gap-4 col">
+      <Members class="col-span-1" />
+      <DarkLightCard class="col-span-2" />
+    </div>
+    <div class="grid grid-cols-3 gap-4 col">
+      <CSSVariables class="col-span-2" />
+      <ActivityChart class="col-span-1" />
+    </div>
+  </div>
 </div>
+
+<script>
+  import gsap from 'gsap';
+
+  const wrapper = document.querySelector('.cols');
+
+  const clone = wrapper.cloneNode(true);
+  wrapper.parentNode?.appendChild(clone);
+
+  const totalHeight = wrapper.offsetHeight;
+
+  gsap.to([wrapper, clone], {
+    y: `-=${totalHeight}`,
+    ease: 'linear',
+    duration: totalHeight / 50,
+    repeat: -1,
+    modifiers: {
+      y: gsap.utils.unitize((y) => parseFloat(y) % totalHeight),
+    },
+  });
+</script>

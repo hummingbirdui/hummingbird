@@ -1,9 +1,16 @@
 ---
 import Image from 'astro/components/Image.astro';
 import EcoLogo from '@assets/images/landing/eco-logo.png';
+import CardWrapper from './CardWrapper.astro';
+
+interface Props {
+  class?: string;
+}
+
+const { class: className = '' } = Astro.props;
 ---
 
-<div class="card p-6 rounded-2xl bg-default">
+<CardWrapper color="warning" class={className}>
   <div class="mb-5 flex items-center gap-4">
     <Image src={EcoLogo} class="h-12 w-12 rounded-lg" alt="eco-logo" />
     <div>
@@ -24,4 +31,4 @@ import EcoLogo from '@assets/images/landing/eco-logo.png';
   </div>
 
   <p class="mb-0 text-sm">Budget: <span class="font-semibold">$790,000</span></p>
-</div>
+</CardWrapper>

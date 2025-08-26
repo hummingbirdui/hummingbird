@@ -1,8 +1,15 @@
 ---
 import profile from '@assets/images/landing/profile.jpg';
+import CardWrapper from './CardWrapper.astro';
+
+interface Props {
+  class?: string;
+}
+
+const { class: className = '' } = Astro.props;
 ---
 
-<div class="card w-[215px] p-6 flex flex-col items-center">
+<CardWrapper color="warning" class={`flex flex-col items-center ${className}`}>
   <img src={profile.src} alt="Avatar" class="mb-2 h-20 w-20 object-cover rounded-full" />
   <h3 class="mb-0.75 font-bold text-base text-default">Liam Carter</h3>
   <p class="mb-3 text-xs text-highlight">Product Designer</p>
@@ -37,4 +44,4 @@ import profile from '@assets/images/landing/profile.jpg';
       </svg>
     </button>
   </div>
-</div>
+</CardWrapper>

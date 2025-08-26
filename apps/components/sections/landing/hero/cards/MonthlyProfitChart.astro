@@ -1,0 +1,113 @@
+---
+import CardWrapper from './CardWrapper.astro';
+
+interface Props {
+  class?: string;
+}
+
+const { class: className = '' } = Astro.props;
+---
+
+<CardWrapper color="success" class={className}>
+  <h3 class="mb-4 font-bold">Monthly Net Profit</h3>
+  <h1 class="mb-1 text-highlight text-2xl font-semibold">$25,049</h1>
+  <div class="flex items-center gap-1.5">
+    <span class="badge badge-subtle-success text-success-dark">+4.00%</span>
+    <p class="mb-0 text-highlight text-sm">vs last month</p>
+  </div>
+
+  <div id="weekly-chart" class="w-full h-19"></div>
+</CardWrapper>
+
+<script>
+  import * as echarts from 'echarts';
+
+  const data = [65, 30, 95, 25, 65, 35, 55];
+  const weeks = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+
+  if (typeof window !== 'undefined') {
+    const chartDom = document.getElementById('weekly-chart');
+    if (chartDom) {
+      const myChart = echarts.init(chartDom);
+
+      const option = {
+        tooltip: {
+          trigger: 'axis',
+          formatter: 'Activity: {c}%',
+          axisPointer: {
+            type: 'none',
+          },
+        },
+        grid: {
+          top: 0,
+          bottom: 0,
+          left: 0,
+          right: 0,
+          containerLabel: true,
+        },
+        xAxis: {
+          type: 'category',
+          data: weeks,
+          axisTick: {
+            show: false,
+          },
+          axisLine: {
+            show: false,
+          },
+          axisLabel: {
+            show: false,
+          },
+          splitLine: {
+            show: false,
+          },
+          boundaryGap: 0,
+        },
+        yAxis: {
+          type: 'value',
+          min: 0,
+          max: 100,
+          minInterval: 10,
+          axisLabel: {
+            show: false,
+          },
+          splitLine: {
+            show: false,
+          },
+        },
+        series: [
+          {
+            data,
+            type: 'line',
+            smooth: true,
+            showSymbol: false,
+            symbol: 'none',
+            lineStyle: {
+              width: 2,
+              type: 'solid',
+              cap: 'round',
+              color: '#1E90FF',
+            },
+            areaStyle: {
+              color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                {
+                  offset: 0,
+                  color: 'rgba(30, 144, 255, 0.5)',
+                },
+                {
+                  offset: 1,
+                  color: 'rgba(30, 144, 255, 0.1)',
+                },
+              ]),
+            },
+            emphasis: {
+              disabled: true,
+            },
+          },
+        ],
+      };
+
+      myChart.setOption(option);
+      window.addEventListener('resize', () => myChart.resize());
+    }
+  }
+</script>

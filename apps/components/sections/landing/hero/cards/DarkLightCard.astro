@@ -1,11 +1,22 @@
 ---
 import Image from 'astro/components/Image.astro';
 import hummingbird from '@assets/images/landing/hummingbird.jpg';
+import CardWrapper from './CardWrapper.astro';
+
+interface Props {
+  class?: string;
+}
+
+const { class: className = '' } = Astro.props;
 ---
 
-<div class="p-6 rounded-2xl border border-success bg-default">
+<CardWrapper color="warning" class={className}>
   <div class="flex items-start gap-3">
-    <Image src={hummingbird} class="shrink-0 w-[171px] h-[167px] object-cover object-center rounded-lg" alt="hummingbird" />
+    <Image
+      src={hummingbird}
+      class="shrink-0 w-[171px] h-[167px] object-cover object-center rounded-lg"
+      alt="hummingbird"
+    />
 
     <div class="py-2 flex flex-col items-between">
       <div class="p-2 mb-6 mx-auto flex gap-2 rounded-3xl bg-subtle">
@@ -31,4 +42,4 @@ import hummingbird from '@assets/images/landing/hummingbird.jpg';
       </div>
     </div>
   </div>
-</div>
+</CardWrapper>

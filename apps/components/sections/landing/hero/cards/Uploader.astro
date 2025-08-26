@@ -1,8 +1,15 @@
 ---
 import 'dropzone/dist/dropzone.css';
+import CardWrapper from './CardWrapper.astro';
+
+interface Props {
+  class?: string;
+}
+
+const { class: className = '' } = Astro.props;
 ---
 
-<div class="p-6 rounded-2xl border border-gray-200">
+<CardWrapper color="secondary" class={className}>
   <h3 class="mb-4 font-bold">Uploader</h3>
   <form
     id="my-dropzone"
@@ -50,4 +57,4 @@ import 'dropzone/dist/dropzone.css';
       `,
     });
   </script>
-</div>
+</CardWrapper>

@@ -1,4 +1,14 @@
-<div class="p-6 rounded-2xl border border-success">
+---
+import CardWrapper from './CardWrapper.astro';
+
+interface Props {
+  class?: string;
+}
+
+const { class: className = '' } = Astro.props;
+---
+
+<CardWrapper color="success" class={className}>
   <div class="mb-6 flex items-center gap-2">
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path
@@ -19,4 +29,4 @@
       <input type="text" class="form-control-fill" />
     </div>
   </div>
-</div>
+</CardWrapper>
