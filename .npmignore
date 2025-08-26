@@ -1,0 +1,12 @@
+_gh_pages/
+node_modules/
+static/
+build/
+apps/
+public/
+.vscode/
+.git/
+.gitignore
+.npmignore
+package-lock.json
+

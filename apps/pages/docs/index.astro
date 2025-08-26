@@ -1,0 +1,17 @@
+---
+import { SITE_TITLE } from '../../const';
+
+const url = new URL('/docs/components/buttons', Astro.site);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{SITE_TITLE}</title>
+    <link rel="canonical" href={url} />
+    <meta name="robots" content="noindex" />
+    <meta http-equiv="refresh" content={`0; url=${url}`} />
+  </head>
+</html>

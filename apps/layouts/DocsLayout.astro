@@ -1,0 +1,135 @@
+---
+import BreadcrumbBar from '@components/docs/BreadcrumbBar.astro';
+import Sidebar from '@components/docs/Sidebar.astro';
+import Toc from '@components/docs/Toc.astro';
+import BaseLayout from '@layouts/BaseLayout.astro';
+const { headings, title, description, toc, classNames } = Astro.props;
+
+interface ClassTableRow {
+  class: string;
+  desc: string;
+}
+---
+
+<BaseLayout {...Astro.props} fluid={true}>
+  <BreadcrumbBar />
+  <div class="px-6 sm:px-10">
+    <div class="lg:grid lg:grid-cols-[15rem_1fr] max-w-8xl mx-auto h-full">
+      <Sidebar />
+      <div class="xl:grid lg:grid-cols-[1fr_16.75rem]">
+        <div class="py-10 lg:ps-10 xl:pe-10">
+          <h3 class="mb-4">{title}</h3>
+          <p class="text-xl mb-10">{description}</p>
+          {
+            classNames && (
+              <div class="overflow-auto rounded-t-2xl max-h-84 mb-12">
+                <table class="table table-highlight table-sticky-header whitespace-nowrap">
+                  <thead>
+                    <tr>
+                      <th scope="col">Class Name</th>
+                      <th scope="col">Type</th>
+                      <th scope="col">Description</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {classNames.component &&
+                      classNames.component.map((item: ClassTableRow) => (
+                        <tr>
+                          <th class="py-3" scope="row">
+                            {item.class}
+                          </th>
+                          <td class="py-3">
+                            <span class="badge badge-subtle">Component</span>
+                          </td>
+                          <td class="py-3">{item.desc}</td>
+                        </tr>
+                      ))}
+                    {classNames.inner &&
+                      classNames.inner.map((item: ClassTableRow) => (
+                        <tr>
+                          <th class="py-3" scope="row">
+                            {item.class}
+                          </th>
+                          <td class="py-3">
+                            <span class="badge badge-subtle">Inner</span>
+                          </td>
+                          <td class="py-3">{item.desc}</td>
+                        </tr>
+                      ))}
+                    {classNames.color &&
+                      classNames.color.map((item: ClassTableRow) => (
+                        <tr>
+                          <th class="py-3" scope="row">
+                            {item.class}
+                          </th>
+                          <td class="py-3">
+                            <span class="badge badge-subtle-primary">Color</span>
+                          </td>
+                          <td class="py-3">{item.desc}</td>
+                        </tr>
+                      ))}
+                    {classNames.style &&
+                      classNames.style.map((item: ClassTableRow) => (
+                        <tr>
+                          <th class="py-3" scope="row">
+                            {item.class}
+                          </th>
+                          <td class="py-3">
+                            <span class="badge badge-subtle-success">Style</span>
+                          </td>
+                          <td class="py-3">{item.desc}</td>
+                        </tr>
+                      ))}
+                    {classNames.behavior &&
+                      classNames.behavior.map((item: ClassTableRow) => (
+                        <tr>
+                          <th class="py-3" scope="row">
+                            {item.class}
+                          </th>
+                          <td class="py-3">
+                            <span class="badge badge-subtle-info">Behavior</span>
+                          </td>
+                          <td class="py-3">{item.desc}</td>
+                        </tr>
+                      ))}
+                    {classNames.size &&
+                      classNames.size.map((item: ClassTableRow) => (
+                        <tr>
+                          <th class="py-3" scope="row">
+                            {item.class}
+                          </th>
+                          <td class="py-3">
+                            <span class="badge badge-subtle-warning">Size</span>
+                          </td>
+                          <td class="py-3">{item.desc}</td>
+                        </tr>
+                      ))}
+                    {classNames.modifier &&
+                      classNames.modifier.map((item: ClassTableRow) => (
+                        <tr>
+                          <th class="py-3" scope="row">
+                            {item.class}
+                          </th>
+                          <td class="py-3">
+                            <span class="badge badge-subtle-info">Modifier</span>
+                          </td>
+                          <td class="py-3">{item.desc}</td>
+                        </tr>
+                      ))}
+                  </tbody>
+                </table>
+              </div>
+            )
+          }
+          <div class="docs-content">
+            <slot />
+          </div>
+        </div>
+        <div class="min-w-67 ps-6 py-10 sticky top-[var(--navbar-height)] h-max hidden xl:block">
+          <p class="font-bold ps-4">On this page</p>
+          {toc && headings && <Toc headings={headings} />}
+        </div>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

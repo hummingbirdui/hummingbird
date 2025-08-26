@@ -1,0 +1,205 @@
+@utility badge {
+  @layer base {
+    --badge-bg: var(--color-main);
+    --badge-color: var(--color-contrast);
+    --badge-font-size: var(--text-xs);
+    --badge-padding-y: --spacing(0.75);
+    --badge-padding-x: --spacing(1.5);
+    --badge-border-color: transparent;
+    --badge-link-hover-bg: var(--color-dark);
+
+    @apply inline-flex items-center justify-center gap-1 align-middle transition-[background] duration-200
+    bg-[var(--badge-bg)]
+    text-[var(--badge-color)]
+    text-[length:var(--badge-font-size)]
+    p-[var(--badge-padding-y)_var(--badge-padding-x)]
+    leading-[1]
+    font-semibold
+    rounded-full
+    border
+    border-[var(--badge-border-color)];
+  }
+}
+
+@utility badge-md {
+  @layer base {
+    --badge-padding-y: --spacing(1.25);
+    --badge-padding-x: --spacing(2);
+  }
+}
+@utility badge-lg {
+  @layer base {
+    --badge-padding-y: --spacing(2);
+    --badge-padding-x: --spacing(3);
+    --badge-font-size: var(--text-sm);
+  }
+}
+
+@utility badge-link {
+  @layer base {
+    @apply cursor-pointer no-underline
+    hover:bg-[var(--badge-link-hover-bg)];
+  }
+}
+
+@utility badge-action-btn {
+  @layer base {
+    @apply cursor-pointer flex items-center justify-center rounded-full;
+    & > * {
+      @apply transition-colors duration-200 text-[--alpha(var(--badge-color)/60%)] hover:text-[var(--badge-color)];
+    }
+  }
+}
+
+@utility badge-primary {
+  @layer base {
+    --badge-bg: var(--color-primary);
+    --badge-link-hover-bg: var(--color-primary-dark);
+  }
+}
+@utility badge-secondary {
+  @layer base {
+    --badge-bg: var(--color-secondary);
+    --badge-link-hover-bg: var(--color-secondary-dark);
+  }
+}
+@utility badge-info {
+  @layer base {
+    --badge-bg: var(--color-info);
+    --badge-link-hover-bg: var(--color-info-dark);
+  }
+}
+@utility badge-success {
+  @layer base {
+    --badge-bg: var(--color-success);
+    --badge-link-hover-bg: var(--color-success-dark);
+  }
+}
+@utility badge-warning {
+  @layer base {
+    --badge-bg: var(--color-warning);
+    --badge-link-hover-bg: var(--color-warning-dark);
+  }
+}
+@utility badge-danger {
+  @layer base {
+    --badge-bg: var(--color-danger);
+    --badge-link-hover-bg: var(--color-danger-dark);
+  }
+}
+
+/* subtle variant */
+@utility badge-subtle {
+  @layer base {
+    --badge-bg: var(--background-color-muted);
+    --badge-color: var(--color-main);
+    --badge-border-color: var(--border-color-base);
+    --badge-link-hover-bg: var(--background-color-highlight);
+  }
+}
+@utility badge-subtle-primary {
+  @layer base {
+    --badge-bg: --alpha(var(--color-primary) / 15%);
+    --badge-color: var(--color-primary);
+    --badge-border-color: --alpha(var(--color-primary) / 50%);
+    --badge-link-hover-bg: --alpha(var(--color-primary) / 35%);
+  }
+}
+@utility badge-subtle-secondary {
+  @layer base {
+    --badge-bg: --alpha(var(--color-secondary) / 15%);
+    --badge-color: var(--color-secondary);
+    --badge-border-color: --alpha(var(--color-secondary) / 50%);
+    --badge-link-hover-bg: --alpha(var(--color-secondary) / 35%);
+  }
+}
+@utility badge-subtle-info {
+  @layer base {
+    --badge-bg: --alpha(var(--color-info) / 15%);
+    --badge-color: var(--color-info);
+    --badge-border-color: --alpha(var(--color-info) / 50%);
+    --badge-link-hover-bg: --alpha(var(--color-info) / 35%);
+  }
+}
+@utility badge-subtle-success {
+  @layer base {
+    --badge-bg: --alpha(var(--color-success) / 15%);
+    --badge-color: var(--color-success);
+    --badge-border-color: --alpha(var(--color-success) / 50%);
+    --badge-link-hover-bg: --alpha(var(--color-success) / 35%);
+  }
+}
+@utility badge-subtle-warning {
+  @layer base {
+    --badge-bg: --alpha(var(--color-warning) / 15%);
+    --badge-color: var(--color-warning);
+    --badge-border-color: --alpha(var(--color-warning) / 50%);
+    --badge-link-hover-bg: --alpha(var(--color-warning) / 35%);
+  }
+}
+@utility badge-subtle-danger {
+  @layer base {
+    --badge-bg: --alpha(var(--color-danger) / 15%);
+    --badge-color: var(--color-danger);
+    --badge-border-color: --alpha(var(--color-danger) / 50%);
+    --badge-link-hover-bg: --alpha(var(--color-danger) / 35%);
+  }
+}
+
+/* outline variant */
+@utility badge-outline {
+  @layer base {
+    --badge-bg: transparent;
+    --badge-color: var(--color-main);
+    --badge-border-color: var(--border-color-base);
+    --badge-link-hover-bg: var(--background-color-emphasis);
+  }
+}
+@utility badge-outline-primary {
+  @layer base {
+    --badge-bg: transparent;
+    --badge-color: var(--color-primary);
+    --badge-border-color: --alpha(var(--color-primary) / 50%);
+    --badge-link-hover-bg: --alpha(var(--color-primary) / 12%);
+  }
+}
+@utility badge-outline-secondary {
+  @layer base {
+    --badge-bg: transparent;
+    --badge-color: var(--color-secondary);
+    --badge-border-color: --alpha(var(--color-secondary) / 50%);
+    --badge-link-hover-bg: --alpha(var(--color-secondary) / 12%);
+  }
+}
+@utility badge-outline-info {
+  @layer base {
+    --badge-bg: transparent;
+    --badge-color: var(--color-info);
+    --badge-border-color: --alpha(var(--color-info) / 50%);
+    --badge-link-hover-bg: --alpha(var(--color-info) / 12%);
+  }
+}
+@utility badge-outline-success {
+  @layer base {
+    --badge-bg: transparent;
+    --badge-color: var(--color-success);
+    --badge-border-color: --alpha(var(--color-success) / 50%);
+    --badge-link-hover-bg: --alpha(var(--color-success) / 12%);
+  }
+}
+@utility badge-outline-warning {
+  @layer base {
+    --badge-bg: transparent;
+    --badge-color: var(--color-warning);
+    --badge-border-color: --alpha(var(--color-warning) / 50%);
+    --badge-link-hover-bg: --alpha(var(--color-warning) / 12%);
+  }
+}
+@utility badge-outline-danger {
+  @layer base {
+    --badge-bg: transparent;
+    --badge-color: var(--color-danger);
+    --badge-border-color: --alpha(var(--color-danger) / 50%);
+    --badge-link-hover-bg: --alpha(var(--color-danger) / 12%);
+  }
+}

@@ -1,0 +1,95 @@
+@utility btn-group {
+  @layer base {
+    @apply relative inline-flex align-middle rounded-[var(--input-btn-radius)];
+
+    > .btn {
+      @apply relative shrink grow basis-auto;
+    }
+
+    > .btn-check:checked + .btn,
+    > .btn-check:focus + .btn,
+    > .btn:hover,
+    > .btn:focus,
+    > .btn:active,
+    > .btn.active {
+      @apply z-1;
+    }
+
+    > :not(.btn-check:first-child) + .btn,
+    > .btn-group:not(:first-child) {
+      @apply -ml-[var(--input-btn-border-width)];
+    }
+
+    > .btn:not(:last-child):not([data-bs-toggle='dropdown']),
+    > .btn-group:not(:last-child) > .btn {
+      @apply rounded-r-none;
+    }
+
+    > .btn:nth-child(n + 3),
+    > :not(.btn-check) + .btn,
+    > .btn-group:not(:first-child) > .btn {
+      @apply rounded-l-none;
+    }
+  }
+}
+
+@utility btn-group-vertical {
+  @layer base {
+    @apply relative inline-flex align-middle flex-col items-start justify-center;
+
+    > .btn {
+      @apply relative shrink grow basis-auto;
+    }
+
+    > .btn-check:checked + .btn,
+    > .btn-check:focus + .btn,
+    > .btn:hover,
+    > .btn:focus,
+    > .btn:active,
+    > .btn.active {
+      @apply z-1;
+    }
+
+    > .btn,
+    > .btn-group {
+      @apply w-full;
+    }
+
+    > .btn:not(:first-child),
+    > .btn-group:not(:first-child) {
+      @apply -mt-[var(--input-btn-border-width)];
+    }
+
+    > .btn:not(:last-child):not([data-bs-toggle='dropdown']),
+    > .btn-group:not(:last-child) > .btn {
+      @apply rounded-b-none;
+    }
+
+    > .btn:nth-child(n + 3),
+    > :not(.btn-check) + .btn,
+    > .btn-group:not(:first-child) > .btn {
+      @apply rounded-t-none;
+    }
+  }
+}
+
+@utility btn-toolbar {
+  @layer base {
+    @apply flex flex-wrap justify-start;
+
+    .input-group {
+      @apply w-auto;
+    }
+  }
+}
+
+@utility btn-group-sm {
+  > .btn {
+    @apply btn-sm;
+  }
+}
+@utility btn-group-lg {
+  > .btn {
+    @apply btn-lg;
+  }
+}

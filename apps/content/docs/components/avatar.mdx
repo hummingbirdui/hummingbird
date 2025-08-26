@@ -1,0 +1,188 @@
+---
+title: Avatar
+description: Avatars are small, circular, square images or icons used to represent users or entities. They are commonly seen in tables, lists, and dialog menus.
+toc: true
+classNames:
+  component:
+  - class: avatar
+    desc: Avatar
+  - class: avatar-group
+    desc: Avatar Group
+  modifier:
+  - class: avatar-name
+    desc: Shows letter as an avatar
+  - class: avatar-status-online
+    desc: Indicates the user is online
+  - class: avatar-status-offline
+    desc: Indicates the user is offline
+  - class: avatar-status-away
+    desc: Indicates the user is away
+  - class: avatar-status-busy
+    desc: Indicates the user is busy
+  size:
+  - class: avatar-xs
+    desc: Extra Small size
+  - class: avatar-sm
+    desc: Small size
+  - class: default
+    desc: Medium size (default)
+  - class: avatar-lg
+    desc: Large size
+---
+
+##### Image Avatar
+
+Image avatars display a user or entity using a photo or graphic.
+
+<Example class='text-center' code={`<div class="avatar">
+    <img src='/images/avatar_1.webp' alt="Avatar" class="rounded-full" />
+  </div>`}
+/>
+
+##### Letter Avatar
+
+Letter avatars display simple character, to represent a user or entity when an image is not available.
+
+<Example class='flex justify-center gap-2' code={`<div class="avatar">
+    <div class="avatar-name rounded-full">
+      <span>A</span>
+    </div>
+  </div>
+  <div class="avatar">
+    <div class="avatar-name bg-primary rounded-full">
+      <span>B</span>
+    </div>
+  </div>
+  <div class="avatar">
+    <div class="avatar-name bg-secondary rounded-full">
+      <span>C</span>
+    </div>
+  </div>
+  <div class="avatar">
+    <div class="avatar-name bg-info rounded-full">
+      <span>D</span>
+    </div>
+  </div>
+  <div class="avatar">
+    <div class="avatar-name bg-warning rounded-full">
+      <span>E</span>
+    </div>
+  </div>`} />
+
+##### Icon Avatar
+
+Avatar can be created using icon by passing icon inside `.avatar-name`
+
+<Example class='flex justify-center gap-2' code={`<div class="avatar">
+    <div class="avatar-name bg-warning rounded-full">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="currentColor" d="M8 13h8v-2H8zm0 3h8v-2H8zm0 3h5v-2H8zm-2 3q-.825 0-1.412-.587T4 20V4q0-.825.588-1.412T6 2h8l6 6v12q0 .825-.587 1.413T18 22zm7-13h5l-5-5z"/></svg>
+    </div>
+  </div>
+  <div class="avatar">
+    <div class="avatar-name bg-info rounded-full">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="currentColor" d="M5.85 17.1q1.275-.975 2.85-1.537T12 15t3.3.563t2.85 1.537q.875-1.025 1.363-2.325T20 12q0-3.325-2.337-5.663T12 4T6.337 6.338T4 12q0 1.475.488 2.775T5.85 17.1M12 13q-1.475 0-2.488-1.012T8.5 9.5t1.013-2.488T12 6t2.488 1.013T15.5 9.5t-1.012 2.488T12 13m0 9q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22"/></svg>
+    </div>
+  </div>
+  <div class="avatar">
+    <div class="avatar-name bg-success rounded-full">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="currentColor" d="M19 6q-1.25 0-2.125-.875T16 3t.875-2.125T19 0t2.125.875T22 3t-.875 2.125T19 6M6 18l-2.3 2.3q-.475.475-1.088.213T2 19.575V4q0-.825.588-1.412T4 2h9.1q.4 0 .663.3T14 3q0 1.125.488 2.125T15.85 6.85q.65.525 1.463.838T19 8q.45 0 .9-.075t.875-.25t.825.05t.4.65V16q0 .825-.588 1.413T20 18z"/></svg>
+    </div>
+  </div>`} />
+
+##### Sizes
+
+Avatars support four preset sizes: `.avatar-xs`, `.avatar-sm`, default, and `.avatar-lg`. Custom sizes can also be created by defining your own height and width.
+
+<Example class='flex items-center justify-center gap-2' code={`<div class="avatar avatar-xs">
+    <img src="/images/avatar_1.webp" alt="Avatar" class="rounded-full" />
+  </div>
+  <div class="avatar avatar-sm">
+    <img src="/images/avatar_2.webp" alt="Avatar" class="rounded-full" />
+  </div>
+  <div class="avatar">
+    <img src="/images/avatar_3.webp" alt="Avatar" class="rounded-full" />
+  </div>
+  <div class="avatar avatar-lg">
+    <img src="/images/avatar_4.webp" alt="Avatar" class="rounded-full" />
+  </div>`} />
+
+##### Avatar Shape
+
+Use Tailwind CSS border radius classes to change the shape of an avatar.
+
+<Example class='flex flex-col items-center gap-2' code={`<div class="flex gap-2">
+    <div class="avatar">
+      <img src="/images/avatar_1.webp" alt="Avatar" class='rounded-full' />
+    </div>
+    <div class="avatar">
+      <img src="/images/avatar_1.webp" alt="Avatar" class="rounded" />
+    </div>
+    <div class="avatar">
+      <img src="/images/avatar_1.webp" alt="Avatar" />
+    </div>
+  </div>
+  <div class="flex gap-2">
+    <div class="avatar">
+      <div class='avatar-name rounded-full'><span>A</span></div>
+    </div>
+    <div class="avatar">
+      <div class='avatar-name rounded bg-primary'><span>B</span></div>
+    </div>
+    <div class="avatar">
+      <div class='avatar-name bg-secondary'><span>C</span></div>
+    </div>
+  </div>`} />
+
+##### Avatar Group
+
+Avatar groups display multiple avatars together to represent a collection of users or entities.
+
+<Example class='flex justify-center' code={`<div class="avatar-group">
+    <div class="avatar">
+      <img src="/images/avatar_1.webp" alt="Avatar" />
+    </div>
+    <div class="avatar">
+      <img src="/images/avatar_2.webp" alt="Avatar" />
+    </div>
+    <div class="avatar">
+      <img src="/images/avatar_3.webp" alt="Avatar" />
+    </div>
+    <div class="avatar">
+      <img src="/images/avatar_4.webp" alt="Avatar" />
+    </div>
+    <div class="avatar">
+      <div class="avatar-name bg-primary text-base">
+        <span>+99</span>
+      </div>
+    </div>
+  </div>`} />
+
+##### Status
+
+Avatars can include status indicators, such as online, offline, away, or busy, to show user availability.
+
+<Example class='flex justify-center gap-2' code={`<div class="avatar avatar-status-online">
+    <img src="/images/avatar_1.webp" alt="Avatar" class="rounded-full" />
+  </div>
+  <div class="avatar avatar-status-offline">
+    <img src="/images/avatar_3.webp" alt="Avatar" class="rounded-full" />
+  </div>
+  <div class="avatar avatar-status-away">
+    <img src="/images/avatar_4.webp" alt="Avatar" class="rounded-full" />
+  </div>
+  <div class="avatar avatar-status-busy">
+    <img src="/images/avatar_2.webp" alt="Avatar" class="rounded-full" />
+  </div>`} />
+
+##### CSS variables
+
+The avatar component is built using a set of CSS variables. These variables provide flexibility for customizing styles.
+
+<Example lang='sass' showPreview={false}
+  code={`--avatar-width: --spacing(10);
+  --avatar-height: --spacing(10);
+  --avatar-bg: var(--color-main);
+  --avatar-color: var(--color-contrast);
+  --avatar-font-weight: var(--font-weight-medium);
+  --avatar-font-size: var(--text-lg);`}
+/>

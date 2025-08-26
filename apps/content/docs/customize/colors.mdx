@@ -1,0 +1,122 @@
+---
+title: Colors
+---
+
+##### Background & Foreground
+
+<div class='border border-light rounded-2xl p-4 not-prose'>
+  <div class="grid grid-cols-3 gap-2">
+    <div class='h-[100px] bg-default text-default p-4 rounded-xl'>
+      <p>bg-default</p>
+      <p class='mb-0'>test-default</p>
+    </div>
+    <div class='h-[100px] bg-subtle text-subtle p-4 rounded-xl'>
+      <p>bg-subtle</p>
+      <p class='mb-0'>test-subtle</p>
+    </div>
+    <div class='h-[100px] bg-muted text-muted p-4 rounded-xl'>
+      <p>bg-muted</p>
+      <p class='mb-0'>test-muted</p>
+    </div>
+    <div class='h-[100px] bg-highlight text-highlight p-4 rounded-xl'>
+      <p>bg-highlight</p>
+      <p class='mb-0'>test-highlight</p>
+    </div>
+    <div class='h-[100px] bg-emphasis text-emphasis p-4 rounded-xl'>
+      <p>bg-emphasis</p>
+      <p class='mb-0'>test-emphasis</p>
+    </div>
+  </div>
+</div>
+<br/>
+<br/>
+
+##### color variables
+
+<Example>
+  <div slot="code">
+    ```css
+    @theme {
+      /* base colors */
+      --color-default: var(--color-white);
+      --color-default-color: var(--color-gray-800);
+
+      --color-subtle: var(--color-gray-50);
+      --color-subtle-color: var(--color-gray-800);
+
+      --color-muted: var(--color-gray-100);
+      --color-muted-color: var(--color-gray-800);
+
+      --color-highlight: var(--color-gray-200);
+      --color-highlight-color: var(--color-gray-600);
+
+      --color-emphasis: var(--color-gray-300);
+      --color-emphasis-color: var(--color-gray-400);
+
+      /* neutral */
+      --color-lighter: var(--color-gray-100);
+      --color-light: var(--color-gray-600);
+      --color-main: var(--color-gray-800);
+      --color-dark: var(--color-gray-900);
+      --color-darker: var(--color-gray-950);
+      --color-contrast: var(--color-white);
+
+      /* primary */
+      --color-primary-lighter: var(--color-blue-50);
+      --color-primary-light: var(--color-blue-400);
+      --color-primary: var(--color-blue-500);
+      --color-primary-dark: var(--color-blue-600);
+      --color-primary-darker: var(--color-blue-900);
+
+      /* secondary */
+      --color-secondary-lighter: var(--color-purple-50);
+      --color-secondary-light: var(--color-purple-300);
+      --color-secondary: var(--color-purple-500);
+      --color-secondary-dark: var(--color-purple-700);
+      --color-secondary-darker: var(--color-purple-900);
+
+      /* danger */
+      --color-danger-lighter: var(--color-red-50);
+      --color-danger-light: var(--color-red-300);
+      --color-danger: var(--color-red-500);
+      --color-danger-dark: var(--color-red-600);
+      --color-danger-darker: var(--color-red-900);
+
+      /* warning */
+      --color-warning-lighter: var(--color-orange-50);
+      --color-warning-light: var(--color-orange-400);
+      --color-warning: var(--color-orange-500);
+      --color-warning-dark: var(--color-orange-700);
+      --color-warning-darker: var(--color-orange-900);
+
+      /* success */
+      --color-success-lighter: var(--color-green-50);
+      --color-success-light: var(--color-green-400);
+      --color-success: var(--color-green-500);
+      --color-success-dark: var(--color-green-700);
+      --color-success-darker: var(--color-green-900);
+
+      /* info */
+      --color-info-lighter: var(--color-sky-50);
+      --color-info-light: var(--color-sky-300);
+      --color-info: var(--color-sky-500);
+      --color-info-dark: var(--color-sky-700);
+      --color-info-darker: var(--color-sky-900);
+
+      /* borders */
+      --border-color-light: --alpha(var(--color-gray-300) / 60%);
+      --border-color-base: var(--color-gray-300);
+      --border-color-dark: --alpha(var(--color-gray-700) / 0%);
+
+      /* actions */
+      --color-active: var(--color-gray-500);
+      --color-hover: var(--color-gray-100);
+      --color-selected: var(--color-gray-100);
+      --color-disabled-color: var(--color-gray-400);
+      --color-disabled: var(--color-gray-200);
+      --color-focus: var(--color-gray-300);
+    }
+    ```
+
+  </div>
+</Example>

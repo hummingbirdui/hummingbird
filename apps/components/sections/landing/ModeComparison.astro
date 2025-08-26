@@ -1,0 +1,122 @@
+---
+import SectionHeader from './common/SectionHeader.astro';
+import SectionWrapper from './common/SectionWrapper.astro';
+import ArrowRangeIcon from '@components/icons/ArrowRangeIcon.astro';
+import lightLgImage from '@assets/images/landing/light-dark/light-lg.png';
+import darkLgImage from '@assets/images/landing/light-dark/dark-lg.png';
+---
+
+<SectionWrapper id="mode-comparison" class="max-w-5xl">
+  <SectionHeader
+    title="Dark mode, perfected."
+    subtitle="Hummingbird's dark mode offers automatic detection or manual toggle, ensuring optimal contrast and a sleek appearance."
+  />
+
+  <div
+    id="slider-container"
+    class="mx-auto relative select-none w-full max-w-82 sm:max-w-136 md:max-w-170 lg:max-w-236 aspect-[328/536] sm:aspect-[544/536] md:aspect-[680/548] lg:aspect-[944/564] rounded-3xl border-2 border-light overflow-hidden"
+  >
+    <img id="light-image" src={lightLgImage.src} class="absolute inset-0 h-full w-full object-cover object-center" />
+
+    <img
+      id="dark-image"
+      src={darkLgImage.src}
+      class="absolute inset-0 h-full w-full object-cover object-center"
+      style="clip-path: inset(0 0 0 50%);"
+    />
+
+    <div
+      id="slider"
+      class="absolute top-0 left-1/2 h-full w-0.75 bg-primary cursor-col-resize flex items-center justify-center"
+    >
+      <button class="absolute btn btn-primary btn-icon rounded-full border border-white cursor-ew-resize shadow-md"
+        ><ArrowRangeIcon /></button
+      >
+    </div>
+  </div>
+</SectionWrapper>
+
+<script>
+  const container = document.getElementById('slider-container') as HTMLDivElement;
+  const lightImage = document.getElementById('light-image') as HTMLImageElement;
+  const darkImage = document.getElementById('dark-image') as HTMLImageElement;
+  const slider = document.getElementById('slider') as HTMLElement;
+  import lightXsImage from '@assets/images/landing/light-dark/light-xs.png';
+  import darkXsImage from '@assets/images/landing/light-dark/dark-xs.png';
+  import lightSmImage from '@assets/images/landing/light-dark/light-sm.png';
+  import darkSmImage from '@assets/images/landing/light-dark/dark-sm.png';
+  import lightMdImage from '@assets/images/landing/light-dark/light-md.png';
+  import darkMdImage from '@assets/images/landing/light-dark/dark-md.png';
+  import lightLgImage from '@assets/images/landing/light-dark/light-lg.png';
+  import darkLgImage from '@assets/images/landing/light-dark/dark-lg.png';
+
+  const lightImages = {
+    xs: lightXsImage.src,
+    sm: lightSmImage.src,
+    md: lightMdImage.src,
+    lg: lightLgImage.src,
+  };
+
+  const darkImages = {
+    xs: darkXsImage.src,
+    sm: darkSmImage.src,
+    md: darkMdImage.src,
+    lg: darkLgImage.src,
+  };
+
+  const getCurrentBreakpoint = () => {
+    const width = window.innerWidth;
+    if (width < 640) return 'xs';
+    if (width < 768) return 'sm';
+    if (width < 1024) return 'md';
+    return 'lg';
+  };
+
+  const updateImages = () => {
+    const bp = getCurrentBreakpoint();
+    lightImage.src = lightImages[bp];
+    darkImage.src = darkImages[bp];
+  };
+
+  window.addEventListener('resize', updateImages);
+  updateImages();
+
+  // --- slider ---
+  let isDragging = false;
+
+  const startDrag = (e: MouseEvent | TouchEvent) => {
+    e.preventDefault();
+    isDragging = true;
+  };
+
+  const stopDrag = () => (isDragging = false);
+
+  const onDrag = (e: MouseEvent | TouchEvent) => {
+    if (!isDragging) return;
+    e.preventDefault();
+
+    const rect = container.getBoundingClientRect();
+    let x: number;
+
+    if (e instanceof TouchEvent) {
+      x = e.touches[0].clientX - rect.left;
+    } else {
+      x = e.clientX - rect.left;
+    }
+
+    if (x < 0) x = 0;
+    if (x > rect.width) x = rect.width - 7;
+
+    darkImage.style.clipPath = `inset(0 0 0 ${x}px)`;
+    slider.style.left = `${x}px`;
+  };
+
+  slider.addEventListener('mousedown', startDrag);
+  slider.addEventListener('touchstart', startDrag);
+
+  window.addEventListener('mouseup', stopDrag);
+  window.addEventListener('touchend', stopDrag);
+
+  window.addEventListener('mousemove', onDrag);
+  window.addEventListener('touchmove', onDrag, { passive: false });
+</script>

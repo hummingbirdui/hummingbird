@@ -1,0 +1,215 @@
+@utility carousel {
+  @layer base {
+    --carousel-transition-duration: 0.6s;
+    --carousel-control-width: 15%;
+    --carousel-control-color: var(--color-contrast);
+    --carousel-control-opacity: 0.5;
+    --carousel-control-hover-opacity: 0.9;
+    --carousel-control-icon-width: 2rem;
+    --carousel-control-icon-height: 2rem;
+    --carousel-control-prev-icon-bg: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ffffff'><path d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0'/></svg>");
+    --carousel-control-next-icon-bg: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ffffff'><path d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708'/></svg>");
+    --carousel-indicator-width: 1.875rem;
+    --carousel-indicator-height: 0.1875rem;
+    --carousel-indicator-spacer: --spacing(0.75);
+    --carousel-indicator-active-bg: var(--color-contrast);
+    --carousel-indicator-hit-area-height: 0.625rem;
+    --carousel-indicator-opacity: 0.5;
+    --carousel-indicator-active-opacity: 1;
+    --carousel-caption-width: 70%;
+    --carousel-caption-spacer: --spacing(5);
+    --carousel-caption-padding-y: --spacing(5);
+    --carousel-caption-color: var(--color-contrast);
+
+    @apply relative;
+
+    &.pointer-event {
+      @apply touch-pan-y;
+    }
+
+    .carousel-item.active,
+    .carousel-item-next,
+    .carousel-item-prev {
+      @apply block;
+    }
+
+    .carousel-item-next:not(.carousel-item-start),
+    .active.carousel-item-end {
+      @apply translate-x-full;
+    }
+
+    .carousel-item-prev:not(.carousel-item-end),
+    .active.carousel-item-start {
+      @apply -translate-x-full;
+    }
+
+    @variant dark {
+      --carousel-control-prev-icon-bg: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%2306080A'><path d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0'/></svg>");
+      --carousel-control-next-icon-bg: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%2306080A'><path d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708'/></svg>");
+    }
+  }
+}
+
+@utility carousel-inner {
+  @layer base {
+    @apply relative w-full overflow-hidden;
+    &::after {
+      @apply block clear-both content-[''];
+    }
+  }
+}
+
+@utility carousel-item {
+  @layer base {
+    @apply relative hidden float-left w-full -mr-[100%]
+    backface-hidden
+    transition-transform
+    duration-[var(--carousel-transition-duration)]
+    ease-in-out;
+  }
+}
+
+/* Alternative transition */
+
+@utility carousel-fade {
+  @layer components {
+    .carousel-item {
+      @apply opacity-0 transition-opacity translate-none;
+    }
+
+    .carousel-item.active,
+    .carousel-item-next.carousel-item-start,
+    .carousel-item-prev.carousel-item-end {
+      @apply z-1 opacity-100;
+    }
+
+    .active.carousel-item-start,
+    .active.carousel-item-end {
+      @apply z-0 opacity-0
+      transition-opacity
+      duration-0
+      delay-[var(--carousel-transition-duration)];
+    }
+  }
+}
+
+@utility carousel-control-prev {
+  @layer base {
+    @apply absolute top-0 bottom-0 left-0 z-1
+    flex items-center justify-center
+    w-[var(--carousel-control-width)]
+    p-0
+    text-[var(--carousel-control-color)]
+    text-center
+    bg-none
+    border-0
+    opacity-[var(--carousel-control-opacity)]
+    transition-opacity
+    duration-150
+    cursor-pointer;
+    &:hover,
+    &:focus {
+      @apply text-[var(--carousel-control-color)]
+    no-underline
+    outline-0
+    opacity-[var(--carousel-control-hover-opacity)];
+    }
+  }
+}
+
+@utility carousel-control-next {
+  @layer base {
+    @apply absolute top-0 bottom-0 right-0 z-1
+    flex items-center justify-center
+    w-[var(--carousel-control-width)]
+    p-0
+    text-[var(--carousel-control-color)]
+    text-center
+    bg-none
+    border-0
+    opacity-[var(--carousel-control-opacity)]
+    transition-opacity
+    duration-150
+    cursor-pointer;
+    &:hover,
+    &:focus {
+      @apply text-[var(--carousel-control-color)]
+    no-underline
+    outline-0
+    opacity-[var(--carousel-control-hover-opacity)];
+    }
+  }
+}
+
+@utility carousel-control-prev-icon {
+  @layer base {
+    @apply inline-block
+    w-[var(--carousel-control-icon-width)]
+    h-[var(--carousel-control-icon-width)]
+    bg-no-repeat
+    bg-position-[50%]
+    bg-size-[100%_100%]
+    bg-[image:var(--carousel-control-prev-icon-bg)];
+  }
+}
+@utility carousel-control-next-icon {
+  @layer base {
+    @apply inline-block
+    w-[var(--carousel-control-icon-width)]
+    h-[var(--carousel-control-icon-width)]
+    bg-no-repeat
+    bg-position-[50%]
+    bg-size-[100%_100%]
+    bg-[image:var(--carousel-control-next-icon-bg)];
+  }
+}
+
+@utility carousel-indicators {
+  @layer base {
+    @apply absolute right-0 bottom-0 left-0 z-2
+    flex justify-center
+    p-0
+    mr-[var(--carousel-control-width)]
+    mb-4
+    ml-[var(--carousel-control-width)];
+
+    [data-bs-target] {
+      @apply box-content
+      flex-[0_1_auto]
+      w-[var(--carousel-indicator-width)]
+      h-[var(--carousel-indicator-height)]
+      p-0
+      mr-[var(--carousel-indicator-spacer)]
+      ml-[var(--carousel-indicator-spacer)]
+      -indent-[999px]
+      cursor-pointer
+      bg-[var(--carousel-indicator-active-bg)]
+      bg-clip-padding
+      border-0
+      border-transparent
+      border-solid
+      border-t-[var(--carousel-indicator-hit-area-height)]
+      border-b-[var(--carousel-indicator-hit-area-height)]
+      opacity-[var(--carousel-indicator-opacity)]
+      transition-opacity
+      duration-[var(--carousel-transition-duration)];
+    }
+
+    .active {
+      @apply opacity-[var(--carousel-indicator-active-opacity)];
+    }
+  }
+}
+
+@utility carousel-caption {
+  @layer base {
+    @apply absolute
+    right-[calc((100%-var(--carousel-caption-width))*0.5)]
+    bottom-[var(--carousel-caption-spacer)]
+    left-[calc((100%-var(--carousel-caption-width))*0.5)]
+    pt-[var(--carousel-caption-padding-y)]
+    pb-[var(--carousel-caption-padding-y)]
+    text-[var(--carousel-caption-color)]
+    text-center;
+  }
+}

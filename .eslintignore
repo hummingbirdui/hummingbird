@@ -1,0 +1,6 @@
+*.md
+.gitignore
+build/
+dist/
+lib/
+static/

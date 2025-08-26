@@ -1,0 +1,168 @@
+@utility alert {
+  @layer base {
+    --alert-bg: var(--color-main);
+    --alert-padding-x: --spacing(4);
+    --alert-padding-y: --spacing(3.5);
+    --alert-color: var(--color-contrast);
+    --alert-border-color: transparent;
+    --alert-border-radius: var(--radius-lg);
+    --alert-icon-color: var(--color-contrast);
+
+    @apply relative flex items-center gap-3
+    p-[var(--alert-padding-y)_var(--alert-padding-x)]
+    text-[var(--alert-color)]
+    font-medium
+    bg-[var(--alert-bg)]
+    border-1
+    border-[var(--alert-border-color)]
+    rounded-[var(--alert-border-radius)]
+    leading-[1.5];
+  }
+}
+
+@utility alert-icon {
+  @layer base {
+    @apply text-[var(--alert-icon-color)] text-lg shrink-0;
+  }
+}
+
+/* filled variant */
+@utility alert-primary {
+  @layer base {
+    --alert-bg: var(--color-primary);
+  }
+}
+@utility alert-secondary {
+  @layer base {
+    --alert-bg: var(--color-secondary);
+  }
+}
+@utility alert-info {
+  @layer base {
+    --alert-bg: var(--color-info);
+  }
+}
+@utility alert-success {
+  @layer base {
+    --alert-bg: var(--color-success);
+  }
+}
+@utility alert-warning {
+  @layer base {
+    --alert-bg: var(--color-warning);
+  }
+}
+@utility alert-danger {
+  @layer base {
+    --alert-bg: var(--color-danger);
+  }
+}
+
+/* subtle variant */
+@utility alert-subtle {
+  @layer base {
+    --alert-bg: var(--background-color-muted);
+    --alert-color: var(--color-darker);
+    --alert-icon-color: var(--color-main);
+  }
+}
+@utility alert-subtle-primary {
+  @layer base {
+    --alert-bg: var(--color-primary-lighter);
+    --alert-color: var(--color-primary-darker);
+    --alert-icon-color: var(--color-primary);
+  }
+}
+@utility alert-subtle-secondary {
+  @layer base {
+    --alert-bg: var(--color-secondary-lighter);
+    --alert-color: var(--color-secondary-darker);
+    --alert-icon-color: var(--color-secondary);
+  }
+}
+@utility alert-subtle-info {
+  @layer base {
+    --alert-bg: var(--color-info-lighter);
+    --alert-color: var(--color-info-darker);
+    --alert-icon-color: var(--color-info);
+  }
+}
+@utility alert-subtle-success {
+  @layer base {
+    --alert-bg: var(--color-success-lighter);
+    --alert-color: var(--color-success-darker);
+    --alert-icon-color: var(--color-success);
+  }
+}
+@utility alert-subtle-warning {
+  @layer base {
+    --alert-bg: var(--color-warning-lighter);
+    --alert-color: var(--color-warning-darker);
+    --alert-icon-color: var(--color-warning);
+  }
+}
+@utility alert-subtle-danger {
+  @layer base {
+    --alert-bg: var(--color-danger-lighter);
+    --alert-color: var(--color-danger-darker);
+    --alert-icon-color: var(--color-danger);
+  }
+}
+
+/* outlined variant */
+@utility alert-outline {
+  @layer base {
+    --alert-bg: transparent;
+    --alert-color: var(--color-main);
+    --alert-icon-color: var(--color-main);
+    --alert-border-color: var(--color-main);
+  }
+}
+@utility alert-outline-primary {
+  @layer base {
+    --alert-bg: transparent;
+    --alert-color: var(--color-primary);
+    --alert-icon-color: var(--color-primary);
+    --alert-border-color: var(--color-primary);
+  }
+}
+@utility alert-outline-secondary {
+  @layer base {
+    --alert-bg: transparent;
+    --alert-color: var(--color-secondary);
+    --alert-icon-color: var(--color-secondary);
+    --alert-border-color: var(--color-secondary);
+  }
+}
+@utility alert-outline-info {
+  @layer base {
+    --alert-bg: transparent;
+    --alert-color: var(--color-info);
+    --alert-icon-color: var(--color-info);
+    --alert-border-color: var(--color-info);
+  }
+}
+@utility alert-outline-success {
+  @layer base {
+    --alert-bg: transparent;
+    --alert-color: var(--color-success);
+    --alert-icon-color: var(--color-success);
+    --alert-border-color: var(--color-success);
+  }
+}
+@utility alert-outline-warning {
+  @layer base {
+    --alert-bg: transparent;
+    --alert-color: var(--color-warning);
+    --alert-icon-color: var(--color-warning);
+    --alert-border-color: var(--color-warning);
+  }
+}
+@utility alert-outline-danger {
+  @layer base {
+    --alert-bg: transparent;
+    --alert-color: var(--color-danger);
+    --alert-icon-color: var(--color-danger);
+    --alert-border-color: var(--color-danger);
+  }
+}

@@ -1,0 +1,178 @@
+@utility nav {
+  @layer base {
+    --nav-bg: transparent;
+    --nav-link-padding-x: --spacing(4);
+    --nav-link-padding-y: --spacing(2);
+    --nav-link-font-weight: var(--font-weight-medium);
+    --nav-link-color: var(--text-color-highlight);
+    --nav-link-font-size: var(--text-base);
+    --nav-link-line-height: 1.5;
+    --nav-link-disabled-color: var(--color-disabled-color);
+    --nav-link-active-color: unset;
+    --nav-link-focus-ring-color: --alpha(var(--nav-link-active-color) / 30%);
+
+    @apply flex flex-wrap pl-0 mb-0 list-none
+    bg-[var(--nav-bg)];
+    .nav-link.active,
+    .show > .nav-link {
+      @apply text-[var(--nav-link-active-color)];
+    }
+  }
+}
+
+@utility nav-link {
+  @layer base {
+    @apply block
+    px-[var(--nav-link-padding-x)]
+    py-[var(--nav-link-padding-y)]
+    text-[length:var(--nav-link-font-size)]
+    font-[var(--nav-link-font-weight)]
+    text-[var(--nav-link-color)]
+    leading-[var(--nav-link-line-height)]
+    no-underline
+    bg-none
+    border-0
+    cursor-pointer
+    transition-colors duration-150 ease-in-out;
+
+    @variant focus-visible {
+      @apply outline-0 ring-4 ring-[var(--nav-link-focus-ring-color)];
+    }
+
+    &.disabled,
+    &:disabled {
+      @apply text-[var(--nav-link-disabled-color)]
+      pointer-events-none cursor-default;
+    }
+  }
+}
+
+@utility nav-underline {
+  @layer base {
+    --nav-underline-gap: 0;
+    --nav-underline-border-width: 2px;
+    --nav-link-active-color: var(--color-primary);
+
+    @apply gap-[var(--nav-underline-gap)];
+
+    .nav-link {
+      @apply border-b-[length:var(--nav-underline-border-width)] border-transparent;
+    }
+
+    .nav-link.active,
+    .show > .nav-link {
+      @apply border-b-current;
+    }
+  }
+}
+
+@utility nav-tabs {
+  @layer components {
+    --nav-link-active-color: var(--color-primary);
+    --nav-tabs-border-width: 1px;
+    --nav-tabs-border-color: var(--border-color-base);
+    --nav-tabs-border-radius: var(--radius-md);
+    --nav-tabs-link-hover-border-color: var(--border-color-light);
+    --nav-tabs-link-active-bg: var(--background-color-default);
+    --nav-tabs-link-active-border-color: var(--border-color-base) var(--border-color-base)
+      var(--nav-tabs-link-active-bg);
+
+    @apply border-b-[length:var(--nav-tabs-border-width)] border-[var(--nav-tabs-border-color)];
+
+    .nav-link {
+      @apply -mb-[length:var(--nav-tabs-border-width)]
+      border-[length:var(--nav-tabs-border-width)]
+      border-transparent
+      rounded-t-[var(--nav-tabs-border-radius)];
+
+      &:hover,
+      &:focus {
+        @apply isolate
+        border-[var(--nav-tabs-link-hover-border-color)];
+      }
+    }
+
+    .nav-link.active,
+    .show > .nav-link {
+      @apply border-[var(--nav-tabs-link-active-border-color)]
+      bg-[var(--nav-tabs-link-active-bg)];
+    }
+  }
+}
+
+@utility tab-pane {
+  @layer base {
+    display: none;
+  }
+}
+@utility tab-content {
+  @layer base {
+    > .tab-pane.active {
+      display: block;
+    }
+  }
+}
+
+@utility nav-primary {
+  @layer base {
+    --nav-bg: var(--color-primary);
+    --nav-link-color: --alpha(var(--color-contrast) / 50%);
+    --nav-link-disabled-color: --alpha(var(--color-contrast) / 30%);
+    --nav-link-active-color: var(--color-contrast);
+    --nav-link-focus-ring-color: --alpha(var(--color-primary-dark) / 30%);
+  }
+}
+@utility nav-secondary {
+  @layer base {
+    --nav-bg: var(--color-secondary);
+    --nav-link-color: --alpha(var(--color-contrast) / 50%);
+    --nav-link-disabled-color: --alpha(var(--color-contrast) / 30%);
+    --nav-link-active-color: var(--color-contrast);
+    --nav-link-focus-ring-color: --alpha(var(--color-secondary-dark) / 30%);
+  }
+}
+@utility nav-info {
+  @layer base {
+    --nav-bg: var(--color-info);
+    --nav-link-color: --alpha(var(--color-contrast) / 50%);
+    --nav-link-disabled-color: --alpha(var(--color-contrast) / 30%);
+    --nav-link-active-color: var(--color-contrast);
+    --nav-link-focus-ring-color: --alpha(var(--color-info-dark) / 30%);
+  }
+}
+@utility nav-success {
+  @layer base {
+    --nav-bg: var(--color-success);
+    --nav-link-color: --alpha(var(--color-contrast) / 50%);
+    --nav-link-disabled-color: --alpha(var(--color-contrast) / 30%);
+    --nav-link-active-color: var(--color-contrast);
+    --nav-link-focus-ring-color: --alpha(var(--color-success-dark) / 30%);
+  }
+}
+@utility nav-warning {
+  @layer base {
+    --nav-bg: var(--color-warning);
+    --nav-link-color: --alpha(var(--color-contrast) / 50%);
+    --nav-link-disabled-color: --alpha(var(--color-contrast) / 30%);
+    --nav-link-active-color: var(--color-contrast);
+    --nav-link-focus-ring-color: --alpha(var(--color-warning-dark) / 30%);
+  }
+}
+@utility nav-danger {
+  @layer base {
+    --nav-bg: var(--color-danger);
+    --nav-link-color: --alpha(var(--color-contrast) / 50%);
+    --nav-link-disabled-color: --alpha(var(--color-contrast) / 30%);
+    --nav-link-active-color: var(--color-contrast);
+    --nav-link-focus-ring-color: --alpha(var(--color-danger-dark) / 30%);
+  }
+}
+@utility nav-neutral {
+  @layer base {
+    --nav-bg: var(--color-main);
+    --nav-link-color: --alpha(var(--color-contrast) / 50%);
+    --nav-link-disabled-color: --alpha(var(--color-contrast) / 30%);
+    --nav-link-active-color: var(--color-contrast);
+    --nav-link-focus-ring-color: --alpha(var(--color-neutral-dark) / 30%);
+  }
+}

@@ -1,0 +1,194 @@
+---
+title: File Input
+description: File Input lets users upload files
+---
+
+##### File Input
+
+<Example>
+  <div slot="preview" class="not-prose grid items-center gap-3 sm:grid-cols-2">
+    <input type="file" class="form-control-fill" />
+    <input type="file" class="form-control" />
+  </div>
+  <div slot="code">
+    ```html
+    <input type="file" class="form-control-fill" />
+    <input type="file" class="form-control" />
+    ```
+  </div>
+</Example>
+
+##### File Input with label
+
+<Example>
+  <div slot="preview" class="not-prose grid items-center gap-3 sm:grid-cols-2">
+    <div class="form-field">
+      <label class="form-label">Avatar</label>
+      <input type="file" class="form-control-fill" />
+    </div>
+    <div class="form-field">
+      <label class="form-label">Avatar</label>
+      <input type="file" class="form-control" />
+    </div>
+  </div>
+  <div slot="code">
+    ```html
+    <div class="form-field">
+      <label class="form-label">Avatar</label>
+      <input type="file" class="form-control-fill" />
+    </div>
+    <div class="form-field">
+      <label class="form-label">Avatar</label>
+      <input type="file" class="form-control" />
+    </div>
+    ```
+  </div>
+</Example>
+
+##### Sizing
+
+Set heights using classes like <code>.form-control-sm</code> and <code>.form-control-lg</code> for small and large File Input. Default is medium.
+
+<Example>
+  <div slot="preview" class="not-prose grid gap-3">
+    <input type="file" class="form-control-fill form-control-sm" />
+    <input type="file" class="form-control-fill" />
+    <input type="file" class="form-control-fill form-control-lg" />
+    <input type="file" class="form-control form-control-sm" />
+    <input type="file" class="form-control" />
+    <input type="file" class="form-control form-control-lg" />
+  </div>
+  <div slot="code">
+    ```html
+    <input type="file" class="form-control-fill form-control-sm" />
+    <input type="file" class="form-control-fill" />
+    <input type="file" class="form-control-fill form-control-lg" />
+    <input type="file" class="form-control form-control-sm" />
+    <input type="file" class="form-control" />
+    <input type="file" class="form-control form-control-lg" />
+    ```
+  </div>
+</Example>
+
+##### Color Variants
+
+Different colors become visible while the input is focused. By default, the file input uses the **primary** color. Use additional utility classes to modify the focus color and the file input button color. Like:
+
+- **`.form-control-secondary`**
+- **`.form-control-success`**
+
+<Example>
+  <div slot="preview" class="not-prose grid items-center gap-3 sm:grid-cols-2">
+    <input type="file" class="form-control-fill form-control-secondary" />
+    <input type="file" class="form-control-fill form-control-success" />
+    <input type="file" class="form-control form-control-secondary" />
+    <input type="file" class="form-control form-control-success" />
+  </div>
+  <div slot="code">
+    ```html
+    <input type="file" class="form-control-fill form-control-secondary" />
+    <input type="file" class="form-control-fill form-control-success" />
+    <input type="file" class="form-control form-control-secondary" />
+    <input type="file" class="form-control form-control-success" />
+    ```
+  </div>
+</Example>
+
+##### Disabled
+
+<Example>
+  <div slot="preview" class="not-prose grid items-center gap-3 sm:grid-cols-2">
+    <input type="file" class="form-control-fill" placeholder="Disabled" disabled />
+    <input type="file" class="form-control" placeholder="Disabled" disabled />
+  </div>
+  <div slot="code">
+    ```html
+    <input type="file" class="form-control-fill" placeholder="Disabled" disabled />
+    <input type="file" class="form-control" placeholder="Disabled" disabled />
+    ```
+  </div>
+</Example>
+
+##### Validation
+
+Indicate validation states by adding the `.is-invalid` class to file input. This highlights the input field when invalid or requiring user attention.
+
+<Example>
+  <div slot="preview" class="not-prose grid items-center gap-3 sm:grid-cols-2">
+    <div class="form-field">
+      <label class="form-label">Avatar</label>
+      <input type="file" class="form-control-fill is-invalid" />
+    </div>
+    <div class="form-field">
+      <label class="form-label">Avatar</label>
+      <input type="file" class="form-control is-invalid" />
+    </div>
+  </div>
+  <div slot="code">
+    ```html
+    <div class="form-field">
+      <label class="form-label">Avatar</label>
+      <input type="file" class="form-control-fill is-invalid" />
+    </div>
+    <div class="form-field">
+      <label class="form-label">Avatar</label>
+      <input type="file" class="form-control is-invalid" />
+    </div>
+    ```
+  </div>
+</Example>
+
+##### File upload button
+
+<Example>
+  <div slot="preview" class='not-prose space-x-2 space-y-2'>
+    <label class='btn btn-primary' for="btnFileUpload">
+      <span class='icon-[material-symbols--cloud-upload] text-base'></span>
+      {`Upload file`}
+    </label>
+    <input type='file' id='btnFileUpload' />
+    <label class='btn btn-secondary' for="btnFileUploadSecondary">
+      <span class='icon-[material-symbols--cloud-upload] text-base'></span>
+      {`Upload file`}
+    </label>
+    <input type='file' id='btnFileUploadSecondary' />
+    <label class='btn btn-outline-primary' for="btnFileUploadOutlined">
+      <span class='icon-[material-symbols--cloud-upload] text-base'></span>
+      {`Upload file`}
+    </label>
+    <input type='file' id='btnFileUploadOutlined' />
+    <label class='btn btn-text-secondary' for="btnFileUploadText">
+      <span class='icon-[material-symbols--cloud-upload] text-base'></span>
+      {`Upload file`}
+    </label>
+    <input type='file' id='btnFileUploadText' />
+  </div>
+
+  <div slot="code">
+  ```html
+  <label class='btn btn-primary' for="btnFileUpload">
+    <span class='icon-[material-symbols--cloud-upload] text-base'></span>
+    Upload file
+  </label>
+  <input type='file' id='btnFileUpload' />
+
+<label class="btn btn-secondary" for="btnFileUploadSecondary">
+  <span class="icon-[material-symbols--cloud-upload] text-base"></span>
+  Upload file
+</label>
+<input type="file" id="btnFileUploadSecondary" />
+
+  <label class='btn btn-outline-primary' for="btnFileUploadOutlined">
+    <span class='icon-[material-symbols--cloud-upload] text-base'></span>
+    Upload file
+  </label>
+  <input type='file' id='btnFileUploadOutlined' />
+  
+  <label class='btn btn-text-secondary' for="btnFileUploadText">
+    <span class='icon-[material-symbols--cloud-upload] text-base'></span>
+    Upload file
+  </label>
+  <input type='file' id='btnFileUploadText' />
+  ```
+  </div>
+</Example>

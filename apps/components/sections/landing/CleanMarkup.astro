@@ -1,0 +1,126 @@
+---
+import { tabsData, product } from 'apps/data/landing/clean-markup';
+import SectionWrapper from './common/SectionWrapper.astro';
+import SectionHeader from './common/SectionHeader.astro';
+import cardImage from '@assets/images/landing/product.png';
+import CartIcon from '@components/icons/CartIcon.astro';
+import AddIcon from '@components/icons/AddIcon.astro';
+import RemoveIcon from '@components/icons/RemoveIcon.astro';
+import CheckIcon from '@components/icons/CheckIcon.astro';
+import CopyIcon from '@components/icons/CopyIcon.astro';
+import Code from 'astro/components/Code.astro';
+---
+
+<SectionWrapper id="clean-markup" class="max-w-340">
+  <SectionHeader
+    title="Clean markup, full control."
+    subtitle="Ditch long utility class strings. Hummingbird gives you complete freedom of pixel-perfect tweaks - plus full Tailwind flexibility."
+  />
+
+  <div class="flex flex-col md:h-112 md:flex-row gap-6">
+    <!-- Code Tabs -->
+    <div class="p-6 relative flex flex-col flex-1 max-h-88 md:max-h-none overflow-hidden bg-muted rounded-2xl">
+      <nav class="border-b border-base">
+        <div class="nav nav-underline gap-1" role="tablist">
+          {
+            tabsData.map((tab) => (
+              <button
+                class={`nav-link font-bold px-2 h-9 text-sm ${tab.active ? 'active' : ''}`}
+                id={`${tab.id}-tab`}
+                data-bs-toggle="tab"
+                data-bs-target={`#${tab.id}`}
+                type="button"
+                role="tab"
+                aria-controls={tab.id}
+                aria-selected={tab.active ? 'true' : 'false'}
+              >
+                {tab.label}
+              </button>
+            ))
+          }
+          <div id="copy-btn" class="ml-auto p-0.5 cursor-pointer">
+            <CopyIcon id="copy-icon" />
+            <CheckIcon id="check-icon" class="hidden text-success" />
+          </div>
+        </div>
+      </nav>
+
+      <div class="tab-content flex overflow-hidden">
+        {
+          tabsData.map((tab) => (
+            <div
+              class={`tab-pane fade overflow-auto scrollbar-hide ${tab.active ? 'show active' : ''}`}
+              id={tab.id}
+              role="tabpanel"
+              tabindex="0"
+            >
+              <Code
+                class="!text-sm h-full w-full overflow-auto !bg-muted !rounded-lg !px-0 scrollbar-hide"
+                data-astro-code
+                code={tab.code}
+                themes={{ light: 'github-light', dark: 'github-dark' }}
+                lang="html"
+              />
+            </div>
+          ))
+        }
+      </div>
+    </div>
+
+    <!-- Preview Product -->
+    <div class="w-75 h-full mx-auto shrink-0">
+      <div class="card rounded-2xl h-full overflow-hidden">
+        <img src={cardImage.src} class="card-img-top aspect-[10/7]" alt={product.title} />
+        <div class="card-body pb-1.5">
+          <h4 class="card-title text-base">{product.title}</h4>
+          <p class="text-sm">{product.desc}</p>
+
+          <div class="mb-6 flex items-center space-x-2">
+            <span class="text-2xl text-subtle font-bold tracking-tight">{product.price}</span>
+            <span class="text-emphasis">{product.oldPrice}</span>
+            <span class="badge badge-subtle-success text-success-dark">{product.discount}</span>
+          </div>
+
+          <div class="flex items-center gap-1">
+            <button class="btn btn-square h-7.5 w-7.5 text-emphasis bg-highlight rounded-sm">
+              <RemoveIcon />
+            </button>
+            <span class="px-5 py-1.25 text-subtle text-sm bg-muted rounded-sm">2</span>
+            <button class="btn btn-square h-7.5 w-7.5 bg-muted rounded-sm">
+              <AddIcon />
+            </button>
+          </div>
+        </div>
+        <div class="card-footer p-4">
+          <button class="btn btn-neutral w-full">
+            <CartIcon /> Add to Cart
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</SectionWrapper>
+
+<script>
+  const copyBtn = document.querySelector('#copy-btn') as HTMLButtonElement;
+  const copyIcon = copyBtn.querySelector('#copy-icon') as HTMLElement;
+  const checkIcon = copyBtn.querySelector('#check-icon') as HTMLElement;
+
+  copyBtn.addEventListener('click', async () => {
+    const activeTab = document.querySelector('.tab-pane.show.active code');
+    if (!activeTab) return;
+
+    try {
+      await navigator.clipboard.writeText(activeTab.textContent);
+      copyIcon.classList.add('hidden');
+      checkIcon.classList.remove('hidden');
+
+      setTimeout(() => {
+        checkIcon.classList.add('hidden');
+        copyIcon.classList.remove('hidden');
+      }, 1500);
+    } catch (err) {
+      console.error('Failed to copy:', err);
+    }
+  });
+</script>

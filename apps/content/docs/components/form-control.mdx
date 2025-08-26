@@ -1,0 +1,201 @@
+---
+title: Text Field
+description: Text Fields let users enter and edit text.
+---
+
+##### Basic Text Field
+
+The Basic Text Field component provides a simple input field with two variations: Filled and Outlined
+
+<Example>
+  <div slot="preview" class="not-prose grid items-center gap-3 sm:grid-cols-2">
+    <input type="text" class="form-control-fill" />
+    <input type="text" class="form-control" />
+  </div>
+  <div slot="code">
+    ```html
+    <input type="text" class="form-control-fill" />
+    <input type="text" class="form-control" />
+    ```
+  </div>
+</Example>
+
+##### Text Field with label
+
+<Example>
+  <div slot="preview" class="not-prose grid items-center gap-3 sm:grid-cols-2">
+    <div class="form-field">
+      <label class="form-label">User Name</label>
+      <input type="text" class="form-control-fill" />
+    </div>
+    <div class="form-field">
+      <label class="form-label">User Name</label>
+      <input type="text" class="form-control" />
+    </div>
+  </div>
+  <div slot="code">
+    ```html
+    <div class="form-field">
+      <label class="form-label">User Name</label>
+      <input type="text" class="form-control-fill" />
+    </div>
+    <div class="form-field">
+      <label class="form-label">User Name</label>
+      <input type="text" class="form-control" />
+    </div>
+    ```
+  </div>
+</Example>
+
+##### Text Field with icon
+
+Icons can be placed at the **start** or **end** of the input field. Use `.form-control-icon` class to the icon.
+
+<Example>
+  <div slot="preview" class="not-prose grid items-center gap-3 sm:grid-cols-2">
+    <div class="input-group-icon">
+      <span class="icon-[material-symbols--calendar-today-outline-rounded] form-control-icon-start"></span>
+      <input type="text" class="form-control-fill" />
+    </div>
+    <div class="input-group-icon">
+      <span class="icon-[material-symbols--calendar-today-outline-rounded] form-control-icon-start"></span>
+      <input type="text" class="form-control" />
+    </div>
+    <div class="input-group-icon">
+      <input type="text" class="form-control-fill" />
+      <span class="icon-[material-symbols--calendar-today-outline-rounded] form-control-icon-end"></span>
+    </div>
+    <div class="input-group-icon">
+      <input type="text" class="form-control" />
+      <span class="icon-[material-symbols--calendar-today-outline-rounded] form-control-icon-end"></span>
+    </div>
+  </div>
+  <div slot="code">
+    ```html
+    <div class="input-group-icon">
+      <span class="icon-[material-symbols--calendar-today-outline-rounded] form-control-icon-start"></span>
+      <input type="text" class="form-control-fill" />
+    </div>
+    <div class="input-group-icon">
+      <span class="icon-[material-symbols--calendar-today-outline-rounded] form-control-icon-start"></span>
+      <input type="text" class="form-control" />
+    </div>
+    <div class="input-group-icon">
+      <input type="text" class="form-control-fill" />
+      <span class="icon-[material-symbols--calendar-today-outline-rounded] form-control-icon-end"></span>
+    </div>
+    <div class="input-group-icon">
+      <input type="text" class="form-control" />
+      <span class="icon-[material-symbols--calendar-today-outline-rounded] form-control-icon-end"></span>
+    </div>
+    ```
+  </div>
+</Example>
+
+##### Textarea
+
+<Example>
+  <div slot="preview" class="not-prose grid items-center gap-3 sm:grid-cols-2">
+    <textarea type="text" class="form-control-fill" placeholder="Message" />
+    <textarea type="text" class="form-control" placeholder="Message" />
+  </div>
+  <div slot="code">
+    ```html
+    <textarea type="text" class="form-control-fill" placeholder="Message"></textarea>
+    <textarea type="text" class="form-control" placeholder="Message"></textarea>
+    ```
+  </div>
+</Example>
+
+##### Sizing
+
+Set heights using classes like <code>.form-control-sm</code> and <code>.form-control-lg</code> for small and large input field. Default is medium.
+
+<Example>
+  <div slot="preview" class="not-prose grid items-center gap-3 sm:grid-cols-3">
+    <input type="text" class="form-control-fill form-control-sm" />
+    <input type="text" class="form-control-fill" />
+    <input type="text" class="form-control-fill form-control-lg" />
+    <input type="text" class="form-control form-control-sm" />
+    <input type="text" class="form-control" />
+    <input type="text" class="form-control form-control-lg" />
+  </div>
+  <div slot="code">
+    ```html
+    <input type="text" class="form-control-fill form-control-sm" />
+    <input type="text" class="form-control-fill" />
+    <input type="text" class="form-control-fill form-control-lg" />
+    <input type="text" class="form-control form-control-sm" />
+    <input type="text" class="form-control" />
+    <input type="text" class="form-control form-control-lg" />
+    ```
+  </div>
+</Example>
+
+##### Color Variants
+
+Different colors become visible while the input is focused. By default, the input field uses the **primary** color. Use additional utility classes to modify the focus color. Like:
+
+- **`.form-control-secondary`**
+- **`.form-control-success`**
+
+<Example>
+  <div slot="preview" class="not-prose grid items-center gap-3 sm:grid-cols-2">
+    <input type="text" class="form-control-fill form-control-secondary" />
+    <input type="text" class="form-control-fill form-control-success" />
+    <input type="text" class="form-control form-control-secondary" />
+    <input type="text" class="form-control form-control-success" />
+  </div>
+  <div slot="code">
+    ```html
+    <input type="text" class="form-control-fill form-control-secondary" />
+    <input type="text" class="form-control-fill form-control-success" />
+    <input type="text" class="form-control form-control-secondary" />
+    <input type="text" class="form-control form-control-success" />
+    ```
+  </div>
+</Example>
+
+##### Disabled
+
+<Example>
+  <div slot="preview" class="not-prose grid items-center gap-3 sm:grid-cols-2">
+    <input type="text" class="form-control-fill" placeholder="Disabled" disabled />
+    <input type="text" class="form-control" placeholder="Disabled" disabled />
+  </div>
+  <div slot="code">
+    ```html
+    <input type="text" class="form-control-fill" placeholder="Disabled" disabled />
+    <input type="text" class="form-control" placeholder="Disabled" disabled />
+    ```
+  </div>
+</Example>
+
+##### Validation
+
+Indicate validation states by adding the `.is-invalid` class to input fields. This highlights the input field when invalid or requiring user attention.
+
+<Example>
+  <div slot="preview" class="not-prose grid items-center gap-3 sm:grid-cols-2">
+    <div class="form-field">
+      <label class="form-label">First name</label>
+      <input type="text" class="form-control-fill is-invalid" />
+    </div>
+    <div class="form-field">
+      <label class="form-label">Last name</label>
+      <input type="text" class="form-control is-invalid" />
+    </div>
+  </div>
+  <div slot="code">
+    ```html
+    <div class="form-field">
+      <label class="form-label">First name</label>
+      <input type="text" class="form-control-fill is-invalid" />
+    </div>
+    <div class="form-field">
+      <label class="form-label">Last name</label>
+      <input type="text" class="form-control is-invalid" />
+    </div>
+    ```
+  </div>
+</Example>

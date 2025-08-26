@@ -1,0 +1,86 @@
+@utility accordion {
+  @layer base {
+    --accordion-color: var(--text-color-default);
+    --accordion-bg: var(--background-color-default);
+    --accordion-border-color: var(--border-color-base);
+    --accordion-border-width: 0;
+    --accordion-border-radius: var(--radius-lg);
+    --accordion-btn-padding-x: --spacing(6);
+    --accordion-btn-padding-y: --spacing(6);
+    --accordion-btn-font-size: var(--text-base);
+    --accordion-btn-color: var(--text-color-default);
+    --accordion-btn-bg: transparent;
+    --accordion-btn-icon: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%231B2124' stroke-linecap='round' stroke-linejoin='round'><path d='m2 5 6 6 6-6'/></svg>");
+    --accordion-btn-icon-width: 1rem;
+    --accordion-btn-icon-transform: rotate(-180deg);
+    --accordion-btn-icon-transition: transform 0.2s ease-in-out;
+    --accordion-btn-active-icon: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%231B2124' stroke-linecap='round' stroke-linejoin='round'><path d='m2 5 6 6 6-6'/></svg>");
+    --accordion-body-padding-x: --spacing(6);
+    --accordion-body-padding-y: --spacing(6);
+    --accordion-hover-color: var(--text-color-default);
+    --accordion-hover-bg: var(--background-color-subtle);
+
+    @variant dark {
+      --accordion-btn-icon: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23EBF2F5' stroke-linecap='round' stroke-linejoin='round'><path d='m2 5 6 6 6-6'/></svg>");
+      --accordion-btn-active-icon: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23EBF2F5' stroke-linecap='round' stroke-linejoin='round'><path d='m2 5 6 6 6-6'/></svg>");
+    }
+  }
+}
+
+@utility accordion-button {
+  @layer base {
+    @apply relative flex items-center w-full cursor-pointer
+    px-[var(--accordion-btn-padding-x)]
+    py-[var(--accordion-btn-padding-y)]
+    text-[length:var(--accordion-btn-font-size)]
+    text-[var(--accordion-btn-color)]
+    bg-[var(--accordion-btn-bg)]
+    rounded-[var(--accordion-border-radius)]
+    text-left font-semibold;
+    overflow-anchor: none;
+    &:not(.collapsed) {
+      &::after {
+        @apply bg-[image:var(--accordion-btn-active-icon)]
+        transform-[var(--accordion-btn-icon-transform)];
+      }
+    }
+    &::after {
+      @apply shrink-0
+      w-[var(--accordion-btn-icon-width)]
+      h-[var(--accordion-btn-icon-width)]
+      ml-auto
+      content-['']
+      bg-[image:var(--accordion-btn-icon)]
+      bg-no-repeat
+      bg-size-[var(--accordion-btn-icon-width)]
+      transition-[var(--accordion-btn-icon-transition)];
+    }
+    @variant focus {
+      @apply outline-0 bg-[var(--accordion-hover-bg)];
+    }
+  }
+}
+
+@utility accordion-header {
+  @layer base {
+    @apply mb-0;
+  }
+}
+
+@utility accordion-item {
+  @layer base {
+    @apply text-[var(--accordion-color)]
+    bg-[var(--accordion-bg)]
+    border-[length:var(--accordion-border-width)]
+    border-[var(--accordion-border-color)]
+    rounded-[var(--accordion-border-radius)];
+    @variant hover {
+      @apply text-[var(--accordion-hover-color)] bg-[var(--accordion-hover-bg)];
+    }
+  }
+}
+@utility accordion-body {
+  @layer base {
+    @apply px-[var(--accordion-body-padding-x)] pb-[var(--accordion-body-padding-y)];
+  }
+}
