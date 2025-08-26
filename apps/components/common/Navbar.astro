@@ -5,7 +5,7 @@ import logo from '@assets/images/logos/hummingbird.png';
 const menuItems = [
   {
     name: 'Docs',
-    path: '#',
+    path: '/docs/components/buttons',
   },
   {
     name: 'Components',
@@ -79,7 +79,7 @@ const menuItems = [
         {
           menuItems.map((item) => (
             <li class="nav-item">
-              <a class="nav-link px-4 py-2.5 hover:bg-hover rounded-lg" aria-disabled="true">
+              <a href={item.path} class="nav-link px-4 py-2.5 hover:bg-hover rounded-lg" aria-disabled="true">
                 {item.name}
               </a>
             </li>

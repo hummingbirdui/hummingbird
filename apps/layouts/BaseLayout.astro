@@ -2,7 +2,7 @@
 import '../style.css';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../const';
 import Navbar from '@components/common/Navbar.astro';
-import Head from '@components/base/Head.astro';
+import Head from '@components/core/Head.astro';
 const { frontmatter } = Astro.props;
 const title = Astro.props.title ?? frontmatter?.title ?? SITE_TITLE;
 const description = frontmatter?.description ? frontmatter.description : SITE_DESCRIPTION;
