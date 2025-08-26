@@ -16,7 +16,7 @@ export default defineConfig(({ mode }) => {
       minify: false,
       lib: {
         entry: path.resolve(__dirname, isBundle ? 'src/index.umd.ts' : 'src/index.ts'),
-        name: 'Hummingbird',
+        name: 'hummingbird',
         fileName: 'hummingbird',
       },
       rollupOptions: {
@@ -26,12 +26,12 @@ export default defineConfig(({ mode }) => {
               {
                 format: 'umd',
                 entryFileNames: 'hummingbird.bundle.js',
-                name: 'Hummingbird',
+                name: 'hummingbird',
               },
               {
                 format: 'umd',
                 entryFileNames: 'hummingbird.bundle.min.js',
-                name: 'Hummingbird',
+                name: 'hummingbird',
                 plugins: [terser()],
               },
             ]
@@ -39,7 +39,7 @@ export default defineConfig(({ mode }) => {
               {
                 format: 'umd',
                 entryFileNames: 'hummingbird.js',
-                name: 'Hummingbird',
+                name: 'hummingbird',
                 globals: {
                   '@popperjs/core': 'Popper',
                 },
@@ -47,7 +47,7 @@ export default defineConfig(({ mode }) => {
               {
                 format: 'umd',
                 entryFileNames: 'hummingbird.min.js',
-                name: 'Hummingbird',
+                name: 'hummingbird',
                 globals: {
                   '@popperjs/core': 'Popper',
                 },

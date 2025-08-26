@@ -1,269 +1,287 @@
 ---
 title: Alerts
-desc: Provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages.
+description: Alerts provide contextual feedback messages for common user actions. They can display success, warning, error, or informational states using flexible styles.
+toc: true
+classNames:
+  component:
+  - class: 'alert'
+    desc: Alert
+  color:
+  - class: alert-primary
+    desc: Primary color
+  - class: alert-secondary
+    desc: Secondary color
+  - class: alert-info
+    desc: Info color
+  - class: alert-success
+    desc: Success color
+  - class: alert-warning
+    desc: Warning color
+  - class: alert-danger
+    desc: Danger color
+  - class: alert-neutral
+    desc: Neutral color
+  style:
+  - class: alert-subtle
+    desc: Subtle style
+  - class: alert-outline
+    desc: Outline style
 ---
 
-###### Examples
+##### Subtle variant
 
-<Example>
-  <div slot="preview" class='space-y-2'>
-    <div class="alert" role="alert">A simple neutral alert!</div>
-    <div class="alert alert-primary" role="alert">A simple primary alert!</div>
-    <div class="alert alert-secondary" role="alert">A simple secondary alert!</div>
-    <div class="alert alert-info" role="alert">A simple info alert!</div>
-    <div class="alert alert-success" role="alert">A simple success alert!</div>
-    <div class="alert alert-warning" role="alert">A simple warning alert!</div>
-    <div class="alert alert-danger" role="alert">A simple error alert!</div>
+Simple alerts use a subtle background with clear text color.
+
+<Example class='flex flex-col gap-2' 
+  code={`<div class="alert alert-subtle" role="alert">A simple neutral subtle alert!</div>
+  <div class="alert alert-subtle-primary" role="alert">A simple primary subtle alert!</div>
+  <div class="alert alert-subtle-secondary" role="alert">A simple secondary subtle alert!</div>
+  <div class="alert alert-subtle-info" role="alert">A simple info subtle alert!</div>
+  <div class="alert alert-subtle-success" role="alert">A simple success subtle alert!</div>
+  <div class="alert alert-subtle-warning" role="alert">A simple warning subtle alert!</div>
+  <div class="alert alert-subtle-danger" role="alert">A simple error subtle alert!</div>`}
+/>
+
+##### Contained variant
+
+Contained alerts use a solid background color to clearly convey the type of message, such as success, warning, error, or information.
+
+<Example class='flex flex-col gap-2' 
+  code={`<div class="alert" role="alert">A simple neutral alert!</div>
+  <div class="alert alert-primary" role="alert">A simple primary alert!</div>
+  <div class="alert alert-secondary" role="alert">A simple secondary alert!</div>
+  <div class="alert alert-info" role="alert">A simple info alert!</div>
+  <div class="alert alert-success" role="alert">A simple success alert!</div>
+  <div class="alert alert-warning" role="alert">A simple warning alert!</div>
+  <div class="alert alert-danger" role="alert">A simple error alert!</div>`}
+/>
+
+##### Outlined variant
+
+Outlined alerts use a border and transparent background to provide medium emphasis. They are useful when you want feedback messages to be visible without dominating the interface.
+
+<Example class='flex flex-col gap-2' 
+  code={`<div class="alert alert-outline" role="alert">A simple neutral outline alert!</div>
+  <div class="alert alert-outline-primary" role="alert">A simple primary outline alert!</div>
+  <div class="alert alert-outline-secondary" role="alert">A simple secondary outline alert!</div>
+  <div class="alert alert-outline-info" role="alert">A simple info outline alert!</div>
+  <div class="alert alert-outline-success" role="alert">A simple success outline alert!</div>
+  <div class="alert alert-outline-warning" role="alert">A simple warning outline alert!</div>
+  <div class="alert alert-outline-danger" role="alert">A simple error outline alert!</div>`}
+/>
+
+##### Alert with Icon
+
+Alerts can include icons to improve clarity and recognition. Icons provide a quick visual cue about the alert type, such as success, information, or error.
+
+<Example class='flex flex-col gap-2' code={`<div class="alert alert-success" role="alert">
+    <span class="icon-[material-symbols--check-circle-outline] alert-icon"></span>
+    <span>Operation successful — everything is up to date!</span>
   </div>
-
-  <div slot="code">
-    ```html
-    <div class="alert" role="alert">A simple neutral alert!</div>
-    <div class="alert alert-primary" role="alert">A simple primary alert!</div>
-    <div class="alert alert-secondary" role="alert">A simple secondary alert!</div>
-    <div class="alert alert-info" role="alert">A simple info alert!</div>
-    <div class="alert alert-success" role="alert">A simple success alert!</div>
-    <div class="alert alert-warning" role="alert">A simple warning alert!</div>
-    <div class="alert alert-danger" role="alert">A simple error alert!</div>
-    ```
+  <div class="alert alert-info" role="alert">
+    <span class="icon-[material-symbols--info-outline] alert-icon"></span>
+    <span>Note the following — changes have been saved.</span>
   </div>
-</Example>
-
-###### Subtle variant
-
-<Example>
-  <div slot="preview" class='space-y-2'>
-    <div class="alert alert-subtle" role="alert">A simple neutral subtle alert!</div>
-    <div class="alert alert-subtle-primary" role="alert">A simple primary subtle alert!</div>
-    <div class="alert alert-subtle-secondary" role="alert">A simple secondary subtle alert!</div>
-    <div class="alert alert-subtle-info" role="alert">A simple info subtle alert!</div>
-    <div class="alert alert-subtle-success" role="alert">A simple success subtle alert!</div>
-    <div class="alert alert-subtle-warning" role="alert">A simple warning subtle alert!</div>
-    <div class="alert alert-subtle-danger" role="alert">A simple error subtle alert!</div>
+  <div class="alert alert-danger" role="alert">
+    <span class="icon-[material-symbols--error-outline-rounded] alert-icon"></span>
+    <span>Something went wrong — please try again later.</span>
   </div>
-
-  <div slot="code">
-    ```html
-    <div class="alert alert-subtle" role="alert">A simple neutral subtle alert!</div>
-    <div class="alert alert-subtle-primary" role="alert">A simple primary subtle alert!</div>
-    <div class="alert alert-subtle-secondary" role="alert">A simple secondary subtle alert!</div>
-    <div class="alert alert-subtle-info" role="alert">A simple info subtle alert!</div>
-    <div class="alert alert-subtle-success" role="alert">A simple success subtle alert!</div>
-    <div class="alert alert-subtle-warning" role="alert">A simple warning subtle alert!</div>
-    <div class="alert alert-subtle-danger" role="alert">A simple error subtle alert!</div>
-    ```
+  <div class="alert alert-subtle-success" role="alert">
+    <span class="icon-[material-symbols--check-circle-outline] alert-icon"></span>
+    <span>Operation successful — everything is up to date!</span>
   </div>
-</Example>
-
-###### Outlined variant
-
-<Example>
-  <div slot="preview" class='space-y-2'>
-    <div class="alert alert-outline" role="alert">A simple neutral outline alert!</div>
-    <div class="alert alert-outline-primary" role="alert">A simple primary outline alert!</div>
-    <div class="alert alert-outline-secondary" role="alert">A simple secondary outline alert!</div>
-    <div class="alert alert-outline-info" role="alert">A simple info outline alert!</div>
-    <div class="alert alert-outline-success" role="alert">A simple success outline alert!</div>
-    <div class="alert alert-outline-warning" role="alert">A simple warning outline alert!</div>
-    <div class="alert alert-outline-danger" role="alert">A simple error outline alert!</div>
+  <div class="alert alert-subtle-info" role="alert">
+    <span class="icon-[material-symbols--info-outline] alert-icon"></span>
+    <span>Note the following — changes have been saved.</span>
   </div>
-
-  <div slot="code">
-    ```html
-    <div class="alert alert-outline" role="alert">A simple neutral outline alert!</div>
-    <div class="alert alert-outline-primary" role="alert">A simple primary outline alert!</div>
-    <div class="alert alert-outline-secondary" role="alert">A simple secondary outline alert!</div>
-    <div class="alert alert-outline-info" role="alert">A simple info outline alert!</div>
-    <div class="alert alert-outline-success" role="alert">A simple success outline alert!</div>
-    <div class="alert alert-outline-warning" role="alert">A simple warning outline alert!</div>
-    <div class="alert alert-outline-danger" role="alert">A simple error outline alert!</div>
-    ```
+  <div class="alert alert-subtle-danger" role="alert">
+    <span class="icon-[material-symbols--error-outline-rounded] alert-icon"></span>
+    <span>Something went wrong — please try again later.</span>
   </div>
-</Example>
-
-###### Alert with Icon
-
-<Example>
-  <div slot="preview" class='space-y-2'>
-    <div class="alert alert-success" role="alert">
-      <span class="icon-[material-symbols--check-circle-outline] alert-icon"></span>
-      <span>Operation successful — everything is up to date!</span>
-    </div>
-    <div class="alert alert-info" role="alert">
-      <span class="icon-[material-symbols--info-outline] alert-icon"></span>
-      <span>Note the following — changes have been saved.</span>
-    </div>
-    <div class="alert alert-danger" role="alert">
-      <span class="icon-[material-symbols--error-outline-rounded] alert-icon"></span>
-      <span>Something went wrong — please try again later.</span>
-    </div>
-    <div class="alert alert-subtle-success" role="alert">
-      <span class="icon-[material-symbols--check-circle-outline] alert-icon"></span>
-      <span>Operation successful — everything is up to date!</span>
-    </div>
-    <div class="alert alert-subtle-info" role="alert">
-      <span class="icon-[material-symbols--info-outline] alert-icon"></span>
-      <span>Note the following — changes have been saved.</span>
-    </div>
-    <div class="alert alert-subtle-danger" role="alert">
-      <span class="icon-[material-symbols--error-outline-rounded] alert-icon"></span>
-      <span>Something went wrong — please try again later.</span>
-    </div>
-    <div class="alert alert-outline-success" role="alert">
-      <span class="icon-[material-symbols--check-circle-outline] alert-icon"></span>
-      <span>Operation successful — everything is up to date!</span>
-    </div>
-    <div class="alert alert-outline-info" role="alert">
-      <span class="icon-[material-symbols--info-outline] alert-icon"></span>
-      <span>Note the following — changes have been saved.</span>
-    </div>
-    <div class="alert alert-outline-danger" role="alert">
-      <span class="icon-[material-symbols--error-outline-rounded] alert-icon"></span>
-      <span>Something went wrong — please try again later.</span>
-    </div>
+  <div class="alert alert-outline-success" role="alert">
+    <span class="icon-[material-symbols--check-circle-outline] alert-icon"></span>
+    <span>Operation successful — everything is up to date!</span>
   </div>
-
-  <div slot="code">
-    ```html
-    <div class="alert alert-success" role="alert">
-      <span class="icon-[material-symbols--check-circle-outline] alert-icon"></span>
-      <span>Operation successful — everything is up to date!</span>
-    </div>
-    <div class="alert alert-info" role="alert">
-      <span class="icon-[material-symbols--info-outline] alert-icon"></span>
-      <span>Note the following — changes have been saved.</span>
-    </div>
-    <div class="alert alert-danger" role="alert">
-      <span class="icon-[material-symbols--error-outline-rounded] alert-icon"></span>
-      <span>Something went wrong — please try again later.</span>
-    </div>
-
-    <div class="alert alert-subtle-success" role="alert">
-      <span class="icon-[material-symbols--check-circle-outline] alert-icon"></span>
-      <span>Operation successful — everything is up to date!</span>
-    </div>
-    <div class="alert alert-subtle-info" role="alert">
-      <span class="icon-[material-symbols--info-outline] alert-icon"></span>
-      <span>Note the following — changes have been saved.</span>
-    </div>
-    <div class="alert alert-subtle-danger" role="alert">
-      <span class="icon-[material-symbols--error-outline-rounded] alert-icon"></span>
-      <span>Something went wrong — please try again later.</span>
-    </div>
-
-    <div class="alert alert-outline-success" role="alert">
-      <span class="icon-[material-symbols--check-circle-outline] alert-icon"></span>
-      <span>Operation successful — everything is up to date!</span>
-    </div>
-    <div class="alert alert-outline-info" role="alert">
-      <span class="icon-[material-symbols--info-outline] alert-icon"></span>
-      <span>Note the following — changes have been saved.</span>
-    </div>
-    <div class="alert alert-outline-danger" role="alert">
-      <span class="icon-[material-symbols--error-outline-rounded] alert-icon"></span>
-      <span>Something went wrong — please try again later.</span>
-    </div>
-    ```
-
+  <div class="alert alert-outline-info" role="alert">
+    <span class="icon-[material-symbols--info-outline] alert-icon"></span>
+    <span>Note the following — changes have been saved.</span>
   </div>
-</Example>
+  <div class="alert alert-outline-danger" role="alert">
+    <span class="icon-[material-symbols--error-outline-rounded] alert-icon"></span>
+    <span>Something went wrong — please try again later.</span>
+  </div>`} 
+/>
 
-###### Alert with title
+##### Alert with title
 
-<Example>
-  <div slot="preview" class='space-y-2'>
-    <div class="alert alert-subtle-warning items-start" role="alert">
-      <span class="icon-[material-symbols--warning-outline-rounded] alert-icon"></span>
-      <div>
-        <p class='mb-0'>Warning</p>
-        <span>Please be cautious — review your actions.</span>
-      </div>
+Alerts can also include headings, paragraphs, and dividers to provide more context or structure within the message.
+
+<Example code={`<div class="alert alert-subtle-warning items-start" role="alert">
+    <span class="icon-[material-symbols--warning-outline-rounded] alert-icon"></span>
+    <div>
+      <h6 class='font-medium'>Warning</h6>
+      <span>Please be cautious — review your actions.</span>
     </div>
+  </div>`} />
+
+##### Alert Actions
+
+This example demonstrates various alert components with actionable buttons.
+
+- Each alert displays a relevant icon and message.
+- Buttons provide users with options such as closing the alert, continuing, or retrying an action.
+
+##### Alert Actions
+
+<Example class='flex flex-col gap-2' 
+  code={`<div class="alert alert-subtle-warning" role="alert">
+    <span class="icon-[material-symbols--warning-outline-rounded] alert-icon"></span>
+    <span>This is a generic alert — please take note.</span>
+    <button class='btn btn-icon btn-icon-warning ms-auto shrink-0'>
+      <span class='icon-[material-symbols--close-rounded] text-base'></span>
+    </button>
   </div>
-
-  <div slot="code">
-    ```html
-    <div class="alert alert-subtle-warning items-start" role="alert">
-      <span class="icon-[material-symbols--warning-outline-rounded] alert-icon"></span>
-      <div>
-        <p class='mb-0'>Warning</p>
-        <span>Please be cautious — review your actions.</span>
-      </div>
-    </div>
-    ```
+  <div class="alert alert-outline-success" role="alert">
+    <span class="icon-[material-symbols--check-circle-outline] alert-icon"></span>
+    <span>This is a success alert — you can continue.</span>
+    <button class='btn btn-sm btn-success ms-auto shrink-0'>Continue</button>
   </div>
-</Example>
+  <div class="alert alert-danger" role="alert">
+    <span class="icon-[material-symbols--error-outline-rounded] alert-icon"></span>
+    <span>Error occurs - Try again.</span>
+    <button class='btn btn-sm btn-text-danger text-contrast hover:bg-danger-dark ms-auto'>Start</button>
+  </div>`}
+/>
 
-###### Alert Actions
+##### Dismissing
 
-<Example>
-  <div slot="preview" class='space-y-2'>
-    <div class="alert alert-subtle-warning" role="alert">
-      <span class="icon-[material-symbols--warning-outline-rounded] alert-icon"></span>
-      <span>This is a generic alert — please take note.</span>
-      <button class='btn btn-icon btn-icon-warning ms-auto shrink-0'>
-        <span class='icon-[material-symbols--close-rounded] text-base'></span>
-      </button>
-    </div>
-    <div class="alert alert-outline-success" role="alert">
-      <span class="icon-[material-symbols--check-circle-outline] alert-icon"></span>
-      <span>This is a success alert — you can continue.</span>
-      <button class='btn btn-sm btn-success ms-auto shrink-0'>Continue</button>
-    </div>
-    <div class="alert alert-danger" role="alert">
-      <span class="icon-[material-symbols--error-outline-rounded] alert-icon"></span>
-      <span>Error occurs - Try again.</span>
-      <button class='btn btn-sm btn-text-danger text-contrast hover:bg-danger-dark ms-auto'>Start</button>
-    </div>
-  </div>
+Using the alert JavaScript plugin that uses the **Bootstrap Button plugin**, it’s possible to dismiss any alert inline. Here’s how:
 
-  <div slot="code">
-    ```html
-    <div class="alert alert-subtle-warning" role="alert">
-      <span class="icon-[material-symbols--warning-outline-rounded] alert-icon"></span>
-      <span>This is a generic alert — please take note.</span>
-      <button class='btn btn-icon btn-icon-warning ms-auto shrink-0'>
-        <span class='icon-[material-symbols--close-rounded] text-base'></span>
-      </button>
-    </div>
-    <div class="alert alert-outline-success" role="alert">
-      <span class="icon-[material-symbols--check-circle-outline] alert-icon"></span>
-      <span>This is a success alert — you can continue.</span>
-      <button class='btn btn-sm btn-success ms-auto shrink-0'>
-        Continue
-      </button>
-    </div>
-    <div class="alert alert-danger" role="alert">
-      <span class="icon-[material-symbols--error-outline-rounded] alert-icon"></span>
-      <span>Error occurs - Try again.</span>
-      <button class='btn btn-sm btn-text-danger text-contrast hover:bg-danger-dark ms-auto'>
-        Start
-      </button>
-    </div>
-    ```
-  </div>
-</Example>
+- Be sure you’ve loaded the alert plugin, or the compiled Hummingbird JavaScript.
+- Add a close button and the .alert-dismissible class, which adds extra padding to the right of the alert and positions the close button.
+- On the close button, add the `data-bs-dismiss="alert"` attribute, which triggers the JavaScript functionality. Be sure to use the `<button>` element with it for proper behavior across all devices.
+- To animate alerts when dismissing them, be sure to add the `.fade` and `.show` classes.
+  You can see this in action with a live demo:
 
-###### Dismissing
+<Example code={`<div class="alert alert-subtle-warning fade show" role="alert">
+    <p class='mb-0'><strong>Holy guacamole!</strong> You should check in on some of those fields below.</p>
+    <button type="button" class="btn btn-icon btn-icon-warning ms-auto" data-bs-dismiss="alert" aria-label="Close">
+      <span class="icon-[material-symbols--close-rounded] text-base"></span>
+    </button>
+  </div>`} />
 
-<Example>
-  <div slot="preview">
-    <div class="alert alert-subtle-warning fade show" role="alert">
-      <p class='mb-0'><strong>Holy guacamole!</strong> You should check in on some of those fields below.</p>
-      <button type="button" class="btn btn-icon btn-icon-warning ms-auto" data-bs-dismiss="alert" aria-label="Close">
-        <span class="icon-[material-symbols--close-rounded] text-base"></span>
-      </button>
-    </div>
-  </div>
+##### CSS variables
 
-  <div slot="code">
-    ```html
-    <div class="alert alert-subtle-warning fade show" role="alert">
-      <p class='mb-0'><strong>Holy guacamole!</strong> You should check in on some of those fields below.</p>
-      <button type="button" class="btn btn-icon btn-icon-warning ms-auto" data-bs-dismiss="alert" aria-label="Close">
-        <span class="icon-[material-symbols--close-rounded] text-base"></span>
-      </button>
-    </div>
-    ```
-  </div>
-</Example>
+The alert component is built using a set of CSS variables. These variables provide flexibility for customizing styles.
+
+<Example showPreview={false} lang='sass' code={`.alert {
+    --alert-bg: var(--color-main);
+    --alert-padding-x: --spacing(4);
+    --alert-padding-y: --spacing(3.5);
+    --alert-color: var(--color-contrast);
+    --alert-border-color: transparent;
+    --alert-border-radius: var(--radius-lg);
+    --alert-icon-color: var(--color-contrast);
+  }`} />
+
+##### JavaScript behavior
+
+###### Initialize
+
+Initialize elements as alerts
+
+<Example lang='js' showPreview={false}
+  code={`const alertList = document.querySelectorAll('.alert')
+  const alerts = [...alertList].map(element => new hummingbird.Alert(element))`}
+/>
+
+###### Triggers
+
+Dismissal can be achieved with the `data-bs-dismiss` attribute on a button **within the alert** as demonstrated below:
+
+<Example showPreview={false} 
+  code={`<button type="button" class="btn btn-icon" data-bs-dismiss="alert" aria-label="Close">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="currentColor" d="m12 13.4l-2.9 2.9q-.275.275-.7.275t-.7-.275t-.275-.7t.275-.7l2.9-2.9l-2.9-2.875q-.275-.275-.275-.7t.275-.7t.7-.275t.7.275l2.9 2.9l2.875-2.9q.275-.275.7-.275t.7.275q.3.3.3.713t-.3.687L13.375 12l2.9 2.9q.275.275.275.7t-.275.7q-.3.3-.712.3t-.688-.3z"/></svg>
+  </button>`}
+/>
+
+or on a button outside the alert using the additional data-bs-target as demonstrated below:
+
+**Note that closing an alert will remove it from the DOM.**
+
+###### Methods
+
+You can create an alert instance with the alert constructor, for example:
+
+<Example showPreview={false} lang='js'
+  code={`const myAlert = new hummingbird.Alert('#myAlert')`}
+/>
+
+This makes an alert listen for click events on descendant elements which have the `data-bs-dismiss="alert"` attribute. (Not necessary when using the data-api’s auto-initialization.)
+
+<HbTable>
+  <thead>
+    <tr>
+      <th scope="col">Method</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">`close`</th>
+      <td>Closes an alert by removing it from the DOM. If the `.fade` and `.show` classes are present on the element, the alert will fade out before it is removed.</td>
+    </tr>
+    <tr>
+      <th scope="row">`dispose`</th>
+      <td>Destroys an element’s alert. (Removes stored data on the DOM element)</td>
+    </tr>
+    <tr>
+      <th scope="row">`getInstance`</th>
+      <td>Static method which allows you to get the alert instance associated to a DOM element. For example: `hummingbird.Alert.getInstance(alert)`.</td>
+    </tr>
+    <tr>
+      <th scope="row">`getOrCreateInstance`</th>
+      <td>Static method which returns an alert instance associated to a DOM element or create a new one in case it wasn’t initialized. You can use it like this: `hummingbird.Alert.getOrCreateInstance(element)`.</td>
+    </tr>
+  </tbody>
+</HbTable>
+
+Basic usage:
+
+<Example lang='js' showPreview={false}
+  code={`const alert = hummingbird.Alert.getOrCreateInstance('#myAlert')
+  alert.close()`}
+/>
+
+###### Events
+
+Hummingbird’s alert plugin exposes a few events for hooking into alert functionality.
+
+<HbTable>
+  <thead>
+    <tr>
+      <th scope="col">Event</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">`close.bs.alert`</th>
+      <td>Fires immediately when the `close` instance method is called.</td>
+    </tr>
+    <tr>
+      <th scope="row">`closed.bs.alert`</th>
+      <td>Fired when the alert has been closed and CSS transitions have completed.</td>
+    </tr>
+  </tbody>
+</HbTable>
+
+<Example lang='js' showPreview={false}
+  code={`const myAlert = document.getElementById('myAlert')
+  myAlert.addEventListener('closed.bs.alert', event => {
+    // do something, for instance, explicitly move focus to the most appropriate element,
+    // so it doesn’t get lost/reset to the start of the page
+    // document.getElementById('...').focus()
+  })
+`}
+/>

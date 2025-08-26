@@ -34,7 +34,7 @@
     }
 
     &.active {
-      @apply text-[var(--breadcrumb-item-active-color)];
+      @apply text-[var(--breadcrumb-item-active-color)] gap-0.5;
     }
   }
 }
