@@ -1,10 +1,10 @@
 ---
-import Image from 'astro/components/Image.astro';
 import StarIcon from '@components/icons/StarIcon.astro';
 import CheckIcon from '@components/icons/CheckIcon.astro';
 import CloseIcon from '@components/icons/CloseIcon.astro';
 import ErrorIcon from '@components/icons/ErrorIcon.astro';
 import { featureComparisons, frameworks } from 'apps/data/landing/featureComparisons';
+import { Image } from 'astro:assets';
 
 const getIcon = (featureState: string) => {
   switch (featureState) {

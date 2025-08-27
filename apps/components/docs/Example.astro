@@ -12,7 +12,13 @@ interface Props {
 
 const { code: rawCode, class: className, id, lang = 'html', showMarkup = true, showPreview = true } = Astro.props;
 
-const original: string = Array.isArray(rawCode) ? rawCode.join('\n') : (rawCode ?? '');
+function normalizeCode(input: unknown): string {
+  if (typeof input === 'string') return input;
+  if (Array.isArray(input)) return input.join('\n');
+  return String((input as any)?.value ?? input ?? '');
+}
+
+const original: string = normalizeCode(rawCode);
 ---
 
 <div class={`mb-6 ${showPreview ? 'border border-light rounded-2xl' : ''}`} id={id}>
