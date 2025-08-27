@@ -6,7 +6,8 @@ import cardImage from '@assets/images/hamster.webp';
 import CopyIcon from '@components/icons/CopyIcon.astro';
 import CheckIcon from '@components/icons/CheckIcon.astro';
 import RefreshIcon from '@components/icons/RefreshIcon.astro';
-import bgImage from '@assets/images/landing/editor-preview-light.png';
+// import bgImageDark from '/images/editor-preview-dark.png';
+// import bgImageLight from '/images/editor-preview-light.png';
 ---
 
 <SectionWrapper id="editor-preview" class="max-w-340">
@@ -35,8 +36,8 @@ import bgImage from '@assets/images/landing/editor-preview-light.png';
     <GradientBorderBox color="warning" class="h-100 md:h-138 w-full rounded-2xl">
       <div
         id="preview"
-        class="flex items-center h-full w-full justify-center bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${bgImage.src})` }}
+        class="flex items-center h-full w-full justify-center bg-cover bg-center bg-no-repeat
+         bg-[url('/images/editor-preview-light.png')] dark:bg-[url('/images/editor-preview-dark.png')]"
         data-preview-img={cardImage.src}
       >
       </div>

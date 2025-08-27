@@ -16,8 +16,8 @@ import CSSVariables from './cards/CSSVariables.astro';
 import ActivityChart from './cards/ActivityChart.astro';
 ---
 
-<div class="overflow-hidden w-[678px] h-full relative">
-  <div class="cols relative space-y-4 mb-4">
+<div class="overflow-hidden w-[678px] h-[600px] relative">
+  <div class="cols space-y-4">
     <div class="grid grid-cols-3 gap-4 col">
       <EventList class="col-span-1" />
       <Uploader class="col-span-2" />
@@ -53,20 +53,28 @@ import ActivityChart from './cards/ActivityChart.astro';
 <script>
   import gsap from 'gsap';
 
-  const wrapper = document.querySelector('.cols');
+  window.addEventListener('load', () => {
+    const wrapper = document.querySelector('.cols') as HTMLElement;
+    const rows = gsap.utils.toArray('.col');
 
-  const clone = wrapper.cloneNode(true);
-  wrapper.parentNode?.appendChild(clone);
+    rows.forEach((row: any) => {
+      wrapper.appendChild(row.cloneNode(true));
+    });
 
-  const totalHeight = wrapper.offsetHeight;
+    const totalHeight = wrapper.scrollHeight / 2;
 
-  gsap.to([wrapper, clone], {
-    y: `-=${totalHeight}`,
-    ease: 'linear',
-    duration: totalHeight / 50,
-    repeat: -1,
-    modifiers: {
-      y: gsap.utils.unitize((y) => parseFloat(y) % totalHeight),
-    },
+    const tween = gsap.fromTo(
+      wrapper,
+      { y: -totalHeight },
+      {
+        y: 0,
+        duration: 20,
+        ease: 'none',
+        repeat: -1,
+      },
+    );
+
+    wrapper.addEventListener('mouseenter', () => tween.pause());
+    wrapper.addEventListener('mouseleave', () => tween.resume());
   });
 </script>
