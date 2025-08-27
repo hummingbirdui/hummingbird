@@ -1,0 +1,88 @@
+---
+import { Image } from 'astro:assets';
+import SectionWrapper from '../common/SectionWrapper.astro';
+import django from '@assets/images/landing/logos/django.png';
+import vue from '@assets/images/landing/logos/vue.png';
+import angular from '@assets/images/landing/logos/Angular.png';
+import nuxt from '@assets/images/landing/logos/Nuxt.png';
+import astro from '@assets/images/landing/logos/astro.png';
+import laravel from '@assets/images/landing/logos/laravel.png';
+import react from '@assets/images/landing/logos/react.png';
+import remix from '@assets/images/landing/logos/remix.png';
+import nextjs from '@assets/images/landing/logos/nextjs.png';
+---
+
+<SectionWrapper id="frameworks" class='overflow-hidden h-138 bg-red-100'>
+  <div class="relative mx-auto max-w-5xl h-full flex items-center">
+    <div class="flex-1 flex flex-col max-w-145 lg:max-w-125 shrink-0">
+      <h1 class="mb-4 text-[28px] md:text-[32px] lg:text-[42px] text-center xl:text-left font-medium tracking-tighter">
+        Plug & play components,<br />for every modern framework
+      </h1>
+      <p class="mb-8 text-center xl:text-left text-highlight">
+        Hummingbird, the framework-agnostic tool provides typed wrappers for popular tools, ensuring smooth integration
+        & easy DIYs.
+      </p>
+      <a href="/docs/components/buttons" type="button" class="self-center xl:self-start btn btn-subtle-primary"
+        >View integration guides</a
+      >
+    </div>
+
+    <div class="absolute right-[-46%] w-247 h-176 grid grid-cols-7 gap-2">
+      <div class="h-[134px] aspect-square rounded-lg border border-base bg-default opacity-0"></div>
+      <div class="h-[134px] aspect-square rounded-lg border border-base bg-default opacity-0"></div>
+      <div class="h-[134px] aspect-square rounded-lg border border-base bg-default opacity-0"></div>
+      <div class="h-[134px] aspect-square rounded-lg border border-base bg-default opacity-0"></div>
+      <div class="h-[134px] aspect-square rounded-lg border border-base bg-default opacity-0"></div>
+      <div class="h-[134px] aspect-square rounded-lg border border-base bg-default opacity-0"></div>
+      <div class="h-[134px] aspect-square rounded-lg border border-base bg-default opacity-30"></div>
+      <div class="h-[134px] aspect-square rounded-lg border border-base bg-default opacity-0"></div>
+      <div class="h-[134px] aspect-square rounded-lg border border-base bg-default opacity-35"></div>
+      <div class="h-[134px] aspect-square rounded-lg border border-base bg-default opacity-0"></div>
+      <div class="h-[134px] aspect-square rounded-lg border border-light bg-default flex items-center justify-center">
+        <Image src={django} alt="django" class="w-16 object-contain" />
+      </div>
+      <div class="h-[134px] aspect-square rounded-lg border border-light bg-default flex items-center justify-center">
+        <Image src={vue} alt="django" class="w-16 object-contain" />
+      </div>
+      <div class="h-[134px] aspect-square rounded-lg border border-base bg-default opacity-40"></div>
+      <div class="h-[134px] aspect-square rounded-lg border border-base bg-default opacity-30"></div>
+      <div class="h-[134px] aspect-square rounded-lg border border-base bg-default opacity-0"></div>
+      <div class="h-[134px] aspect-square rounded-lg border border-base bg-default opacity-0"></div>
+      <div class="h-[134px] aspect-square rounded-lg border border-light bg-default flex items-center justify-center">
+        <Image src={nuxt} alt="django" class="w-16 object-contain" />
+      </div>
+      <div class="h-[134px] aspect-square rounded-lg border border-light bg-default flex items-center justify-center">
+        <Image src={laravel} alt="django" class="w-16 object-contain" />
+      </div>
+      <div class="h-[134px] aspect-square rounded-lg border border-light bg-default flex items-center justify-center">
+        <Image src={nextjs} alt="django" class="w-16 object-contain" />
+      </div>
+      <div class="h-[134px] aspect-square rounded-lg border border-base bg-default opacity-60"></div>
+      <div class="h-[134px] aspect-square rounded-lg border border-base bg-default opacity-0"></div>
+      <div class="h-[134px] aspect-square rounded-lg border border-base bg-default opacity-0"></div>
+
+      <div class="h-[134px] aspect-square rounded-lg border border-light bg-default flex items-center justify-center">
+        <Image src={react} alt="django" class="w-16 object-contain" />
+      </div>
+      <div class="h-[134px] aspect-square rounded-lg border border-light bg-default flex items-center justify-center">
+        <Image src={angular} alt="django" class="w-16 object-contain" />
+      </div>
+      <div class="h-[134px] aspect-square rounded-lg border border-light bg-default flex items-center justify-center">
+        <Image src={remix} alt="django" class="w-14 object-contain" />
+      </div>
+      <div class="h-[134px] aspect-square rounded-lg border border-light bg-default flex items-center justify-center">
+        <Image src={astro} alt="django" class="w-13 object-contain" />
+      </div>
+
+      <div class="h-[134px] aspect-square rounded-lg border border-base bg-default opacity-75"></div>
+      <div class="h-[134px] aspect-square rounded-lg border border-base bg-default opacity-60"></div>
+      <div class="h-[134px] aspect-square rounded-lg border border-base bg-default opacity-40"></div>
+      <div class="h-[134px] aspect-square rounded-lg border border-base bg-default opacity-0"></div>
+      <div class="h-[134px] aspect-square rounded-lg border border-base bg-default opacity-30"></div>
+      <div class="h-[134px] aspect-square rounded-lg border border-base bg-default opacity-55"></div>
+      <div class="h-[134px] aspect-square rounded-lg border border-base bg-default opacity-0"></div>
+      <div class="h-[134px] aspect-square rounded-lg border border-base bg-default opacity-35"></div>
+      <div class="h-[134px] aspect-square rounded-lg border border-base bg-default opacity-60"></div>
+    </div>
+  </div>
+</SectionWrapper>

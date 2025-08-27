@@ -12,20 +12,22 @@ import ModeComparison from '@components/sections/landing/ModeComparison.astro';
 import CleanMarkup from '@components/sections/landing/CleanMarkup.astro';
 import Comparison from '@components/sections/landing/comparison/Comparison.astro';
 import Hero from '@components/sections/landing/hero/Hero.astro';
+import Frameworks from '@components/sections/landing/frameworks/Frameworks.astro';
 ---
 
 <Layout>
-  <main class="bg-default" >
+  <div class="bg-default">
     <Hero />
     <Features />
     <Comparison />
     <EditorPreview />
     <CleanMarkup />
     <ModeComparison />
+    <Frameworks />
     <FeaturedComponents />
     <GlobalStyles />
     <InteractiveComponents />
     <CTA />
     <Footer />
-  </main>
+  </div>
 </Layout>
