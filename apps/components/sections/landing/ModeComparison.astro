@@ -104,8 +104,8 @@ import darkLgImage from '@assets/images/landing/light-dark/dark-lg.png';
       x = e.clientX - rect.left;
     }
 
-    if (x < 0) x = 0;
-    if (x > rect.width) x = rect.width - 7;
+    if (x < 18) x = 18;
+    if (x > rect.width - 25) x = rect.width - 25;
 
     darkImage.style.clipPath = `inset(0 0 0 ${x}px)`;
     slider.style.left = `${x}px`;
