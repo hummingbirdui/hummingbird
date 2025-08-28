@@ -25,7 +25,7 @@ const currentPath = Astro.url.pathname;
       <h5 class="mb-0 font-semibold hidden sm:flex">hummingbird</h5>
     </a>
     <span class="ml-1 sm:ml-4 badge badge-subtle shrink-0">v 1.0.0</span>
-    <div class="ml-8 relative xl:ms-15 hidden lg:flex items-center basis-70">
+    <div class="ml-8 2xl:ml-15 relative hidden lg:flex items-center basis-70">
       <SearchIcon class="absolute left-4" />
       <input class="form-control-fill w-full px-11" type="search" placeholder="Search" aria-label="Search" />
       <span class="absolute right-5 badge text-highlight font-normal border-0 bg-transparent pointer-events-none"
@@ -33,13 +33,13 @@ const currentPath = Astro.url.pathname;
       >
     </div>
 
-    <ul class="navbar-nav ms-auto flex-row items-center hidden 2xl:flex">
+    <ul class="navbar-nav ms-auto flex-row items-center hidden xl:flex">
       {
         menuItems.map((item) => (
           <li class="nav-item">
             <a
               href={item.path}
-              class={`nav-link px-4 py-2.5 rounded-lg hover:bg-hover ${
+              class={`nav-link px-4 py-2.5 text-sm rounded-lg hover:bg-hover ${
                 currentPath.startsWith(item.path) ? 'text-primary' : ''
               }`}
               aria-disabled="true"
@@ -55,16 +55,16 @@ const currentPath = Astro.url.pathname;
       <SearchIcon />
     </button>
 
-    <div class="mx-2 xl:mx-4 my-auto border-l h-8 xl:h-10 border-base flex lg:hidden 2xl:flex"></div>
+    <div class="mx-2 xl:mx-4 my-auto border-l h-8 xl:h-10 border-base flex lg:hidden xl:flex"></div>
 
-    <button class="lg:ml-auto 2xl:ml-0 btn btn-circle btn-subtle-neutral" data-theme-toggle-btn>
+    <button class="lg:ml-auto xl:ml-0 btn btn-circle btn-subtle-neutral" data-theme-toggle-btn>
       <BulbIcon />
     </button>
     <button class="ml-2 btn max-lg:btn-circle btn-subtle-neutral">
       <GitHubIcon />
       <span class="hidden lg:flex">20.5k</span>
     </button>
-    <button id="drawerToggle" class="ml-6 btn btn-circle btn-subtle-neutral flex 2xl:hidden">
+    <button id="drawerToggle" class="ml-6 btn btn-circle btn-subtle-neutral flex xl:hidden">
       <MenuIcon />
     </button>
   </div>

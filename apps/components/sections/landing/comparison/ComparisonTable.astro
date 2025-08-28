@@ -4,7 +4,7 @@ import StarIcon from '@components/icons/StarIcon.astro';
 import CheckIcon from '@components/icons/CheckIcon.astro';
 import CloseIcon from '@components/icons/CloseIcon.astro';
 import ErrorIcon from '@components/icons/ErrorIcon.astro';
-import { featureComparisons, frameworks } from 'apps/data/landing/featureComparisons';
+import { comparisons, frameworks } from 'apps/data/landing/comparisons';
 
 const getIcon = (featureState: string) => {
   switch (featureState) {
@@ -39,7 +39,7 @@ const getIcon = (featureState: string) => {
 
   <tbody>
     {
-      featureComparisons.map(({ feature, hummingbird, tailwindcss, bootstrap }, i, features) => {
+      comparisons.map(({ feature, hummingbird, tailwindcss, bootstrap }, i, features) => {
         const frameworkStates = [{ value: hummingbird }, { value: tailwindcss }, { value: bootstrap }];
 
         return (
