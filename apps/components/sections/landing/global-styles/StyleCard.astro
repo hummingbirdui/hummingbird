@@ -18,16 +18,16 @@ const { style, class: className = '' } = Astro.props;
     {style.description}
   </p>
   <div class="relative flex-1">
-    <button class="copy-btn p-0.5 absolute top-2 right-2 md:top-4 md:right-4" data-code={style.code}>
+    <button class="copy-btn p-0.5 absolute top-2 right-2 md:top-3 md:right-3" data-code={style.code}>
       <CopyIcon class="copy-icon" />
       <CheckIcon class="check-icon hidden text-success" />
     </button>
     <Code
-      class="!text-sm h-full !bg-muted !rounded-lg"
+      class="!text-sm h-full !bg-muted !rounded-lg scrollbar-hide !pt-6"
       data-astro-code
       code={style.code}
       themes={{ light: 'github-light', dark: 'github-dark' }}
-      lang="css"
+      lang="sass"
     />
   </div>
 </div>

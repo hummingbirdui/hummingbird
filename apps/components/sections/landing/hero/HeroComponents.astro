@@ -51,30 +51,30 @@ import ActivityChart from './cards/ActivityChart.astro';
 </div>
 
 <script>
-  import gsap from 'gsap';
+  // import gsap from 'gsap';
 
-  window.addEventListener('load', () => {
-    const wrapper = document.querySelector('.cols') as HTMLElement;
-    const rows = gsap.utils.toArray('.col');
+  // window.addEventListener('load', () => {
+  //   const wrapper = document.querySelector('.cols') as HTMLElement;
+  //   const rows = gsap.utils.toArray('.col');
 
-    rows.forEach((row: any) => {
-      wrapper.appendChild(row.cloneNode(true));
-    });
+  //   rows.forEach((row: any) => {
+  //     wrapper.appendChild(row.cloneNode(true));
+  //   });
 
-    const totalHeight = wrapper.scrollHeight / 2;
+  //   const totalHeight = wrapper.scrollHeight / 2;
 
-    const tween = gsap.fromTo(
-      wrapper,
-      { y: -totalHeight },
-      {
-        y: 0,
-        duration: 20,
-        ease: 'none',
-        repeat: -1,
-      },
-    );
+  //   const tween = gsap.fromTo(
+  //     wrapper,
+  //     { y: -totalHeight },
+  //     {
+  //       y: 0,
+  //       duration: 20,
+  //       ease: 'none',
+  //       repeat: -1,
+  //     },
+  //   );
 
-    wrapper.addEventListener('mouseenter', () => tween.pause());
-    wrapper.addEventListener('mouseleave', () => tween.resume());
-  });
+  //   wrapper.addEventListener('mouseenter', () => tween.pause());
+  //   wrapper.addEventListener('mouseleave', () => tween.resume());
+  // });
 </script>

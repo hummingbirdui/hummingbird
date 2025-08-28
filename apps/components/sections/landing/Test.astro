@@ -1,0 +1,38 @@
+<div class="mx-auto w-[677px] h-[720px] relative border-2 overflow-hidden">
+  <div class="w-full h-[324px] relative border-2 col1">
+    <div class="card1 w-54 h-54 bg-amber-300 absolute top-0 left-0"></div>
+    <div class="card2 w-112 h-54 bg-blue-300 absolute bottom-0 right-0"></div>
+  </div>
+</div>
+
+<style>
+  .col1 {
+    position: absolute;
+    top: -324px;
+    animation: col1 5s linear infinite;
+  }
+
+  .card1 {
+    animation: card1 1s linear forwards;
+    animation-delay: 3s;
+  }
+
+  .card1 {
+    animation: card1 5s linear alternate;
+  }
+
+  @keyframes col1 {
+    0% {
+      top: -324px;
+    }
+    60% {
+      top: 396px;
+    }
+    80% {
+      top: 396px;
+    }
+    100% {
+      top: 720px;
+    }
+  }
+</style>

@@ -13,12 +13,16 @@ import CleanMarkup from '@components/sections/landing/CleanMarkup.astro';
 import Comparison from '@components/sections/landing/comparison/Comparison.astro';
 import Hero from '@components/sections/landing/hero/Hero.astro';
 import Frameworks from '@components/sections/landing/frameworks/Frameworks.astro';
+import Test from '@components/sections/landing/Test.astro';
 ---
 
 <Layout>
-  <div class="bg-default !transition-none">
+  <div class="bg-default">
+    <EditorPreview />
+     <GlobalStyles />
     <!-- <Hero /> -->
-    <Features />
+    <!-- <Test /> -->
+    <!-- <Features />
     <Comparison />
     <EditorPreview />
     <CleanMarkup />
@@ -28,6 +32,6 @@ import Frameworks from '@components/sections/landing/frameworks/Frameworks.astro
     <GlobalStyles />
     <InteractiveComponents />
     <CTA />
-    <Footer />
+    <Footer /> -->
   </div>
 </Layout>
