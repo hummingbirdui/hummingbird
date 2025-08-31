@@ -16,25 +16,31 @@ import TimePicker from './cards/TimePicker.astro';
 import Uploader from './cards/Uploader.astro';
 ---
 
-<div id="animContainer" class="w-[677px] h-180 relative shrink-0">
+<div id="animContainer" class="relative mx-auto 2xl:mx-0 w-112 2xl:w-170 h-180 hidden xl:flex shrink-0">
   <div id="col9" class="w-full h-81 absolute -top-[342px]">
-    <div class="w-112 h-54 absolute top-0 right-0">
+    <div class="w-112 h-54 absolute top-0 right-0 hidden 2xl:block">
       <ModeToggleCard />
+    </div>
+    <div class="w-54 h-54 absolute top-0 right-0 2xl:hidden">
+      <Preferences />
     </div>
     <div class="w-54 h-54 absolute bottom-0 left-0">
       <Members />
     </div>
   </div>
   <div id="col8" class="w-full h-81 absolute -top-[342px]">
-    <div class="w-112 h-54 absolute top-0 left-0">
+    <div class="w-112 h-54 absolute top-0 left-0 hidden 2xl:block">
       <CSSVariables />
+    </div>
+    <div class="w-54 h-54 absolute top-0 left-0 2xl:hidden">
+      <ActivityChart />
     </div>
     <div class="w-54 h-54 absolute bottom-0 right-0">
       <AddressInfields />
     </div>
   </div>
   <div id="col7" class="w-full h-81 absolute -top-[342px]">
-    <div class="w-54 h-54 absolute top-0 left-0">
+    <div class="w-54 h-54 absolute top-0 left-0 hidden 2xl:block">
       <EventList />
     </div>
     <div class="w-112 h-54 absolute bottom-0 right-0">
@@ -42,7 +48,7 @@ import Uploader from './cards/Uploader.astro';
     </div>
   </div>
   <div id="col6" class="w-full h-81 absolute -top-[342px]">
-    <div class="w-54 h-54 absolute top-0 right-0">
+    <div class="w-54 h-54 absolute top-0 right-0 hidden 2xl:block">
       <HoursChart />
     </div>
     <div class="w-112 h-54 absolute bottom-0 left-0">
@@ -53,34 +59,37 @@ import Uploader from './cards/Uploader.astro';
     <div class="w-54 h-54 absolute top-0 left-0">
       <TimePicker />
     </div>
-    <div class="w-112 h-54 absolute bottom-0 right-0">
+    <div class="w-112 h-54 absolute bottom-0 right-0 hidden 2xl:block">
       <JSCode />
     </div>
-  </div>
-  <div id="col4" class="w-full h-108 absolute -top-[432px]">
-    <div class="w-54 h-54 absolute top-0 left-0">
-      <ProfileCard />
-    </div>
-    <div class="w-54 h-54 absolute top-27 left-1/2 transform -translate-x-1/2">
-      <MonthlyProfitChart />
-    </div>
-    <div class="w-54 h-54 absolute bottom-0 right-0">
-      <Members />
+    <div class="w-54 h-54 absolute bottom-0 right-0 2xl:hidden">
+      <ActivityChart />
     </div>
   </div>
-  <div id="col3" class="w-full h-81 absolute -top-[342px]">
+  <div id="col4" class="w-full h-81 absolute -top-[342px]">
     <div class="w-112 h-54 absolute top-0 left-0">
       <BluePalette />
     </div>
-    <div class="w-54 h-54 absolute bottom-0 right-0">
+    <div class="w-54 h-54 absolute bottom-0 right-0 hidden 2xl:block">
       <Preferences />
+    </div>
+  </div>
+  <div id="col3" class="w-full h-81 2xl:h-108 absolute -top-[342px] 2xl:-top-[432px]">
+    <div class="w-54 h-54 absolute top-0 left-0">
+      <ProfileCard />
+    </div>
+    <div class="w-54 h-54 absolute bottom-0 right-0 2xl:top-27 2xl:left-1/2 2xl:transform 2xl:-translate-x-1/2">
+      <MonthlyProfitChart />
+    </div>
+    <div class="w-54 h-54 absolute bottom-0 right-0 hidden 2xl:block">
+      <Members />
     </div>
   </div>
   <div id="col2" class="w-full h-81 absolute -top-[342px]">
     <div class="w-112 h-54 absolute top-0 right-0">
       <ModeToggleCard />
     </div>
-    <div class="w-54 h-54 absolute bottom-0 left-0">
+    <div class="w-54 h-54 absolute bottom-0 left-0 xl:hidden 2xl:block">
       <Members />
     </div>
   </div>
@@ -88,7 +97,7 @@ import Uploader from './cards/Uploader.astro';
     <div class="w-112 h-54 absolute top-0 left-0">
       <CSSVariables />
     </div>
-    <div class="w-54 h-54 absolute bottom-0 right-0">
+    <div class="w-54 h-54 absolute bottom-0 right-0 xl:hidden 2xl:block">
       <ActivityChart />
     </div>
   </div>
@@ -106,7 +115,7 @@ import Uploader from './cards/Uploader.astro';
   const STAGGER = 3.5;
   const CYCLE = columns.length * STAGGER;
   const REPEAT_DELAY = CYCLE - DURATION;
-  const EXIT_DURATION = DURATION * 0.25;
+  const EXIT_DURATION = DURATION * 0.275;
 
   columns.forEach((id, i) => {
     const el = document.getElementById(id) as HTMLElement;
@@ -138,7 +147,7 @@ import Uploader from './cards/Uploader.astro';
       defaults: { ease: 'none' },
     });
 
-    tl.fromTo(el, { top: START_TOP }, { top: CONTAINER_H - colH - 20, duration: moveDuration })
+    tl.fromTo(el, { top: START_TOP - 15 }, { top: CONTAINER_H - colH - 20, duration: moveDuration })
 
       .add(() => {
         boxTweens.forEach((tw) => tw.kill());
@@ -156,7 +165,7 @@ import Uploader from './cards/Uploader.astro';
           const tween = gsap.to(box, {
             top: colH - boxH,
             duration,
-            ease: 'linear',
+            ease: 'none',
           });
           boxTweens.push(tween);
         });
