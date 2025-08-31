@@ -50,14 +50,14 @@ const original: string = normalizeCode(rawCode);
           </div>
         )}
         <Code
-          class={`${!showPreview ? 'py-6 px-4 max-h-full' : 'p-4 max-h-70'}`}
+          class={`${!showPreview ? 'py-7 px-4 max-h-full' : 'p-4 max-h-70'}`}
           data-astro-code
           code={original}
           themes={{ light: 'github-light', dark: 'github-dark' }}
           lang={lang}
         />
         {!showPreview && (
-          <button class="btn btn-icon p-0 absolute top-0 right-0 mt-2 mr-2" data-btn-copy-secondary>
+          <button class="btn btn-icon p-0 absolute top-3 right-3" data-btn-copy-secondary>
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
               <path
                 fill="currentColor"
