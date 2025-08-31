@@ -1,24 +1,18 @@
 ---
-import CardWrapper from './CardWrapper.astro';
-
-interface Props {
-  class?: string;
-}
-
-const { class: className = '' } = Astro.props;
+import CardWrapper from '../CardWrapper.astro';
 ---
 
-<CardWrapper color="success" class={className}>
-  <div class="mb-6 flex items-center gap-2">
+<CardWrapper color="success" class="shadow-success/5 dark:shadow-success-darker/5">
+  <div class="mb-4 flex items-center gap-2">
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path
         d="M12 19.85C14.0333 17.9833 15.5417 16.2875 16.525 14.7625C17.5083 13.2375 18 11.8833 18 10.7C18 8.88333 17.4208 7.39583 16.2625 6.2375C15.1042 5.07917 13.6833 4.5 12 4.5C10.3167 4.5 8.89583 5.07917 7.7375 6.2375C6.57917 7.39583 6 8.88333 6 10.7C6 11.8833 6.49167 13.2375 7.475 14.7625C8.45833 16.2875 9.96667 17.9833 12 19.85ZM12 21.825C11.7667 21.825 11.5333 21.7833 11.3 21.7C11.0667 21.6167 10.8583 21.4917 10.675 21.325C9.59167 20.325 8.63333 19.35 7.8 18.4C6.96667 17.45 6.27083 16.5292 5.7125 15.6375C5.15417 14.7458 4.72917 13.8875 4.4375 13.0625C4.14583 12.2375 4 11.45 4 10.7C4 8.2 4.80417 6.20833 6.4125 4.725C8.02083 3.24167 9.88333 2.5 12 2.5C14.1167 2.5 15.9792 3.24167 17.5875 4.725C19.1958 6.20833 20 8.2 20 10.7C20 11.45 19.8542 12.2375 19.5625 13.0625C19.2708 13.8875 18.8458 14.7458 18.2875 15.6375C17.7292 16.5292 17.0333 17.45 16.2 18.4C15.3667 19.35 14.4083 20.325 13.325 21.325C13.1417 21.4917 12.9333 21.6167 12.7 21.7C12.4667 21.7833 12.2333 21.825 12 21.825ZM12 12.5C12.55 12.5 13.0208 12.3042 13.4125 11.9125C13.8042 11.5208 14 11.05 14 10.5C14 9.95 13.8042 9.47917 13.4125 9.0875C13.0208 8.69583 12.55 8.5 12 8.5C11.45 8.5 10.9792 8.69583 10.5875 9.0875C10.1958 9.47917 10 9.95 10 10.5C10 11.05 10.1958 11.5208 10.5875 11.9125C10.9792 12.3042 11.45 12.5 12 12.5Z"
-        fill="#1D2025"></path>
+        fill="currentColor"></path>
     </svg>
-    <h3 class="mb-0 font-bold">Address Infields</h3>
+    <h3 class="mb-0 text-base font-bold">Address Infields</h3>
   </div>
 
-  <div class="space-y-3">
+  <div class="grow flex flex-col justify-between">
     <div class="form-field">
       <label class="form-label pl-4 font-medium">City</label>
       <input type="text" class="form-control-fill" />

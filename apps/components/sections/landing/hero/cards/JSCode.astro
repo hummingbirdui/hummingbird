@@ -1,19 +1,13 @@
 ---
 import Code from 'astro/components/Code.astro';
-import CardWrapper from './CardWrapper.astro';
-
-interface Props {
-  class?: string;
-}
-
-const { class: className = '' } = Astro.props;
+import CardWrapper from '../CardWrapper.astro';
 ---
 
-<CardWrapper color="secondary" class={className}>
-  <h3 class="mb-4 font-bold">JavaScript</h3>
+<CardWrapper color="secondary" class="shadow-secondary/5 dark:shadow-secondary-darker/5">
+  <h3 class="mb-4 text-base font-bold">JavaScript</h3>
 
   <Code
-    class="!text-sm h-full !bg-muted !rounded-lg"
+    class="!text-sm h-full !bg-muted !rounded-lg !overflow-auto scrollbar-hide"
     data-astro-code
     code={`btn.addEventListener('click', async () => {
       const code = btn.dataset.code;

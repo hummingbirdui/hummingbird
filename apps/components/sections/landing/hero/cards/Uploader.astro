@@ -1,19 +1,13 @@
 ---
 import 'dropzone/dist/dropzone.css';
-import CardWrapper from './CardWrapper.astro';
-
-interface Props {
-  class?: string;
-}
-
-const { class: className = '' } = Astro.props;
+import CardWrapper from '../CardWrapper.astro';
 ---
 
-<CardWrapper color="secondary" class={className}>
-  <h3 class="mb-4 font-bold">Uploader</h3>
+<CardWrapper color="secondary" class="shadow-secondary/5 dark:shadow-secondary-darker/5">
+  <h3 class="mb-4 text-base font-bold">Uploader</h3>
   <form
     id="my-dropzone"
-    class="dropzone h-15 flex items-center justify-center !min-h-0 !border-1 !border-dashed !border-base !rounded-lg bg-gray-50"
+    class="dropzone h-15 flex items-center justify-center !min-h-0 !border-1 !border-dashed !border-base !rounded-lg bg-default"
   >
   </form>
 

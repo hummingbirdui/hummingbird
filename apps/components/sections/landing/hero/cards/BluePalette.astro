@@ -1,9 +1,5 @@
 ---
-import CardWrapper from './CardWrapper.astro';
-
-interface Props {
-  class?: string;
-}
+import CardWrapper from '../CardWrapper.astro';
 
 const colors = [
   '--color-blue-50',
@@ -18,21 +14,19 @@ const colors = [
   '--color-blue-900',
   '--color-blue-950',
 ];
-
-const { class: className = '' } = Astro.props;
 ---
 
-<CardWrapper color="primary" class={className}>
-  <h3 class="mb-4 font-bold">Blue Palette</h3>
+<CardWrapper color="primary" class="shadow-primary/5 dark:shadow-primary-darker/5">
+  <h3 class="mb-4 text-base font-bold">Blue Palette</h3>
 
-  <div class="grid grid-cols-11 gap-1">
+  <div class="grid grid-cols-11 gap-1 grow">
     {
       colors.map((variable) => {
         const label = variable.split('-').pop();
         return (
-          <div>
+          <div class="flex flex-col h-full">
             <p class="mb-1 text-xs text-center text-emphasis">{label}</p>
-            <div class="h-[110px] rounded-sm" style={{ backgroundColor: `var(${variable})` }} />
+            <div class="rounded-sm grow" style={{ backgroundColor: `var(${variable})` }} />
           </div>
         );
       })

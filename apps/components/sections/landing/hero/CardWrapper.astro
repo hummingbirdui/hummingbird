@@ -1,5 +1,5 @@
 ---
-import GradientBorderBox from '../../common/GradientBorderBox.astro';
+import GradientBorderBox from '../common/GradientBorderBox.astro';
 
 interface Props extends astroHTML.JSX.HTMLAttributes {
   class?: string;
@@ -9,6 +9,6 @@ interface Props extends astroHTML.JSX.HTMLAttributes {
 const { class: className = '', color, ...rest } = Astro.props;
 ---
 
-<GradientBorderBox color={color} class={`p-6 h-54 rounded-2xl ${className}`} {...rest}>
+<GradientBorderBox color={color} class={`p-6 h-full w-full flex flex-col rounded-2xl shadow-sm ${className}`} {...rest}>
   <slot />
 </GradientBorderBox>

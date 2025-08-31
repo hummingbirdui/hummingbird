@@ -1,31 +1,38 @@
 ---
-import CardWrapper from './CardWrapper.astro';
-
-interface Props {
-  class?: string;
-}
-
-const { class: className = '' } = Astro.props;
+import CardWrapper from '../CardWrapper.astro';
 ---
 
-<CardWrapper color="success" class={className}>
-  <h3 class="mb-4 font-bold">Monthly Net Profit</h3>
+<CardWrapper color="success" class="shadow-success/5 dark:shadow-success-darker/5">
+  <h3 class="mb-4 text-base font-bold">Monthly Net Profit</h3>
   <h1 class="mb-1 text-highlight text-2xl font-semibold">$25,049</h1>
   <div class="flex items-center gap-1.5">
     <span class="badge badge-subtle-success text-success-dark">+4.00%</span>
     <p class="mb-0 text-highlight text-sm">vs last month</p>
   </div>
 
-  <div id="weekly-chart" class="w-full h-19"></div>
+  <div id="weekly-chart" class="w-full grow"></div>
 </CardWrapper>
 
 <script>
   import * as echarts from 'echarts';
 
-  const data = [65, 30, 95, 25, 65, 35, 55];
-  const weeks = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-
   if (typeof window !== 'undefined') {
+    function getPastDates(days: number) {
+      const dates = [];
+      const today = new Date();
+      for (let i = days - 1; i >= 0; i--) {
+        const d = new Date(today);
+        d.setDate(today.getDate() - i);
+        dates.push(d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }));
+      }
+      return dates;
+    }
+
+    const dummyData = {
+      currentYear: [0, 400, 250, 300, 80, 600],
+      lastYear: [100, 250, 150, 200, 400, 250],
+    };
+
     const chartDom = document.getElementById('weekly-chart');
     if (chartDom) {
       const myChart = echarts.init(chartDom);
@@ -33,77 +40,71 @@ const { class: className = '' } = Astro.props;
       const option = {
         tooltip: {
           trigger: 'axis',
-          formatter: 'Activity: {c}%',
           axisPointer: {
             type: 'none',
           },
-        },
-        grid: {
-          top: 0,
-          bottom: 0,
-          left: 0,
-          right: 0,
-          containerLabel: true,
+          backgroundColor: '#111',
+          borderColor: 'transparent',
+          textStyle: {
+            color: '#fff',
+            fontSize: 12,
+            fontWeight: 400,
+            fontFamily: 'Figtree, sans-serif',
+          },
+          padding: [3, 8],
+          extraCssText: 'border-radius: 4px;',
+          formatter: (params: any) => {
+            return params.map((p: any) => `${p.marker} ${p.seriesName}: ${p.value}`).join('<br/>');
+          },
         },
         xAxis: {
           type: 'category',
-          data: weeks,
-          axisTick: {
-            show: false,
-          },
-          axisLine: {
-            show: false,
-          },
-          axisLabel: {
-            show: false,
-          },
-          splitLine: {
-            show: false,
-          },
-          boundaryGap: 0,
+          data: getPastDates(6),
+          boundaryGap: false,
+          axisLine: { show: false },
+          axisTick: { show: false },
+          axisLabel: { show: false },
         },
         yAxis: {
+          show: false,
           type: 'value',
-          min: 0,
-          max: 100,
-          minInterval: 10,
-          axisLabel: {
-            show: false,
-          },
-          splitLine: {
-            show: false,
-          },
+          boundaryGap: false,
         },
         series: [
           {
-            data,
+            name: 'Current year',
             type: 'line',
-            smooth: true,
+            data: dummyData.currentYear,
             showSymbol: false,
-            symbol: 'none',
             lineStyle: {
-              width: 2,
-              type: 'solid',
-              cap: 'round',
-              color: '#1E90FF',
+              width: 3,
+              color: '#25D092',
             },
-            areaStyle: {
-              color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-                {
-                  offset: 0,
-                  color: 'rgba(30, 144, 255, 0.5)',
-                },
-                {
-                  offset: 1,
-                  color: 'rgba(30, 144, 255, 0.1)',
-                },
-              ]),
+            itemStyle: {
+              color: '#25D092',
+            },
+            emphasis: {
+              disabled: true,
+            },
+          },
+          {
+            name: 'Last year',
+            type: 'line',
+            data: dummyData.lastYear,
+            showSymbol: false,
+            lineStyle: {
+              width: 1,
+              color: '#DFE4ED',
+            },
+            itemStyle: {
+              color: '#DFE4ED',
             },
             emphasis: {
               disabled: true,
             },
           },
         ],
+        grid: { left: 5, right: 5, top: 10, bottom: 5 },
       };
 
       myChart.setOption(option);
