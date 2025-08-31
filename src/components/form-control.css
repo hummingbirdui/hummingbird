@@ -42,6 +42,9 @@
     &.is-invalid {
       @apply bg-[var(--color-danger-lighter)] border-[var(--color-danger)];
     }
+    &.is-valid {
+      @apply bg-[var(--color-success-lighter)] border-[var(--color-success)];
+    }
     &[type='file'] {
       overflow: hidden;
 
@@ -67,6 +70,11 @@
       --file-selector-btn-bg: var(--color-danger);
       --file-selector-btn-color: var(--color-contrast);
       --file-selector-btn-hover-bg: var(--color-danger-dark);
+    }
+    &.is-valid::file-selector-button {
+      --file-selector-btn-bg: var(--color-success);
+      --file-selector-btn-color: var(--color-contrast);
+      --file-selector-btn-hover-bg: var(--color-success-dark);
     }
     &:is(:disabled, [disabled])::file-selector-button {
       --file-selector-btn-bg: var(--background-color-muted);
@@ -116,6 +124,10 @@
     &.is-invalid {
       @apply border-[var(--color-danger)];
     }
+    &.is-valid {
+      @apply border-[var(--color-success)];
+    }
+
     &[type='file'] {
       overflow: hidden;
 
@@ -252,6 +264,10 @@
 
 @utility form-label {
   @layer base {
+    --input-label-color: var(--text-color-highlight);
+    --input-label-font-size: var(--text-xs);
+    --input-label-font-weight: 600;
+    --input-label-bg: transparent;
     @apply font-[var(--input-label-font-weight)]
     text-[var(--input-label-color)]
     text-[length:var(--input-label-font-size)]
@@ -261,11 +277,6 @@
 
 @utility form-field {
   @layer base {
-    --input-label-color: var(--text-color-highlight);
-    --input-label-font-size: var(--text-xs);
-    --input-label-font-weight: 600;
-    --input-label-bg: transparent;
-
     @apply flex flex-col gap-1;
     &:where(:has(.form-control-fill, .form-control, .form-select-fill, .form-select)):focus-within {
       .form-label {
@@ -296,6 +307,12 @@
     &:where(:has(.is-invalid)):focus-within {
       .form-label {
         --input-label-color: var(--color-danger);
+      }
+    }
+    &:where(:has(.is-valid)),
+    &:where(:has(.is-valid)):focus-within {
+      .form-label {
+        --input-label-color: var(--color-success);
       }
     }
     &:has(input[disabled]) {
