@@ -179,10 +179,12 @@ Avatars can include status indicators, such as online, offline, away, or busy, t
 The avatar component is built using a set of CSS variables. These variables provide flexibility for customizing styles.
 
 <Example lang='sass' showPreview={false}
-  code={`--avatar-width: --spacing(10);
-  --avatar-height: --spacing(10);
-  --avatar-bg: var(--color-main);
-  --avatar-color: var(--color-contrast);
-  --avatar-font-weight: var(--font-weight-medium);
-  --avatar-font-size: var(--text-lg);`}
+  code={`.avatar {
+    --avatar-width: --spacing(10);
+    --avatar-height: --spacing(10);
+    --avatar-bg: var(--color-main);
+    --avatar-color: var(--color-contrast);
+    --avatar-font-weight: var(--font-weight-medium);
+    --avatar-font-size: var(--text-lg);
+  }`}
 />

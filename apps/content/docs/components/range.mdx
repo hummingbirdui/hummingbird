@@ -1,122 +1,46 @@
 ---
 title: Range
 description: Range allow users to make selections from a range of values.
+toc: true
 ---
 
 ##### Default
 
-<Example>
-  <div slot="preview" class='space-y-3'>
-    <input type="range" class="form-range" />
-    <input type="range" class="form-range" disabled />
-  </div>
-
-  <div slot="code">
-  ```html
-  <input type="range" class="form-range" />
-  <input type="range" class="form-range" disabled />
-  ```
-  </div>
-</Example>
+<Example code={`<input type="range" class="form-range" />
+  <input type="range" class="form-range" disabled />`} />
 
 ##### Min and max
 
-<Example>
-  <div slot="preview">
-    <input type="range" class="form-range" min="0" max="10" />
-  </div>
-
-  <div slot="code">
-  ```html
-  <input type="range" class="form-range" min="0" max="10" />
-  ```
-  </div>
-</Example>
+<Example code={`<input type="range" class="form-range" min="0" max="10" />`} />
 
 ##### Steps
 
-<Example>
-  <div slot="preview">
-    <input type="range" class="form-range" min="0" max="10" step="0.5" />
-  </div>
-
-  <div slot="code">
-  ```html
-  <input type="range" class="form-range" min="0" max="10" step="0.5" />
-  ```
-  </div>
-</Example>
+<Example code={`<input type="range" class="form-range" min="0" max="10" step="0.5" />`} />
 
 ##### Range with Label
 
-<Example>
-  <div slot="preview">
-    <label class="form-label"id="rangeWithLabel">Temperature</label>
-    <input type="range" class="form-range" min="0" max="100"id="rangeWithLabel" />
-    <div class='flex items-center justify-between'>
-      <span>0ºC</span>
-      <span>25ºC</span>
-      <span>50ºC</span>
-      <span>75ºC</span>
-      <span>100ºC</span>
-    </div>
-  </div>
-
-  <div slot="code">
-  ```html
-    <label class="form-label" id="rangeWithLabel">Temperature</label>
-    <input type="range" class="form-range" min="0" max="100" id="rangeWithLabel" />
-    <div class='flex items-center justify-between'>
-      <span>0ºC</span>
-      <span>25ºC</span>
-      <span>50ºC</span>
-      <span>75ºC</span>
-      <span>100ºC</span>
-    </div>
-  ```
-  </div>
-</Example>
+<Example code={`<label class="form-label"id="rangeWithLabel">Temperature</label>
+  <input type="range" class="form-range" min="0" max="100"id="rangeWithLabel" />
+  <div class='flex items-center justify-between'>
+    <span>0ºC</span>
+    <span>25ºC</span>
+    <span>50ºC</span>
+    <span>75ºC</span>
+    <span>100ºC</span>
+  </div>`} />
 
 ##### Sizes
 
-<Example>
-  <div slot="preview" class='space-y-3'>
-    <input type="range" class="form-range form-range-sm" min="0" max="100" />
-    <input type="range" class="form-range" min="0" max="100" />
-    <input type="range" class="form-range form-range-lg" min="0" max="100" />
-  </div>
-
-  <div slot="code">
-  ```html
-  <input type="range" class="form-range form-range-sm" min="0" max="100" />
+<Example class='flex flex-col gap-4' code={`<input type="range" class="form-range form-range-sm" min="0" max="100" />
   <input type="range" class="form-range" min="0" max="100" />
-  <input type="range" class="form-range form-range-lg" min="0" max="100" />
-  ```
-  </div>
-</Example>
+  <input type="range" class="form-range form-range-lg" min="0" max="100" />`} />
 
 ##### Colors
 
-<Example>
-  <div slot="preview" class='space-y-3'>
-    <input type="range" class="form-range" min="0" max="100" />
-    <input type="range" class="form-range form-range-secondary" min="0" max="100" />
-    <input type="range" class="form-range form-range-info" min="0" max="100" />
-    <input type="range" class="form-range form-range-success" min="0" max="100" />
-    <input type="range" class="form-range form-range-warning" min="0" max="100" />
-    <input type="range" class="form-range form-range-danger" min="0" max="100" />
-    <input type="range" class="form-range form-range-neutral" min="0" max="100" />
-  </div>
-
-  <div slot="code">
-  ```html
-  <input type="range" class="form-range" min="0" max="100" />
+<Example class='flex flex-col gap-3' code={`<input type="range" class="form-range" min="0" max="100" />
   <input type="range" class="form-range form-range-secondary" min="0" max="100" />
   <input type="range" class="form-range form-range-info" min="0" max="100" />
   <input type="range" class="form-range form-range-success" min="0" max="100" />
   <input type="range" class="form-range form-range-warning" min="0" max="100" />
   <input type="range" class="form-range form-range-danger" min="0" max="100" />
-  <input type="range" class="form-range form-range-neutral" min="0" max="100" />
-  ```
-  </div>
-</Example>
+  <input type="range" class="form-range form-range-neutral" min="0" max="100" />`} />

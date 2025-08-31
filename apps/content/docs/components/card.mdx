@@ -164,17 +164,19 @@ Use the `.card-aside` layout to place images or media alongside card content, ei
 The card component is built using a set of CSS variables. These variables provide flexibility for customizing styles.
 
 <Example lang='sass' showPreview={false}
-  code={`--card-bg: var(--background-color-subtle);
-  --card-color: var(--text-color-highlight);
-  --card-border-width: 1px;
-  --card-border-color: var(--border-color-base);
-  --card-border-radius: var(--radius-lg);
-  --card-padding-x: --spacing(4);
-  --card-padding-y: --spacing(4);
-  --card-cap-padding-x: --spacing(2);
-  --card-cap-padding-y: --spacing(2);
-  --card-cap-bg: transparent;
-  --card-cap-color: null;
-  --card-title-color: var(--text-color-default);
-  --card-title-space-y: --spacing(2);`}
+  code={`.card {
+    --card-bg: var(--background-color-subtle);
+    --card-color: var(--text-color-highlight);
+    --card-border-width: 1px;
+    --card-border-color: var(--border-color-base);
+    --card-border-radius: var(--radius-lg);
+    --card-padding-x: --spacing(4);
+    --card-padding-y: --spacing(4);
+    --card-cap-padding-x: --spacing(2);
+    --card-cap-padding-y: --spacing(2);
+    --card-cap-bg: transparent;
+    --card-cap-color: null;
+    --card-title-color: var(--text-color-default);
+    --card-title-space-y: --spacing(2);
+  }`}
 />

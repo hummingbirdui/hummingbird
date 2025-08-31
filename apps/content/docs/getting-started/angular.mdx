@@ -1,160 +1,125 @@
 ---
 title: Angular
+toc: true
 ---
 
 ##### Initialization
 
 This example demonstrates a basic setup for initializing the **Hummingbird UI** library in an Angular app. The `import()` statement inside `ngOnInit` ensures that the library is loaded once the root component is initialized. This works in client-only environments.
 
-<Example>
-  <div slot="code">
-    ```js
-    import { Component, OnInit } from '@angular/core';
-    import { RouterOutlet } from '@angular/router';
+<Example lang='js' showPreview={false}
+  code={`import { Component, OnInit } from '@angular/core';
+  import { RouterOutlet } from '@angular/router';
 
-    @Component({
-      selector: 'app-root',
-      imports: [RouterOutlet],
-      templateUrl: './app.html',
-      styleUrl: './app.css',
-    })
-    export class App implements OnInit {
-      ngOnInit(): void {
-        import('@hummingbirdui/hummingbird');
-      }
+  @Component({
+    selector: 'app-root',
+    imports: [RouterOutlet],
+    templateUrl: './app.html',
+    styleUrl: './app.css',
+  })
+  export class App implements OnInit {
+    ngOnInit(): void {
+      import('@hummingbirdui/hummingbird');
     }
-    ```
-
-  </div>
-</Example>
-
----
+  }`} />
 
 ##### Optimize
 
 To improve performance and reduce bundle size, import only the required component scripts from the Hummingbird library. This helps avoid loading unnecessary code. Simply uncomment the components you need in your app.
 
-<Example>
-  <div slot="code">
-    ```js
-    import { Component, OnInit } from '@angular/core';
-    import { RouterOutlet } from '@angular/router';
+<Example lang='js' showPreview={false}
+  code={`import { Component, OnInit } from '@angular/core';
+  import { RouterOutlet } from '@angular/router';
 
-    @Component({
-      selector: 'app-root',
-      imports: [RouterOutlet],
-      templateUrl: './app.html',
-      styleUrl: './app.css',
-    })
-    export class App implements OnInit {
-      ngOnInit(): void {
-        // import('@hummingbirdui/hummingbird/lib/esm/scripts/alert');
-        // import('@hummingbirdui/hummingbird/lib/esm/scripts/button');
-        // import('@hummingbirdui/hummingbird/lib/esm/scripts/carousel');
-        // import('@hummingbirdui/hummingbird/lib/esm/scripts/collapse');
-        // import('@hummingbirdui/hummingbird/lib/esm/scripts/dropdown');
-        import('@hummingbirdui/hummingbird/lib/esm/scripts/modal');
-        // import('@hummingbirdui/hummingbird/lib/esm/scripts/offcanvas');
-        // import('@hummingbirdui/hummingbird/lib/esm/scripts/popover');
-        // import('@hummingbirdui/hummingbird/lib/esm/scripts/scrollspy');
-        // import('@hummingbirdui/hummingbird/lib/esm/scripts/tab');
-        // import('@hummingbirdui/hummingbird/lib/esm/scripts/toast');
-        // import('@hummingbirdui/hummingbird/lib/esm/scripts/tooltip');
-      }
+  @Component({
+    selector: 'app-root',
+    imports: [RouterOutlet],
+    templateUrl: './app.html',
+    styleUrl: './app.css',
+  })
+  export class App implements OnInit {
+    ngOnInit(): void {
+      // import('@hummingbirdui/hummingbird/lib/esm/scripts/alert');
+      // import('@hummingbirdui/hummingbird/lib/esm/scripts/button');
+      // import('@hummingbirdui/hummingbird/lib/esm/scripts/carousel');
+      // import('@hummingbirdui/hummingbird/lib/esm/scripts/collapse');
+      // import('@hummingbirdui/hummingbird/lib/esm/scripts/dropdown');
+      import('@hummingbirdui/hummingbird/lib/esm/scripts/modal');
+      // import('@hummingbirdui/hummingbird/lib/esm/scripts/offcanvas');
+      // import('@hummingbirdui/hummingbird/lib/esm/scripts/popover');
+      // import('@hummingbirdui/hummingbird/lib/esm/scripts/scrollspy');
+      // import('@hummingbirdui/hummingbird/lib/esm/scripts/tab');
+      // import('@hummingbirdui/hummingbird/lib/esm/scripts/toast');
+      // import('@hummingbirdui/hummingbird/lib/esm/scripts/tooltip');
     }
-    ```
-
-  </div>
-</Example>
-
----
+  }`} />
 
 ##### JavaScript API
 
 This section shows how to manually interact with Hummingbird UI components using the JavaScript API in Angular. You can directly create instances like `Modal` and use methods such as `toggle()` for programmatic control. Event listeners are added via `querySelector` just like in vanilla JavaScript.
 
-<Example>
-  <div slot="code">
-    ```js
-    import { Component, OnInit } from '@angular/core';
-    import { Modal } from '@hummingbirdui/hummingbird';
+<Example lang='js' showPreview={false}
+  code={`import { Component, OnInit } from '@angular/core';
+  import { Modal } from '@hummingbirdui/hummingbird';
 
-    @Component({
-      selector: 'modal-component',
-      templateUrl: './modal-component.html',
-      styleUrl: './modal-component.css',
-    })
-    export class ModalComponent implements OnInit {
-      ngOnInit(): void {
-        const openBtn = document.querySelector('[data-open-demo-modal]');
+  @Component({
+    selector: 'modal-component',
+    templateUrl: './modal-component.html',
+    styleUrl: './modal-component.css',
+  })
+  export class ModalComponent implements OnInit {
+    ngOnInit(): void {
+      const openBtn = document.querySelector('[data-open-demo-modal]');
 
-        const myModal = new Modal('.modal');
+      const myModal = new Modal('.modal');
 
-        openBtn?.addEventListener('click', () => {
-          myModal.toggle();
-        });
-      }
+      openBtn?.addEventListener('click', () => {
+        myModal.toggle();
+      });
     }
-    ```
-
-  </div>
-</Example>
-
----
+  }`} />
 
 ##### Angular SSR
 
 If your app uses **Angular Universal** for **Server-Side Rendering**, it’s important to only load Hummingbird on the client side. This example provides a service that checks if the current platform is the browser, using Angular's `PLATFORM_ID` and `isPlatformBrowser()` utility.
 
-<Example>
-  <div slot="code">
-    ```js
-    // src/app/services/hummingbird.service.ts
-    import { Injectable, Inject, PLATFORM_ID } from '@angular/core';
-    import { isPlatformBrowser } from '@angular/common';
+<Example lang='js' showPreview={false}
+  code={`// src/app/services/hummingbird.service.ts
+  import { Injectable, Inject, PLATFORM_ID } from '@angular/core';
+  import { isPlatformBrowser } from '@angular/common';
 
-    @Injectable({
-      providedIn: 'root',
-    })
-    export class HummingbirdService {
-      constructor(@Inject(PLATFORM_ID) private platformId: any) {}
+  @Injectable({
+    providedIn: 'root',
+  })
+  export class HummingbirdService {
+    constructor(@Inject(PLATFORM_ID) private platformId: any) {}
 
-      loadHummingbird(callback: () => void) {
-        if (isPlatformBrowser(this.platformId)) {
-          callback();
-        }
+    loadHummingbird(callback: () => void) {
+      if (isPlatformBrowser(this.platformId)) {
+        callback();
       }
     }
-    ```
-
-  </div>
-</Example>
+  }`} />
 
 You can now inject this service into your root or feature components and safely load Hummingbird components only in the browser.
 
-<Example>
-  <div slot="code">
-    ```js
-    import { Component, OnInit, signal } from '@angular/core';
-    import { RouterOutlet } from '@angular/router';
-    import { HummingbirdService } from './services/hummingbird.service';
+<Example lang='js' showPreview={false}
+  code={`import { Component, OnInit, signal } from '@angular/core';
+  import { RouterOutlet } from '@angular/router';
+  import { HummingbirdService } from './services/hummingbird.service';
 
-    @Component({
-      selector: 'app-root',
-      imports: [RouterOutlet],
-      templateUrl: './app.html',
-      styleUrl: './app.css',
-    })
-    export class App implements OnInit {
-      constructor(private hummingbird: HummingbirdService) {}
+  @Component({
+    selector: 'app-root',
+    imports: [RouterOutlet],
+    templateUrl: './app.html',
+    styleUrl: './app.css',
+  })
+  export class App implements OnInit {
+    constructor(private hummingbird: HummingbirdService) {}
 
-      ngOnInit(): void {
-        this.hummingbird.loadHummingbird(() => {
-          import('@hummingbirdui/hummingbird');
-        });
-      }
+    ngOnInit(): void {
+      this.hummingbird.loadHummingbird(() => {
+        import('@hummingbirdui/hummingbird');
+      });
     }
-    ```
-
-  </div>
-</Example>
+  }`} />
