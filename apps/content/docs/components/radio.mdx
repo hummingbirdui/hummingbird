@@ -1,247 +1,171 @@
 ---
 title: Radios
-description: The Radio Group allows the user to select one option from a set.
+description: Radio buttons let users select a single option from a set, ensuring only one choice can be active at a time.
+toc: true
+classNames:
+  component:
+    - class: form-check-input
+      desc: Checkbox 
+    - class: form-check-input-wrapper
+      desc: Checkbox Wrapper
+    - class: form-check
+      desc: Checkbox Container
+    - class: form-check-inline
+      desc: Checkbox Inline
+    - class: form-check-label
+      desc: Checkbox Label
+  size:
+    - class: default
+      desc: Small size (default)
+    - class: form-check-md
+      desc: Medium size
+    - class: form-check-lg
+      desc: Large size
+  color:
+    - class: default
+      desc: Primary color (default)
+    - class: form-check-secondary
+      desc: Secondary color
+    - class: form-check-info
+      desc: Info color
+    - class: form-check-success
+      desc: Success color
+    - class: form-check-warning
+      desc: Warning color
+    - class: form-check-danger
+      desc: Danger color
+    - class: form-check-neutral
+      desc: Neutral color
+  modifier:
+    - class: btn-check
+      desc: Checkbox Button
 ---
 
-##### Radio
+##### Basic Radio
 
-<Example>
-  <div slot="preview" class="not-prose">
-    <label for="radioDefault" class="form-check-input-wrapper">
-      <input class="form-check-input" type="radio" name="radioDefault" value="" id="radioDefault" />
-    </label>
-    <label for="radioChecked" class="form-check-input-wrapper">
-      <input class="form-check-input" type="radio" name="radioDefault" value="" id="radioChecked" checked />
-    </label>
-    <label for="radioDisabled" class="form-check-input-wrapper">
-      <input class="form-check-input" type="radio" name="radioDefault" value="" id="radioDisabled" disabled />
-    </label>
-  </div>
-  <div slot="code">
-    ```html
-    <label for="radioDefault" class="form-check-input-wrapper">
-      <input class="form-check-input" type="radio" name="radioDefault" value="" id="radioDefault" />
-    </label>
-    <label for="radioChecked" class="form-check-input-wrapper">
-      <input class="form-check-input" type="radio" name="radioDefault" value="" id="radioChecked" checked />
-    </label>
-    <label for="radioDisabled" class="form-check-input-wrapper">
-      <input class="form-check-input" type="radio" name="radioDefault" value="" id="radioDisabled" disabled />
-    </label>
-    ```
-  </div>
-</Example>
+<Example class='text-center' code={`<label for="radioDefault" class="form-check-input-wrapper">
+    <input class="form-check-input" type="radio" name="radioDefault" value="" id="radioDefault" />
+  </label>
+  <label for="radioChecked" class="form-check-input-wrapper">
+    <input class="form-check-input" type="radio" name="radioDefault" value="" id="radioChecked" checked />
+  </label>
+  <label for="radioDisabled" class="form-check-input-wrapper">
+    <input class="form-check-input" type="radio" name="radioDefault" value="" id="radioDisabled" disabled />
+  </label>`} />
 
 ##### Radio with label
 
-<Example>
-  <div slot="preview" class="not-prose">
-    <div class="form-check">
-      <label for="radioDefaultLabel" class="form-check-input-wrapper">
-        <input class="form-check-input" type="radio" name="radioDefaultLabel" value="" id="radioDefaultLabel" />
-      </label>
-      <label for="radioDefaultLabel" class="form-check-label">Basic Checkbox</label>
-    </div>
-    <div class="form-check">
-      <label for="radioCheckedLabel" class="form-check-input-wrapper">
-        <input class="form-check-input" type="radio" name="radioDefaultLabel" value="" id="radioCheckedLabel" checked />
-      </label>
-      <label for="radioCheckedLabel" class="form-check-label">Checked</label>
-    </div>
-    <div class="form-check">
-      <label for="radioDisabledLabel" class="form-check-input-wrapper">
-        <input class="form-check-input" type="radio" name="radioDefaultLabel" value="" id="radioDisabledLabel" disabled />
-      </label>
-      <label for="radioDisabledLabel" class="form-check-label">Disabled</label>
-    </div>
+<Example code={`<div class="form-check">
+    <label for="radioDefaultLabel" class="form-check-input-wrapper">
+      <input class="form-check-input" type="radio" name="radioDefaultLabel" value="" id="radioDefaultLabel" />
+    </label>
+    <label for="radioDefaultLabel" class="form-check-label">Basic Checkbox</label>
   </div>
-  <div slot="code">
-    ```html
-    <div class="form-check">
-      <label for="radioDefaultLabel" class="form-check-input-wrapper">
-        <input class="form-check-input" type="radio" name="radioDefaultLabel" value="" id="radioDefaultLabel" />
-      </label>
-      <label for="radioDefaultLabel" class="form-check-label">
-        Basic Checkbox
-      </label>
-    </div>
-    <div class="form-check">
-      <label for="radioCheckedLabel" class="form-check-input-wrapper">
-        <input class="form-check-input" type="radio" name="radioDefaultLabel" value="" id="radioCheckedLabel" checked />
-      </label>
-      <label for="radioCheckedLabel" class="form-check-label">
-        Checked
-      </label>
-    </div>
-    <div class="form-check">
-      <label for="radioDisabledLabel" class="form-check-input-wrapper">
-        <input class="form-check-input" type="radio" name="radioDefaultLabel" value="" id="radioDisabledLabel" disabled />
-      </label>
-      <label for="radioDisabledLabel" class="form-check-label">
-        Disabled
-      </label>
-    </div>
-    ```
+  <div class="form-check">
+    <label for="radioCheckedLabel" class="form-check-input-wrapper">
+      <input class="form-check-input" type="radio" name="radioDefaultLabel" value="" id="radioCheckedLabel" checked />
+    </label>
+    <label for="radioCheckedLabel" class="form-check-label">Checked</label>
   </div>
-</Example>
+  <div class="form-check">
+    <label for="radioDisabledLabel" class="form-check-input-wrapper">
+      <input class="form-check-input" type="radio" name="radioDefaultLabel" value="" id="radioDisabledLabel" disabled />
+    </label>
+    <label for="radioDisabledLabel" class="form-check-label">Disabled</label>
+  </div>`} />
 
 ##### Size
 
-<Example>
-  <div slot="preview" class="not-prose">
-    <label for="radioSmall" class="form-check-input-wrapper">
-      <input class="form-check-input" type="radio" name="radioSizes" value="" id="radioSmall" />
-    </label>
-    <label for="radioMedium" class="form-check-input-wrapper">
-      <input class="form-check-input form-check-md" type="radio" name="radioSizes" value="" id="radioMedium" checked />
-    </label>
-    <label for="radioLarge" class="form-check-input-wrapper">
-      <input class="form-check-input form-check-lg" type="radio" name="radioSizes" value="" id="radioLarge" />
-    </label>
-  </div>
-  <div slot="code">
-    ```html
-    <label for="radioSmall" class="form-check-input-wrapper">
-      <input class="form-check-input" type="radio" name="radioSizes" value="" id="radioSmall" />
-    </label>
-    <label for="radioMedium" class="form-check-input-wrapper">
-      <input class="form-check-input form-check-md" type="radio" name="radioSizes" value="" id="radioMedium" checked />
-    </label>
-    <label for="radioLarge" class="form-check-input-wrapper">
-      <input class="form-check-input form-check-lg" type="radio" name="radioSizes" value="" id="radioLarge" />
-    </label>
-    ```
-  </div>
-</Example>
+For medium and large radio, use `.form-check-md` and `.form-check-lg`. Default is small.
+
+<Example class='text-center' code={`<label for="radioSmall" class="form-check-input-wrapper">
+    <input class="form-check-input" type="radio" name="radioSizes" value="" id="radioSmall" />
+  </label>
+  <label for="radioMedium" class="form-check-input-wrapper">
+    <input class="form-check-input form-check-md" type="radio" name="radioSizes" value="" id="radioMedium" checked />
+  </label>
+  <label for="radioLarge" class="form-check-input-wrapper">
+    <input class="form-check-input form-check-lg" type="radio" name="radioSizes" value="" id="radioLarge" />
+  </label>`} />
 
 ##### Colors
 
-<Example>
-  <div slot="preview" class="not-prose">
-    <label for="radioPrimary" class="form-check-input-wrapper">
-      <input class="form-check-input" type="radio" name="radioColors" value="" id="radioPrimary" />
-    </label>
-    <label for="radioSecondary" class="form-check-input-wrapper">
-      <input class="form-check-input form-check-secondary" type="radio" name="radioColors" value="" id="radioSecondary" checked />
-    </label>
-    <label for="radioInfo" class="form-check-input-wrapper">
-      <input class="form-check-input form-check-info" type="radio" name="radioColors" value="" id="radioInfo" />
-    </label>
-    <label for="radioSuccess" class="form-check-input-wrapper">
-      <input class="form-check-input form-check-success" type="radio" name="radioColors" value="" id="radioSuccess" />
-    </label>
-    <label for="radioWarning" class="form-check-input-wrapper">
-      <input class="form-check-input form-check-warning" type="radio" name="radioColors" value="" id="radioWarning" />
-    </label>
-    <label for="radioDanger" class="form-check-input-wrapper">
-      <input class="form-check-input form-check-danger" type="radio" name="radioColors" value="" id="radioDanger" />
-    </label>
-    <label for="radioNeutral" class="form-check-input-wrapper">
-      <input class="form-check-input form-check-neutral" type="radio" name="radioColors" value="" id="radioNeutral" />
-    </label>
-  </div>
-  <div slot="code">
-    ```html
-    <label for="radioPrimary" class="form-check-input-wrapper">
-      <input class="form-check-input" type="radio" name="radioColors" value="" id="radioPrimary" />
-    </label>
-    <label for="radioSecondary" class="form-check-input-wrapper">
-      <input class="form-check-input form-check-secondary" type="radio" name="radioColors" value="" id="radioSecondary" checked />
-    </label>
-    <label for="radioInfo" class="form-check-input-wrapper">
-      <input class="form-check-input form-check-info" type="radio" name="radioColors" value="" id="radioInfo" />
-    </label>
-    <label for="radioSuccess" class="form-check-input-wrapper">
-      <input class="form-check-input form-check-success" type="radio" name="radioColors" value="" id="radioSuccess" />
-    </label>
-    <label for="radioWarning" class="form-check-input-wrapper">
-      <input class="form-check-input form-check-warning" type="radio" name="radioColors" value="" id="radioWarning" />
-    </label>
-    <label for="radioDanger" class="form-check-input-wrapper">
-      <input class="form-check-input form-check-danger" type="radio" name="radioColors" value="" id="radioDanger" />
-    </label>
-    <label for="radioNeutral" class="form-check-input-wrapper">
-      <input class="form-check-input form-check-neutral" type="radio" name="radioColors" value="" id="radioNeutral" />
-    </label>
-    ```
-  </div>
-</Example>
+Use color variants like `.form-check-{secondary, info, success, warning, danger, neutral}` to change the radio color. Default is primary.
+
+<Example class='text-center' code={`<label for="radioPrimary" class="form-check-input-wrapper">
+    <input class="form-check-input" type="radio" name="radioColors" value="" id="radioPrimary" />
+  </label>
+  <label for="radioSecondary" class="form-check-input-wrapper">
+    <input class="form-check-input form-check-secondary" type="radio" name="radioColors" value="" id="radioSecondary" checked />
+  </label>
+  <label for="radioInfo" class="form-check-input-wrapper">
+    <input class="form-check-input form-check-info" type="radio" name="radioColors" value="" id="radioInfo" />
+  </label>
+  <label for="radioSuccess" class="form-check-input-wrapper">
+    <input class="form-check-input form-check-success" type="radio" name="radioColors" value="" id="radioSuccess" />
+  </label>
+  <label for="radioWarning" class="form-check-input-wrapper">
+    <input class="form-check-input form-check-warning" type="radio" name="radioColors" value="" id="radioWarning" />
+  </label>
+  <label for="radioDanger" class="form-check-input-wrapper">
+    <input class="form-check-input form-check-danger" type="radio" name="radioColors" value="" id="radioDanger" />
+  </label>
+  <label for="radioNeutral" class="form-check-input-wrapper">
+    <input class="form-check-input form-check-neutral" type="radio" name="radioColors" value="" id="radioNeutral" />
+  </label>`} />
 
 ##### Inline
 
-<Example>
-  <div slot="preview" class="not-prose">
-    <div class="form-check-inline">
-      <label for="radioInline" class="form-check-input-wrapper">
-        <input class="form-check-input" type="radio" name="inlineRadio" value="" id="radioInline" />
-      </label>
-      <label for="radioInline" class="form-check-label">Inline Radio</label>
-    </div>
-    <div class="form-check-inline">
-      <label for="inlineChecked" class="form-check-input-wrapper">
-        <input class="form-check-input" type="radio" name="inlineRadio" value="" id="inlineChecked" checked />
-      </label>
-      <label for="inlineChecked" class="form-check-label">Checked</label>
-    </div>
-    <div class="form-check-inline">
-      <label for="inlineDisabled" class="form-check-input-wrapper">
-        <input class="form-check-input" type="radio" name="inlineRadio" value="" id="inlineDisabled" disabled />
-      </label>
-      <label for="inlineDisabled" class="form-check-label">Disabled</label>
-    </div>
+Create inline checkboxes by using the `.form-check-inline` class.
+
+<Example class='text-center' code={`<div class="form-check-inline">
+    <label for="radioInline" class="form-check-input-wrapper">
+      <input class="form-check-input" type="radio" name="inlineRadio" value="" id="radioInline" />
+    </label>
+    <label for="radioInline" class="form-check-label">Inline Radio</label>
   </div>
-  <div slot="code">
-    ```html
-    <div class="form-check-inline">
-      <label for="radioInline" class="form-check-input-wrapper">
-        <input class="form-check-input" type="radio" name="inlineRadio" value="" id="radioInline" />
-      </label>
-      <label for="radioInline" class="form-check-label">
-        Inline Radio
-      </label>
-    </div>
-    <div class="form-check-inline">
-      <label for="inlineChecked" class="form-check-input-wrapper">
-        <input class="form-check-input" type="radio" name="inlineRadio" value="" id="inlineChecked" checked />
-      </label>
-      <label for="inlineChecked" class="form-check-label">
-        Checked
-      </label>
-    </div>
-    <div class="form-check-inline">
-      <label for="inlineDisabled" class="form-check-input-wrapper">
-        <input class="form-check-input" type="radio" name="inlineRadio" value="" id="inlineDisabled" disabled />
-      </label>
-      <label for="inlineDisabled" class="form-check-label">
-        Disabled
-      </label>
-    </div>
-    ```
+  <div class="form-check-inline">
+    <label for="inlineChecked" class="form-check-input-wrapper">
+      <input class="form-check-input" type="radio" name="inlineRadio" value="" id="inlineChecked" checked />
+    </label>
+    <label for="inlineChecked" class="form-check-label">Checked</label>
   </div>
-</Example>
+  <div class="form-check-inline">
+    <label for="inlineDisabled" class="form-check-input-wrapper">
+      <input class="form-check-input" type="radio" name="inlineRadio" value="" id="inlineDisabled" disabled />
+    </label>
+    <label for="inlineDisabled" class="form-check-label">Disabled</label>
+  </div>`} />
 
 ##### Checkbox toggle buttons
 
-<Example>
-  <div slot='preview' class="not-prose space-x-2">
-    <input class="btn-check" type="radio" name="radioBtnExample" value="" id="radioBtnDefault" />
-    <label for="radioBtnDefault" class="btn btn-primary">Default</label>
-    <input class="btn-check" type="radio" name="radioBtnExample" value="" id="radioBtnChecked" checked />
-    <label for="radioBtnChecked" class="btn btn-primary">Checked</label>
-    <input class="btn-check" type="radio" name="radioBtnExample" value="" id="radioBtnDisabled" disabled />
-    <label for="radioBtnDisabled" class="btn btn-primary">Disabled</label>
-  </div>
-  <div slot="code">
-    ```html
-    <input class="btn-check" type="radio" name="radioBtnExample" value="" id="radioBtnDefault" />
-    <label for="radioBtnDefault" class="btn btn-primary">Default</label>
+Create button-like radio by using `.btn` styles rather than `.form-check-label` on the `<label>` elements.
 
-    <input class="btn-check" type="radio" name="radioBtnExample" value="" id="radioBtnChecked" checked />
-    <label for="radioBtnChecked" class="btn btn-primary">Checked</label>
+<Example class='flex justify-center flex-wrap gap-2' code={`<input class="btn-check" type="radio" name="radioBtnExample" value="" id="radioBtnDefault" />
+  <label for="radioBtnDefault" class="btn btn-primary">Default</label>
 
-    <input class="btn-check" type="radio" name="radioBtnExample" value="" id="radioBtnDisabled" disabled />
-    <label for="radioBtnDisabled" class="btn btn-primary">Disabled</label>
-    ```
+  <input class="btn-check" type="radio" name="radioBtnExample" value="" id="radioBtnChecked" checked />
+  <label for="radioBtnChecked" class="btn btn-primary">Checked</label>
 
-  </div>
-</Example>
+  <input class="btn-check" type="radio" name="radioBtnExample" value="" id="radioBtnDisabled" disabled />
+  <label for="radioBtnDisabled" class="btn btn-primary">Disabled</label>`} />
+
+##### CSS variables
+
+The [checkbox](/docs/components/checkbox) and [radio](/docs/components/radio) component is built using a set of CSS variables. These variables provide flexibility for customizing styles.
+
+<Example showPreview={false} lang='sass' 
+  code={`.form-check-input {
+    --form-check-input-bg: var(--background-color-default);
+    --form-check-input-checked-bg: var(--color-primary);
+    --form-check-input-with: --spacing(4);
+    --form-check-input-height: --spacing(4);
+    --form-check-input-border-width: 1px;
+    --form-check-input-border-color: var(--border-color-base);
+    --form-check-input-radius: var(--radius-sm);
+    --form-check-bg-image: none;
+  }
+  
+  .form-check-input-wrapper {
+    --form-check-input-wrapper-bg: --alpha(var(--color-primary) / 12%);
+  }`} />
