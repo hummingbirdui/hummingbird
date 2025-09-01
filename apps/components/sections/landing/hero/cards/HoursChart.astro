@@ -18,7 +18,7 @@ import CardWrapper from '../CardWrapper.astro';
 
 <script>
   import * as echarts from 'echarts';
-
+  import { onThemeChange } from '@libs/utils';
   const data = [6, 8, 5, 4, 7, 6, 5];
 
   if (typeof window !== 'undefined') {
@@ -26,73 +26,85 @@ import CardWrapper from '../CardWrapper.astro';
     if (chartDom) {
       const myChart = echarts.init(chartDom);
 
-      const option = {
-        grid: { top: 0, left: 0, right: 0, bottom: 0 },
-        tooltip: {
-          trigger: 'item',
-          formatter: (params: any) => `${params.value} hours`,
-          backgroundColor: '#111',
-          borderColor: 'transparent',
-          textStyle: {
-            color: '#fff',
-            fontSize: 12,
-            fontWeight: 400,
-            fontFamily: 'Figtree, sans-serif',
+      const renderChart = (theme: 'light' | 'dark') => {
+        const isDark = theme === 'dark';
+        const option = {
+          grid: { top: 0, left: 0, right: 0, bottom: 0 },
+          tooltip: {
+            trigger: 'item',
+            formatter: (params: any) => `${params.value} hours`,
+            backgroundColor: '#111',
+            borderColor: 'transparent',
+            textStyle: {
+              color: '#fff',
+              fontSize: 12,
+              fontWeight: 400,
+              fontFamily: 'Figtree, sans-serif',
+            },
+            padding: [2, 8],
+            extraCssText: 'border-radius: 4px;',
           },
-          padding: [2, 8],
-          extraCssText: 'border-radius: 4px;',
-        },
-        xAxis: {
-          type: 'category',
-          data: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
-          axisTick: { show: false },
-          axisLine: { show: false },
-          axisLabel: {
-            color: '#505763',
-            fontWeight: 400,
-            fontSize: 12,
-            fontFamily: 'Figtree, sans-serif',
-          },
-          boundaryGap: 0,
-        },
-        yAxis: [
-          {
-            type: 'value',
-            min: 0,
-            max: Math.max(10, Math.max(...data)),
-            minInterval: 1,
+          xAxis: {
+            type: 'category',
+            data: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
+            axisTick: { show: false },
+            axisLine: { show: false },
             axisLabel: {
-              show: false,
+              color: isDark ? '#A4ABB9' : '#505763',
+              fontWeight: 400,
+              fontSize: 12,
+              fontFamily: 'Figtree, sans-serif',
             },
-            splitLine: {
-              show: false,
-            },
+            boundaryGap: 0,
           },
-        ],
-        series: [
-          {
-            type: 'bar',
-            data,
-            barWidth: 12,
-            showBackground: true,
-            backgroundStyle: {
-              color: '#EBF5FF',
-              borderRadius: 16,
-            },
-            itemStyle: {
-              borderRadius: [10, 10, 10, 10],
-              color: (params: any) => (params.dataIndex === 1 ? '#4DA7FF' : '#A3D2FF'),
-            },
-            emphasis: {
-              itemStyle: {
-                color: '#4DA7FF',
+          yAxis: [
+            {
+              type: 'value',
+              min: 0,
+              max: Math.max(10, Math.max(...data)),
+              minInterval: 1,
+              axisLabel: {
+                show: false,
+              },
+              splitLine: {
+                show: false,
               },
             },
-          },
-        ],
+          ],
+          series: [
+            {
+              type: 'bar',
+              data,
+              barWidth: 12,
+              showBackground: true,
+              backgroundStyle: {
+                color: isDark ? '#00101F' : '#EBF5FF',
+                borderRadius: 16,
+              },
+              itemStyle: {
+                borderRadius: [10, 10, 10, 10],
+                color: (params: any) => {
+                  if (params.dataIndex === 1) {
+                    return isDark ? '#0074E6' : '#4DA7FF';
+                  } else {
+                    return isDark ? '#003970' : '#A3D2FF';
+                  }
+                },
+              },
+              emphasis: {
+                itemStyle: {
+                  color: isDark ? '#0074E6' : '#4DA7FF',
+                },
+              },
+            },
+          ],
+        };
+
+        myChart.setOption(option, true);
       };
 
-      myChart.setOption(option);
+      onThemeChange((theme) => renderChart(theme));
+
       window.addEventListener('resize', () => myChart.resize());
     }
   }
