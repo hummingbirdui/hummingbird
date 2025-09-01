@@ -16,7 +16,7 @@ interface ClassTableRow {
   <div class="px-6 sm:px-10">
     <div class="lg:grid lg:grid-cols-[15rem_1fr] max-w-8xl mx-auto h-full">
       <Sidebar />
-      <div class="xl:grid lg:grid-cols-[1fr_16.75rem]">
+      <div class=`xl:grid ${toc ? 'lg:grid-cols-[1fr_16.75rem]' : ''}`>
         <div class="py-10 lg:ps-10 xl:pe-10">
           <h3 class="mb-4">{title}</h3>
           <p class="text-xl mb-10">{description}</p>
@@ -125,10 +125,14 @@ interface ClassTableRow {
             <slot />
           </div>
         </div>
-        <div class="min-w-67 ps-6 py-10 sticky top-[var(--navbar-height)] h-max hidden xl:block">
-          <p class="font-bold ps-4">On this page</p>
-          {toc && headings && <Toc headings={headings} />}
-        </div>
+        {
+          toc && (
+            <div class="min-w-67 ps-6 py-10 sticky top-[var(--navbar-height)] h-max hidden xl:block">
+              <p class="font-bold ps-4">On this page</p>
+              {headings && <Toc headings={headings} />}
+            </div>
+          )
+        }
       </div>
     </div>
   </div>

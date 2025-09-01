@@ -97,9 +97,11 @@ Breadcrumbs support different separator styles, such as dashed or arrow, to matc
 The breadcrumb component is built using a set of CSS variables. These variables provide flexibility for customizing styles.
 
 <Example lang='sass' showPreview={false}
-  code={`--breadcrumb-font-size: var(--text-sm);
-  --breadcrumb-item-active-color: var(--text-color-default);
-  --breadcrumb-item-gap: --spacing(2);
-  --breadcrumb-item-separator: '/';
-  --breadcrumb-separator-color: var(--text-color-highlight);`}
+  code={`.breadcrumb {
+    --breadcrumb-font-size: var(--text-sm);
+    --breadcrumb-item-active-color: var(--text-color-default);
+    --breadcrumb-item-gap: --spacing(2);
+    --breadcrumb-item-separator: '/';
+    --breadcrumb-separator-color: var(--text-color-highlight);
+  }`}
 />

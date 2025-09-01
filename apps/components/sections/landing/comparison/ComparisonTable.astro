@@ -1,19 +1,19 @@
 ---
-import Image from 'astro/components/Image.astro';
 import StarIcon from '@components/icons/StarIcon.astro';
 import CheckIcon from '@components/icons/CheckIcon.astro';
 import CloseIcon from '@components/icons/CloseIcon.astro';
 import ErrorIcon from '@components/icons/ErrorIcon.astro';
-import { featureComparisons, frameworks } from 'apps/data/landing/featureComparisons';
+import { comparisons, frameworks } from 'apps/data/landing/comparisons';
+import { Image } from 'astro:assets';
 
 const getIcon = (featureState: string) => {
   switch (featureState) {
     case 'yes':
       return { icon: CheckIcon, color: 'text-primary-light' };
     case 'no':
-      return { icon: CloseIcon, color: 'text-[var(--color-gray-300)]' };
+      return { icon: CloseIcon, color: 'text-[var(--color-gray-300)] dark:text-[var(--color-gray-700)]' };
     case 'partial':
-      return { icon: ErrorIcon, color: 'text-[var(--color-blue-200)]' };
+      return { icon: ErrorIcon, color: 'text-[var(--color-blue-200)] dark:text-[var(--color-blue-800)]' };
     case 'highlight':
       return { icon: StarIcon, color: 'text-primary-light' };
   }
@@ -39,12 +39,12 @@ const getIcon = (featureState: string) => {
 
   <tbody>
     {
-      featureComparisons.map(({ feature, hummingbird, tailwindcss, bootstrap }, i, features) => {
+      comparisons.map(({ feature, hummingbird, tailwindcss, bootstrap }, i, features) => {
         const frameworkStates = [{ value: hummingbird }, { value: tailwindcss }, { value: bootstrap }];
 
         return (
           <tr class="border-b border-black/4 last:border-b-0">
-            <td class="text-sm text-left px-6 py-4.5 text-gray-700">{feature}</td>
+            <td class="text-sm text-left px-6 py-4.5 text-highlight">{feature}</td>
 
             {frameworkStates.map(({ value }, j) => {
               const data = getIcon(value);

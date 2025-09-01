@@ -1,83 +1,71 @@
 ---
 title: Gatsby
+description: Quick guide to integrate Hummingbird UI with Gatsby. Wrap all pages in a provider that dynamically loads only the required scripts, keeping performance fast and bundle size small.
+toc: true
 ---
 
 ##### Initialization
 
-<Example>
-  <div slot="code">
-    ```js
-    // src/components/HummingbirdUI.tsx
-    import React, { PropsWithChildren, useEffect } from "react";
-    import { useLocation } from "@reach/router";
+Set up a wrapper component to load Hummingbird scripts dynamically on route changes.
 
-    const HummingbirdUI = ({ children }: PropsWithChildren) => {
-      const location = useLocation();
+<Example lang='js' showPreview={false} 
+  code={`// src/components/HummingbirdUI.tsx
+  import React, { PropsWithChildren, useEffect } from "react";
+  import { useLocation } from "@reach/router";
 
-      useEffect(() => {
-        import("@hummingbirdui/hummingbird");
-      }, [location.pathname]);
+  const HummingbirdUI = ({ children }: PropsWithChildren) => {
+    const location = useLocation();
 
-      return <>{children}</>;
-    };
+    useEffect(() => {
+      import("@hummingbirdui/hummingbird");
+    }, [location.pathname]);
 
-    export default HummingbirdUI;
-    ```
+    return <>{children}</>;
+  };
 
-  </div>
-</Example>
+  export default HummingbirdUI;`} />
 
-Automatically wrap all pages
+Configure Gatsby to wrap every page with the Hummingbird provider for global availability.
 
 Edit `gatsby-browser.js`:
 
-<Example>
-  <div slot="code">
-    ```js
-    // gatsby-browser.js
-    import React from "react";
-    import HummingbirdUI from "./src/components/HummingbirdUI";
+<Example lang='js' showPreview={false}
+  code={`// gatsby-browser.js
+  import React from "react";
+  import HummingbirdUI from "./src/components/HummingbirdUI";
 
-    export function wrapPageElement({ element, props }) {
-      return <HummingbirdUI {...props}>{element}</HummingbirdUI>;
-    }
-    ```
-
-  </div>
-</Example>
+  export function wrapPageElement({ element, props }) {
+    return <HummingbirdUI {...props}>{element}</HummingbirdUI>;
+  }`} />
 
 ##### Optimization
 
-<Example>
-  <div slot="code">
-    ```js
-    // src/components/HummingbirdUI.tsx
-    import React, { PropsWithChildren, useEffect } from "react";
-    import { useLocation } from "@reach/router";
+Import only the scripts you need (e.g., `modal`, `dropdown`) to improve performance and reduce bundle size.
 
-    const HummingbirdUI = ({ children }: PropsWithChildren) => {
-      const location = useLocation();
+<Example lang='js' showPreview={false}
+  code={`// src/components/HummingbirdUI.tsx
+  import React, { PropsWithChildren, useEffect } from "react";
+  import { useLocation } from "@reach/router";
 
-      useEffect(() => {
-        // import('@hummingbirdui/hummingbird/lib/esm/scripts/alert');
-        // import('@hummingbirdui/hummingbird/lib/esm/scripts/button');
-        // import('@hummingbirdui/hummingbird/lib/esm/scripts/carousel');
-        // import('@hummingbirdui/hummingbird/lib/esm/scripts/collapse');
-        // import('@hummingbirdui/hummingbird/lib/esm/scripts/dropdown');
-       import('@hummingbirdui/hummingbird/lib/esm/scripts/modal');
-        // import('@hummingbirdui/hummingbird/lib/esm/scripts/offcanvas');
-        // import('@hummingbirdui/hummingbird/lib/esm/scripts/popover');
-        // import('@hummingbirdui/hummingbird/lib/esm/scripts/scrollspy');
-        // import('@hummingbirdui/hummingbird/lib/esm/scripts/tab');
-        // import('@hummingbirdui/hummingbird/lib/esm/scripts/toast');
-        // import('@hummingbirdui/hummingbird/lib/esm/scripts/tooltip');
-      }, [location.pathname]);
+  const HummingbirdUI = ({ children }: PropsWithChildren) => {
+    const location = useLocation();
 
-      return <>{children}</>;
-    };
+    useEffect(() => {
+      // import('@hummingbirdui/hummingbird/lib/esm/scripts/alert');
+      // import('@hummingbirdui/hummingbird/lib/esm/scripts/button');
+      // import('@hummingbirdui/hummingbird/lib/esm/scripts/carousel');
+      // import('@hummingbirdui/hummingbird/lib/esm/scripts/collapse');
+      // import('@hummingbirdui/hummingbird/lib/esm/scripts/dropdown');
+      import('@hummingbirdui/hummingbird/lib/esm/scripts/modal');
+      // import('@hummingbirdui/hummingbird/lib/esm/scripts/offcanvas');
+      // import('@hummingbirdui/hummingbird/lib/esm/scripts/popover');
+      // import('@hummingbirdui/hummingbird/lib/esm/scripts/scrollspy');
+      // import('@hummingbirdui/hummingbird/lib/esm/scripts/tab');
+      // import('@hummingbirdui/hummingbird/lib/esm/scripts/toast');
+      // import('@hummingbirdui/hummingbird/lib/esm/scripts/tooltip');
+    }, [location.pathname]);
 
-    export default HummingbirdUI;
-    ```
+    return <>{children}</>;
+  };
 
-  </div>
-</Example>
+  export default HummingbirdUI;`} />

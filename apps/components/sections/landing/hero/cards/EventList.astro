@@ -1,0 +1,32 @@
+---
+import CardWrapper from '../CardWrapper.astro';
+import ListIcon from '@components/icons/ListIcon.astro';
+
+const events = [
+  { id: 'checkboxCheckedLabel', label: 'Tasks', checked: true, class: '' },
+  { id: 'checkboxDefaultLabel', label: 'My Events', checked: false, class: '' },
+  { id: 'checkboxSecondary', label: 'Birthday', checked: true, class: 'form-check-secondary' },
+];
+---
+
+<CardWrapper color="success" class="shadow-success/5 dark:shadow-success-darker/5">
+  <div class="mb-6 flex items-center gap-2">
+    <ListIcon />
+    <h3 class="mb-0 text-base font-bold">Event list</h3>
+  </div>
+
+  <div class="-ml-1.5 grow flex flex-col justify-between">
+    {
+      events.map((event) => (
+        <div class="form-check">
+          <label for={event.id} class="form-check-input-wrapper">
+            <input class={`form-check-input ${event.class}`} type="checkbox" id={event.id} checked={event.checked} />
+          </label>
+          <label for={event.id} class="form-check-label font-semibold text-highlight select-none">
+            {event.label}
+          </label>
+        </div>
+      ))
+    }
+  </div>
+</CardWrapper>

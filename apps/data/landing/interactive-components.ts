@@ -1,15 +1,27 @@
-import alert from '@assets/images/landing/js-showcase/alert.png';
-import button from '@assets/images/landing/js-showcase/button.png';
-import tooltip from '@assets/images/landing/js-showcase/tooltip.png';
-import carousel from '@assets/images/landing/js-showcase/carousel.png';
-import collapse from '@assets/images/landing/js-showcase/collapse.png';
-import dropdown from '@assets/images/landing/js-showcase/dropdown.png';
-import offcanvas from '@assets/images/landing/js-showcase/offcanvas.png';
-import modal from '@assets/images/landing/js-showcase/modal.png';
-import tab from '@assets/images/landing/js-showcase/tab.png';
+import alert from '@assets/images/landing/interactive/alert.png';
+import button from '@assets/images/landing/interactive/button.png';
+import tooltip from '@assets/images/landing/interactive/tooltip.png';
+import carousel from '@assets/images/landing/interactive/carousel.png';
+import collapse from '@assets/images/landing/interactive/collapse.png';
+import dropdown from '@assets/images/landing/interactive/dropdown.png';
+import offcanvas from '@assets/images/landing/interactive/offcanvas.png';
+import modal from '@assets/images/landing/interactive/modal.png';
+import tab from '@assets/images/landing/interactive/tab.png';
+import alertDark from '@assets/images/landing/interactive/alert-dark.png';
+import buttonDark from '@assets/images/landing/interactive/button-dark.png';
+import tooltipDark from '@assets/images/landing/interactive/tooltip-dark.png';
+import carouselDark from '@assets/images/landing/interactive/carousel-dark.png';
+import collapseDark from '@assets/images/landing/interactive/collapse-dark.png';
+import dropdownDark from '@assets/images/landing/interactive/dropdown-dark.png';
+import offcanvasDark from '@assets/images/landing/interactive/offcanvas-dark.png';
+import modalDark from '@assets/images/landing/interactive/modal-dark.png';
+import tabDark from '@assets/images/landing/interactive/tab-dark.png';
 
 export interface Component {
-  image: ImageMetadata;
+  image: {
+    light: ImageMetadata;
+    dark: ImageMetadata;
+  };
   title: string;
   description: string;
   color: string;
@@ -18,65 +30,65 @@ export interface Component {
 
 export const interactiveComponents: Component[] = [
   {
-    image: alert,
     title: 'Alert',
     description: 'Provide relevant notices and feedback users can quickly dismiss.',
+    image: { light: alert, dark: alertDark },
     color: 'primary',
     link: '#',
   },
   {
-    image: collapse,
     title: 'Collapse',
     description: 'Easily show and hide sections of content with a toggle.',
+    image: { light: collapse, dark: collapseDark },
     color: 'warning',
     link: '#',
   },
   {
-    image: offcanvas,
     title: 'Offcanvas',
     description: 'Slide in side menus and panels from outside the browser viewport.',
+    image: { light: offcanvas, dark: offcanvasDark },
     color: 'secondary',
     link: '#',
   },
   {
-    image: button,
     title: 'Button',
     description: 'Add buttons to handle user clicks and trigger app actions.',
+    image: { light: button, dark: buttonDark },
     color: 'secondary-dark',
     link: '#',
   },
   {
-    image: dropdown,
     title: 'Dropdown',
     description: 'Build accessible and easy-to-use menus for navigation or actions.',
+    image: { light: dropdown, dark: dropdownDark },
     color: 'success-dark',
     link: '#',
   },
   {
-    image: tab,
     title: 'Tab',
     description: 'Organize content into switchable tabs for a cleaner interface.',
+    image: { light: tab, dark: tabDark },
     color: 'primary-dark',
     link: '#',
   },
   {
-    image: carousel,
     title: 'Carousel',
     description: 'Create smooth, flexible sliders for showcasing images or content.',
-    color: 'info-main',
+    image: { light: carousel, dark: carouselDark },
+    color: 'info-dark',
     link: '#',
   },
   {
-    image: modal,
     title: 'Modal',
     description: 'Open pop-up dialogs over content to focus user tasks.',
+    image: { light: modal, dark: modalDark },
     color: 'error',
     link: '#',
   },
   {
-    image: tooltip,
     title: 'Tooltip',
     description: 'Display small pop-ups with extra info when a user hovers on UI.',
+    image: { light: tooltip, dark: tooltipDark },
     color: 'success',
     link: '#',
   },

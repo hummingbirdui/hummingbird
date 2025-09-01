@@ -1,5 +1,6 @@
 ---
 title: Next
+toc: true
 ---
 
 ##### Code
@@ -8,68 +9,49 @@ This example demonstrates how to dynamically import the full **Hummingbird UI** 
 
 The `HummingbirdWrapper` component is dynamically loaded with `ssr: false` to ensure it's only executed in the browser. This allows you to initialize scripts after route changes in Next.js App Router.
 
-<Example>
-  <div slot="code">
-    ```js
-    "use client";
+<Example lang='js' showPreview={false}
+  code={`"use client";
 
-    import { useEffect } from "react";
-    import dynamic from "next/dynamic";
-    import { usePathname } from "next/navigation";
+  import { useEffect } from "react";
+  import dynamic from "next/dynamic";
+  import { usePathname } from "next/navigation";
 
-    function HummingbirdWrapper() {
-      const path = usePathname();
-      useEffect(() => {
-        const loadHummingbird = async () => {
-          await import("@hummingbirdui/hummingbird");
-        };
+  function HummingbirdWrapper() {
+    const path = usePathname();
+    useEffect(() => {
+      const loadHummingbird = async () => {
+        await import("@hummingbirdui/hummingbird");
+      };
 
-        loadHummingbird();
-      }, [path]);
+      loadHummingbird();
+    }, [path]);
 
-      return null;
-    }
+    return null;
+  }
 
-    const HummingbirdUI = dynamic(() => Promise.resolve(HummingbirdWrapper), {
-      ssr: false,
-    });
+  const HummingbirdUI = dynamic(() => Promise.resolve(HummingbirdWrapper), {
+    ssr: false,
+  });
 
-    export default HummingbirdUI;
-    ```
-
-  </div>
-</Example>
+  export default HummingbirdUI;`} />
 
 Use this component in your **layout file** (e.g. `app/layout.tsx`) to automatically load Hummingbird scripts across all routes.
 
-<Example>
-  <div slot="code">
-    ```js
-    import HummingbirdUI from "./components/HumminhbirdUI";
+<Example lang='js' showPreview={false}
+  code={`import HummingbirdUI from "./components/HumminhbirdUI";
 
-    export default function RootLayout({
-      children,
-    }: Readonly<{
-      children: React.ReactNode;
-    }>) {
-      return (
-        <html lang="en">
-          <body
-            className={...}
-          >
-            {children}
-            <HummingbirdUI />
-          </body>
-        </html>
-      );
-    }
-
-    ```
-
-  </div>
-</Example>
-
----
+  export default function RootLayout({children,}: Readonly<{children: React.ReactNode;}>) {
+    return (
+      <html lang="en">
+        <body
+          className={...}
+        >
+          {children}
+          <HummingbirdUI />
+        </body>
+      </html>
+    );
+  }`} />
 
 ##### Optimize
 
@@ -77,38 +59,31 @@ To reduce bundle size, load only the specific scripts you need instead of the en
 
 This approach follows the best practice of **tree-shaking** and is especially useful for large projects or slow networks.
 
-<Example>
-  <div slot="code">
-    ```js
-    function HummingbirdWrapper() {
-      const path = usePathname();
-      useEffect(() => {
-        const loadHummingbird = async () => {
-          // await import('@hummingbirdui/hummingbird/lib/esm/scripts/alert');
-          // await import('@hummingbirdui/hummingbird/lib/esm/scripts/button');
-          // await import('@hummingbirdui/hummingbird/lib/esm/scripts/carousel');
-          // await import('@hummingbirdui/hummingbird/lib/esm/scripts/collapse');
-          // await import('@hummingbirdui/hummingbird/lib/esm/scripts/dropdown');
-          await import('@hummingbirdui/hummingbird/lib/esm/scripts/modal');
-          // await import('@hummingbirdui/hummingbird/lib/esm/scripts/offcanvas');
-          // await import('@hummingbirdui/hummingbird/lib/esm/scripts/popover');
-          // await import('@hummingbirdui/hummingbird/lib/esm/scripts/scrollspy');
-          // await import('@hummingbirdui/hummingbird/lib/esm/scripts/tab');
-          // await import('@hummingbirdui/hummingbird/lib/esm/scripts/toast');
-          // await import('@hummingbirdui/hummingbird/lib/esm/scripts/tooltip');
-        };
+<Example lang='js' showPreview={false}
+  code={`function HummingbirdWrapper() {
+    const path = usePathname();
+    useEffect(() => {
+      const loadHummingbird = async () => {
+        // await import('@hummingbirdui/hummingbird/lib/esm/scripts/alert');
+        // await import('@hummingbirdui/hummingbird/lib/esm/scripts/button');
+        // await import('@hummingbirdui/hummingbird/lib/esm/scripts/carousel');
+        // await import('@hummingbirdui/hummingbird/lib/esm/scripts/collapse');
+        // await import('@hummingbirdui/hummingbird/lib/esm/scripts/dropdown');
+        await import('@hummingbirdui/hummingbird/lib/esm/scripts/modal');
+        // await import('@hummingbirdui/hummingbird/lib/esm/scripts/offcanvas');
+        // await import('@hummingbirdui/hummingbird/lib/esm/scripts/popover');
+        // await import('@hummingbirdui/hummingbird/lib/esm/scripts/scrollspy');
+        // await import('@hummingbirdui/hummingbird/lib/esm/scripts/tab');
+        // await import('@hummingbirdui/hummingbird/lib/esm/scripts/toast');
+        // await import('@hummingbirdui/hummingbird/lib/esm/scripts/tooltip');
+      };
 
-        loadHummingbird();
-      }, [path]);
+      loadHummingbird();
+    }, [path]);
 
-      return null;
-    }
-    ```
+    return null;
+  }`} />
 
-  </div>
-</Example>
-
----
 
 ##### JavaScript API
 
@@ -116,45 +91,39 @@ This example shows how to use the **JavaScript API** of Hummingbird in a Next.js
 
 The `usePathname()` hook ensures the modal is re-initialized when the route changes. The `ModalInstance` type is used for proper TypeScript support.
 
-<Example>
-  <div slot="code">
-    ```js
-    "use client";
+<Example lang='js' showPreview={false}
+  code={`"use client";
 
-    import { useEffect, useState } from "react";
-    import { usePathname } from "next/navigation";
-    import type { ModalInstance } from "@hummingbirdui/hummingbird";
+  import { useEffect, useState } from "react";
+  import { usePathname } from "next/navigation";
+  import type { ModalInstance } from "@hummingbirdui/hummingbird";
 
-    async function loadHummingbird() {
-      return import("@hummingbirdui/hummingbird");
-    }
+  async function loadHummingbird() {
+    return import("@hummingbirdui/hummingbird");
+  }
 
-    function Component() {
-      const path = usePathname();
-      const [myModal, setMyModal] = useState<ModalInstance>();
+  function Component() {
+    const path = usePathname();
+    const [myModal, setMyModal] = useState<ModalInstance>();
 
-      useEffect(() => {
-        const initModal = async () => {
-          const { Modal } = await loadHummingbird();
-          setMyModal(new Modal(".modal"));
-        };
-        initModal();
-      }, [path]);
-
-      const handleClick = () => {
-        myModal?.toggle();
+    useEffect(() => {
+      const initModal = async () => {
+        const { Modal } = await loadHummingbird();
+        setMyModal(new Modal(".modal"));
       };
+      initModal();
+    }, [path]);
 
-      return (
-        <div>
-          <button className="btn btn-primary" onClick={handleClick}>Primary</button>
-          <div className="modal">...</div>
-        </div>
-      );
-    }
+    const handleClick = () => {
+      myModal?.toggle();
+    };
 
-    export default Component;
-    ```
+    return (
+      <div>
+        <button className="btn btn-primary" onClick={handleClick}>Primary</button>
+        <div className="modal">...</div>
+      </div>
+    );
+  }
 
-  </div>
-</Example>
+  export default Component;`} />

@@ -9,6 +9,12 @@
   "plugins": ["prettier-plugin-tailwindcss"],
   "overrides": [
     {
+      "files": ["*.mdx"],
+      "options": {
+        "requirePragma": true
+      }
+    },
+    {
       "files": ["*.mdx", "*.md"],
       "options": {
         "singleQuote": false,

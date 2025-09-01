@@ -1,362 +1,257 @@
 ---
 title: Select
-description: Customize the native <select>s with custom CSS that changes the element’s initial appearance.
+description: The select component allows users to choose from a list of options.
+toc: true
+classNames:
+  component:
+    - class: form-select
+      desc: A basic select field.
+    - class: form-select-fill
+      desc: A filled select field.
+    - class: form-label
+      desc: Form label
+    - class: form-field
+      desc: Container for labels and inputs.
+  size:
+    - class: form-select-sm
+      desc: Small select field.
+    - class: default
+      desc: Medium size (default)
+    - class: form-select-lg
+      desc: Large select field.
+  color:
+    - class: form-select-secondary
+      desc: Secondary color.
+    - class: form-select-info
+      desc: Info color.
+    - class: form-select-success
+      desc: Success color.
+    - class: form-select-warning
+      desc: Warning color.
+  modifier:
+    - class: is-valid
+      desc: Valid state
+    - class: is-invalid
+      desc: Invalid state
 ---
 
 ##### Basic Select
 
-The Floating Label component comes with two variations: Filled and Outlined
+The Basic Select component provides a simple select field with two variations: Filled and Outlined.
 
-<Example>
-  <div slot="preview" class="not-prose grid items-center gap-3 sm:grid-cols-2">
-    <select class="form-select-fill" aria-label="Default filled example">
-      <option selected>Select option</option>
-      <option value="1">One</option>
-      <option value="2">Two</option>
-      <option value="3">Three</option>
-    </select>
-    <select class="form-select" aria-label="Default outlined example">
-      <option selected>Select option</option>
-      <option value="1">One</option>
-      <option value="2">Two</option>
-      <option value="3">Three</option>
-    </select>
-  </div>
-  <div slot="code">
-    ```html
-    <select class="form-select-fill" aria-label="Default filled example">
-      <option selected>Select option</option>
-      <option value="1">One</option>
-      <option value="2">Two</option>
-      <option value="3">Three</option>
-    </select>
-    <select class="form-select" aria-label="Default outlined example">
-      <option selected>Select option</option>
-      <option value="1">One</option>
-      <option value="2">Two</option>
-      <option value="3">Three</option>
-    </select>
-    ```
-  </div>
-</Example>
+<Example class='grid mx-auto sm:grid-cols-2 gap-3 md:w-5/6' code={`<select class="form-select" aria-label="Default outlined example">
+    <option selected>Select option</option>
+    <option value="1">One</option>
+    <option value="2">Two</option>
+    <option value="3">Three</option>
+  </select>
+  <select class="form-select-fill" aria-label="Default filled example">
+    <option selected>Select option</option>
+    <option value="1">One</option>
+    <option value="2">Two</option>
+    <option value="3">Three</option>
+  </select>`} />
 
 ##### Select with label
 
-<Example>
-  <div slot='preview' class="not-prose grid sm:grid-cols-2 items-center gap-3">
-    <div class="form-field">
-      <label class="form-label">Options</label>
-      <select class="form-select-fill" aria-label="Filled example with label">
-        <option selected>Select option</option>
-        <option value="1">One</option>
-        <option value="2">Two</option>
-        <option value="3">Three</option>
-      </select>
-    </div>
-    <div class="form-field">
-      <label class="form-label">Options</label>
-      <select class="form-select" aria-label="Outlined example with label">
-        <option selected>Select option</option>
-        <option value="1">One</option>
-        <option value="2">Two</option>
-        <option value="3">Three</option>
-      </select>
-    </div>
+The Select component can be used with a label for better accessibility.
+
+<Example class='grid mx-auto sm:grid-cols-2 gap-3 md:w-5/6' code={`<div class="form-field">
+    <label class="form-label">Options</label>
+    <select class="form-select" aria-label="Outlined example with label">
+      <option selected>Select option</option>
+      <option value="1">One</option>
+      <option value="2">Two</option>
+      <option value="3">Three</option>
+    </select>
   </div>
-  <div slot="code">
-    ```html
-    <div class="form-field">
-      <label class="form-label">Options</label>
-      <select class="form-select-fill" aria-label="Filled example with label">
-        <option selected>Select option</option>
-        <option value="1">One</option>
-        <option value="2">Two</option>
-        <option value="3">Three</option>
-      </select>
-    </div>
-
-    <div class="form-field">
-      <label class="form-label">Options</label>
-      <select class="form-select" aria-label="Outlined example with label">
-        <option selected>Select option</option>
-        <option value="1">One</option>
-        <option value="2">Two</option>
-        <option value="3">Three</option>
-      </select>
-    </div>
-    ```
-
-  </div>
-</Example>
-
-##### Floating Label
-
-<Example>
-  <div slot='preview' class="not-prose grid sm:grid-cols-2 items-center gap-3">
-    <div class="form-floating form-field">
-      <select class="form-select-fill" aria-label="Filled floating label example">
-        <option selected>Select option</option>
-        <option value="1">One</option>
-        <option value="2">Two</option>
-        <option value="3">Three</option>
-      </select>
-      <label class="form-label" for="floatingInput">Options</label>
-    </div>
-    <div class="form-floating form-field">
-      <select class="form-select" aria-label="Outlined floating label example">
-        <option selected>Select option</option>
-        <option value="1">One</option>
-        <option value="2">Two</option>
-        <option value="3">Three</option>
-      </select>
-      <label class="form-label" for="floatingInput">Options</label>
-    </div>
-  </div>
-  <div slot="code">
-    ```html
-    <div class="form-floating form-field">
-      <select class="form-select-fill" aria-label="Filled floating label example">
-        <option selected>Select option</option>
-        <option value="1">One</option>
-        <option value="2">Two</option>
-        <option value="3">Three</option>
-      </select>
-      <label class="form-label" for="floatingInput">Options</label>
-    </div>
-
-    <div class="form-floating form-field">
-      <select class="form-select" aria-label="Outlined floating label example">
-        <option selected>Select option</option>
-        <option value="1">One</option>
-        <option value="2">Two</option>
-        <option value="3">Three</option>
-      </select>
-      <label class="form-label" for="floatingInput">Options</label>
-    </div>
-    ```
-
-  </div>
-</Example>
+  <div class="form-field">
+    <label class="form-label">Options</label>
+    <select class="form-select-fill" aria-label="Filled example with label">
+      <option selected>Select option</option>
+      <option value="1">One</option>
+      <option value="2">Two</option>
+      <option value="3">Three</option>
+    </select>
+  </div>`} />
 
 ##### Sizing
 
-Set heights using classes like .form-select-sm and .form-select-lg for small and large select field. Default is medium.
+Set heights using classes like `.form-select-sm` and `.form-select-lg` for small and large select fields. Default is medium.
 
-<Example>
-  <div slot="preview" class="not-prose grid items-center gap-3 sm:grid-cols-3">
-    <select class="form-select-fill form-select-sm" aria-label="Filled small">
-      <option selected>Select option</option>
-      <option value="1">One</option>
-      <option value="2">Two</option>
-      <option value="3">Three</option>
-    </select>
-    <select class="form-select-fill" aria-label="Filled medium">
-      <option selected>Select option</option>
-      <option value="1">One</option>
-      <option value="2">Two</option>
-      <option value="3">Three</option>
-    </select>
-    <select class="form-select-fill form-select-lg" aria-label="Filled large">
-      <option selected>Select option</option>
-      <option value="1">One</option>
-      <option value="2">Two</option>
-      <option value="3">Three</option>
-    </select>
-    <select class="form-select form-select-sm" aria-label="Outlined small">
-      <option selected>Select option</option>
-      <option value="1">One</option>
-      <option value="2">Two</option>
-      <option value="3">Three</option>
-    </select>
-    <select class="form-select" aria-label="Outlined medium">
-      <option selected>Select option</option>
-      <option value="1">One</option>
-      <option value="2">Two</option>
-      <option value="3">Three</option>
-    </select>
-    <select class="form-select form-select-lg" aria-label="Outlined large">
-      <option selected>Select option</option>
-      <option value="1">One</option>
-      <option value="2">Two</option>
-      <option value="3">Three</option>
-    </select>
-  </div>
-  <div slot="code">
-    ```html
-    <select class="form-select-fill form-select-sm" aria-label="Filled small">
-      <option selected>Select option</option>
-      <option value="1">One</option>
-      <option value="2">Two</option>
-      <option value="3">Three</option>
-    </select>
-    <select class="form-select-fill" aria-label="Filled medium">
-      <option selected>Select option</option>
-      <option value="1">One</option>
-      <option value="2">Two</option>
-      <option value="3">Three</option>
-    </select>
-    <select class="form-select-fill form-select-lg" aria-label="Filled large">
-      <option selected>Select option</option>
-      <option value="1">One</option>
-      <option value="2">Two</option>
-      <option value="3">Three</option>
-    </select>
-    <select class="form-select form-select-sm" aria-label="Outlined small">
-      <option selected>Select option</option>
-      <option value="1">One</option>
-      <option value="2">Two</option>
-      <option value="3">Three</option>
-    </select>
-    <select class="form-select" aria-label="Outlined medium">
-      <option selected>Select option</option>
-      <option value="1">One</option>
-      <option value="2">Two</option>
-      <option value="3">Three</option>
-    </select>
-    <select class="form-select form-select-lg" aria-label="Outlined large">
-      <option selected>Select option</option>
-      <option value="1">One</option>
-      <option value="2">Two</option>
-      <option value="3">Three</option>
-    </select>
-    ```
-  </div>
-</Example>
+<Example class='grid items-center sm:grid-cols-3 gap-3' code={`<select class="form-select form-select-sm" aria-label="Outlined small">
+    <option selected>Select option</option>
+    <option value="1">One</option>
+    <option value="2">Two</option>
+    <option value="3">Three</option>
+  </select>
+  <select class="form-select" aria-label="Outlined medium">
+    <option selected>Select option</option>
+    <option value="1">One</option>
+    <option value="2">Two</option>
+    <option value="3">Three</option>
+  </select>
+  <select class="form-select form-select-lg" aria-label="Outlined large">
+    <option selected>Select option</option>
+    <option value="1">One</option>
+    <option value="2">Two</option>
+    <option value="3">Three</option>
+  </select>
+  <select class="form-select-fill form-select-sm" aria-label="Filled small">
+    <option selected>Select option</option>
+    <option value="1">One</option>
+    <option value="2">Two</option>
+    <option value="3">Three</option>
+  </select>
+  <select class="form-select-fill" aria-label="Filled medium">
+    <option selected>Select option</option>
+    <option value="1">One</option>
+    <option value="2">Two</option>
+    <option value="3">Three</option>
+  </select>
+  <select class="form-select-fill form-select-lg" aria-label="Filled large">
+    <option selected>Select option</option>
+    <option value="1">One</option>
+    <option value="2">Two</option>
+    <option value="3">Three</option>
+  </select>`} />
 
 ##### Color Variants
 
 Different colors become visible while the select is focused. By default, the select field uses the **primary** color. Use additional utility classes to modify the focus color. Like:
 
-- **`.form-select-secondary`**
-- **`.form-select-success`**
+- `.form-select-secondary`
+- `.form-select-success`
 
-<Example>
-  <div slot="preview" class="not-prose grid items-center gap-3 sm:grid-cols-2">
-    <select class="form-select-fill form-select-secondary" aria-label="Filled secondary">
-      <option selected>Select option</option>
-      <option value="1">One</option>
-      <option value="2">Two</option>
-      <option value="3">Three</option>
-    </select>
-    <select class="form-select-fill form-select-success" aria-label="Filled success">
-      <option selected>Select option</option>
-      <option value="1">One</option>
-      <option value="2">Two</option>
-      <option value="3">Three</option>
-    </select>
-    <select class="form-select form-select-secondary" aria-label="Outlined secondary">
-      <option selected>Select option</option>
-      <option value="1">One</option>
-      <option value="2">Two</option>
-      <option value="3">Three</option>
-    </select>
-    <select class="form-select form-select-success" aria-label="Outlined success">
-      <option selected>Select option</option>
-      <option value="1">One</option>
-      <option value="2">Two</option>
-      <option value="3">Three</option>
-    </select>
-  </div>
-  <div slot="code">
-    ```html
-    <select class="form-select-fill form-select-secondary" aria-label="Filled secondary">
-      <option selected>Select option</option>
-      <option value="1">One</option>
-      <option value="2">Two</option>
-      <option value="3">Three</option>
-    </select>
-    <select class="form-select-fill form-select-success" aria-label="Filled success">
-      <option selected>Select option</option>
-      <option value="1">One</option>
-      <option value="2">Two</option>
-      <option value="3">Three</option>
-    </select>
-    <select class="form-select form-select-secondary" aria-label="Outlined secondary">
-      <option selected>Select option</option>
-      <option value="1">One</option>
-      <option value="2">Two</option>
-      <option value="3">Three</option>
-    </select>
-    <select class="form-select form-select-success" aria-label="Outlined success">
-      <option selected>Select option</option>
-      <option value="1">One</option>
-      <option value="2">Two</option>
-      <option value="3">Three</option>
-    </select>
-    ```
-  </div>
-</Example>
+<Example class='grid mx-auto sm:grid-cols-2 gap-3 md:w-5/6' code={`<select class="form-select form-select-secondary" aria-label="Outlined secondary">
+    <option selected>Select option</option>
+    <option value="1">One</option>
+    <option value="2">Two</option>
+    <option value="3">Three</option>
+  </select>
+  <select class="form-select form-select-success" aria-label="Outlined success">
+    <option selected>Select option</option>
+    <option value="1">One</option>
+    <option value="2">Two</option>
+    <option value="3">Three</option>
+  </select>
+  <select class="form-select-fill form-select-secondary" aria-label="Filled secondary">
+    <option selected>Select option</option>
+    <option value="1">One</option>
+    <option value="2">Two</option>
+    <option value="3">Three</option>
+  </select>
+  <select class="form-select-fill form-select-success" aria-label="Filled success">
+    <option selected>Select option</option>
+    <option value="1">One</option>
+    <option value="2">Two</option>
+    <option value="3">Three</option>
+  </select>`} />
 
 ##### Disabled
 
-The Floating Label component comes with two variations: Filled and Outlined
+Make select fields appear disabled by adding the `disabled` attribute.
 
-<Example>
-  <div slot="preview" class="not-prose grid items-center gap-3 sm:grid-cols-2">
-    <select class="form-select-fill" aria-label="Filled disabled" disabled>
-      <option selected>Select option</option>
-      <option value="1">One</option>
-      <option value="2">Two</option>
-      <option value="3">Three</option>
-    </select>
-    <select class="form-select" aria-label="Outlined disabled" disabled>
-      <option selected>Select option</option>
-      <option value="1">One</option>
-      <option value="2">Two</option>
-      <option value="3">Three</option>
-    </select>
-  </div>
-  <div slot="code">
-    ```html
-    <select class="form-select-fill" aria-label="Filled disabled" disabled>
-      <option selected>Select option</option>
-      <option value="1">One</option>
-      <option value="2">Two</option>
-      <option value="3">Three</option>
-    </select>
-    <select class="form-select" aria-label="Outlined disabled" disabled>
-      <option selected>Select option</option>
-      <option value="1">One</option>
-      <option value="2">Two</option>
-      <option value="3">Three</option>
-    </select>
-    ```
-  </div>
-</Example>
+<Example class='grid mx-auto sm:grid-cols-2 gap-3 md:w-5/6' code={`<select class="form-select" aria-label="Outlined disabled" disabled>
+    <option selected>Select option</option>
+    <option value="1">One</option>
+    <option value="2">Two</option>
+    <option value="3">Three</option>
+  </select>
+  <select class="form-select-fill" aria-label="Filled disabled" disabled>
+    <option selected>Select option</option>
+    <option value="1">One</option>
+    <option value="2">Two</option>
+    <option value="3">Three</option>
+  </select>`} />
 
 ##### Validation
 
-Indicate validation states by adding the `.is-invalid` class to select fields. This highlights the input field when invalid or requiring user attention.
+Indicate validation states by adding the `.is-valid` class for success state and `.is-invalid` class for error state to input fields.
 
-<Example>
-  <div slot="preview" class="not-prose grid items-center gap-3 sm:grid-cols-2">
-    <select class="form-select-fill is-invalid" aria-label="Filled invalid">
-      <option selected>Select option</option>
-      <option value="1">One</option>
-      <option value="2">Two</option>
-      <option value="3">Three</option>
-    </select>
-    <select class="form-select is-invalid" aria-label="Outlined invalid">
-      <option selected>Select option</option>
-      <option value="1">One</option>
-      <option value="2">Two</option>
-      <option value="3">Three</option>
-    </select>
-  </div>
-  <div slot="code">
-    ```html
-    <select class="form-select-fill is-invalid" aria-label="Filled invalid">
-      <option selected>Select option</option>
-      <option value="1">One</option>
-      <option value="2">Two</option>
-      <option value="3">Three</option>
-    </select>
-    <select class="form-select is-invalid" aria-label="Outlined invalid">
-      <option selected>Select option</option>
-      <option value="1">One</option>
-      <option value="2">Two</option>
-      <option value="3">Three</option>
-    </select>
-    ```
-  </div>
-</Example>
+<Example class='grid mx-auto sm:grid-cols-2 gap-3 md:w-5/6' code={`<select class="form-select is-valid" aria-label="Outlined invalid">
+    <option selected>Select option</option>
+    <option value="1">One</option>
+    <option value="2">Two</option>
+    <option value="3">Three</option>
+  </select>
+  <select class="form-select-fill is-valid" aria-label="Filled invalid">
+    <option selected>Select option</option>
+    <option value="1">One</option>
+    <option value="2">Two</option>
+    <option value="3">Three</option>
+  </select>
+  <select class="form-select is-invalid" aria-label="Outlined invalid">
+    <option selected>Select option</option>
+    <option value="1">One</option>
+    <option value="2">Two</option>
+    <option value="3">Three</option>
+  </select>
+  <select class="form-select-fill is-invalid" aria-label="Filled invalid">
+    <option selected>Select option</option>
+    <option value="1">One</option>
+    <option value="2">Two</option>
+    <option value="3">Three</option>
+  </select>`} />
+
+
+##### CSS Variables
+
+The form select component is built using a set of CSS variables. These variables provide flexibility for customizing styles globally or locally.
+
+###### Global variables
+
+Global variables apply shared styles across buttons, inputs, and selects. Updating these will affect all related components.
+
+<Example lang='sass' showPreview={false}
+  code={`/* Used across button, form-control, select */
+  --input-btn-font-size: var(--text-sm);
+  --input-btn-radius: var(--radius-lg);
+  --input-btn-padding-x: --spacing(4);
+  --input-btn-padding-y: --spacing(1.75);
+  --input-btn-line-height: 1.5;
+  --input-btn-border-width: 1px;
+
+  /* Used across input and form-select */
+  --input-label-color: var(--text-color-highlight);
+  --input-bg: var(--background-color-muted);
+  --input-color: var(--text-color-default);
+  --input-border-color: var(--border-color-base);
+  --input-disabled-bg: var(--background-color-highlight);
+  --input-hover-bg: var(--background-color-highlight);
+  --input-focus-bg: var(--color-primary-lighter);
+  --input-hover-border-color: var(--text-color-emphasis);
+  --input-focus-border-color: var(--color-primary);
+  --input-disabled-border-color: var(--border-color-base);`}
+/>
+
+###### Local variables
+
+Local variables apply only to form-select, allowing fine-grained control over their appearance without affecting other elements.
+
+<Example lang='sass' showPreview={false}
+  code={`.form-select {
+    --form-select-font-size: var(--input-btn-font-size);
+    --form-select-radius: var(--input-btn-radius);
+    --form-select-padding-x: var(--input-btn-padding-x);
+    --form-select-padding-y: var(--input-btn-padding-y);
+    --form-select-line-height: var(--input-btn-line-height);
+    --form-select-border-width: var(--input-btn-border-width);
+    --form-select-padding-right: --spacing(9);
+    --form-select-bg-size: --spacing(4) --spacing(3);
+    --form-select-indicator: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='none' stroke='%231B2124' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/></svg>");
+  }
+
+  .form-select-fill {
+    --form-select-font-size: var(--input-btn-font-size);
+    --form-select-radius: var(--input-btn-radius);
+    --form-select-padding-x: var(--input-btn-padding-x);
+    --form-select-padding-y: var(--input-btn-padding-y);
+    --form-select-line-height: var(--input-btn-line-height);
+    --form-select-border-width: var(--input-btn-border-width);
+    --form-select-padding-right: --spacing(9);
+    --form-select-bg-size: --spacing(4) --spacing(3);
+    --form-select-indicator: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='none' stroke='%231B2124' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/></svg>");
+    --input-border-color: transparent;
+  }`}
+/>

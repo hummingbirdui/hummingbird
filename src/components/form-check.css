@@ -193,7 +193,7 @@
         }
       }
       &:disabled {
-        @apply opacity-75;
+        @apply opacity-50;
         &:checked {
           --form-check-input-bg: var(--form-check-input-checked-bg);
         }

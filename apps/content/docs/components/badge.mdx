@@ -175,11 +175,13 @@ Badges can include a delete action, allowing users to remove the badge using a c
 The badge component is built using a set of CSS variables. These variables provide flexibility for customizing styles.
 
 <Example lang='sass' showPreview={false}
-  code={`--badge-bg: var(--color-main);
-  --badge-color: var(--color-contrast);
-  --badge-font-size: var(--text-xs);
-  --badge-padding-y: --spacing(0.75);
-  --badge-padding-x: --spacing(1.5);
-  --badge-border-color: transparent;
-  --badge-link-hover-bg: var(--color-dark);`}
+  code={`.badge {
+    --badge-bg: var(--color-main);
+    --badge-color: var(--color-contrast);
+    --badge-font-size: var(--text-xs);
+    --badge-padding-y: --spacing(0.75);
+    --badge-padding-x: --spacing(1.5);
+    --badge-border-color: transparent;
+    --badge-link-hover-bg: var(--color-dark);
+  }`}
 />

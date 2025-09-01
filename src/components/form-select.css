@@ -47,6 +47,9 @@
     &.is-invalid {
       @apply bg-[var(--color-danger-lighter)] border-[var(--color-danger)];
     }
+    &.is-valid {
+      @apply bg-[var(--color-success-lighter)] border-[var(--color-success)];
+    }
 
     @variant dark {
       --form-select-indicator: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='none' stroke='%23EBF2F5' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/></svg>");
@@ -103,6 +106,9 @@
 
     &.is-invalid {
       @apply border-[var(--color-danger)];
+    }
+    &.is-valid {
+      @apply border-[var(--color-success)];
     }
 
     @variant dark {

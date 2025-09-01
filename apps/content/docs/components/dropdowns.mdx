@@ -1,534 +1,216 @@
 ---
 title: Dropdowns
 description: Toggle contextual overlays for displaying lists of links and more with the Bootstrap dropdown plugin.
+toc: true
 ---
 
 ##### Single button
 
 Any single .btn can be turned into a dropdown toggle with some markup changes. Here’s how you can put them to work with `<button>` elements:
 
-<Example>
-  <div slot="preview">
-    <div class="dropdown">
-      <button class="btn btn-subtle-neutral" type="button" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</button>
-      <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="#">Profile</a></li>
-        <li><a class="dropdown-item" href="#">My Account</a></li>
-        <li><a class="dropdown-item" href="#">Dashboard</a></li>
-      </ul>
-    </div>
-  </div>
-
-  <div slot="code">
-    ```html
-    <div class="dropdown">
-      <button class="btn btn-subtle-neutral" type="button" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</button>
-      <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="#">Profile</a></li>
-        <li><a class="dropdown-item" href="#">My Account</a></li>
-        <li><a class="dropdown-item" href="#">Dashboard</a></li>
-      </ul>
-    </div>
-    ```
-  </div>
-</Example>
+<Example class='text-center' code={`<div class="dropdown">
+    <button class="btn btn-subtle-neutral" type="button" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</button>
+    <ul class="dropdown-menu">
+      <li><a class="dropdown-item" href="#">Profile</a></li>
+      <li><a class="dropdown-item" href="#">My Account</a></li>
+      <li><a class="dropdown-item" href="#">Dashboard</a></li>
+    </ul>
+  </div>`} />
 
 While `<button>` is the recommended control for a dropdown toggle, there might be situations where you have to use an `<a>` element. If you do, we recommend adding a role="button" attribute to appropriately convey control’s purpose to assistive technologies such as screen readers.
 
-<Example>
-  <div slot="preview">
-    <div class="dropdown">
-      <a class="btn btn-subtle-neutral" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Dropdown link</a>
-      <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="#">Profile</a></li>
-        <li><a class="dropdown-item" href="#">My Account</a></li>
-        <li><a class="dropdown-item" href="#">Dashboard</a></li>
-      </ul>
-    </div>
-  </div>
-
-  <div slot="code">
-    ```html
-    <div class="dropdown">
-      <a class="btn btn-subtle-neutral" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Dropdown link</a>
-      <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="#">Profile</a></li>
-        <li><a class="dropdown-item" href="#">My Account</a></li>
-        <li><a class="dropdown-item" href="#">Dashboard</a></li>
-      </ul>
-    </div>
-    ```
-  </div>
-</Example>
+<Example class='text-center' code={`<div class="dropdown">
+    <a class="btn btn-subtle-neutral" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Dropdown link</a>
+    <ul class="dropdown-menu">
+      <li><a class="dropdown-item" href="#">Profile</a></li>
+      <li><a class="dropdown-item" href="#">My Account</a></li>
+      <li><a class="dropdown-item" href="#">Dashboard</a></li>
+    </ul>
+  </div>`} />
 
 ##### Centered Dropdown
 
-<Example>
-  <div slot="preview">
-    <div class="dropdown-center">
-      <button class="btn btn-subtle-neutral" type="button" data-bs-toggle="dropdown" aria-expanded="false">Centered Dropdown</button>
-      <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="#">Profile</a></li>
-        <li><a class="dropdown-item" href="#">My Account</a></li>
-        <li><a class="dropdown-item" href="#">Dashboard</a></li>
-      </ul>
-    </div>
-  </div>
-
-  <div slot="code">
-    ```html
-    <div class="dropdown-center">
-      <button class="btn btn-subtle-neutral" type="button" data-bs-toggle="dropdown" aria-expanded="false">Centered Dropdown</button>
-      <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="#">Profile</a></li>
-        <li><a class="dropdown-item" href="#">My Account</a></li>
-        <li><a class="dropdown-item" href="#">Dashboard</a></li>
-      </ul>
-    </div>
-    ```
-  </div>
-</Example>
+<Example class='text-center' code={`<div class="dropdown-center">
+    <button class="btn btn-subtle-neutral" type="button" data-bs-toggle="dropdown" aria-expanded="false">Centered Dropdown</button>
+    <ul class="dropdown-menu">
+      <li><a class="dropdown-item" href="#">Profile</a></li>
+      <li><a class="dropdown-item" href="#">My Account</a></li>
+      <li><a class="dropdown-item" href="#">Dashboard</a></li>
+    </ul>
+  </div>`} />
 
 ##### Dropup
 
-<Example>
-  <div slot="preview">
-    <div class="dropup">
-      <button class="btn btn-subtle-neutral" type="button" data-bs-toggle="dropdown" aria-expanded="false">Dropup</button>
-      <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="#">Profile</a></li>
-        <li><a class="dropdown-item" href="#">My Account</a></li>
-        <li><a class="dropdown-item" href="#">Dashboard</a></li>
-      </ul>
-    </div>
-  </div>
-
-  <div slot="code">
-    ```html
-    <div class="dropup">
-      <button class="btn btn-subtle-neutral" type="button" data-bs-toggle="dropdown" aria-expanded="false">Dropup</button>
-      <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="#">Profile</a></li>
-        <li><a class="dropdown-item" href="#">My Account</a></li>
-        <li><a class="dropdown-item" href="#">Dashboard</a></li>
-      </ul>
-    </div>
-    </div>
-    ```
-  </div>
-</Example>
+<Example class='text-center' code={`<div class="dropup">
+    <button class="btn btn-subtle-neutral" type="button" data-bs-toggle="dropdown" aria-expanded="false">Dropup</button>
+    <ul class="dropdown-menu">
+      <li><a class="dropdown-item" href="#">Profile</a></li>
+      <li><a class="dropdown-item" href="#">My Account</a></li>
+      <li><a class="dropdown-item" href="#">Dashboard</a></li>
+    </ul>
+  </div>`} />
 
 ##### Dropup Centered
 
-<Example>
-  <div slot="preview">
-    <div class="dropup-center dropup">
-      <button class="btn btn-subtle-neutral" type="button" data-bs-toggle="dropdown" aria-expanded="false">Dropup Centered</button>
-      <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="#">Profile</a></li>
-        <li><a class="dropdown-item" href="#">My Account</a></li>
-        <li><a class="dropdown-item" href="#">Dashboard</a></li>
-      </ul>
-    </div>
-  </div>
-
-  <div slot="code">
-    ```html
-    <div class="dropup-center dropup">
-      <button class="btn btn-subtle-neutral" type="button" data-bs-toggle="dropdown" aria-expanded="false">Dropup Centered</button>
-      <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="#">Profile</a></li>
-        <li><a class="dropdown-item" href="#">My Account</a></li>
-        <li><a class="dropdown-item" href="#">Dashboard</a></li>
-      </ul>
-    </div>
-    ```
-  </div>
-</Example>
+<Example class='text-center' code={`<div class="dropup-center dropup">
+    <button class="btn btn-subtle-neutral" type="button" data-bs-toggle="dropdown" aria-expanded="false">Dropup Centered</button>
+    <ul class="dropdown-menu">
+      <li><a class="dropdown-item" href="#">Profile</a></li>
+      <li><a class="dropdown-item" href="#">My Account</a></li>
+      <li><a class="dropdown-item" href="#">Dashboard</a></li>
+    </ul>
+  </div>`} />
 
 ##### Dropend
 
-<Example>
-  <div slot="preview">
-    <div class="dropend">
-      <button class="btn btn-subtle-neutral" type="button" data-bs-toggle="dropdown" aria-expanded="false">Dropend</button>
-      <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="#">Profile</a></li>
-        <li><a class="dropdown-item" href="#">My Account</a></li>
-        <li><a class="dropdown-item" href="#">Dashboard</a></li>
-      </ul>
-    </div>
-  </div>
-
-  <div slot="code">
-    ```html
-    <div class="dropend">
-      <button class="btn btn-subtle-neutral" type="button" data-bs-toggle="dropdown" aria-expanded="false">Dropend</button>
-      <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="#">Profile</a></li>
-        <li><a class="dropdown-item" href="#">My Account</a></li>
-        <li><a class="dropdown-item" href="#">Dashboard</a></li>
-      </ul>
-    </div>
-    ```
-  </div>
-</Example>
+<Example class='text-center' code={`<div class="dropend">
+    <button class="btn btn-subtle-neutral" type="button" data-bs-toggle="dropdown" aria-expanded="false">Dropend</button>
+    <ul class="dropdown-menu">
+      <li><a class="dropdown-item" href="#">Profile</a></li>
+      <li><a class="dropdown-item" href="#">My Account</a></li>
+      <li><a class="dropdown-item" href="#">Dashboard</a></li>
+    </ul>
+  </div>`} />
 
 ##### Dropstart
 
-<Example>
-  <div slot="preview">
-    <div class="dropstart">
-      <button class="btn btn-subtle-neutral" type="button" data-bs-toggle="dropdown" aria-expanded="false">Dropstart</button>
-      <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="#">Profile</a></li>
-        <li><a class="dropdown-item" href="#">My Account</a></li>
-        <li><a class="dropdown-item" href="#">Dashboard</a></li>
-      </ul>
-    </div>
-  </div>
-
-  <div slot="code">
-    ```html
-    <div class="dropstart">
-      <button class="btn btn-subtle-neutral" type="button" data-bs-toggle="dropdown" aria-expanded="false">Dropstart</button>
-      <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="#">Profile</a></li>
-        <li><a class="dropdown-item" href="#">My Account</a></li>
-        <li><a class="dropdown-item" href="#">Dashboard</a></li>
-      </ul>
-    </div>
-    ```
-  </div>
-</Example>
+<Example class='text-center' code={`<div class="dropstart">
+    <button class="btn btn-subtle-neutral" type="button" data-bs-toggle="dropdown" aria-expanded="false">Dropstart</button>
+    <ul class="dropdown-menu">
+      <li><a class="dropdown-item" href="#">Profile</a></li>
+      <li><a class="dropdown-item" href="#">My Account</a></li>
+      <li><a class="dropdown-item" href="#">Dashboard</a></li>
+    </ul>
+  </div>`} />
 
 ##### Dropdown with Icon
 
-<Example>
-  <div slot="preview">
-    <div class="dropdown">
-      <button class="btn btn-subtle-neutral" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-        {`Dropdown`}
-        <span class="icon-[iconamoon--arrow-down-2-fill] text-base"></span>
-      </button>
-      <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="#">Profile</a></li>
-        <li><a class="dropdown-item" href="#">My Account</a></li>
-        <li><a class="dropdown-item" href="#">Dashboard</a></li>
-      </ul>
-    </div>
-  </div>
-
-  <div slot="code">
-    ```html
-    <div class="dropdown">
-      <button class="btn btn-subtle-neutral" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-        Dropdown
-        <span class="icon-[iconamoon--arrow-down-2-fill] text-base"></span>
-      </button>
-      <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="#">Profile</a></li>
-        <li><a class="dropdown-item" href="#">My Account</a></li>
-        <li><a class="dropdown-item" href="#">Dashboard</a></li>
-      </ul>
-    </div>
-    ```
-  </div>
-</Example>
+<Example class='text-center' code={`<div class="dropdown">
+    <button class="btn btn-subtle-neutral" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+      Dropdown
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M7 9a1 1 0 0 0-.707 1.707l5 5a1 1 0 0 0 1.414 0l5-5A1 1 0 0 0 17 9z" clip-rule="evenodd"/></svg>
+    </button>
+    <ul class="dropdown-menu">
+      <li><a class="dropdown-item" href="#">Profile</a></li>
+      <li><a class="dropdown-item" href="#">My Account</a></li>
+      <li><a class="dropdown-item" href="#">Dashboard</a></li>
+    </ul>
+  </div>`} />
 
 ##### Menu Alignment
 
-<Example>
-  <div slot="preview">
-    <div class="relative inline-flex">
-      <button type="button" class="btn btn-subtle-neutral" data-bs-toggle="dropdown" aria-expanded="false">Right-aligned menu example</button>
-      <ul class="dropdown-menu dropdown-menu-end">
-        <li><button class="dropdown-item" type="button">Profile</button></li>
-        <li><button class="dropdown-item" type="button">My Account</button></li>
-        <li><button class="dropdown-item" type="button">Dashboard</button></li>
-      </ul>
-    </div>
-  </div>
-
-  <div slot="code">
-    ```html
-    <div class="relative inline-flex">
-      <button type="button" class="btn btn-subtle-neutral" data-bs-toggle="dropdown" aria-expanded="false">
-        Right-aligned menu example
-      </button>
-      <ul class="dropdown-menu dropdown-menu-end">
-        <li><button class="dropdown-item" type="button">Profile</button></li>
-        <li><button class="dropdown-item" type="button">My Account</button></li>
-        <li><button class="dropdown-item" type="button">Dashboard</button></li>
-      </ul>
-    </div>
-    ```
-  </div>
-</Example>
+<Example class='text-center' code={`<div class="btn-group">
+    <button type="button" class="btn btn-subtle-neutral" data-bs-toggle="dropdown" aria-expanded="false">Right-aligned menu example</button>
+    <ul class="dropdown-menu dropdown-menu-end">
+      <li><button class="dropdown-item" type="button">Profile</button></li>
+      <li><button class="dropdown-item" type="button">My Account</button></li>
+      <li><button class="dropdown-item" type="button">Dashboard</button></li>
+    </ul>
+  </div>`} />
 
 ##### Responsive alignment
 
-<Example>
-  <div slot="preview">
-    <div class="relative inline-flex">
-      <button type="button" class="btn btn-subtle-neutral" data-bs-toggle="dropdown" aria-expanded="false">Left-aligned but right aligned when large screen</button>
-      <ul class="dropdown-menu lg:dropdown-menu-end">
-        <li><button class="dropdown-item" type="button">Profile</button></li>
-        <li><button class="dropdown-item" type="button">My Account</button></li>
-        <li><button class="dropdown-item" type="button">Dashboard</button></li>
-      </ul>
-    </div>
-  </div>
-
-  <div slot="code">
-    ```html
-    <div class="relative inline-flex">
-      <button type="button" class="btn btn-subtle-neutral" data-bs-toggle="dropdown" aria-expanded="false">
-        Left-aligned but right aligned when large screen
-      </button>
-      <ul class="dropdown-menu lg:dropdown-menu-end">
-        <li><button class="dropdown-item" type="button">Profile</button></li>
-        <li><button class="dropdown-item" type="button">My Account</button></li>
-        <li><button class="dropdown-item" type="button">Dashboard</button></li>
-      </ul>
-    </div>
-    ```
-  </div>
-</Example>
+<Example class='text-center' code={`<div class="btn-group">
+    <button type="button" class="btn btn-subtle-neutral" data-bs-toggle="dropdown" aria-expanded="false">Left-aligned but right aligned when large screen</button>
+    <ul class="dropdown-menu lg:dropdown-menu-end">
+      <li><button class="dropdown-item" type="button">Profile</button></li>
+      <li><button class="dropdown-item" type="button">My Account</button></li>
+      <li><button class="dropdown-item" type="button">Dashboard</button></li>
+    </ul>
+  </div>`} />
 
 ##### Menu Header
 
-<Example>
-  <div slot="preview">
-    <div class="dropdown">
-      <button class="btn btn-subtle-neutral" type="button" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</button>
-      <ul class="dropdown-menu">
-        <li><h6 class="dropdown-header">Dropdown header</h6></li>
-        <li><a class="dropdown-item" href="#">Profile</a></li>
-        <li><a class="dropdown-item" href="#">My Account</a></li>
-        <li><a class="dropdown-item" href="#">Dashboard</a></li>
-      </ul>
-    </div>
-  </div>
-
-  <div slot="code">
-    ```html
-    <div class="dropdown">
-      <button class="btn btn-subtle-neutral" type="button" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</button>
-      <ul class="dropdown-menu">
-        <li><h6 class="dropdown-header">Dropdown header</h6></li>
-        <li><a class="dropdown-item" href="#">Profile</a></li>
-        <li><a class="dropdown-item" href="#">My Account</a></li>
-        <li><a class="dropdown-item" href="#">Dashboard</a></li>
-      </ul>
-    </div>
-    ```
-  </div>
-</Example>
+<Example class='text-center' code={`<div class="dropdown">
+    <button class="btn btn-subtle-neutral" type="button" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</button>
+    <ul class="dropdown-menu">
+      <li><h6 class="dropdown-header">Dropdown header</h6></li>
+      <li><a class="dropdown-item" href="#">Profile</a></li>
+      <li><a class="dropdown-item" href="#">My Account</a></li>
+      <li><a class="dropdown-item" href="#">Dashboard</a></li>
+    </ul>
+  </div>`} />
 
 ##### Menu Divider
 
-<Example>
-  <div slot="preview">
-    <div class="dropdown">
-      <button class="btn btn-subtle-neutral" type="button" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</button>
-      <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="#">Profile</a></li>
-        <li><a class="dropdown-item" href="#">My Account</a></li>
-        <li><a class="dropdown-item" href="#">Dashboard</a></li>
-        <li><hr class="dropdown-divider" /></li>
-        <li><a class="dropdown-item" href="#">Sign Out</a></li>
-      </ul>
-    </div>
-  </div>
-
-  <div slot="code">
-    ```html
-    <div class="dropdown">
-      <button class="btn btn-subtle-neutral" type="button" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</button>
-      <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="#">Profile</a></li>
-        <li><a class="dropdown-item" href="#">My Account</a></li>
-        <li><a class="dropdown-item" href="#">Dashboard</a></li>
-        <li><hr class="dropdown-divider" /></li>
-        <li><a class="dropdown-item" href="#">Sign Out</a></li>
-      </ul>
-    </div>
-    ```
-  </div>
-</Example>
+<Example class='text-center' code={`<div class="dropdown">
+    <button class="btn btn-subtle-neutral" type="button" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</button>
+    <ul class="dropdown-menu">
+      <li><a class="dropdown-item" href="#">Profile</a></li>
+      <li><a class="dropdown-item" href="#">My Account</a></li>
+      <li><a class="dropdown-item" href="#">Dashboard</a></li>
+      <li><hr class="dropdown-divider" /></li>
+      <li><a class="dropdown-item" href="#">Sign Out</a></li>
+    </ul>
+  </div>`} />
 
 ##### Text
 
-<Example>
-  <div slot="preview">
-    <div class="dropdown">
-      <button class="btn btn-subtle-neutral" type="button" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</button>
-      <div class="dropdown-menu p-4 max-w-[15rem]">
-        <p class="mb-0">Some example text that’s free-flowing within the dropdown menu.</p>
-      </div>
+<Example class='flex justify-center' code={`<div class="dropdown">
+    <button class="btn btn-subtle-neutral" type="button" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</button>
+    <div class="dropdown-menu p-4 w-60">
+      <p class="mb-0">Some example text that’s free-flowing within the dropdown menu.</p>
     </div>
-  </div>
-
-  <div slot="code">
-    ```html
-    <div class="dropdown">
-      <button class="btn btn-subtle-neutral" type="button" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</button>
-      <div class="dropdown-menu p-4 max-w-[15rem]">
-        <p class="mb-0">Some example text that’s free-flowing within the dropdown menu.</p>
-      </div>
-    </div>
-    ```
-  </div>
-</Example>
+  </div>`} />
 
 ##### Dropdown options
 
-<Example>
-  <div slot="preview">
-    <div class="flex gap-3">
-      <div class="dropdown">
-        <button type="button" class="btn btn-subtle-neutral" data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="10,20">Offset</button>
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#">Profile</a></li>
-          <li><a class="dropdown-item" href="#">My Account</a></li>
-          <li><a class="dropdown-item" href="#">Dashboard</a></li>
-        </ul>
-      </div>
-      <div class='dropdown flex gap-1'>
-        <button type="button" class="btn btn-subtle-neutral">Reference</button>
-        <button class='btn btn-subtle-neutral btn-square' type="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-reference="parent">
-          <span class="icon-[material-symbols--keyboard-arrow-down-rounded] text-lg"></span>
-        </button>
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#">Profile</a></li>
-          <li><a class="dropdown-item" href="#">My Account</a></li>
-          <li><a class="dropdown-item" href="#">Dashboard</a></li>
-          <li><hr class="dropdown-divider" /></li>
-          <li><a class="dropdown-item" href="#">Sign Out</a></li>
-        </ul>
-      </div>
-    </div>
-
+<Example class='flex justify-center gap-3' code={`<div class="dropdown">
+    <button type="button" class="btn btn-subtle-neutral" data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="10,20">Offset</button>
+    <ul class="dropdown-menu">
+      <li><a class="dropdown-item" href="#">Profile</a></li>
+      <li><a class="dropdown-item" href="#">My Account</a></li>
+      <li><a class="dropdown-item" href="#">Dashboard</a></li>
+    </ul>
   </div>
-
-  <div slot="code">
-    ```html
-    <div class="dropdown">
-      <button type="button" class="btn btn-subtle-neutral" data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="10,20">
-        Offset
-      </button>
-      <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="#">Profile</a></li>
-        <li><a class="dropdown-item" href="#">My Account</a></li>
-        <li><a class="dropdown-item" href="#">Dashboard</a></li>
-      </ul>
-    </div>
-    <div class='dropdown flex gap-1'>
-      <button type="button" class="btn btn-subtle-neutral">Reference</button>
-      <button class='btn btn-subtle-neutral btn-square' type="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-reference="parent">
-        <span class="icon-[material-symbols--keyboard-arrow-down-rounded] text-lg"></span>
-      </button>
-      <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="#">Profile</a></li>
-        <li><a class="dropdown-item" href="#">My Account</a></li>
-        <li><a class="dropdown-item" href="#">Dashboard</a></li>
-        <li><hr class="dropdown-divider" /></li>
-        <li><a class="dropdown-item" href="#">Sign Out</a></li>
-      </ul>
-    </div>
-    ```
-  </div>
-</Example>
+  <div class='dropdown flex gap-1'>
+    <button type="button" class="btn btn-subtle-neutral">Reference</button>
+    <button class='btn btn-subtle-neutral btn-square' type="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-reference="parent">
+      <span class="icon-[material-symbols--keyboard-arrow-down-rounded] text-lg"></span>
+    </button>
+    <ul class="dropdown-menu">
+      <li><a class="dropdown-item" href="#">Profile</a></li>
+      <li><a class="dropdown-item" href="#">My Account</a></li>
+      <li><a class="dropdown-item" href="#">Dashboard</a></li>
+      <li><hr class="dropdown-divider" /></li>
+      <li><a class="dropdown-item" href="#">Sign Out</a></li>
+    </ul>
+  </div>`} />
 
 ##### Auto close behavior
 
-<Example>
-  <div slot="preview" class="flex gap-3 flex-wrap">
-    <div class="relative">
-      <button class="btn btn-subtle-neutral" type="button" data-bs-toggle="dropdown" data-bs-auto-close="true" aria-expanded="false">Default dropdown</button>
-      <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="#">Menu item</a></li>
-        <li><a class="dropdown-item" href="#">Menu item</a></li>
-        <li><a class="dropdown-item" href="#">Menu item</a></li>
-      </ul>
-    </div>
-
-    <div class="relative">
-      <button class="btn btn-subtle-neutral" type="button" data-bs-toggle="dropdown" data-bs-auto-close="inside" aria-expanded="false">Clickable inside</button>
-      <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="#">Menu item</a></li>
-        <li><a class="dropdown-item" href="#">Menu item</a></li>
-        <li><a class="dropdown-item" href="#">Menu item</a></li>
-      </ul>
-    </div>
-
-    <div class="relative">
-      <button class="btn btn-subtle-neutral" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Clickable outside</button>
-      <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="#">Menu item</a></li>
-        <li><a class="dropdown-item" href="#">Menu item</a></li>
-        <li><a class="dropdown-item" href="#">Menu item</a></li>
-      </ul>
-    </div>
-
-    <div class="relative">
-      <button class="btn btn-subtle-neutral" type="button" data-bs-toggle="dropdown" data-bs-auto-close="false" aria-expanded="false">Manual close</button>
-      <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="#">Menu item</a></li>
-        <li><a class="dropdown-item" href="#">Menu item</a></li>
-        <li><a class="dropdown-item" href="#">Menu item</a></li>
-      </ul>
-    </div>
-
+<Example class='flex flex-wrap justify-center gap-3' code={`<div class="relative">
+    <button class="btn btn-subtle-neutral" type="button" data-bs-toggle="dropdown" data-bs-auto-close="true" aria-expanded="false">Default dropdown</button>
+    <ul class="dropdown-menu">
+      <li><a class="dropdown-item" href="#">Menu item</a></li>
+      <li><a class="dropdown-item" href="#">Menu item</a></li>
+      <li><a class="dropdown-item" href="#">Menu item</a></li>
+    </ul>
   </div>
 
-  <div slot="code">
-    ```html
-    <div class="relative">
-      <button class="btn btn-subtle-neutral" type="button" data-bs-toggle="dropdown" data-bs-auto-close="true" aria-expanded="false">
-        Default dropdown
-      </button>
-      <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="#">Menu item</a></li>
-        <li><a class="dropdown-item" href="#">Menu item</a></li>
-        <li><a class="dropdown-item" href="#">Menu item</a></li>
-      </ul>
-    </div>
-
-    <div class="relative">
-      <button class="btn btn-subtle-neutral" type="button" data-bs-toggle="dropdown" data-bs-auto-close="inside" aria-expanded="false">
-        Clickable inside
-      </button>
-      <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="#">Menu item</a></li>
-        <li><a class="dropdown-item" href="#">Menu item</a></li>
-        <li><a class="dropdown-item" href="#">Menu item</a></li>
-      </ul>
-    </div>
-
-    <div class="relative">
-      <button class="btn btn-subtle-neutral" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
-        Clickable outside
-      </button>
-      <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="#">Menu item</a></li>
-        <li><a class="dropdown-item" href="#">Menu item</a></li>
-        <li><a class="dropdown-item" href="#">Menu item</a></li>
-      </ul>
-    </div>
-
-    <div class="relative">
-      <button class="btn btn-subtle-neutral" type="button" data-bs-toggle="dropdown" data-bs-auto-close="false" aria-expanded="false">
-        Manual close
-      </button>
-      <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="#">Menu item</a></li>
-        <li><a class="dropdown-item" href="#">Menu item</a></li>
-        <li><a class="dropdown-item" href="#">Menu item</a></li>
-      </ul>
-    </div>
-    ```
-
+  <div class="relative">
+    <button class="btn btn-subtle-neutral" type="button" data-bs-toggle="dropdown" data-bs-auto-close="inside" aria-expanded="false">Clickable inside</button>
+    <ul class="dropdown-menu">
+      <li><a class="dropdown-item" href="#">Menu item</a></li>
+      <li><a class="dropdown-item" href="#">Menu item</a></li>
+      <li><a class="dropdown-item" href="#">Menu item</a></li>
+    </ul>
   </div>
-</Example>
+
+  <div class="relative">
+    <button class="btn btn-subtle-neutral" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Clickable outside</button>
+    <ul class="dropdown-menu">
+      <li><a class="dropdown-item" href="#">Menu item</a></li>
+      <li><a class="dropdown-item" href="#">Menu item</a></li>
+      <li><a class="dropdown-item" href="#">Menu item</a></li>
+    </ul>
+  </div>
+
+  <div class="relative">
+    <button class="btn btn-subtle-neutral" type="button" data-bs-toggle="dropdown" data-bs-auto-close="false" aria-expanded="false">Manual close</button>
+    <ul class="dropdown-menu">
+      <li><a class="dropdown-item" href="#">Menu item</a></li>
+      <li><a class="dropdown-item" href="#">Menu item</a></li>
+      <li><a class="dropdown-item" href="#">Menu item</a></li>
+    </ul>
+  </div>`} />

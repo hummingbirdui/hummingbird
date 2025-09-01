@@ -1,27 +1,30 @@
 ---
-import Image from 'astro/components/Image.astro';
 import EcoLogo from '@assets/images/landing/eco-logo.png';
+import CardWrapper from '../CardWrapper.astro';
+import { Image } from 'astro:assets';
 ---
 
-<div class="card p-6 rounded-2xl bg-default">
-  <div class="mb-5 flex items-center gap-4">
+<CardWrapper color="warning" class="justify-between shadow-warning/5 dark:shadow-warning-darker/5">
+  <div class="flex items-center gap-4">
     <Image src={EcoLogo} class="h-12 w-12 rounded-lg" alt="eco-logo" />
     <div>
-      <h3 class="mb-1 font-bold">Eco-Friendly Energy Solutions</h3>
+      <h3 class="mb-1 text-base font-bold">Eco-Friendly Energy Solutions</h3>
       <p class="mb-0 font-sm">GreenTech Innovations</p>
     </div>
   </div>
 
-  <p class="mb-2 text-sm font-medium">Project Status</p>
-  <div class="mb-6">
-    <p class="mb-1 flex justify-between size-xs">
-      <span>0%</span>
-      <span>100%</span>
-    </p>
-    <div class="relative h-2 w-full rounded-xs bg-warning/20">
-      <div class="h-full w-[40%] rounded-xs bg-warning"></div>
+  <div class="">
+    <p class="mb-2 text-sm font-medium">Project Status</p>
+    <div class="">
+      <p class="mb-1 flex justify-between size-xs">
+        <span>0%</span>
+        <span>100%</span>
+      </p>
+      <div class="relative h-2 w-full rounded-xs bg-warning/20">
+        <div class="h-full w-[40%] rounded-xs bg-warning"></div>
+      </div>
     </div>
   </div>
 
   <p class="mb-0 text-sm">Budget: <span class="font-semibold">$790,000</span></p>
-</div>
+</CardWrapper>

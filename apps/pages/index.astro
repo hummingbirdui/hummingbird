@@ -7,25 +7,26 @@ import FeaturedComponents from '@components/sections/landing/featured-components
 import GlobalStyles from '@components/sections/landing/global-styles/GlobalStyles.astro';
 import Footer from '@components/sections/landing/Footer.astro';
 import CTA from '@components/sections/landing/CTA.astro';
-import bgImage from '@assets/images/landing/default-bg.png';
-import ModeComparison from '@components/sections/landing/ModeComparison.astro';
 import CleanMarkup from '@components/sections/landing/CleanMarkup.astro';
+import ModeComparison from '@components/sections/landing/ModeComparison.astro';
 import Comparison from '@components/sections/landing/comparison/Comparison.astro';
+import Frameworks from '@components/sections/landing/frameworks/Frameworks.astro';
 import Hero from '@components/sections/landing/hero/Hero.astro';
 ---
 
 <Layout>
-  <main class="bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${bgImage.src})` }}>
-    <!-- <Hero /> -->
+  <div>
+    <Hero />
     <Features />
     <Comparison />
     <EditorPreview />
     <CleanMarkup />
     <ModeComparison />
+    <Frameworks />
     <FeaturedComponents />
     <GlobalStyles />
     <InteractiveComponents />
     <CTA />
     <Footer />
-  </main>
+  </div>
 </Layout>

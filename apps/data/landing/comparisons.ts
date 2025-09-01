@@ -7,7 +7,7 @@ export interface Framework {
   logo: ImageMetadata;
 }
 
-export interface FeatureComparison {
+export interface Comparison {
   feature: string;
   hummingbird: string;
   tailwindcss: string;
@@ -20,7 +20,7 @@ export const frameworks: Framework[] = [
   { name: 'Bootstrap', logo: bootstrap },
 ];
 
-export const featureComparisons: FeatureComparison[] = [
+export const comparisons: Comparison[] = [
   { feature: 'Ready-to-use components', hummingbird: 'yes', tailwindcss: 'partial', bootstrap: 'yes' },
   { feature: 'Clean, semantic HTML', hummingbird: 'yes', tailwindcss: 'partial', bootstrap: 'yes' },
   { feature: 'Pre-built dark mode', hummingbird: 'yes', tailwindcss: 'partial', bootstrap: 'no' },

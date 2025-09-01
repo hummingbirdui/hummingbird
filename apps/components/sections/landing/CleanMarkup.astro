@@ -38,9 +38,9 @@ import Code from 'astro/components/Code.astro';
               </button>
             ))
           }
-          <div id="copy-btn" class="ml-auto p-0.5 cursor-pointer">
-            <CopyIcon id="copy-icon" />
-            <CheckIcon id="check-icon" class="hidden text-success" />
+          <div id="cl-copy-btn" class="ml-auto p-0.5 cursor-pointer">
+            <CopyIcon id="cl-copy-icon" />
+            <CheckIcon id="cl-check-icon" class="hidden text-success" />
           </div>
         </div>
       </nav>
@@ -55,7 +55,7 @@ import Code from 'astro/components/Code.astro';
               tabindex="0"
             >
               <Code
-                class="!text-sm h-full w-full overflow-auto !bg-muted !rounded-lg !px-0 scrollbar-hide"
+                class="!text-sm h-full w-full !overflow-auto !bg-muted !rounded-lg !px-0 scrollbar-hide"
                 data-astro-code
                 code={tab.code}
                 themes={{ light: 'github-light', dark: 'github-dark' }}
@@ -102,9 +102,9 @@ import Code from 'astro/components/Code.astro';
 </SectionWrapper>
 
 <script>
-  const copyBtn = document.querySelector('#copy-btn') as HTMLButtonElement;
-  const copyIcon = copyBtn.querySelector('#copy-icon') as HTMLElement;
-  const checkIcon = copyBtn.querySelector('#check-icon') as HTMLElement;
+  const copyBtn = document.querySelector('#cl-copy-btn') as HTMLButtonElement;
+  const copyIcon = copyBtn.querySelector('#cl-copy-icon') as HTMLElement;
+  const checkIcon = copyBtn.querySelector('#cl-check-icon') as HTMLElement;
 
   copyBtn.addEventListener('click', async () => {
     const activeTab = document.querySelector('.tab-pane.show.active code');

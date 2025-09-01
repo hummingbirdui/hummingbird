@@ -8,7 +8,7 @@
     --badge-border-color: transparent;
     --badge-link-hover-bg: var(--color-dark);
 
-    @apply inline-flex items-center justify-center gap-1 align-middle transition-[background] duration-200
+    @apply inline-flex items-center justify-center gap-1 align-middle
     bg-[var(--badge-bg)]
     text-[var(--badge-color)]
     text-[length:var(--badge-font-size)]
@@ -37,7 +37,7 @@
 
 @utility badge-link {
   @layer base {
-    @apply cursor-pointer no-underline
+    @apply cursor-pointer no-underline transition-[background] duration-200
     hover:bg-[var(--badge-link-hover-bg)];
   }
 }
