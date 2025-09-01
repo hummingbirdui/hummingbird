@@ -9,16 +9,13 @@ import CardWrapper from '../CardWrapper.astro';
   <Code
     class="!text-sm h-full !bg-muted !rounded-lg !overflow-auto scrollbar-hide"
     data-astro-code
-    code={`btn.addEventListener('click', async () => {
-      const code = btn.dataset.code;
-      if (!code) return;
+    code={`import { Modal } from "@hummingbirdui/hummingbird";
+  const myModal = new Modal('.myModal');
+  const button = document.querySelector('.btn');
 
-      try {
-        await navigator.clipboard.writeText(code);
-
-        if (copyIcon && checkIcon) {
-          copyIcon.classList.add('hidden');
-          checkIcon.classList.remove('hidden');`}
+  button.addEventListener('click', () => {
+    myModal.open();
+});`}
     themes={{ light: 'github-light', dark: 'github-dark' }}
     lang="javascript"
   />
