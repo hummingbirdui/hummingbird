@@ -10,105 +10,111 @@ import CardWrapper from '../CardWrapper.astro';
     <p class="mb-0 text-highlight text-sm">vs last month</p>
   </div>
 
-  <div id="weekly-chart" class="w-full grow"></div>
+  <div data-profitchartid={`chart-${Date.now()}`} class="w-full grow"></div>
 </CardWrapper>
 
 <script>
+  import { onThemeChange } from '@libs/utils';
   import * as echarts from 'echarts';
 
+  const dummyData = {
+    currentYear: [0, 400, 250, 300, 80, 600],
+    lastYear: [100, 250, 150, 200, 400, 250],
+  };
+
+  function getPastDates(days: number) {
+    const dates = [];
+    const today = new Date();
+    for (let i = days - 1; i >= 0; i--) {
+      const d = new Date(today);
+      d.setDate(today.getDate() - i);
+      dates.push(d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }));
+    }
+    return dates;
+  }
+
   if (typeof window !== 'undefined') {
-    function getPastDates(days: number) {
-      const dates = [];
-      const today = new Date();
-      for (let i = days - 1; i >= 0; i--) {
-        const d = new Date(today);
-        d.setDate(today.getDate() - i);
-        dates.push(d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }));
-      }
-      return dates;
-    }
+    const chartContainers = document.querySelectorAll<HTMLDivElement>('[data-profitchartid]');
 
-    const dummyData = {
-      currentYear: [0, 400, 250, 300, 80, 600],
-      lastYear: [100, 250, 150, 200, 400, 250],
-    };
-
-    const chartDom = document.getElementById('weekly-chart');
-    if (chartDom) {
-      const myChart = echarts.init(chartDom);
-
-      const option = {
-        tooltip: {
-          trigger: 'axis',
-          axisPointer: {
-            type: 'none',
-          },
-          backgroundColor: '#111',
-          borderColor: 'transparent',
-          textStyle: {
-            color: '#fff',
-            fontSize: 12,
-            fontWeight: 400,
-            fontFamily: 'Figtree, sans-serif',
-          },
-          padding: [3, 8],
-          extraCssText: 'border-radius: 4px;',
-          formatter: (params: any) => {
-            return params.map((p: any) => `${p.marker} ${p.seriesName}: ${p.value}`).join('<br/>');
-          },
-        },
-        xAxis: {
-          type: 'category',
-          data: getPastDates(6),
-          boundaryGap: false,
-          axisLine: { show: false },
-          axisTick: { show: false },
-          axisLabel: { show: false },
-        },
-        yAxis: {
-          show: false,
-          type: 'value',
-          boundaryGap: false,
-        },
-        series: [
-          {
-            name: 'Current year',
-            type: 'line',
-            data: dummyData.currentYear,
-            showSymbol: false,
-            lineStyle: {
-              width: 3,
-              color: '#25D092',
+    chartContainers.forEach((container) => {
+      const chartId = container.dataset.profitchartid;
+      if (!chartId) return;
+      const profitChart = echarts.init(container);
+      const renderChart = (theme: 'light' | 'dark') => {
+        const isDark = theme === 'dark';
+        const option = {
+          grid: { left: 5, right: 5, top: 10, bottom: 5 },
+          tooltip: {
+            trigger: 'axis',
+            axisPointer: {
+              type: 'none',
             },
-            itemStyle: {
-              color: '#25D092',
+            backgroundColor: '#111',
+            borderColor: 'transparent',
+            textStyle: {
+              color: '#fff',
+              fontSize: 12,
+              fontWeight: 400,
+              fontFamily: 'Figtree, sans-serif',
             },
-            emphasis: {
-              disabled: true,
+            padding: [3, 8],
+            extraCssText: 'border-radius: 4px;',
+            formatter: (params: any) => {
+              return params.map((p: any) => `${p.marker} ${p.seriesName}: ${p.value}`).join('<br/>');
             },
           },
-          {
-            name: 'Last year',
-            type: 'line',
-            data: dummyData.lastYear,
-            showSymbol: false,
-            lineStyle: {
-              width: 1,
-              color: '#DFE4ED',
-            },
-            itemStyle: {
-              color: '#DFE4ED',
-            },
-            emphasis: {
-              disabled: true,
-            },
+          xAxis: {
+            type: 'category',
+            data: getPastDates(6),
+            boundaryGap: false,
+            axisLine: { show: false },
+            axisTick: { show: false },
+            axisLabel: { show: false },
           },
-        ],
-        grid: { left: 5, right: 5, top: 10, bottom: 5 },
+          yAxis: {
+            show: false,
+            type: 'value',
+            boundaryGap: false,
+          },
+          series: [
+            {
+              name: 'Last year',
+              type: 'line',
+              data: dummyData.lastYear,
+              showSymbol: false,
+              lineStyle: {
+                width: 1,
+                color: isDark ? '#1d2025' : '#DFE4ED',
+              },
+              itemStyle: {
+                color: isDark ? '#1d2025' : '#DFE4ED',
+              },
+              emphasis: {
+                disabled: true,
+              },
+            },
+            {
+              name: 'Current year',
+              type: 'line',
+              data: dummyData.currentYear,
+              showSymbol: false,
+              lineStyle: {
+                width: 3,
+                color: isDark ? '#058c5b' : '#25D092',
+              },
+              itemStyle: {
+                color: isDark ? '#058c5b' : '#25D092',
+              },
+              emphasis: {
+                disabled: true,
+              },
+            },
+          ],
+        };
+        profitChart.setOption(option, true);
       };
-
-      myChart.setOption(option);
-      window.addEventListener('resize', () => myChart.resize());
-    }
+      onThemeChange((theme) => renderChart(theme));
+      window.addEventListener('resize', () => profitChart.resize());
+    });
   }
 </script>

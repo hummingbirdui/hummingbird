@@ -13,7 +13,7 @@ import CardWrapper from '../CardWrapper.astro';
     <h3 class="mb-0 text-base font-bold">Hours</h3>
   </div>
 
-  <div id="hours-chart" class="w-full grow"></div>
+  <div data-barchartid={`chart-${Date.now()}`} class="w-full grow"></div>
 </CardWrapper>
 
 <script>
@@ -22,10 +22,12 @@ import CardWrapper from '../CardWrapper.astro';
   const data = [6, 8, 5, 4, 7, 6, 5];
 
   if (typeof window !== 'undefined') {
-    const chartDom = document.getElementById('hours-chart');
-    if (chartDom) {
-      const myChart = echarts.init(chartDom);
+    const chartContainers = document.querySelectorAll<HTMLDivElement>('[data-barchartid]');
 
+    chartContainers.forEach((container) => {
+      const chartId = container.dataset.barchartid;
+      if (!chartId) return;
+      const barChart = echarts.init(container);
       const renderChart = (theme: 'light' | 'dark') => {
         const isDark = theme === 'dark';
         const option = {
@@ -100,12 +102,11 @@ import CardWrapper from '../CardWrapper.astro';
           ],
         };
 
-        myChart.setOption(option, true);
+        barChart.setOption(option, true);
       };
-
       onThemeChange((theme) => renderChart(theme));
 
-      window.addEventListener('resize', () => myChart.resize());
-    }
+      window.addEventListener('resize', () => barChart.resize());
+    });
   }
 </script>
