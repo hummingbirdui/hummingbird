@@ -1,7 +1,33 @@
 ---
 title: Range
-description: Range allow users to make selections from a range of values.
+description: Range inputs let users select a value from a continuous range, typically with a slider control.
 toc: true
+classNames:
+  component:
+    - class: form-range
+      desc: Range input
+  size:
+    - class: form-range-sm
+      desc: Small range input
+    - class: default
+      desc: Medium size (default)
+    - class: form-range-lg
+      desc: Large range input
+  color:
+    - class: default
+      desc: Primary color (default)
+    - class: form-range-secondary
+      desc: Secondary color
+    - class: form-range-info
+      desc: Info color
+    - class: form-range-success
+      desc: Success color
+    - class: form-range-warning
+      desc: Warning color
+    - class: form-range-danger
+      desc: Danger color
+    - class: form-range-neutral
+      desc: Neutral color
 ---
 
 ##### Default
@@ -31,11 +57,13 @@ toc: true
 
 ##### Sizes
 
+Use `.form-range-sm` for a small slider and `.form-range-lg` for a large slider. The default size is medium.
+
 <Example class='flex flex-col gap-4' code={`<input type="range" class="form-range form-range-sm" min="0" max="100" />
   <input type="range" class="form-range" min="0" max="100" />
   <input type="range" class="form-range form-range-lg" min="0" max="100" />`} />
 
-##### Colors
+##### Colors variants
 
 <Example class='flex flex-col gap-3' code={`<input type="range" class="form-range" min="0" max="100" />
   <input type="range" class="form-range form-range-secondary" min="0" max="100" />
@@ -44,3 +72,19 @@ toc: true
   <input type="range" class="form-range form-range-warning" min="0" max="100" />
   <input type="range" class="form-range form-range-danger" min="0" max="100" />
   <input type="range" class="form-range form-range-neutral" min="0" max="100" />`} />
+
+##### CSS variables
+
+The range component is built using a set of CSS variables. These variables provide flexibility for customizing styles.
+
+<Example showPreview={false} lang='sass' code={`.form-range {
+    --form-range-color: var(--color-primary);
+    --form-range-height: --spacing(6);
+    --form-range-thumb-width: --spacing(5);
+    --form-range-thumb-height: --spacing(5);
+    --form-range-thumb-border-radius: calc(infinity * 1px);
+    --form-range-thumb-box-shadow: --alpha(var(--form-range-color) / 16%) 0px 0px 0px 8px;
+    --form-range-track-width: 100%;
+    --form-range-track-height: --spacing(1.5);
+    --form-range-track-border-radius: var(--radius-sm);
+  }`} />

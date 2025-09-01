@@ -1,12 +1,25 @@
 ---
 title: Input Group
-description: Easily extend form controls by adding text, buttons, or button groups on either side of textual inputs, custom selects, and custom file inputs.
+description: Input groups let you enhance form controls by adding text, icons, buttons, or button groups to either side of an input, select, or file input.
 toc: true
+classNames:
+  component:
+    - class: input-group
+      desc: Container of inputs
+    - class: input-group-text
+      desc: Addon text or something as an addon
+  size:
+    - class: input-group-sm
+      desc: Small size
+    - class: default
+      desc: Medium size (default)
+    - class: input-group-lg
+      desc: Large size
 ---
 
 ##### Basic example
 
-Place one add-on or button on either side of an input. You may also place one on both sides of an input. Remember to place `<label>`s outside the input group.
+Add text or buttons to the left, right, or both sides of an input using an input group. Labels should always be placed outside the group for accessibility.
 
 <Example class='flex flex-col gap-3' code={`<div class="input-group">
     <span class="input-group-text" id="basic-addon1">@</span>
@@ -46,7 +59,7 @@ Place one add-on or button on either side of an input. You may also place one on
 
 ##### Wrapping
 
-Input groups wrap by default via `flex-wrap: wrap` in order to accommodate custom form field validation within an input group. You may disable this with `.flex-nowrap`.
+Input groups use `.flex-wrap` by default to support validation and flexible layouts. Use `.flex-nowrap` to prevent wrapping.
 
 <Example code={`<div class="input-group flex-nowrap">
     <span class="input-group-text" id="addon-wrapping">@</span>
@@ -55,7 +68,7 @@ Input groups wrap by default via `flex-wrap: wrap` in order to accommodate custo
 
 ##### Border radius
 
-Due to limitations of browser support at the time, `border-radius` styles can only be applied to the first and last children within the `.input-group` class. Any non-visible element in one of those positions will cause the input group to render incorrectly.
+Border-radius applies only to the first and last children in an `.input-group`. Hidden elements in these positions may break styling.
 
 <Example code={`<div class="input-group">
     <span class="input-group-text" id="visible-addon">@</span>
@@ -65,9 +78,7 @@ Due to limitations of browser support at the time, `border-radius` styles can on
 
 ##### Sizing
 
-Add the relative form sizing classes to the .input-group itself and contents within will automatically resize—no need for repeating the form control size classes on each element.
-
-**Sizing on the individual input group elements isn’t supported.**
+Input groups can be sized using the `.input-group-sm`, `.input-group-lg`, default is medium. No need to add size classes to the individual elements, its not supported.
 
 <Example class='flex flex-col gap-3' code={`<div class="input-group input-group-sm">
     <span class="input-group-text" id="inputGroup-sizing-sm">Small</span>
@@ -86,25 +97,23 @@ Add the relative form sizing classes to the .input-group itself and contents wit
 
 ##### Checkboxes and radios
 
-Place any checkbox or radio option within an input group’s addon instead of text. We recommend adding `.mt-0` to the `.form-check-input` when there’s no visible text next to the input.
+You can add checkboxes and radios as addons to input groups.
 
 <Example class='flex flex-col gap-3' code={`<div class="input-group">
     <div class="input-group-text">
-      <input class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input"/>
+      <input class="form-check-input" type="checkbox" value="" aria-label="Checkbox for following text input"/>
     </div>
     <input type="text" class="form-control" aria-label="Text input with checkbox"/>
   </div>
 
   <div class="input-group">
     <div class="input-group-text">
-      <input class="form-check-input mt-0" type="radio" value="" aria-label="Radio button for following text input"/>
+      <input class="form-check-input" type="radio" value="" aria-label="Radio button for following text input"/>
     </div>
     <input type="text" class="form-control" aria-label="Text input with radio button"/>
   </div>`} />
 
 ##### Multiple inputs
-
-While multiple `<input>`s are supported visually, validation styles are only available for input groups with a single `<input>`.
 
 <Example code={`<div class="input-group">
     <span class="input-group-text">First and last name</span>
@@ -114,7 +123,7 @@ While multiple `<input>`s are supported visually, validation styles are only ava
 
 ##### Multiple addons
 
-Multiple add-ons are supported and can be mixed with checkbox and radio input versions.
+Input groups support multiple add-ons, which can also include checkbox or radio inputs.
 
 <Example class='flex flex-col gap-3' code={`<div class="input-group">
     <span class="input-group-text">$</span>
@@ -246,7 +255,7 @@ Multiple add-ons are supported and can be mixed with checkbox and radio input ve
 
 ##### Custom forms
 
-Input groups include support for custom selects and custom file inputs. Browser default versions of these are not supported.
+Input groups support custom selects and file inputs.
 
 ###### Custom select
 
@@ -311,3 +320,20 @@ Input groups include support for custom selects and custom file inputs. Browser 
     <input type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload"/>
     <button class="btn btn-outline-neutral" type="button" id="inputGroupFileAddon04">Button</button>
   </div>`} />
+
+
+##### CSS variables
+
+Input group text styles can be customized using the following CSS variables.
+
+<Example showPreview={false} lang='sass' code={`.input-group-text {
+    --input-group-addon-padding-x: var(--input-btn-padding-x);
+    --input-group-addon-padding-y: var(--input-btn-padding-y);
+    --input-group-addon-font-weight: var(--input-font-weight, 400);
+    --input-group-addon-bg: var(--background-color-subtle);
+    --input-group-addon-color: var(--input-color);
+    --input-group-addon-border-color: var(--border-color-base);
+    --input-group-addon-radius: var(--input-btn-radius);
+    --input-group-addon-font-size: var(--input-btn-font-size);
+    --input-group-addon-line-height: var(--input-btn-line-height);
+  }`} />

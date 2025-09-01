@@ -2,6 +2,28 @@
 title: Link
 description: Link utilities are used to stylize your anchors to adjust their color, opacity, underline offset, underline color, and more.
 toc: true
+classNames:
+  component:
+    - class: link
+      desc: Link component
+  color:
+    - class: link-primary
+      desc: Primary color
+    - class: link-secondary
+      desc: Secondary color
+    - class: link-info
+      desc: Info color
+    - class: link-success
+      desc: Success color
+    - class: link-warning
+      desc: Warning color
+    - class: link-danger
+      desc: Danger color
+    - class: link-neutral
+      desc: Neutral color
+  modifier:
+    - class: link-hover
+      desc: Underline on hover
 ---
 
 ##### Example
@@ -28,3 +50,13 @@ toc: true
   <a href="#" class="link link-hover link-warning">Warning</a>
   <a href="#" class="link link-hover link-danger">Danger</a>
   <a href="#" class="link link-hover link-neutral">Neutral</a>`} />
+
+##### CSS variables
+
+The link component is built using a set of CSS variables. These variables provide flexibility for customizing styles.
+
+<Example showPreview={false} lang='sass' code={`.link {
+    --link-color: var(--text-color-default);
+    --link-hover-color: var(--text-color-default);
+    --link-active-color: var(--link-hover-color);
+  }`} />
