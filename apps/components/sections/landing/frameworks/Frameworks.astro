@@ -12,7 +12,10 @@ import remix from '@assets/images/landing/logos/remix.png';
 import nextjs from '@assets/images/landing/logos/nextjs.png';
 ---
 
-<SectionWrapper id="frameworks" class="h-134 sm:h-130 md:h-148 lg:h-175 xl:h-135 2xl:h-138 !p-0 overflow-hidden">
+<SectionWrapper
+  id="frameworks"
+  class="!p-0 h-134 sm:h-130 md:h-148 lg:h-175 xl:h-135 2xl:h-138 bg-cover bg-center bg-no-repeat bg-[url('/images/framework/xs-l.png')] dark:bg-[url('/images/framework/xs-d.png')] sm:bg-[url('/images/framework/sm-l.png')] dark:sm:bg-[url('/images/framework/sm-d.png')] md:bg-[url('/images/framework/md-l.png')] dark:md:bg-[url('/images/framework/md-d.png')] lg:bg-[url('/images/framework/lg-l.png')] dark:lg:bg-[url('/images/framework/lg-d.png')] xl:bg-[url('/images/framework/xl-l.png')] dark:xl:bg-[url('/images/framework/xl-d.png')] 2xl:bg-[url('/images/framework/xxl-l.png')] dark:2xl:bg-[url('/images/framework/xxl-d.png')] overflow-hidden"
+>
   <div
     class="relative mx-auto max-w-238 h-full flex flex-col xl:flex-row items-center overflow-hidden xl:overflow-visible"
   >
@@ -135,11 +138,12 @@ import nextjs from '@assets/images/landing/logos/nextjs.png';
       >
         <Image src={laravel} alt="django" class="w-12 object-contain" />
       </a>
-      <div
+      <a
+        href="#"
         class="h-[62px] md:h-20 lg:h-25 xl:h-[110px] 2xl:h-[134px] aspect-square rounded-lg border border-light hover:border-primary bg-default flex items-center justify-center"
       >
         <Image src={nextjs} alt="django" class="w-12 object-contain" />
-      </div>
+      </a>
       <div
         class="h-[62px] md:h-20 lg:h-25 xl:h-[110px] 2xl:h-[134px] aspect-square rounded-lg border border-base bg-default opacity-60"
       >
