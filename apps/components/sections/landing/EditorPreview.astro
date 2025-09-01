@@ -60,6 +60,7 @@ import RefreshIcon from '@components/icons/RefreshIcon.astro';
   import { EditorState } from '@codemirror/state';
   import { html } from '@codemirror/lang-html';
   import cssText from '../../../style.css?inline';
+  import { onThemeChange } from '@libs/utils';
 
   const resetButton = document.getElementById('resetBtn') as HTMLButtonElement;
   const copyButton = document.getElementById('copyBtn') as HTMLButtonElement;
@@ -88,13 +89,22 @@ import RefreshIcon from '@components/icons/RefreshIcon.astro';
   const updatePreview = (code: string) => {
     const iframe = document.getElementById('preview') as HTMLIFrameElement;
     const doc = iframe.contentDocument as HTMLDocument;
-    const body = doc.getElementById('previewCode');
+    const html = doc.documentElement;
+    const body = doc.getElementById('previewCode') as HTMLElement;
     const styleEl = doc.createElement('style');
+
     styleEl.textContent = cssText;
     doc.head.appendChild(styleEl);
-    if (body) {
-      body.innerHTML = code;
-    }
+
+    body.innerHTML = code;
+
+    onThemeChange((theme) => {
+      if (theme === 'dark') {
+        html.classList.add('dark');
+      } else {
+        html.classList.remove('dark');
+      }
+    });
   };
 
   const editor = new EditorView({
