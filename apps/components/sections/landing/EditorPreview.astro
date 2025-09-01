@@ -45,7 +45,7 @@ import RefreshIcon from '@components/icons/RefreshIcon.astro';
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   <title>Document</title>
 </head>
-<body id="previewCode" class="flex items-center justify-center min-h-screen">
+<body id="previewCode" class="flex items-center justify-center min-h-screen bg-transparent">
 </body>
 </html>`}
       >
@@ -59,6 +59,7 @@ import RefreshIcon from '@components/icons/RefreshIcon.astro';
   import { basicSetup, EditorView } from 'codemirror';
   import { EditorState } from '@codemirror/state';
   import { html } from '@codemirror/lang-html';
+  import cssText from '../../../style.css?inline';
 
   const resetButton = document.getElementById('resetBtn') as HTMLButtonElement;
   const copyButton = document.getElementById('copyBtn') as HTMLButtonElement;
@@ -88,6 +89,9 @@ import RefreshIcon from '@components/icons/RefreshIcon.astro';
     const iframe = document.getElementById('preview') as HTMLIFrameElement;
     const doc = iframe.contentDocument as HTMLDocument;
     const body = doc.getElementById('previewCode');
+    const styleEl = doc.createElement('style');
+    styleEl.textContent = cssText;
+    doc.head.appendChild(styleEl);
     if (body) {
       body.innerHTML = code;
     }
