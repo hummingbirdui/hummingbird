@@ -1,0 +1,1 @@
+const o=e=>{if(typeof window>"u")return;const t=()=>document.documentElement.classList.contains("dark")?"dark":"light";e(t()),new MutationObserver(()=>{e(t())}).observe(document.documentElement,{attributes:!0,attributeFilter:["class"]}),window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change",()=>{e(t())})};export{o};
