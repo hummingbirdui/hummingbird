@@ -1,17 +1,50 @@
 ---
 import 'dropzone/dist/dropzone.css';
 import CardWrapper from '../CardWrapper.astro';
+import birdImg1 from '@assets/images/landing/birds/bird1.jpg';
+import birdImg2 from '@assets/images/landing/birds/bird2.jpg';
+import birdImg3 from '@assets/images/landing/birds/bird3.jpg';
+import birdImg4 from '@assets/images/landing/birds/bird4.jpg';
+import birdImg5 from '@assets/images/landing/birds/bird5.jpg';
+
+const uploadedImages = [
+  { image: birdImg1 },
+  { image: birdImg2 },
+  { image: birdImg3 },
+  { image: birdImg4 },
+  { image: birdImg5 },
+];
 ---
 
 <CardWrapper color="secondary" class="shadow-secondary/5 dark:shadow-secondary-darker/5">
   <h3 class="mb-4 text-base font-bold">Uploader</h3>
   <form
     id="my-dropzone"
-    class="dropzone h-15 flex items-center justify-center !min-h-0 !border-1 !border-dashed !border-base !rounded-lg bg-default"
+    class="dropzone mb-4 h-15 flex items-center justify-center !min-h-0 !border-1 !border-dashed !border-base !rounded-lg bg-muted"
   >
   </form>
 
-  <div id="preview-container" class="flex flex-wrap gap-3"></div>
+  <!-- Preview container -->
+  <div id="preview-container" class="flex flex-wrap gap-3">
+    {
+      uploadedImages.map((item, index) => (
+        <div class="relative w-14 h-14" data-default>
+          <img src={item.image.src} alt="Uploaded preview" class="object-cover w-full h-full rounded-lg" />
+          <button
+            type="button"
+            class="remove-btn h-3 w-3 flex items-center justify-center absolute -top-1 -right-1 text-white dark:text-black bg-dark dark:bg-main rounded-full"
+          >
+            <svg width="9" height="8" viewBox="0 0 9 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M4.39766 4.34995L2.64766 6.09995C2.59766 6.14995 2.53932 6.17495 2.47266 6.17495C2.40599 6.17495 2.34766 6.14995 2.29766 6.09995C2.24766 6.04995 2.22266 5.99162 2.22266 5.92495C2.22266 5.85828 2.24766 5.79995 2.29766 5.74995L4.04766 3.99995L2.29766 2.24995C2.24766 2.19995 2.22266 2.14162 2.22266 2.07495C2.22266 2.00828 2.24766 1.94995 2.29766 1.89995C2.34766 1.84995 2.40599 1.82495 2.47266 1.82495C2.53932 1.82495 2.59766 1.84995 2.64766 1.89995L4.39766 3.64995L6.14766 1.89995C6.19766 1.84995 6.25599 1.82495 6.32266 1.82495C6.38932 1.82495 6.44766 1.84995 6.49766 1.89995C6.54766 1.94995 6.57266 2.00828 6.57266 2.07495C6.57266 2.14162 6.54766 2.19995 6.49766 2.24995L4.74766 3.99995L6.49766 5.74995C6.54766 5.79995 6.57266 5.85828 6.57266 5.92495C6.57266 5.99162 6.54766 6.04995 6.49766 6.09995C6.44766 6.14995 6.38932 6.17495 6.32266 6.17495C6.25599 6.17495 6.19766 6.14995 6.14766 6.09995L4.39766 4.34995Z"
+                fill="currentColor"
+              />
+            </svg>
+          </button>
+        </div>
+      ))
+    }
+  </div>
 
   <script>
     import Dropzone from 'dropzone';
@@ -41,14 +74,23 @@ import CardWrapper from '../CardWrapper.astro';
         </p>
       </div>`,
       previewTemplate: `
-        <div class="relative w-24 h-24 rounded-lg overflow-hidden shadow-md">
-          <img data-dz-thumbnail class="object-cover w-full h-full" />
+        <div class="relative w-14 h-14">
+          <img data-dz-thumbnail class="object-cover w-full h-full rounded-lg" />
           <button data-dz-remove
-            class="absolute top-1 right-1 bg-black/60 text-white text-xs rounded-full px-1">
-            ✕
+            class="h-3 w-3 flex items-center justify-center absolute -top-1 -right-1 text-white dark:text-black bg-dark dark:bg-main rounded-full">
+            <svg width="9" height="8" viewBox="0 0 9 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M4.39766 4.34995L2.64766 6.09995C2.59766 6.14995 2.53932 6.17495 2.47266 6.17495C2.40599 6.17495 2.34766 6.14995 2.29766 6.09995C2.24766 6.04995 2.22266 5.99162 2.22266 5.92495C2.22266 5.85828 2.24766 5.79995 2.29766 5.74995L4.04766 3.99995L2.29766 2.24995C2.24766 2.19995 2.22266 2.14162 2.22266 2.07495C2.22266 2.00828 2.24766 1.94995 2.29766 1.89995C2.34766 1.84995 2.40599 1.82495 2.47266 1.82495C2.53932 1.82495 2.59766 1.84995 2.64766 1.89995L4.39766 3.64995L6.14766 1.89995C6.19766 1.84995 6.25599 1.82495 6.32266 1.82495C6.38932 1.82495 6.44766 1.84995 6.49766 1.89995C6.54766 1.94995 6.57266 2.00828 6.57266 2.07495C6.57266 2.14162 6.54766 2.19995 6.49766 2.24995L4.74766 3.99995L6.49766 5.74995C6.54766 5.79995 6.57266 5.85828 6.57266 5.92495C6.57266 5.99162 6.54766 6.04995 6.49766 6.09995C6.44766 6.14995 6.38932 6.17495 6.32266 6.17495C6.25599 6.17495 6.19766 6.14995 6.14766 6.09995L4.39766 4.34995Z" fill="currentColor"/>
+            </svg>
           </button>
         </div>
       `,
+    });
+
+    document.querySelectorAll('#preview-container [data-default] .remove-btn').forEach((btn) => {
+      btn.addEventListener('click', (e) => {
+        const parent = (e.currentTarget as HTMLElement).closest('[data-default]');
+        if (parent) parent.remove();
+      });
     });
   </script>
 </CardWrapper>
