@@ -6,7 +6,6 @@ import cardImage from '@assets/images/hamster.webp';
 import CopyIcon from '@components/icons/CopyIcon.astro';
 import CheckIcon from '@components/icons/CheckIcon.astro';
 import RefreshIcon from '@components/icons/RefreshIcon.astro';
-import bgImage from '@assets/images/landing/editor-preview-light.png';
 ---
 
 <SectionWrapper id="editor-preview" class="max-w-340">
@@ -17,9 +16,9 @@ import bgImage from '@assets/images/landing/editor-preview-light.png';
 
   <div class="flex flex-col md:flex-row items-center gap-6">
     <!-- editor -->
-    <div class="p-6 flex flex-col h-100 md:h-138 w-full rounded-2xl bg-darker overflow-hidden">
-      <div class="mb-4 flex items-center justify-between gap-2 border-b border-[#C3D3DB]/60">
-        <h6 class="text-highlight font-bold">Edit the Code Sample</h6>
+    <div class="p-6 flex flex-col h-100 md:h-138 w-full rounded-2xl bg-[var(--color-gray-900)] overflow-hidden">
+      <div class="mb-4 flex items-center justify-between gap-2 border-b border-[var(--color-gray-700)]">
+        <h6 class="text-[var(--color-gray-500)] text-base font-bold">Edit the Code Sample</h6>
         <button id="resetBtn" class="ml-auto text-emphasis">
           <RefreshIcon />
         </button>
@@ -33,50 +32,79 @@ import bgImage from '@assets/images/landing/editor-preview-light.png';
 
     <!-- preview -->
     <GradientBorderBox color="warning" class="h-100 md:h-138 w-full rounded-2xl">
-      <div
+      <iframe
         id="preview"
-        class="flex items-center h-full w-full justify-center bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${bgImage.src})` }}
-        data-preview-img={cardImage.src}
+        data-card-img={cardImage.src}
+        class="flex items-center h-full w-full justify-center bg-cover bg-center bg-no-repeat
+         bg-[url('/images/editor-preview-light.png')] dark:bg-[url('/images/editor-preview-dark.png')]"
+        srcdoc={`<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <title>Document</title>
+</head>
+<body id="previewCode" class="flex items-center justify-center min-h-screen bg-transparent">
+</body>
+</html>`}
       >
-      </div>
+      </iframe>
     </GradientBorderBox>
   </div>
 </SectionWrapper>
-
-<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
 <script>
   import { oneDark } from '@codemirror/theme-one-dark';
   import { basicSetup, EditorView } from 'codemirror';
   import { EditorState } from '@codemirror/state';
   import { html } from '@codemirror/lang-html';
+  import cssText from '../../../style.css?inline';
+  import { onThemeChange } from '@libs/utils';
 
-  const preview = document.getElementById('preview') as HTMLDivElement;
   const resetButton = document.getElementById('resetBtn') as HTMLButtonElement;
   const copyButton = document.getElementById('copyBtn') as HTMLButtonElement;
   const copyIcon = document.getElementById('copyIcon') as HTMLElement;
   const checkIcon = document.getElementById('checkIcon') as HTMLElement;
 
-  const previewImage = preview.dataset.previewImg;
+  const preview = document.getElementById('preview') as HTMLIFrameElement;
+  const cardImg = preview.dataset.cardImg ?? '';
 
   const startCode = `<div class="card p-2 shadow-lg rounded-2xl max-w-64">
-  <img src="${previewImage}" class='card-img-top pb-4' alt="Hummingbird" />
+  <img src="${cardImg}" class='card-img-top pb-4' alt="Hummingbird" />
   <div class="card-body p-1">
     <h4 class="card-title text-base">10 Fascinating Animal Facts</h4>
-    <p class='text-xs'>Discover surprising traits and behaviors
-from creatures big and small.</p>
+    <p class='text-xs'>Discover surprising traits and behaviors from creatures big and small.</p>
   </div>
-  <div class="card-footer flex items-center justify-between">
-    <p class="text-sm m-0">12 min read</p>
+  <div class="card-footer px-1 flex items-center justify-between">
+    <p class="text-xs m-0">12 min read</p>
     <button class='btn btn-icon btn-sm'>
-      <span class='icon-[material-symbols--bookmark-outline] text-lg text-default'></span>
+      <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M5.625 14.9393L9.75 13.1955L13.875 14.9393V4.17676H5.625V14.9393ZM5.2875 16.308C5.1 16.3955 4.92188 16.383 4.75313 16.2705C4.58438 16.158 4.5 16.0018 4.5 15.8018V4.17676C4.5 3.87676 4.6125 3.61426 4.8375 3.38926C5.0625 3.16426 5.325 3.05176 5.625 3.05176H13.875C14.175 3.05176 14.4375 3.16426 14.6625 3.38926C14.8875 3.61426 15 3.87676 15 4.17676V15.8018C15 16.0018 14.9156 16.158 14.7469 16.2705C14.5781 16.383 14.4 16.3955 14.2125 16.308L9.75 14.3955L5.2875 16.308ZM5.625 4.17676H13.875H9.75H5.625Z" fill="currentColor"/>
+      </svg>
     </button>
   </div>
 </div>`;
 
   const updatePreview = (code: string) => {
-    preview.innerHTML = code;
+    const iframe = document.getElementById('preview') as HTMLIFrameElement;
+    const doc = iframe.contentDocument as HTMLDocument;
+    const html = doc.documentElement;
+    const body = doc.getElementById('previewCode') as HTMLElement;
+    const styleEl = doc.createElement('style');
+
+    styleEl.textContent = cssText;
+    doc.head.appendChild(styleEl);
+
+    body.innerHTML = code;
+
+    onThemeChange((theme) => {
+      if (theme === 'dark') {
+        html.classList.add('dark');
+      } else {
+        html.classList.remove('dark');
+      }
+    });
   };
 
   const editor = new EditorView({

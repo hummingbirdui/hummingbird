@@ -6,6 +6,6 @@ interface Props extends astroHTML.JSX.HTMLAttributes {
 const { class: className = '', ...rest } = Astro.props;
 ---
 
-<section class={`mx-auto px-6 lg:px-10 py-20 w-full ${className}`} {...rest}>
+<section class={`mx-auto px-6 lg:px-10 py-12 sm:py-20 w-full ${className}`} {...rest}>
   <slot />
 </section>

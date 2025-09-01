@@ -1,91 +1,140 @@
 ---
 import logo from '@assets/images/logos/hummingbird.png';
+import SearchIcon from '@components/icons/SearchIcon.astro';
+import BulbIcon from '@components/icons/BulbIcon.astro';
+import GitHubIcon from '@components/icons/GithubIcon.astro';
+import MenuIcon from '@components/icons/MenuIcon.astro';
+import TimesIcon from '@components/icons/TimesIcon.astro';
 import { Image } from 'astro:assets';
 
 const menuItems = [
-  {
-    name: 'Docs',
-    path: '/docs/components/buttons',
-  },
-  {
-    name: 'Components',
-    path: '#',
-  },
-  {
-    name: 'Examples',
-    path: '#',
-  },
-  {
-    name: 'Blog',
-    path: '#',
-  },
-  {
-    name: 'Roadmap',
-    path: '#',
-  },
+  { name: 'Docs', path: '/docs/components/buttons' },
+  { name: 'Components', path: '#' },
+  { name: 'Examples', path: '#' },
+  { name: 'Blog', path: '#' },
+  { name: 'Roadmap', path: '#' },
 ];
+
+const currentPath = Astro.url.pathname;
 ---
 
-<nav class="navbar navbar-expand-xl border-b border-light bg-default sticky top-0 w-full z-10">
-  <div class="flex flex-wrap items-center mx-auto w-full max-w-8xl">
+<nav class="px-6 md:px-10 sticky top-0 border-b border-light bg-default z-10">
+  <div class="mx-auto py-5 flex items-center w-full max-w-8xl">
     <a class="navbar-brand flex items-center gap-2" href="/">
       <Image src={logo} alt="Logo" class="w-10 h-10" />
-      <h5 class="mb-0 font-semibold">hummingbird</h5>
+      <h5 class="mb-0 text-highlight font-semibold hidden sm:flex">hummingbird</h5>
     </a>
-    <span class="badge badge-subtle">v 1.0.0</span>
-    <input
-      class="form-control-fill max-w-70 ms-8 xl:ms-15 hidden md:block"
-      type="search"
-      placeholder="Search"
-      aria-label="Search"
-    />
-    <div class="xl:border-l border-light xl:ms-4 xl:ps-4 flex gap-2 xl:order-1 ms-auto">
-      <button class="btn btn-circle btn-subtle-neutral" data-theme-toggle-btn>
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-          ><path
-            fill="currentColor"
-            d="M12 22q-.825 0-1.412-.587T10 20h4q0 .825-.587 1.413T12 22m-3-3q-.425 0-.712-.288T8 18t.288-.712T9 17h6q.425 0 .713.288T16 18t-.288.713T15 19zm-.75-3q-1.725-1.025-2.738-2.75T4.5 9.5q0-3.125 2.188-5.312T12 2t5.313 2.188T19.5 9.5q0 2.025-1.012 3.75T15.75 16zm.6-2h6.3q1.125-.8 1.738-1.975T17.5 9.5q0-2.3-1.6-3.9T12 4T8.1 5.6T6.5 9.5q0 1.35.613 2.525T8.85 14M12 14"
-          ></path></svg
-        >
-      </button>
-      <button class="btn btn-circle btn-subtle-neutral">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-          ><path
-            fill="currentColor"
-            fill-rule="evenodd"
-            d="M12.006 2a9.85 9.85 0 0 0-6.484 2.44a10.32 10.32 0 0 0-3.393 6.17a10.48 10.48 0 0 0 1.317 6.955a10.05 10.05 0 0 0 5.4 4.418c.504.095.683-.223.683-.494c0-.245-.01-1.052-.014-1.908c-2.78.62-3.366-1.21-3.366-1.21a2.7 2.7 0 0 0-1.11-1.5c-.907-.637.07-.621.07-.621c.317.044.62.163.885.346c.266.183.487.426.647.71c.135.253.318.476.538.655a2.08 2.08 0 0 0 2.37.196c.045-.52.27-1.006.635-1.37c-2.219-.259-4.554-1.138-4.554-5.07a4.02 4.02 0 0 1 1.031-2.75a3.77 3.77 0 0 1 .096-2.713s.839-.275 2.749 1.05a9.26 9.26 0 0 1 5.004 0c1.906-1.325 2.74-1.05 2.74-1.05c.37.858.406 1.828.101 2.713a4.02 4.02 0 0 1 1.029 2.75c0 3.939-2.339 4.805-4.564 5.058a2.47 2.47 0 0 1 .679 1.897c0 1.372-.012 2.477-.012 2.814c0 .272.18.592.687.492a10.05 10.05 0 0 0 5.388-4.421a10.47 10.47 0 0 0 1.313-6.948a10.32 10.32 0 0 0-3.39-6.165A9.85 9.85 0 0 0 12.007 2Z"
-            clip-rule="evenodd"></path></svg
-        >
-      </button>
-      <button
-        class="btn btn-circle navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
+    <span class="ml-1 sm:ml-4 badge badge-subtle shrink-0">v 1.0.0</span>
+    <div class="ml-8 2xl:ml-15 relative hidden lg:flex items-center basis-70">
+      <SearchIcon class="absolute left-4" />
+      <input class="form-control-fill w-full px-11" type="search" placeholder="Search" aria-label="Search" />
+      <span class="absolute right-5 badge text-highlight font-normal border-0 bg-transparent pointer-events-none"
+        >CTRL K</span
       >
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-          ><path
-            fill="currentColor"
-            d="M4 18q-.425 0-.712-.288T3 17t.288-.712T4 16h16q.425 0 .713.288T21 17t-.288.713T20 18zm0-5q-.425 0-.712-.288T3 12t.288-.712T4 11h16q.425 0 .713.288T21 12t-.288.713T20 13zm0-5q-.425 0-.712-.288T3 7t.288-.712T4 6h16q.425 0 .713.288T21 7t-.288.713T20 8z"
-          ></path></svg
-        >
-      </button>
     </div>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ms-auto mb-2 lg:mb-0">
-        {
-          menuItems.map((item) => (
-            <li class="nav-item">
-              <a href={item.path} class="nav-link px-4 py-2.5 hover:bg-hover rounded-lg" aria-disabled="true">
-                {item.name}
-              </a>
-            </li>
-          ))
-        }
-      </ul>
-    </div>
+
+    <ul class="navbar-nav ms-auto flex-row items-center hidden xl:flex">
+      {
+        menuItems.map((item) => (
+          <li class="nav-item">
+            <a
+              href={item.path}
+              class={`nav-link px-4 py-2.5 text-sm rounded-lg hover:bg-hover ${
+                currentPath.startsWith(item.path) ? 'text-primary' : ''
+              }`}
+              aria-disabled="true"
+            >
+              {item.name}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+
+    <button class="ml-auto 2xl:ml-0 btn btn-circle btn-subtle-neutral lg:hidden">
+      <SearchIcon />
+    </button>
+
+    <div class="mx-2 xl:mx-4 my-auto border-l h-8 xl:h-10 border-base flex lg:hidden xl:flex"></div>
+
+    <button class="lg:ml-auto xl:ml-0 btn btn-circle btn-subtle-neutral" data-theme-toggle-btn>
+      <BulbIcon />
+    </button>
+    <button class="ml-2 btn max-lg:btn-circle btn-subtle-neutral">
+      <GitHubIcon />
+      <span class="hidden lg:flex">20.5k</span>
+    </button>
+    <button id="drawerToggle" class="ml-6 btn btn-circle btn-subtle-neutral flex xl:hidden">
+      <MenuIcon />
+    </button>
   </div>
 </nav>
+
+<!-- Drawer -->
+<div
+  id="drawer"
+  class="fixed top-0 right-0 h-full w-80 bg-default dark:bg-subtle border-l border-transparent dark:border-light transform translate-x-full transition-transform duration-300 ease-in-out z-50"
+>
+  <div class="px-6 py-5 flex justify-between items-center">
+    <a class="navbar-brand flex items-center gap-2" href="/">
+      <Image src={logo} alt="Logo" class="w-10 h-10" />
+      <h5 class="mb-0 text-highlight font-semibold">hummingbird</h5>
+    </a>
+    <button id="drawerClose" class="btn btn-square bg-transparent">
+      <TimesIcon />
+    </button>
+  </div>
+  <ul class="navbar-nav px-6 space-y-1">
+    {
+      menuItems.map((item) => (
+        <li class="nav-item">
+          <a
+            href={item.path}
+            class={`nav-link px-4 py-2 text-default font-normal rounded-lg hover:bg-hover   ${
+              currentPath.startsWith(item.path) ? 'text-primary' : ''
+            }`}
+          >
+            {item.name}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</div>
+
+<div
+  id="drawerOverlay"
+  class="fixed inset-0 bg-black/50 opacity-0 pointer-events-none transition-opacity duration-300 z-40"
+>
+</div>
+
+<script>
+  const drawer = document.getElementById('drawer') as HTMLElement;
+  const overlay = document.getElementById('drawerOverlay') as HTMLElement;
+  const toggleBtn = document.getElementById('drawerToggle') as HTMLButtonElement;
+  const closeBtn = document.getElementById('drawerClose') as HTMLButtonElement;
+
+  const openDrawer = () => {
+    drawer.classList.remove('translate-x-full');
+    drawer.classList.add('translate-x-0');
+
+    overlay.classList.remove('opacity-0', 'pointer-events-none');
+    overlay.classList.add('opacity-100');
+
+    document.body.classList.add('overflow-hidden');
+  };
+
+  const closeDrawer = () => {
+    drawer.classList.add('translate-x-full');
+    drawer.classList.remove('translate-x-0');
+
+    overlay.classList.add('opacity-0', 'pointer-events-none');
+    overlay.classList.remove('opacity-100');
+
+    document.body.classList.remove('overflow-hidden');
+  };
+
+  toggleBtn.addEventListener('click', openDrawer);
+  closeBtn.addEventListener('click', closeDrawer);
+  overlay.addEventListener('click', closeDrawer);
+</script>

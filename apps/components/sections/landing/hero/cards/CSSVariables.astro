@@ -1,12 +1,13 @@
 ---
 import Code from 'astro/components/Code.astro';
+import CardWrapper from '../CardWrapper.astro';
 ---
 
-<div class="p-6 rounded-2xl border border-gray-200">
-  <h3 class="mb-4 font-bold">Css Variables</h3>
+<CardWrapper color="secondary" class="shadow-secondary/5 dark:shadow-secondary-darker/5">
+  <h3 class="mb-4 text-base font-bold">Css Variables</h3>
 
   <Code
-    class="!text-sm h-full !bg-muted !rounded-lg"
+    class="!text-sm grow !bg-muted !rounded-lg !overflow-auto scrollbar-hide"
     data-astro-code
     code={`.table {
   color: var(--table-color);
@@ -15,6 +16,6 @@ import Code from 'astro/components/Code.astro';
   border-radius: 0.25rem;
 }`}
     themes={{ light: 'github-light', dark: 'github-dark' }}
-    lang="css"
+    lang="sass"
   />
-</div>
+</CardWrapper>

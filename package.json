@@ -115,6 +115,7 @@
     "codemirror": "^6.0.2",
     "dropzone": "^6.0.0-beta.2",
     "echarts": "^6.0.0",
+    "gsap": "^3.13.0",
     "tailwind-scrollbar-hide": "^4.0.0"
   }
 }

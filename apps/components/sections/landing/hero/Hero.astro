@@ -1,35 +1,81 @@
 ---
-import HeroComponents from './HeroComponents.astro';
+import HeroCards from './HeroCards.astro';
+import CopyIcon from '@components/icons/CopyIcon.astro';
+import CheckIcon from '@components/icons/CheckIcon.astro';
 ---
 
-<section id="hero" class="w-full bg-cover bg-center bg-no-repeat">
-  <div class="flex mx-auto max-w-8xl items-center justify-between">
-    <div class="py-46">
-      <h1 class="my-5 text-[88px] font-normal -tracking-[5.25px]">
+<section
+  id="hero"
+  class="px-4 sm:px-6 lg:px-10 relative h-screen lg:h-[720px] bg-cover bg-center bg-no-repeat
+         bg-[url('/images/hero/hero-xxl-l.png')] dark:bg-[url('/images/hero/hero-xxl-d.png')] overflow-hidden"
+>
+  <div class="mx-auto flex justify-between gap-10 h-full max-w-8xl">
+    <div class="my-auto w-full xl:w-auto">
+      <h1
+        class="mb-6 text-[42px] sm:text-[56px] md:text-[74px] lg:text-[88px] text-center xl:text-left font-normal -tracking-[3px] md:-tracking-[5.25px]"
+      >
         <span class="italic bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">Simple </span>
         <span>like Bootstrap</span><br />
         <span class="italic bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">Strong </span>
         <span>like Tailwind</span>
       </h1>
-      <p class="mt-6 text-highlight text-[21px] -tracking-[1px] leading-[1.2] max-w-2xl">
+      <p
+        class="mb-10 lg:mb-16 mx-auto xl:mx-0 text-highlight text-base sm:text-[21px] text-center xl:text-left -tracking-[1px] leading-[1.2] max-w-2xl"
+      >
         An open-source system sensibly designed for rapid development, without sacrificing the granular control of
         utility-first CSS.
       </p>
-      <section id="links" class="mt-16 flex items-center gap-4">
-        <a href="/docs/components/buttons" type="button" class="btn btn-primary btn-lg">Get Started</a>
-        <div class="flex items-center gap-1 bg-muted text-sm font-mono px-4 py-1.5 rounded-lg">
-          <span class="text-xs select-none mr-1.25">$</span>
-          <span class="text-xs">npm i @hummingbirdui/hummingbird@latest</span>
+      <section id="links" class="flex flex-col sm:flex-row items-center justify-center xl:justify-start gap-4">
+        <a href="/docs/components/buttons" type="button" class="btn btn-primary btn-lg w-full sm:w-auto">Get Started</a>
+        <div
+          class="w-full sm:w-auto flex items-center justify-center sm:justify-start gap-1 bg-muted text-sm font-mono pl-2 pr-0 sm:pl-4 sm:pr-2 h-10.5 rounded-lg"
+        >
+          <span class="text-xs select-none mr-0.75 sm:mr-1.25">$</span>
+          <span class="text-xs text-nowrap">npm i @hummingbirdui/hummingbird@latest</span>
           <button
-            class="btn btn-icon btn-sm -mr-2"
+            id="copy-btn"
+            class="mb-0.5 h-7.5 w-7.5"
+            data-cmd="npm i @hummingbirdui/hummingbird@latest"
             aria-label="Copy command"
-            onclick="navigator.clipboard.writeText('npm i @hummingbirdui/hummingbird@latest')"
           >
-            <span class="icon-[material-symbols--content-copy-outline-rounded] text-xl text-gray-900"></span>
+            <CopyIcon id="cmd-copy-icon" class="text-default" />
+            <CheckIcon id="cmd-check-icon" class="hidden text-success" />
           </button>
         </div>
       </section>
     </div>
+    <HeroCards />
   </div>
-  <HeroComponents />
+  <div
+    class="pointer-events-none absolute bottom-0 left-0 w-full h-5
+         bg-gradient-to-t from-white via-white/60 to-transparent dark:from-black dark:via-black/60 z-20"
+  >
+  </div>
 </section>
+
+<script>
+  const copyBtn = document.querySelector('#copy-btn') as HTMLButtonElement;
+  const copyIcon = copyBtn.querySelector<HTMLElement>('#cmd-copy-icon');
+  const checkIcon = copyBtn.querySelector<HTMLElement>('#cmd-check-icon');
+
+  copyBtn.addEventListener('click', async () => {
+    const cmd = copyBtn.dataset.cmd;
+    if (!cmd) return;
+
+    try {
+      await navigator.clipboard.writeText(cmd);
+
+      if (copyIcon && checkIcon) {
+        copyIcon.classList.add('hidden');
+        checkIcon.classList.remove('hidden');
+
+        setTimeout(() => {
+          checkIcon.classList.add('hidden');
+          copyIcon.classList.remove('hidden');
+        }, 1200);
+      }
+    } catch (err) {
+      console.error('Failed to copy: ', err);
+    }
+  });
+</script>

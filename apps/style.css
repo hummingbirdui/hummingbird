@@ -82,8 +82,10 @@
   @apply hidden;
 }
 
+.cm-activeLine {
+  @apply !bg-transparent;
+}
+
 .dz-default {
-  margin: 0 !important;
-  display: flex;
-  align-items: center;
+  @apply !m-0 flex items-center;
 }

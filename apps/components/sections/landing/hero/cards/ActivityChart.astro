@@ -1,0 +1,134 @@
+---
+import CardWrapper from '../CardWrapper.astro';
+---
+
+<CardWrapper color="info" class="shadow-info/5 dark:shadow-info-darker/5">
+  <div class="mb-6 flex items-center gap-2">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M2.55078 17.925C2.38411 17.7583 2.30078 17.5667 2.30078 17.35C2.30078 17.1333 2.38411 16.9417 2.55078 16.775L8.95078 10.375C9.10078 10.225 9.27578 10.15 9.47578 10.15C9.67578 10.15 9.85078 10.225 10.0008 10.375L13.4758 13.875L20.4258 6.07501C20.5591 5.92501 20.7299 5.84168 20.9383 5.82501C21.1466 5.80834 21.3258 5.87501 21.4758 6.02501C21.6091 6.15834 21.6799 6.32501 21.6883 6.52501C21.6966 6.72501 21.6341 6.90001 21.5008 7.05001L14.0008 15.525C13.8674 15.6917 13.6883 15.7792 13.4633 15.7875C13.2383 15.7958 13.0508 15.725 12.9008 15.575L9.47578 12.15L3.70078 17.925C3.53411 18.0917 3.34245 18.175 3.12578 18.175C2.90911 18.175 2.71745 18.0917 2.55078 17.925Z"
+        fill="currentColor"></path>
+    </svg>
+
+    <h3 class="mb-0 text-base font-bold">Activity</h3>
+  </div>
+
+  <div data-linechartid={`chart-${Date.now()}`} class="grow"></div>
+</CardWrapper>
+
+<script>
+  import * as echarts from 'echarts';
+  import { onThemeChange } from '@libs/utils';
+
+  const data = [65, 30, 95, 25, 65, 35, 55];
+  const weeks = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+
+  if (typeof window !== 'undefined') {
+    const chartContainers = document.querySelectorAll<HTMLDivElement>('[data-linechartid]');
+
+    chartContainers.forEach((container) => {
+      const chartId = container.dataset.linechartid;
+      if (!chartId) return;
+
+      const lineChart = echarts.init(container);
+
+      const renderChart = (theme: 'light' | 'dark') => {
+        const isDark = theme === 'dark';
+
+        const option = {
+          tooltip: {
+            trigger: 'axis',
+            formatter: (params: any) => {
+              const value = params[0]?.value ?? 0;
+              const name = params[0]?.name ?? '';
+              return `${name}: ${value}%`;
+            },
+            backgroundColor: '#111',
+            borderColor: 'transparent',
+            textStyle: {
+              color: '#fff',
+              fontSize: 12,
+              fontWeight: 400,
+              fontFamily: 'Figtree, sans-serif',
+            },
+            padding: [2, 8],
+            extraCssText: 'border-radius: 4px;',
+            axisPointer: {
+              type: 'none',
+            },
+          },
+          grid: {
+            top: 0,
+            bottom: 0,
+            left: 0,
+            right: 0,
+            containerLabel: true,
+          },
+          xAxis: {
+            type: 'category',
+            data: weeks,
+            axisTick: {
+              show: false,
+            },
+            axisLine: {
+              show: false,
+            },
+            axisLabel: {
+              show: false,
+            },
+            splitLine: {
+              show: false,
+            },
+            boundaryGap: 0,
+          },
+          yAxis: {
+            type: 'value',
+            min: 0,
+            max: 100,
+            minInterval: 10,
+            axisLabel: {
+              show: false,
+            },
+            splitLine: {
+              show: false,
+            },
+          },
+          series: [
+            {
+              data,
+              type: 'line',
+              smooth: true,
+              showSymbol: false,
+              symbol: 'none',
+              lineStyle: {
+                width: 2,
+                type: 'solid',
+                cap: 'round',
+                color: isDark ? '#0074E6' : '#1E90FF',
+              },
+              areaStyle: {
+                color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                  {
+                    offset: 0,
+                    color: 'rgba(30, 144, 255, 0.5)',
+                  },
+                  {
+                    offset: 1,
+                    color: 'rgba(30, 144, 255, 0.1)',
+                  },
+                ]),
+              },
+              emphasis: {
+                disabled: true,
+              },
+            },
+          ],
+        };
+        lineChart.setOption(option, true);
+      };
+
+      onThemeChange((theme) => renderChart(theme));
+      window.addEventListener('resize', () => lineChart.resize());
+    });
+  }
+</script>

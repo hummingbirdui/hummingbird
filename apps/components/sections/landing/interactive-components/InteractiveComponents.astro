@@ -1,8 +1,8 @@
 ---
 import ComponentCard from './ComponentCard.astro';
+import SectionWrapper from '../common/SectionWrapper.astro';
 import ChevronIcon from '@components/icons/ChevronIcon.astro';
 import { interactiveComponents } from 'apps/data/landing/interactive-components';
-import SectionWrapper from '../common/SectionWrapper.astro';
 ---
 
 <SectionWrapper
@@ -27,6 +27,10 @@ import SectionWrapper from '../common/SectionWrapper.astro';
   </div>
 
   <div class="shrink-0 grid grid-cols-2 sm:grid-cols-3 gap-4">
-    {interactiveComponents.map((item, i) => <ComponentCard component={item} index={i} />)}
+    {
+      interactiveComponents.map((item, i, arr) => (
+        <ComponentCard component={item} index={i} isLast={i === arr.length - 1} />
+      ))
+    }
   </div>
 </SectionWrapper>
