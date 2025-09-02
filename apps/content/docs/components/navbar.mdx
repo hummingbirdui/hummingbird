@@ -1,7 +1,41 @@
 ---
 title: Navbar
-description: Documentation and examples for how to use Bootstrap’s included navigation components.
+description: The navbar provides a responsive header for navigation, branding, forms, and other interactive elements.
 toc: true
+classNames:
+  component:
+    - class: navbar
+      desc: Navbar component
+  modifier:
+    - class: navbar-expand
+      desc: Always expanded
+    - class: navbar-expand-sm
+      desc: Expand at small breakpoint
+    - class: navbar-expand-md
+      desc: Expand at medium breakpoint
+    - class: navbar-expand-lg
+      desc: Expand at large breakpoint
+    - class: navbar-expand-xl
+      desc: Expand at extra large breakpoint
+    - class: navbar-expand-xxl
+      desc: Expand at double extra large breakpoint
+  inner:
+    - class: navbar-brand
+      desc: Branding section
+    - class: navbar-toggler
+      desc: Toggler button for mobile view
+    - class: navbar-collapse
+      desc: Collapsible content container
+    - class: navbar-nav
+      desc: Navigation links container
+    - class: nav-item
+      desc: Navigation item
+    - class: nav-link
+      desc: Navigation link
+    - class: navbar-text
+      desc: Text content
+    - class: navbar-nav-scroll
+      desc: Scrollable navigation links container
 ---
 
 ##### Basic Example
@@ -19,9 +53,6 @@ A basic navbar includes branding, navigation links, dropdowns, and a search form
         <ul class="navbar-nav me-auto mb-2 lg:mb-0">
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</a>
@@ -46,11 +77,9 @@ A basic navbar includes branding, navigation links, dropdowns, and a search form
 
 ##### Nav
 
-Navbar navigation links build on our `.nav` options with their own modifier class and require the use of toggler classes for proper responsive styling. Navigation in navbars will also grow to occupy as much horizontal space as possible to keep your navbar contents securely aligned.
+The nav component structures navigation links within a navbar. It supports active and disabled states. Add the `.active` class on `.nav-link` to indicate the current page.
 
-Add the `.active` class on `.nav-link` to indicate the current page.
-
-Please note that you should also add the `aria-current` attribute on the active `.nav-link`.
+Note that you should also add the `aria-current` attribute on the active `.nav-link`.
 
 <Example
   code={`<nav class="navbar navbar-expand-lg bg-subtle">
@@ -78,7 +107,7 @@ Please note that you should also add the `aria-current` attribute on the active 
     </div>
   </nav>`} />
 
-And because we use classes for our navs, you can avoid the list-based approach entirely if you like.
+You can avoid list-based approaches entirely if you like.
 
 <Example
   code={`<nav class="navbar navbar-expand-lg bg-subtle">
@@ -100,7 +129,7 @@ And because we use classes for our navs, you can avoid the list-based approach e
 
 ##### Form
 
-Place various form controls and components within a navbar:
+Forms can be placed inside a navbar to include inputs, buttons, or other interactive elements.
 
 <Example code={`<nav class="navbar bg-subtle">
     <div class="container">
@@ -111,7 +140,7 @@ Place various form controls and components within a navbar:
     </div>
   </nav>`} />
 
-Immediate child elements of .navbar use flex layout and will default to justify-content: space-between. Use additional flex utilities as needed to adjust this behavior.
+Immediate `.navbar` children use flex with `.justify-between` by default. Adjust alignment with flex utilities.
 
 <Example code={`<nav class="navbar bg-subtle">
     <div class="container">
@@ -125,7 +154,7 @@ Immediate child elements of .navbar use flex layout and will default to justify-
 
 ##### Text
 
-Navbars may contain bits of text with the help of `.navbar-text`. This class adjusts vertical alignment and horizontal spacing for strings of text.
+To use text within a navbar, use the `.navbar-text` class.
 
 <Example code={`<nav class="navbar bg-subtle">
     <div class="container">
@@ -134,6 +163,8 @@ Navbars may contain bits of text with the help of `.navbar-text`. This class adj
   </nav>`} />
 
 ##### Color schemes
+
+Navbars are flexible and support different background and color schemes to match your design.
 
 <Example showMarkup={false} class='flex flex-col gap-3' 
   code={`<nav class="navbar navbar-expand-lg bg-subtle dark">
@@ -209,11 +240,7 @@ Use any of the responsive containers such as `.sm:container`, `.md:container`, `
 
 ##### Scrolling
 
-Add `.navbar-nav-scroll` to a `.navbar-nav` (or other navbar sub-component) to enable vertical scrolling within the toggleable contents of a collapsed navbar. By default, scrolling kicks in at `75vh` (or 75% of the viewport height), but you can override that with the local CSS custom property `--navbar-height` or custom styles. At larger viewports when the navbar is expanded, content will appear as it does in a default navbar.
-
-Please note that this behavior comes with a potential drawback of `overflow`—when setting `overflow-y: auto` (required to scroll the content here), `overflow-x` is the equivalent of `auto`, which will crop some horizontal content.
-
-Here’s an example navbar using `.navbar-nav-scroll` with `style="--bs-scroll-height: 100px;"`, with some extra margin utilities for optimum spacing.
+The `.navbar-nav-scroll` class allows vertical scrolling for `.navbar-nav` or other sub-components inside a collapsed navbar. This is especially useful for long navigation menus on smaller screens. By default, the scrollable area has a max height of `75vh`. You can adjust this using utility classes (e.g., `max-h-[value]`) or by overriding the `--scroll-height` CSS variable for finer control.
 
 <Example
   code={`<nav class="navbar navbar-expand-lg bg-subtle">
@@ -223,7 +250,7 @@ Here’s an example navbar using `.navbar-nav-scroll` with `style="--bs-scroll-h
         <span class="icon-[material-symbols--menu-rounded] text-lg"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarScroll">
-        <ul class="navbar-nav me-auto my-2 lg:my-0 navbar-nav-scroll" style="--scroll-height: 100px;">
+        <ul class="navbar-nav navbar-nav-scroll me-auto my-2 lg:my-0" style="--scroll-height: 100px;">
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="#">Home</a>
           </li>
@@ -253,13 +280,13 @@ Here’s an example navbar using `.navbar-nav-scroll` with `style="--bs-scroll-h
 
 ##### Responsive behaviors
 
-Navbars can use `.navbar-toggler`, `.navbar-collapse`, and `.navbar-expand{-sm|-md|-lg|-xl|-xxl}` classes to determine when their content collapses behind a button. In combination with other utilities, you can easily choose when to show or hide particular elements.
+Navbars use `.navbar-toggler`, `.navbar-collapse`, and `.navbar-expand{-sm|-md|-lg|-xl|-xxl}` classes to control when content collapses into a toggleable menu. With utility classes, you can also decide when to show or hide specific elements.
 
-For navbars that never collapse, add the `.navbar-expand` class on the navbar. For navbars that always collapse, don’t add any `.navbar-expand` class.
+For navbars that never collapse, add the `.navbar-expand` class. For navbars that always collapse, omit the `.navbar-expand` class.
 
 ##### External content
 
-Sometimes you want to use the collapse plugin to trigger a container element for content that structurally sits outside of the `.navbar` . Because our plugin works on the `id` and `data-bs-target` matching, that’s easily done!
+The collapse plugin can toggle content outside the `.navbar` by matching id with `data-bs-target`.
 
 <Example code={`<div class="collapse" id="navbarToggleExternalContent"x>
     <div class="bg-subtle p-4">
@@ -275,7 +302,6 @@ Sometimes you want to use the collapse plugin to trigger a container element for
     </div>
   </nav>`} />
 
-When you do this, we recommend including additional JavaScript to move the focus programmatically to the container when it is opened. Otherwise, keyboard users and users of assistive technologies will likely have a hard time finding the newly revealed content - particularly if the container that was opened comes before the toggler in the document’s structure. We also recommend making sure that the toggler has the `aria-controls` attribute, pointing to the id of the content container. In theory, this allows assistive technology users to jump directly from the toggler to the container it controls–but support for this is currently quite patchy.
 
 ##### Offcanvas
 
@@ -285,7 +311,7 @@ In the example below, to create an offcanvas navbar that is always collapsed acr
 
 <Example code={`<nav class="navbar bg-subtle">
     <div class="container">
-      <a class="navbar-brand" href="#">Offcanvas navbar</a>
+      <a class="navbar-brand" href="#">Offcanvas</a>
       <button class="btn btn-icon navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
         <span class="icon-[material-symbols--menu-rounded] text-lg"></span>
       </button>
@@ -300,9 +326,6 @@ In the example below, to create an offcanvas navbar that is always collapsed acr
           <ul class="navbar-nav">
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</a>
