@@ -9,7 +9,7 @@
 @theme {
   --container-8xl: 95rem;
   --navbar-height: --spacing(20.5);
-  --anchor-header-offset: 95px;
+  --anchor-header-offset: 120px;
 }
 
 .docs-sidebar {
