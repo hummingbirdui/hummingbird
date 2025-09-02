@@ -1,11 +1,29 @@
 ---
-title: React
+title: React & React Router Framework Mood
+description: This guide explains how to set up Hummingbird with React + Vite using Tailwind CSS. It covers project setup, configuration, and usage so you can quickly build and style components in your React app.
 toc: true
 ---
 
+##### Install Tailwindcss
+
+Follow the <a href="https://tailwindcss.com/docs/installation" target="_blank" rel="noopener noreferrer">official installation guide</a> to install Tailwind CSS in your React project.
+
+##### Install Hummingbird
+Install Hummingbird via preferred package manager:
+
+<Example lang='bash' showPreview={false} code={`npm install @hummingbirdui/hummingbird`} />
+
+###### Include Hummingbird css
+
+Import Hummingbird styles in your main CSS file (e.g., `index.css` or `app.css`).
+
+<Example lang='css' showPreview={false} 
+  code={`@import "tailwindcss";
+  @import "@hummingbirdui/hummingbird";`} />
+
 ##### Initialization
 
-This example shows how to initialize **Hummingbird UI** components dynamically when the route changes in a React application using `react-router`. It uses `useEffect` to load the full library only on the client.
+Initialize hummingbird at the root of your application, for example in `App.js` or `App.tsx`.
 
 <Example lang='js' showPreview={false}
   code={`import { useEffect } from "react";
@@ -34,9 +52,7 @@ This example shows how to initialize **Hummingbird UI** components dynamically w
 
 ##### Optimize
 
-This example shows how to import just the `modal` script instead of the whole library.
-
-Uncomment the components you need and only those scripts will be included in your bundle.
+**Optional:** you can optimize your application by only importing the components you need.
 
 <Example lang='js' showPreview={false}
   code={`import { useEffect } from "react";
@@ -79,9 +95,9 @@ Uncomment the components you need and only those scripts will be included in you
 
 ##### JavaScript API
 
-This example demonstrates how to use the **JavaScript API** for interacting with a Hummingbird component — in this case, a `Modal`. The modal instance is created and stored in local state, allowing it to be controlled programmatically using `toggle()`.
+Hummingbird also provides a JavaScript API for programmatic control of components. For example, you can toggle a modal manually using the API.
 
-Type support for the instance (e.g., `ModalInstance`) ensures correct usage with TypeScript.
+Here’s how to initialize and use the `Modal` component:
 
 <Example lang='js' showPreview={false}
   code={`import { useEffect, useState } from "react";
