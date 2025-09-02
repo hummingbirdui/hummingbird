@@ -25,14 +25,24 @@ export interface Component {
   url: string;
 }
 
-export const featuredComponents: Component[] = [
-  { image: { light: accordion, dark: accordionDark }, name: 'Accordion', count: 2, url: '#' },
-  { image: { light: alert, dark: alertDark }, name: 'Alert', count: 3, url: '#' },
-  { image: { light: avatar, dark: avatarDark }, name: 'Avatar', count: 14, url: '#' },
-  { image: { light: badge, dark: badgeDark }, name: 'Badge', count: 14, url: '#' },
-  { image: { light: breadcrumb, dark: breadcrumbDark }, name: 'Breadcrumb', count: 2, url: '#' },
-  { image: { light: button, dark: buttonDark }, name: 'Button', count: 20, url: '#' },
-  { image: { light: buttonGroup, dark: buttonGroupDark }, name: 'Button Group', count: 2, url: '#' },
-  { image: { light: card, dark: cardDark }, name: 'Card', count: 20, url: '#' },
-  { image: { light: chip, dark: chipDark }, name: 'Chip', count: 20, url: '#' },
+export const components: Component[] = [
+  { image: { light: accordion, dark: accordionDark }, name: 'Accordion', count: 2, url: '/docs/components/accordion' },
+  { image: { light: alert, dark: alertDark }, name: 'Alert', count: 3, url: '/docs/components/alert' },
+  { image: { light: avatar, dark: avatarDark }, name: 'Avatar', count: 14, url: '/docs/components/avatar' },
+  { image: { light: badge, dark: badgeDark }, name: 'Badge', count: 14, url: '/docs/components/badge' },
+  {
+    image: { light: breadcrumb, dark: breadcrumbDark },
+    name: 'Breadcrumb',
+    count: 2,
+    url: '/docs/components/breadcrumb',
+  },
+  { image: { light: button, dark: buttonDark }, name: 'Button', count: 20, url: '/docs/components/buttons' },
+  {
+    image: { light: buttonGroup, dark: buttonGroupDark },
+    name: 'Button Group',
+    count: 2,
+    url: '/docs/components/button-group',
+  },
+  { image: { light: card, dark: cardDark }, name: 'Card', count: 20, url: '/docs/components/card' },
+  { image: { light: chip, dark: chipDark }, name: 'Chip', count: 20, url: '/docs/components/badge' },
 ];

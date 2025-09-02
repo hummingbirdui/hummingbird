@@ -1,45 +1,53 @@
 ---
 import { Image } from 'astro:assets';
-import SectionWrapper from '../common/SectionWrapper.astro';
+import SectionWrapper from './common/SectionWrapper.astro';
 import django from '@assets/images/landing/logos/django.png';
-import vue from '@assets/images/landing/logos/vue.png';
 import angular from '@assets/images/landing/logos/Angular.png';
-import nuxt from '@assets/images/landing/logos/Nuxt.png';
-import astro from '@assets/images/landing/logos/astro.png';
 import laravel from '@assets/images/landing/logos/laravel.png';
+import nextjs from '@assets/images/landing/logos/nextjs.png';
+import astro from '@assets/images/landing/logos/astro.png';
 import react from '@assets/images/landing/logos/react.png';
 import remix from '@assets/images/landing/logos/remix.png';
-import nextjs from '@assets/images/landing/logos/nextjs.png';
+import nuxt from '@assets/images/landing/logos/Nuxt.png';
+import vue from '@assets/images/landing/logos/vue.png';
+
+const opacities = [
+  'opacity-20',
+  'opacity-50',
+  'opacity-0',
+  'opacity-20',
+  'opacity-50',
+  'opacity-30',
+  'opacity-20',
+  'opacity-0',
+  'opacity-0',
+  'opacity-30',
+  'opacity-0',
+  'opacity-0',
+  'opacity-20',
+  'opacity-0',
+  'opacity-0',
+  'opacity-0',
+  'opacity-0',
+  'opacity-0',
+  'opacity-0',
+  'opacity-0',
+];
 ---
 
 <SectionWrapper
   id="frameworks"
-  class="!p-0 h-134 sm:h-130 md:h-148 lg:h-175 xl:h-135 2xl:h-138 bg-cover bg-center bg-no-repeat bg-[url('/images/framework/xs-l.png')] dark:bg-[url('/images/framework/xs-d.png')] sm:bg-[url('/images/framework/sm-l.png')] dark:sm:bg-[url('/images/framework/sm-d.png')] md:bg-[url('/images/framework/md-l.png')] dark:md:bg-[url('/images/framework/md-d.png')] lg:bg-[url('/images/framework/lg-l.png')] dark:lg:bg-[url('/images/framework/lg-d.png')] xl:bg-[url('/images/framework/xl-l.png')] dark:xl:bg-[url('/images/framework/xl-d.png')] 2xl:bg-[url('/images/framework/xxl-l.png')] dark:2xl:bg-[url('/images/framework/xxl-d.png')] overflow-hidden"
+  class="!p-0 h-134 sm:h-130 md:h-148 lg:h-175 xl:h-135 2xl:h-138 bg-cover bg-center bg-no-repeat bg-[url('/images/framework/framework-xxl-l.png')] dark:bg-[url('/images/framework/framework-xxl-d.png')] overflow-hidden"
 >
   <div
     class="relative mx-auto max-w-238 h-full flex flex-col xl:flex-row items-center overflow-hidden xl:overflow-visible"
   >
     <div class="absolute -left-[60%] w-138 h-173 hidden xl:grid grid-cols-4 gap-2">
-      <div class="h-[134px] aspect-square rounded-lg border border-base bg-default opacity-20"></div>
-      <div class="h-[134px] aspect-square rounded-lg border border-base bg-default opacity-50"></div>
-      <div class="h-[134px] aspect-square rounded-lg border border-base bg-default opacity-0"></div>
-      <div class="h-[134px] aspect-square rounded-lg border border-base bg-default opacity-20"></div>
-      <div class="h-[134px] aspect-square rounded-lg border border-base bg-default opacity-50"></div>
-      <div class="h-[134px] aspect-square rounded-lg border border-base bg-default opacity-30"></div>
-      <div class="h-[134px] aspect-square rounded-lg border border-base bg-default opacity-20"></div>
-      <div class="h-[134px] aspect-square rounded-lg border border-base bg-default opacity-0"></div>
-      <div class="h-[134px] aspect-square rounded-lg border border-base bg-default opacity-0"></div>
-      <div class="h-[134px] aspect-square rounded-lg border border-base bg-default opacity-30"></div>
-      <div class="h-[134px] aspect-square rounded-lg border border-base bg-default opacity-0"></div>
-      <div class="h-[134px] aspect-square rounded-lg border border-base bg-default opacity-0"></div>
-      <div class="h-[134px] aspect-square rounded-lg border border-base bg-default opacity-20"></div>
-      <div class="h-[134px] aspect-square rounded-lg border border-base bg-default opacity-0"></div>
-      <div class="h-[134px] aspect-square rounded-lg border border-base bg-default opacity-0"></div>
-      <div class="h-[134px] aspect-square rounded-lg border border-base bg-default opacity-0"></div>
-      <div class="h-[134px] aspect-square rounded-lg border border-base bg-default opacity-0"></div>
-      <div class="h-[134px] aspect-square rounded-lg border border-base bg-default opacity-0"></div>
-      <div class="h-[134px] aspect-square rounded-lg border border-base bg-default opacity-0"></div>
-      <div class="h-[134px] aspect-square rounded-lg border border-base bg-default opacity-0"></div>
+      {
+        opacities.map((opacity) => (
+          <div class={`h-[134px] aspect-square rounded-lg border border-base bg-default ${opacity}`} />
+        ))
+      }
     </div>
 
     <div class="px-6 lg:px-10 pt-10 xl:p-0 flex-1 flex flex-col max-w-145 xl:max-w-125 shrink-0">
@@ -102,13 +110,13 @@ import nextjs from '@assets/images/landing/logos/nextjs.png';
         href="#"
         class="h-[62px] md:h-20 lg:h-25 xl:h-[110px] 2xl:h-[134px] aspect-square rounded-lg border border-light hover:border-primary bg-default flex items-center justify-center"
       >
-        <Image src={django} alt="django" class="w-12 object-contain" />
+        <Image src={django} alt="django" class="w-12 lg:w-15 object-contain" />
       </a>
       <a
-        href="#"
+        href="/docs/getting-started/vue"
         class="h-[62px] md:h-20 lg:h-25 xl:h-[110px] 2xl:h-[134px] aspect-square rounded-lg border border-light hover:border-primary bg-default flex items-center justify-center"
       >
-        <Image src={vue} alt="django" class="w-12 object-contain" />
+        <Image src={vue} alt="django" class="w-12 lg:w-15 object-contain" />
       </a>
       <div
         class="h-[62px] md:h-20 lg:h-25 xl:h-[110px] 2xl:h-[134px] aspect-square rounded-lg border border-base bg-default opacity-40"
@@ -127,22 +135,22 @@ import nextjs from '@assets/images/landing/logos/nextjs.png';
       >
       </div>
       <a
-        href="#"
+        href="/docs/getting-started/nuxt"
         class="h-[62px] md:h-20 lg:h-25 xl:h-[110px] 2xl:h-[134px] aspect-square rounded-lg border border-light hover:border-primary bg-default flex items-center justify-center"
       >
-        <Image src={nuxt} alt="django" class="w-12 object-contain" />
+        <Image src={nuxt} alt="django" class="w-12 lg:w-15 object-contain" />
       </a>
       <a
         href="#"
         class="h-[62px] md:h-20 lg:h-25 xl:h-[110px] 2xl:h-[134px] aspect-square rounded-lg border border-light hover:border-primary bg-default flex items-center justify-center"
       >
-        <Image src={laravel} alt="django" class="w-12 object-contain" />
+        <Image src={laravel} alt="django" class="w-12 lg:w-15 object-contain" />
       </a>
       <a
-        href="#"
+        href="/docs/getting-started/next"
         class="h-[62px] md:h-20 lg:h-25 xl:h-[110px] 2xl:h-[134px] aspect-square rounded-lg border border-light hover:border-primary bg-default flex items-center justify-center"
       >
-        <Image src={nextjs} alt="django" class="w-12 object-contain" />
+        <Image src={nextjs} alt="django" class="w-12 lg:w-15 object-contain" />
       </a>
       <div
         class="h-[62px] md:h-20 lg:h-25 xl:h-[110px] 2xl:h-[134px] aspect-square rounded-lg border border-base bg-default opacity-60"
@@ -158,28 +166,28 @@ import nextjs from '@assets/images/landing/logos/nextjs.png';
       </div>
 
       <a
-        href="#"
+        href="/docs/getting-started/react"
         class="h-[62px] md:h-20 lg:h-25 xl:h-[110px] 2xl:h-[134px] aspect-square rounded-lg border border-light hover:border-primary bg-default flex items-center justify-center"
       >
-        <Image src={react} alt="django" class="w-12 object-contain" />
+        <Image src={react} alt="django" class="w-12 lg:w-15 object-contain" />
+      </a>
+      <a
+        href="/docs/getting-started/angular"
+        class="h-[62px] md:h-20 lg:h-25 xl:h-[110px] 2xl:h-[134px] aspect-square rounded-lg border border-light hover:border-primary bg-default flex items-center justify-center"
+      >
+        <Image src={angular} alt="django" class="w-12 lg:w-15 object-contain" />
       </a>
       <a
         href="#"
         class="h-[62px] md:h-20 lg:h-25 xl:h-[110px] 2xl:h-[134px] aspect-square rounded-lg border border-light hover:border-primary bg-default flex items-center justify-center"
       >
-        <Image src={angular} alt="django" class="w-12 object-contain" />
+        <Image src={remix} alt="django" class="w-11 lg:w-14 object-contain" />
       </a>
       <a
         href="#"
         class="h-[62px] md:h-20 lg:h-25 xl:h-[110px] 2xl:h-[134px] aspect-square rounded-lg border border-light hover:border-primary bg-default flex items-center justify-center"
       >
-        <Image src={remix} alt="django" class="w-11 object-contain" />
-      </a>
-      <a
-        href="#"
-        class="h-[62px] md:h-20 lg:h-25 xl:h-[110px] 2xl:h-[134px] aspect-square rounded-lg border border-light hover:border-primary bg-default flex items-center justify-center"
-      >
-        <Image src={astro} alt="django" class="w-10 object-contain" />
+        <Image src={astro} alt="django" class="w-10 lg:w-13 object-contain" />
       </a>
 
       <div

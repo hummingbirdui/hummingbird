@@ -1,9 +1,10 @@
 ---
 import { Image } from 'astro:assets';
+import ComparisonTable from './ComparisonTable.astro';
 import SectionHeader from '../common/SectionHeader.astro';
 import SectionWrapper from '../common/SectionWrapper.astro';
-import ComparisonTable from './ComparisonTable.astro';
-import overlay from '@assets/images/landing/table-overlay.png';
+import overlayDark from '@assets/images/landing/table/table-overlay-d.png';
+import overlayLight from '@assets/images/landing/table/table-overlay-l.png';
 ---
 
 <SectionWrapper id="comparison">
@@ -15,10 +16,15 @@ import overlay from '@assets/images/landing/table-overlay.png';
 
   <div class="overflow-hidden overflow-x-auto">
     <div class="relative w-238 mx-auto">
-      <Image
-        src={overlay}
+      <img
+        src={overlayDark.src}
+        class="absolute top-0 left-[238px] w-[238px] h-142 pointer-events-none rounded-2xl z-10 hidden dark:block"
         alt="table-overlay"
-        class="absolute top-0 left-[238px] w-[238px] h-142 pointer-events-none rounded-2xl z-10"
+      />
+      <img
+        src={overlayLight.src}
+        class="absolute top-0 left-[238px] w-[238px] h-142 pointer-events-none rounded-2xl z-10 dark:hidden"
+        alt="table-overlay"
       />
       <ComparisonTable />
     </div>
