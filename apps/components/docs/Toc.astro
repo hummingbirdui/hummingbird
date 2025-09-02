@@ -11,7 +11,7 @@ const { entries, headings } = Astro.props;
 const toc = entries ? entries : generateToc(headings ?? []);
 ---
 
-<ul id="toc-root" class="ps-4 list-none" data-header-offset="96">
+<ul id="toc-root" class="ps-4 list-none" data-header-offset="120">
   {
     toc.map(({ children, slug, text }) => (
       <li>
@@ -35,112 +35,150 @@ const toc = entries ? entries : generateToc(headings ?? []);
     const tocRoot = document.getElementById('toc-root') as HTMLUListElement | null;
     if (!tocRoot) return;
 
+    const HEADER_OFFSET = Number.parseInt(tocRoot.dataset.headerOffset || '120', 10) || 120;
+
+    const SCROLL_SELECTOR = tocRoot.dataset.scrollContainer || '';
+    type Scrollable = Window | HTMLElement;
+
+    const maybeContainer = SCROLL_SELECTOR ? (document.querySelector(SCROLL_SELECTOR) as HTMLElement | null) : null;
+
+    const scrollContainer: Scrollable = maybeContainer ?? window;
+
+    const isWindow = (x: Scrollable): x is Window => x === window;
+
     const anchors = Array.from(tocRoot.querySelectorAll<HTMLAnchorElement>('a[data-target-id]'));
 
-    interface Item {
-      id: string;
-      el: HTMLElement;
-      a: HTMLAnchorElement;
-    }
+    type Item = { id: string; el: HTMLElement; a: HTMLAnchorElement };
 
     const items: Item[] = anchors
       .map((a) => {
-        const id = a.dataset.targetId ?? '';
-        const el = id ? (document.getElementById(id) as HTMLElement | null) : null;
+        const id = a.dataset.targetId;
+        if (!id) return null;
+        const el = document.getElementById(id) as HTMLElement | null;
         return el ? { id, el, a } : null;
       })
-      .filter((x): x is Item => Boolean(x));
+      .filter((x): x is Item => x !== null);
 
-    if (!items.length) return;
+    if (items.length === 0) return;
 
-    const HEADER_OFFSET = Number.parseInt(tocRoot.dataset.headerOffset ?? '', 10) || 96;
-
-    // Click handling (no smooth scroll)
-    anchors.forEach((a) => {
-      a.addEventListener('click', (e) => {
-        const id = a.dataset.targetId;
-        const target = id ? document.getElementById(id) : null;
-        if (!target) return;
-        e.preventDefault();
-
-        const y = target.getBoundingClientRect().top + window.scrollY - HEADER_OFFSET;
-        window.history.pushState(null, '', `#${id}`);
-        // Instant jump (no smooth behavior)
-        window.scrollTo({ top: y });
-      });
-    });
-
-    const clearAll = () => anchors.forEach((x) => x.setAttribute('aria-current', 'false'));
+    const clearAll = () => anchors.forEach((a) => a.setAttribute('aria-current', 'false'));
 
     const bubbleToParents = (anchor: HTMLAnchorElement) => {
       let li = anchor.closest('li') as HTMLLIElement | null;
       while (li) {
         const parentAnchor = li.querySelector<HTMLAnchorElement>(':scope > a[data-target-id]');
         if (parentAnchor) parentAnchor.setAttribute('aria-current', 'true');
-        li = li.parentElement?.closest('li') ?? null;
+        const parentList = li.parentElement;
+        li = parentList ? parentList.closest('li') : null;
       }
     };
 
     const setActive = (id: string) => {
       clearAll();
-      const activeAnchor = anchors.find((x) => x.dataset.targetId === id);
-      if (activeAnchor) {
-        activeAnchor.setAttribute('aria-current', 'true');
-        bubbleToParents(activeAnchor);
+      const active = anchors.find((a) => a.dataset.targetId === id);
+      if (active) {
+        active.setAttribute('aria-current', 'true');
+        bubbleToParents(active);
       }
     };
 
-    // Initialize from hash (if present)
-    if (location.hash) {
-      const hashId = decodeURIComponent(location.hash.slice(1));
-      if (anchors.some((a) => a.dataset.targetId === hashId)) {
-        setActive(hashId);
-      }
-    }
+    const getScrollTop = (): number =>
+      isWindow(scrollContainer) ? scrollContainer.scrollY : scrollContainer.scrollTop;
 
-    // Pick the "current" heading based on scroll position
+    const getContainerTop = (): number => (isWindow(scrollContainer) ? 0 : scrollContainer.getBoundingClientRect().top);
+
+    // Absolute Y within the *scrolling context*
+    const absY = (el: HTMLElement): number => {
+      const rect = el.getBoundingClientRect();
+      if (isWindow(scrollContainer)) {
+        return rect.top + window.scrollY;
+      }
+      return rect.top - getContainerTop() + scrollContainer.scrollTop;
+    };
+
+    // Click: activate right away and scroll the correct container
+    anchors.forEach((a) => {
+      a.addEventListener('click', (e) => {
+        const id = a.dataset.targetId;
+        if (!id) return;
+
+        const target = document.getElementById(id) as HTMLElement | null;
+        if (!target) return;
+
+        e.preventDefault();
+        setActive(id);
+
+        const y = absY(target) - HEADER_OFFSET;
+        history.pushState(null, '', `#${id}`);
+
+        if (isWindow(scrollContainer)) {
+          window.scrollTo({ top: y });
+        } else {
+          scrollContainer.scrollTo({ top: y });
+        }
+      });
+    });
+
+    // Scroll-driven activation
+    const EPS = 1;
     const chooseByScroll = () => {
-      const above = items.filter(({ el }) => el.getBoundingClientRect().top - HEADER_OFFSET <= 0);
-      const current = above.length ? above[above.length - 1] : items[0];
+      const currentTop = getScrollTop();
+      let current: Item | undefined = items[0];
+
+      for (const it of items) {
+        if (absY(it.el) - currentTop - HEADER_OFFSET <= EPS) {
+          current = it;
+        } else {
+          break;
+        }
+      }
       if (current) setActive(current.id);
     };
 
-    // IntersectionObserver for efficiency + better edge handling
-    const io = new IntersectionObserver(
-      () => {
-        // On any intersection change, update using scroll heuristic for accuracy
-        requestAnimationFrame(chooseByScroll);
-      },
-      {
-        root: null,
-        rootMargin: `-${HEADER_OFFSET}px 0px -70% 0px`,
-        threshold: [0, 1],
-      },
-    );
+    // Keep in sync on back/forward & manual edits
+    window.addEventListener('hashchange', () => {
+      const raw = location.hash.slice(1);
+      if (!raw) return;
+      const id = decodeURIComponent(raw);
+      if (anchors.some((a) => a.dataset.targetId === id)) setActive(id);
+    });
 
-    items.forEach(({ el }) => io.observe(el));
-
+    // rAF-throttled scroll handler
     let ticking = false;
-    window.addEventListener(
-      'scroll',
-      () => {
-        if (!ticking) {
-          requestAnimationFrame(() => {
-            chooseByScroll();
-            ticking = false;
-          });
-          ticking = true;
-        }
-      },
-      { passive: true },
-    );
+    const onScroll: EventListener = () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        chooseByScroll();
+        ticking = false;
+      });
+    };
+
+    if (isWindow(scrollContainer)) {
+      window.addEventListener('scroll', onScroll, { passive: true });
+    } else {
+      scrollContainer.addEventListener('scroll', onScroll, { passive: true });
+    }
 
     window.addEventListener('resize', () => {
-      // Re-evaluate which heading is current after layout shifts
       requestAnimationFrame(chooseByScroll);
     });
 
-    // Initial highlight
-    chooseByScroll();
+    // Initial state
+    if (location.hash) {
+      const raw = location.hash.slice(1);
+      if (raw) {
+        const hashId = decodeURIComponent(raw);
+        if (anchors.some((a) => a.dataset.targetId === hashId)) {
+          setActive(hashId);
+        } else {
+          chooseByScroll();
+        }
+      } else {
+        chooseByScroll();
+      }
+    } else {
+      chooseByScroll();
+    }
   })();
 </script>
