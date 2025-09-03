@@ -12,6 +12,10 @@
   --anchor-header-offset: 95px;
 }
 
+.disable-transitions * {
+  @apply !transition-none;
+}
+
 .docs-sidebar {
   ~ .offcanvas-backdrop {
     @apply z-8;

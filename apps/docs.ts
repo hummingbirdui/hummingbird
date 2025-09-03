@@ -1,5 +1,15 @@
 type Theme = 'dark' | 'light';
 
+const disableTransitionsWhile = (fn: () => void) => {
+  const root = document.documentElement;
+  root.classList.add('disable-transitions');
+  fn();
+  requestAnimationFrame(() => {
+    root.classList.remove('disable-transitions');
+  });
+};
+
+
 const toggleSidenav = () => {
   const toggleBtn = document.querySelector('[data-toggle-sidebar]');
   const sidebar = document.querySelector('[data-sidebar]');
@@ -11,12 +21,14 @@ const toggleSidenav = () => {
 };
 
 const toggleTheme = (theme: Theme) => {
-  const html = document.documentElement;
-  if (theme === 'dark') {
-    html.classList.add('dark');
-  } else {
-    html.classList.remove('dark');
-  }
+  disableTransitionsWhile(() => {
+    const html = document.documentElement;
+    if (theme === 'dark') {
+      html.classList.add('dark');
+    } else {
+      html.classList.remove('dark');
+    }
+  });
 };
 
 const updateToggleThemeButton = (theme: Theme) => {
