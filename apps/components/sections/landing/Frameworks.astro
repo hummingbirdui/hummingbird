@@ -2,13 +2,16 @@
 import { Image } from 'astro:assets';
 import SectionWrapper from './common/SectionWrapper.astro';
 import django from '@assets/images/landing/logos/django.png';
-import angular from '@assets/images/landing/logos/Angular.png';
+import angular from '@assets/images/landing/logos/angular.png';
 import laravel from '@assets/images/landing/logos/laravel.png';
-import nextjs from '@assets/images/landing/logos/nextjs.png';
-import astro from '@assets/images/landing/logos/astro.png';
-import react from '@assets/images/landing/logos/react.png';
-import remix from '@assets/images/landing/logos/remix.png';
-import nuxt from '@assets/images/landing/logos/Nuxt.png';
+import nextjsL from '@assets/images/landing/logos/nextjs.png';
+import nextjsD from '@assets/images/landing/logos/nextjs-dark.png';
+import astroL from '@assets/images/landing/logos/astro.png';
+import astroD from '@assets/images/landing/logos/astro-dark.png';
+import reactL from '@assets/images/landing/logos/react.png';
+import reactD from '@assets/images/landing/logos/react-dark.png';
+import svelte from '@assets/images/landing/logos/svelte.png';
+import nuxt from '@assets/images/landing/logos/nuxt.png';
 import vue from '@assets/images/landing/logos/vue.png';
 
 const opacities = [
@@ -110,13 +113,13 @@ const opacities = [
         href="#"
         class="h-[62px] md:h-20 lg:h-25 xl:h-[110px] 2xl:h-[134px] aspect-square rounded-lg border border-light hover:border-primary bg-default flex items-center justify-center"
       >
-        <Image src={django} alt="django" class="w-12 lg:w-15 object-contain" />
+        <Image src={django} alt="django" class="w-12 lg:w-16 object-contain" />
       </a>
       <a
         href="/docs/getting-started/vue"
         class="h-[62px] md:h-20 lg:h-25 xl:h-[110px] 2xl:h-[134px] aspect-square rounded-lg border border-light hover:border-primary bg-default flex items-center justify-center"
       >
-        <Image src={vue} alt="django" class="w-12 lg:w-15 object-contain" />
+        <Image src={vue} alt="vue" class="w-12 lg:w-16 object-contain" />
       </a>
       <div
         class="h-[62px] md:h-20 lg:h-25 xl:h-[110px] 2xl:h-[134px] aspect-square rounded-lg border border-base bg-default opacity-40"
@@ -138,19 +141,20 @@ const opacities = [
         href="/docs/getting-started/nuxt"
         class="h-[62px] md:h-20 lg:h-25 xl:h-[110px] 2xl:h-[134px] aspect-square rounded-lg border border-light hover:border-primary bg-default flex items-center justify-center"
       >
-        <Image src={nuxt} alt="django" class="w-12 lg:w-15 object-contain" />
+        <Image src={nuxt} alt="nuxt" class="w-12 lg:w-16 object-contain" />
       </a>
       <a
         href="#"
         class="h-[62px] md:h-20 lg:h-25 xl:h-[110px] 2xl:h-[134px] aspect-square rounded-lg border border-light hover:border-primary bg-default flex items-center justify-center"
       >
-        <Image src={laravel} alt="django" class="w-12 lg:w-15 object-contain" />
+        <Image src={laravel} alt="laravel" class="w-12 lg:w-16 object-contain" />
       </a>
       <a
         href="/docs/getting-started/next"
         class="h-[62px] md:h-20 lg:h-25 xl:h-[110px] 2xl:h-[134px] aspect-square rounded-lg border border-light hover:border-primary bg-default flex items-center justify-center"
       >
-        <Image src={nextjs} alt="django" class="w-12 lg:w-15 object-contain" />
+        <img src={nextjsL.src} alt="nextjs" class="w-12 lg:w-16 object-contain dark:hidden" />
+        <img src={nextjsD.src} alt="nextjs" class="w-12 lg:w-16 object-contain hidden dark:block" />
       </a>
       <div
         class="h-[62px] md:h-20 lg:h-25 xl:h-[110px] 2xl:h-[134px] aspect-square rounded-lg border border-base bg-default opacity-60"
@@ -169,25 +173,27 @@ const opacities = [
         href="/docs/getting-started/react"
         class="h-[62px] md:h-20 lg:h-25 xl:h-[110px] 2xl:h-[134px] aspect-square rounded-lg border border-light hover:border-primary bg-default flex items-center justify-center"
       >
-        <Image src={react} alt="django" class="w-12 lg:w-15 object-contain" />
+        <img src={reactL.src} alt="react" class="w-12 lg:w-16 object-contain dark:hidden" />
+        <img src={reactD.src} alt="react" class="w-12 lg:w-16 object-contain hidden dark:block" />
       </a>
       <a
         href="/docs/getting-started/angular"
         class="h-[62px] md:h-20 lg:h-25 xl:h-[110px] 2xl:h-[134px] aspect-square rounded-lg border border-light hover:border-primary bg-default flex items-center justify-center"
       >
-        <Image src={angular} alt="django" class="w-12 lg:w-15 object-contain" />
+        <Image src={angular} alt="angular" class="w-12 lg:w-16 object-contain" />
       </a>
       <a
         href="#"
         class="h-[62px] md:h-20 lg:h-25 xl:h-[110px] 2xl:h-[134px] aspect-square rounded-lg border border-light hover:border-primary bg-default flex items-center justify-center"
       >
-        <Image src={remix} alt="django" class="w-11 lg:w-14 object-contain" />
+        <Image src={svelte} alt="svelte" class="w-12 lg:w-16 object-contain" />
       </a>
       <a
         href="#"
         class="h-[62px] md:h-20 lg:h-25 xl:h-[110px] 2xl:h-[134px] aspect-square rounded-lg border border-light hover:border-primary bg-default flex items-center justify-center"
       >
-        <Image src={astro} alt="django" class="w-10 lg:w-13 object-contain" />
+        <img src={astroL.src} alt="astro" class="w-10 lg:w-13 object-contain dark:hidden" />
+        <img src={astroD.src} alt="astro" class="w-10 lg:w-13 object-contain hidden dark:block" />
       </a>
 
       <div
