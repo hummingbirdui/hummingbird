@@ -1,11 +1,8 @@
 ---
-import { tabsData, product } from 'apps/data/landing/clean-markup';
+import { tabsData } from 'apps/data/landing/clean-markup';
 import SectionWrapper from './common/SectionWrapper.astro';
 import SectionHeader from './common/SectionHeader.astro';
-import cardImage from '@assets/images/landing/product.png';
-import CartIcon from '@components/icons/CartIcon.astro';
-import AddIcon from '@components/icons/AddIcon.astro';
-import RemoveIcon from '@components/icons/RemoveIcon.astro';
+import cardImage from '@assets/images/landing/card.jpg';
 import CheckIcon from '@components/icons/CheckIcon.astro';
 import CopyIcon from '@components/icons/CopyIcon.astro';
 import Code from 'astro/components/Code.astro';
@@ -18,7 +15,7 @@ import Code from 'astro/components/Code.astro';
   />
 
   <div class="flex flex-col md:h-112 md:flex-row gap-6">
-    <!-- Code Tabs -->
+    <!-- code tabs -->
     <div class="p-6 relative flex flex-col flex-1 max-h-88 md:max-h-none overflow-hidden bg-muted rounded-2xl">
       <nav class="border-b border-base">
         <div class="nav nav-underline gap-1" role="tablist">
@@ -67,34 +64,26 @@ import Code from 'astro/components/Code.astro';
       </div>
     </div>
 
-    <!-- Preview Product -->
+    <!-- card -->
     <div class="w-75 h-full mx-auto shrink-0">
-      <div class="card rounded-2xl h-full overflow-hidden">
-        <img src={cardImage.src} class="card-img-top aspect-[10/7]" alt={product.title} />
-        <div class="card-body pb-1.5">
-          <h4 class="card-title text-base">{product.title}</h4>
-          <p class="text-sm">{product.desc}</p>
-
-          <div class="mb-6 flex items-center space-x-2">
-            <span class="text-2xl text-subtle font-bold tracking-tight">{product.price}</span>
-            <span class="text-emphasis">{product.oldPrice}</span>
-            <span class="badge badge-subtle-success text-success-dark">{product.discount}</span>
+      <div class="card h-full rounded-2xl overflow-hidden">
+        <img src={cardImage.src} class="card-img-top object-cover h-1/2" alt="card-image" />
+        <div class="card-body">
+          <div class="flex justify-between">
+            <div>
+              <h4 class="card-title">Bali Getaway</h4>
+              <p class="text-xs text-emphasis">5 Days · 4 Nights</p>
+            </div>
+            <h6 class="text-default text-base">$499 pp</h6>
           </div>
 
-          <div class="flex items-center gap-1">
-            <button class="btn btn-square h-7.5 w-7.5 text-emphasis bg-highlight rounded-sm">
-              <RemoveIcon />
-            </button>
-            <span class="px-5 py-1.25 text-subtle text-sm bg-muted rounded-sm">2</span>
-            <button class="btn btn-square h-7.5 w-7.5 bg-muted rounded-sm">
-              <AddIcon />
-            </button>
-          </div>
+          <p class="mb-0">
+            Discover the beauty of Bali with guided tours, luxury resorts, and unforgettable sunsets. Perfect for
+            families.
+          </p>
         </div>
         <div class="card-footer p-4">
-          <button class="btn btn-neutral w-full">
-            <CartIcon /> Add to Cart
-          </button>
+          <button class="btn btn-neutral w-full">Book now</button>
         </div>
       </div>
     </div>
