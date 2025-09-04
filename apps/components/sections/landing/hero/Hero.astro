@@ -4,11 +4,7 @@ import CopyIcon from '@components/icons/CopyIcon.astro';
 import CheckIcon from '@components/icons/CheckIcon.astro';
 ---
 
-<section
-  id="hero"
-  class="relative px-4 sm:px-6 lg:px-10 lg:h-180 bg-cover bg-top-left bg-no-repeat
-         bg-[url('/images/hero/hero-xxl-l.png')] dark:bg-[url('/images/hero/hero-xxl-d.png')] overflow-hidden"
->
+<section id="hero" class="relative px-4 sm:px-6 lg:px-10 lg:h-180 overflow-hidden">
   <div class="mx-auto flex justify-between gap-10 h-full max-w-8xl">
     <div class="my-auto py-24 sm:py-29 md:py-50 w-full xl:w-auto">
       <h1
@@ -45,11 +41,6 @@ import CheckIcon from '@components/icons/CheckIcon.astro';
       </section>
     </div>
     <HeroCards />
-  </div>
-  <div
-    class="pointer-events-none absolute bottom-0 left-0 w-full h-5
-         bg-gradient-to-t from-white via-white/60 to-transparent dark:from-black dark:via-black/60 z-10"
-  >
   </div>
 </section>
 
