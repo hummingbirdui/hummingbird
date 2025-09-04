@@ -1,11 +1,34 @@
 ---
 title: Angular
+description: This guide explains how to set up Hummingbird with Angular and Angular SSR using Tailwind CSS. It covers project setup, configuration, and usage so you can quickly build and style components in your Angular app.
 toc: true
 ---
 
-##### Initialization
+##### Install Tailwindcss
 
-This example demonstrates a basic setup for initializing the **Hummingbird UI** library in an Angular app. The `import()` statement inside `ngOnInit` ensures that the library is loaded once the root component is initialized. This works in client-only environments.
+Follow the <a href="https://tailwindcss.com/docs/installation/framework-guides/angular" target="_blank" rel="noopener noreferrer">official installation guide</a> to install Tailwind CSS in your Angular project.
+
+##### Install Hummingbird
+
+Install Hummingbird via your preferred package manager:
+
+<Example lang='bash' showPreview={false} code={`npm install @hummingbirdui/hummingbird`} />
+
+###### Include Hummingbird CSS
+
+Import Hummingbird styles in your main CSS file (e.g., `styles.css`).
+
+<Example lang='css' showPreview={false} 
+  code={`/* You can add global styles to this file, and also import other style files */
+  @import "tailwindcss";
+  @import "@hummingbirdui/hummingbird";
+  `} />
+
+##### Initialize JS plugins
+
+###### Client-Side Rendering (CSR)
+
+Import Hummingbird inside the ngOnInit lifecycle hook of your root component. This ensures Hummingbird is loaded when the component initializes.
 
 <Example lang='js' showPreview={false}
   code={`import { Component, OnInit } from '@angular/core';
@@ -25,7 +48,7 @@ This example demonstrates a basic setup for initializing the **Hummingbird UI** 
 
 ##### Optimize
 
-To improve performance and reduce bundle size, import only the required component scripts from the Hummingbird library. This helps avoid loading unnecessary code. Simply uncomment the components you need in your app.
+**Optional:** you can optimize your application by only importing the components you need. The below example demonstrates how to import only the `modal` script.
 
 <Example lang='js' showPreview={false}
   code={`import { Component, OnInit } from '@angular/core';
@@ -56,7 +79,9 @@ To improve performance and reduce bundle size, import only the required componen
 
 ##### JavaScript API
 
-This section shows how to manually interact with Hummingbird UI components using the JavaScript API in Angular. You can directly create instances like `Modal` and use methods such as `toggle()` for programmatic control. Event listeners are added via `querySelector` just like in vanilla JavaScript.
+Hummingbird also provides a JavaScript API for programmatic control of components. For example, you can toggle a modal manually using the API.
+
+Here’s how to initialize and use the `Modal` component:
 
 <Example lang='js' showPreview={false}
   code={`import { Component, OnInit } from '@angular/core';
@@ -79,9 +104,9 @@ This section shows how to manually interact with Hummingbird UI components using
     }
   }`} />
 
-##### Angular SSR
+##### Server-Side Rendering (SSR)
 
-If your app uses **Angular Universal** for **Server-Side Rendering**, it’s important to only load Hummingbird on the client side. This example provides a service that checks if the current platform is the browser, using Angular's `PLATFORM_ID` and `isPlatformBrowser()` utility.
+When using Angular with SSR, load Hummingbird only in the browser to avoid hydration errors. To handle this cleanly, create a dedicated service (e.g., `hummingbird.service.ts`) inside a services folder. This service runs scripts safely on the client.
 
 <Example lang='js' showPreview={false}
   code={`// src/app/services/hummingbird.service.ts
@@ -101,7 +126,7 @@ If your app uses **Angular Universal** for **Server-Side Rendering**, it’s imp
     }
   }`} />
 
-You can now inject this service into your root or feature components and safely load Hummingbird components only in the browser.
+Inject this service into your root or feature components to safely load Hummingbird only in the browser.
 
 <Example lang='js' showPreview={false}
   code={`import { Component, OnInit, signal } from '@angular/core';

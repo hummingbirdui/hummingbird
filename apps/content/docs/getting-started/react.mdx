@@ -21,7 +21,7 @@ Import Hummingbird styles in your main CSS file (e.g., `index.css` or `app.css`)
   code={`@import "tailwindcss";
   @import "@hummingbirdui/hummingbird";`} />
 
-##### Initialization
+##### Initialize JS plugins
 
 Initialize hummingbird at the root of your application, for example in `App.js` or `App.tsx`.
 
@@ -52,7 +52,7 @@ Initialize hummingbird at the root of your application, for example in `App.js` 
 
 ##### Optimize
 
-**Optional:** you can optimize your application by only importing the components you need.
+**Optional:** you can optimize your application by only importing the components you need. The below example demonstrates how to import only the `modal` script.
 
 <Example lang='js' showPreview={false}
   code={`import { useEffect } from "react";
@@ -126,7 +126,7 @@ Here’s how to initialize and use the `Modal` component:
 
     return (
       <div>
-        <button className="btn btn-primary" onClick={handleClick}>Primary</button>
+        <button className="btn btn-primary" onClick={handleClick}>Open</button>
         <div className="modal">...</div>
       </div>
     );

@@ -55,6 +55,10 @@ const sitemap: Sitemap[] = [
         name: 'Gatsby',
         path: '/docs/getting-started/gatsby',
       },
+      {
+        name: 'Astro',
+        path: '/docs/getting-started/astro',
+      },
     ],
   },
   {

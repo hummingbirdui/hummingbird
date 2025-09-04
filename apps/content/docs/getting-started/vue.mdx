@@ -25,7 +25,7 @@ Import Hummingbird styles in your main CSS file (e.g., `main.css`).
   @import "@hummingbirdui/hummingbird";`} />
 
 
-##### Initialization
+##### Initialize JS plugins
 
 To use Hummingbird in a Vue 3 project, import the full library inside the `onMounted` lifecycle hook in `App.vue` or a layout component to initialize it after the app is mounted.
 
@@ -45,7 +45,7 @@ To use Hummingbird in a Vue 3 project, import the full library inside the `onMou
 
 ##### Optimize
 
-**Optional:** you can optimize your application by only importing the components you need.
+**Optional:** you can optimize your application by only importing the components you need. The below example demonstrates how to import only the `modal` script.
 
 <Example lang='vue' showPreview={false} 
   code={`<script setup>
@@ -94,6 +94,6 @@ Here’s how to initialize and use the `Modal` component:
   </script>
 
   <template>
-    <button class="btn btn-primary" data-open-demo-modal>Toggle Modal</button>
+    <button class="btn btn-primary" data-open-demo-modal>Open</button>
     <div class="modal"> ... </div>
   </template>`} />

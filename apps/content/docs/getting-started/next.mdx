@@ -22,7 +22,7 @@ Import Hummingbird styles in your main CSS file (e.g., `globals.css`).
   code={`@import "tailwindcss";
   @import "@hummingbirdui/hummingbird";`} />
 
-##### Initialization
+##### Initialize JS plugins
 
 Create a wrapper component that dynamically imports Hummingbird whenever the route changes. This ensures the library is loaded only on the client side.
 
@@ -72,7 +72,7 @@ Add the wrapper to your layout.tsx so Hummingbird scripts are included globally,
 
 ##### Optimize
 
-**Optional:** you can optimize your application by only importing the components you need.
+**Optional:** you can optimize your application by only importing the components you need. The below example demonstrates how to import only the `modal` script.
 
 <Example lang='js' showPreview={false}
   code={`function HummingbirdWrapper() {
@@ -135,7 +135,7 @@ Here’s how to initialize and use the `Modal` component:
 
     return (
       <div>
-        <button className="btn btn-primary" onClick={handleClick}>Primary</button>
+        <button className="btn btn-primary" onClick={handleClick}>Open</button>
         <div className="modal">...</div>
       </div>
     );

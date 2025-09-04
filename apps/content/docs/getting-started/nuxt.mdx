@@ -1,12 +1,32 @@
 ---
 title: Nuxt
+description: This guide explains how to set up Hummingbird with Nuxt.js using Tailwind CSS. It covers project setup, configuration, and usage so you can quickly build and style components in your Nuxt.js app.
 toc: true
 ---
-##### Initialization
+
+##### Install Tailwindcss
+
+Follow the <a href="https://tailwindcss.com/docs/installation/framework-guides/nuxt" target="_blank" rel="noopener noreferrer">official installation guide</a> to install Tailwind CSS in your Nuxt project.
+
+##### Install Hummingbird
+
+Install Hummingbird via your preferred package manager:
+
+<Example lang='bash' showPreview={false} code={`npm install @hummingbirdui/hummingbird`} />
+
+###### Include Hummingbird CSS
+
+Import Hummingbird styles in your main CSS file (e.g., `main.css`).
+
+<Example lang='css' showPreview={false} 
+  code={`@import "tailwindcss";
+  @import "@hummingbirdui/hummingbird";`} />
+
+##### Initialize JS plugins
 
 ###### Composable
 
-Use this utility to ensure that Hummingbird scripts run only when the Nuxt app is fully mounted and no longer hydrating.
+Create a composable `useHummingbird.ts` in your `composables` directory, this composable ensures Hummingbird scripts run only after the Nuxt app has mounted and hydration is complete.
 
 <Example lang='js' showPreview={false}
   code={`import { onMounted } from "vue";
@@ -21,7 +41,7 @@ Use this utility to ensure that Hummingbird scripts run only when the Nuxt app i
     });
   }`} />
 
-You can import and call `useHummingbird` inside Nuxt page to load and initialize the full Hummingbird JavaScript bundle
+Import and call `useHummingbird` inside a Nuxt page (e.g., `app.vue` file) to load and initialize the Hummingbird JavaScript bundle.
 
 <Example lang='vue' showPreview={false}
   code={`<script setup>
@@ -38,7 +58,7 @@ You can import and call `useHummingbird` inside Nuxt page to load and initialize
 
 ##### Optimized Imports
 
-To reduce JavaScript bundle size, you can selectively import only the scripts you need from the library.
+**Optional:** you can optimize your application by only importing the components you need. The below example demonstrates how to import only the `modal` script.
 
 <Example lang='vue' showPreview={false}
   code={`<script setup>
@@ -66,7 +86,9 @@ To reduce JavaScript bundle size, you can selectively import only the scripts yo
 
 ##### JavaScript API
 
-If you're using component classes directly (like `Modal`, `Dropdown`, etc.), you can dynamically import and interact with them using the same hook.
+Hummingbird also provides a JavaScript API for programmatic control of components. For example, you can toggle a modal manually using the API.
+
+Here’s how to initialize and use the `Modal` component:
 
 <Example lang='vue' showPreview={false}
   code={`<script setup>
@@ -85,6 +107,6 @@ If you're using component classes directly (like `Modal`, `Dropdown`, etc.), you
   </script>
 
   <template>
-    <button class='btn btn-primary' data-open-demo-modal>Toggle Modal</button>
+    <button class='btn btn-primary' data-open-demo-modal>Open</button>
     <div class="modal">...</div>
   </template>`} />
