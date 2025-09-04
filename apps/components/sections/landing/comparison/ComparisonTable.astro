@@ -22,7 +22,7 @@ const getIcon = (featureState: string) => {
 
 <table class="table-fixed rounded-3xl w-full bg-default">
   <thead>
-    <tr class="border-b border-black/4">
+    <tr class="border-b border-light/30">
       <th class="text-left p-4"></th>
       {
         frameworks.map(({ name, logo }, i) => (
@@ -43,7 +43,7 @@ const getIcon = (featureState: string) => {
         const frameworkStates = [{ value: hummingbird }, { value: tailwindcss }, { value: bootstrap }];
 
         return (
-          <tr class="border-b border-black/4 last:border-b-0">
+          <tr class="border-b border-light/30 last:border-b-0">
             <td class="text-sm text-left px-6 py-4.5 text-highlight">{feature}</td>
 
             {frameworkStates.map(({ value }, j) => {

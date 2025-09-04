@@ -127,6 +127,10 @@
       @apply hidden;
     }
   }
+
+  .offcanvas {
+    @apply offcanvas-static transition-none!;
+  }
 }
 
 @utility navbar-expand-sm {

@@ -1,11 +1,33 @@
 ---
 title: Vue
+description: This guide explains how to set up Hummingbird with Vue 3 using Tailwind CSS. It covers project setup, configuration, and usage so you can quickly build and style components in your Vue app.
 toc: true
 ---
 
-##### Initialization
 
-To use Hummingbird in a Vue 3 project, start by importing the full library. You can do this in the `onMounted` lifecycle hook within your `App.vue` or a layout component to ensure it only runs on the client side.
+##### Install Tailwindcss
+
+Follow the <a href="https://tailwindcss.com/docs/installation" target="_blank" rel="noopener noreferrer">official installation guide</a> to install Tailwind CSS in your Vue project.
+
+##### Install Hummingbird
+
+Install Hummingbird via your preferred package manager:
+
+<Example lang='bash' showPreview={false} code={`npm install @hummingbirdui/hummingbird`} />
+
+###### Include Hummingbird CSS
+
+Import Hummingbird styles in your main CSS file (e.g., `main.css`).
+
+<Example lang='css' showPreview={false} 
+  code={`/* main.css */
+  @import "tailwindcss";
+  @import "@hummingbirdui/hummingbird";`} />
+
+
+##### Initialize JS plugins
+
+To use Hummingbird in a Vue 3 project, import the full library inside the `onMounted` lifecycle hook in `App.vue` or a layout component to initialize it after the app is mounted.
 
 <Example lang='vue' showPreview={false} 
   code={`<script setup>
@@ -21,13 +43,9 @@ To use Hummingbird in a Vue 3 project, start by importing the full library. You 
     ...
   </template>`} />
 
-This approach is useful during development or when you want to include the entire JavaScript bundle. However, for better performance in production, consider importing only the modules you need.
-
 ##### Optimize
 
-To optimize your app's performance, selectively import only the JavaScript modules for the components you're actually using. This reduces bundle size and speeds up loading.
-
-Below is an example where only the `modal` component is included:
+**Optional:** you can optimize your application by only importing the components you need. The below example demonstrates how to import only the `modal` script.
 
 <Example lang='vue' showPreview={false} 
   code={`<script setup>
@@ -76,6 +94,6 @@ Here’s how to initialize and use the `Modal` component:
   </script>
 
   <template>
-    <button class="btn btn-primary" data-open-demo-modal>Toggle Modal</button>
+    <button class="btn btn-primary" data-open-demo-modal>Open</button>
     <div class="modal"> ... </div>
   </template>`} />

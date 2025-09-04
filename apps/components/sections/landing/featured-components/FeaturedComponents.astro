@@ -1,5 +1,5 @@
 ---
-import { featuredComponents } from 'apps/data/landing/featured-components';
+import { components } from 'apps/data/landing/components';
 import SectionWrapper from '../common/SectionWrapper.astro';
 import ComponentCard from './ComponentCard.astro';
 ---
@@ -23,6 +23,6 @@ import ComponentCard from './ComponentCard.astro';
   <div
     class="flex-2 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 max-w-65 sm:max-w-134 md:max-w-172 lg:max-w-203 xl:max-w-188 2xl:max-w-203"
   >
-    {featuredComponents.map((item, i, arr) => <ComponentCard component={item} isLast={i === arr.length - 1} />)}
+    {components.map((item, i, arr) => <ComponentCard component={item} isLast={i === arr.length - 1} />)}
   </div>
 </SectionWrapper>

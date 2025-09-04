@@ -1,0 +1,237 @@
+---
+import { Image } from 'astro:assets';
+import SectionWrapper from './common/SectionWrapper.astro';
+import django from '@assets/images/landing/frameworks/django.png';
+import angular from '@assets/images/landing/frameworks/angular.png';
+import laravel from '@assets/images/landing/frameworks/laravel.png';
+import nextjsL from '@assets/images/landing/frameworks/nextjs.png';
+import nextjsD from '@assets/images/landing/frameworks/nextjs-dark.png';
+import astroL from '@assets/images/landing/frameworks/astro.png';
+import astroD from '@assets/images/landing/frameworks/astro-dark.png';
+import reactL from '@assets/images/landing/frameworks/react.png';
+import reactD from '@assets/images/landing/frameworks/react-dark.png';
+import svelte from '@assets/images/landing/frameworks/svelte.png';
+import nuxt from '@assets/images/landing/frameworks/nuxt.png';
+import vue from '@assets/images/landing/frameworks/vue.png';
+
+const opacities = [
+  'opacity-20',
+  'opacity-50',
+  'opacity-0',
+  'opacity-20',
+  'opacity-50',
+  'opacity-30',
+  'opacity-20',
+  'opacity-0',
+  'opacity-0',
+  'opacity-30',
+  'opacity-0',
+  'opacity-0',
+  'opacity-20',
+  'opacity-0',
+  'opacity-0',
+  'opacity-0',
+  'opacity-0',
+  'opacity-0',
+  'opacity-0',
+  'opacity-0',
+];
+---
+
+<SectionWrapper
+  id="frameworks"
+  class="!p-0 h-134 sm:h-130 md:h-148 lg:h-175 xl:h-135 2xl:h-138 bg-cover bg-center bg-no-repeat bg-[url('/images/framework/framework-xxl-l.png')] dark:bg-[url('/images/framework/framework-xxl-d.png')] overflow-hidden"
+>
+  <div
+    class="relative mx-auto max-w-238 h-full flex flex-col xl:flex-row items-center overflow-hidden xl:overflow-visible"
+  >
+    <div class="absolute -left-[60%] w-138 h-173 hidden xl:grid grid-cols-4 gap-2">
+      {
+        opacities.map((opacity) => (
+          <div class={`h-[134px] aspect-square rounded-lg border border-base bg-default ${opacity}`} />
+        ))
+      }
+    </div>
+
+    <div class="px-6 lg:px-10 pt-10 xl:p-0 flex-1 flex flex-col max-w-145 xl:max-w-125 shrink-0">
+      <h1 class="mb-4 text-[28px] md:text-[32px] xl:text-[42px] text-center xl:text-left font-medium tracking-tighter">
+        Plug & play components,<br />for every modern framework
+      </h1>
+      <p class="mb-8 text-center xl:text-left text-highlight">
+        Hummingbird, the framework-agnostic tool provides typed wrappers for popular tools, ensuring smooth integration
+        & easy DIYs.
+      </p>
+      <a href="/docs/components/buttons" type="button" class="self-center xl:self-start btn btn-subtle-primary"
+        >View integration guides</a
+      >
+    </div>
+
+    <div
+      class="absolute -bottom-5 md:-bottom-12 xl:-bottom-5 2xl:-bottom-20 xl:-right-85 2xl:-right-128 w-114 md:w-146 lg:w-187 xl:w-205 2xl:w-247 h-80 md:h-104 lg:h-133 xl:h-146 2xl:h-176 grid grid-cols-7 gap-1 lg:gap-2"
+    >
+      <div
+        class="h-[62px] md:h-20 lg:h-25 xl:h-[110px] 2xl:h-[134px] aspect-square rounded-lg border border-base bg-default opacity-0"
+      >
+      </div>
+      <div
+        class="h-[62px] md:h-20 lg:h-25 xl:h-[110px] 2xl:h-[134px] aspect-square rounded-lg border border-base bg-default opacity-0"
+      >
+      </div>
+      <div
+        class="h-[62px] md:h-20 lg:h-25 xl:h-[110px] 2xl:h-[134px] aspect-square rounded-lg border border-base bg-default opacity-0"
+      >
+      </div>
+      <div
+        class="h-[62px] md:h-20 lg:h-25 xl:h-[110px] 2xl:h-[134px] aspect-square rounded-lg border border-base bg-default opacity-0"
+      >
+      </div>
+      <div
+        class="h-[62px] md:h-20 lg:h-25 xl:h-[110px] 2xl:h-[134px] aspect-square rounded-lg border border-base bg-default opacity-0"
+      >
+      </div>
+      <div
+        class="h-[62px] md:h-20 lg:h-25 xl:h-[110px] 2xl:h-[134px] aspect-square rounded-lg border border-base bg-default opacity-0"
+      >
+      </div>
+      <div
+        class="h-[62px] md:h-20 lg:h-25 xl:h-[110px] 2xl:h-[134px] aspect-square rounded-lg border border-base bg-default opacity-30"
+      >
+      </div>
+      <div
+        class="h-[62px] md:h-20 lg:h-25 xl:h-[110px] 2xl:h-[134px] aspect-square rounded-lg border border-base bg-default opacity-0"
+      >
+      </div>
+      <div
+        class="h-[62px] md:h-20 lg:h-25 xl:h-[110px] 2xl:h-[134px] aspect-square rounded-lg border border-base bg-default opacity-35"
+      >
+      </div>
+      <div
+        class="h-[62px] md:h-20 lg:h-25 xl:h-[110px] 2xl:h-[134px] aspect-square rounded-lg border border-base bg-default opacity-0"
+      >
+      </div>
+      <a
+        href="#"
+        class="h-[62px] md:h-20 lg:h-25 xl:h-[110px] 2xl:h-[134px] aspect-square rounded-lg border border-light hover:border-primary bg-default flex items-center justify-center"
+      >
+        <Image src={django} alt="django" class="w-12 lg:w-16 object-contain" />
+      </a>
+      <a
+        href="/docs/getting-started/vue"
+        class="h-[62px] md:h-20 lg:h-25 xl:h-[110px] 2xl:h-[134px] aspect-square rounded-lg border border-light hover:border-primary bg-default flex items-center justify-center"
+      >
+        <Image src={vue} alt="vue" class="w-12 lg:w-16 object-contain" />
+      </a>
+      <div
+        class="h-[62px] md:h-20 lg:h-25 xl:h-[110px] 2xl:h-[134px] aspect-square rounded-lg border border-base bg-default opacity-40"
+      >
+      </div>
+      <div
+        class="h-[62px] md:h-20 lg:h-25 xl:h-[110px] 2xl:h-[134px] aspect-square rounded-lg border border-base bg-default opacity-30"
+      >
+      </div>
+      <div
+        class="h-[62px] md:h-20 lg:h-25 xl:h-[110px] 2xl:h-[134px] aspect-square rounded-lg border border-base bg-default opacity-0"
+      >
+      </div>
+      <div
+        class="h-[62px] md:h-20 lg:h-25 xl:h-[110px] 2xl:h-[134px] aspect-square rounded-lg border border-base bg-default opacity-0"
+      >
+      </div>
+      <a
+        href="/docs/getting-started/nuxt"
+        class="h-[62px] md:h-20 lg:h-25 xl:h-[110px] 2xl:h-[134px] aspect-square rounded-lg border border-light hover:border-primary bg-default flex items-center justify-center"
+      >
+        <Image src={nuxt} alt="nuxt" class="w-12 lg:w-16 object-contain" />
+      </a>
+      <a
+        href="#"
+        class="h-[62px] md:h-20 lg:h-25 xl:h-[110px] 2xl:h-[134px] aspect-square rounded-lg border border-light hover:border-primary bg-default flex items-center justify-center"
+      >
+        <Image src={laravel} alt="laravel" class="w-12 lg:w-16 object-contain" />
+      </a>
+      <a
+        href="/docs/getting-started/next"
+        class="h-[62px] md:h-20 lg:h-25 xl:h-[110px] 2xl:h-[134px] aspect-square rounded-lg border border-light hover:border-primary bg-default flex items-center justify-center"
+      >
+        <img src={nextjsL.src} alt="nextjs" class="w-12 lg:w-16 object-contain dark:hidden" />
+        <img src={nextjsD.src} alt="nextjs" class="w-12 lg:w-16 object-contain hidden dark:block" />
+      </a>
+      <div
+        class="h-[62px] md:h-20 lg:h-25 xl:h-[110px] 2xl:h-[134px] aspect-square rounded-lg border border-base bg-default opacity-60"
+      >
+      </div>
+      <div
+        class="h-[62px] md:h-20 lg:h-25 xl:h-[110px] 2xl:h-[134px] aspect-square rounded-lg border border-base bg-default opacity-0"
+      >
+      </div>
+      <div
+        class="h-[62px] md:h-20 lg:h-25 xl:h-[110px] 2xl:h-[134px] aspect-square rounded-lg border border-base bg-default opacity-0"
+      >
+      </div>
+
+      <a
+        href="/docs/getting-started/react"
+        class="h-[62px] md:h-20 lg:h-25 xl:h-[110px] 2xl:h-[134px] aspect-square rounded-lg border border-light hover:border-primary bg-default flex items-center justify-center"
+      >
+        <img src={reactL.src} alt="react" class="w-12 lg:w-16 object-contain dark:hidden" />
+        <img src={reactD.src} alt="react" class="w-12 lg:w-16 object-contain hidden dark:block" />
+      </a>
+      <a
+        href="/docs/getting-started/angular"
+        class="h-[62px] md:h-20 lg:h-25 xl:h-[110px] 2xl:h-[134px] aspect-square rounded-lg border border-light hover:border-primary bg-default flex items-center justify-center"
+      >
+        <Image src={angular} alt="angular" class="w-12 lg:w-16 object-contain" />
+      </a>
+      <a
+        href="#"
+        class="h-[62px] md:h-20 lg:h-25 xl:h-[110px] 2xl:h-[134px] aspect-square rounded-lg border border-light hover:border-primary bg-default flex items-center justify-center"
+      >
+        <Image src={svelte} alt="svelte" class="w-12 lg:w-16 object-contain" />
+      </a>
+      <a
+        href="#"
+        class="h-[62px] md:h-20 lg:h-25 xl:h-[110px] 2xl:h-[134px] aspect-square rounded-lg border border-light hover:border-primary bg-default flex items-center justify-center"
+      >
+        <img src={astroL.src} alt="astro" class="w-10 lg:w-13 object-contain dark:hidden" />
+        <img src={astroD.src} alt="astro" class="w-10 lg:w-13 object-contain hidden dark:block" />
+      </a>
+
+      <div
+        class="h-[62px] md:h-20 lg:h-25 xl:h-[110px] 2xl:h-[134px] aspect-square rounded-lg border border-base bg-default opacity-75"
+      >
+      </div>
+      <div
+        class="h-[62px] md:h-20 lg:h-25 xl:h-[110px] 2xl:h-[134px] aspect-square rounded-lg border border-base bg-default opacity-60"
+      >
+      </div>
+      <div
+        class="h-[62px] md:h-20 lg:h-25 xl:h-[110px] 2xl:h-[134px] aspect-square rounded-lg border border-base bg-default opacity-40"
+      >
+      </div>
+      <div
+        class="h-[62px] md:h-20 lg:h-25 xl:h-[110px] 2xl:h-[134px] aspect-square rounded-lg border border-base bg-default opacity-0"
+      >
+      </div>
+      <div
+        class="h-[62px] md:h-20 lg:h-25 xl:h-[110px] 2xl:h-[134px] aspect-square rounded-lg border border-base bg-default opacity-30"
+      >
+      </div>
+      <div
+        class="h-[62px] md:h-20 lg:h-25 xl:h-[110px] 2xl:h-[134px] aspect-square rounded-lg border border-base bg-default opacity-55"
+      >
+      </div>
+      <div
+        class="h-[62px] md:h-20 lg:h-25 xl:h-[110px] 2xl:h-[134px] aspect-square rounded-lg border border-base bg-default opacity-0"
+      >
+      </div>
+      <div
+        class="h-[62px] md:h-20 lg:h-25 xl:h-[110px] 2xl:h-[134px] aspect-square rounded-lg border border-base bg-default opacity-35"
+      >
+      </div>
+      <div
+        class="h-[62px] md:h-20 lg:h-25 xl:h-[110px] 2xl:h-[134px] aspect-square rounded-lg border border-base bg-default opacity-60"
+      >
+      </div>
+    </div>
+  </div>
+</SectionWrapper>

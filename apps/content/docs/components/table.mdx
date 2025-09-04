@@ -1,10 +1,51 @@
 ---
 title: Table
-description: Tables display sets of data. They can be fully customized..
+description: Tables organize and display structured data in rows and columns.
 toc: true
+classNames:
+  component:
+    - class: table
+      desc: Basic table
+  size:
+    - class: table-sm
+      desc: Small table
+  color:
+    - class: table-primary
+      desc: Primary color
+    - class: table-secondary
+      desc: Secondary color
+    - class: table-success
+      desc: Success color
+    - class: table-danger
+      desc: Danger color
+    - class: table-warning
+      desc: Warning color
+    - class: table-info
+      desc: Info color
+    - class: table-neutral
+      desc: Neutral color
+  modifier:
+    - class: table-highlight
+      desc: Highlighted table
+    - class: table-striped
+      desc: Striped table
+    - class: table-striped-columns
+      desc: Striped columns
+    - class: table-hover
+      desc: Hoverable table
+    - class: table-active
+      desc: Active row or cell
+    - class: table-sticky-header
+      desc: Sticky table header
+    - class: table-bordered
+      desc: Bordered table
+    - class: table-borderless
+      desc: Borderless table
 ---
 
 ##### Basic Table
+
+A basic table consists of a header, body, and optional footer. Use the `.table` to get the basic styling.
 
 <Example code={`<div class="overflow-x-auto">
     <table class="table">
@@ -52,6 +93,8 @@ toc: true
   </div>`} />
 
 ##### Highlight Table
+
+Highlight table-head and table-footer with `.table-highlight` class.
 
 <Example code={`<div class="overflow-x-auto rounded-2xl">
     <table class="table table-highlight">
@@ -109,6 +152,8 @@ toc: true
   </div>`} />
 
 ##### Variants
+
+You can easily create different table variants by applying contextual classes to the table, rows, or cells.
 
 <Example showMarkup={false} code={`<div class="overflow-x-auto">
     <table class="table">
@@ -202,6 +247,8 @@ toc: true
 
 ##### Small Table
 
+Small tables can be created using the `.table-sm` class.
+
 <Example code={`<div class="overflow-x-auto">
     <table class="table table-sm">
       <thead>
@@ -247,7 +294,11 @@ toc: true
     </table>
   </div>`} />
 
-##### Striped Table
+##### Accented tables
+
+###### Striped Table
+
+Striped tables use the `.table-striped` class to add zebra-striping to the table rows.
 
 <Example code={`<div class="overflow-x-auto">
     <table class="table table-striped">
@@ -294,7 +345,9 @@ toc: true
     </table>
   </div>`} />
 
-##### Striped columns
+###### Striped columns
+
+Striped columns use the `.table-striped-columns` class to add zebra-striping to the table columns.
 
 <Example code={`<div class="overflow-x-auto">
     <table class="table table-striped-columns">
@@ -341,7 +394,9 @@ toc: true
     </table>
   </div>`} />
 
-##### Hoverable Table
+###### Hoverable Table
+
+Enable row highlighting on hover with the `.table-hover` class.
 
 <Example code={`<div class="overflow-x-auto rounded-t-2xl">
     <table class="table table-highlight table-hover">
@@ -388,7 +443,9 @@ toc: true
     </table>
   </div>`} />
 
-##### Active Table
+###### Active Table
+
+Use the `.table-active` class to highlight the active row or cell.
 
 <Example code={`<div class="overflow-x-auto">
     <table class="table">
@@ -436,6 +493,8 @@ toc: true
   </div>`} />
 
 ##### Table sticky header
+
+Here the example of table with sticky header. Add `.table-sticky-header` class to the table element and set a height to the parent container with `overflow-auto` class.
 
 <Example code={`<div class="overflow-auto rounded-t-2xl h-[19rem]">
     <table class="table table-highlight table-sticky-header">
@@ -569,6 +628,8 @@ A simple example with spanning rows & columns.
 
 ##### Caption
 
+A table caption provides a title or summary for the table's content. Use the `<caption>` element to add a caption to your table.
+
 <Example code={`<div class="overflow-x-auto">
     <table class="table">
       <caption>A basic table example with a caption</caption>
@@ -615,7 +676,11 @@ A simple example with spanning rows & columns.
     </table>
   </div>`} />
 
-##### Bordered Table
+##### Table borders
+
+###### Bordered Table
+
+Add the `.table-bordered` class to the table element to create borders around all table cells.
 
 <Example code={`<div class="overflow-x-auto">
     <table class="table table-bordered">
@@ -662,7 +727,9 @@ A simple example with spanning rows & columns.
     </table>
   </div>`} />
 
-##### Tables without borders
+###### Tables without borders
+
+Add the `.table-borderless` class to the table element to remove borders from all table cells.
 
 <Example code={`<div class="overflow-x-auto">
     <table class="table table-borderless">
@@ -708,3 +775,26 @@ A simple example with spanning rows & columns.
       </tbody>
     </table>
   </div>`} />
+
+##### CSS variables
+
+The table component is built using a set of CSS variables. These variables provide flexibility for customizing styles.
+
+<Example lang='sass' showPreview={false}
+  code={`.table {
+    --table-bg: initial;
+    --table-color: var(--text-color-highlight);
+    --table-cell-padding-x: --spacing(4);
+    --table-cell-padding-y: --spacing(4);
+    --table-border-color: var(--border-color-light);
+    --table-font-size: var(--text-sm);
+    --table-head-bg: var(--background-color-subtle);
+    --table-head-color: var(--text-color-default);
+    --table-striped-bg: var(--background-color-muted);
+    --table-striped-color: var(--text-color-highlight);
+    --table-active-bg: var(--background-color-highlight);
+    --table-active-color: var(--text-color-default);
+    --table-hover-bg: var(--background-color-highlight);
+    --table-hover-color: var(--text-color-highlight);
+  }`}
+/>

@@ -1,10 +1,29 @@
 ---
 title: Gatsby
-description: Quick guide to integrate Hummingbird UI with Gatsby. Wrap all pages in a provider that dynamically loads only the required scripts, keeping performance fast and bundle size small.
+description: This guide explains how to set up Hummingbird with Gatsby using Tailwind CSS. It covers project setup, configuration, and usage so you can quickly build and style components in your Gatsby app.
 toc: true
 ---
 
-##### Initialization
+##### Install Tailwindcss
+
+Follow the <a href="https://tailwindcss.com/docs/installation/framework-guides/gatsby" target="_blank" rel="noopener noreferrer">official installation guide</a> to install Tailwind CSS in your Gatsby project.
+
+##### Install Hummingbird
+
+Install Hummingbird via your preferred package manager:
+
+<Example lang='bash' showPreview={false} code={`npm install @hummingbirdui/hummingbird`} />
+
+###### Include Hummingbird CSS
+
+Import Hummingbird styles in your main CSS file (e.g., `global.css`).
+
+<Example lang='css' showPreview={false} 
+  code={`@import "tailwindcss";
+  @import "@hummingbirdui/hummingbird";
+  `} />
+
+##### Initialize JS plugins
 
 Set up a wrapper component to load Hummingbird scripts dynamically on route changes.
 
@@ -40,7 +59,7 @@ Edit `gatsby-browser.js`:
 
 ##### Optimization
 
-Import only the scripts you need (e.g., `modal`, `dropdown`) to improve performance and reduce bundle size.
+**Optional:** you can optimize your application by only importing the components you need. The below example demonstrates how to import only the `modal` script.
 
 <Example lang='js' showPreview={false}
   code={`// src/components/HummingbirdUI.tsx

@@ -1,21 +1,22 @@
 ---
 import Layout from '@layouts/Layout.astro';
+import Hero from '@components/sections/landing/hero/Hero.astro';
+import Overlay from '@components/sections/landing/Overlay.astro';
 import Features from '@components/sections/landing/features/Features.astro';
+import Comparison from '@components/sections/landing/comparison/Comparison.astro';
 import EditorPreview from '@components/sections/landing/EditorPreview.astro';
-import InteractiveComponents from '@components/sections/landing/interactive-components/InteractiveComponents.astro';
+import CleanMarkup from '@components/sections/landing/CleanMarkup.astro';
+import Frameworks from '@components/sections/landing/Frameworks.astro';
+import ModeComparison from '@components/sections/landing/ModeComparison.astro';
 import FeaturedComponents from '@components/sections/landing/featured-components/FeaturedComponents.astro';
+import InteractiveComponents from '@components/sections/landing/interactive-components/InteractiveComponents.astro';
 import GlobalStyles from '@components/sections/landing/global-styles/GlobalStyles.astro';
 import Footer from '@components/sections/landing/Footer.astro';
 import CTA from '@components/sections/landing/CTA.astro';
-import CleanMarkup from '@components/sections/landing/CleanMarkup.astro';
-import ModeComparison from '@components/sections/landing/ModeComparison.astro';
-import Comparison from '@components/sections/landing/comparison/Comparison.astro';
-import Frameworks from '@components/sections/landing/frameworks/Frameworks.astro';
-import Hero from '@components/sections/landing/hero/Hero.astro';
 ---
 
 <Layout>
-  <div>
+  <div class="relative">
     <Hero />
     <Features />
     <Comparison />
@@ -28,5 +29,6 @@ import Hero from '@components/sections/landing/hero/Hero.astro';
     <InteractiveComponents />
     <CTA />
     <Footer />
+    <Overlay />
   </div>
 </Layout>

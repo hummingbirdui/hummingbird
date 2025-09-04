@@ -10,32 +10,23 @@ export const tabsData: TabData[] = [
     id: 'tailwindcss',
     label: 'Tailwind CSS',
     active: true,
-    code: `<div class="card rounded-2xl h-full overflow-hidden">
-  <img src={cardImage.src} class="card-img-top aspect-[10/7]" alt="Headphone" />
-  <div class="card-body pb-1.5">
-    <h4 class="card-title text-base">Wireless Headphone</h4>
-    <p class="text-sm">Premium audio with noise cancellation.</p>
-
-    <div class="mb-6 flex items-center space-x-2">
-      <span class="text-2xl text-subtle font-bold tracking-tight">$400</span>
-      <span class="text-emphasis">$800</span>
-      <span class="badge badge-subtle-success text-success-dark">50% off</span>
+    code: `<div class="w-75 h-full border border-[#c9d0de] dark:border-[#282c32] rounded-2xl overflow-hidden">
+  <img src='./images/nature.png' class="h-1/2 w-full object-cover" alt="card-image" />
+  <div class="p-4 h-1/2 flex flex-col">
+    <div class="flex justify-between">
+      <div>
+        <h4 class="mb-1 text-xl text-[#1d2025] dark:text-white">Bali Getaway</h4>
+        <p class="text-xs text-[#a4abb9] dark:text-[#7c8491]">5 Days · 4 Nights</p>
+      </div>
+      <h6 class="text-base text-[#1d2025] dark:text-white">$499 pp</h6>
     </div>
-
-    <div class="flex items-center gap-1">
-      <button class="btn btn-square h-7.5 w-7.5 text-emphasis bg-highlight rounded-sm">
-        <RemoveIcon />
-      </button>
-      <span class="px-5 py-1.25 text-subtle text-sm bg-muted rounded-sm">2</span>
-      <button class="btn btn-square h-7.5 w-7.5 bg-muted rounded-sm">
-        <AddIcon />
-      </button>
-    </div>
-  </div>
-  <div class="card-footer p-4">
-    <button class="btn btn-neutral w-full">
-      <CartIcon /> Add to Cart
-    </button>
+    <p class="text-sm text-[#505763] dark:text-[#a4abb9]">
+      Discover the beauty of Bali with guided tours, luxury resorts, and unforgettable sunsets. Perfect for
+      families.
+    </p>
+    <button class="mt-auto w-full h-9 text-sm text-[#fff] dark:text-[#1d2025] font-semibold bg-[#1d2025] dark:bg-[#c9d0de] rounded-lg"
+      >Book now</button
+    >
   </div>
 </div>`,
   },
@@ -43,41 +34,26 @@ export const tabsData: TabData[] = [
     id: 'hummingbird',
     label: 'Hummingbird',
     active: false,
-    code: `<div class="card rounded-2xl h-full overflow-hidden">
-  <img src={cardImage.src} class="card-img-top aspect-[10/7]" alt="Headphone" />
-  <div class="card-body pb-1.5">
-    <h4 class="card-title text-base">Wireless Headphone</h4>
-    <p class="text-sm">Premium audio with noise cancellation.</p>
-
-    <div class="mb-6 flex items-center space-x-2">
-      <span class="text-2xl text-subtle font-bold tracking-tight">$400</span>
-      <span class="text-emphasis">$800</span>
-      <span class="badge badge-subtle-success text-success-dark">50% off</span>
+    code: `<div class="card w-75 rounded-2xl overflow-hidden">
+  <img src='./images/nature.png' class="card-img-top object-cover h-1/2" alt="card-image" />
+  <div class="card-body">
+    <div class="flex justify-between">
+      <div>
+        <h4 class="card-title">Bali Getaway</h4>
+        <p class="text-xs text-emphasis">5 Days · 4 Nights</p>
+      </div>
+      <h6 class="text-default text-base">$499 pp</h6>
     </div>
 
-    <div class="flex items-center gap-1">
-      <button class="btn btn-square h-7.5 w-7.5 text-emphasis bg-highlight rounded-sm">
-        <RemoveIcon />
-      </button>
-      <span class="px-5 py-1.25 text-subtle text-sm bg-muted rounded-sm">2</span>
-      <button class="btn btn-square h-7.5 w-7.5 bg-muted rounded-sm">
-        <AddIcon />
-      </button>
-    </div>
+    <p class="mb-0">
+      Discover the beauty of Bali with guided tours, luxury resorts, and unforgettable sunsets. Perfect for
+      families.
+    </p>
   </div>
   <div class="card-footer p-4">
-    <button class="btn btn-neutral w-full">
-      <CartIcon /> Add to Cart
-    </button>
+    <button class="btn btn-neutral w-full">Book now</button>
   </div>
 </div>`,
   },
 ];
 
-export const product = {
-  title: 'Wireless Headphone',
-  desc: 'Premium audio with noise cancellation.',
-  price: '$400',
-  oldPrice: '$800',
-  discount: '50% off',
-};
