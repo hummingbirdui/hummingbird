@@ -4,10 +4,10 @@ import CardWrapper from '../CardWrapper.astro';
 
 <CardWrapper color="success" class="shadow-success/5 dark:shadow-success-darker/5">
   <h3 class="mb-4 text-base font-bold">Monthly Net Profit</h3>
-  <h1 class="mb-1 text-highlight text-2xl font-semibold">$25,049</h1>
+  <h1 class="mb-1 text-muted text-2xl font-semibold">$25,049</h1>
   <div class="flex items-center gap-1.5">
     <span class="badge badge-subtle-success text-success-dark">+4.00%</span>
-    <p class="mb-0 text-highlight text-sm">vs last month</p>
+    <p class="mb-0 text-muted text-sm">vs last month</p>
   </div>
 
   <div data-profitchartid={`chart-${Date.now()}`} class="w-full grow"></div>

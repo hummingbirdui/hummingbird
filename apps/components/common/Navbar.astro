@@ -22,13 +22,13 @@ const currentPath = Astro.url.pathname;
   <div class="mx-auto py-5 flex items-center w-full max-w-8xl">
     <a class="navbar-brand flex items-center gap-2" href="/">
       <Image src={logo} alt="Logo" class="w-10 h-10" />
-      <h5 class="mb-0 text-highlight font-semibold hidden sm:flex">hummingbird</h5>
+      <h5 class="mb-0 text-muted font-semibold hidden sm:flex">hummingbird</h5>
     </a>
     <span class="ml-1 sm:ml-4 badge badge-subtle shrink-0">v 1.0.0</span>
     <div class="ml-8 2xl:ml-15 relative hidden lg:flex items-center basis-70">
       <SearchIcon class="absolute left-4" />
       <input class="form-control-fill w-full px-11" type="search" placeholder="Search" aria-label="Search" />
-      <span class="absolute right-5 badge text-highlight font-normal border-0 bg-transparent pointer-events-none"
+      <span class="absolute right-5 badge text-muted font-normal border-0 bg-transparent pointer-events-none"
         >CTRL K</span
       >
     </div>
@@ -78,7 +78,7 @@ const currentPath = Astro.url.pathname;
   <div class="px-6 py-5 flex justify-between items-center">
     <a class="navbar-brand flex items-center gap-2" href="/">
       <Image src={logo} alt="Logo" class="w-10 h-10" />
-      <h5 class="mb-0 text-highlight font-semibold">hummingbird</h5>
+      <h5 class="mb-0 text-muted font-semibold">hummingbird</h5>
     </a>
     <button id="drawerClose" class="btn btn-square bg-transparent">
       <TimesIcon />

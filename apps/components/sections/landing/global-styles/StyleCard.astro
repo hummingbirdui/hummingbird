@@ -14,7 +14,7 @@ const { style, class: className = '' } = Astro.props;
 
 <div class={`p-6 flex flex-col min-h-65 md:min-h-92 border border-base bg-subtle rounded-2xl ${className}`}>
   <h3 class="mb-2 text-[21px] font-semibold">{style.title}</h3>
-  <p class="mb-6 text-highlight text-sm">
+  <p class="mb-6 text-muted text-sm">
     {style.description}
   </p>
   <div class="relative flex-1">

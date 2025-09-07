@@ -23,7 +23,7 @@ const { color, image, title, description, link } = component;
     <img src={image.dark.src} class="card-img brightness-100 hidden dark:flex" alt={title} />
     <div class="p-4 sm:p-5 xl:p-6 card-body flex flex-col items-start">
       <h4 class="mb-4 card-title text-lg sm:text-[21px] text-default font-medium">{title}</h4>
-      <p class="mb-0 text-highlight line-clamp-2 xl:line-clamp-none">{description}</p>
+      <p class="mb-0 text-muted line-clamp-2 xl:line-clamp-none">{description}</p>
       <a href={link} class="mt-auto self-end">
         <button>
           <ArrowIcon class="text-default" />

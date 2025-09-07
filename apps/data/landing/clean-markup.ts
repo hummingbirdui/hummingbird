@@ -40,7 +40,7 @@ export const tabsData: TabData[] = [
     <div class="flex justify-between">
       <div>
         <h4 class="card-title">Bali Getaway</h4>
-        <p class="text-xs text-emphasis">5 Days · 4 Nights</p>
+        <p class="text-xs text-subtle">5 Days · 4 Nights</p>
       </div>
       <h6 class="text-default text-base">$499 pp</h6>
     </div>
@@ -56,4 +56,3 @@ export const tabsData: TabData[] = [
 </div>`,
   },
 ];
-

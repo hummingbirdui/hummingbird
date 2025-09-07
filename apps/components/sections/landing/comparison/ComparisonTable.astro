@@ -44,7 +44,7 @@ const getIcon = (featureState: string) => {
 
         return (
           <tr class="border-b border-light/30 last:border-b-0">
-            <td class="text-sm text-left px-6 py-4.5 text-highlight">{feature}</td>
+            <td class="text-sm text-left px-6 py-4.5 text-muted">{feature}</td>
 
             {frameworkStates.map(({ value }, j) => {
               const data = getIcon(value);

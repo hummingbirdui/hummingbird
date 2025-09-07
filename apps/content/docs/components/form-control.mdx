@@ -162,14 +162,14 @@ Global variables apply shared styles across buttons, inputs, and selects. Updati
   --input-btn-border-width: 1px;
 
   /* Used across input and form-select */
-  --input-label-color: var(--text-color-highlight);
+  --input-label-color: var(--text-color-muted);
   --input-bg: var(--background-color-muted);
   --input-color: var(--text-color-default);
   --input-border-color: var(--border-color-base);
   --input-disabled-bg: var(--background-color-highlight);
   --input-hover-bg: var(--background-color-highlight);
   --input-focus-bg: var(--color-primary-lighter);
-  --input-hover-border-color: var(--text-color-emphasis);
+  --input-hover-border-color: var(--text-color-subtle);
   --input-focus-border-color: var(--color-primary);
   --input-disabled-border-color: var(--border-color-base);`}
 />
@@ -214,7 +214,7 @@ Local variables apply only to form-control, allowing fine-grained control over t
 ###### Form Label variables
 
 <Example lang='sass' showPreview={false} code={`.form-label {
-    --input-label-color: var(--text-color-highlight);
+    --input-label-color: var(--text-color-muted);
     --input-label-font-size: var(--text-xs);
     --input-label-font-weight: 600;
     --input-label-bg: transparent;
@@ -226,5 +226,5 @@ Local variables apply only to form-control, allowing fine-grained control over t
     --form-text-margin-top: --spacing(1);
     --form-text-font-size: var(--text-xs);
     --form-text-font-weight: 400;
-    --form-text-color: var(--text-color-highlight);
+    --form-text-color: var(--text-color-muted);
 }`} />
