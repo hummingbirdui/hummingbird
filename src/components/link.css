@@ -57,7 +57,7 @@
 }
 @utility link-neutral {
   @layer base {
-    --link-color: var(--color-main);
-    --link-hover-color: var(--color-dark);
+    --link-color: var(--text-color-default);
+    --link-hover-color: var(--text-color-emphasis);
   }
 }

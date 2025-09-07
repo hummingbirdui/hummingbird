@@ -1,9 +1,9 @@
 @utility alert {
   @layer base {
-    --alert-bg: var(--color-main);
+    --alert-bg: var(--color-dark);
     --alert-padding-x: --spacing(4);
     --alert-padding-y: --spacing(3.5);
-    --alert-color: var(--color-contrast);
+    --alert-color: var(--color-white);
     --alert-border-color: transparent;
     --alert-border-radius: var(--radius-lg);
     --alert-icon-color: var(--color-contrast);
@@ -30,31 +30,37 @@
 @utility alert-primary {
   @layer base {
     --alert-bg: var(--color-primary);
+    --alert-color: var(--color-contrast);
   }
 }
 @utility alert-secondary {
   @layer base {
     --alert-bg: var(--color-secondary);
+    --alert-color: var(--color-contrast);
   }
 }
 @utility alert-info {
   @layer base {
     --alert-bg: var(--color-info);
+    --alert-color: var(--color-contrast);
   }
 }
 @utility alert-success {
   @layer base {
     --alert-bg: var(--color-success);
+    --alert-color: var(--color-contrast);
   }
 }
 @utility alert-warning {
   @layer base {
     --alert-bg: var(--color-warning);
+    --alert-color: var(--color-contrast);
   }
 }
 @utility alert-danger {
   @layer base {
     --alert-bg: var(--color-danger);
+    --alert-color: var(--color-contrast);
   }
 }
 
@@ -62,8 +68,8 @@
 @utility alert-subtle {
   @layer base {
     --alert-bg: var(--background-color-muted);
-    --alert-color: var(--color-darker);
-    --alert-icon-color: var(--color-main);
+    --alert-color: var(--text-color-emphasis);
+    --alert-icon-color: var(--text-color-default);
   }
 }
 @utility alert-subtle-primary {
@@ -113,9 +119,9 @@
 @utility alert-outline {
   @layer base {
     --alert-bg: transparent;
-    --alert-color: var(--color-main);
-    --alert-icon-color: var(--color-main);
-    --alert-border-color: var(--color-main);
+    --alert-color: var(--text-color-default);
+    --alert-icon-color: var(--text-color-default);
+    --alert-border-color: var(--text-color-default);
   }
 }
 @utility alert-outline-primary {

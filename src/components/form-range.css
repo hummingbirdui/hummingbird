@@ -125,6 +125,6 @@
 }
 @utility form-range-neutral {
   @layer base {
-    --form-range-color: var(--color-main);
+    --form-range-color: var(--text-color-default);
   }
 }

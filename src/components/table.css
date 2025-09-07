@@ -145,16 +145,16 @@
 
 @utility table-neutral {
   @layer base {
-    --table-bg: var(--color-main);
-    --table-color: var(--color-contrast);
-    --table-head-color: var(--color-contrast);
-    --table-border-color: var(--color-light);
-    --table-striped-bg: --alpha(var(--color-dark) / 100%);
-    --table-striped-color: var(--color-contrast);
-    --table-hover-bg: var(--color-darker);
-    --table-hover-color: var(--color-contrast);
-    --table-active-bg: var(--color-darker);
-    --table-active-color: var(--color-contrast);
+    --table-bg: var(--color-dark);
+    --table-color: var(--color-white);
+    --table-head-color: var(--color-white);
+    --table-border-color: var(--border-color-light);
+    --table-striped-bg: --alpha(var(--color-dark) / 90%);
+    --table-striped-color: var(--color-white);
+    --table-hover-bg: --alpha(var(--color-dark) / 80%);
+    --table-hover-color: var(--color-white);
+    --table-active-bg: --alpha(var(--color-dark) / 80%);
+    --table-active-color: var(--color-white);
   }
 }
 @utility table-primary {
