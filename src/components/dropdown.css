@@ -39,7 +39,7 @@
     --dropdown-divider-margin-y: --spacing(2);
     --dropdown-header-padding-y: --spacing(2);
     --dropdown-header-padding-x: --spacing(4);
-    --dropdown-header-color: var(--text-color-highlight);
+    --dropdown-header-color: var(--text-color-muted);
     --dropdown-header-font-size: var(--text-base);
 
     @apply absolute 

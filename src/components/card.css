@@ -1,7 +1,7 @@
 @utility card {
   @layer base {
     --card-bg: var(--background-color-subtle);
-    --card-color: var(--text-color-highlight);
+    --card-color: var(--text-color-muted);
     --card-border-width: 1px;
     --card-border-color: var(--border-color-base);
     --card-border-radius: var(--radius-lg);

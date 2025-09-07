@@ -4,7 +4,7 @@
     --nav-link-padding-x: --spacing(4);
     --nav-link-padding-y: --spacing(2);
     --nav-link-font-weight: var(--font-weight-medium);
-    --nav-link-color: var(--text-color-highlight);
+    --nav-link-color: var(--text-color-muted);
     --nav-link-font-size: var(--text-base);
     --nav-link-line-height: 1.5;
     --nav-link-disabled-color: var(--color-disabled-color);
