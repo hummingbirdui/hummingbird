@@ -70,15 +70,15 @@ const sitemap: Sitemap[] = [
       },
       {
         name: 'Theming',
-        path: '#',
-      },
-      {
-        name: 'Dark mode',
-        path: '#',
+        path: '/docs/customize/theming',
       },
       {
         name: 'Colors',
         path: '/docs/customize/colors',
+      },
+      {
+        name: 'Dark mode',
+        path: '#',
       },
     ],
   },

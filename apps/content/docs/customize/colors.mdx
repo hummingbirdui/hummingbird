@@ -1,6 +1,28 @@
 ---
 title: Colors
+description: Hummingbird provide a small set of semantic color variables, which makes it easy to apply and customize consistently across your project.
+toc: true
 ---
+
+##### Overview
+
+Instead of applying fixed Tailwind palette classes like:
+
+- `text-red-500`
+- `bg-green-600`
+- `border-blue-700` etc.
+
+It’s better to rely on semantic color classes. Semantic colors are mapped to your design tokens and automatically adapt when you change themes.
+
+For example, you can use:
+
+- `text-subtle`
+- `bg-secondary`
+- `border-light` etc.
+
+This way, you’re not tied to a specific palette value (`blue-500`, `green-600`, etc.). Instead, your components reference semantic roles (`primary`, `secondary`, `warning`), which makes your UI easier to maintain, brand, and theme.
+
+Behind the scenes, each semantic color class points to a CSS variable. Updating or overriding that variable updates the color everywhere it’s used.
 
 ##### Background & Foreground
 
@@ -18,11 +40,11 @@ title: Colors
       <p>bg-muted</p>
       <p class='mb-0'>test-muted</p>
     </div>
-    <div class='h-[100px] bg-highlight text-highlight p-4 rounded-xl'>
+    <div class='h-[100px] bg-highlight text-muted p-4 rounded-xl'>
       <p>bg-highlight</p>
       <p class='mb-0'>test-highlight</p>
     </div>
-    <div class='h-[100px] bg-emphasis text-emphasis p-4 rounded-xl'>
+    <div class='h-[100px] bg-emphasis text-subtle p-4 rounded-xl'>
       <p>bg-emphasis</p>
       <p class='mb-0'>test-emphasis</p>
     </div>
