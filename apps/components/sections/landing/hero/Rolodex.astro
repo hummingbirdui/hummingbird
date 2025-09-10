@@ -1,0 +1,411 @@
+---
+import ActivityChart from './cards/ActivityChart.astro';
+import AddressInfields from './cards/AddressInfields.astro';
+import BluePalette from './cards/BluePalette.astro';
+import CSSVariables from './cards/CSSVariables.astro';
+import EcoCard from './cards/EcoCard.astro';
+import EventList from './cards/EventList.astro';
+import HoursChart from './cards/HoursChart.astro';
+import JSCode from './cards/JSCode.astro';
+import Members from './cards/Members.astro';
+import ModeToggleCard from './cards/ModeToggleCard.astro';
+import MonthlyProfitChart from './cards/MonthlyProfitChart.astro';
+import Preferences from './cards/Preferences.astro';
+import ProfileCard from './cards/ProfileCard.astro';
+import TimePicker from './cards/TimePicker.astro';
+import Uploader from './cards/Uploader.astro';
+---
+
+<div class="hero-anim-container w-170 h-180">
+  <ul class="m-0 p-0 relative list-none h-full w-full flex items-center justify-center">
+    <li class="slide absolute w-full h-54">
+      <div class="w-54 h-54 absolute left-0">
+        <EventList />
+      </div>
+      <div class="w-112 h-54 absolute right-0">
+        <Uploader />
+      </div>
+    </li>
+    <li class="slide absolute w-full h-54">
+      <div class="w-54 h-54 absolute right-0">
+        <HoursChart />
+      </div>
+      <div class="w-112 h-54 absolute left-0">
+        <EcoCard />
+      </div>
+    </li>
+    <li class="slide absolute w-full h-54">
+      <div class="w-54 h-54 absolute left-0">
+        <TimePicker />
+      </div>
+      <div class="w-112 h-54 absolute right-0">
+        <JSCode />
+      </div>
+    </li>
+    <li class="slide absolute w-full h-54">
+      <div class="w-112 h-54 absolute left-0">
+        <BluePalette />
+      </div>
+      <div class="w-54 h-54 absolute right-0">
+        <AddressInfields />
+      </div>
+    </li>
+    <li class="slide absolute w-full h-54">
+      <div class="w-54 h-54 absolute left-0">
+        <ProfileCard />
+      </div>
+      <div class="w-54 h-54 absolute left-1/2 transform -translate-x-1/2">
+        <MonthlyProfitChart />
+      </div>
+      <div class="w-54 h-54 absolute right-0">
+        <Preferences />
+      </div>
+    </li>
+    <li class="slide absolute w-full h-54">
+      <div class="w-54 h-54 absolute left-0">
+        <Members />
+      </div>
+      <div class="w-112 h-54 absolute right-0">
+        <ModeToggleCard />
+      </div>
+    </li>
+    <li class="slide absolute w-full h-54">
+      <div class="w-112 h-54 absolute left-0">
+        <CSSVariables />
+      </div>
+      <div class="w-54 h-54 absolute right-0">
+        <ActivityChart />
+      </div>
+    </li>
+    <li class="slide absolute w-full h-54">
+      <div class="w-54 h-54 absolute left-0">
+        <HoursChart />
+      </div>
+      <div class="w-112 h-54 absolute right-0">
+        <EcoCard />
+      </div>
+    </li>
+    <li class="slide absolute w-full h-54">
+      <div class="w-112 h-54 absolute left-0">
+        <BluePalette />
+      </div>
+      <div class="w-54 h-54 absolute right-0">
+        <AddressInfields />
+      </div>
+    </li>
+    <li class="slide absolute w-full h-54">
+      <div class="w-54 h-54 absolute left-0">
+        <ProfileCard />
+      </div>
+      <div class="w-54 h-54 absolute left-1/2 transform -translate-x-1/2">
+        <MonthlyProfitChart />
+      </div>
+      <div class="w-54 h-54 absolute right-0">
+        <Preferences />
+      </div>
+    </li>
+    <li class="slide absolute w-full h-54">
+      <div class="w-54 h-54 absolute left-0">
+        <Members />
+      </div>
+      <div class="w-112 h-54 absolute right-0">
+        <ModeToggleCard />
+      </div>
+    </li>
+    <li class="slide absolute w-full h-54">
+      <div class="w-112 h-54 absolute left-0">
+        <CSSVariables />
+      </div>
+      <div class="w-54 h-54 absolute right-0">
+        <ActivityChart />
+      </div>
+    </li>
+  </ul>
+</div>
+
+<script>
+  import gsap from 'gsap';
+
+  const radius = 600;
+  const cycleDuration = 36;
+  const maxOffset = 34;
+  const startBump = 0.05;
+  const endBump = 0.8;
+
+  function windowedBump(pos: number, start = startBump, end = endBump) {
+    if (pos < start || pos > end) return 0;
+    const local = (pos - start) / (end - start);
+    return Math.sin(local * Math.PI);
+  }
+
+  const container = document.querySelector('.hero-anim-container');
+  if (!container) {
+    console.warn('[hero] container not found');
+  } else {
+    const slides = gsap.utils.toArray<HTMLElement>('.slide');
+    const slideCount = slides.length;
+
+    let progress = 0;
+    let last = performance.now();
+    const state = { speed: 1 / cycleDuration };
+
+    slides.forEach((s) => gsap.set(s, { y: 0, opacity: 1 }));
+
+    gsap.ticker.add(() => {
+      const now = performance.now();
+      const dt = (now - last) / 1000;
+      last = now;
+
+      progress = (progress + state.speed * dt) % 1;
+
+      slides.forEach((slide, i) => {
+        const t = (progress + i / slideCount) % 1;
+        const angle = t * Math.PI * 2;
+
+        // outer slide movement
+        const y = Math.sin(angle) * radius;
+        const opacity = 0.3 + 0.7 * Math.cos(angle);
+        // const scale = 0.5 + 0.5 * Math.cos(angle);
+        gsap.set(slide, { y, opacity, pointerEvents: opacity <= 0.05 ? 'none' : 'auto' });
+
+        // inner card effect
+        const cards = slide.querySelectorAll(':scope > div');
+        if (!cards || cards.length === 0) return;
+
+        // detect center card (left-1/2 class) or fallback to middle index
+        let centerIndex = -1;
+        cards.forEach((c, idx) => {
+          if (c.classList && (c.classList.contains('left-1/2') || c.classList.contains('center'))) {
+            centerIndex = idx;
+          }
+        });
+        if (centerIndex < 0) centerIndex = Math.floor((cards.length - 1) / 2);
+
+        const pos = (Math.sin(angle) + 1) / 2;
+        const bump = windowedBump(pos, startBump, endBump);
+
+        cards.forEach((card, idx) => {
+          const dist = Math.abs(idx - centerIndex);
+          const offset = maxOffset * bump * dist;
+          gsap.set(card, { y: offset });
+        });
+      });
+    });
+
+    // Hover pause/resume
+    container.addEventListener('mouseenter', () => {
+      gsap.to(state, { speed: 0, duration: 0.45, ease: 'power2.out' });
+    });
+    container.addEventListener('mouseleave', () => {
+      gsap.to(state, { speed: 1 / cycleDuration, duration: 0.45, ease: 'power2.out' });
+    });
+  }
+</script>
+
+<!-- <script>
+  import gsap from 'gsap';
+
+  const cycleDuration = 18;
+  const maxOffset = 20;
+  const startBump = 0.2;
+  const endBump = 0.8;
+  const minSpacing = 3; // tighter at top/bottom
+  const maxSpacing = 5; // widest at center
+
+  function windowedBump(pos: number, start = startBump, end = endBump) {
+    if (pos < start || pos > end) return 0;
+    const local = (pos - start) / (end - start);
+    return Math.sin(local * Math.PI);
+  }
+
+  // spacing curve: t ∈ [0,1], center = 0.5
+  function spacingFactor(t: number) {
+    // distance from center (0 = center, 0.5 = top/bottom)
+    const d = Math.abs(t - 0.5) * 2; // 0 at center, 1 at edges
+    // inverted curve: max at center, min at edges
+    return minSpacing + (1 - d) * (maxSpacing - minSpacing);
+  }
+
+  const container = document.querySelector('.hero-anim-container');
+  if (!container) {
+    console.warn('[hero] container not found');
+  } else {
+    const slides = gsap.utils.toArray<HTMLElement>('.slide');
+    const slideCount = slides.length;
+
+    let progress = 0;
+    let last = performance.now();
+    const state = { speed: 1 / cycleDuration };
+
+    slides.forEach((s) => gsap.set(s, { y: 0, opacity: 1 }));
+
+    gsap.ticker.add(() => {
+      const now = performance.now();
+      const dt = (now - last) / 1000;
+      last = now;
+
+      progress = (progress + state.speed * dt) % 1;
+
+      slides.forEach((slide, i) => {
+        const t = (progress + i / slideCount) % 1;
+
+        // calculate spacing factor based on distance from center
+        const spacing = spacingFactor(t);
+
+        // vertical conveyor with dynamic spacing
+        const y = (t - 0.5) * container.clientHeight * spacing;
+
+        // fade based on center proximity
+        const opacity = 0.3 + 0.7 * (1 - Math.abs(t - 0.5) * 2);
+
+        gsap.set(slide, { y, opacity });
+
+        // inner cards "bump" effect
+        const cards = slide.querySelectorAll(':scope > div');
+        if (!cards || cards.length === 0) return;
+
+        let centerIndex = -1;
+        cards.forEach((c, idx) => {
+          if (c.classList && (c.classList.contains('left-1/2') || c.classList.contains('center'))) {
+            centerIndex = idx;
+          }
+        });
+        if (centerIndex < 0) centerIndex = Math.floor((cards.length - 1) / 2);
+
+        const bump = windowedBump(t, startBump, endBump);
+
+        cards.forEach((card, idx) => {
+          const dist = Math.abs(idx - centerIndex);
+          const offset = maxOffset * bump * dist;
+          gsap.set(card, { y: offset });
+        });
+      });
+    });
+
+    // Hover pause/resume
+    container.addEventListener('mouseenter', () => {
+      gsap.to(state, { speed: 0, duration: 0.45, ease: 'power2.out' });
+    });
+    container.addEventListener('mouseleave', () => {
+      gsap.to(state, { speed: 1 / cycleDuration, duration: 0.45, ease: 'power2.out' });
+    });
+  }
+</script> -->
+
+<!-- <script>
+  import gsap from 'gsap';
+
+  const container = document.querySelector('.hero-anim-container') as HTMLElement;
+  const slides = gsap.utils.toArray<HTMLElement>('.slide');
+  const slideCount = slides.length;
+  const radius = 580;
+
+  const tl = gsap.timeline({
+    repeat: -1,
+    defaults: { ease: 'none' },
+  });
+
+  slides.forEach((slide, i) => {
+    gsap.set(slide, { transformOrigin: '50% 50%' });
+
+    tl.to(
+      slide,
+      {
+        y: 0,
+        opacity: 1,
+        duration: 18,
+        modifiers: {
+          y: (_, target) => {
+            const progress = tl.time() / tl.duration();
+            const angle = (i / slideCount + progress) * Math.PI * 2;
+            return Math.sin(angle) * radius + 'px';
+          },
+          opacity: (_, target) => {
+            const progress = tl.time() / tl.duration();
+            const angle = (i / slideCount + progress) * Math.PI * 2;
+            return 0.3 + 0.7 * Math.cos(angle);
+          },
+        },
+      },
+      0,
+    );
+  });
+
+  container.addEventListener('mouseenter', () => {
+    gsap.to(tl, { timeScale: 0, duration: 0.5, ease: 'power2.out' });
+  });
+  container.addEventListener('mouseleave', () => {
+    gsap.to(tl, { timeScale: 1, duration: 0.5, ease: 'power2.out' });
+  });
+</script> -->
+
+<!-- <script>
+  import gsap from 'gsap';
+
+  const container = document.querySelector('.hero-anim-container') as HTMLElement;
+  const slides = gsap.utils.toArray<HTMLElement>('.slide');
+  const slideCount = slides.length;
+  const radius = 580;
+
+  const tween = gsap.to(
+    {},
+    {
+      duration: 18,
+      repeat: -1,
+      ease: 'power1.inOut',
+      onUpdate: function () {
+        const t = this.progress();
+        slides.forEach((slide, i) => {
+          const angle = (i / slideCount + t) * Math.PI * 2;
+          const y = Math.sin(angle) * radius;
+          const opacity = 0.3 + 0.7 * Math.cos(angle);
+
+          gsap.set(slide, { y, opacity, pointerEvents: opacity <= 0.05 ? 'none' : 'auto' });
+        });
+      },
+    },
+  );
+
+  container.addEventListener('mouseenter', () => tween.pause());
+  container.addEventListener('mouseleave', () => tween.resume());
+
+  import gsap from 'gsap';
+
+  const container = document.querySelector('.hero-anim-container') as HTMLElement;
+  const slides = gsap.utils.toArray<HTMLElement>('.slide');
+  const slideCount = slides.length;
+  const radius = 580;
+
+  const scrubber = { progress: 0 };
+
+  const tl = gsap.timeline({
+    repeat: -1,
+    defaults: { ease: 'none' },
+  });
+
+  tl.to(scrubber, {
+    progress: 1,
+    duration: 18,
+    onUpdate: () => {
+      const t = scrubber.progress;
+      slides.forEach((slide, i) => {
+        const angle = (i / slideCount + t) * Math.PI * 2;
+        const y = Math.sin(angle) * radius;
+        const opacity = 0.3 + 0.7 * Math.cos(angle);
+
+        gsap.set(slide, {
+          y,
+          opacity,
+          pointerEvents: opacity <= 0.05 ? 'none' : 'auto',
+        });
+      });
+    },
+  });
+
+  container.addEventListener('mouseenter', () => {
+    gsap.to(tl, { timeScale: 0, duration: 0.5, ease: 'power2.out' });
+  });
+  container.addEventListener('mouseleave', () => {
+    gsap.to(tl, { timeScale: 1, duration: 0.5, ease: 'power2.out' });
+  });
+</script> -->

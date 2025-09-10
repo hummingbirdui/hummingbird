@@ -16,192 +16,199 @@ import TimePicker from './cards/TimePicker.astro';
 import Uploader from './cards/Uploader.astro';
 ---
 
-<div id="animContainer" class="relative mx-auto 2xl:mx-0 w-112 2xl:w-170 h-180 hidden xl:flex shrink-0">
-  <div id="col9" class="w-full h-81 absolute -top-81">
-    <div class="w-112 h-54 absolute top-0 right-0 hidden 2xl:block">
-      <ModeToggleCard />
-    </div>
-    <div class="w-54 h-54 absolute top-0 right-0 2xl:hidden">
-      <HoursChart />
-    </div>
-    <div class="w-54 h-54 absolute bottom-0 left-0">
-      <Members />
-    </div>
-  </div>
-  <div id="col8" class="w-full h-81 absolute -top-81">
-    <div class="w-112 h-54 absolute top-0 left-0 hidden 2xl:block">
-      <CSSVariables />
-    </div>
-    <div class="w-54 h-54 absolute top-0 left-0 2xl:hidden">
-      <ActivityChart />
-    </div>
-    <div class="w-54 h-54 absolute bottom-0 right-0">
-      <AddressInfields />
-    </div>
-  </div>
-  <div id="col7" class="w-full h-81 absolute -top-81">
-    <div class="w-54 h-54 absolute top-0 left-0 hidden 2xl:block">
-      <EventList />
-    </div>
-    <div class="w-112 h-54 absolute bottom-0 right-0">
-      <Uploader />
-    </div>
-  </div>
-  <div id="col6" class="w-full h-81 absolute -top-81">
-    <div class="w-54 h-54 absolute top-0 right-0 hidden 2xl:block">
-      <HoursChart />
-    </div>
-    <div class="w-112 h-54 absolute bottom-0 left-0">
-      <EcoCard />
-    </div>
-  </div>
-  <div id="col5" class="w-full h-81 absolute -top-81">
-    <div class="w-54 h-54 absolute top-0 left-0">
-      <TimePicker />
-    </div>
-    <div class="w-112 h-54 absolute bottom-0 right-0 hidden 2xl:block">
-      <JSCode />
-    </div>
-    <div class="w-54 h-54 absolute bottom-0 right-0 2xl:hidden">
-      <ActivityChart />
-    </div>
-  </div>
-  <div id="col4" class="w-full h-81 absolute -top-81">
-    <div class="w-112 h-54 absolute top-0 left-0">
-      <BluePalette />
-    </div>
-    <div class="w-54 h-54 absolute bottom-0 right-0 hidden 2xl:block">
-      <Preferences />
-    </div>
-  </div>
-  <div id="col3" class="w-full h-81 2xl:h-108 absolute -top-81 2xl:-top-108">
-    <div class="w-54 h-54 absolute top-0 left-0">
-      <ProfileCard />
-    </div>
-    <div class="w-54 h-54 absolute bottom-0 right-0 2xl:top-27 2xl:left-1/2 2xl:transform 2xl:-translate-x-1/2">
-      <MonthlyProfitChart />
-    </div>
-    <div class="w-54 h-54 absolute bottom-0 right-0 hidden 2xl:block">
-      <Members />
-    </div>
-  </div>
-  <div id="col2" class="w-full h-81 absolute -top-81">
-    <div class="w-112 h-54 absolute top-0 right-0">
-      <ModeToggleCard />
-    </div>
-    <div class="w-54 h-54 absolute bottom-0 left-0 xl:hidden 2xl:block">
-      <Members />
-    </div>
-  </div>
-  <div id="col1" class="w-full h-81 absolute -top-81">
-    <div class="w-112 h-54 absolute top-0 left-0">
-      <CSSVariables />
-    </div>
-    <div class="w-54 h-54 absolute bottom-0 right-0 xl:hidden 2xl:block">
-      <ActivityChart />
-    </div>
-  </div>
-  <div
-    class="pointer-events-none absolute bottom-0 left-0 w-full h-5
-         bg-gradient-to-t from-white via-white/60 to-transparent dark:from-[#07080a] dark:via-[#07080a]/60 z-10"
-  >
-  </div>
+<div class="hero-anim-container w-170 h-180">
+  <ul class="m-0 p-0 relative list-none h-full w-full flex items-center justify-start">
+    <li class="slide absolute w-full h-54">
+      <div class="w-54 h-54 absolute left-0">
+        <EventList />
+      </div>
+      <div class="w-112 h-54 absolute right-0">
+        <Uploader />
+      </div>
+    </li>
+    <li class="slide absolute w-full h-54">
+      <div class="w-54 h-54 absolute right-0">
+        <HoursChart />
+      </div>
+      <div class="w-112 h-54 absolute left-0">
+        <EcoCard />
+      </div>
+    </li>
+    <li class="slide absolute w-full h-54">
+      <div class="w-54 h-54 absolute left-0">
+        <TimePicker />
+      </div>
+      <div class="w-112 h-54 absolute right-0">
+        <JSCode />
+      </div>
+    </li>
+    <li class="slide absolute w-full h-54">
+      <div class="w-112 h-54 absolute left-0">
+        <BluePalette />
+      </div>
+      <div class="w-54 h-54 absolute right-0">
+        <AddressInfields />
+      </div>
+    </li>
+    <li class="slide absolute w-full h-54">
+      <div class="w-54 h-54 absolute left-0">
+        <ProfileCard />
+      </div>
+      <div class="w-54 h-54 absolute left-1/2 transform -translate-x-1/2">
+        <MonthlyProfitChart />
+      </div>
+      <div class="w-54 h-54 absolute right-0">
+        <Preferences />
+      </div>
+    </li>
+    <li class="slide absolute w-full h-54">
+      <div class="w-54 h-54 absolute left-0">
+        <Members />
+      </div>
+      <div class="w-112 h-54 absolute right-0">
+        <ModeToggleCard />
+      </div>
+    </li>
+    <li class="slide absolute w-full h-54">
+      <div class="w-112 h-54 absolute left-0">
+        <CSSVariables />
+      </div>
+      <div class="w-54 h-54 absolute right-0">
+        <ActivityChart />
+      </div>
+    </li>
+    <li class="slide absolute w-full h-54">
+      <div class="w-54 h-54 absolute left-0">
+        <HoursChart />
+      </div>
+      <div class="w-112 h-54 absolute right-0">
+        <EcoCard />
+      </div>
+    </li>
+    <li class="slide absolute w-full h-54">
+      <div class="w-112 h-54 absolute left-0">
+        <BluePalette />
+      </div>
+      <div class="w-54 h-54 absolute right-0">
+        <AddressInfields />
+      </div>
+    </li>
+    <li class="slide absolute w-full h-54">
+      <div class="w-54 h-54 absolute left-0">
+        <ProfileCard />
+      </div>
+      <div class="w-54 h-54 absolute left-1/2 transform -translate-x-1/2">
+        <MonthlyProfitChart />
+      </div>
+      <div class="w-54 h-54 absolute right-0">
+        <Preferences />
+      </div>
+    </li>
+    <li class="slide absolute w-full h-54">
+      <div class="w-54 h-54 absolute left-0">
+        <Members />
+      </div>
+      <div class="w-112 h-54 absolute right-0">
+        <ModeToggleCard />
+      </div>
+    </li>
+    <li class="slide absolute w-full h-54">
+      <div class="w-112 h-54 absolute left-0">
+        <CSSVariables />
+      </div>
+      <div class="w-54 h-54 absolute right-0">
+        <ActivityChart />
+      </div>
+    </li>
+  </ul>
 </div>
 
 <script>
   import gsap from 'gsap';
 
-  const columns = ['col1', 'col2', 'col3', 'col4', 'col5', 'col6', 'col7', 'col8', 'col9'];
-  const columnTimelines: gsap.core.Timeline[] = [];
-  let boxTweens: gsap.core.Tween[] = [];
+  const windowedBump = (pos: number, start: number, end: number) => {
+    if (pos < start || pos > end) return 0;
+    const local = (pos - start) / (end - start);
+    return Math.sin(local * Math.PI);
+  };
 
-  const CONTAINER_H = 720;
-  const DURATION = 7;
-  const STAGGER = 3;
-  const CYCLE = columns.length * STAGGER;
-  const REPEAT_DELAY = CYCLE - DURATION;
-  const EXIT_DURATION = DURATION * 0.275;
+  const startAnimation = () => {
+    const radius = window.innerWidth < 1536 ? 514 : 600;
+    const cycleDuration = 36;
+    const maxOffset = 34;
+    const startBump = 0.05;
+    const endBump = 0.8;
 
-  columns.forEach((id, i) => {
-    const el = document.getElementById(id) as HTMLElement;
-    if (!el) return;
+    const container = document.querySelector('.hero-anim-container');
+    if (!container) {
+      console.warn('[hero] container not found');
+    } else {
+      const slides = gsap.utils.toArray<HTMLElement>('.slide');
+      const slideCount = slides.length;
 
-    const colH = el.offsetHeight;
-    const START_TOP = -colH;
-    const OUT_TOP = CONTAINER_H;
-    const boxes = el.querySelectorAll<HTMLElement>(':scope > div');
-    const originalPositions: number[] = [];
+      let progress = 0;
+      let last = performance.now();
+      const state = { speed: 1 / cycleDuration };
 
-    boxes.forEach((box) => {
-      const topVal = parseFloat(getComputedStyle(box).top || '0');
-      originalPositions.push(topVal);
-    });
+      slides.forEach((s) => gsap.set(s, { y: 0, opacity: 1 }));
 
-    gsap.set(el, { clearProps: 'transform', top: START_TOP });
+      gsap.ticker.add(() => {
+        const now = performance.now();
+        const dt = (now - last) / 1000;
+        last = now;
 
-    const moveDistance = CONTAINER_H - colH - START_TOP;
-    const moveDuration = DURATION * 0.6;
-    const columnSpeed = moveDistance / moveDuration;
+        progress = (progress + state.speed * dt) % 1;
 
-    const maxPause = STAGGER - EXIT_DURATION;
+        slides.forEach((slide, i) => {
+          const t = (progress + i / slideCount) % 1;
+          const angle = t * Math.PI * 2;
 
-    const tl = gsap.timeline({
-      repeat: -1,
-      delay: i * STAGGER,
-      repeatDelay: REPEAT_DELAY,
-      defaults: { ease: 'none' },
-    });
+          // outer slide movement
+          const y = Math.sin(angle) * radius;
+          const opacity = 0.3 + 0.7 * Math.cos(angle);
+          // const scale = 0.5 + 0.5 * Math.cos(angle);
+          gsap.set(slide, { y, opacity, pointerEvents: opacity <= 0.05 ? 'none' : 'auto' });
 
-    tl.fromTo(el, { top: START_TOP - 15 }, { top: CONTAINER_H - colH - 20, duration: moveDuration })
+          // inner card effect
+          const cards = slide.querySelectorAll(':scope > div');
+          if (!cards || cards.length === 0) return;
 
-      .add(() => {
-        boxTweens.forEach((tw) => tw.kill());
-        boxTweens = [];
-
-        if (boxes.length === 0) return;
-
-        boxes.forEach((box, idx) => {
-          const startTop = parseFloat(getComputedStyle(box).top || '0');
-          const boxH = box.offsetHeight;
-          const distance = colH - boxH - startTop;
-
-          const duration = distance / columnSpeed;
-
-          const tween = gsap.to(box, {
-            top: colH - boxH,
-            duration,
-            ease: 'none',
+          // detect center card (left-1/2 class) or fallback to middle index
+          let centerIndex = -1;
+          cards.forEach((c, idx) => {
+            if (c.classList && (c.classList.contains('left-1/2') || c.classList.contains('center'))) {
+              centerIndex = idx;
+            }
           });
-          boxTweens.push(tween);
-        });
+          if (centerIndex < 0) centerIndex = Math.floor((cards.length - 1) / 2);
 
-        const maxDuration = Math.max(...boxTweens.map((tw) => tw.duration()));
-        (el.dataset as DOMStringMap).pauseDuration = String(maxDuration);
-      })
+          const pos = (Math.sin(angle) + 1) / 2;
+          const bump = windowedBump(pos, startBump, endBump);
 
-      .to(el, {
-        top: CONTAINER_H - colH - 20,
-        duration: () => parseFloat((el.dataset as DOMStringMap).pauseDuration || String(DURATION * 0.2)),
-      })
-
-      .to(el, { top: OUT_TOP, duration: EXIT_DURATION })
-
-      .add(() => {
-        boxes.forEach((box, idx) => {
-          gsap.set(box, { top: originalPositions[idx] });
+          cards.forEach((card, idx) => {
+            const dist = Math.abs(idx - centerIndex);
+            const offset = maxOffset * bump * dist;
+            gsap.set(card, { y: offset });
+          });
         });
       });
 
-    columnTimelines.push(tl);
-  });
+      // hover pause/resume
+      container.addEventListener('mouseenter', () => {
+        gsap.to(state, { speed: 0, duration: 0.45, ease: 'power2.out' });
+      });
+      container.addEventListener('mouseleave', () => {
+        gsap.to(state, { speed: 1 / cycleDuration, duration: 0.45, ease: 'power2.out' });
+      });
+    }
+  };
 
-  const container = document.getElementById('animContainer') as HTMLElement;
-  container.addEventListener('mouseenter', () => {
-    columnTimelines.forEach((tl) => tl.pause());
-    boxTweens.forEach((tw) => tw.pause());
+  window.addEventListener('resize', () => {
+    if (window.innerWidth < 1536) {
+      gsap.set('.slide', { scale: 0.8 });
+    } else {
+      gsap.set('.slide', { scale: 1 });
+    }
   });
-  container.addEventListener('mouseleave', () => {
-    columnTimelines.forEach((tl) => tl.resume());
-    boxTweens.forEach((tw) => tw.resume());
-  });
+  startAnimation();
 </script>

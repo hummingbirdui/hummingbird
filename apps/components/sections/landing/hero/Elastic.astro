@@ -1,0 +1,85 @@
+---
+import ActivityChart from './cards/ActivityChart.astro';
+import CSSVariables from './cards/CSSVariables.astro';
+import Members from './cards/Members.astro';
+import ModeToggleCard from './cards/ModeToggleCard.astro';
+import MonthlyProfitChart from './cards/MonthlyProfitChart.astro';
+import Preferences from './cards/Preferences.astro';
+import ProfileCard from './cards/ProfileCard.astro';
+---
+
+<div class="flex w-full h-full flex-col gap-4 mt-2">
+  <div class="relative w-full h-54 z-5">
+    <div class="w-54 h-54 absolute left-0 box7">
+      <ProfileCard />
+    </div>
+    <div class="w-54 h-54 absolute left-1/2 transform -translate-x-1/2 box6">
+      <MonthlyProfitChart />
+    </div>
+    <div class="w-54 h-54 absolute right-0 box5">
+      <Preferences />
+    </div>
+  </div>
+
+  <div class="relative w-full h-54 z-6">
+    <div class="w-54 h-54 absolute left-0 box4">
+      <Members />
+    </div>
+    <div class="w-112 h-54 absolute right-0 box3">
+      <ModeToggleCard />
+    </div>
+  </div>
+
+  <div class="relative w-full h-54 z-7">
+    <div class="w-112 h-54 absolute left-0 box2">
+      <CSSVariables />
+    </div>
+    <div class="w-54 h-54 absolute right-0 box1">
+      <ActivityChart />
+    </div>
+  </div>
+</div>
+
+<script>
+  import { gsap } from 'gsap';
+
+  window.addEventListener('DOMContentLoaded', () => {
+    const tl = gsap.timeline();
+
+    tl.from(
+      ['.box1', '.box2'],
+      {
+        y: -50,
+        opacity: 0,
+        duration: 1.2,
+        ease: 'elastic.out(1, 0.5)',
+        stagger: 0.15,
+      },
+      0,
+    )
+
+      .from(
+        ['.box4', '.box3'],
+        {
+          y: -50,
+          opacity: 0,
+          duration: 1.2,
+          ease: 'elastic.out(1, 0.5)',
+          stagger: 0.15,
+        },
+        0.1,
+      )
+
+      .from(
+        ['.box5', '.box6', '.box7'],
+        {
+          y: -50,
+          opacity: 0,
+          duration: 1.2,
+          ease: 'elastic.out(1, 0.5)',
+          stagger: 0.15,
+        },
+        0.15,
+      );
+  });
+</script>

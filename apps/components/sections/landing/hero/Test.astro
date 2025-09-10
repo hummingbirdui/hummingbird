@@ -1,0 +1,205 @@
+---
+import ActivityChart from './cards/ActivityChart.astro';
+import AddressInfields from './cards/AddressInfields.astro';
+import BluePalette from './cards/BluePalette.astro';
+import CSSVariables from './cards/CSSVariables.astro';
+import EcoCard from './cards/EcoCard.astro';
+import EventList from './cards/EventList.astro';
+import HoursChart from './cards/HoursChart.astro';
+import JSCode from './cards/JSCode.astro';
+import Members from './cards/Members.astro';
+import ModeToggleCard from './cards/ModeToggleCard.astro';
+import MonthlyProfitChart from './cards/MonthlyProfitChart.astro';
+import Preferences from './cards/Preferences.astro';
+import ProfileCard from './cards/ProfileCard.astro';
+import TimePicker from './cards/TimePicker.astro';
+import Uploader from './cards/Uploader.astro';
+---
+
+<div class="relative container w-170 h-180 flex -mt-2 flex-col">
+  <div class="absolute -top-54 w-full h-54 box1 z-7">
+    <div class="w-112 h-54 absolute left-0">
+      <CSSVariables />
+    </div>
+    <div class="w-54 h-54 absolute right-0">
+      <ActivityChart />
+    </div>
+  </div>
+
+  <div class="absolute -top-54 w-full h-54 box2 z-6">
+    <div class="w-54 h-54 absolute left-0">
+      <Members />
+    </div>
+    <div class="w-112 h-54 absolute right-0">
+      <ModeToggleCard />
+    </div>
+  </div>
+
+  <div class="absolute -top-54 w-full h-54 box3 z-5">
+    <div class="w-54 h-54 absolute left-0">
+      <ProfileCard />
+    </div>
+    <div class="w-54 h-54 absolute left-1/2 transform -translate-x-1/2">
+      <MonthlyProfitChart />
+    </div>
+    <div class="w-54 h-54 absolute right-0">
+      <Preferences />
+    </div>
+  </div>
+
+  <div class="absolute -top-54 w-full h-54 box4 z-4">
+    <div class="w-112 h-54 absolute left-0">
+      <BluePalette />
+    </div>
+    <div class="w-54 h-54 absolute right-0">
+      <AddressInfields />
+    </div>
+  </div>
+
+  <div class="absolute -top-54 w-full h-54 box5 z-3">
+    <div class="w-54 h-54 absolute left-0">
+      <TimePicker />
+    </div>
+    <div class="w-112 h-54 absolute right-0">
+      <JSCode />
+    </div>
+  </div>
+
+  <div class="absolute -top-54 w-full h-54 box6 z-2">
+    <div class="w-54 h-54 absolute right-0">
+      <HoursChart />
+    </div>
+    <div class="w-112 h-54 absolute left-0">
+      <EcoCard />
+    </div>
+  </div>
+
+  <div class="absolute -top-54 w-full h-54 box7 z-1">
+    <div class="w-54 h-54 absolute left-0">
+      <EventList />
+    </div>
+    <div class="w-112 h-54 absolute right-0">
+      <Uploader />
+    </div>
+  </div>
+
+  <div
+    class="pointer-events-none absolute -bottom-2 left-0 w-full h-5
+         bg-gradient-to-t from-white via-white/60 to-transparent dark:from-[#07080a] dark:via-[#07080a]/60 z-10"
+  >
+  </div>
+</div>
+
+<script>
+  import gsap from 'gsap';
+
+  const boxes = 8;
+  const moveDistance = 936;
+  const baseDuration = 7;
+  const delayIncrement = 1.9;
+
+  const tweens: gsap.core.Tween[] = [];
+
+  for (let i = 1; i <= boxes; i++) {
+    const tween = gsap.to(`.box${i}`, {
+      y: `+=${moveDistance}`,
+      duration: baseDuration,
+      // repeat: -1,
+      ease: 'power1.inOut',
+      delay: (i - 1) * delayIncrement,
+      modifiers: {
+        y: gsap.utils.unitize((y) => parseFloat(y) % moveDistance),
+      },
+    });
+
+    tweens.push(tween);
+  }
+
+  const container = document.querySelector('.container') as HTMLElement;
+
+  container.addEventListener('mouseenter', () => {
+    tweens.forEach((tween) => tween.pause());
+  });
+
+  container.addEventListener('mouseleave', () => {
+    tweens.forEach((tween) => tween.resume());
+  });
+</script>
+
+<!-- <script>
+  import gsap from 'gsap';
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const container = document.querySelector('.container');
+    if (!container) return console.warn('container not found');
+
+    const moveDistance = 1500;     
+    const baseDuration = 14;       
+    const delayIncrement = 1.5;  
+
+    const timelines = [];
+
+   
+    const boxEls = Array.from(container.children).filter((el) =>
+      el.classList && Array.from(el.classList).some(c => /^box\d+$/.test(c))
+    );
+
+    if (boxEls.length === 0) {
+      console.warn('no box elements found — expected .box1 .box2 etc as direct children');
+      return;
+    }
+
+    boxEls.forEach((boxEl, i) => {
+     
+      const childEls = Array.from(boxEl.querySelectorAll(':scope > div'));
+
+    
+      childEls.forEach(ch => {
+        const csTop = parseFloat(getComputedStyle(ch).top);
+        const initialTop = Number.isFinite(csTop) ? csTop : ch.offsetTop;
+        ch.dataset.initialTop = String(initialTop);
+       
+        gsap.set(ch, { y: 0 });
+      });
+
+     
+      const tl = gsap.timeline({
+        repeat: -1,
+        delay: i * delayIncrement,
+      });
+
+     
+      tl.to(boxEl, {
+        y: `+=${moveDistance}`,
+        duration: baseDuration,
+        ease: 'power1.out',
+        modifiers: {
+          y: gsap.utils.unitize(y => parseFloat(y) % moveDistance)
+        }
+      }, 0);
+
+      
+      childEls.forEach((ch) => {
+        const initialTop = parseFloat(ch.dataset.initialTop) || 0;
+        const delta = -initialTop;
+       
+        tl.fromTo(ch,
+          { y: 0 },
+          { y: delta, duration: baseDuration - 7, ease: 'power1.out' },
+          0 
+        );
+      });
+
+      timelines.push(tl);
+    });
+
+    container.addEventListener('mouseenter', () => timelines.forEach(t => t.pause()));
+    container.addEventListener('mouseleave', () => timelines.forEach(t => t.resume()));
+
+    // debug: uncomment to log initial tops
+    // boxEls.forEach((b, idx) => {
+    //   console.log('box', idx + 1, Array.from(b.querySelectorAll(':scope > div')).map(ch => ch.dataset.initialTop));
+    // });
+  });
+</script>
+ -->
