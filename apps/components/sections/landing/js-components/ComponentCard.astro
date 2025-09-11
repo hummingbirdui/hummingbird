@@ -1,11 +1,10 @@
 ---
 import ArrowIcon from '@components/icons/ArrowIcon.astro';
 import GradientBorderBox from '../common/GradientBorderBox.astro';
-import type { Component } from 'apps/data/landing/interactive-components';
-import { Image } from 'astro:assets';
+import type { JSComponent } from 'apps/data/landing/js-components';
 
 interface Props {
-  component: Component;
+  component: JSComponent;
   index: number;
   isLast: boolean;
 }

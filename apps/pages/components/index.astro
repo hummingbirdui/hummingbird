@@ -1,0 +1,42 @@
+---
+import BreadcrumbBar from '@components/docs/BreadcrumbBar.astro';
+import Sidebar from '@components/docs/Sidebar.astro';
+import Toc from '@components/docs/Toc.astro';
+import BaseLayout from '@layouts/BaseLayout.astro';
+import SearchIcon from '@components/icons/SearchIcon.astro';
+---
+
+<BaseLayout {...Astro.props} fluid={true}>
+  <BreadcrumbBar />
+  <div class="px-6 sm:px-10">
+    <div class="lg:grid lg:grid-cols-[15rem_1fr] max-w-8xl mx-auto h-full">
+      <Sidebar />
+      <div class="xl:grid lg:grid-cols-[1fr_16.75rem]">
+        <div class="py-10 lg:ps-10 xl:pe-10 flex items-start justify-between gap-0">
+          <div>
+            <h3 class="mb-4">Component Overview</h3>
+            <p class="text-xl mb-12">
+              Hummingbird provides various UI components to improve your web applications, and we will keep refining the
+              experience.
+            </p>
+          </div>
+
+          <div class="ml-8 2xl:ml-15 relative hidden lg:flex items-center w-65 shrink-0">
+            <SearchIcon class="absolute left-4 text-highlight text-2xl" />
+            <input
+              class="form-control-fill form-control-lg w-full px-11"
+              type="search"
+              placeholder="Search components"
+              aria-label="Search"
+            />
+          </div>
+        </div>
+
+        <div class="min-w-67 ps-6 py-10 sticky top-[var(--navbar-height)] h-max hidden xl:block">
+          <p class="font-bold ps-4">On this page</p>
+          <!-- {headings && <Toc headings={headings} />} -->
+        </div>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

@@ -17,7 +17,7 @@ import offcanvasDark from '@assets/images/landing/interactive/offcanvas-dark.png
 import modalDark from '@assets/images/landing/interactive/modal-dark.png';
 import tabDark from '@assets/images/landing/interactive/tab-dark.png';
 
-export interface Component {
+export interface JSComponent {
   image: {
     light: ImageMetadata;
     dark: ImageMetadata;
@@ -28,7 +28,7 @@ export interface Component {
   link: string;
 }
 
-export const interactiveComponents: Component[] = [
+export const jsComponents: JSComponent[] = [
   {
     title: 'Alert',
     description: 'Provide relevant notices and feedback users can quickly dismiss.',
