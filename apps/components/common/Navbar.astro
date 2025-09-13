@@ -6,6 +6,7 @@ import GitHubIcon from '@components/icons/GithubIcon.astro';
 import MenuIcon from '@components/icons/MenuIcon.astro';
 import TimesIcon from '@components/icons/TimesIcon.astro';
 import { Image } from 'astro:assets';
+import BulbOffIcon from '@components/icons/BulbOffIcon.astro';
 
 const menuItems = [
   { name: 'Docs', path: '/docs/components/buttons' },
@@ -58,7 +59,8 @@ const currentPath = Astro.url.pathname;
     <div class="mx-2 xl:mx-4 my-auto border-l h-8 xl:h-10 border-base flex lg:hidden xl:flex"></div>
 
     <button class="lg:ml-auto xl:ml-0 btn btn-circle btn-subtle-neutral" data-theme-toggle-btn>
-      <BulbIcon />
+      <BulbIcon data-theme-toggle="dark" />
+      <BulbOffIcon data-theme-toggle="light" />
     </button>
     <button class="ml-2 btn max-lg:btn-circle btn-subtle-neutral">
       <GitHubIcon />
