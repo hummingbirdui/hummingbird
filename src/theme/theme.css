@@ -187,7 +187,7 @@
     /* borders */
     --border-color-light: var(--color-gray-800);
     --border-color-base: var(--color-gray-700);
-    --border-color-dark: var(--color-gray-700);
+    --border-color-dark: var(--color-gray-600);
 
     /* actions */
     --color-active: var(--color-gray-500);
