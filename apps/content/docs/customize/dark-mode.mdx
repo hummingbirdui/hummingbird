@@ -1,0 +1,115 @@
+---
+title: Dark mode
+description: This guide explains how to enable and manage dark mode in a way consistent with Tailwind’s dark-mode documentation.
+toc: true
+---
+
+##### Enable dark mode
+
+Add the custom variant in your main CSS so Tailwind will apply any dark: utilities inside a .dark scope.
+
+<Example lang='css' showPreview={false}
+  code={`@custom-variant dark (&:where(.dark, .dark *));`}
+/>
+
+You will typically add/remove the `.dark` class on the `<html>` element.
+
+##### Set the initial theme
+
+Add this inline script inside the `<head>` tag to ensure the correct theme is applied before the page renders. This prevents flash issue and respects both the user’s saved preference in localStorage and their system’s `prefers-color-scheme` setting.
+
+<Example lang='html' showPreview={false}
+  code={`<script>
+    // On page load or when changing themes, best to add inline in head to avoid FOUC
+    document.documentElement.classList.toggle(
+      "dark",
+      localStorage.theme === "dark" ||
+        (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches),
+    );
+  </script>`}
+/>
+
+##### Theme toggle script
+
+This script manages switching between light and dark themes. It works by:
+
+- Adding or removing the `.dark` class on the `<html>` element
+- Temporarily disabling transitions and animations to avoid flicker when toggling
+- Updating the visibility of toggle icons (`[data-theme-toggle="dark"]` and `[data-theme-toggle="light"]`)
+- Storing the user’s preference in `localStorage` and restoring it automatically on page load
+
+<Example lang='js' showPreview={false} 
+  code={`const toggleTheme = (theme) => {
+    const s = document.createElement('style');
+    s.textContent = '*,*::before,*::after{transition:none!important;animation:none!important}';
+    document.head.appendChild(s);
+    const html = document.documentElement;
+    if (theme === 'dark') html.classList.add('dark');
+    else html.classList.remove('dark');
+    requestAnimationFrame(() => requestAnimationFrame(() => s.remove()));
+  };
+
+  const updateToggleThemeButton = (theme) => {
+    const moonIcon = document.querySelector('[data-theme-toggle="dark"]');
+    const sunIcon = document.querySelector('[data-theme-toggle="light"]');
+    if (theme === 'dark') {
+      moonIcon?.classList.add('hidden');
+      sunIcon?.classList.remove('hidden');
+    } else {
+      moonIcon?.classList.remove('hidden');
+      sunIcon?.classList.add('hidden');
+    }
+  };
+  
+  document.addEventListener('DOMContentLoaded', () => {
+    const savedTheme = localStorage.getItem('theme');
+    const initialTheme = savedTheme ?? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    
+    toggleTheme(initialTheme);
+    updateToggleThemeButton(initialTheme);
+    
+    const toggleThemeBtn = document.querySelector('[data-theme-toggle-btn]');
+    toggleThemeBtn?.addEventListener('click', () => {
+      const current = localStorage.getItem('theme') ?? initialTheme;
+      const newTheme = current === 'dark' ? 'light' : 'dark';
+      localStorage.setItem('theme', newTheme);
+      toggleTheme(newTheme);
+      updateToggleThemeButton(newTheme);
+    });
+  });`}
+/>
+
+If you do not plan to update the toggle theme button, you can remove the `updateToggleThemeButton` implementation.
+
+##### Toggle button markup (example)
+
+Use any markup you prefer, this example matches your selectors and hides/shows icons based on the current state.
+
+<Example lang='html' showPreview={false}
+  code={`<button type="button" data-theme-toggle-btn class="btn btn-circle btn-subtle-neutral">
+    <svg data-theme-toggle="dark"><!-- moon icon --></svg>
+    <svg data-theme-toggle="light"><!-- sun icon --></svg>
+  </button>
+`}
+/>
+
+##### How to use
+
+Hummingbird supports dark mode out of the box, and all components are fully compatible with it. You don’t need to add any extra configuration to enable dark mode styles.
+
+If you want to apply additional styling specifically for dark mode, use the `dark:` variant alongside your utility classes. This ensures that elements automatically adjust their appearance whenever the `.dark` class is active.
+
+<Example lang='html' showPreview={false}
+  code={`<div class="bg-subtle text-primary dark:text-secondary">
+    This content adapts to dark mode
+  </div>`}
+/>
+
+In addition to using the `dark:` variant, you can directly override Hummingbird’s theme variables inside a dark scope:
+
+<Example lang='sass' showPreview={false}
+  code={`@variant dark {
+    --color-primary: var(--color-blue-400);
+    --color-secondary: var(--color-purple-400);
+  }`}
+/>
