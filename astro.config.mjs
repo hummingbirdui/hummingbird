@@ -29,6 +29,18 @@ export default defineConfig({
         light: 'github-light',
         dark: 'github-dark',
       },
+      transformers: [
+        {
+          pre(node) {
+            return {
+              type: 'element',
+              tagName: 'div',
+              properties: { class: 'grid' },
+              children: [node],
+            };
+          },
+        },
+      ],
     },
     rehypePlugins: [
       rehypeSlug,
