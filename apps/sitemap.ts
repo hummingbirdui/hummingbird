@@ -78,7 +78,7 @@ const sitemap: Sitemap[] = [
       },
       {
         name: 'Dark mode',
-        path: '#',
+        path: '/docs/customize/dark-mode',
       },
     ],
   },
