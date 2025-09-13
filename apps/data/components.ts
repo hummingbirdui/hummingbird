@@ -1,186 +1,274 @@
-import accordion from '@assets/images/landing/components/light/accordian.png';
-import avatar from '@assets/images/landing/components/light/avatar.png';
-import alert from '@assets/images/landing/components/light/alert.png';
-import badge from '@assets/images/landing/components/light/badge.png';
-import button from '@assets/images/landing/components/light/button.png';
-import buttonGroup from '@assets/images/landing/components/light/button-group.png';
-import breadcrumb from '@assets/images/landing/components/light/breadcrumb.png';
-import card from '@assets/images/landing/components/light/card.png';
+import button from '@assets/images/components/light/button.png';
+import buttonGroup from '@assets/images/components/light/button-group.png';
+import link from '@assets/images/components/light/link.png';
 
-import accordionDark from '@assets/images/landing/components/dark/accordian.png';
-import avatarDark from '@assets/images/landing/components/dark/avatar.png';
-import alertDark from '@assets/images/landing/components/dark/alert.png';
-import badgeDark from '@assets/images/landing/components/dark/badge.png';
-import buttonDark from '@assets/images/landing/components/dark/button.png';
-import buttonGroupDark from '@assets/images/landing/components/dark/button-group.png';
-import breadcrumbDark from '@assets/images/landing/components/dark/breadcrumb.png';
-import cardDark from '@assets/images/landing/components/dark/card.png';
+import avatar from '@assets/images/components/light/avatar.png';
+import badge from '@assets/images/components/light/badge.png';
+import card from '@assets/images/components/light/card.png';
+import listGroup from '@assets/images/components/light/list-group.png';
+import table from '@assets/images/components/light/table.png';
+import tooltip from '@assets/images/components/light/tooltip.png';
+
+import checkbox from '@assets/images/components/light/checkbox.png';
+import fileInput from '@assets/images/components/light/file-input.png';
+import floatingLabels from '@assets/images/components/light/floating-labels.png';
+import formControls from '@assets/images/components/light/form-controls.png';
+import inputGroup from '@assets/images/components/light/input-group.png';
+import radio from '@assets/images/components/light/radio.png';
+import range from '@assets/images/components/light/range.png';
+import select from '@assets/images/components/light/select.png';
+import swItch from '@assets/images/components/light/switch.png';
+
+import alert from '@assets/images/components/light/alert.png';
+import modal from '@assets/images/components/light/modal.png';
+
+import accordion from '@assets/images/components/light/accordion.png';
+import carousel from '@assets/images/components/light/carousel.png';
+import breadcrumb from '@assets/images/components/light/breadcrumb.png';
+import collapse from '@assets/images/components/light/collapse.png';
+import dropdown from '@assets/images/components/light/dropdown.png';
+import navsTabs from '@assets/images/components/light/navs-tabs.png';
+import navbar from '@assets/images/components/light/navbar.png';
+import offcanvas from '@assets/images/components/light/offcanvas.png';
+
+// dark images
+import buttonDark from '@assets/images/components/dark/button-dark.png';
+import buttonGroupDark from '@assets/images/components/dark/button-group-dark.png';
+import linkDark from '@assets/images/components/dark/link-dark.png';
+
+import avatarDark from '@assets/images/components/dark/avatar-dark.png';
+import badgeDark from '@assets/images/components/dark/badge-dark.png';
+import cardDark from '@assets/images/components/dark/card-dark.png';
+import listGroupDark from '@assets/images/components/dark/list-group-dark.png';
+import tableDark from '@assets/images/components/dark/table-dark.png';
+import tooltipDark from '@assets/images/components/dark/tooltip-dark.png';
+
+import checkboxDark from '@assets/images/components/dark/checkbox-dark.png';
+import fileInputDark from '@assets/images/components/dark/file-input-dark.png';
+import floatingLabelsDark from '@assets/images/components/dark/floating-labels-dark.png';
+import formControlsDark from '@assets/images/components/dark/form-controls-dark.png';
+import inputGroupDark from '@assets/images/components/dark/input-group-dark.png';
+import radioDark from '@assets/images/components/dark/radio-dark.png';
+import rangeDark from '@assets/images/components/dark/range-dark.png';
+import selectDark from '@assets/images/components/dark/select-dark.png';
+import swItchDark from '@assets/images/components/dark/switch-dark.png';
+
+import alertDark from '@assets/images/components/dark/alert-dark.png';
+import modalDark from '@assets/images/components/dark/modal-dark.png';
+
+import accordionDark from '@assets/images/components/dark/accordion-dark.png';
+import carouselDark from '@assets/images/components/dark/carousel-dark.png';
+import breadcrumbDark from '@assets/images/components/dark/breadcrumb-dark.png';
+import collapseDark from '@assets/images/components/dark/collapse-dark.png';
+import dropdownDark from '@assets/images/components/dark/dropdown-dark.png';
+import navsTabsDark from '@assets/images/components/dark/navs-tabs-dark.png';
+import navbarDark from '@assets/images/components/dark/navbar-dark.png';
+import offcanvasDark from '@assets/images/components/dark/offcanvas-dark.png';
 
 export interface Component {
-  section: string;
   title: string;
   count: number;
   url: string;
-  image: { light: ImageMetadata | string; dark: ImageMetadata | string };
+  image: { light: ImageMetadata; dark: ImageMetadata };
 }
 
-export const components: Component[] = [
-  // General
-  {
-    section: 'general',
-    title: 'Button',
-    url: '/docs/components/button',
-    count: 20,
-    image: { light: button, dark: buttonDark },
-  },
-  {
-    section: 'general',
-    title: 'Button Group',
-    url: '/docs/components/button-group',
-    count: 2,
-    image: { light: buttonGroup, dark: buttonGroupDark },
-  },
-  { section: 'general', title: 'Link', url: '/docs/components/link', count: 20, image: { light: '', dark: '' } },
+export interface Section {
+  section: string;
+  items: Component[];
+}
 
-  // Data Display
+export const components: Section[] = [
   {
-    section: 'data-display',
-    title: 'Avatar',
-    url: '/docs/components/avatar',
-    count: 14,
-    image: { light: avatar, dark: avatarDark },
+    section: 'General',
+    items: [
+      {
+        title: 'Button',
+        url: '/docs/components/button',
+        count: 20,
+        image: { light: button, dark: buttonDark },
+      },
+      {
+        title: 'Button Group',
+        url: '/docs/components/button-group',
+        count: 2,
+        image: { light: buttonGroup, dark: buttonGroupDark },
+      },
+      {
+        title: 'Link',
+        url: '/docs/components/link',
+        count: 20,
+        image: { light: link, dark: linkDark },
+      },
+    ],
   },
   {
-    section: 'data-display',
-    title: 'Badge',
-    url: '/docs/components/badge',
-    count: 14,
-    image: { light: badge, dark: badgeDark },
+    section: 'Data Display',
+    items: [
+      {
+        title: 'Avatar',
+        url: '/docs/components/avatar',
+        count: 14,
+        image: { light: avatar, dark: avatarDark },
+      },
+      {
+        title: 'Badge',
+        url: '/docs/components/badge',
+        count: 14,
+        image: { light: badge, dark: badgeDark },
+      },
+      {
+        title: 'Card',
+        url: '/docs/components/card',
+        count: 20,
+        image: { light: card, dark: cardDark },
+      },
+      {
+        title: 'List Group',
+        url: '/docs/components/list-group',
+        count: 10,
+        image: { light: listGroup, dark: listGroupDark },
+      },
+      {
+        title: 'Table',
+        url: '/docs/components/table',
+        count: 20,
+        image: { light: table, dark: tableDark },
+      },
+      {
+        title: 'Tooltip',
+        url: '/docs/components/tooltip',
+        count: 20,
+        image: { light: tooltip, dark: tooltipDark },
+      },
+    ],
   },
   {
-    section: 'data-display',
-    title: 'Card',
-    url: '/docs/components/card',
-    count: 20,
-    image: { light: card, dark: cardDark },
+    section: 'Data Entry',
+    items: [
+      {
+        title: 'Checkbox',
+        url: '/docs/components/checkbox',
+        count: 2,
+        image: { light: checkbox, dark: checkboxDark },
+      },
+      {
+        title: 'File Input',
+        url: '/docs/components/file-input',
+        count: 1,
+        image: { light: fileInput, dark: fileInputDark },
+      },
+      {
+        title: 'Floating labels',
+        url: '/docs/components/floating-labels',
+        count: 14,
+        image: { light: floatingLabels, dark: floatingLabelsDark },
+      },
+      {
+        title: 'Form controls',
+        url: '/docs/components/form-controls',
+        count: 14,
+        image: { light: formControls, dark: formControlsDark },
+      },
+      {
+        title: 'Input Group',
+        url: '/docs/components/input-group',
+        count: 10,
+        image: { light: inputGroup, dark: inputGroupDark },
+      },
+      {
+        title: 'Radio',
+        url: '/docs/components/radio',
+        count: 20,
+        image: { light: radio, dark: radioDark },
+      },
+      {
+        title: 'Range',
+        url: '/docs/components/range',
+        count: 2,
+        image: { light: range, dark: rangeDark },
+      },
+      {
+        title: 'Select',
+        url: '/docs/components/select',
+        count: 20,
+        image: { light: select, dark: selectDark },
+      },
+      {
+        title: 'Switch',
+        url: '/docs/components/switch',
+        count: 20,
+        image: { light: swItch, dark: swItchDark },
+      },
+    ],
   },
   {
-    section: 'data-display',
-    title: 'List Group',
-    url: '/docs/components/list-group',
-    count: 10,
-    image: { light: '', dark: '' },
-  },
-  { section: 'data-display', title: 'Table', url: '/docs/components/table', count: 20, image: { light: '', dark: '' } },
-  {
-    section: 'data-display',
-    title: 'Tooltip',
-    url: '/docs/components/tooltip',
-    count: 20,
-    image: { light: '', dark: '' },
-  },
-
-  // Data Entry
-  {
-    section: 'data-entry',
-    title: 'Checkbox',
-    url: '/docs/components/checkbox',
-    count: 2,
-    image: { light: '', dark: '' },
+    section: 'Feedback',
+    items: [
+      {
+        title: 'Alert',
+        url: '/docs/components/alert',
+        count: 3,
+        image: { light: alert, dark: alertDark },
+      },
+      {
+        title: 'Modal',
+        url: '/docs/components/modal',
+        count: 20,
+        image: { light: modal, dark: modalDark },
+      },
+    ],
   },
   {
-    section: 'data-entry',
-    title: 'File Input',
-    url: '/docs/components/file-input',
-    count: 1,
-    image: { light: '', dark: '' },
+    section: 'Navigation',
+    items: [
+      {
+        title: 'Accordion',
+        url: '/docs/components/accordion',
+        count: 2,
+        image: { light: accordion, dark: accordionDark },
+      },
+      {
+        title: 'Breadcrumb',
+        url: '/docs/components/breadcrumb',
+        count: 2,
+        image: { light: breadcrumb, dark: breadcrumbDark },
+      },
+      {
+        title: 'Carousel',
+        url: '/docs/components/carousel',
+        count: 2,
+        image: { light: carousel, dark: carouselDark },
+      },
+      {
+        title: 'Collapse',
+        url: '/docs/components/collapse',
+        count: 20,
+        image: { light: collapse, dark: collapseDark },
+      },
+      {
+        title: 'Dropdown',
+        url: '/docs/components/dropdown',
+        count: 20,
+        image: { light: dropdown, dark: dropdownDark },
+      },
+      {
+        title: 'Navs & Tabs',
+        url: '/docs/components/navs-tabs',
+        count: 20,
+        image: { light: navsTabs, dark: navsTabsDark },
+      },
+      {
+        title: 'Navbar',
+        url: '/docs/components/navbar',
+        count: 20,
+        image: { light: navbar, dark: navbarDark },
+      },
+      {
+        title: 'Offcanvas',
+        url: '/docs/components/offcanvas',
+        count: 20,
+        image: { light: offcanvas, dark: offcanvasDark },
+      },
+    ],
   },
-  {
-    section: 'data-entry',
-    title: 'Floating labels',
-    url: '/docs/components/floating-labels',
-    count: 14,
-    image: { light: '', dark: '' },
-  },
-  {
-    section: 'data-entry',
-    title: 'Form controls',
-    url: '/docs/components/form-controls',
-    count: 14,
-    image: { light: '', dark: '' },
-  },
-  {
-    section: 'data-entry',
-    title: 'Input Group',
-    url: '/docs/components/input-group',
-    count: 10,
-    image: { light: '', dark: '' },
-  },
-  { section: 'data-entry', title: 'Radio', url: '/docs/components/radio', count: 20, image: { light: '', dark: '' } },
-  { section: 'data-entry', title: 'Range', url: '/docs/components/range', count: 2, image: { light: '', dark: '' } },
-  { section: 'data-entry', title: 'Select', url: '/docs/components/select', count: 20, image: { light: '', dark: '' } },
-  { section: 'data-entry', title: 'Switch', url: '/docs/components/switch', count: 20, image: { light: '', dark: '' } },
-
-  // Feedback
-  {
-    section: 'feedback',
-    title: 'Alert',
-    url: '/docs/components/alert',
-    count: 3,
-    image: { light: alert, dark: alertDark },
-  },
-  { section: 'feedback', title: 'Modal', url: '/docs/components/modal', count: 20, image: { light: '', dark: '' } },
-
-  // Navigation
-  {
-    section: 'navigation',
-    title: 'Accordion',
-    url: '/docs/components/accordion',
-    count: 2,
-    image: { light: accordion, dark: accordionDark },
-  },
-  {
-    section: 'navigation',
-    title: 'Breadcrumb',
-    url: '/docs/components/breadcrumb',
-    count: 2,
-    image: { light: breadcrumb, dark: breadcrumbDark },
-  },
-  {
-    section: 'navigation',
-    title: 'Carousel',
-    url: '/docs/components/carousel',
-    count: 2,
-    image: { light: '', dark: '' },
-  },
-  {
-    section: 'navigation',
-    title: 'Collapse',
-    url: '/docs/components/collapse',
-    count: 20,
-    image: { light: '', dark: '' },
-  },
-  {
-    section: 'navigation',
-    title: 'Dropdown',
-    url: '/docs/components/dropdown',
-    count: 20,
-    image: { light: '', dark: '' },
-  },
-  {
-    section: 'navigation',
-    title: 'Navs & Tabs',
-    url: '/docs/components/navs-tabs',
-    count: 20,
-    image: { light: '', dark: '' },
-  },
-  { section: 'navigation', title: 'Navbar', url: '/docs/components/navbar', count: 20, image: { light: '', dark: '' } },
-  {
-    section: 'navigation',
-    title: 'Offcanvas',
-    url: '/docs/components/offcanvas',
-    count: 20,
-    image: { light: '', dark: '' },
-  },
-  { section: 'navigation', title: 'Switch', url: '/docs/components/switch', count: 20, image: { light: '', dark: '' } },
-].sort((a, b) => a.title.localeCompare(b.title));
+];
