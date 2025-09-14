@@ -12,10 +12,12 @@ const { url, image, title, count } = component;
 
 <a
   href={url}
-  class={`card card-action w-full rounded-2xl bg-default overflow-hidden hover:border-primary ${isLast ? 'hidden md:grid' : ''}`}
+  class={`card card-action w-full aspect-[13/12] rounded-2xl bg-default overflow-hidden hover:border-primary ${isLast ? 'hidden md:flex' : ''}`}
 >
-  <img src={image.light.src} class="h-full w-full object-cover dark:hidden" alt={title} />
-  <img src={image.dark.src} class="h-full w-full object-cover hidden dark:flex" alt={title} />
+  <div class="grow flex items-center justify-center bg-subtle">
+    <img src={image.light.src} class="object-contain dark:hidden" alt={title} />
+    <img src={image.dark.src} class="object-contain hidden dark:flex" alt={title} />
+  </div>
   <div class="px-4 py-3">
     <h6 class="card-title mb-0.5 text-base font-semibold">{title}</h6>
     <p class="mb-0 text-xs text-highlight">{count} components</p>

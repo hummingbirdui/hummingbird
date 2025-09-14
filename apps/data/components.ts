@@ -83,7 +83,7 @@ export const components: Section[] = [
     items: [
       {
         title: 'Button',
-        url: '/docs/components/button',
+        url: '/docs/components/buttons',
         count: 20,
         image: { light: button, dark: buttonDark },
       },
