@@ -1,0 +1,32 @@
+<svg width="200" height="118" viewBox="0 0 200 118" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_34357_70044)">
+<path d="M8 0.5H192C196.142 0.500002 199.5 3.85787 199.5 8V14.5H0.5V8C0.5 3.85786 3.85786 0.5 8 0.5Z" stroke="#1D2025" stroke-opacity="0.6"/>
+<circle cx="10.5" cy="7.5" r="2.5" fill="#1D2025"/>
+<circle cx="17.5" cy="7.5" r="2.5" fill="#1D2025"/>
+<circle cx="24.5" cy="7.5" r="2.5" fill="#1D2025"/>
+<mask id="path-8-inside-1_34357_70044" fill="white">
+<path d="M0 15H77V117.835H0V15Z"/>
+</mask>
+<path d="M0 15H77V117.835H0V15Z" fill="#07080A"/>
+<path d="M77 117.835V118.835H78V117.835H77ZM0 117.835H-1V118.835H0V117.835ZM77 15H76V117.835H77H78V15H77ZM77 117.835V116.835H0V117.835V118.835H77V117.835ZM0 117.835H1V15H0H-1V117.835H0Z" fill="#1D2025" fill-opacity="0.6" mask="url(#path-8-inside-1_34357_70044)"/>
+<rect x="8" y="23" width="61" height="7.83496" rx="2" fill="#505763"/>
+<circle cx="11" cy="41.8359" r="3" fill="#282C32"/>
+<rect x="18" y="38.8359" width="51" height="6" rx="2" fill="#1D2025"/>
+<circle cx="11" cy="54.8359" r="3" fill="#282C32"/>
+<rect x="18" y="51.8359" width="51" height="6" rx="2" fill="#1D2025"/>
+<circle cx="11" cy="67.8359" r="3" fill="#282C32"/>
+<rect x="18" y="64.8359" width="51" height="6" rx="2" fill="#1D2025"/>
+<circle cx="11" cy="80.8359" r="3" fill="#282C32"/>
+<rect x="18" y="77.8359" width="51" height="6" rx="2" fill="#1D2025"/>
+<circle cx="11" cy="93.8359" r="3" fill="#282C32"/>
+<rect x="18" y="90.8359" width="51" height="6" rx="2" fill="#1D2025"/>
+<circle cx="11" cy="106.836" r="3" fill="#282C32"/>
+<rect x="18" y="103.836" width="51" height="6" rx="2" fill="#1D2025"/>
+</g>
+<rect x="0.5" y="0.5" width="199" height="117" rx="7.5" stroke="#1D2025" stroke-opacity="0.6"/>
+<defs>
+<clipPath id="clip0_34357_70044">
+<rect width="200" height="118" rx="8" fill="white"/>
+</clipPath>
+</defs>
+</svg>
