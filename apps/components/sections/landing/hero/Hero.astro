@@ -4,11 +4,11 @@ import CopyIcon from '@components/icons/CopyIcon.astro';
 import CheckIcon from '@components/icons/CheckIcon.astro';
 ---
 
-<section id="hero" class="relative px-4 sm:px-6 lg:px-10 lg:h-180 overflow-hidden">
+<section id="hero" class="relative px-4 sm:px-6 lg:px-10 xl:h-180 overflow-hidden">
   <div class="mx-auto flex justify-between gap-10 h-full max-w-8xl">
-    <div class="my-auto py-24 sm:py-29 md:py-50 w-full xl:w-auto">
+    <div class="my-auto py-24 sm:py-29 md:py-50 w-full [@media(min-width:1368px)]:w-186 shrink-0">
       <h1
-        class="mb-6 text-[42px] sm:text-[56px] md:text-[74px] lg:text-[88px] text-center xl:text-left font-normal -tracking-[3px] md:-tracking-[5.25px]"
+        class="mb-6 text-[42px] sm:text-[56px] md:text-[74px] lg:text-[88px] text-center [@media(min-width:1368px)]:text-left font-normal -tracking-[3px] md:-tracking-[5.25px]"
       >
         <span class="italic bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">Simple </span>
         <span>like Bootstrap</span><br />
@@ -16,12 +16,15 @@ import CheckIcon from '@components/icons/CheckIcon.astro';
         <span>like Tailwind</span>
       </h1>
       <p
-        class="mb-10 lg:mb-16 mx-auto xl:mx-0 text-muted text-base sm:text-[21px] text-center xl:text-left -tracking-[1px] leading-[1.2] max-w-2xl"
+        class="mb-10 lg:mb-16 mx-auto [@media(min-width:1368px)]:mx-0 text-muted text-base sm:text-[21px] text-center [@media(min-width:1368px)]:text-left -tracking-[1px] leading-[1.2] max-w-2xl"
       >
         An open-source system sensibly designed for rapid development, without sacrificing the granular control of
         utility-first CSS.
       </p>
-      <section id="links" class="flex flex-col sm:flex-row items-center justify-center xl:justify-start gap-4">
+      <section
+        id="links"
+        class="flex flex-col sm:flex-row items-center justify-center [@media(min-width:1368px)]:justify-start gap-4"
+      >
         <a href="/docs/components/buttons" type="button" class="btn btn-primary btn-lg w-full sm:w-auto">Get Started</a>
         <div
           class="w-full sm:w-auto flex items-center justify-center sm:justify-start gap-1 bg-muted text-sm font-mono pl-2 pr-0 sm:pl-4 sm:pr-2 h-10.5 rounded-lg"
@@ -40,7 +43,15 @@ import CheckIcon from '@components/icons/CheckIcon.astro';
         </div>
       </section>
     </div>
-    <HeroCards />
+
+    <div class="absolute -right-24 2xl:relative 2xl:right-0 shrink-0 hidden [@media(min-width:1368px)]:flex">
+      <HeroCards />
+      <div
+        class="pointer-events-none absolute bottom-0 left-0 w-full h-3
+         bg-gradient-to-t from-white via-white/60 to-transparent dark:from-[#07080a] dark:via-[#07080a]/60 z-10"
+      >
+      </div>
+    </div>
   </div>
 </section>
 

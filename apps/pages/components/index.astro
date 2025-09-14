@@ -1,0 +1,168 @@
+---
+import BreadcrumbBar from '@components/docs/BreadcrumbBar.astro';
+import Sidebar from '@components/docs/Sidebar.astro';
+import BaseLayout from '@layouts/BaseLayout.astro';
+import LinkIcon from '@components/icons/LinkIcon.astro';
+import SearchIcon from '@components/icons/SearchIcon.astro';
+import ComponentCard from '@components/sections/components/ComponentCard.astro';
+import { components } from 'apps/data/components';
+---
+
+<BaseLayout {...Astro.props} fluid={true}>
+  <BreadcrumbBar />
+  <div class="px-6 sm:px-10">
+    <div class="lg:grid lg:grid-cols-[15rem_1fr] max-w-8xl mx-auto h-full">
+      <Sidebar />
+      <div class="xl:grid lg:grid-cols-[1fr_16.75rem]">
+        <div class="py-10 lg:ps-10 xl:pe-10">
+          <div
+            class="mb-12 flex flex-col md:flex-row xl:flex-col 2xl:flex-row items-start justify-between gap-4 2xl:gap-8"
+          >
+            <div>
+              <h3 class="mb-4">Component Overview</h3>
+              <p class="text-xl font-light">
+                Hummingbird provides various UI components to improve your web applications, and we will keep refining
+                the experience.
+              </p>
+            </div>
+
+            <div class="relative flex items-center w-full md:w-65 xl:w-full 2xl:w-65 shrink-0">
+              <SearchIcon class="absolute left-4 text-highlight text-2xl" />
+              <input
+                class="form-control-fill form-control-lg w-full px-11"
+                type="search"
+                placeholder="Search components"
+                aria-label="Search"
+              />
+            </div>
+          </div>
+
+          {
+            components.map((item) => {
+              const title = item.section.toLowerCase().replace(' ', '-');
+              return (
+                <section id={title} class="mb-12">
+                  <div class="mb-6 sm:mb-4 flex items-center gap-1">
+                    <h2 class="mb-0 text-2xl font-medium">{item.section}</h2>
+                    <a href={`#${title}`} aria-label={`link to ${title}`} class="link-icon -mb-0.5">
+                      <LinkIcon />
+                    </a>
+                  </div>
+                  <div class="flex-2 mx-auto place-items-center grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 max-w-70 sm:max-w-full gap-6">
+                    {item.items.map((item, i, arr) => (
+                      <ComponentCard component={item} isLast={i === arr.length - 1} />
+                    ))}
+                  </div>
+                </section>
+              );
+            })
+          }
+        </div>
+
+        <div class="min-w-67 ps-6 py-10 sticky top-[var(--navbar-height)] h-max hidden xl:block">
+          <p class="font-bold ps-4">On this page</p>
+          <nav id="nav" class="ps-4 flex flex-col gap-4">
+            {
+              components.map((item) => {
+                const title = item.section.toLowerCase().replace(' ', '-');
+                return (
+                  <div data-target={title} data-active="false" class="group flex items-center gap-2">
+                    <div class="h-1 w-1 rounded-full bg-gray-600 dark:bg-gray-400 group-data-[active=true]:bg-primary" />
+                    <a
+                      href={`#${title}`}
+                      class="text-sm no-underline text-highlight group-data-[active=true]:text-primary"
+                    >
+                      {item.section}
+                    </a>
+                  </div>
+                );
+              })
+            }
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</BaseLayout>
+
+<script>
+  const nav = document.getElementById('nav');
+  if (!nav) throw new Error('Nav element not found');
+
+  const links: HTMLAnchorElement[] = Array.from(nav.querySelectorAll('div[data-target]'));
+  const sections: HTMLElement[] = links
+    .map((l) => document.getElementById(l.dataset.target!))
+    .filter((s): s is HTMLElement => s !== null);
+  const header = document.querySelector('header');
+  const headerOffset = header ? header.offsetHeight : 0;
+
+  function getOffset(): number {
+    return headerOffset + 100;
+  }
+
+  function setActive(id: string): void {
+    links.forEach((l) => {
+      const isActive = l.dataset.target === id;
+      l.dataset.active = String(isActive);
+      if (isActive) l.setAttribute('aria-current', 'true');
+      else l.removeAttribute('aria-current');
+    });
+  }
+
+  function scrollToElement(id: string): void {
+    const el = document.getElementById(id);
+    if (!el) return;
+    const top = el.getBoundingClientRect().top + window.pageYOffset - getOffset();
+    window.scrollTo({ top, behavior: 'smooth' });
+    setActive(id);
+  }
+
+  if (sections.length > 0) {
+    setActive(sections[0].id);
+  }
+
+  let ticking = false;
+  window.addEventListener(
+    'scroll',
+    () => {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(() => {
+          let closest: HTMLElement = sections[0];
+          let minDistance = Infinity;
+          const offset = getOffset();
+          sections.forEach((s) => {
+            const distance = Math.abs(s.getBoundingClientRect().top - offset);
+            if (distance < minDistance) {
+              minDistance = distance;
+              closest = s;
+            }
+          });
+          if (closest && closest.id) setActive(closest.id);
+          ticking = false;
+        });
+      }
+    },
+    { passive: true },
+  );
+
+  links.forEach((link) => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      scrollToElement(link.dataset.target!);
+    });
+  });
+
+  document.querySelectorAll<HTMLAnchorElement>('.link-icon').forEach((icon) => {
+    icon.addEventListener('click', (e) => {
+      e.preventDefault();
+      const id = icon.getAttribute('href')!.slice(1);
+      scrollToElement(id);
+    });
+  });
+
+  setTimeout(() => {
+    const hash = location.hash.replace('#', '');
+    if (hash) scrollToElement(hash);
+  }, 50);
+</script>

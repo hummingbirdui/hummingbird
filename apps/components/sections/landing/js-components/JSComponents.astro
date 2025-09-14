@@ -1,0 +1,32 @@
+---
+import ComponentCard from './ComponentCard.astro';
+import SectionWrapper from '../common/SectionWrapper.astro';
+import ChevronIcon from '@components/icons/ChevronIcon.astro';
+import { jsComponents } from 'apps/data/landing/js-components';
+---
+
+<SectionWrapper
+  id="interactive-components"
+  class="!pt-40 pb-20 max-w-315 flex flex-col lg:flex-row items-center justify-between gap-10 sm:gap-30 lg:gap-8 xl:gap-10"
+>
+  <div class="flex flex-col items-center lg:items-start">
+    <h1 class="mb-4 text-[28px] md:text-[32px] lg:text-[42px] text-center lg:text-left font-medium tracking-tighter">
+      Modern JavaScript,<br class="sm:hidden lg:flex" /> built to perform
+    </h1>
+    <p class="mb-6 text-muted text-center lg:text-left max-w-145 lg:max-w-105">
+      We revamped Bootstrap's JavaScript for the modern web with TypeScript support and zero dependencies.
+    </p>
+
+    <a
+      type="button"
+      href="/docs/components/buttons"
+      class="hidden lg:flex -ml-4 btn btn-text-primary hover:bg-transparent"
+      >Learn more about JavaScript <ChevronIcon />
+    </a>
+    <a href="/docs/components/buttons" type="button" class="btn btn-subtle-primary lg:hidden">Browse components</a>
+  </div>
+
+  <div class="shrink-0 grid grid-cols-2 sm:grid-cols-3 gap-4">
+    {jsComponents.map((item, i, arr) => <ComponentCard component={item} index={i} isLast={i === arr.length - 1} />)}
+  </div>
+</SectionWrapper>
