@@ -36,12 +36,12 @@ document.addEventListener('DOMContentLoaded', () => {
     toggleTheme(newTheme);
     updateToggleThemeButton(newTheme);
   });
-});
 
-// preventing browser default scroll to top behavior for a tag
-// document.addEventListener('click', function (event) {
-//   const target = event.target instanceof Element ? event.target.closest('a') : null;
-//   if (target && target.getAttribute('href') === '#') {
-//     event.preventDefault();
-//   }
-// });
+  // preventing browser default scroll to top behavior for a tag
+  document.addEventListener('click', function (event) {
+    const target = event.target instanceof Element ? event.target.closest('a') : null;
+    if (target && target.getAttribute('href') === '#') {
+      event.preventDefault();
+    }
+  });
+});
