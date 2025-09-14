@@ -17,7 +17,7 @@ const { url, image, title, count } = component;
   <img src={image.light.src} class="h-full w-full object-cover dark:hidden" alt={title} />
   <img src={image.dark.src} class="h-full w-full object-cover hidden dark:flex" alt={title} />
   <div class="px-4 py-3">
-    <h6 class="card-title mb-0.5 text-base font-semibold">{name}</h6>
+    <h6 class="card-title mb-0.5 text-base font-semibold">{title}</h6>
     <p class="mb-0 text-xs text-muted">{count} components</p>
   </div>
 </a>

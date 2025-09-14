@@ -8,7 +8,7 @@ import ComponentCard from '@components/sections/components/ComponentCard.astro';
 import { components } from 'apps/data/components';
 ---
 
-<BaseLayout {...Astro.props} fluid={true}>
+<BaseLayout {...Astro.props}>
   <BreadcrumbBar />
   <div class="px-6 sm:px-10">
     <div class="lg:grid lg:grid-cols-[15rem_1fr] max-w-8xl mx-auto h-full">
@@ -24,16 +24,6 @@ import { components } from 'apps/data/components';
                 Hummingbird provides various UI components to improve your web applications, and we will keep refining
                 the experience.
               </p>
-            </div>
-
-            <div class="relative flex items-center w-full md:w-65 xl:w-full 2xl:w-65 shrink-0">
-              <SearchIcon class="absolute left-4 text-highlight text-2xl" />
-              <input
-                class="form-control-fill form-control-lg w-full px-11"
-                type="search"
-                placeholder="Search components"
-                aria-label="Search"
-              />
             </div>
           </div>
 
