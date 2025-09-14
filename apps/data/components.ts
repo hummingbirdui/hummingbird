@@ -1,69 +1,69 @@
-import button from '@assets/images/components/light/button.png';
-import buttonGroup from '@assets/images/components/light/button-group.png';
-import link from '@assets/images/components/light/link.png';
+import button from '@assets/images/components/light/button.svg';
+import buttonGroup from '@assets/images/components/light/button-group.svg';
+import link from '@assets/images/components/light/link.svg';
 
-import avatar from '@assets/images/components/light/avatar.png';
-import badge from '@assets/images/components/light/badge.png';
-import card from '@assets/images/components/light/card.png';
-import listGroup from '@assets/images/components/light/list-group.png';
-import table from '@assets/images/components/light/table.png';
-import tooltip from '@assets/images/components/light/tooltip.png';
+import avatar from '@assets/images/components/light/avatar.svg';
+import badge from '@assets/images/components/light/badge.svg';
+import card from '@assets/images/components/light/card.svg';
+import listGroup from '@assets/images/components/light/list-group.svg';
+import table from '@assets/images/components/light/table.svg';
+import tooltip from '@assets/images/components/light/tooltip.svg';
 
-import checkbox from '@assets/images/components/light/checkbox.png';
-import fileInput from '@assets/images/components/light/file-input.png';
-import floatingLabels from '@assets/images/components/light/floating-labels.png';
-import formControls from '@assets/images/components/light/form-controls.png';
-import inputGroup from '@assets/images/components/light/input-group.png';
-import radio from '@assets/images/components/light/radio.png';
-import range from '@assets/images/components/light/range.png';
-import select from '@assets/images/components/light/select.png';
-import swItch from '@assets/images/components/light/switch.png';
+import checkbox from '@assets/images/components/light/checkbox.svg';
+import fileInput from '@assets/images/components/light/file-input.svg';
+import floatingLabels from '@assets/images/components/light/floating-labels.svg';
+import formControls from '@assets/images/components/light/form-controls.svg';
+import inputGroup from '@assets/images/components/light/input-group.svg';
+import radio from '@assets/images/components/light/radio.svg';
+import range from '@assets/images/components/light/range.svg';
+import select from '@assets/images/components/light/select.svg';
+import swItch from '@assets/images/components/light/switch.svg';
 
-import alert from '@assets/images/components/light/alert.png';
-import modal from '@assets/images/components/light/modal.png';
+import alert from '@assets/images/components/light/alert.svg';
+import modal from '@assets/images/components/light/modal.svg';
 
-import accordion from '@assets/images/components/light/accordion.png';
-import carousel from '@assets/images/components/light/carousel.png';
-import breadcrumb from '@assets/images/components/light/breadcrumb.png';
-import collapse from '@assets/images/components/light/collapse.png';
-import dropdown from '@assets/images/components/light/dropdown.png';
-import navsTabs from '@assets/images/components/light/navs-tabs.png';
-import navbar from '@assets/images/components/light/navbar.png';
-import offcanvas from '@assets/images/components/light/offcanvas.png';
+import accordion from '@assets/images/components/light/accordion.svg';
+import carousel from '@assets/images/components/light/carousel.svg';
+import breadcrumb from '@assets/images/components/light/breadcrumb.svg';
+import collapse from '@assets/images/components/light/collapse.svg';
+import dropdown from '@assets/images/components/light/dropdown.svg';
+import navsTabs from '@assets/images/components/light/navs-tabs.svg';
+import navbar from '@assets/images/components/light/navbar.svg';
+import offcanvas from '@assets/images/components/light/offcanvas.svg';
 
 // dark images
-import buttonDark from '@assets/images/components/dark/button-dark.png';
-import buttonGroupDark from '@assets/images/components/dark/button-group-dark.png';
-import linkDark from '@assets/images/components/dark/link-dark.png';
+import buttonDark from '@assets/images/components/dark/button-dark.svg';
+import buttonGroupDark from '@assets/images/components/dark/button-group-dark.svg';
+import linkDark from '@assets/images/components/dark/link-dark.svg';
 
-import avatarDark from '@assets/images/components/dark/avatar-dark.png';
-import badgeDark from '@assets/images/components/dark/badge-dark.png';
-import cardDark from '@assets/images/components/dark/card-dark.png';
-import listGroupDark from '@assets/images/components/dark/list-group-dark.png';
-import tableDark from '@assets/images/components/dark/table-dark.png';
-import tooltipDark from '@assets/images/components/dark/tooltip-dark.png';
+import avatarDark from '@assets/images/components/dark/avatar-dark.svg';
+import badgeDark from '@assets/images/components/dark/badge-dark.svg';
+import cardDark from '@assets/images/components/dark/card-dark.svg';
+import listGroupDark from '@assets/images/components/dark/list-group-dark.svg';
+import tableDark from '@assets/images/components/dark/table-dark.svg';
+import tooltipDark from '@assets/images/components/dark/tooltip-dark.svg';
 
-import checkboxDark from '@assets/images/components/dark/checkbox-dark.png';
-import fileInputDark from '@assets/images/components/dark/file-input-dark.png';
-import floatingLabelsDark from '@assets/images/components/dark/floating-labels-dark.png';
-import formControlsDark from '@assets/images/components/dark/form-controls-dark.png';
-import inputGroupDark from '@assets/images/components/dark/input-group-dark.png';
-import radioDark from '@assets/images/components/dark/radio-dark.png';
-import rangeDark from '@assets/images/components/dark/range-dark.png';
-import selectDark from '@assets/images/components/dark/select-dark.png';
-import swItchDark from '@assets/images/components/dark/switch-dark.png';
+import checkboxDark from '@assets/images/components/dark/checkbox-dark.svg';
+import fileInputDark from '@assets/images/components/dark/file-input-dark.svg';
+import floatingLabelsDark from '@assets/images/components/dark/floating-labels-dark.svg';
+import formControlsDark from '@assets/images/components/dark/form-controls-dark.svg';
+import inputGroupDark from '@assets/images/components/dark/input-group-dark.svg';
+import radioDark from '@assets/images/components/dark/radio-dark.svg';
+import rangeDark from '@assets/images/components/dark/range-dark.svg';
+import selectDark from '@assets/images/components/dark/select-dark.svg';
+import swItchDark from '@assets/images/components/dark/switch-dark.svg';
 
-import alertDark from '@assets/images/components/dark/alert-dark.png';
-import modalDark from '@assets/images/components/dark/modal-dark.png';
+import alertDark from '@assets/images/components/dark/alert-dark.svg';
+import modalDark from '@assets/images/components/dark/modal-dark.svg';
 
-import accordionDark from '@assets/images/components/dark/accordion-dark.png';
-import carouselDark from '@assets/images/components/dark/carousel-dark.png';
-import breadcrumbDark from '@assets/images/components/dark/breadcrumb-dark.png';
-import collapseDark from '@assets/images/components/dark/collapse-dark.png';
-import dropdownDark from '@assets/images/components/dark/dropdown-dark.png';
-import navsTabsDark from '@assets/images/components/dark/navs-tabs-dark.png';
-import navbarDark from '@assets/images/components/dark/navbar-dark.png';
-import offcanvasDark from '@assets/images/components/dark/offcanvas-dark.png';
+import accordionDark from '@assets/images/components/dark/accordion-dark.svg';
+import carouselDark from '@assets/images/components/dark/carousel-dark.svg';
+import breadcrumbDark from '@assets/images/components/dark/breadcrumb-dark.svg';
+import collapseDark from '@assets/images/components/dark/collapse-dark.svg';
+import dropdownDark from '@assets/images/components/dark/dropdown-dark.svg';
+import navsTabsDark from '@assets/images/components/dark/navs-tabs-dark.svg';
+import navbarDark from '@assets/images/components/dark/navbar-dark.svg';
+import offcanvasDark from '@assets/images/components/dark/offcanvas-dark.svg';
 
 export interface Component {
   title: string;

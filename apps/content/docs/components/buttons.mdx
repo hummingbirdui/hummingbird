@@ -243,11 +243,12 @@ For larger or smaller icon buttons, use the <code>.btn-lg</code> and <code>.btn-
 
 ##### Button plugin
 
-The button plugin uses the **Bootstrap Button plugin** which provides an easy way to create toggle buttons that switch between on and off states.
+The button plugin enables the creation of straightforward on/off toggle buttons.
+Visually, these toggle buttons appear identical to checkbox toggle buttons. However, assistive technologies convey them differently: screen readers announce checkbox toggles as “checked”/“not checked” (as they remain fundamentally checkboxes despite their appearance), whereas these toggle buttons are announced as “button”/“button pressed.” The choice between these two approaches should be based on the specific type of toggle being created, and whether the toggle's function is best understood by users when announced as a checkbox or as an actual button.
 
 ###### Toggle states
 
-Use `data-bs-toggle="button"` to enable a button’s toggle behavior. To set a button as active by default, add the `.active` class and `aria-pressed="true"` to ensure proper accessibility support.
+To activate a button's toggle state, add `data-bs-toggle="button"`. If a button is pre-toggled, it is essential to manually include both the `.active` class and `aria-pressed="true"`. This ensures correct conveyance to assistive technologies.
 
 <Example class="flex flex-wrap gap-2 justify-center" 
   code={`<button type="button" class="btn btn-primary" data-bs-toggle="button">Toggle button</button>
@@ -257,7 +258,7 @@ Use `data-bs-toggle="button"` to enable a button’s toggle behavior. To set a b
 
 ###### Methods
 
-You can create a button instance with the button constructor, for example:
+A button instance can be created using the button constructor, as shown in this example:
 
 <Example showPreview={false} lang='js' code={`const myButton = new hummingbird.Button('#myButton')`} />
 
@@ -271,30 +272,30 @@ You can create a button instance with the button constructor, for example:
   <tbody>
     <tr>
       <th scope="row">`dispose`</th>
-      <td>Destroys an element’s button. (Removes stored data on the DOM element)</td>
+      <td>This method removes the button's functionality from an element, deleting stored data on the DOM element.</td>
     </tr>
     <tr>
       <th scope="row">`getInstance`</th>
-      <td>Static method which allows you to get the button instance associated with a DOM element, you can use it like this: `hummingbird.Button.getInstance(element)`.</td>
+      <td>A static method that allows retrieval of the button instance associated with a specific DOM element. Example usage: `hummingbird.Button.getInstance(element)`.</td>
     </tr>
     <tr>
       <th scope="row">`getOrCreateInstance`</th>
-      <td>Static method which returns a button instance associated with a DOM element or creates a new one in case it wasn’t initialized. You can use it like this: `hummingbird.Button.getOrCreateInstance(element)`.</td>
+      <td>A static method that returns an existing button instance for a DOM element, or creates a new one if it has not been initialized. Example usage: `hummingbird.Button.getOrCreateInstance(element)`.</td>
     </tr>
     <tr>
       <th scope="row">`toggle`</th>
-      <td>Toggles push state. Gives the button the appearance that it has been activated.</td>
+      <td>This method changes the button's push state, giving it the visual appearance of being activated.</td>
     </tr>
   </tbody>
 </HbTable>
 
-For example, to toggle all buttons
+For example, to toggle all buttons:
 
 <Example showPreview={false} lang='js'
   code={`document.querySelectorAll('.btn').forEach(buttonElement => {
     const button = hummingbird.Button.getOrCreateInstance(buttonElement)
     button.toggle()
-  })`} 
+})`} 
 />
 
 ##### CSS Variables

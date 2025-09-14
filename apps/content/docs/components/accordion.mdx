@@ -135,68 +135,49 @@ The accordion component is built using a set of CSS variables. These variables p
 
 ##### Usage
 
-The collapse plugin uses the **Bootstrap Collapse plugin** which utilizes a few classes to handle the heavy lifting:
+The collapse plugin employs specific classes to manage its primary functions:
 
-- `collapse` hides the content
-- `collapse.show` shows the content
-- `collapsing` is added when the transition starts, and removed when it finishes
+- `collapse` conceals content.
+- `collapse.show` displays content.
+- `collapsing` is present during the transition's start and removed upon its completion.
 
-These classes can be found in `transitions.css`.
+These classes are located within `transitions.css`.
 
 ###### Via data attributes
 
-Just add `data-bs-toggle="collapse"` and a `data-bs-target` to the element to automatically assign control of one or more collapsible elements. The `data-bs-target` attribute accepts a CSS selector to apply the collapse to. Be sure to add the class `collapse` to the collapsible element. If you’d like it to default open, add the additional class `show`.
-
-To add accordion group management to a collapsible area, add the data attribute `data-bs-parent="#selector".`
+To automatically control one or more collapsible elements, simply add `data-bs-toggle="collapse"` and a `data-bs-target` to the desired element. The `data-bs-target` attribute accepts a CSS selector, indicating which element to apply the collapse functionality to. Ensure the collapse class is also added to the collapsible element. To have it open by default, include the show class as well.
+To enable accordion-like group management within a collapsible area, append the `data-bs-parent="#selector"` attribute.
 
 ###### Via JavaScript
 
-Enable manually with:
+Manual enablement is achieved with the following JavaScript:
 
-<Example lang='js' showPreview={false} code={`const accordionCollapseElementList = document.querySelectorAll('#myAccordion .collapse')
-const accordionCollapseList = [...accordionCollapseElementList].map(accordionCollapseEl => new hummingbird.Collapse(accordionCollapseEl))`} />
+<Example showPreview={false} lang='js' code={`const accordionCollapseElementList = document.querySelectorAll('#myAccordion .collapse')
+const accordionCollapseList = [...accordionCollapseElementList].map(accordionCollapseEl => new hummingbird.Collapse(accordionCollapseEl))
+`} />
 
 ###### Options
 
-As options can be passed via data attributes or JavaScript, you can append an option name to `data-bs-`, as in `data-bs-animation="{value}"`. Make sure to change the case type of the option name from “camelCase” to “kebab-case” when passing the options via data attributes. For example, use `data-bs-custom-class="beautifier"` instead of `data-bs-customClass="beautifier"`.
+Options can be configured either through data attributes or JavaScript. When using `data-bs-attributes`, append the option's name (e.g., `data-bs-animation="{value}"`). It is crucial to convert "camelCase" option names to "kebab-case" when passed via data attributes. For instance, use `data-bs-custom-class="beautifier"` rather than `data-bs-customClass="beautifier"`.
 
-In Hummingbird, all components support an experimental reserved data attribute `data-bs-config` that can house simple component configuration as a JSON string. When an element has `data-bs-config='{"delay":0, "title":123}'` and `data-bs-title="456"` attributes, the final `title` value will be `456` and the separate data attributes will override values given on `data-bs-config`. In addition, existing data attributes are able to house JSON values like `data-bs-delay='{"show":0,"hide":150}'`.
+As of Bootstrap 5.2.0, all components support an experimental `data-bs-config` data attribute, which can contain component configuration as a JSON string. When an element possesses both `data-bs-config='{"delay":0, "title":123}'` and `data-bs-title="456"`, the final title value will be 456, as individual data attributes override values provided in `data-bs-config`. Furthermore, existing `data-bs-attributes` can also house JSON values, such as `data-bs-delay='{"show":0,"hide":150}'`.
 
-The final configuration object is the merged result of `data-bs-config`, `data-bs-`, and js object where the latest given key-value overrides the others.
+The ultimate configuration object is the result of merging `data-bs-config`, individual `data-bs-attributes`, and JavaScript objects, with the latest provided key-value pair taking precedence.
 
-<HbTable>
-  <thead>
-    <tr>
-      <th scope="col">Name</th>
-      <th scope="col">Type</th>
-      <th scope="col">Default</th>
-      <th scope="col">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">`parent`</th>
-      <td>selector, DOM element</td>
-      <td>`null`</td>
-      <td>If parent is provided, then all collapsible elements under the specified parent will be closed when this collapsible item is shown. (similar to traditional accordion behavior - this is dependent on the `card` class). The attribute has to be set on the target collapsible area.</td>
-    </tr>
-    <tr>
-      <th scope="row">`toggle`</th>
-      <td>boolean</td>
-      <td>`true`</td>
-      <td>Toggles the collapsible element on invocation.</td>
-    </tr>
-  </tbody>
-</HbTable>
+- **parent** (selector, DOM element, default: null): If a parent is specified, all other collapsible elements within that parent will close when the current collapsible item is shown. This behavior is similar to traditional accordions and depends on the card class. This attribute must be set on the target collapsible area.
+- **toggle** (boolean, default: true): This option controls whether the collapsible element is toggled (shown or hidden) upon its initialization.
+
 
 ###### Methods
 
-Activates your content as a collapsible element. Accepts an optional options `object`.
+All API methods are asynchronous and initiate a transition. They return to the caller immediately after the transition begins, but before it concludes. Additionally, a method call on a component that is already transitioning will be disregarded. More information is available in our JavaScript documentation.
 
-You can create a collapse instance with the constructor, for example:
+These methods enable content as a collapsible element and accept an optional options object.
+
+A collapse instance can be created with the constructor, as demonstrated:
 
 <Example lang='js' showPreview={false}
-  code={`const myCollapse = new hummingbird.Collapse('#myCollapse', {
+  code={`const bsCollapse = new hummingbird.Collapse('#myCollapse', {
     toggle: false
 })`}
 />
@@ -211,34 +192,34 @@ You can create a collapse instance with the constructor, for example:
   <tbody>
     <tr>
       <th scope="row">`dispose`</th>
-      <td>Destroys an element’s button. (Removes stored data on the DOM element)</td>
+      <td>Destroys an element's collapse functionality, removing stored data from the DOM element.</td>
     </tr>
     <tr>
       <th scope="row">`getInstance`</th>
-      <td>Static method which allows you to get the collapse instance associated with a DOM element, you can use it like this: `hummingbird.Collapse.getInstance(element)`.</td>
+      <td>A static method allowing retrieval of the collapse instance associated with a DOM element. Usage: `hummingbird.Collapse.getInstance(element)`.</td>
     </tr>
     <tr>
       <th scope="row">`getOrCreateInstance`</th>
-      <td>Static method which returns a collapse instance associated with a DOM element or creates a new one in case it wasn’t initialized. You can use it like this: `hummingbird.Collapse.getOrCreateInstance(element)`.</td>
+      <td>A static method that returns an existing collapse instance for a DOM element or creates a new one if it has not been initialized. Usage: `hummingbird.Collapse.getOrCreateInstance(element)`.</td>
     </tr>
     <tr>
       <th scope="row">`hide`</th>
-      <td>Hides a collapsible element. **Returns to the caller before the collapsible element has actually been hidden** (e.g., before the `hidden.bs.collapse` event occurs).</td>
+      <td>Conceals a collapsible element. It returns to the caller before the collapsible element has completed its hiding animation (e.g., before the `hidden.bs.collapse` event occurs).</td>
     </tr>
     <tr>
       <th scope="row">`show`</th>
-      <td>Shows a collapsible element. **Returns to the caller before the collapsible element has actually been shown** (e.g., before the `shown.bs.collapse event` occurs).</td>
+      <td>Displays a collapsible element. It returns to the caller before the collapsible element has completed its showing animation (e.g., before the `shown.bs.collapse` event occurs).</td>
     </tr>
     <tr>
       <th scope="row">`toggle`</th>
-      <td>Toggles a collapsible element to shown or hidden. **Returns to the caller before the collapsible element has actually been shown or hidden** (i.e. before the `shown.bs.collapse` or `hidden.bs.collapse` event occurs).</td>
+      <td>Toggles a collapsible element between its shown and hidden states. It returns to the caller before the collapsible element has completed its animation (i.e., before the `shown.bs.collapse` or `hidden.bs.collapse` events occur).</td>
     </tr>
   </tbody>
 </HbTable>
 
 ###### Events
 
-Hummingbird’s collapse class exposes a few events for hooking into collapse functionality.
+Hummingbird's collapse class exposes several events, providing hooks into its collapse functionality.
 
 <HbTable>
   <thead>
@@ -250,19 +231,19 @@ Hummingbird’s collapse class exposes a few events for hooking into collapse fu
   <tbody>
     <tr>
       <th scope="row">`hide.bs.collapse`</th>
-      <td>This event is fired immediately when the `hide` method has been called.</td>
+      <td>This event fires immediately when the hide method is called.</td>
     </tr>
     <tr>
       <th scope="row">`hidden.bs.collapse`</th>
-      <td>This event is fired when a collapse element has been hidden from the user (will wait for CSS transitions to complete).</td>
+      <td>This event fires when a collapse element has finished hiding from the user (waiting for CSS transitions to complete).</td>
     </tr>
     <tr>
       <th scope="row">`show.bs.collapse`</th>
-      <td>This event fires immediately when the `show` instance method is called.</td>
+      <td>This event fires immediately when the show instance method is called.</td>
     </tr>
     <tr>
       <th scope="row">`shown.bs.collapse`</th>
-      <td>This event is fired when a collapse element has been made visible to the user (will wait for CSS transitions to complete).</td>
+      <td>This event fires when a collapse element has finished becoming visible to the user (waiting for CSS transitions to complete).</td>
     </tr>
   </tbody>
 </HbTable>
@@ -271,5 +252,6 @@ Hummingbird’s collapse class exposes a few events for hooking into collapse fu
   code={`const myCollapsible = document.getElementById('myCollapsible')
   myCollapsible.addEventListener('hidden.bs.collapse', event => {
     // do something...
-})`}
+})
+`}
 />

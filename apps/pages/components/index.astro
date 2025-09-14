@@ -3,7 +3,6 @@ import BreadcrumbBar from '@components/docs/BreadcrumbBar.astro';
 import Sidebar from '@components/docs/Sidebar.astro';
 import BaseLayout from '@layouts/BaseLayout.astro';
 import LinkIcon from '@components/icons/LinkIcon.astro';
-import SearchIcon from '@components/icons/SearchIcon.astro';
 import ComponentCard from '@components/sections/components/ComponentCard.astro';
 import { components } from 'apps/data/components';
 ---
@@ -15,16 +14,12 @@ import { components } from 'apps/data/components';
       <Sidebar />
       <div class="xl:grid lg:grid-cols-[1fr_16.75rem]">
         <div class="py-10 lg:ps-10 xl:pe-10">
-          <div
-            class="mb-12 flex flex-col md:flex-row xl:flex-col 2xl:flex-row items-start justify-between gap-4 2xl:gap-8"
-          >
-            <div>
-              <h3 class="mb-4">Component Overview</h3>
-              <p class="text-xl font-light">
-                Hummingbird provides various UI components to improve your web applications, and we will keep refining
-                the experience.
-              </p>
-            </div>
+          <div class="mb-12">
+            <h3 class="mb-4">Component Overview</h3>
+            <p class="text-xl font-light">
+              Hummingbird provides various UI components to improve your web applications, and we will keep refining the
+              experience.
+            </p>
           </div>
 
           {
@@ -39,8 +34,8 @@ import { components } from 'apps/data/components';
                     </a>
                   </div>
                   <div class="flex-2 mx-auto place-items-center grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 max-w-70 sm:max-w-full gap-6">
-                    {item.items.map((item, i, arr) => (
-                      <ComponentCard component={item} isLast={i === arr.length - 1} />
+                    {item.items.map((item) => (
+                      <ComponentCard component={item} />
                     ))}
                   </div>
                 </section>

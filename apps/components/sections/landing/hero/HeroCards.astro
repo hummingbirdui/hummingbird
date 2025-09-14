@@ -16,7 +16,7 @@ import TimePicker from './cards/TimePicker.astro';
 import Uploader from './cards/Uploader.astro';
 ---
 
-<div class="hero-anim-container w-170 h-180">
+<div class="hero-anim-container w-170 h-180 opacity-0">
   <ul class="m-0 p-0 relative list-none h-full w-full flex items-center justify-start">
     <li class="slide absolute w-full h-54">
       <div class="w-54 h-54 absolute left-0">
@@ -151,6 +151,7 @@ import Uploader from './cards/Uploader.astro';
       const state = { speed: 1 / cycleDuration };
 
       slides.forEach((s) => gsap.set(s, { y: 0, opacity: 1 }));
+      gsap.to(container, { opacity: 1, duration: 0.6, ease: 'power2.out' });
 
       gsap.ticker.add(() => {
         const now = performance.now();
