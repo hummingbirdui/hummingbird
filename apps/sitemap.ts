@@ -83,6 +83,15 @@ const sitemap: Sitemap[] = [
     ],
   },
   {
+    subHeader: 'Layout',
+    items: [
+      {
+        name: 'Grid',
+        path: '/docs/layout/grid',
+      },
+    ],
+  },
+  {
     subHeader: 'Forms',
     items: [
       {
