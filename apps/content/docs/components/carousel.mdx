@@ -9,6 +9,14 @@ import img1 from "@assets/images/carousel-1.png";
 import img2 from "@assets/images/carousel-2.png";
 import img3 from "@assets/images/carousel-3.png";
 
+##### How It Works
+- The carousel functions as a slideshow, designed for cycling through various content, whether images, text, or custom markup. Its foundation involves CSS 3D transforms and a small amount of JavaScript. It also incorporates support for previous/next navigation controls and indicators.
+- For optimal performance, carousels require manual initialization using the carousel constructor method. Without this initialization, certain event listeners—specifically those needed for touch and swipe support—will not be registered until a user explicitly activates a control or an indicator.
+- The sole exception to this is autoplaying carousels that include the `data-bs-ride="carousel"` attribute; these are automatically initialized upon page load. If using autoplaying carousels with this data attribute, avoid explicitly initializing those same carousels with the constructor method.
+- Nested carousels are not supported. Additionally, it is important to note that carousels, in general, can frequently present usability and accessibility challenges.
+- The animation effects of this component are influenced by the prefers-reduced-motion media query. Refer to the reduced motion section within our accessibility documentation for further details.
+
+
 ##### Basic examples
 
 <Example code={`<div id="carouselExample" class="carousel slide">
@@ -242,3 +250,170 @@ Carousels support swiping left/right on touchscreen devices to move between slid
       <span class="hidden">Next</span>
     </button>
   </div>`} />
+
+##### Usage
+
+###### Via data attributes
+Data attributes provide a straightforward method for controlling the carousel's position. The `data-bs-slide` attribute accepts the keywords prev or next, which adjust the slide's position relative to its current state. Alternatively, `data-bs-slide-to` can be used to pass a specific slide index to the carousel, for example, `data-bs-slide-to="2"`, which moves the slide position to a particular index starting from 0.
+
+###### Via JavaScript
+Manual instantiation of the carousel is performed with:
+
+<Example showPreview={false} lang='js' code={`const carousel = new hummingbird.Carousel('#myCarousel')`} />
+
+
+##### Options
+Options can be provided through data attributes or via JavaScript. When using `data-bs-attributes`, append the option's name, as in `data-bs-animation="{value}"`. It is essential to convert "camelCase" option names to "kebab-case" when passing options via data attributes. For example, `data-bs-custom-class="beautifier"` should be used instead of `data-bs-customClass="beautifier"`.
+
+As of **Bootstrap 5.2.0**, all components support an experimental `data-bs-config` data attribute. This attribute can contain simple component configurations as a JSON string. If an element has both `data-bs-config='{"delay":0, "title":123}'` and `data-bs-title="456"` attributes, the final title value will be 456, as separate data attributes override values provided within data-bs-config. Additionally, existing data attributes can also house JSON values, such as `data-bs-delay='{"show":0,"hide":150}'`.
+
+The final configuration object results from merging `data-bs-config`, individual `data-bs-attributes`, and JavaScript objects, where the latest provided key-value pair takes precedence over others.
+
+<HbTable>
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Type</th>
+      <th scope="col">Default</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td scope="row">`interval`</td>
+      <td scope="row">number</td>
+      <td scope="row">`5000`</td>
+      <td>Defines the duration in milliseconds to delay between automatically cycling items.</td>
+    </tr>
+    <tr>
+      <td scope="row">`keyboard`</td>
+      <td scope="row">boolean</td>
+      <td scope="row">`true`</td>
+      <td>Determines whether the carousel responds to keyboard events.</td>
+    </tr>
+     <tr>
+      <td scope="row">`pause`</td>
+      <td scope="row">string, boolean</td>
+      <td scope="row">`"hover"`</td>
+      <td>If set to "hover", it pauses the carousel's cycling on mouseenter and resumes on mouseleave. If set to false, hovering over the carousel will not pause it. On touch-enabled devices, when set to "hover", cycling pauses on touchend (after user interaction) for two intervals before automatically resuming. This occurs in addition to the mouse behavior.</td>
+    </tr>
+     <tr>
+      <td scope="row">`ride`</td>
+      <td scope="row">string, boolean</td>
+      <td scope="row">`false`</td>
+      <td>If set to true, the carousel autoplays after a user manually cycles the first item. If set to "carousel", the carousel autoplays upon loading.</td>
+    </tr>
+    <tr>
+      <td scope="row">`touch`</td>
+      <td scope="row">boolean</td>
+      <td scope="row">`true`</td>
+      <td>Controls whether the carousel supports left/right swipe interactions on touchscreen devices.</td>
+    </tr>
+    <tr>
+      <td scope="row">`wrap`</td>
+      <td scope="row">boolean</td>
+      <td scope="row">`true`</td>
+      <td>Determines whether the carousel cycles continuously or has defined start and end points.</td>
+    </tr>
+  </tbody>
+</HbTable>
+
+##### Methods
+All API methods are asynchronous and initiate a transition. They return to the caller immediately after the transition begins but before it concludes. Furthermore, a method call on a component that is already transitioning will be disregarded. More details are available in our JavaScript documentation.
+
+A carousel instance can be created with the carousel constructor, along with any additional options. For example, to manually initialize an autoplaying carousel (without using the `data-bs-ride="carousel"` attribute in the markup) with a specific interval and disabled touch support:
+
+<Example showPreview={false} lang='js'
+  code={`const myCarouselElement = document.querySelector('#myCarousel')
+  const carousel = new hummingbird.Carousel(myCarouselElement, {
+    interval: 2000,
+    touch: false
+  })`} 
+/>
+
+<HbTable>
+  <thead>
+    <tr>
+      <th scope="col">Method</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">`cycle`</th>
+      <td> Initiates cycling through the carousel items from left to right.</td>
+    </tr>
+    <tr>
+      <th scope="row">`dispose`</th>
+      <td>Destroys an element's carousel functionality, removing stored data from the DOM element.</td>
+    </tr>
+    <tr>
+      <th scope="row">`getInstance`</th>
+      <td>A static method for retrieving the carousel instance associated with a DOM element. Usage: `hummingbird.Carousel.getInstance(element)`.</td>
+    </tr>
+    <tr>
+      <th scope="row">`getOrCreateInstance`</th>
+      <td>A static method that returns an existing carousel instance for a DOM element or creates a new one if it has not been initialized. Usage: `hummingbird.Carousel.getOrCreateInstance(element)`.</td>
+    </tr>
+    <tr>
+      <th scope="row">`next`</th>
+      <td>Advances to the next item in the carousel. It returns to the caller before the next item has been displayed (e.g., before the `slid.bs.carousel` event occurs).</td>
+    </tr>
+    <tr>
+      <th scope="row">`nextWhenVisible`</th>
+      <td>Prevents the carousel from cycling to the next item if the page, the carousel itself, or the carousel's parent is not visible. It returns to the caller before the target item has been shown.</td>
+    </tr>
+    <tr>
+      <th scope="row">`pause`</th>
+      <td>Halts the carousel from cycling through items.</td>
+    </tr>
+    <tr>
+      <th scope="row">`prev`</th>
+      <td>Cycles to the previous item in the carousel. It returns to the caller before the previous item has been displayed (e.g., before the `slid.bs.carousel` event occurs).</td>
+    </tr>
+     <tr>
+      <th scope="row">`to`</th>
+      <td>Cycles the carousel to a specific frame (0-based index, similar to an array). It returns to the caller before the target item has been displayed (e.g., before the `slid.bs.carousel` event occurs).</td>
+    </tr>
+  </tbody>
+</HbTable>
+
+
+##### Events
+
+Bootstrap's carousel class exposes two events, providing opportunities to integrate with its functionality. Both events include the following additional properties:
+
+- **direction:** Indicates the direction in which the carousel is sliding (either "left" or "right").
+- **relatedTarget:** Refers to the DOM element that is moving into place as the active item.
+- **from:** Represents the index of the current item.
+- **to:** Represents the index of the next item.
+
+All carousel events are dispatched at the carousel element itself (i.e., the `<div class="carousel">`).
+
+<HbTable>
+  <thead>
+    <tr>
+      <th scope="col">Event type</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">`slid.bs.carousel`</th>
+      <td>This event fires after the carousel has completed its slide transition.</td>
+    </tr>
+    <tr>
+      <th scope="row">`slide.bs.carousel`</th>
+      <td>This event fires immediately when the slide instance method is invoked.</td>
+    </tr>
+  </tbody>
+</HbTable>
+
+Example event listener:
+
+<Example showPreview={false} lang='js'
+  code={`const myCarousel = document.getElementById('myCarousel')
+  myCarousel.addEventListener('slide.bs.carousel', event => {
+    // do something...
+  })`} 
+/>
