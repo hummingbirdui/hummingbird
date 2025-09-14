@@ -12,8 +12,8 @@
   @layer base {
     --avatar-width: --spacing(10);
     --avatar-height: --spacing(10);
-    --avatar-bg: var(--color-main);
-    --avatar-color: var(--color-contrast);
+    --avatar-bg: var(--color-dark);
+    --avatar-color: var(--color-white);
     --avatar-font-weight: var(--font-weight-medium);
     --avatar-font-size: var(--text-lg);
 
@@ -48,7 +48,7 @@
 @utility avatar-status-offline {
   @layer base {
     &::before {
-      @apply bg-main;
+      @apply bg-dark;
     }
   }
 }

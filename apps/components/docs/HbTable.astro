@@ -1,5 +1,9 @@
+---
+const { className } = Astro.props;
+---
+
 <div class="overflow-x-auto my-6">
-  <table class="table">
+  <table class={`table ${className}`}>
     <slot />
   </table>
 </div>

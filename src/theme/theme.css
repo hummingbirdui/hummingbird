@@ -9,18 +9,15 @@
   --background-color-emphasis: var(--color-gray-300);
 
   /* Text colors */
-  --text-color-subtle: var(--color-gray-950);
-  --text-color-muted: var(--color-gray-900);
+  --text-color-subtle: var(--color-gray-400);
+  --text-color-muted: var(--color-gray-600);
   --text-color-default: var(--color-gray-800);
-  --text-color-highlight: var(--color-gray-600);
-  --text-color-emphasis: var(--color-gray-400);
+  --text-color-highlight: var(--color-gray-900);
+  --text-color-emphasis: var(--color-gray-950);
 
   /* neutral */
-  --color-lighter: var(--color-gray-100);
-  --color-light: var(--color-gray-600);
-  --color-main: var(--color-gray-800);
-  --color-dark: var(--color-gray-900);
-  --color-darker: var(--color-gray-950);
+  --color-light: var(--color-gray-100);
+  --color-dark: var(--color-gray-950);
   --color-contrast: var(--color-white);
 
   /* primary */
@@ -68,7 +65,7 @@
   /* borders */
   --border-color-light: --alpha(var(--color-gray-300) / 60%);
   --border-color-base: var(--color-gray-300);
-  --border-color-dark: --alpha(var(--color-gray-700) / 0%);
+  --border-color-dark: var(--color-gray-600);
 
   /* actions */
   --color-active: var(--color-gray-500);
@@ -113,14 +110,13 @@
   --input-btn-line-height: 1.5;
   --input-btn-border-width: 1px;
 
-  --input-label-color: var(--text-color-highlight);
   --input-bg: var(--background-color-muted);
   --input-color: var(--text-color-default);
   --input-border-color: var(--border-color-base);
   --input-disabled-bg: var(--background-color-highlight);
   --input-hover-bg: var(--background-color-highlight);
   --input-focus-bg: var(--color-primary-lighter);
-  --input-hover-border-color: var(--text-color-emphasis);
+  --input-hover-border-color: var(--text-color-subtle);
   --input-focus-border-color: var(--color-primary);
   --input-disabled-border-color: var(--border-color-base);
 }
@@ -135,18 +131,15 @@
     --background-color-emphasis: var(--color-gray-600);
 
     /* Text colors */
-    --text-color-subtle: var(--color-gray-100);
-    --text-color-muted: var(--color-gray-100);
+    --text-color-subtle: var(--color-gray-500);
+    --text-color-muted: var(--color-gray-400);
     --text-color-default: var(--color-gray-100);
-    --text-color-highlight: var(--color-gray-400);
-    --text-color-emphasis: var(--color-gray-500);
+    --text-color-highlight: var(--color-gray-50);
+    --text-color-emphasis: var(--color-white);
 
     /* neutral */
-    --color-lighter: var(--color-gray-900);
     --color-light: var(--color-gray-800);
-    --color-main: var(--color-gray-300);
-    --color-dark: var(--color-gray-200);
-    --color-darker: var(--color-gray-100);
+    --color-dark: var(--color-gray-700);
     --color-contrast: var(--color-gray-950);
 
     /* primary */
@@ -194,7 +187,7 @@
     /* borders */
     --border-color-light: var(--color-gray-800);
     --border-color-base: var(--color-gray-700);
-    --border-color-dark: var(--color-gray-700);
+    --border-color-dark: var(--color-gray-600);
 
     /* actions */
     --color-active: var(--color-gray-500);

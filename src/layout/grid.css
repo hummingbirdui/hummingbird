@@ -1,0 +1,340 @@
+/* Row */
+@utility container {
+  --hb-gutter-x: 1.5rem;
+  --hb-gutter-y: 0;
+  width: 100%;
+  padding-right: calc(var(--hb-gutter-x) * 0.5);
+  padding-left: calc(var(--hb-gutter-x) * 0.5);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@utility row {
+  --hb-gutter-x: 1.5rem;
+  --hb-gutter-y: 0px;
+  --grid-columns: 12;
+  --grid-row-columns: 6;
+
+  display: flex;
+  flex-wrap: wrap;
+
+  margin-block-start: calc(-1 * var(--hb-gutter-y));
+  margin-inline: calc(-0.5 * var(--hb-gutter-x));
+
+  & > * {
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 100%;
+    padding-inline: calc(var(--hb-gutter-x) * 0.5);
+    margin-block-start: var(--hb-gutter-y);
+    min-width: 0;
+  }
+}
+
+/* Equal and auto columns */
+@utility col {
+  flex: 1 0 0;
+  max-width: 100%;
+  min-width: 0;
+}
+@utility col-auto {
+  flex: 0 0 auto;
+  width: auto;
+  min-width: 0;
+}
+
+/* Fixed fraction columns (1–12) */
+@utility col-1 {
+  --col: 1;
+  flex: 0 0 auto;
+  width: calc(var(--col) / var(--grid-columns) * 100%);
+}
+@utility col-2 {
+  --col: 2;
+  flex: 0 0 auto;
+  width: calc(var(--col) / var(--grid-columns) * 100%);
+}
+@utility col-3 {
+  --col: 3;
+  flex: 0 0 auto;
+  width: calc(var(--col) / var(--grid-columns) * 100%);
+}
+@utility col-4 {
+  --col: 4;
+  flex: 0 0 auto;
+  width: calc(var(--col) / var(--grid-columns) * 100%);
+}
+@utility col-5 {
+  --col: 5;
+  flex: 0 0 auto;
+  width: calc(var(--col) / var(--grid-columns) * 100%);
+}
+@utility col-6 {
+  --col: 6;
+  flex: 0 0 auto;
+  width: calc(var(--col) / var(--grid-columns) * 100%);
+}
+@utility col-7 {
+  --col: 7;
+  flex: 0 0 auto;
+  width: calc(var(--col) / var(--grid-columns) * 100%);
+}
+@utility col-8 {
+  --col: 8;
+  flex: 0 0 auto;
+  width: calc(var(--col) / var(--grid-columns) * 100%);
+}
+@utility col-9 {
+  --col: 9;
+  flex: 0 0 auto;
+  width: calc(var(--col) / var(--grid-columns) * 100%);
+}
+@utility col-10 {
+  --col: 10;
+  flex: 0 0 auto;
+  width: calc(var(--col) / var(--grid-columns) * 100%);
+}
+@utility col-11 {
+  --col: 11;
+  flex: 0 0 auto;
+  width: calc(var(--col) / var(--grid-columns) * 100%);
+}
+@utility col-12 {
+  --col: 12;
+  flex: 0 0 auto;
+  width: calc(var(--col) / var(--grid-columns) * 100%);
+}
+
+/* offset (0–11) */
+@utility offset-0 {
+  --offset: 0;
+  margin-inline-start: calc(var(--offset) / var(--grid-columns) * 100%);
+}
+@utility offset-1 {
+  --offset: 1;
+  margin-inline-start: calc(var(--offset) / var(--grid-columns) * 100%);
+}
+@utility offset-2 {
+  --offset: 2;
+  margin-inline-start: calc(var(--offset) / var(--grid-columns) * 100%);
+}
+@utility offset-3 {
+  --offset: 3;
+  margin-inline-start: calc(var(--offset) / var(--grid-columns) * 100%);
+}
+@utility offset-4 {
+  --offset: 4;
+  margin-inline-start: calc(var(--offset) / var(--grid-columns) * 100%);
+}
+@utility offset-5 {
+  --offset: 5;
+  margin-inline-start: calc(var(--offset) / var(--grid-columns) * 100%);
+}
+@utility offset-6 {
+  --offset: 6;
+  margin-inline-start: calc(var(--offset) / var(--grid-columns) * 100%);
+}
+@utility offset-7 {
+  --offset: 7;
+  margin-inline-start: calc(var(--offset) / var(--grid-columns) * 100%);
+}
+@utility offset-8 {
+  --offset: 8;
+  margin-inline-start: calc(var(--offset) / var(--grid-columns) * 100%);
+}
+@utility offset-9 {
+  --offset: 9;
+  margin-inline-start: calc(var(--offset) / var(--grid-columns) * 100%);
+}
+@utility offset-10 {
+  --offset: 10;
+  margin-inline-start: calc(var(--offset) / var(--grid-columns) * 100%);
+}
+@utility offset-11 {
+  --offset: 11;
+  margin-inline-start: calc(var(--offset) / var(--grid-columns) * 100%);
+}
+
+/* row-cols (force N equal columns for direct children) */
+@utility row-cols-1 {
+  --row-cols: 1;
+  & > * {
+    flex: 0 0 auto;
+    width: calc(100% / var(--row-cols));
+  }
+}
+@utility row-cols-2 {
+  --row-cols: 2;
+  & > * {
+    flex: 0 0 auto;
+    width: calc(100% / var(--row-cols));
+  }
+}
+@utility row-cols-3 {
+  --row-cols: 3;
+  & > * {
+    flex: 0 0 auto;
+    width: calc(100% / var(--row-cols));
+  }
+}
+@utility row-cols-4 {
+  --row-cols: 4;
+  & > * {
+    flex: 0 0 auto;
+    width: calc(100% / var(--row-cols));
+  }
+}
+@utility row-cols-5 {
+  --row-cols: 5;
+  & > * {
+    flex: 0 0 auto;
+    width: calc(100% / var(--row-cols));
+  }
+}
+@utility row-cols-6 {
+  --row-cols: 6;
+  & > * {
+    flex: 0 0 auto;
+    width: calc(100% / var(--row-cols));
+  }
+}
+@utility row-cols-auto {
+  & > * {
+    flex: 0 0 auto;
+    width: auto;
+  }
+}
+
+/* Gutter (0–12) */
+@utility g-0 {
+  --hb-gutter-x: 0;
+  --hb-gutter-y: 0;
+}
+@utility g-1 {
+  --hb-gutter-x: 0.25rem;
+  --hb-gutter-y: 0.25rem;
+}
+@utility g-2 {
+  --hb-gutter-x: 0.5rem;
+  --hb-gutter-y: 0.5rem;
+}
+@utility g-3 {
+  --hb-gutter-x: 0.75rem;
+  --hb-gutter-y: 0.75rem;
+}
+@utility g-4 {
+  --hb-gutter-x: 1rem;
+  --hb-gutter-y: 1rem;
+}
+@utility g-5 {
+  --hb-gutter-x: 1.25rem;
+  --hb-gutter-y: 1.25rem;
+}
+@utility g-6 {
+  --hb-gutter-x: 1.5rem;
+  --hb-gutter-y: 1.5rem;
+}
+@utility g-7 {
+  --hb-gutter-x: 1.75rem;
+  --hb-gutter-y: 1.75rem;
+}
+@utility g-8 {
+  --hb-gutter-x: 2rem;
+  --hb-gutter-y: 2rem;
+}
+@utility g-9 {
+  --hb-gutter-x: 2.25rem;
+  --hb-gutter-y: 2.25rem;
+}
+@utility g-10 {
+  --hb-gutter-x: 2.5rem;
+  --hb-gutter-y: 2.5rem;
+}
+@utility g-11 {
+  --hb-gutter-x: 2.75rem;
+  --hb-gutter-y: 2.75rem;
+}
+@utility g-12 {
+  --hb-gutter-x: 3rem;
+  --hb-gutter-y: 3rem;
+}
+
+@utility gx-0 {
+  --hb-gutter-x: 0;
+}
+@utility gx-1 {
+  --hb-gutter-x: 0.25rem;
+}
+@utility gx-2 {
+  --hb-gutter-x: 0.5rem;
+}
+@utility gx-3 {
+  --hb-gutter-x: 0.75rem;
+}
+@utility gx-4 {
+  --hb-gutter-x: 1rem;
+}
+@utility gx-5 {
+  --hb-gutter-x: 1.25rem;
+}
+@utility gx-6 {
+  --hb-gutter-x: 1.5rem;
+}
+@utility gx-7 {
+  --hb-gutter-x: 1.75rem;
+}
+@utility gx-8 {
+  --hb-gutter-x: 2rem;
+}
+@utility gx-9 {
+  --hb-gutter-x: 2.25rem;
+}
+@utility gx-10 {
+  --hb-gutter-x: 2.5rem;
+}
+@utility gx-11 {
+  --hb-gutter-x: 2.75rem;
+}
+@utility gx-12 {
+  --hb-gutter-x: 3rem;
+}
+
+@utility gy-0 {
+  --hb-gutter-y: 0;
+}
+@utility gy-1 {
+  --hb-gutter-y: 0.25rem;
+}
+@utility gy-2 {
+  --hb-gutter-y: 0.5rem;
+}
+@utility gy-3 {
+  --hb-gutter-y: 0.75rem;
+}
+@utility gy-4 {
+  --hb-gutter-y: 1rem;
+}
+@utility gy-5 {
+  --hb-gutter-y: 1.25rem;
+}
+@utility gy-6 {
+  --hb-gutter-y: 1.5rem;
+}
+@utility gy-7 {
+  --hb-gutter-y: 1.75rem;
+}
+@utility gy-8 {
+  --hb-gutter-y: 2rem;
+}
+@utility gy-9 {
+  --hb-gutter-y: 2.25rem;
+}
+@utility gy-10 {
+  --hb-gutter-y: 2.5rem;
+}
+@utility gy-11 {
+  --hb-gutter-y: 2.75rem;
+}
+@utility gy-12 {
+  --hb-gutter-y: 3rem;
+}

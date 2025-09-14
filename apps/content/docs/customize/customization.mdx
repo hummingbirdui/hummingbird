@@ -1,0 +1,85 @@
+---
+title: Customization
+description: Though Hummingbird works great out of the box, you can customize it to fit your project's unique design needs.
+toc: true
+---
+
+###### Using Utility Classes
+
+Lets dive into how you can customize Hummingbird to better fit your project's design needs. Suppose you want to customize button component:
+
+<div>
+  <button class="btn">Base Button</button>
+</div>
+<br/>
+<br/>
+```html
+<button class="btn">Base Button</button>
+```
+<br/>
+Using Hummingbird's utility classes, you can easily modify the button's appearance. For example you can change it's color, variants, size etc.
+
+<div class='flex flex-wrap gap-2'>
+  <button class="btn btn-primary">Primary</button>
+  <button class="btn btn-subtle-secondary">Secondary</button>
+  <button class="btn btn-outline-success">Success</button>
+  <button class="btn btn-text-info">Info</button>
+</div>
+<br/>
+```html
+<button class="btn btn-primary">Primary</button>
+<button class="btn btn-subtle-secondary">Secondary</button>
+<button class="btn btn-outline-success">Success</button>
+<button class="btn btn-text-info">Info</button>
+```
+<br/>
+You can customize using tailwind utility classes. For example, you can create rounded pill buttons by adding `rounded-full` class, you can all other tailwind utility classes as well.
+
+<div class='flex flex-wrap gap-2'>
+  <button class="btn btn-primary rounded-full">Pill Button</button>
+  <button class="btn btn-subtle-secondary px-12 rounded-full hover:shadow-2xs">Pill Button</button>
+</div>
+<br/>
+```html
+<button class="btn btn-primary rounded-full">Pill Button</button>
+<button class="btn btn-subtle-secondary px-12 rounded-full hover:shadow-2xs">Pill Button</button>
+```
+<br/>
+
+You can customize inside CSS file using Tailwind CSS `@apply` directive,
+
+```css
+@utility btn {
+  @apply px-12 rounded-full hover:shadow-2xs;
+}
+```
+
+###### Using CSS variables
+
+Hummingbird components are styled using a set of CSS variables. These variables make it easy to customize styles either globally (across your entire project) or locally (for a specific component).
+
+For example, to update or customize the Button component, you can override its CSS variables:
+
+<Example lang='sass' showPreview={false}
+  code={`.btn {
+    --btn-font-size: var(--input-btn-font-size);
+    --btn-radius: var(--input-btn-radius);
+    --btn-padding-x: var(--input-btn-padding-x);
+    --btn-padding-y: var(--input-btn-padding-y);
+    --btn-line-height: var(--input-btn-line-height);
+    --btn-border-width: var(--input-btn-border-width);
+    --btn-bg: var(--background-color-highlight);
+    --btn-color: var(--text-color-default);
+    --btn-font-weight: var(--font-weight-semibold);
+    --btn-hover-bg: var(--color-hover);
+    --btn-hover-color: var(--btn-color);
+    --btn-border-color: transparent;
+    --btn-disabled-border-color: transparent;
+    --btn-disabled-bg: var(--color-disabled);
+    --btn-disabled-color: var(--color-disabled-color);
+    --btn-active-bg: var(--btn-hover-bg);
+    --btn-active-color: var(--btn-color);
+    --btn-width: unset;
+    --btn-height: unset;
+  }`}
+/>

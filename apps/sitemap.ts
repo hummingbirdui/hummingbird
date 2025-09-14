@@ -16,7 +16,7 @@ const sitemap: Sitemap[] = [
       },
       {
         name: 'Installation',
-        path: '#',
+        path: '/docs/getting-started/installation',
       },
       {
         name: 'Tutorial',
@@ -65,16 +65,29 @@ const sitemap: Sitemap[] = [
     subHeader: 'Customize',
     items: [
       {
-        name: 'Theming',
-        path: '#',
+        name: 'Customization',
+        path: '/docs/customize/customization',
       },
       {
-        name: 'Dark mode',
-        path: '#',
+        name: 'Theming',
+        path: '/docs/customize/theming',
       },
       {
         name: 'Colors',
         path: '/docs/customize/colors',
+      },
+      {
+        name: 'Dark mode',
+        path: '/docs/customize/dark-mode',
+      },
+    ],
+  },
+  {
+    subHeader: 'Layout',
+    items: [
+      {
+        name: 'Grid',
+        path: '/docs/layout/grid',
       },
     ],
   },

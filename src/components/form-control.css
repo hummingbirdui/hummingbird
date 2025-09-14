@@ -264,7 +264,7 @@
 
 @utility form-label {
   @layer base {
-    --input-label-color: var(--text-color-highlight);
+    --input-label-color: var(--text-color-muted);
     --input-label-font-size: var(--text-xs);
     --input-label-font-weight: 600;
     --input-label-bg: transparent;
@@ -330,7 +330,7 @@
     --form-text-margin-top: --spacing(1);
     --form-text-font-size: var(--text-xs);
     --form-text-font-weight: 400;
-    --form-text-color: var(--text-color-highlight);
+    --form-text-color: var(--text-color-muted);
 
     @apply mt-[var(--form-text-margin-top)]
     text-[length:var(--form-text-font-size)]

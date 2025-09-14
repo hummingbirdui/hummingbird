@@ -126,9 +126,9 @@
 }
 @utility btn-neutral {
   @layer base {
-    --btn-bg: var(--color-main);
-    --btn-color: var(--color-contrast);
-    --btn-hover-bg: var(--color-dark);
+    --btn-bg: var(--color-dark);
+    --btn-color: var(--color-white);
+    --btn-hover-bg: --alpha(var(--color-dark) / 80%);
   }
 }
 
@@ -184,7 +184,7 @@
 @utility btn-subtle-neutral {
   @layer base {
     --btn-bg: var(--background-color-muted);
-    --btn-color: var(--color-dark);
+    --btn-color: var(--text-color-emphasis);
     --btn-hover-bg: var(--background-color-highlight);
     --btn-disabled-bg: var(--background-color-muted);
   }
@@ -260,7 +260,7 @@
 @utility btn-outline-neutral {
   @layer base {
     --btn-bg: transparent;
-    --btn-color: var(--color-main);
+    --btn-color: var(--text-color-default);
     --btn-hover-bg: var(--color-hover);
     --btn-border-width: 1px;
     --btn-border-color: var(--background-color-emphasis);
@@ -321,7 +321,7 @@
 @utility btn-text-neutral {
   @layer base {
     --btn-bg: transparent;
-    --btn-color: var(--color-main);
+    --btn-color: var(--text-color-default);
     --btn-hover-bg: var(--color-hover);
     --btn-disabled-bg: transparent;
   }

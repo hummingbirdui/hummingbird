@@ -1,0 +1,76 @@
+---
+title: Installation
+description: This guide provides step-by-step instructions for installing Hummingbird in your project. It covers prerequisites, package installation, and initial setup to help you get started quickly.
+toc: true
+---
+
+Hummingbird is a fast, lightweight UI library built on top of Tailwind CSS utility classes. Write cleaner HTML, customize with utilities, and bring your project to life with interactive, accessible components. Start building today by following the quickstart guide.
+
+##### Prerequisites
+
+Ensure you have a project set up with Tailwind CSS. If you haven't set up Tailwind CSS yet, follow the <a href="https://tailwindcss.com/docs/installation" target="_blank" rel="noopener noreferrer">official installation guide</a>.
+
+##### Install Hummingbird
+
+Install Hummingbird via your preferred package manager:
+
+<Example lang='bash' showPreview={false} code={`npm install @hummingbirdui/hummingbird`} />
+
+Import Hummingbird styles in your main CSS file (e.g., `styles.css`).
+
+<Example lang='css' showPreview={false} 
+  code={`@import "tailwindcss";
+  @import "@hummingbirdui/hummingbird";`} />
+
+##### Initialize JS plugins
+
+Include Hummingbird javascript at the end of your HTML body.
+
+<Example lang='html' showPreview={false} 
+  code={`<script src="../path/to/@hummingbirdui/hummingbird/dist/hummingbird.bundle.min.js"></script>`} />
+
+Alternatively, You can import Hummingbird in your JavaScript entry file. This is especially useful if you're using a module bundler like Webpack or Vite.
+
+<Example lang='js' showPreview={false} 
+  code={`import '@hummingbirdui/hummingbird';`} />
+
+###### Optimization
+
+**Optional:** To reduce the final bundle size, you can import only the specific JavaScript plugins you need. This is not required because Hummingbird bundle is already optimized, it's not too large, but it can be useful in certain scenarios.
+
+The below example shows how to import only the `Modal` plugin:
+
+<Example lang='js' showPreview={false} 
+  code={`// import "@hummingbirdui/hummingbird/lib/esm/scripts/alert";
+  // import "@hummingbirdui/hummingbird/lib/esm/scripts/button";
+  // import "@hummingbirdui/hummingbird/lib/esm/scripts/carousel";
+  // import "@hummingbirdui/hummingbird/lib/esm/scripts/collapse";
+  // import "@hummingbirdui/hummingbird/lib/esm/scripts/dropdown";
+  import "@hummingbirdui/hummingbird/lib/esm/scripts/modal";
+  // import "@hummingbirdui/hummingbird/lib/esm/scripts/offcanvas";
+  // import "@hummingbirdui/hummingbird/lib/esm/scripts/popover";
+  // import "@hummingbirdui/hummingbird/lib/esm/scripts/scrollspy";
+  // import "@hummingbirdui/hummingbird/lib/esm/scripts/tab";
+  // import "@hummingbirdui/hummingbird/lib/esm/scripts/toast";
+  // import "@hummingbirdui/hummingbird/lib/esm/scripts/tooltip";
+`} />
+
+###### TypeScript Support
+
+Hummingbird includes TypeScript definitions for all components. If you're using TypeScript, you can import Hummingbird plugins with their types.
+
+<Example lang='ts' showPreview={false} 
+  code={`import { Modal } from "@hummingbirdui/hummingbird";
+  import { type ModalClass, type ModalInstance, type ModalOptions } from "@hummingbirdui/hummingbird";`} />
+
+###### ESM vs CJS
+
+Hummingbird supports both **ESM** and **CJS** builds so it works with different environments:
+
+* **ESM**
+  Used by modern bundlers like **Vite**, **Rollup**, and **Webpack 5+**. If your project is using ES modules (`import` syntax), this is what gets loaded automatically.
+
+* **CJS**
+  Used in **Node.js** or older tooling that relies on `require()`. If your environment doesn’t support ESM, bundlers and Node will fall back to this file.
+
+You don’t need to choose manually, your bundler or runtime will pick the right version based on your setup.

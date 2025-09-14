@@ -1,7 +1,7 @@
 @utility table {
   @layer base {
     --table-bg: initial;
-    --table-color: var(--text-color-highlight);
+    --table-color: var(--text-color-muted);
     --table-cell-padding-x: --spacing(4);
     --table-cell-padding-y: --spacing(4);
     --table-border-color: var(--border-color-light);
@@ -9,11 +9,11 @@
     --table-head-bg: var(--background-color-subtle);
     --table-head-color: var(--text-color-default);
     --table-striped-bg: var(--background-color-muted);
-    --table-striped-color: var(--text-color-highlight);
+    --table-striped-color: var(--text-color-muted);
     --table-active-bg: var(--background-color-highlight);
     --table-active-color: var(--text-color-default);
     --table-hover-bg: var(--background-color-highlight);
-    --table-hover-color: var(--text-color-highlight);
+    --table-hover-color: var(--text-color-muted);
 
     @apply w-full text-left
     text-[length:var(--table-font-size)]
@@ -145,16 +145,16 @@
 
 @utility table-neutral {
   @layer base {
-    --table-bg: var(--color-main);
-    --table-color: var(--color-contrast);
-    --table-head-color: var(--color-contrast);
-    --table-border-color: var(--color-light);
-    --table-striped-bg: --alpha(var(--color-dark) / 100%);
-    --table-striped-color: var(--color-contrast);
-    --table-hover-bg: var(--color-darker);
-    --table-hover-color: var(--color-contrast);
-    --table-active-bg: var(--color-darker);
-    --table-active-color: var(--color-contrast);
+    --table-bg: var(--color-dark);
+    --table-color: var(--color-white);
+    --table-head-color: var(--color-white);
+    --table-border-color: var(--border-color-light);
+    --table-striped-bg: --alpha(var(--color-dark) / 90%);
+    --table-striped-color: var(--color-white);
+    --table-hover-bg: --alpha(var(--color-dark) / 80%);
+    --table-hover-color: var(--color-white);
+    --table-active-bg: --alpha(var(--color-dark) / 80%);
+    --table-active-color: var(--color-white);
   }
 }
 @utility table-primary {

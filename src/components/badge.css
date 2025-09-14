@@ -1,7 +1,7 @@
 @utility badge {
   @layer base {
-    --badge-bg: var(--color-main);
-    --badge-color: var(--color-contrast);
+    --badge-bg: var(--color-dark);
+    --badge-color: var(--color-white);
     --badge-font-size: var(--text-xs);
     --badge-padding-y: --spacing(0.75);
     --badge-padding-x: --spacing(1.5);
@@ -92,7 +92,7 @@
 @utility badge-subtle {
   @layer base {
     --badge-bg: var(--background-color-muted);
-    --badge-color: var(--color-main);
+    --badge-color: var(--text-color-default);
     --badge-border-color: var(--border-color-base);
     --badge-link-hover-bg: var(--background-color-highlight);
   }
@@ -150,7 +150,7 @@
 @utility badge-outline {
   @layer base {
     --badge-bg: transparent;
-    --badge-color: var(--color-main);
+    --badge-color: var(--text-color-default);
     --badge-border-color: var(--border-color-base);
     --badge-link-hover-bg: var(--background-color-emphasis);
   }

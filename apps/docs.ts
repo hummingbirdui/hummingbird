@@ -1,34 +1,13 @@
 type Theme = 'dark' | 'light';
 
-const disableTransitionsWhile = (fn: () => void) => {
-  const root = document.documentElement;
-  root.classList.add('disable-transitions');
-  fn();
-  requestAnimationFrame(() => {
-    root.classList.remove('disable-transitions');
-  });
-};
-
-
-const toggleSidenav = () => {
-  const toggleBtn = document.querySelector('[data-toggle-sidebar]');
-  const sidebar = document.querySelector('[data-sidebar]');
-  if (sidebar) {
-    toggleBtn?.addEventListener('click', () => {
-      sidebar.classList.toggle('-translate-x-full');
-    });
-  }
-};
-
 const toggleTheme = (theme: Theme) => {
-  disableTransitionsWhile(() => {
-    const html = document.documentElement;
-    if (theme === 'dark') {
-      html.classList.add('dark');
-    } else {
-      html.classList.remove('dark');
-    }
-  });
+  const s = document.createElement('style');
+  s.textContent = '*,*::before,*::after{transition:none!important;animation:none!important}';
+  document.head.appendChild(s);
+  const html = document.documentElement;
+  if (theme === 'dark') html.classList.add('dark');
+  else html.classList.remove('dark');
+  requestAnimationFrame(() => requestAnimationFrame(() => s.remove()));
 };
 
 const updateToggleThemeButton = (theme: Theme) => {
@@ -44,19 +23,15 @@ const updateToggleThemeButton = (theme: Theme) => {
 };
 
 document.addEventListener('DOMContentLoaded', () => {
-  toggleSidenav();
   const savedTheme = localStorage.getItem('theme') as Theme | null;
-  const initialTheme: Theme = savedTheme ?? 'light';
-
+  const initialTheme: Theme =
+    savedTheme ?? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
   toggleTheme(initialTheme);
   updateToggleThemeButton(initialTheme);
-  if (!savedTheme) {
-    localStorage.setItem('theme', initialTheme);
-  }
   const toggleThemeBtn = document.querySelector('[data-theme-toggle-btn]');
   toggleThemeBtn?.addEventListener('click', () => {
-    const newTheme: Theme = localStorage.getItem('theme') === 'dark' ? 'light' : 'dark';
-
+    const current = (localStorage.getItem('theme') as Theme | null) ?? initialTheme;
+    const newTheme: Theme = current === 'dark' ? 'light' : 'dark';
     localStorage.setItem('theme', newTheme);
     toggleTheme(newTheme);
     updateToggleThemeButton(newTheme);

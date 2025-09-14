@@ -23,7 +23,7 @@ const pathName = Astro.originPathname;
       {
         sitemap.map((category, index) => (
           <div>
-            <h2 class={`text-xs mb-2 text-emphasis uppercase ${index !== 0 ? 'mt-6' : ''}`}>{category.subHeader}</h2>
+            <h2 class={`text-xs mb-2 text-subtle uppercase ${index !== 0 ? 'mt-6' : ''}`}>{category.subHeader}</h2>
             <div class="list-group w-full bg-transparent">
               {category.items.map((item) => (
                 <a

@@ -4,7 +4,7 @@
     --nav-link-padding-x: --spacing(4);
     --nav-link-padding-y: --spacing(2);
     --nav-link-font-weight: var(--font-weight-medium);
-    --nav-link-color: var(--text-color-highlight);
+    --nav-link-color: var(--text-color-muted);
     --nav-link-font-size: var(--text-base);
     --nav-link-line-height: 1.5;
     --nav-link-disabled-color: var(--color-disabled-color);
@@ -169,10 +169,10 @@
 }
 @utility nav-neutral {
   @layer base {
-    --nav-bg: var(--color-main);
-    --nav-link-color: --alpha(var(--color-contrast) / 50%);
-    --nav-link-disabled-color: --alpha(var(--color-contrast) / 30%);
-    --nav-link-active-color: var(--color-contrast);
-    --nav-link-focus-ring-color: --alpha(var(--color-neutral-dark) / 30%);
+    --nav-bg: var(--color-dark);
+    --nav-link-color: --alpha(var(--color-white) / 70%);
+    --nav-link-disabled-color: --alpha(var(--color-white) / 30%);
+    --nav-link-active-color: var(--color-white);
+    --nav-link-focus-ring-color: --alpha(var(--color-dark) / 80%);
   }
 }

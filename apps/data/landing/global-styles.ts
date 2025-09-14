@@ -34,7 +34,7 @@ export const globalStyles: StyleSystem[] = [
     description:
       'Override styles on any component with a single, clean declaration. No more fighting with specificity.',
     code: `.btn {
-  --btn-color: var(--text-color-emphasis);
+  --btn-color: var(--text-color-subtle);
   --btn-border-color: var(--border-color-base);
   --btn-bg: var(--background-color-emphasis);
 }`,

@@ -4,7 +4,7 @@
     --breadcrumb-item-active-color: var(--text-color-default);
     --breadcrumb-item-gap: --spacing(2);
     --breadcrumb-item-separator: '/';
-    --breadcrumb-separator-color: var(--text-color-highlight);
+    --breadcrumb-separator-color: var(--text-color-muted);
     @apply flex flex-wrap m-0 p-0
     text-[length:var(--breadcrumb-font-size)];
   }

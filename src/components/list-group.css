@@ -8,9 +8,9 @@
     --list-group-item-padding-x: --spacing(4);
     --list-group-item-padding-y: --spacing(2.5);
     --list-group-item-font-size: var(--text-base);
-    --list-group-action-color: var(--text-color-highlight);
+    --list-group-action-color: var(--text-color-muted);
     --list-group-hover-bg: var(--color-hover);
-    --list-group-hover-color: var(--text-color-highlight);
+    --list-group-hover-color: var(--text-color-muted);
     --list-group-active-bg: var(--color-primary-lighter);
     --list-group-active-color: var(--color-primary);
     --list-group-disabled-bg: inherit;
@@ -93,6 +93,6 @@
 }
 @utility list-text-secondary {
   @layer base {
-    @apply text-sm font-normal text-highlight mb-0;
+    @apply text-sm font-normal text-muted mb-0;
   }
 }

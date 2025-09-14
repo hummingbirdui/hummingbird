@@ -2,7 +2,7 @@
   @layer base {
     --navbar-padding-x: --spacing(3);
     --navbar-padding-y: --spacing(2);
-    --navbar-color: var(--text-color-highlight);
+    --navbar-color: var(--text-color-muted);
     --navbar-hover-color: var(--text-color-default);
     --navbar-disabled-color: var(--color-disabled-color);
     --navbar-active-color: var(--text-color-default);
@@ -51,7 +51,7 @@
     --nav-link-padding-x: 0;
     --nav-link-padding-y: --spacing(2);
     --nav-link-font-weight: var(--font-weight-medium);
-    --nav-link-color: var(--text-color-highlight);
+    --nav-link-color: var(--text-color-muted);
     --nav-link-font-size: var(--text-base);
     --nav-link-line-height: 1.5;
     --nav-link-disabled-color: var(--color-disabled-color);
