@@ -9,7 +9,7 @@ import img1 from "@assets/images/carousel-1.png";
 import img2 from "@assets/images/carousel-2.png";
 import img3 from "@assets/images/carousel-3.png";
 
-##### How It Works
+## How It Works
 - The carousel functions as a slideshow, designed for cycling through various content, whether images, text, or custom markup. Its foundation involves CSS 3D transforms and a small amount of JavaScript. It also incorporates support for previous/next navigation controls and indicators.
 - For optimal performance, carousels require manual initialization using the carousel constructor method. Without this initialization, certain event listeners—specifically those needed for touch and swipe support—will not be registered until a user explicitly activates a control or an indicator.
 - The sole exception to this is autoplaying carousels that include the `data-bs-ride="carousel"` attribute; these are automatically initialized upon page load. If using autoplaying carousels with this data attribute, avoid explicitly initializing those same carousels with the constructor method.
@@ -17,7 +17,7 @@ import img3 from "@assets/images/carousel-3.png";
 - The animation effects of this component are influenced by the prefers-reduced-motion media query. Refer to the reduced motion section within our accessibility documentation for further details.
 
 
-##### Basic examples
+## Basic examples
 
 <Example code={`<div id="carouselExample" class="carousel slide">
     <div class="carousel-inner">
@@ -41,7 +41,7 @@ import img3 from "@assets/images/carousel-3.png";
     </button>
   </div>`} />
 
-##### Indicators
+## Indicators
 
 <Example code={`<div id="carouselExampleIndicators" class="carousel slide">
     <div class="carousel-indicators">
@@ -70,7 +70,7 @@ import img3 from "@assets/images/carousel-3.png";
     </button>
   </div>`} />
 
-##### Captions
+## Captions
 
 <Example code={`<div id="carouselExampleCaptions" class="carousel slide">
     <div class="carousel-indicators">
@@ -111,7 +111,7 @@ import img3 from "@assets/images/carousel-3.png";
     </button>
   </div>`} />
 
-##### Crossfade
+## Crossfade
 
 <Example code={`<div id="carouselExampleFade" class="carousel slide carousel-fade">
     <div class="carousel-inner">
@@ -135,7 +135,7 @@ import img3 from "@assets/images/carousel-3.png";
     </button>
   </div>`} />
 
-##### Autoplaying carousels
+## Autoplaying carousels
 
 <Example code={`<div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
@@ -183,7 +183,7 @@ When the `ride` option is set to `true`, rather than `carousel`, the carousel wo
     </button>
   </div>`} />
 
-##### Individual `.carousel-item` interval
+## Individual `.carousel-item` interval
 
 Add `data-bs-interval=""` to a `.carousel-item` to change the amount of time to delay between automatically cycling to the next item.
 
@@ -209,7 +209,7 @@ Add `data-bs-interval=""` to a `.carousel-item` to change the amount of time to 
     </button>
   </div>`} />
 
-##### Autoplaying carousels without controls
+## Autoplaying carousels without controls
 
 <Example code={`<div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
@@ -225,7 +225,7 @@ Add `data-bs-interval=""` to a `.carousel-item` to change the amount of time to 
     </div>
   </div>`} />
 
-##### Disable touch swiping
+## Disable touch swiping
 
 Carousels support swiping left/right on touchscreen devices to move between slides. This can be disabled by setting the `touch` option to `false`.
 
@@ -251,18 +251,18 @@ Carousels support swiping left/right on touchscreen devices to move between slid
     </button>
   </div>`} />
 
-##### Usage
+## Usage
 
-###### Via data attributes
+### Via data attributes
 Data attributes provide a straightforward method for controlling the carousel's position. The `data-bs-slide` attribute accepts the keywords prev or next, which adjust the slide's position relative to its current state. Alternatively, `data-bs-slide-to` can be used to pass a specific slide index to the carousel, for example, `data-bs-slide-to="2"`, which moves the slide position to a particular index starting from 0.
 
-###### Via JavaScript
+### Via JavaScript
 Manual instantiation of the carousel is performed with:
 
 <Example showPreview={false} lang='js' code={`const carousel = new hummingbird.Carousel('#myCarousel')`} />
 
 
-##### Options
+## Options
 Options can be provided through data attributes or via JavaScript. When using `data-bs-attributes`, append the option's name, as in `data-bs-animation="{value}"`. It is essential to convert "camelCase" option names to "kebab-case" when passing options via data attributes. For example, `data-bs-custom-class="beautifier"` should be used instead of `data-bs-customClass="beautifier"`.
 
 As of **Bootstrap 5.2.0**, all components support an experimental `data-bs-config` data attribute. This attribute can contain simple component configurations as a JSON string. If an element has both `data-bs-config='{"delay":0, "title":123}'` and `data-bs-title="456"` attributes, the final title value will be 456, as separate data attributes override values provided within data-bs-config. Additionally, existing data attributes can also house JSON values, such as `data-bs-delay='{"show":0,"hide":150}'`.
@@ -318,7 +318,7 @@ The final configuration object results from merging `data-bs-config`, individual
   </tbody>
 </HbTable>
 
-##### Methods
+## Methods
 All API methods are asynchronous and initiate a transition. They return to the caller immediately after the transition begins but before it concludes. Furthermore, a method call on a component that is already transitioning will be disregarded. More details are available in our JavaScript documentation.
 
 A carousel instance can be created with the carousel constructor, along with any additional options. For example, to manually initialize an autoplaying carousel (without using the `data-bs-ride="carousel"` attribute in the markup) with a specific interval and disabled touch support:
@@ -379,7 +379,7 @@ A carousel instance can be created with the carousel constructor, along with any
 </HbTable>
 
 
-##### Events
+## Events
 
 Bootstrap's carousel class exposes two events, providing opportunities to integrate with its functionality. Both events include the following additional properties:
 

@@ -4,17 +4,17 @@ description: This guide explains how to set up Hummingbird with Nuxt.js using Ta
 toc: true
 ---
 
-##### Install Tailwindcss
+## Install Tailwindcss
 
 Follow the <a href="https://tailwindcss.com/docs/installation/framework-guides/nuxt" target="_blank" rel="noopener noreferrer">official installation guide</a> to install Tailwind CSS in your Nuxt project.
 
-##### Install Hummingbird
+## Install Hummingbird
 
 Install Hummingbird via your preferred package manager:
 
 <Example lang='bash' showPreview={false} code={`npm install @hummingbirdui/hummingbird`} />
 
-###### Include Hummingbird CSS
+### Include Hummingbird CSS
 
 Import Hummingbird styles in your main CSS file (e.g., `main.css`).
 
@@ -22,9 +22,9 @@ Import Hummingbird styles in your main CSS file (e.g., `main.css`).
   code={`@import "tailwindcss";
   @import "@hummingbirdui/hummingbird";`} />
 
-##### Initialize JS plugins
+## Initialize JS plugins
 
-###### Composable
+### Composable
 
 Create a composable `useHummingbird.ts` in your `composables` directory, this composable ensures Hummingbird scripts run only after the Nuxt app has mounted and hydration is complete.
 
@@ -56,7 +56,7 @@ Import and call `useHummingbird` inside a Nuxt page (e.g., `app.vue` file) to lo
   ...
   </template>`} />
 
-##### Optimized Imports
+## Optimized Imports
 
 **Optional:** you can optimize your application by only importing the components you need. The below example demonstrates how to import only the `modal` script.
 
@@ -84,7 +84,7 @@ Import and call `useHummingbird` inside a Nuxt page (e.g., `app.vue` file) to lo
   ...
   </template>`} />
 
-##### JavaScript API
+## JavaScript API
 
 Hummingbird also provides a JavaScript API for programmatic control of components. For example, you can toggle a modal manually using the API.
 

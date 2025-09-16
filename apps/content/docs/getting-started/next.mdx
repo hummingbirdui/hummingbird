@@ -4,17 +4,17 @@ description: This guide explains how to set up Hummingbird with Next.js using Ta
 toc: true
 ---
 
-##### Install Tailwindcss
+## Install Tailwindcss
 
 Follow the <a href="https://tailwindcss.com/docs/installation/framework-guides/nextjs" target="_blank" rel="noopener noreferrer">official installation guide</a> to install Tailwind CSS in your Next.js project.
 
-##### Install Hummingbird
+## Install Hummingbird
 
 Install Hummingbird via your preferred package manager:
 
 <Example lang='bash' showPreview={false} code={`npm install @hummingbirdui/hummingbird`} />
 
-###### Include Hummingbird CSS
+### Include Hummingbird CSS
 
 Import Hummingbird styles in your main CSS file (e.g., `globals.css`).
 
@@ -22,7 +22,7 @@ Import Hummingbird styles in your main CSS file (e.g., `globals.css`).
   code={`@import "tailwindcss";
   @import "@hummingbirdui/hummingbird";`} />
 
-##### Initialize JS plugins
+## Initialize JS plugins
 
 Create a wrapper component that dynamically imports Hummingbird whenever the route changes. This ensures the library is loaded only on the client side.
 
@@ -70,7 +70,7 @@ Add the wrapper to your layout.tsx so Hummingbird scripts are included globally,
     );
   }`} />
 
-##### Optimize
+## Optimize
 
 **Optional:** you can optimize your application by only importing the components you need. The below example demonstrates how to import only the `modal` script.
 
@@ -100,7 +100,7 @@ Add the wrapper to your layout.tsx so Hummingbird scripts are included globally,
   }`} />
 
 
-##### JavaScript API
+## JavaScript API
 
 Hummingbird also provides a JavaScript API for programmatic control of components. For example, you can toggle a modal manually using the API.
 

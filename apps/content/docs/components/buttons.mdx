@@ -48,7 +48,7 @@ classNames:
     desc: Circle shape (1:1 ratio)
 ---
 
-##### Base button
+## Base button
 
 The `.btn` class defines the base button styles, including padding, alignment, and overall structure. It ensures consistent spacing and content alignment across all button types.
 
@@ -56,7 +56,7 @@ The `.btn` class defines the base button styles, including padding, alignment, a
   code={`<button class='btn'>Base button</button>`} 
 />
 
-##### Contained button
+## Contained button
 
 Contained buttons use a filled style with elevation to give strong emphasis. They are intended for primary actions in an application.
 
@@ -71,7 +71,7 @@ Contained buttons use a filled style with elevation to give strong emphasis. The
   <button class='btn btn-link'>Link</button>`} 
 />
 
-##### Subtle button
+## Subtle button
 
 Subtle buttons use a light background with clear text color, giving gentle emphasis. They are suitable for secondary actions that should remain visible without drawing too much attention.
 
@@ -85,7 +85,7 @@ Subtle buttons use a light background with clear text color, giving gentle empha
   <button class='btn btn-subtle-neutral'>Neutral</button>`} 
 />
 
-##### Outlined button
+## Outlined button
 
 Outlined buttons provide medium emphasis for actions that are important but not primary.
 
@@ -101,7 +101,7 @@ They serve as a lower emphasis alternative to contained buttons, and a higher em
   <button class='btn btn-outline-neutral'>Neutral</button>`} 
 />
 
-##### Text button
+## Text button
 
 Text buttons are low-emphasis buttons without a background or border. They are best used for less prominent actions, such as those in dialogs or cards, where the focus should remain on the content.
 
@@ -115,7 +115,7 @@ Text buttons are low-emphasis buttons without a background or border. They are b
   <button class='btn btn-text-neutral'>Neutral</button>`}
 />
 
-##### Button Sizes
+## Button Sizes
 
 For larger or smaller buttons, use the <code>.btn-lg</code> and <code>.btn-sm</code> class. Default is medium.
 
@@ -125,7 +125,7 @@ For larger or smaller buttons, use the <code>.btn-lg</code> and <code>.btn-sm</c
   <button class='btn btn-primary btn-lg'>Large</button>`}
 />
 
-##### Button Shape
+## Button Shape
 
 You can change the shape of the button using the <code>.btn-square</code> and <code>.btn-circle</code> class.
 
@@ -166,7 +166,7 @@ You can change the shape of the button using the <code>.btn-square</code> and <c
   </div>`}
 />
 
-##### Buttons with icons and label
+## Buttons with icons and label
 
 Buttons can include icons alongside text to improve usability and recognition. Icons help users quickly identify the purpose of an action, such as using a trash icon for a delete button.
 
@@ -187,7 +187,7 @@ Buttons can include icons alongside text to improve usability and recognition. I
   </button>`}
 />
 
-##### Icon button
+## Icon button
 
 Icon buttons display only an icon and are often used in app bars and toolbars. They are also suitable for toggle actions, such as marking an item as favorite with a star.
 
@@ -214,7 +214,7 @@ Icon buttons display only an icon and are often used in app bars and toolbars. T
   </button>`}
 />
 
-##### Sizes
+## Sizes
 
 For larger or smaller icon buttons, use the <code>.btn-lg</code> and <code>.btn-sm</code> classes. Default is medium.
 
@@ -241,12 +241,12 @@ For larger or smaller icon buttons, use the <code>.btn-lg</code> and <code>.btn-
   </button>`}
 />
 
-##### Button plugin
+## Button plugin
 
 The button plugin enables the creation of straightforward on/off toggle buttons.
 Visually, these toggle buttons appear identical to checkbox toggle buttons. However, assistive technologies convey them differently: screen readers announce checkbox toggles as “checked”/“not checked” (as they remain fundamentally checkboxes despite their appearance), whereas these toggle buttons are announced as “button”/“button pressed.” The choice between these two approaches should be based on the specific type of toggle being created, and whether the toggle's function is best understood by users when announced as a checkbox or as an actual button.
 
-###### Toggle states
+### Toggle states
 
 To activate a button's toggle state, add `data-bs-toggle="button"`. If a button is pre-toggled, it is essential to manually include both the `.active` class and `aria-pressed="true"`. This ensures correct conveyance to assistive technologies.
 
@@ -256,7 +256,7 @@ To activate a button's toggle state, add `data-bs-toggle="button"`. If a button 
   <button type="button" class="btn btn-primary" disabled data-bs-toggle="button">Disabled toggle button</button>`} 
 />
 
-###### Methods
+### Methods
 
 A button instance can be created using the button constructor, as shown in this example:
 
@@ -298,11 +298,11 @@ For example, to toggle all buttons:
 })`} 
 />
 
-##### CSS Variables
+## CSS Variables
 
 The button component is built using a set of CSS variables. These variables provide flexibility for customizing styles globally or locally.
 
-###### Global variables
+### Global variables
 
 Global variables apply shared styles across buttons, inputs, and selects. Updating these will affect all related components.
 
@@ -315,7 +315,7 @@ Global variables apply shared styles across buttons, inputs, and selects. Updati
   --input-btn-border-width: 1px;`}
 />
 
-###### Local variables
+### Local variables
 
 Local variables apply only to buttons, allowing fine-grained control over their appearance without affecting other elements.
 

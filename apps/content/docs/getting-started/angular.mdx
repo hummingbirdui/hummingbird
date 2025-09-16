@@ -4,17 +4,17 @@ description: This guide explains how to set up Hummingbird with Angular and Angu
 toc: true
 ---
 
-##### Install Tailwindcss
+## Install Tailwindcss
 
 Follow the <a href="https://tailwindcss.com/docs/installation/framework-guides/angular" target="_blank" rel="noopener noreferrer">official installation guide</a> to install Tailwind CSS in your Angular project.
 
-##### Install Hummingbird
+## Install Hummingbird
 
 Install Hummingbird via your preferred package manager:
 
 <Example lang='bash' showPreview={false} code={`npm install @hummingbirdui/hummingbird`} />
 
-###### Include Hummingbird CSS
+### Include Hummingbird CSS
 
 Import Hummingbird styles in your main CSS file (e.g., `styles.css`).
 
@@ -24,9 +24,9 @@ Import Hummingbird styles in your main CSS file (e.g., `styles.css`).
   @import "@hummingbirdui/hummingbird";
   `} />
 
-##### Initialize JS plugins
+## Initialize JS plugins
 
-###### Client-Side Rendering (CSR)
+### Client-Side Rendering (CSR)
 
 Import Hummingbird inside the ngOnInit lifecycle hook of your root component. This ensures Hummingbird is loaded when the component initializes.
 
@@ -46,7 +46,7 @@ Import Hummingbird inside the ngOnInit lifecycle hook of your root component. Th
     }
   }`} />
 
-##### Optimize
+## Optimize
 
 **Optional:** you can optimize your application by only importing the components you need. The below example demonstrates how to import only the `modal` script.
 
@@ -77,7 +77,7 @@ Import Hummingbird inside the ngOnInit lifecycle hook of your root component. Th
     }
   }`} />
 
-##### JavaScript API
+## JavaScript API
 
 Hummingbird also provides a JavaScript API for programmatic control of components. For example, you can toggle a modal manually using the API.
 
@@ -104,7 +104,7 @@ Here’s how to initialize and use the `Modal` component:
     }
   }`} />
 
-##### Server-Side Rendering (SSR)
+## Server-Side Rendering (SSR)
 
 When using Angular with SSR, load Hummingbird only in the browser to avoid hydration errors. To handle this cleanly, create a dedicated service (e.g., `hummingbird.service.ts`) inside a services folder. This service runs scripts safely on the client.
 

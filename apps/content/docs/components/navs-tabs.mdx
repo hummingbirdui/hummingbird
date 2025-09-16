@@ -4,7 +4,7 @@ description: Documentation and examples for how to use Bootstrap’s included na
 toc: true
 ---
 
-##### Examples
+## Examples
 
 <Example code={`<ul class="nav nav-underline">
     <li class="nav-item">
@@ -21,7 +21,7 @@ toc: true
     </li>
   </ul>`} />
 
-##### Tabs
+## Tabs
 
 <Example code={`<ul class="nav nav-tabs">
     <li class="nav-item">
@@ -38,7 +38,7 @@ toc: true
     </li>
   </ul>`} />
 
-##### Color variants
+## Color variants
 
 <Example class='flex flex-col gap-3' code={`<ul class="nav nav-primary">
     <li class="nav-item">
@@ -69,7 +69,7 @@ toc: true
     </li>
   </ul>`} />
 
-##### JavaScript behavior
+## JavaScript behavior
 
 <Example code={`<ul class="nav nav-underline mb-4" id="myTab" role="tablist">
     <li class="nav-item" role="presentation">
@@ -155,7 +155,7 @@ The tabs plugin also works with lift nav & color variants.
 />
 
 
-##### Accessibility
+## Accessibility
 
 Dynamic tabbed interfaces, as outlined in the <a href="https://www.w3.org/WAI/ARIA/apg/patterns/tabs/">ARIA Authoring Practices Guide tabs pattern</a>, require `role="tablist"`, `role="tab"`, `role="tabpanel"`, and additional aria- attributes. These are essential for conveying their structure, functionality, and current state to users of assistive technologies, such as screen readers. As a recommended practice, using `<button>` elements for tabs is advisable, as these function as controls that trigger a dynamic change, rather than links that navigate to new pages or locations.
 
@@ -172,7 +172,7 @@ In adherence to the ARIA Authoring Practices pattern, only the currently active 
 </div>
 
 
-###### Using Data Attributes
+### Using Data Attributes
 
 A tab or pill navigation can be activated without writing any JavaScript by simply specifying `data-bs-toggle="tab"` or `data-bs-toggle="pill"` on an element. These data attributes should be used on `.nav-tabs` or `.nav-pills` elements.
 
@@ -202,7 +202,7 @@ A tab or pill navigation can be activated without writing any JavaScript by simp
   </div>`} 
 />
 
-###### Via JavaScript
+### Via JavaScript
 
 Tabbable tabs can be enabled via JavaScript (each tab requires individual activation):
 
@@ -228,7 +228,7 @@ Individual tabs can be activated in several ways:
   bootstrap.Tab.getInstance(triggerFirstTabEl).show() // Select first tab`} 
 />
 
-##### Fade Effect
+## Fade Effect
 
 To incorporate a `fade-in` effect for tabs, add `.fade` to each `.tab-pane`. The initial tab pane must also include `.show` to ensure its content is visible from the start.
 
@@ -241,7 +241,7 @@ To incorporate a `fade-in` effect for tabs, add `.fade` to each `.tab-pane`. The
 </div>`} 
 />
 
-##### Methods
+## Methods
 
 All API methods are asynchronous and initiate a transition. They return to the caller immediately after the transition begins but before it concludes. Furthermore, a method call on a component that is already transitioning will be disregarded. More information is available in our JavaScript documentation.
 
@@ -280,7 +280,7 @@ A tab instance can be created with the constructor, as demonstrated:
   </tbody>
 </HbTable>
 
-##### Events
+## Events
 
 When a new tab is displayed, the events fire in the following sequence:
 

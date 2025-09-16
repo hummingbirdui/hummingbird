@@ -4,17 +4,17 @@ description: This guide explains how to set up Hummingbird with Gatsby using Tai
 toc: true
 ---
 
-##### Install Tailwindcss
+## Install Tailwindcss
 
 Follow the <a href="https://tailwindcss.com/docs/installation/framework-guides/gatsby" target="_blank" rel="noopener noreferrer">official installation guide</a> to install Tailwind CSS in your Gatsby project.
 
-##### Install Hummingbird
+## Install Hummingbird
 
 Install Hummingbird via your preferred package manager:
 
 <Example lang='bash' showPreview={false} code={`npm install @hummingbirdui/hummingbird`} />
 
-###### Include Hummingbird CSS
+### Include Hummingbird CSS
 
 Import Hummingbird styles in your main CSS file (e.g., `global.css`).
 
@@ -23,7 +23,7 @@ Import Hummingbird styles in your main CSS file (e.g., `global.css`).
   @import "@hummingbirdui/hummingbird";
   `} />
 
-##### Initialize JS plugins
+## Initialize JS plugins
 
 Set up a wrapper component to load Hummingbird scripts dynamically on route changes.
 
@@ -57,7 +57,7 @@ Edit `gatsby-browser.js`:
     return <HummingbirdUI {...props}>{element}</HummingbirdUI>;
   }`} />
 
-##### Optimization
+## Optimization
 
 **Optional:** you can optimize your application by only importing the components you need. The below example demonstrates how to import only the `modal` script.
 

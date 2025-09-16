@@ -6,11 +6,11 @@ toc: true
 
 Hummingbird is a fast, lightweight UI library built on top of Tailwind CSS utility classes. Write cleaner HTML, customize with utilities, and bring your project to life with interactive, accessible components. Start building today by following the quickstart guide.
 
-##### Prerequisites
+## Prerequisites
 
 Ensure you have a project set up with Tailwind CSS. If you haven't set up Tailwind CSS yet, follow the <a href="https://tailwindcss.com/docs/installation" target="_blank" rel="noopener noreferrer">official installation guide</a>.
 
-##### Install Hummingbird
+## Install Hummingbird
 
 Install Hummingbird via your preferred package manager:
 
@@ -22,7 +22,7 @@ Import Hummingbird styles in your main CSS file (e.g., `styles.css`).
   code={`@import "tailwindcss";
   @import "@hummingbirdui/hummingbird";`} />
 
-##### Initialize JS plugins
+## Initialize JS plugins
 
 Include Hummingbird javascript at the end of your HTML body.
 
@@ -34,7 +34,7 @@ Alternatively, You can import Hummingbird in your JavaScript entry file. This is
 <Example lang='js' showPreview={false} 
   code={`import '@hummingbirdui/hummingbird';`} />
 
-###### Optimization
+### Optimization
 
 **Optional:** To reduce the final bundle size, you can import only the specific JavaScript plugins you need. This is not required because Hummingbird bundle is already optimized, it's not too large, but it can be useful in certain scenarios.
 
@@ -55,7 +55,7 @@ The below example shows how to import only the `Modal` plugin:
   // import "@hummingbirdui/hummingbird/lib/esm/scripts/tooltip";
 `} />
 
-###### TypeScript Support
+### TypeScript Support
 
 Hummingbird includes TypeScript definitions for all components. If you're using TypeScript, you can import Hummingbird plugins with their types.
 
@@ -63,7 +63,7 @@ Hummingbird includes TypeScript definitions for all components. If you're using 
   code={`import { Modal } from "@hummingbirdui/hummingbird";
   import { type ModalClass, type ModalInstance, type ModalOptions } from "@hummingbirdui/hummingbird";`} />
 
-###### ESM vs CJS
+### ESM vs CJS
 
 Hummingbird supports both **ESM** and **CJS** builds so it works with different environments:
 

@@ -17,7 +17,7 @@ classNames:
     desc: Accordion body component
 ---
 
-##### Basic Accordion
+## Basic Accordion
 
 Accordions can be expanded or collapsed to show or hide content. By default, all panels are collapsed. To display a panel as open on page load
 
@@ -64,7 +64,7 @@ Accordions can be expanded or collapsed to show or hide content. By default, all
   </div>
 `}/>
 
-##### Always Open
+## Always Open
 
 To keep multiple accordion items open at the same time, omit the `data-bs-parent` attribute from each `.accordion-collapse` element.
 
@@ -107,7 +107,7 @@ To keep multiple accordion items open at the same time, omit the `data-bs-parent
     </div>
   </div>`}/>
 
-##### CSS variables
+## CSS variables
 
 The accordion component is built using a set of CSS variables. These variables provide flexibility for customizing styles.
 
@@ -133,7 +133,7 @@ The accordion component is built using a set of CSS variables. These variables p
     --accordion-hover-bg: var(--background-color-subtle);
   }`} />
 
-##### Usage
+## Usage
 
 The collapse plugin employs specific classes to manage its primary functions:
 
@@ -143,12 +143,12 @@ The collapse plugin employs specific classes to manage its primary functions:
 
 These classes are located within `transitions.css`.
 
-###### Via data attributes
+### Via data attributes
 
 To automatically control one or more collapsible elements, simply add `data-bs-toggle="collapse"` and a `data-bs-target` to the desired element. The `data-bs-target` attribute accepts a CSS selector, indicating which element to apply the collapse functionality to. Ensure the collapse class is also added to the collapsible element. To have it open by default, include the show class as well.
 To enable accordion-like group management within a collapsible area, append the `data-bs-parent="#selector"` attribute.
 
-###### Via JavaScript
+### Via JavaScript
 
 Manual enablement is achieved with the following JavaScript:
 
@@ -156,7 +156,7 @@ Manual enablement is achieved with the following JavaScript:
 const accordionCollapseList = [...accordionCollapseElementList].map(accordionCollapseEl => new hummingbird.Collapse(accordionCollapseEl))
 `} />
 
-###### Options
+### Options
 
 Options can be configured either through data attributes or JavaScript. When using `data-bs-attributes`, append the option's name (e.g., `data-bs-animation="{value}"`). It is crucial to convert "camelCase" option names to "kebab-case" when passed via data attributes. For instance, use `data-bs-custom-class="beautifier"` rather than `data-bs-customClass="beautifier"`.
 
@@ -168,7 +168,7 @@ The ultimate configuration object is the result of merging `data-bs-config`, ind
 - **toggle** (boolean, default: true): This option controls whether the collapsible element is toggled (shown or hidden) upon its initialization.
 
 
-###### Methods
+### Methods
 
 All API methods are asynchronous and initiate a transition. They return to the caller immediately after the transition begins, but before it concludes. Additionally, a method call on a component that is already transitioning will be disregarded. More information is available in our JavaScript documentation.
 
@@ -217,7 +217,7 @@ A collapse instance can be created with the constructor, as demonstrated:
   </tbody>
 </HbTable>
 
-###### Events
+### Events
 
 Hummingbird's collapse class exposes several events, providing hooks into its collapse functionality.
 

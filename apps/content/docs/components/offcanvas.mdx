@@ -4,7 +4,7 @@ description: Integrate concealed sidebars into projects for navigation, shopping
 toc: true
 ---
 
-##### Operation overview
+## Operation overview
 
 Offcanvas functions as a sidebar component, capable of being toggled via JavaScript to emerge from the viewport's left, right, top, or bottom edges. Buttons or anchors serve as triggers, attached to specific elements for toggling, and data attributes are employed to invoke the JavaScript.
 
@@ -20,7 +20,7 @@ Offcanvas functions as a sidebar component, capable of being toggled via JavaScr
   <span>This component's animation effect relies on the `prefers-reduced-motion` media query. Refer to the <a href="#">reduced motion section</a> within the accessibility documentation for more details.</span>
 </div>
 
-##### Example
+## Example
 
 <Example class='flex justify-center flex-wrap gap-2'
   code={`<a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
@@ -46,7 +46,7 @@ Offcanvas functions as a sidebar component, capable of being toggled via JavaScr
     </div>
   </div>`} />
 
-##### Body scrolling
+## Body scrolling
 
 <Example class='text-center' code={`<button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">Enable body scrolling</button>
 
@@ -67,7 +67,7 @@ Offcanvas functions as a sidebar component, capable of being toggled via JavaScr
     </div>
   </div>`} />
 
-##### Body scrolling and backdrop
+## Body scrolling and backdrop
 
 <Example class='text-center' code={`<button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">Enable both scrolling & backdrop</button>
 
@@ -88,7 +88,7 @@ Offcanvas functions as a sidebar component, capable of being toggled via JavaScr
     </div>
   </div>`} />
 
-##### Static backdrop
+## Static backdrop
 
 <Example class='text-center' code={`<button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">Toggle static offcanvas</button>
 
@@ -109,7 +109,7 @@ Offcanvas functions as a sidebar component, capable of being toggled via JavaScr
     </div>
   </div>`} />
 
-##### Responsive
+## Responsive
 
 <Example code={`<button class="btn btn-primary lg:hidden" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasResponsive" aria-controls="offcanvasResponsive">Toggle offcanvas</button>
 
@@ -127,7 +127,7 @@ Offcanvas functions as a sidebar component, capable of being toggled via JavaScr
     </div>
   </div>`} />
 
-##### Placement
+## Placement
 
 <Example class='text-center' code={`<button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop">Toggle top offcanvas</button>
 
@@ -172,7 +172,7 @@ Offcanvas functions as a sidebar component, capable of being toggled via JavaScr
   </div>`} />
 
 
-##### Usage
+## Usage
 
 The offcanvas plugin employs specific classes and attributes to manage its primary functions:
 
@@ -185,13 +185,13 @@ The offcanvas plugin employs specific classes and attributes to manage its prima
 
 Include a dismiss button with the `data-bs-dismiss="offcanvas"` attribute; this triggers the associated JavaScript functionality. Ensure that a `<button>` element is used for this purpose to ensure proper behavior across all devices.
 
-###### Via Data Attributes
+### Via Data Attributes
 
-###### Toggle
+### Toggle
 
 To automatically control an offcanvas element, add `data-bs-toggle="offcanvas"` and either a `data-bs-target` or href to the controlling element. The `data-bs-target` attribute accepts a CSS selector, indicating which offcanvas element to apply the functionality to. Ensure the offcanvas class is also added to the offcanvas element. To have it open by default, include the show class as well.
 
-###### Dismiss
+### Dismiss
 
 Dismissal of an offcanvas can be accomplished using the `data-bs-dismiss` attribute on a button located within the offcanvas, as demonstrated below:
 
@@ -207,7 +207,7 @@ Alternatively, dismissal can be achieved from a button outside the offcanvas by 
 
 While both methods for dismissing an offcanvas are supported, it is important to note that dismissing from outside an offcanvas does not align with the ARIA Authoring Practices Guide's dialog (modal) pattern. This approach should be used with caution.
 
-###### Via JavaScript
+### Via JavaScript
 
 Manual enablement is achieved with the following JavaScript:
 
@@ -216,7 +216,7 @@ Manual enablement is achieved with the following JavaScript:
   const offcanvasList = [...offcanvasElementList].map(offcanvasEl => new bootstrap.Offcanvas(offcanvasEl))`} 
 />
 
-##### Options
+## Options
 
 Options can be provided through data attributes or via JavaScript. When using `data-bs-attributes`, append the option's name (e.g., `data-bs-animation="{value}"`). It is crucial to convert "camelCase" option names to "kebab-case" when passing options via data attributes. For instance, use `data-bs-custom-class="beautifier"` rather than `data-bs-customClass="beautifier"`.
 
@@ -256,7 +256,7 @@ The ultimate configuration object results from merging `data-bs-config`, individ
 </HbTable>
 
 
-##### Methods
+## Methods
 
 All available API methods operate asynchronously, initiating a transition. They complete their return to the caller immediately upon transition commencement, yet prior to its conclusion. Furthermore, any method invoked on a component currently undergoing transition will be disregarded. For more detailed information, consult the JavaScript documentation.
 
@@ -303,7 +303,7 @@ An offcanvas instance can be created using the constructor, for example:
   </tbody>
 </HbTable>
 
-##### Events
+## Events
 
 The offcanvas class within Bootstrap provides a series of events for integrating with offcanvas functionality.
 

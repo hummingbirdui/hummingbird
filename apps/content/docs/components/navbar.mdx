@@ -38,7 +38,7 @@ classNames:
       desc: Scrollable navigation links container
 ---
 
-##### Basic Example
+## Basic Example
 
 A basic navbar includes branding, navigation links, dropdowns, and a search form within a responsive container.
 
@@ -75,7 +75,7 @@ A basic navbar includes branding, navigation links, dropdowns, and a search form
     </div>
   </nav>`} />
 
-##### Nav
+## Nav
 
 The nav component structures navigation links within a navbar. It supports active and disabled states. Add the `.active` class on `.nav-link` to indicate the current page.
 
@@ -127,7 +127,7 @@ You can avoid list-based approaches entirely if you like.
     </div>
   </nav>`}/>
 
-##### Form
+## Form
 
 Forms can be placed inside a navbar to include inputs, buttons, or other interactive elements.
 
@@ -152,7 +152,7 @@ Immediate `.navbar` children use flex with `.justify-between` by default. Adjust
     </div>
   </nav>`} />
 
-##### Text
+## Text
 
 To use text within a navbar, use the `.navbar-text` class.
 
@@ -162,7 +162,7 @@ To use text within a navbar, use the `.navbar-text` class.
     </div>
   </nav>`} />
 
-##### Color schemes
+## Color schemes
 
 Navbars are flexible and support different background and color schemes to match your design.
 
@@ -228,7 +228,7 @@ Navbars are flexible and support different background and color schemes to match
     <!-- Navbar content -->
   </nav>`} />
 
-##### Containers
+## Containers
 
 Use any of the responsive containers such as `.sm:container`, `.md:container`, `.lg:container`, `.xl:container`, `.2xl:container` to change how wide the content in your navbar is presented.
 
@@ -238,7 +238,7 @@ Use any of the responsive containers such as `.sm:container`, `.md:container`, `
     </div>
   </nav>`} />
 
-##### Scrolling
+## Scrolling
 
 The `.navbar-nav-scroll` class allows vertical scrolling for `.navbar-nav` or other sub-components inside a collapsed navbar. This is especially useful for long navigation menus on smaller screens. By default, the scrollable area has a max height of `75vh`. You can adjust this using utility classes (e.g., `max-h-[value]`) or by overriding the `--scroll-height` CSS variable for finer control.
 
@@ -278,13 +278,13 @@ The `.navbar-nav-scroll` class allows vertical scrolling for `.navbar-nav` or ot
     </div>
   </nav>`} />
 
-##### Responsive behaviors
+## Responsive behaviors
 
 Navbars use `.navbar-toggler`, `.navbar-collapse`, and `.navbar-expand{-sm|-md|-lg|-xl|-xxl}` classes to control when content collapses into a toggleable menu. With utility classes, you can also decide when to show or hide specific elements.
 
 For navbars that never collapse, add the `.navbar-expand` class. For navbars that always collapse, omit the `.navbar-expand` class.
 
-##### External content
+## External content
 
 The collapse plugin can toggle content outside the `.navbar` by matching id with `data-bs-target`.
 
@@ -303,7 +303,7 @@ The collapse plugin can toggle content outside the `.navbar` by matching id with
   </nav>`} />
 
 
-##### Offcanvas
+## Offcanvas
 
 Transform your expanding and collapsing navbar into an offcanvas drawer with the offcanvas component. We extend both the offcanvas default styles and use our `.navbar-expand-*` classes to create a dynamic and flexible navigation sidebar.
 

@@ -4,16 +4,16 @@ description: This guide explains how to set up Hummingbird with React + Vite usi
 toc: true
 ---
 
-##### Install Tailwindcss
+## Install Tailwindcss
 
 Follow the <a href="https://tailwindcss.com/docs/installation" target="_blank" rel="noopener noreferrer">official installation guide</a> to install Tailwind CSS in your React project.
 
-##### Install Hummingbird
+## Install Hummingbird
 Install Hummingbird via preferred package manager:
 
 <Example lang='bash' showPreview={false} code={`npm install @hummingbirdui/hummingbird`} />
 
-###### Include Hummingbird css
+### Include Hummingbird css
 
 Import Hummingbird styles in your main CSS file (e.g., `index.css` or `app.css`).
 
@@ -21,7 +21,7 @@ Import Hummingbird styles in your main CSS file (e.g., `index.css` or `app.css`)
   code={`@import "tailwindcss";
   @import "@hummingbirdui/hummingbird";`} />
 
-##### Initialize JS plugins
+## Initialize JS plugins
 
 Initialize hummingbird at the root of your application, for example in `App.js` or `App.tsx`.
 
@@ -50,7 +50,7 @@ Initialize hummingbird at the root of your application, for example in `App.js` 
 
   export default App;`} />
 
-##### Optimize
+## Optimize
 
 **Optional:** you can optimize your application by only importing the components you need. The below example demonstrates how to import only the `modal` script.
 
@@ -93,7 +93,7 @@ Initialize hummingbird at the root of your application, for example in `App.js` 
   export default App;`} />
 
 
-##### JavaScript API
+## JavaScript API
 
 Hummingbird also provides a JavaScript API for programmatic control of components. For example, you can toggle a modal manually using the API.
 

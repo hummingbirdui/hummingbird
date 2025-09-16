@@ -4,7 +4,7 @@ description: Use Bootstrap’s JavaScript modal plugin to add dialogs to your si
 toc: true
 ---
 
-##### Example
+## Example
 
 <Example class='flex justify-center' code={`<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Demo modal</button>
 
@@ -28,7 +28,7 @@ toc: true
     </div>
   </div>`} />
 
-##### Static backdrop
+## Static backdrop
 
 <Example class='flex justify-center' code={`<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Static backdrop modal</button>
 
@@ -52,7 +52,7 @@ toc: true
     </div>
   </div>`} />
 
-##### Scrolling long content
+## Scrolling long content
 
 When modals become too long for the user’s viewport or device, they scroll independent of the page itself. Try the demo below to see what we mean.
 
@@ -109,7 +109,7 @@ You can also create a scrollable modal that allows scrolling the modal body by a
     ...
   </div>`} />
 
-##### Vertically centered
+## Vertically centered
 
 Add `.modal-dialog-centered` to `.modal-dialog` to vertically center the modal.
 
@@ -172,7 +172,7 @@ Add `.modal-dialog-centered` to `.modal-dialog` to vertically center the modal.
     ...
   </div>`} />
 
-##### Toggle between modals
+## Toggle between modals
 
 <Example class='flex justify-center'
   code={`<div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
@@ -215,7 +215,7 @@ Add `.modal-dialog-centered` to `.modal-dialog` to vertically center the modal.
 
   <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Open first modal</button>`} />
 
-##### Optional sizes
+## Optional sizes
 
 <Example class='flex justify-center flex-wrap gap-2' showMarkup={false}
   code={`<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalXl">Extra Large modal</button>
@@ -288,7 +288,7 @@ Add `.modal-dialog-centered` to `.modal-dialog` to vertically center the modal.
   <div class="modal-dialog modal-lg">...</div>
   <div class="modal-dialog modal-sm">...</div>`} />
 
-##### Fullscreen Modal
+## Fullscreen Modal
 
 <Example class='flex flex-wrap gap-2' showMarkup={false}
   code={`<!-- Full Screen Modal -->
@@ -439,18 +439,18 @@ Add `.modal-dialog-centered` to `.modal-dialog` to vertically center the modal.
     ...
   </div>`} />
 
-##### Usage
+## Usage
 
 The modal plugin controls hidden content, making it visible on demand via data attributes or JavaScript. It also overrides the default scrolling behavior and generates a `.modal-backdrop`. This backdrop provides a clickable area for dismissing visible modals when a click occurs outside the modal itself.
 
-###### Via Data Attributes
-###### Toggle
+### Via Data Attributes
+### Toggle
 To activate a modal without writing JavaScript, set `data-bs-toggle="modal"` on a controlling element, such as a button. Additionally, include a `data-bs-target="#foo"` or `href="#foo"` to specify which modal to toggle.
 
 <Example showPreview={false}
   code={`<button type="button" data-bs-toggle="modal" data-bs-target="#myModal">Launch modal</button>`} />
 
-###### Dismiss
+### Dismiss
 Achieve dismissal with the `data-bs-dismiss` attribute on a button within the modal:
 
 <Example showPreview={false}
@@ -466,7 +466,7 @@ Or use the the additionalon `data-bs-target` on a button outside the modal:
 </div>
 
 
-###### Via JavaScript
+### Via JavaScript
 
 A modal can be created with a single line of JavaScript:
 
@@ -477,7 +477,7 @@ A modal can be created with a single line of JavaScript:
 `} />
 
 
-##### Options
+## Options
 
 Options can be provided through data attributes or via JavaScript. When using `data-bs-attributes`, append the option's name (e.g., `data-bs-animation="{value}"`). It is crucial to convert "camelCase" option names to "kebab-case" when passing options via data attributes. For instance, use `data-bs-custom-class="beautifier"` rather than `data-bs-customClass="beautifier"`.
 

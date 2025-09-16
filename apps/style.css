@@ -25,17 +25,25 @@
   :where(h2, h3, h4, h5, h6)[id] {
     @apply scroll-mt-[var(--anchor-header-offset)] font-medium;
   }
-
-  > h5:not(:first-child) {
+  > h2 {
+    @apply text-2xl;
+  }
+  > h2:not(:first-child) {
     @apply mt-12;
   }
-  > h5 {
+  > h2 {
     &:has(+ :not(p)) {
       @apply mb-4;
     }
   }
-  > h6 {
-    @apply mt-8;
+  > h3 {
+    @apply mt-8 text-xl;
+    &:has(+ :not(p)) {
+      @apply mb-4;
+    }
+  }
+  > h4 {
+    @apply mt-7 text-lg;
     &:has(+ :not(p)) {
       @apply mb-4;
     }
