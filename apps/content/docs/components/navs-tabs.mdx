@@ -151,4 +151,180 @@ The tabs plugin also works with lift nav & color variants.
     <div class="tab-pane fade" id="profile-primary-tab-pane" role="tabpanel" aria-labelledby="profile-primary-tab" tabindex="0">This is some placeholder content the <b>Profile tab’s</b> associated content. Clicking another tab will toggle the visibility of this one for the next.</div>
     <div class="tab-pane fade" id="contact-primary-tab-pane" role="tabpanel" aria-labelledby="contact-primary-tab" tabindex="0">This is some placeholder content the <b>Contact tab’s</b> associated content. Clicking another tab will toggle the visibility of this one for the next.</div>
     <div class="tab-pane fade" id="disabled-primary-tab-pane" role="tabpanel" aria-labelledby="disabled-primary-tab" tabindex="0">Disabled</div>
-  </div>`} />
+  </div>`} 
+/>
+
+
+##### Accessibility
+
+Dynamic tabbed interfaces, as outlined in the <a href="https://www.w3.org/WAI/ARIA/apg/patterns/tabs/">ARIA Authoring Practices Guide tabs pattern</a>, require `role="tablist"`, `role="tab"`, `role="tabpanel"`, and additional aria- attributes. These are essential for conveying their structure, functionality, and current state to users of assistive technologies, such as screen readers. As a recommended practice, using `<button>` elements for tabs is advisable, as these function as controls that trigger a dynamic change, rather than links that navigate to new pages or locations.
+
+In adherence to the ARIA Authoring Practices pattern, only the currently active tab receives keyboard focus. Upon initialization of the JavaScript plugin, it sets `tabindex="-1"` on all inactive tab controls. Once the active tab has focus, the cursor keys activate the previous or next tab. The Home and End keys activate the first and last tabs, respectively. The plugin adjusts the <a href="https://www.w3.org/WAI/ARIA/apg/practices/keyboard-interface/">roving tabindex</a> accordingly. However, it is important to note that the JavaScript plugin does not differentiate between horizontal and vertical tab lists regarding cursor key interactions: irrespective of the tab list’s orientation, both the up and left cursor keys navigate to the previous tab, and the down and right cursor keys navigate to the next tab.
+
+<div class="mb-3 alert alert-subtle-warning items-start" role="alert">
+  <span class="icon-[material-symbols--info-outline] alert-icon"></span>
+  <span class="-mt-1">Generally, to enhance keyboard navigation, it is recommended to make the tab panels themselves focusable, unless the first element containing meaningful content within the tab panel is already focusable. The JavaScript plugin does not handle this aspect; where appropriate, tab panels will need to be explicitly made focusable by adding `tabindex="0"` in the markup.</span>
+</div>
+
+<div class="alert alert-subtle-danger items-start" role="alert">
+  <span class="icon-[material-symbols--error-outline-rounded] alert-icon"></span>
+  <span class="-mt-1">The tab JavaScript plugin **does not** support tabbed interfaces that incorporate dropdown menus, as these introduce both usability and accessibility challenges. From a usability standpoint, the fact that the currently displayed tab's trigger element is not immediately visible (as it is inside a closed dropdown menu) can lead to confusion. From an accessibility perspective, there is currently no practical way to map this type of structure to a standard WAI ARIA pattern, which means it cannot be easily understood by users of assistive technologies.</span>
+</div>
+
+
+###### Using Data Attributes
+
+A tab or pill navigation can be activated without writing any JavaScript by simply specifying `data-bs-toggle="tab"` or `data-bs-toggle="pill"` on an element. These data attributes should be used on `.nav-tabs` or `.nav-pills` elements.
+
+<Example code={`
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Home</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Profile</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="messages-tab" data-bs-toggle="tab" data-bs-target="#messages" type="button" role="tab" aria-controls="messages" aria-selected="false">Messages</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="settings-tab" data-bs-toggle="tab" data-bs-target="#settings" type="button" role="tab" aria-controls="settings" aria-selected="false">Settings</button>
+    </li>
+  </ul>
+
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div class="tab-pane active" id="home" role="tabpanel" aria-labelledby="home-tab" tabindex="0"></div>
+    <div class="tab-pane" id="profile" role="tabpanel" aria-labelledby="profile-tab" tabindex="0"></div>
+    <div class="tab-pane" id="messages" role="tabpanel" aria-labelledby="messages-tab" tabindex="0"></div>
+    <div class="tab-pane" id="settings" role="tabpanel" aria-labelledby="settings-tab" tabindex="0"></div>
+  </div>`} 
+/>
+
+###### Via JavaScript
+
+Tabbable tabs can be enabled via JavaScript (each tab requires individual activation):
+
+<Example showPreview={false} lang='js'
+  code={`const triggerTabList = document.querySelectorAll('#myTab button')
+  triggerTabList.forEach(triggerEl => {
+    const tabTrigger = new hummingbird.Tab(triggerEl)
+
+    triggerEl.addEventListener('click', event => {
+      event.preventDefault()
+      tabTrigger.show()
+    })
+  })`} 
+/>
+
+Individual tabs can be activated in several ways:
+
+<Example showPreview={false} lang='js'
+  code={`const triggerEl = document.querySelector('#myTab button[data-bs-target="#profile"]')
+  bootstrap.Tab.getInstance(triggerEl).show() // Select tab by name
+
+  const triggerFirstTabEl = document.querySelector('#myTab li:first-child button')
+  bootstrap.Tab.getInstance(triggerFirstTabEl).show() // Select first tab`} 
+/>
+
+##### Fade Effect
+
+To incorporate a `fade-in` effect for tabs, add `.fade` to each `.tab-pane`. The initial tab pane must also include `.show` to ensure its content is visible from the start.
+
+<Example showPreview={false}
+  code={`<div class="tab-content">
+    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab" tabindex="0">...</div>
+    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">...</div>
+    <div class="tab-pane fade" id="messages" role="tabpanel" aria-labelledby="messages-tab" tabindex="0">...</div>
+    <div class="tab-pane fade" id="settings" role="tabpanel" aria-labelledby="settings-tab" tabindex="0">...</div>
+</div>`} 
+/>
+
+##### Methods
+
+All API methods are asynchronous and initiate a transition. They return to the caller immediately after the transition begins but before it concludes. Furthermore, a method call on a component that is already transitioning will be disregarded. More information is available in our JavaScript documentation.
+
+These methods enable content as a tab element.
+
+A tab instance can be created with the constructor, as demonstrated:
+
+<Example showPreview={false} lang='js'
+  code={`const bsTab = new hummingbird.Tab('#myTab')`} 
+/>
+
+<HbTable>
+  <thead>
+    <tr>
+      <th scope="col">Method</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">`dispose`</th>
+      <td>Destroys an element's tab functionality.</td>
+    </tr>
+    <tr>
+      <th scope="row">`getInstance`</th>
+      <td>A static method allowing retrieval of the tab instance associated with a DOM element. Usage: `hummingbird.Tab.getInstance(element)`.</td>
+    </tr>
+    <tr>
+      <th scope="row">`getOrCreateInstance`</th>
+      <td>A static method that returns an existing tab instance for a DOM element or creates a new one if it has not been initialized. Usage: `hummingbird.Tab.getOrCreateInstance(element)`.</td>
+    </tr>
+    <tr>
+      <th scope="row">`show`</th>
+      <td>Selects the specified tab and displays its associated pane. Any other tab that was previously selected becomes unselected, and its associated pane is hidden. It returns to the caller before the tab pane has actually been shown (i.e., before the `shown.bs.tab` event occurs).</td>
+    </tr>
+  </tbody>
+</HbTable>
+
+##### Events
+
+When a new tab is displayed, the events fire in the following sequence:
+
+- `hide.bs.tab` (on the currently active tab)
+- `show.bs.tab` (on the tab scheduled to be shown)
+- `hidden.bs.tab` (on the previously active tab, the same as for the hide.bs.tab event)
+- `shown.bs.tab` (on the newly active, just-shown tab, the same as for the show.bs.tab event)
+
+If no tab was previously active, the `hide.bs.tab` and `hidden.bs.tab` events will not fire.
+
+<HbTable>
+  <thead>
+    <tr>
+      <th scope="col">Event Type</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">`hide.bs.tab`</th>
+      <td>This event fires when a new tab is about to be shown (and thus the previous active tab is about to be hidden). Use `event.target` and `event.relatedTarget` to target the current active tab and the new soon-to-be-active tab, respectively.</td>
+    </tr>
+    <tr>
+      <th scope="row">`hidden.bs.tab`</th>
+      <td>This event fires after a new tab is shown (and thus the previous active tab is hidden). Use `event.target` and `event.relatedTarget` to target the previous active tab and the new active tab, respectively.</td>
+    </tr>
+    <tr>
+      <th scope="row">`show.bs.tab`</th>
+      <td> This event fires upon a tab show, but before the new tab has actually been displayed. Use `event.target` and `event.relatedTarget` to target the active tab and the previous active tab (if available), respectively.</td>
+    </tr>
+    <tr>
+      <th scope="row">`shown.bs.tab`</th>
+      <td>This event fires upon a tab show, after a tab has been displayed. Use `event.target` and `event.relatedTarget` to target the active tab and the previous active tab (if available), respectively.</td>
+    </tr>
+  </tbody>
+</HbTable>
+
+Example event listener:
+
+<Example showPreview={false} lang='js'
+  code={`const tabEl = document.querySelector('button[data-bs-toggle="tab"]')
+  tabEl.addEventListener('shown.bs.tab', event => {
+    event.target // newly activated tab
+    event.relatedTarget // previous active tab
+  })`}
+/>
+
