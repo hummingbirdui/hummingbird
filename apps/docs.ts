@@ -1,3 +1,20 @@
+import docsearch from '@docsearch/js';
+
+docsearch({
+  container: '#docsearch',
+  appId: '07LKLL0LSI',
+  indexName: 'humming_docs',
+  apiKey: '9b81cd758669ab6de5219db657938910',
+  placeholder: 'Search',
+});
+docsearch({
+  container: '#docsearch-mobile',
+  appId: '07LKLL0LSI',
+  indexName: 'humming_docs',
+  apiKey: '9b81cd758669ab6de5219db657938910',
+  placeholder: 'Search',
+});
+
 type Theme = 'dark' | 'light';
 
 const toggleTheme = (theme: Theme) => {

@@ -16,7 +16,7 @@ interface ClassTableRow {
   <div class="px-6 sm:px-10">
     <div class="lg:grid lg:grid-cols-[15rem_1fr] max-w-8xl mx-auto h-full">
       <Sidebar />
-      <div class=`xl:grid ${toc ? 'lg:grid-cols-[1fr_16.75rem]' : ''}`>
+      <main class=`content-wrapper xl:grid ${toc ? 'lg:grid-cols-[1fr_16.75rem]' : ''}`>
         <div class="py-10 lg:ps-10 xl:pe-10">
           <h3 class="mb-4">{title}</h3>
           <p class="text-xl mb-10 font-light">{description}</p>
@@ -133,7 +133,7 @@ interface ClassTableRow {
             </div>
           )
         }
-      </div>
+      </main>
     </div>
   </div>
 </BaseLayout>
