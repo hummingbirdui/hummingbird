@@ -438,3 +438,80 @@ Add `.modal-dialog-centered` to `.modal-dialog` to vertically center the modal.
   <div class="modal-dialog modal-fullscreen-sm-down">
     ...
   </div>`} />
+
+##### Usage
+
+The modal plugin controls hidden content, making it visible on demand via data attributes or JavaScript. It also overrides the default scrolling behavior and generates a `.modal-backdrop`. This backdrop provides a clickable area for dismissing visible modals when a click occurs outside the modal itself.
+
+###### Via Data Attributes
+###### Toggle
+To activate a modal without writing JavaScript, set `data-bs-toggle="modal"` on a controlling element, such as a button. Additionally, include a `data-bs-target="#foo"` or `href="#foo"` to specify which modal to toggle.
+
+<Example showPreview={false}
+  code={`<button type="button" data-bs-toggle="modal" data-bs-target="#myModal">Launch modal</button>`} />
+
+###### Dismiss
+Achieve dismissal with the `data-bs-dismiss` attribute on a button within the modal:
+
+<Example showPreview={false}
+  code={`<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+`} />
+
+Or use the the additionalon `data-bs-target` on a button outside the modal:
+
+<div class="bg-[#3b2f00] border-l-4 border-[#d4a017] text-[#ffd966] p-4 [&>p]:m-0">
+  While both ways to dismiss a modal are supported, keep in mind that dismissing from outside a modal 
+  does not match the <a href="https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/" class="text-[#4ea3ff]">
+    ARIA Authoring Practices Guide dialog (modal) pattern</a>. Do this at your own risk.
+</div>
+
+
+###### Via JavaScript
+
+A modal can be created with a single line of JavaScript:
+
+<Example showPreview={false} lang='js'
+  code={`const myModal = new hummingbird.Modal(document.getElementById('myModal'), options)
+  // or
+  const myModalAlternative = new hummingbird.Modal('#myModal', options)
+`} />
+
+
+##### Options
+
+Options can be provided through data attributes or via JavaScript. When using `data-bs-attributes`, append the option's name (e.g., `data-bs-animation="{value}"`). It is crucial to convert "camelCase" option names to "kebab-case" when passing options via data attributes. For instance, use `data-bs-custom-class="beautifier"` rather than `data-bs-customClass="beautifier"`.
+
+As of Bootstrap 5.2.0, all components support an experimental `data-bs-config` data attribute. This attribute can contain simple component configurations as a JSON string. If an element has both `data-bs-config='{"delay":0, "title":123}'` and `data-bs-title="456"` attributes, the final title value will be 456, as separate data attributes override values provided within `data-bs-config`. Additionally, existing data attributes can also house JSON values, such as `data-bs-delay='{"show":0,"hide":150}'`.
+
+The ultimate configuration object results from merging `data-bs-config`, individual `data-bs-attributes`, and JavaScript objects, where the latest provided key-value pair takes precedence over others.
+
+<HbTable>
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Type</th>
+      <th scope="col">Default</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td scope="row">`backdrop`</td>
+      <td scope="row">boolean | 'static'</td>
+      <td scope="row">`true`</td>
+      <td scope="row">Determines whether a modal-backdrop element is included. Alternatively, specifying `static` creates a backdrop that does not close the modal when clicked.</td>
+    </tr>
+    <tr>
+      <td scope="row">`focus`</td>
+      <td scope="row">boolean</td>
+      <td scope="row">`true`</td>
+      <td scope="row">When initialized, this option places focus on the modal.</td>
+    </tr>
+    <tr>
+      <td scope="row">`keyboard`</td>
+      <td scope="row">boolean</td>
+      <td scope="row">`true`</td>
+      <td scope="row">This option enables closing the modal when the escape key is pressed.</td>
+    </tr>
+  </tbody>
+</HbTable>

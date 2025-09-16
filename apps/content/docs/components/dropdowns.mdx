@@ -214,3 +214,192 @@ While `<button>` is the recommended control for a dropdown toggle, there might b
       <li><a class="dropdown-item" href="#">Menu item</a></li>
     </ul>
   </div>`} />
+
+##### Usage
+
+Through either data attributes or JavaScript, the dropdown plugin manages hidden content (dropdown menus) by toggling the `.show` class on the parent `.dropdown-menu`. The `data-bs-toggle="dropdown"` attribute is essential for closing dropdown menus at an application level, making its consistent use advisable.
+
+On touch-enabled devices, opening a dropdown introduces temporary, empty mouseover handlers to the immediate children of the `<body>` element. This measure addresses an iOS event delegation quirk that would otherwise prevent a tap outside the dropdown from triggering the code responsible for closing it. Once the dropdown is closed, these additional mouseover handlers are removed.
+
+###### Via Data Attributes
+
+To toggle a dropdown, add `data-bs-toggle="dropdown"` to a link or button:
+
+<Example showPreview={false} lang='html' 
+  code={`<div class="dropdown">
+    <button type="button" data-bs-toggle="dropdown" aria-expanded="false">
+      Dropdown trigger
+    </button>
+    <ul class="dropdown-menu">
+      ...
+    </ul>
+</div>`} />
+
+###### Via JavaScript
+
+Dropdowns require `data-bs-toggle="dropdown"` on their trigger element, regardless of whether they are called via JavaScript or the data-api.
+
+Dropdowns can be called via JavaScript as follows:
+<Example showPreview={false} lang='js' 
+  code={`const dropdownElementList = document.querySelectorAll('.dropdown-toggle')
+const dropdownList = [...dropdownElementList].map(dropdownToggleEl => new hummingbird.Dropdown(dropdownToggleEl))
+`} />
+
+##### Options
+
+Options can be provided through data attributes or via JavaScript. When using `data-bs-attributes`, append the option's name (e.g., `data-bs-animation="{value}"`). It is crucial to convert "camelCase" option names to "kebab-case" when passing options via data attributes. For instance, use `data-bs-custom-class="beautifier"` rather than `data-bs-customClass="beautifier"`.
+
+As of Bootstrap 5.2.0, all components support an experimental `data-bs-config` data attribute. This attribute can contain simple component configurations as a JSON string. If an element has both `data-bs-config='{"delay":0, "title":123}'` and `data-bs-title="456"` attributes, the final title value will be 456, as separate data attributes override values provided within data-bs-config. Additionally, existing data attributes can also house JSON values, such as `data-bs-delay='{"show":0,"hide":150}'`.
+
+The ultimate configuration object results from merging `data-bs-config`, individual `data-bs-attributes`, and JavaScript objects, where the latest provided key-value pair takes precedence over others.
+
+<HbTable>
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Type</th>
+      <th scope="col">Default</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td scope="row">`autoClose`</td>
+      <td scope="row">boolean | string</td>
+      <td scope="row">`true`</td>
+      <td scope="row">
+        Configures the dropdown's auto-close behavior:
+        <ul>
+          <li><code>true</code> – The dropdown will close when clicking either outside or inside the dropdown menu.</li>
+          <li><code>false</code> – The dropdown will close only by clicking the toggle button or by manually calling the hide or toggle method. (It will also not close by pressing the Esc key.)</li>
+          <li><code>'inside'</code> – The dropdown will close only by clicking inside the dropdown menu.</li>
+          <li><code>'outside'</code> – The dropdown will close only by clicking outside the dropdown menu.</li>
+        </ul>
+        <p><strong>Note:</strong> The dropdown can always be closed with the Esc key.</p>
+      </td>
+    </tr>
+    <tr>
+      <td scope="row">`boundary`</td>
+      <td scope="row">string | element</td>
+      <td scope="row">`'clippingParents'`</td>
+      <td scope="row">Defines the overflow constraint boundary for the dropdown menu (this applies only to Popper's preventOverflow modifier). By default, it is `clippingParents` and can accept an HTMLElement reference (via JavaScript only). For more information, refer to Popper's <a href="https://popper.js.org/docs/v2/utils/detect-overflow/#boundary">detectOverflow docs</a>.</td>
+    </tr>
+     <tr>
+      <td scope="row">`display`</td>
+      <td scope="row">string</td>
+      <td scope="row">`'dynamic'`</td>
+      <td scope="row">By default, Popper is used for dynamic positioning. This can be disabled by setting the value to `static`.</td>
+    </tr>
+     <tr>
+      <td scope="row">`offset`</td>
+      <td scope="row">array | string | function</td>
+      <td scope="row">`[0, 2]`</td>
+      <td scope="row">Determines the offset of the dropdown relative to its target. A string with comma-separated values, such as `data-bs-offset="10,20"`, can be passed in data attributes. When a function is used to define the offset, it receives an object (containing the Popper placement, reference, and Popper rects) as its first argument, and the triggering element's DOM node as the second. The function must return an array with two numbers: <a href="https://popper.js.org/docs/v2/modifiers/offset/#skidding-1">skidding</a> and <a href="https://popper.js.org/docs/v2/modifiers/offset/#distance-1">distance</a>. For more information, refer to Popper's <a href="https://popper.js.org/docs/v2/modifiers/offset/#options">offset documentation</a>.</td>
+    </tr>
+     <tr>
+      <td scope="row">`popperConfig`</td>
+      <td scope="row">null | object | function</td>
+      <td scope="row">`null`</td>
+      <td scope="row">Allows modification of Bootstrap's default Popper configuration. Refer to <a href="https://popper.js.org/docs/v2/constructors/#options">Popper's configuration</a> documentation. When a function is used to create the Popper configuration, it is called with an object containing Bootstrap's default Popper configuration. This facilitates using and merging the default configuration with custom settings. The function must return a configuration object for Popper.</td>
+    </tr>
+     <tr>
+      <td scope="row">`reference`</td>
+      <td scope="row">string | element | object</td>
+      <td scope="row">`'toggle'`</td>
+      <td scope="row">Specifies the reference element for the dropdown menu. It accepts values of 'toggle', 'parent', an HTMLElement reference, or an object that provides getBoundingClientRect. For further details, refer to Popper's <a href="https://popper.js.org/docs/v2/constructors/#createpopper">constructor</a> and <a href="https://popper.js.org/docs/v2/virtual-elements/">virtual element</a> documentation.</td>
+    </tr>
+  </tbody>
+</HbTable>
+
+Using function with `popperConfig`:
+
+<Example showPreview={false} lang='js' 
+  code={`const dropdown = new bootstrap.Dropdown(element, {
+    popperConfig(defaultBsPopperConfig) {
+      // const newPopperConfig = {...}
+      // use defaultBsPopperConfig if needed...
+      // return newPopperConfig
+    }
+})`} />
+
+##### Methods
+
+<HbTable>
+  <thead>
+    <tr>
+      <th scope="col">Method</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">`dispose`</th>
+      <td>Destroys an element's dropdown functionality, removing stored data on the DOM element.</td>
+    </tr>
+    <tr>
+      <th scope="row">`getInstance`</th>
+      <td> A static method allowing retrieval of the dropdown instance associated with a DOM element. Usage: `hummingbird.Dropdown.getInstance(element)`.</td>
+    </tr>
+    <tr>
+      <th scope="row">`getOrCreateInstance`</th>
+      <td>A static method that returns an existing dropdown instance for a DOM element or creates a new one if it has not been initialized. Usage: `hummingbird.Dropdown.getOrCreateInstance(element)`.</td>
+    </tr>
+    <tr>
+      <th scope="row">`hide`</th>
+      <td>Conceals the dropdown menu within a given navbar or tabbed navigation.</td>
+    </tr>
+    <tr>
+      <th scope="row">`show`</th>
+      <td>Displays the dropdown menu within a given navbar or tabbed navigation.</td>
+    </tr>
+    <tr>
+      <th scope="row">`toggle`</th>
+      <td>Toggles the dropdown menu within a given navbar or tabbed navigation.</td>
+    </tr>
+    <tr>
+      <th scope="row">`update`</th>
+      <td>Updates the position of an element's dropdown.</td>
+    </tr>
+  </tbody>
+</HbTable>
+
+
+##### Events
+
+All dropdown events are dispatched at the toggling element and then propagate upwards (bubble). Therefore, event listeners can also be added to the `.dropdown-menu`'s parent element. The `hide.bs.dropdown` and `hidden.bs.dropdown` events include a clickEvent property (only when the original Event type is click) which contains an Event object for the click event.
+
+<HbTable>
+  <thead>
+    <tr>
+      <th scope="col">Method</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">`hide.bs.dropdown`</th>
+      <td>This event fires immediately when the `hide` instance method has been called.</td>
+    </tr>
+    <tr>
+      <th scope="row">`hidden.bs.dropdown`</th>
+      <td>This event fires when the dropdown has finished being hidden from the user and CSS transitions have completed.</td>
+    </tr>
+    <tr>
+      <th scope="row">`show.bs.dropdown`</th>
+      <td>This event fires immediately when the `show` instance method is called.</td>
+    </tr>
+    <tr>
+      <th scope="row">`shown.bs.dropdown`</th>
+      <td>This event fires when the dropdown has been made visible to the user and CSS transitions have completed.</td>
+    </tr>
+  </tbody>
+</HbTable>
+
+Example event listener:
+
+<Example showPreview={false} lang='js' 
+  code={`const myDropdown = document.getElementById('myDropdown')
+  myDropdown.addEventListener('show.bs.dropdown', event => {
+    // do something...
+  })
+`} />

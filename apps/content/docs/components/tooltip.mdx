@@ -26,3 +26,44 @@ Elements with the disabled attribute aren’t interactive, meaning users cannot 
 <Example class='text-center' code={`<span class='inline-block' tabindex="0" data-bs-toggle="tooltip" data-bs-title="Disabled tooltip">
     <button class="btn btn-primary" type="button" disabled >Disabled button</button>
   </span>`} />
+
+
+##### Usage
+
+The tooltip plugin dynamically generates content and markup. By default, tooltips are positioned after their trigger element. A tooltip can be triggered via JavaScript as follows:
+
+<Example showPreview={false} lang='js' code={`const exampleEl = document.getElementById('example')
+const tooltip = new bootstrap.Tooltip(exampleEl, options)
+`} />
+
+<div class="alert alert-subtle-warning items-start" role="alert">
+  <span class="icon-[material-symbols--info-outline] alert-icon"></span>
+  <div class="-mt-1">
+    <span>Tooltips automatically attempt to adjust their positions when a parent container has `overflow: auto` or `overflow: scroll`, while still maintaining the original placement's positioning. The boundary option (used for the flip modifier via the `popperConfig` option) can be set to any HTMLElement to override the default value, `'clippingParents'`, such as `document.body`:</span>
+    <Example showPreview={false} lang='js' code={`const tooltip = new bootstrap.Tooltip('#example', {
+    boundary: document.body // or document.querySelector('#boundary')
+  })`} />
+  </div>
+</div>
+
+##### Markup
+
+The essential markup for a tooltip includes only a `data` attribute and a `title` attribute on the HTML element intended to have a tooltip. The generated markup for a tooltip is relatively simple, though it requires a position (by default, set to `top` by the plugin).
+
+<div class="alert alert-subtle-warning items-start mb-3" role="alert">
+  <span class="icon-[material-symbols--info-outline] alert-icon"></span>
+  <span class="-mt-1">**To ensure tooltips are accessible to keyboard and assistive technology users**, they should only be added to HTML elements that are inherently keyboard-focusable and interactive (such as links or form controls). While other HTML elements can be made focusable by adding `tabindex="0"`, this can create disruptive and confusing tab stops on non-interactive elements for keyboard users. Most assistive technologies currently do not announce tooltips in such situations. Furthermore, avoid relying solely on hover as the trigger for tooltips, as this will make them inaccessible to keyboard users.</span>
+</div>
+
+<Example showPreview={false} code={`<!-- HTML to write -->
+  <a href="#" data-bs-toggle="tooltip" data-bs-title="Some tooltip text!">Hover over me</a>
+
+  <!-- Generated markup by the plugin -->
+  <div class="tooltip bs-tooltip-auto" role="tooltip">
+    <div class="tooltip-arrow"></div>
+    <div class="tooltip-inner">
+      Some tooltip text!
+    </div>
+  </div>`} />
+
+
