@@ -199,3 +199,7 @@
   --docsearch-muted-color: var(--text-color-subtle);
   @apply text-subtle!;
 }
+.DocSearch-Hits mark {
+  --docsearch-hit-active-color: var(--color-primary);
+  --docsearch-highlight-color: var(--color-primary);
+}
