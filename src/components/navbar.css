@@ -24,7 +24,7 @@
     > .lg\:container,
     > .xl\:container,
     > .\32xl\:container {
-      @apply flex flex-wrap items-center justify-between mx-auto w-full;
+      @apply flex flex-wrap items-center justify-between;
     }
   }
 }
