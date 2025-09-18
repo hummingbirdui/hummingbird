@@ -119,6 +119,12 @@
   --input-hover-border-color: var(--text-color-subtle);
   --input-focus-border-color: var(--color-primary);
   --input-disabled-border-color: var(--border-color-base);
+
+  /* bootstrap grid */
+  --grid-gutter-x: 1.5rem;
+  --grid-gutter-y: 0px;
+  --grid-columns: 12;
+  --grid-row-columns: 6;
 }
 
 @layer {
