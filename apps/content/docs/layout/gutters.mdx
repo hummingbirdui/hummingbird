@@ -1,0 +1,112 @@
+---
+title: Gutters
+description: Gutters are the spaces between columns in the Bootstrap Grid system, used to create consistent spacing and alignment.
+toc: true
+---
+
+## Horizontal gutters
+
+Use the `.gx-{size}` classes to set horizontal gutters between columns.
+
+<Example class="example-cols"
+  code={`<div class="container text-center overflow-hidden">
+    <div class="row gx-12">
+      <div class="col">
+        <div>Custom column padding</div>
+      </div>
+      <div class="col">
+        <div>Custom column padding</div>
+      </div>
+    </div>
+  </div>`} />
+
+## Vertical gutters
+
+Use the `.gy-{size}` classes to set vertical gutters between rows.
+
+<Example class="example-cols"
+  code={`<div class="container text-center">
+    <div class="row gy-12">
+      <div class="col-6">
+        <div>Custom column padding</div>
+      </div>
+      <div class="col-6">
+        <div>Custom column padding</div>
+      </div>
+      <div class="col-6">
+        <div>Custom column padding</div>
+      </div>
+      <div class="col-6">
+        <div>Custom column padding</div>
+      </div>
+    </div>
+  </div>`} />
+
+## Horizontal & vertical gutters
+
+Use the `.g-{size}` classes to set both horizontal and vertical gutters.
+
+<Example class="example-cols"
+  code={`<div class="container text-center">
+    <div class="row g-3">
+      <div class="col-6">
+        <div>Custom column padding</div>
+      </div>
+      <div class="col-6">
+        <div>Custom column padding</div>
+      </div>
+      <div class="col-6">
+        <div>Custom column padding</div>
+      </div>
+      <div class="col-6">
+        <div>Custom column padding</div>
+      </div>
+    </div>
+  </div>`} />
+
+## Row columns gutters
+
+Gutter classes can be combined with `.row-cols-{number}` classes to create gutters between rows and columns.
+
+<Example class="example-cols"
+  code={`<div class="container text-center">
+    <div class="row row-cols-2 lg:row-cols-3 g-3">
+      <div class="col">
+        <div>Row column</div>
+      </div>
+      <div class="col">
+        <div>Row column</div>
+      </div>
+      <div class="col">
+        <div>Row column</div>
+      </div>
+      <div class="col">
+        <div>Row column</div>
+      </div>
+      <div class="col">
+        <div>Row column</div>
+      </div>
+      <div class="col">
+        <div>Row column</div>
+      </div>
+    </div>
+  </div>`} />
+
+## No gutters
+
+Apply the `.g-0` class to remove all gutters between rows and columns. This removes the padding from the immediate children `.col-{size}` and negative margins from `.row`.
+
+<Example class="example-row"
+  code={`<div class="row g-0 text-center">
+    <div class="md:col-6 md:col-8">.md:col-6 .md:col-8</div>
+    <div class="col-6 md:col-4">.col-6 .md:col-4</div>
+  </div>`}/>
+
+## Change gutter width
+
+Gutters are set to `1.5rem` (24px) by default. To change the gutter width, override the CSS variables in your own stylesheet.
+
+```sass
+--grid-gutter-x: 1.5rem;
+--grid-gutter-y: 0px;
+```
