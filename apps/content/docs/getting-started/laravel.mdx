@@ -1,0 +1,88 @@
+---
+title: Laravel
+description: This guide explains how to set up Hummingbird with Laravel using Tailwind CSS. It covers project setup, configuration, and usage so you can quickly build and style components in your Laravel app.
+toc: true
+---
+
+## Installation
+
+#### 1. Install Tailwind CSS
+
+Follow the <a href="https://tailwindcss.com/docs/installation/framework-guides/laravel" target="_blank" rel="noopener noreferrer">official installation guide</a> to install Tailwind CSS in your Laravel project.
+
+#### 2. Install Hummingbird
+
+Install Hummingbird via your preferred package manager:
+
+<Example lang='bash' showPreview={false} code={`npm install @hummingbirdui/hummingbird`} />
+
+#### 3. Import CSS
+
+Import Hummingbird styles in your main CSS file (e.g., `app.css`).
+
+<Example lang='css' showPreview={false} 
+  code={`@import "tailwindcss";
+  @import "@hummingbirdui/hummingbird";
+
+  @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+  @source '../../storage/framework/views/*.php';
+  @source '../**/*.blade.php';
+  @source '../**/*.js';`} />
+
+#### 4. Initialize JS plugins
+
+Import all of the Hummingbird scripts in your main JavaScript file (e.g., `app.js`).
+<Example lang='js' showPreview={false}
+  code={`import "@hummingbirdui/hummingbird";`} />
+
+**Using Bundle**
+
+Include Hummingbird javascript at the end of your blade layotu file.
+
+<Example lang='html' showPreview={false} 
+  code={`<script src="../path/to/@hummingbirdui/hummingbird/dist/hummingbird.bundle.min.js"></script>`} />
+
+
+## Optimization
+
+reduce the final bundle size, you can import only the specific JavaScript plugins you need. The below example demonstrates how to import only the `modal` script.
+
+<Example lang='js' showPreview={false} 
+  code={`// import "@hummingbirdui/hummingbird/lib/esm/scripts/alert";
+  // import "@hummingbirdui/hummingbird/lib/esm/scripts/button";
+  // import "@hummingbirdui/hummingbird/lib/esm/scripts/carousel";
+  // import "@hummingbirdui/hummingbird/lib/esm/scripts/collapse";
+  // import "@hummingbirdui/hummingbird/lib/esm/scripts/dropdown";
+  import "@hummingbirdui/hummingbird/lib/esm/scripts/modal";
+  // import "@hummingbirdui/hummingbird/lib/esm/scripts/offcanvas";
+  // import "@hummingbirdui/hummingbird/lib/esm/scripts/popover";
+  // import "@hummingbirdui/hummingbird/lib/esm/scripts/scrollspy";
+  // import "@hummingbirdui/hummingbird/lib/esm/scripts/tab";
+  // import "@hummingbirdui/hummingbird/lib/esm/scripts/toast";
+  // import "@hummingbirdui/hummingbird/lib/esm/scripts/tooltip";
+`} />
+
+## JavaScript API
+
+Hummingbird also provides a JavaScript API for programmatic control of components. For example, you can toggle a modal manually using the API.
+
+Here’s how to initialize and use the [Modal](/docs/components/modal) component:
+
+<Example lang='js' showPreview={false} 
+  code={`import { Modal } from '@hummingbirdui/hummingbird';
+  
+  document.addEventListener("DOMContentLoaded", function () {
+    const myModal = new Modal(document.getElementById("myModal"));
+
+    document
+      .getElementById("openModalButton")
+      .addEventListener("click", function () {
+        myModal.show();
+      });
+
+    document
+      .getElementById("closeModalButton")
+      .addEventListener("click", function () {
+        myModal.hide();
+      });
+  });`} />

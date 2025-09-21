@@ -4,7 +4,7 @@ description: This guide explains how to enable and manage dark mode in a way con
 toc: true
 ---
 
-##### Enable dark mode
+## Enable dark mode
 
 Add the custom variant in your main CSS so Tailwind will apply any dark: utilities inside a .dark scope.
 
@@ -14,7 +14,7 @@ Add the custom variant in your main CSS so Tailwind will apply any dark: utiliti
 
 You will typically add/remove the `.dark` class on the `<html>` element.
 
-##### Set the initial theme
+## Set the initial theme
 
 Add this inline script inside the `<head>` tag to ensure the correct theme is applied before the page renders. This prevents flash issue and respects both the user’s saved preference in localStorage and their system’s `prefers-color-scheme` setting.
 
@@ -29,7 +29,7 @@ Add this inline script inside the `<head>` tag to ensure the correct theme is ap
   </script>`}
 />
 
-##### Theme toggle script
+## Theme toggle script
 
 This script manages switching between light and dark themes. It works by:
 
@@ -81,7 +81,7 @@ This script manages switching between light and dark themes. It works by:
 
 If you do not plan to update the toggle theme button, you can remove the `updateToggleThemeButton` implementation.
 
-##### Toggle button markup (example)
+## Toggle button markup (example)
 
 Use any markup you prefer, this example matches your selectors and hides/shows icons based on the current state.
 
@@ -93,7 +93,7 @@ Use any markup you prefer, this example matches your selectors and hides/shows i
 `}
 />
 
-##### How to use
+## How to use
 
 Hummingbird supports dark mode out of the box, and all components are fully compatible with it. You don’t need to add any extra configuration to enable dark mode styles.
 

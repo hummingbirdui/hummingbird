@@ -77,198 +77,192 @@ export interface Section {
   items: Component[];
 }
 
+export const general: Component[] = [
+  {
+    title: 'Button',
+    url: '/docs/components/buttons',
+    count: 20,
+    image: { light: button, dark: buttonDark },
+  },
+  {
+    title: 'Button Group',
+    url: '/docs/components/button-group',
+    count: 2,
+    image: { light: buttonGroup, dark: buttonGroupDark },
+  },
+  {
+    title: 'Link',
+    url: '/docs/components/link',
+    count: 20,
+    image: { light: link, dark: linkDark },
+  },
+];
+
+export const dataDisplay: Component[] = [
+  {
+    title: 'Avatar',
+    url: '/docs/components/avatar',
+    count: 14,
+    image: { light: avatar, dark: avatarDark },
+  },
+  {
+    title: 'Badge',
+    url: '/docs/components/badge',
+    count: 14,
+    image: { light: badge, dark: badgeDark },
+  },
+  {
+    title: 'Card',
+    url: '/docs/components/card',
+    count: 20,
+    image: { light: card, dark: cardDark },
+  },
+  {
+    title: 'List Group',
+    url: '/docs/components/list-group',
+    count: 10,
+    image: { light: listGroup, dark: listGroupDark },
+  },
+  {
+    title: 'Table',
+    url: '/docs/components/table',
+    count: 20,
+    image: { light: table, dark: tableDark },
+  },
+  {
+    title: 'Tooltip',
+    url: '/docs/components/tooltip',
+    count: 20,
+    image: { light: tooltip, dark: tooltipDark },
+  },
+];
+
+export const dataEntry: Component[] = [
+  {
+    title: 'Checkbox',
+    url: '/docs/components/checkbox',
+    count: 2,
+    image: { light: checkbox, dark: checkboxDark },
+  },
+  {
+    title: 'File Input',
+    url: '/docs/components/file-input',
+    count: 1,
+    image: { light: fileInput, dark: fileInputDark },
+  },
+  {
+    title: 'Floating labels',
+    url: '/docs/components/floating-labels',
+    count: 14,
+    image: { light: floatingLabels, dark: floatingLabelsDark },
+  },
+  {
+    title: 'Form controls',
+    url: '/docs/components/form-controls',
+    count: 14,
+    image: { light: formControls, dark: formControlsDark },
+  },
+  {
+    title: 'Input Group',
+    url: '/docs/components/input-group',
+    count: 10,
+    image: { light: inputGroup, dark: inputGroupDark },
+  },
+  {
+    title: 'Radio',
+    url: '/docs/components/radio',
+    count: 20,
+    image: { light: radio, dark: radioDark },
+  },
+  {
+    title: 'Range',
+    url: '/docs/components/range',
+    count: 2,
+    image: { light: range, dark: rangeDark },
+  },
+  {
+    title: 'Select',
+    url: '/docs/components/select',
+    count: 20,
+    image: { light: select, dark: selectDark },
+  },
+  {
+    title: 'Switch',
+    url: '/docs/components/switch',
+    count: 20,
+    image: { light: swItch, dark: swItchDark },
+  },
+];
+
+export const feedback: Component[] = [
+  {
+    title: 'Alert',
+    url: '/docs/components/alert',
+    count: 3,
+    image: { light: alert, dark: alertDark },
+  },
+  {
+    title: 'Modal',
+    url: '/docs/components/modal',
+    count: 20,
+    image: { light: modal, dark: modalDark },
+  },
+];
+
+export const navigation: Component[] = [
+  {
+    title: 'Accordion',
+    url: '/docs/components/accordion',
+    count: 2,
+    image: { light: accordion, dark: accordionDark },
+  },
+  {
+    title: 'Breadcrumb',
+    url: '/docs/components/breadcrumb',
+    count: 2,
+    image: { light: breadcrumb, dark: breadcrumbDark },
+  },
+  {
+    title: 'Carousel',
+    url: '/docs/components/carousel',
+    count: 2,
+    image: { light: carousel, dark: carouselDark },
+  },
+  {
+    title: 'Collapse',
+    url: '/docs/components/collapse',
+    count: 20,
+    image: { light: collapse, dark: collapseDark },
+  },
+  {
+    title: 'Dropdown',
+    url: '/docs/components/dropdown',
+    count: 20,
+    image: { light: dropdown, dark: dropdownDark },
+  },
+  {
+    title: 'Navs & Tabs',
+    url: '/docs/components/navs-tabs',
+    count: 20,
+    image: { light: navsTabs, dark: navsTabsDark },
+  },
+  {
+    title: 'Navbar',
+    url: '/docs/components/navbar',
+    count: 20,
+    image: { light: navbar, dark: navbarDark },
+  },
+  {
+    title: 'Offcanvas',
+    url: '/docs/components/offcanvas',
+    count: 20,
+    image: { light: offcanvas, dark: offcanvasDark },
+  },
+];
+
 export const components: Section[] = [
   {
-    section: 'General',
-    items: [
-      {
-        title: 'Button',
-        url: '/docs/components/buttons',
-        count: 20,
-        image: { light: button, dark: buttonDark },
-      },
-      {
-        title: 'Button Group',
-        url: '/docs/components/button-group',
-        count: 2,
-        image: { light: buttonGroup, dark: buttonGroupDark },
-      },
-      {
-        title: 'Link',
-        url: '/docs/components/link',
-        count: 20,
-        image: { light: link, dark: linkDark },
-      },
-    ],
-  },
-  {
-    section: 'Data Display',
-    items: [
-      {
-        title: 'Avatar',
-        url: '/docs/components/avatar',
-        count: 14,
-        image: { light: avatar, dark: avatarDark },
-      },
-      {
-        title: 'Badge',
-        url: '/docs/components/badge',
-        count: 14,
-        image: { light: badge, dark: badgeDark },
-      },
-      {
-        title: 'Card',
-        url: '/docs/components/card',
-        count: 20,
-        image: { light: card, dark: cardDark },
-      },
-      {
-        title: 'List Group',
-        url: '/docs/components/list-group',
-        count: 10,
-        image: { light: listGroup, dark: listGroupDark },
-      },
-      {
-        title: 'Table',
-        url: '/docs/components/table',
-        count: 20,
-        image: { light: table, dark: tableDark },
-      },
-      {
-        title: 'Tooltip',
-        url: '/docs/components/tooltip',
-        count: 20,
-        image: { light: tooltip, dark: tooltipDark },
-      },
-    ],
-  },
-  {
-    section: 'Data Entry',
-    items: [
-      {
-        title: 'Checkbox',
-        url: '/docs/components/checkbox',
-        count: 2,
-        image: { light: checkbox, dark: checkboxDark },
-      },
-      {
-        title: 'File Input',
-        url: '/docs/components/file-input',
-        count: 1,
-        image: { light: fileInput, dark: fileInputDark },
-      },
-      {
-        title: 'Floating labels',
-        url: '/docs/components/floating-labels',
-        count: 14,
-        image: { light: floatingLabels, dark: floatingLabelsDark },
-      },
-      {
-        title: 'Form controls',
-        url: '/docs/components/form-controls',
-        count: 14,
-        image: { light: formControls, dark: formControlsDark },
-      },
-      {
-        title: 'Input Group',
-        url: '/docs/components/input-group',
-        count: 10,
-        image: { light: inputGroup, dark: inputGroupDark },
-      },
-      {
-        title: 'Radio',
-        url: '/docs/components/radio',
-        count: 20,
-        image: { light: radio, dark: radioDark },
-      },
-      {
-        title: 'Range',
-        url: '/docs/components/range',
-        count: 2,
-        image: { light: range, dark: rangeDark },
-      },
-      {
-        title: 'Select',
-        url: '/docs/components/select',
-        count: 20,
-        image: { light: select, dark: selectDark },
-      },
-      {
-        title: 'Switch',
-        url: '/docs/components/switch',
-        count: 20,
-        image: { light: swItch, dark: swItchDark },
-      },
-    ],
-  },
-  {
-    section: 'Feedback',
-    items: [
-      {
-        title: 'Alert',
-        url: '/docs/components/alert',
-        count: 3,
-        image: { light: alert, dark: alertDark },
-      },
-      {
-        title: 'Modal',
-        url: '/docs/components/modal',
-        count: 20,
-        image: { light: modal, dark: modalDark },
-      },
-    ],
-  },
-  {
     section: 'Navigation',
-    items: [
-      {
-        title: 'Accordion',
-        url: '/docs/components/accordion',
-        count: 2,
-        image: { light: accordion, dark: accordionDark },
-      },
-      {
-        title: 'Breadcrumb',
-        url: '/docs/components/breadcrumb',
-        count: 2,
-        image: { light: breadcrumb, dark: breadcrumbDark },
-      },
-      {
-        title: 'Carousel',
-        url: '/docs/components/carousel',
-        count: 2,
-        image: { light: carousel, dark: carouselDark },
-      },
-      {
-        title: 'Collapse',
-        url: '/docs/components/collapse',
-        count: 20,
-        image: { light: collapse, dark: collapseDark },
-      },
-      {
-        title: 'Dropdown',
-        url: '/docs/components/dropdown',
-        count: 20,
-        image: { light: dropdown, dark: dropdownDark },
-      },
-      {
-        title: 'Navs & Tabs',
-        url: '/docs/components/navs-tabs',
-        count: 20,
-        image: { light: navsTabs, dark: navsTabsDark },
-      },
-      {
-        title: 'Navbar',
-        url: '/docs/components/navbar',
-        count: 20,
-        image: { light: navbar, dark: navbarDark },
-      },
-      {
-        title: 'Offcanvas',
-        url: '/docs/components/offcanvas',
-        count: 20,
-        image: { light: offcanvas, dark: offcanvasDark },
-      },
-    ],
+    items: [],
   },
 ];

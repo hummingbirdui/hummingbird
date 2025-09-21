@@ -2,33 +2,51 @@
 title: Carousel
 description: A slideshow component for cycling through elements—images or slides of text—like a carousel.
 toc: true
+classNames:
+  component:
+  - class: carousel
+    desc: Carousel
+  inner:
+  - class: carousel-inner
+    desc: Accordion item component
+  - class: carousel-item
+    desc: Accordion header component
+  - class: carousel-control-prev
+    desc: Accordion collapse button
+  - class: carousel-control-next
+    desc: Accordion body component
+  - class: carousel-control-prev-icon
+    desc: previous icon
+  - class: carousel-control-next-icon
+    desc: next icon
 ---
 
-import { Image } from "astro:assets";
-import img1 from "@assets/images/carousel-1.png";
-import img2 from "@assets/images/carousel-2.png";
-import img3 from "@assets/images/carousel-3.png";
-
-##### How It Works
+## How It Works
 - The carousel functions as a slideshow, designed for cycling through various content, whether images, text, or custom markup. Its foundation involves CSS 3D transforms and a small amount of JavaScript. It also incorporates support for previous/next navigation controls and indicators.
-- For optimal performance, carousels require manual initialization using the carousel constructor method. Without this initialization, certain event listeners—specifically those needed for touch and swipe support—will not be registered until a user explicitly activates a control or an indicator.
-- The sole exception to this is autoplaying carousels that include the `data-bs-ride="carousel"` attribute; these are automatically initialized upon page load. If using autoplaying carousels with this data attribute, avoid explicitly initializing those same carousels with the constructor method.
+- For optimal performance, **carousels require manual initialization** using the <a href="#methods">carousel constructor method</a>. Without this initialization, certain event listeners—specifically those needed for touch and swipe support—will not be registered until a user explicitly activates a control or an indicator.
+  
+  The sole exception to this is <a href="#autoplaying-carousels">autoplaying carousels</a> that include the `data-bs-ride="carousel"` attribute; these are automatically initialized upon page load. If using autoplaying carousels with this data attribute, **avoid explicitly initializing those same carousels with the constructor method.**
 - Nested carousels are not supported. Additionally, it is important to note that carousels, in general, can frequently present usability and accessibility challenges.
-- The animation effects of this component are influenced by the prefers-reduced-motion media query. Refer to the reduced motion section within our accessibility documentation for further details.
 
+<div class="alert alert-subtle-info items-start" role="alert">
+  <span class="icon-[material-symbols--info-outline] alert-icon"></span>
+  <span class="-mt-1">The animation effects of this component are influenced by the `prefers-reduced-motion` media query. Refer to the <a href="https://getbootstrap.com/docs/5.3/getting-started/accessibility/#reduced-motion">reduced motion section within our accessibility documentation</a> for further details.</span>
+</div>
 
-##### Basic examples
+## Basic examples
+
+Basic carousel with three slides and prev/next controls. Use `<button>` elements (recommended) or `<a role="button">`
 
 <Example code={`<div id="carouselExample" class="carousel slide">
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="/images/carousel-1.png" class="block w-full" alt="slide-1" />
+        <div class="bg-active/50 h-100 flex items-center justify-center text-4xl text-muted">Slide One</div>
       </div>
       <div class="carousel-item">
-        <img src="/images/carousel-2.png" class="block w-full" alt="slide-2" />
+        <div class="bg-active/60 h-100 flex items-center justify-center text-4xl text-muted">Slide Two</div>
       </div>
       <div class="carousel-item">
-        <img src="/images/carousel-3.png" class="block w-full" alt="slide-3" />
+        <div class="bg-active/40 h-100 flex items-center justify-center text-4xl text-muted">Slide Three</div>
       </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
@@ -41,7 +59,9 @@ import img3 from "@assets/images/carousel-3.png";
     </button>
   </div>`} />
 
-##### Indicators
+## Indicators
+
+Add indicators with prev/next controls to let users jump to specific slides.
 
 <Example code={`<div id="carouselExampleIndicators" class="carousel slide">
     <div class="carousel-indicators">
@@ -51,13 +71,13 @@ import img3 from "@assets/images/carousel-3.png";
     </div>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="/images/carousel-1.png" class="block w-full" alt="slide-1" />
+        <div class="bg-active/50 h-100 flex items-center justify-center text-4xl text-muted">Slide One</div>
       </div>
       <div class="carousel-item">
-        <img src="/images/carousel-2.png" class="block w-full" alt="slide-2" />
+        <div class="bg-active/60 h-100 flex items-center justify-center text-4xl text-muted">Slide Two</div>
       </div>
       <div class="carousel-item">
-        <img src="/images/carousel-3.png" class="block w-full" alt="slide-3" />
+        <div class="bg-active/40 h-100 flex items-center justify-center text-4xl text-muted">Slide Three</div>
       </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -70,7 +90,9 @@ import img3 from "@assets/images/carousel-3.png";
     </button>
   </div>`} />
 
-##### Captions
+## Captions
+
+Add captions with `.carousel-caption` inside any `.carousel-item`. Control their visibility using <a href="https://getbootstrap.com/docs/5.3/utilities/display/">display utility classes</a>: hide them by default with `.d-none`, then show on medium and larger screens with `.d-md-block`. This keeps captions hidden on small devices but visible on bigger ones.
 
 <Example code={`<div id="carouselExampleCaptions" class="carousel slide">
     <div class="carousel-indicators">
@@ -80,21 +102,21 @@ import img3 from "@assets/images/carousel-3.png";
     </div>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="/images/carousel-1.png" class="block w-full" alt="slide-1" />
+        <div class="bg-active/50 h-100 flex items-center justify-center text-4xl text-muted">Slide One</div>
         <div class="carousel-caption hidden md:block">
           <h5 class="text-lg font-semibold mb-0">First slide label</h5>
           <p class="mb-0">Some representative placeholder content for the first slide.</p>
         </div>
       </div>
       <div class="carousel-item">
-        <img src="/images/carousel-2.png" class="block w-full" alt="slide-2" />
+        <div class="bg-active/60 h-100 flex items-center justify-center text-4xl text-muted">Slide Two</div>
         <div class="carousel-caption hidden md:block">
           <h5 class="text-lg font-semibold mb-0">Second slide label</h5>
           <p class="mb-0">Some representative placeholder content for the second slide.</p>
         </div>
       </div>
       <div class="carousel-item">
-        <img src="/images/carousel-3.png" class="block w-full" alt="slide-3" />
+        <div class="bg-active/40 h-100 flex items-center justify-center text-4xl text-muted">Slide Three</div>
         <div class="carousel-caption hidden md:block">
           <h5 class="text-lg font-semibold mb-0">Third slide label</h5>
           <p class="mb-0">Some representative placeholder content for the third slide.</p>
@@ -111,18 +133,20 @@ import img3 from "@assets/images/carousel-3.png";
     </button>
   </div>`} />
 
-##### Crossfade
+## Crossfade
+
+Use `.carousel-fade` to switch from sliding to fading transitions. For certain content (like text-only slides), add `.bg-body` or custom CSS to `.carousel-item` for smoother crossfading.
 
 <Example code={`<div id="carouselExampleFade" class="carousel slide carousel-fade">
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="/images/carousel-1.png" class="block w-full" alt="slide-1" />
+        <div class="bg-active/50 h-100 flex items-center justify-center text-4xl text-muted">Slide One</div>
       </div>
       <div class="carousel-item">
-        <img src="/images/carousel-2.png" class="block w-full" alt="slide-2" />
+        <div class="bg-active/60 h-100 flex items-center justify-center text-4xl text-muted">Slide Two</div>
       </div>
       <div class="carousel-item">
-        <img src="/images/carousel-3.png" class="block w-full" alt="slide-3" />
+        <div class="bg-active/40 h-100 flex items-center justify-center text-4xl text-muted">Slide Three</div>
       </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
@@ -135,18 +159,25 @@ import img3 from "@assets/images/carousel-3.png";
     </button>
   </div>`} />
 
-##### Autoplaying carousels
+## Autoplaying carousels
+
+Enable autoplay by setting `data-bs-ride="carousel"`. By default, it pauses on hover (`pause` option). In browsers with the <a href="https://html.spec.whatwg.org/multipage/interaction.html#page-visibility">Page Visibility API</a>, cycling also stops when the tab isn’t visible (e.g., inactive tab or minimized window).
+
+<div class="mb-5 alert alert-subtle-info items-start" role="alert">
+  <span class="icon-[material-symbols--info-outline] alert-icon"></span>
+  <span class="-mt-1">For accessibility, avoid autoplaying carousels. If you use one, provide a button or control to pause/stop it. see <a href="https://www.w3.org/TR/wcag/#pause-stop-hide">WCAG 2.2 Success Criterion 2.2.2 Pause, Stop, Hide.</a></span>
+</div>
 
 <Example code={`<div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="/images/carousel-1.png" class="block w-full" alt="slide-1" />
+        <div class="bg-active/50 h-100 flex items-center justify-center text-4xl text-muted">Slide One</div>
       </div>
       <div class="carousel-item">
-        <img src="/images/carousel-2.png" class="block w-full" alt="slide-2" />
+        <div class="bg-active/60 h-100 flex items-center justify-center text-4xl text-muted">Slide Two</div>
       </div>
       <div class="carousel-item">
-        <img src="/images/carousel-3.png" class="block w-full" alt="slide-3" />
+        <div class="bg-active/40 h-100 flex items-center justify-center text-4xl text-muted">Slide Three</div>
       </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
@@ -164,13 +195,13 @@ When the `ride` option is set to `true`, rather than `carousel`, the carousel wo
 <Example code={`<div id="carouselExampleRide" class="carousel slide" data-bs-ride="true">
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="/images/carousel-1.png" class="block w-full" alt="slide-1" />
+        <div class="bg-active/50 h-100 flex items-center justify-center text-4xl text-muted">Slide One</div>
       </div>
       <div class="carousel-item">
-        <img src="/images/carousel-2.png" class="block w-full" alt="slide-2" />
+        <div class="bg-active/60 h-100 flex items-center justify-center text-4xl text-muted">Slide Two</div>
       </div>
       <div class="carousel-item">
-        <img src="/images/carousel-3.png" class="block w-full" alt="slide-3" />
+        <div class="bg-active/40 h-100 flex items-center justify-center text-4xl text-muted">Slide Three</div>
       </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="prev">
@@ -183,20 +214,20 @@ When the `ride` option is set to `true`, rather than `carousel`, the carousel wo
     </button>
   </div>`} />
 
-##### Individual `.carousel-item` interval
+## Individual interval
 
 Add `data-bs-interval=""` to a `.carousel-item` to change the amount of time to delay between automatically cycling to the next item.
 
 <Example code={`<div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active" data-bs-interval="10000">
-        <img src="/images/carousel-1.png" class="block w-full" alt="slide-1" />
+        <div class="bg-active/50 h-100 flex items-center justify-center text-4xl text-muted">Slide One</div>
       </div>
       <div class="carousel-item" data-bs-interval="2000">
-        <img src="/images/carousel-2.png" class="block w-full" alt="slide-2" />
+        <div class="bg-active/60 h-100 flex items-center justify-center text-4xl text-muted">Slide Two</div>
       </div>
       <div class="carousel-item">
-        <img src="/images/carousel-3.png" class="block w-full" alt="slide-3" />
+        <div class="bg-active/40 h-100 flex items-center justify-center text-4xl text-muted">Slide Three</div>
       </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
@@ -209,36 +240,38 @@ Add `data-bs-interval=""` to a `.carousel-item` to change the amount of time to 
     </button>
   </div>`} />
 
-##### Autoplaying carousels without controls
+## Autoplaying carousels without controls
+
+Carousel with slides only. Use `.d-block` and `.w-100` on images to override default browser alignment.
 
 <Example code={`<div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="/images/carousel-1.png" class="block w-full" alt="slide-1" />
+        <div class="bg-active/50 h-100 flex items-center justify-center text-4xl text-muted">Slide One</div>
       </div>
       <div class="carousel-item">
-        <img src="/images/carousel-2.png" class="block w-full" alt="slide-2" />
+        <div class="bg-active/60 h-100 flex items-center justify-center text-4xl text-muted">Slide Two</div>
       </div>
       <div class="carousel-item">
-        <img src="/images/carousel-3.png" class="block w-full" alt="slide-3" />
+        <div class="bg-active/40 h-100 flex items-center justify-center text-4xl text-muted">Slide Three</div>
       </div>
     </div>
   </div>`} />
 
-##### Disable touch swiping
+## Disable touch swiping
 
-Carousels support swiping left/right on touchscreen devices to move between slides. This can be disabled by setting the `touch` option to `false`.
+On touch devices, carousels allow users to swipe left or right to navigate between slides. If you want to disable this behavior, set the `touch` option to `false` when initializing the carousel.
 
 <Example code={`<div id="carouselExampleControlsNoTouching" class="carousel slide" data-bs-touch="false">
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="/images/carousel-1.png" class="block w-full" alt="slide-1" />
+        <div class="bg-active/50 h-100 flex items-center justify-center text-4xl text-muted">Slide One</div>
       </div>
       <div class="carousel-item">
-        <img src="/images/carousel-2.png" class="block w-full" alt="slide-2" />
+        <div class="bg-active/60 h-100 flex items-center justify-center text-4xl text-muted">Slide Two</div>
       </div>
       <div class="carousel-item">
-        <img src="/images/carousel-3.png" class="block w-full" alt="slide-3" />
+        <div class="bg-active/40 h-100 flex items-center justify-center text-4xl text-muted">Slide Three</div>
       </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="prev">
@@ -251,21 +284,21 @@ Carousels support swiping left/right on touchscreen devices to move between slid
     </button>
   </div>`} />
 
-##### Usage
+## Usage
 
-###### Via data attributes
+### Via data attributes
 Data attributes provide a straightforward method for controlling the carousel's position. The `data-bs-slide` attribute accepts the keywords prev or next, which adjust the slide's position relative to its current state. Alternatively, `data-bs-slide-to` can be used to pass a specific slide index to the carousel, for example, `data-bs-slide-to="2"`, which moves the slide position to a particular index starting from 0.
 
-###### Via JavaScript
+### Via JavaScript
 Manual instantiation of the carousel is performed with:
 
 <Example showPreview={false} lang='js' code={`const carousel = new hummingbird.Carousel('#myCarousel')`} />
 
 
-##### Options
+## Options
 Options can be provided through data attributes or via JavaScript. When using `data-bs-attributes`, append the option's name, as in `data-bs-animation="{value}"`. It is essential to convert "camelCase" option names to "kebab-case" when passing options via data attributes. For example, `data-bs-custom-class="beautifier"` should be used instead of `data-bs-customClass="beautifier"`.
 
-As of **Bootstrap 5.2.0**, all components support an experimental `data-bs-config` data attribute. This attribute can contain simple component configurations as a JSON string. If an element has both `data-bs-config='{"delay":0, "title":123}'` and `data-bs-title="456"` attributes, the final title value will be 456, as separate data attributes override values provided within data-bs-config. Additionally, existing data attributes can also house JSON values, such as `data-bs-delay='{"show":0,"hide":150}'`.
+As of Bootstrap 5.2.0, all components support an **experimental** `data-bs-config` data attribute. This attribute can contain simple component configurations as a JSON string. If an element has both `data-bs-config='{"delay":0, "title":123}'` and `data-bs-title="456"` attributes, the final title value will be 456, as separate data attributes override values provided within `data-bs-config`. Additionally, existing data attributes can also house JSON values, such as `data-bs-delay='{"show":0,"hide":150}'`.
 
 The final configuration object results from merging `data-bs-config`, individual `data-bs-attributes`, and JavaScript objects, where the latest provided key-value pair takes precedence over others.
 
@@ -295,13 +328,13 @@ The final configuration object results from merging `data-bs-config`, individual
       <td scope="row">`pause`</td>
       <td scope="row">string, boolean</td>
       <td scope="row">`"hover"`</td>
-      <td>If set to "hover", it pauses the carousel's cycling on mouseenter and resumes on mouseleave. If set to false, hovering over the carousel will not pause it. On touch-enabled devices, when set to "hover", cycling pauses on touchend (after user interaction) for two intervals before automatically resuming. This occurs in addition to the mouse behavior.</td>
+      <td>If set to `"hover"`, it pauses the carousel's cycling on `mouseenter` and resumes on `mouseleave`. If set to `false`, hovering over the carousel will not pause it. On touch-enabled devices, when set to `"hover"`, cycling pauses on `touchend` (after user interaction) for two intervals before automatically resuming. This occurs in addition to the mouse behavior.</td>
     </tr>
      <tr>
       <td scope="row">`ride`</td>
       <td scope="row">string, boolean</td>
       <td scope="row">`false`</td>
-      <td>If set to true, the carousel autoplays after a user manually cycles the first item. If set to "carousel", the carousel autoplays upon loading.</td>
+      <td>If set to `true`, the carousel autoplays after a user manually cycles the first item. If set to `"carousel"`, the carousel autoplays upon loading.</td>
     </tr>
     <tr>
       <td scope="row">`touch`</td>
@@ -318,8 +351,12 @@ The final configuration object results from merging `data-bs-config`, individual
   </tbody>
 </HbTable>
 
-##### Methods
-All API methods are asynchronous and initiate a transition. They return to the caller immediately after the transition begins but before it concludes. Furthermore, a method call on a component that is already transitioning will be disregarded. More details are available in our JavaScript documentation.
+## Methods
+<div class="alert alert-subtle-danger items-start mb-6" role="alert">
+  <span class="icon-[material-symbols--error-outline-rounded] alert-icon"></span>
+  <span class="-mt-1">**All API methods are asynchronous and initiate a transition.** They return to the caller immediately after the transition begins but before it concludes. Furthermore, a method call on a component that is already transitioning will be disregarded. More details are available in our
+  <a href="https://getbootstrap.com/docs/5.3/getting-started/javascript/#asynchronous-functions-and-transitions">JavaScript documentation.</a></span>
+</div>
 
 A carousel instance can be created with the carousel constructor, along with any additional options. For example, to manually initialize an autoplaying carousel (without using the `data-bs-ride="carousel"` attribute in the markup) with a specific interval and disabled touch support:
 
@@ -357,11 +394,11 @@ A carousel instance can be created with the carousel constructor, along with any
     </tr>
     <tr>
       <th scope="row">`next`</th>
-      <td>Advances to the next item in the carousel. It returns to the caller before the next item has been displayed (e.g., before the `slid.bs.carousel` event occurs).</td>
+      <td>Advances to the next item in the carousel. It **returns to the caller before the next item has been displayed** (e.g., before the `slid.bs.carousel` event occurs).</td>
     </tr>
     <tr>
       <th scope="row">`nextWhenVisible`</th>
-      <td>Prevents the carousel from cycling to the next item if the page, the carousel itself, or the carousel's parent is not visible. It returns to the caller before the target item has been shown.</td>
+      <td>Prevents the carousel from cycling to the next item if the page, the carousel itself, or the carousel's parent is not visible. It **returns to the caller before the target item has been shown.**</td>
     </tr>
     <tr>
       <th scope="row">`pause`</th>
@@ -369,24 +406,24 @@ A carousel instance can be created with the carousel constructor, along with any
     </tr>
     <tr>
       <th scope="row">`prev`</th>
-      <td>Cycles to the previous item in the carousel. It returns to the caller before the previous item has been displayed (e.g., before the `slid.bs.carousel` event occurs).</td>
+      <td>Cycles to the previous item in the carousel. It **returns to the caller before the previous item has been displayed** (e.g., before the `slid.bs.carousel` event occurs).</td>
     </tr>
      <tr>
       <th scope="row">`to`</th>
-      <td>Cycles the carousel to a specific frame (0-based index, similar to an array). It returns to the caller before the target item has been displayed (e.g., before the `slid.bs.carousel` event occurs).</td>
+      <td>Cycles the carousel to a specific frame (0-based index, similar to an array). It **returns to the caller before the target item has been displayed** (e.g., before the `slid.bs.carousel` event occurs).</td>
     </tr>
   </tbody>
 </HbTable>
 
 
-##### Events
+## Events
 
 Bootstrap's carousel class exposes two events, providing opportunities to integrate with its functionality. Both events include the following additional properties:
 
-- **direction:** Indicates the direction in which the carousel is sliding (either "left" or "right").
-- **relatedTarget:** Refers to the DOM element that is moving into place as the active item.
-- **from:** Represents the index of the current item.
-- **to:** Represents the index of the next item.
+- `direction:` Indicates the direction in which the carousel is sliding (either `"left"` or `"right"`).
+- `relatedTarget:` Refers to the DOM element that is moving into place as the active item.
+- `from:` Represents the index of the current item.
+- `to:` Represents the index of the next item.
 
 All carousel events are dispatched at the carousel element itself (i.e., the `<div class="carousel">`).
 
@@ -404,7 +441,7 @@ All carousel events are dispatched at the carousel element itself (i.e., the `<d
     </tr>
     <tr>
       <th scope="row">`slide.bs.carousel`</th>
-      <td>This event fires immediately when the slide instance method is invoked.</td>
+      <td>This event fires immediately when the `slide` instance method is invoked.</td>
     </tr>
   </tbody>
 </HbTable>

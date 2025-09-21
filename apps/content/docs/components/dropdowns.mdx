@@ -2,9 +2,43 @@
 title: Dropdowns
 description: Toggle contextual overlays for displaying lists of links and more with the Bootstrap dropdown plugin.
 toc: true
+classNames:
+  component:
+    - class: dropup
+      desc: Dropup menu
+    - class: dropdown
+      desc: Dropdown menu
+    - class: dropstart
+      desc: Dropstart menu
+    - class: dropend
+      desc: Dropend menu
+  modifier:
+    - class: dropup-center
+      desc: Centered dropup
+    - class: dropdown-center
+      desc: Centered dropdown
+    - class: dropstart-center
+      desc: Centered dropstart
+    - class: dropend-center
+      desc: Centered dropend
+  inner:
+    - class: dropdown-menu
+      desc: Menu container
+    - class: dropdown-menu-start
+      desc: Align start
+    - class: dropdown-menu-end
+      desc: Align end
+    - class: dropdown-header
+      desc: Menu header
+    - class: dropdown-item
+      desc: Menu item
+    - class: dropdown-item-text
+      desc: Text item
+    - class: dropdown-divider
+      desc: Menu divider
 ---
 
-##### Single button
+## Single button
 
 Any single .btn can be turned into a dropdown toggle with some markup changes. Here’s how you can put them to work with `<button>` elements:
 
@@ -28,7 +62,9 @@ While `<button>` is the recommended control for a dropdown toggle, there might b
     </ul>
   </div>`} />
 
-##### Centered Dropdown
+## Centered Dropdown
+
+To center a dropdown menu below its toggle, add the `.dropdown-center` class to the parent element.
 
 <Example class='text-center' code={`<div class="dropdown-center">
     <button class="btn btn-subtle-neutral" type="button" data-bs-toggle="dropdown" aria-expanded="false">Centered Dropdown</button>
@@ -39,7 +75,9 @@ While `<button>` is the recommended control for a dropdown toggle, there might b
     </ul>
   </div>`} />
 
-##### Dropup
+## Dropup
+
+To display a dropdown menu above its toggle, add the `.dropup` class to the parent element.
 
 <Example class='text-center' code={`<div class="dropup">
     <button class="btn btn-subtle-neutral" type="button" data-bs-toggle="dropdown" aria-expanded="false">Dropup</button>
@@ -50,7 +88,9 @@ While `<button>` is the recommended control for a dropdown toggle, there might b
     </ul>
   </div>`} />
 
-##### Dropup Centered
+## Dropup Centered
+
+To center a dropup menu above its toggle, add the `.dropup-center` class to the parent element.
 
 <Example class='text-center' code={`<div class="dropup-center dropup">
     <button class="btn btn-subtle-neutral" type="button" data-bs-toggle="dropdown" aria-expanded="false">Dropup Centered</button>
@@ -61,7 +101,9 @@ While `<button>` is the recommended control for a dropdown toggle, there might b
     </ul>
   </div>`} />
 
-##### Dropend
+## Dropend
+
+To display a dropdown menu to the right of its toggle, add the `.dropend` class to the parent element.
 
 <Example class='text-center' code={`<div class="dropend">
     <button class="btn btn-subtle-neutral" type="button" data-bs-toggle="dropdown" aria-expanded="false">Dropend</button>
@@ -72,7 +114,9 @@ While `<button>` is the recommended control for a dropdown toggle, there might b
     </ul>
   </div>`} />
 
-##### Dropstart
+## Dropstart
+
+To display a dropdown menu to the left of its toggle, add the `.dropstart` class to the parent element.
 
 <Example class='text-center' code={`<div class="dropstart">
     <button class="btn btn-subtle-neutral" type="button" data-bs-toggle="dropdown" aria-expanded="false">Dropstart</button>
@@ -83,7 +127,7 @@ While `<button>` is the recommended control for a dropdown toggle, there might b
     </ul>
   </div>`} />
 
-##### Dropdown with Icon
+## Dropdown with Icon
 
 <Example class='text-center' code={`<div class="dropdown">
     <button class="btn btn-subtle-neutral" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -97,7 +141,16 @@ While `<button>` is the recommended control for a dropdown toggle, there might b
     </ul>
   </div>`} />
 
-##### Menu Alignment
+## Menu Alignment
+
+By default, a dropdown menu is positioned 100% from the top and aligned to the left of its parent. You can change this with the directional `.drop*` classes or by using additional modifier classes.
+
+Add `.dropdown-menu-end` to a `.dropdown-menu` to right-align the menu. When using Bootstrap in RTL, directions are mirrored, so `.dropdown-menu-end` will appear on the left side.
+
+<div class="mb-5 alert alert-subtle-info items-start" role="alert">
+  <span class="icon-[material-symbols--info-outline] alert-icon"></span>
+  <span class="-mt-0.75">**Heads up!** Dropdowns are positioned using Popper, except when they are inside a navbar.</span>
+</div>
 
 <Example class='text-center' code={`<div class="btn-group">
     <button type="button" class="btn btn-subtle-neutral" data-bs-toggle="dropdown" aria-expanded="false">Right-aligned menu example</button>
@@ -108,7 +161,11 @@ While `<button>` is the recommended control for a dropdown toggle, there might b
     </ul>
   </div>`} />
 
-##### Responsive alignment
+## Responsive alignment
+
+For responsive alignment, disable dynamic positioning by adding the `data-bs-display="static"` attribute and use the responsive variation classes.
+
+To **right** align a dropdown menu at a specific breakpoint or larger, add `.dropdown-menu{-sm|-md|-lg|-xl|-xxl}-end`.
 
 <Example class='text-center' code={`<div class="btn-group">
     <button type="button" class="btn btn-subtle-neutral" data-bs-toggle="dropdown" aria-expanded="false">Left-aligned but right aligned when large screen</button>
@@ -119,7 +176,9 @@ While `<button>` is the recommended control for a dropdown toggle, there might b
     </ul>
   </div>`} />
 
-##### Menu Header
+## Menu Header
+
+Add a header to label groups of actions within any dropdown menu.
 
 <Example class='text-center' code={`<div class="dropdown">
     <button class="btn btn-subtle-neutral" type="button" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</button>
@@ -131,7 +190,9 @@ While `<button>` is the recommended control for a dropdown toggle, there might b
     </ul>
   </div>`} />
 
-##### Menu Divider
+## Menu Divider
+
+Use a divider to separate groups of related menu items.
 
 <Example class='text-center' code={`<div class="dropdown">
     <button class="btn btn-subtle-neutral" type="button" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</button>
@@ -144,7 +205,9 @@ While `<button>` is the recommended control for a dropdown toggle, there might b
     </ul>
   </div>`} />
 
-##### Text
+## Text
+
+Place any freeform text within a dropdown menu and use <a href="https://getbootstrap.com/docs/5.3/utilities/spacing/">spacing utilities</a> as needed. Note that you may need additional sizing styles to constrain the menu width.
 
 <Example class='flex justify-center' code={`<div class="dropdown">
     <button class="btn btn-subtle-neutral" type="button" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</button>
@@ -153,7 +216,9 @@ While `<button>` is the recommended control for a dropdown toggle, there might b
     </div>
   </div>`} />
 
-##### Dropdown options
+## Dropdown options
+
+Use `data-bs-offset` or `data-bs-reference` to adjust the position of a dropdown menu.
 
 <Example class='flex justify-center gap-3' code={`<div class="dropdown">
     <button type="button" class="btn btn-subtle-neutral" data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="10,20">Offset</button>
@@ -177,7 +242,9 @@ While `<button>` is the recommended control for a dropdown toggle, there might b
     </ul>
   </div>`} />
 
-##### Auto close behavior
+## Auto close behavior
+
+By default, a dropdown menu closes when clicking inside or outside of it. You can change this behavior using the `autoClose` option.
 
 <Example class='flex flex-wrap justify-center gap-3' code={`<div class="relative">
     <button class="btn btn-subtle-neutral" type="button" data-bs-toggle="dropdown" data-bs-auto-close="true" aria-expanded="false">Default dropdown</button>
@@ -214,3 +281,198 @@ While `<button>` is the recommended control for a dropdown toggle, there might b
       <li><a class="dropdown-item" href="#">Menu item</a></li>
     </ul>
   </div>`} />
+
+## Usage
+
+Through either data attributes or JavaScript, the dropdown plugin manages hidden content (dropdown menus) by toggling the `.show` class on the parent `.dropdown-menu`. The `data-bs-toggle="dropdown"` attribute is essential for closing dropdown menus at an application level, making its consistent use advisable.
+
+<div class="alert alert-subtle-info items-start" role="alert">
+  <span class="icon-[material-symbols--info-outline] alert-icon"></span>
+  <span class="-mt-1">On touch-enabled devices, opening a dropdown introduces temporary, empty mouseover handlers to the immediate children of the `<body>` element. This measure <a href="http://quirksmode.org/blog/archives/2014/02/mouse_event_bub.html">addresses an iOS event delegation quirk</a> that would otherwise prevent a tap outside the dropdown from triggering the code responsible for closing it. Once the dropdown is closed, these additional `mouseover` handlers are removed.</span>
+</div>
+
+### Via Data Attributes
+
+To toggle a dropdown, add `data-bs-toggle="dropdown"` to a link or button:
+
+<Example showPreview={false} lang='html' 
+  code={`<div class="dropdown">
+    <button type="button" data-bs-toggle="dropdown" aria-expanded="false">
+      Dropdown trigger
+    </button>
+    <ul class="dropdown-menu">
+      ...
+    </ul>
+</div>`} />
+
+### Via JavaScript
+
+<div class="alert alert-subtle-warning items-start mb-6" role="alert">
+  <span class="icon-[material-symbols--info-outline] alert-icon"></span>
+  <span class="-mt-1">Dropdowns require `data-bs-toggle="dropdown"` on their trigger element, regardless of whether they are called via JavaScript or the data-api.</span>
+</div>
+
+Dropdowns can be called via JavaScript as follows:
+<Example showPreview={false} lang='js' 
+  code={`const dropdownElementList = document.querySelectorAll('.dropdown-toggle')
+const dropdownList = [...dropdownElementList].map(dropdownToggleEl => new hummingbird.Dropdown(dropdownToggleEl))
+`} />
+
+## Options
+
+Options can be provided through data attributes or via JavaScript. When using `data-bs-attributes`, append the option's name (e.g., `data-bs-animation="{value}"`). It is crucial to convert <i>"camelCase"</i> option names to "kebab-case" when passing options via data attributes. For instance, use `data-bs-custom-class="beautifier"` rather than `data-bs-customClass="beautifier"`.
+
+As of Bootstrap 5.2.0, all components support an **experimental** `data-bs-config` data attribute. This attribute can contain simple component configurations as a JSON string. If an element has both `data-bs-config='{"delay":0, "title":123}'` and `data-bs-title="456"` attributes, the final title value will be 456, as separate data attributes override values provided within data-bs-config. Additionally, existing data attributes can also house JSON values, such as `data-bs-delay='{"show":0,"hide":150}'`.
+
+The ultimate configuration object results from merging `data-bs-config`, individual `data-bs-attributes`, and JavaScript objects, where the latest provided key-value pair takes precedence over others.
+
+<HbTable>
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Type</th>
+      <th scope="col">Default</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td scope="row">`autoClose`</td>
+      <td scope="row">boolean | string</td>
+      <td scope="row">`true`</td>
+      <td scope="row">
+        Configures the dropdown's auto-close behavior:
+        <ul>
+          <li><code>true</code> – The dropdown will close when clicking either outside or inside the dropdown menu.</li>
+          <li><code>false</code> – The dropdown will close only by clicking the toggle button or by manually calling the hide or toggle method. (It will also not close by pressing the Esc key.)</li>
+          <li><code>'inside'</code> – The dropdown will close only by clicking inside the dropdown menu.</li>
+          <li><code>'outside'</code> – The dropdown will close only by clicking outside the dropdown menu.</li>
+        </ul>
+        <p><strong>Note:</strong> The dropdown can always be closed with the Esc key.</p>
+      </td>
+    </tr>
+    <tr>
+      <td scope="row">`boundary`</td>
+      <td scope="row">string | element</td>
+      <td scope="row">`'clippingParents'`</td>
+      <td scope="row">Defines the overflow constraint boundary for the dropdown menu (this applies only to Popper's preventOverflow modifier). By default, it is `clippingParents` and can accept an HTMLElement reference (via JavaScript only). For more information, refer to Popper's <a href="https://popper.js.org/docs/v2/utils/detect-overflow/#boundary">detectOverflow docs</a>.</td>
+    </tr>
+     <tr>
+      <td scope="row">`display`</td>
+      <td scope="row">string</td>
+      <td scope="row">`'dynamic'`</td>
+      <td scope="row">By default, Popper is used for dynamic positioning. This can be disabled by setting the value to `static`.</td>
+    </tr>
+     <tr>
+      <td scope="row">`offset`</td>
+      <td scope="row">array | string | function</td>
+      <td scope="row">`[0, 2]`</td>
+      <td scope="row">Determines the offset of the dropdown relative to its target. A string with comma-separated values, such as `data-bs-offset="10,20"`, can be passed in data attributes. When a function is used to define the offset, it receives an object (containing the Popper placement, reference, and Popper rects) as its first argument, and the triggering element's DOM node as the second. The function must return an array with two numbers: <a href="https://popper.js.org/docs/v2/modifiers/offset/#skidding-1">skidding</a> and <a href="https://popper.js.org/docs/v2/modifiers/offset/#distance-1">distance</a>. For more information, refer to Popper's <a href="https://popper.js.org/docs/v2/modifiers/offset/#options">offset documentation</a>.</td>
+    </tr>
+     <tr>
+      <td scope="row">`popperConfig`</td>
+      <td scope="row">null | object | function</td>
+      <td scope="row">`null`</td>
+      <td scope="row">Allows modification of Bootstrap's default Popper configuration. Refer to <a href="https://popper.js.org/docs/v2/constructors/#options">Popper's configuration</a> documentation. When a function is used to create the Popper configuration, it is called with an object containing Bootstrap's default Popper configuration. This facilitates using and merging the default configuration with custom settings. The function must return a configuration object for Popper.</td>
+    </tr>
+     <tr>
+      <td scope="row">`reference`</td>
+      <td scope="row">string | element | object</td>
+      <td scope="row">`'toggle'`</td>
+      <td scope="row">Specifies the reference element for the dropdown menu. It accepts values of 'toggle', 'parent', an HTMLElement reference, or an object that provides getBoundingClientRect. For further details, refer to Popper's <a href="https://popper.js.org/docs/v2/constructors/#createpopper">constructor</a> and <a href="https://popper.js.org/docs/v2/virtual-elements/">virtual element</a> documentation.</td>
+    </tr>
+  </tbody>
+</HbTable>
+
+Using function with `popperConfig`:
+
+<Example showPreview={false} lang='js' 
+  code={`const dropdown = new bootstrap.Dropdown(element, {
+    popperConfig(defaultBsPopperConfig) {
+      // const newPopperConfig = {...}
+      // use defaultBsPopperConfig if needed...
+      // return newPopperConfig
+    }
+})`} />
+
+## Methods
+
+<HbTable>
+  <thead>
+    <tr>
+      <th scope="col">Method</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">`dispose`</th>
+      <td>Destroys an element's dropdown functionality, removing stored data on the DOM element.</td>
+    </tr>
+    <tr>
+      <th scope="row">`getInstance`</th>
+      <td> A static method allowing retrieval of the dropdown instance associated with a DOM element. Usage: `hummingbird.Dropdown.getInstance(element)`.</td>
+    </tr>
+    <tr>
+      <th scope="row">`getOrCreateInstance`</th>
+      <td>A static method that returns an existing dropdown instance for a DOM element or creates a new one if it has not been initialized. Usage: `hummingbird.Dropdown.getOrCreateInstance(element)`.</td>
+    </tr>
+    <tr>
+      <th scope="row">`hide`</th>
+      <td>Conceals the dropdown menu within a given navbar or tabbed navigation.</td>
+    </tr>
+    <tr>
+      <th scope="row">`show`</th>
+      <td>Displays the dropdown menu within a given navbar or tabbed navigation.</td>
+    </tr>
+    <tr>
+      <th scope="row">`toggle`</th>
+      <td>Toggles the dropdown menu within a given navbar or tabbed navigation.</td>
+    </tr>
+    <tr>
+      <th scope="row">`update`</th>
+      <td>Updates the position of an element's dropdown.</td>
+    </tr>
+  </tbody>
+</HbTable>
+
+
+## Events
+
+All dropdown events are dispatched at the toggling element and then propagate upwards (bubble). Therefore, event listeners can also be added to the `.dropdown-menu`'s parent element. The `hide.bs.dropdown` and `hidden.bs.dropdown` events include a `clickEvent` property (only when the original Event type is `click`) which contains an Event object for the click event.
+
+<HbTable>
+  <thead>
+    <tr>
+      <th scope="col">Method</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">`hide.bs.dropdown`</th>
+      <td>This event fires immediately when the `hide` instance method has been called.</td>
+    </tr>
+    <tr>
+      <th scope="row">`hidden.bs.dropdown`</th>
+      <td>This event fires when the dropdown has finished being hidden from the user and CSS transitions have completed.</td>
+    </tr>
+    <tr>
+      <th scope="row">`show.bs.dropdown`</th>
+      <td>This event fires immediately when the `show` instance method is called.</td>
+    </tr>
+    <tr>
+      <th scope="row">`shown.bs.dropdown`</th>
+      <td>This event fires when the dropdown has been made visible to the user and CSS transitions have completed.</td>
+    </tr>
+  </tbody>
+</HbTable>
+
+Example event listener:
+
+<Example showPreview={false} lang='js' 
+  code={`const myDropdown = document.getElementById('myDropdown')
+  myDropdown.addEventListener('show.bs.dropdown', event => {
+    // do something...
+  })
+`} />

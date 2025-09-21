@@ -1,0 +1,128 @@
+---
+title: JavaScript - Hummingbird
+description: This guide provides an overview of Hummingbird's JavaScript components, including how to initialize and use them in your projects.
+toc: true
+---
+
+Hummingbird creates interactive components using **Bootstrap’s JavaScript plugins**. Hummingbird ensures smooth interactivity, accessibility, and consistent behavior across browsers. With built-in TypeScript support, every plugin is type-safe and developer-friendly, making it easier to extend, customize, and integrate into modern workflows.
+
+## Include Plugins
+
+Plugins can be included individually or all at once.
+
+**Include All Plugins:**
+
+```html
+<script src="../path/to/@hummingbirdui/hummingbird/dist/hummingbird.bundle.min.js"></script>
+```
+<br/>
+
+Alternatively, You can import Hummingbird in your JavaScript entry file. 
+
+```js
+import "@hummingbirdui/hummingbird";
+```
+<br/>
+**Include Individual Plugins:**
+
+```html
+<script src="../path/to/@hummingbirdui/hummingbird/lib/esm/scripts/modal.js"></script>
+```
+<br/>
+
+Alternatively, You can import individual plugins in your JavaScript file.
+
+```js
+import "@hummingbirdui/hummingbird/lib/esm/scripts/modal";
+```
+
+## Optimization
+
+To reduce the final bundle size, you can import only the specific JavaScript plugins you need.
+
+The below example shows how to import only the [Modal](/docs/components/modal) plugin:
+
+<Example lang='js' showPreview={false} 
+  code={`// import "@hummingbirdui/hummingbird/lib/esm/scripts/alert";
+  // import "@hummingbirdui/hummingbird/lib/esm/scripts/button";
+  // import "@hummingbirdui/hummingbird/lib/esm/scripts/carousel";
+  // import "@hummingbirdui/hummingbird/lib/esm/scripts/collapse";
+  // import "@hummingbirdui/hummingbird/lib/esm/scripts/dropdown";
+  import "@hummingbirdui/hummingbird/lib/esm/scripts/modal";
+  // import "@hummingbirdui/hummingbird/lib/esm/scripts/offcanvas";
+  // import "@hummingbirdui/hummingbird/lib/esm/scripts/popover";
+  // import "@hummingbirdui/hummingbird/lib/esm/scripts/scrollspy";
+  // import "@hummingbirdui/hummingbird/lib/esm/scripts/tab";
+  // import "@hummingbirdui/hummingbird/lib/esm/scripts/toast";
+  // import "@hummingbirdui/hummingbird/lib/esm/scripts/tooltip";
+`} />
+
+## JavaScript API
+
+Hummingbird also provides a JavaScript API for programmatic control of components. For example, you can toggle an modal manually using the API.
+
+Here’s how to initialize and use the [Modal](/docs/components/modal) component:
+
+```html
+<button class="btn btn-primary" data-open-demo-modal>Open Modal</button>
+<div class="modal" id="demo-modal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Demo Modal</h5>
+        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>This is a demo modal.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+```
+
+<br/>
+
+```js
+import { Modal } from "@hummingbirdui/hummingbird";
+const openBtn = document.querySelector("[data-open-demo-modal]");
+const myModal = new Modal(".modal");
+
+openBtn.addEventListener("click", () => {
+  myModal.show();
+});
+```
+
+## TypeScript Support
+
+Hummingbird includes TypeScript definitions for all components. If you're using TypeScript, you can import Hummingbird plugins with their types.
+
+```ts
+import { Modal } from "@hummingbirdui/hummingbird";
+import { type ModalClass, type ModalInstance, type ModalOptions } from "@hummingbirdui/hummingbird";
+```
+
+## ESM vs CJS
+
+Hummingbird supports both **ESM** and **CJS** builds so it works with different environments:
+
+* **ESM**
+  Used by modern bundlers like **Vite**, **Rollup**, and **Webpack 5+**. If your project is using ES modules (`import` syntax), this is what gets loaded automatically.
+
+* **CJS**
+  Used in **Node.js** or older tooling that relies on `require()`. If your environment doesn’t support ESM, bundlers and Node will fall back to this file.
+
+You don’t need to choose manually, your bundler or runtime will pick the right version based on your setup.
+
+## Integration with Frameworks
+
+Hummingbird can be integrated into various JavaScript frameworks like [React](./react), [Vue](./vue), [Angular](./angular), etc. While Hummingbird is primarily designed for use with plain HTML and JavaScript, you can still leverage its components within these frameworks by following best practices for DOM manipulation and component lifecycle management.
+
+Follow the framework-specific guidelines to ensure smooth integration and optimal performance.
+
+## Dependencies
+
+Some JavaScript components depend on [Popper](https://popper.js.org/docs/v2/) for positioning elements like dropdowns, tooltips and popovers. Make sure to include Popper.js in your project if you're using these components or use `himmingbird.bundle.min.js` which includes Popper.js.

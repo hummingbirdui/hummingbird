@@ -82,12 +82,6 @@
   --backdrop-zindex: 1040;
   --backdrop-bg: --alpha(var(--color-gray-950) / 20%);
   @apply fixed top-0 left-0 z-[var(--backdrop-zindex)] w-screen h-screen bg-[var(--backdrop-bg)];
-  &.fade {
-    @apply backdrop-blur-none;
-  }
-  &.show {
-    @apply backdrop-blur-xs;
-  }
 }
 
 @utility offcanvas-header {

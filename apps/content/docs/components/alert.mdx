@@ -28,7 +28,7 @@ classNames:
     desc: Outline style
 ---
 
-##### Subtle variant
+## Subtle variant
 
 Simple alerts use a subtle background with clear text color.
 
@@ -42,7 +42,7 @@ Simple alerts use a subtle background with clear text color.
   <div class="alert alert-subtle-danger" role="alert">A simple error subtle alert!</div>`}
 />
 
-##### Contained variant
+## Contained variant
 
 Contained alerts use a solid background color to clearly convey the type of message, such as success, warning, error, or information.
 
@@ -56,7 +56,7 @@ Contained alerts use a solid background color to clearly convey the type of mess
   <div class="alert alert-danger" role="alert">A simple error alert!</div>`}
 />
 
-##### Outlined variant
+## Outlined variant
 
 Outlined alerts use a border and transparent background to provide medium emphasis. They are useful when you want feedback messages to be visible without dominating the interface.
 
@@ -70,7 +70,7 @@ Outlined alerts use a border and transparent background to provide medium emphas
   <div class="alert alert-outline-danger" role="alert">A simple error outline alert!</div>`}
 />
 
-##### Alert with Icon
+## Alert with Icon
 
 Alerts can include icons to improve clarity and recognition. Icons provide a quick visual cue about the alert type, such as success, information, or error.
 
@@ -112,7 +112,7 @@ Alerts can include icons to improve clarity and recognition. Icons provide a qui
   </div>`} 
 />
 
-##### Alert with title
+## Alert with title
 
 Alerts can also include headings, paragraphs, and dividers to provide more context or structure within the message.
 
@@ -124,14 +124,14 @@ Alerts can also include headings, paragraphs, and dividers to provide more conte
     </div>
   </div>`} />
 
-##### Alert Actions
+## Alert Actions
 
 This example demonstrates various alert components with actionable buttons.
 
 - Each alert displays a relevant icon and message.
 - Buttons provide users with options such as closing the alert, continuing, or retrying an action.
 
-##### Alert Actions
+## Alert Actions
 
 <Example class='flex flex-col gap-2' 
   code={`<div class="alert alert-subtle-warning" role="alert">
@@ -153,7 +153,7 @@ This example demonstrates various alert components with actionable buttons.
   </div>`}
 />
 
-##### Dismissing
+## Dismissing
 
 Using the alert JavaScript plugin that uses the **Bootstrap Button plugin**, it’s possible to dismiss any alert inline. Here’s how:
 
@@ -170,7 +170,7 @@ Using the alert JavaScript plugin that uses the **Bootstrap Button plugin**, it�
     </button>
   </div>`} />
 
-##### CSS variables
+## CSS variables
 
 The alert component is built using a set of CSS variables. These variables provide flexibility for customizing styles.
 
@@ -184,9 +184,9 @@ The alert component is built using a set of CSS variables. These variables provi
     --alert-icon-color: var(--color-contrast);
   }`} />
 
-##### JavaScript behavior
+## JavaScript behavior
 
-###### Initialize
+### Initialize
 
 Initialize elements as alerts
 
@@ -195,7 +195,7 @@ Initialize elements as alerts
   const alerts = [...alertList].map(element => new hummingbird.Alert(element))`}
 />
 
-###### Triggers
+### Triggers
 
 Dismissal can be achieved with the `data-bs-dismiss` attribute on a button **within the alert** as demonstrated below:
 
@@ -209,7 +209,7 @@ or on a button outside the alert using the additional data-bs-target as demonstr
 
 **Note that closing an alert will remove it from the DOM.**
 
-###### Methods
+### Methods
 
 You can create an alert instance with the alert constructor, for example:
 
@@ -253,7 +253,7 @@ Basic usage:
   alert.close()`}
 />
 
-###### Events
+### Events
 
 Hummingbird’s alert plugin exposes a few events for hooking into alert functionality.
 

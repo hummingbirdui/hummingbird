@@ -1,0 +1,70 @@
+---
+title: Container
+description: A responsive container for fixing element's width based on current breakpoints.
+toc: true
+---
+
+<HbTable className='container'>
+  <tr>
+    <th>Class</th>
+    <th>Breakpoint</th>
+    <th>Properties</th>
+  </tr>
+  <tr>
+    <td class='align-top' rowspan='6'>`container`</td>
+    <td>none</td>
+    <td>`widtd: 100%;`</td>
+  </tr>
+  <tr>
+    <td>sm (640px)</td>
+    <td>`max-width: 40rem`</td>
+  </tr>
+  <tr>
+    <td>md (768px)</td>
+    <td>`max-width: 48rem`</td>
+  </tr>
+  <tr>
+    <td>lg (1024px)</td>
+    <td>`max-width: 64rem`</td>
+  </tr>
+  <tr>
+    <td>xl (1280px)</td>
+    <td>`max-width: 80rem`</td>
+  </tr>
+  <tr>
+    <td>2xl (1536px)</td>
+    <td>`max-width: 96rem`</td>
+  </tr>
+</HbTable>
+
+## Basic usage
+
+The container class sets the maximum width of an element based on the current responsive breakpoint. Each breakpoint defines a maximum width that scales with the viewport.
+
+This approach allows layouts to adapt to predefined screen sizes rather than relying on a fully fluid viewport. It uses media queries with `width >= …` to set the container’s maximum width.
+
+```html
+<div class="container">
+  <!-- content -->
+</div>
+```
+<br/>
+To add horizontal padding, use the `px-*` utilities:
+
+```html
+<div class="container px-4">
+  <!-- content -->
+</div>
+```
+
+## Responsive variants
+
+The `container` class supports responsive variants out of the box. These variants make it possible to apply container behavior only at specific breakpoints and above.
+
+For example:
+
+```html
+<div class="md:container">
+  <!-- Content -->
+</div>
+```

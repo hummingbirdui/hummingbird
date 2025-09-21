@@ -46,14 +46,14 @@ classNames:
       desc: Invalid state
 ---
 
-##### Basic Text Field
+## Basic Text Field
 
 The Basic Text Field component provides a simple input field with two variations: Filled and Outlined.
 
 <Example class='grid mx-auto sm:grid-cols-2 gap-3 md:w-5/6' code={`<input type="text" class="form-control" />
 <input type="text" class="form-control-fill" />`} />
 
-##### Text Field with label
+## Text Field with label
 
 Wrap the `<label>` and `<input>` inside a `.form-field` container for proper spacing. Apply the `.form-label` class to the label.
 
@@ -66,7 +66,7 @@ Wrap the `<label>` and `<input>` inside a `.form-field` container for proper spa
     <input type="text" class="form-control-fill" />
   </div>`} />
 
-##### Text Field with icon
+## Text Field with icon
 
 Icons can be placed at the **start** or **end** of the input field. Use `.form-control-icon-start` or `.form-control-icon-end` class to the icon.
 
@@ -87,12 +87,12 @@ Icons can be placed at the **start** or **end** of the input field. Use `.form-c
     <svg class="form-control-icon-end" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="currentColor" d="M5 22q-.825 0-1.412-.587T3 20V6q0-.825.588-1.412T5 4h1V3q0-.425.288-.712T7 2t.713.288T8 3v1h8V3q0-.425.288-.712T17 2t.713.288T18 3v1h1q.825 0 1.413.588T21 6v14q0 .825-.587 1.413T19 22zm0-2h14V10H5zM5 8h14V6H5zm0 0V6z"/></svg>
   </div>`} />
 
-##### Textarea
+## Textarea
 
 <Example class='grid sm:grid-cols-2 gap-3' code={`<textarea id='exampleTextArea' type="text" class="form-control" placeholder="Message" rows="3"></textarea>
   <textarea id='exampleTextAreaFill' class="form-control-fill" placeholder="Message" rows="3"></textarea>`} />
 
-##### Sizing
+## Sizing
 
 Set heights using classes like <code>.form-control-sm</code> and <code>.form-control-lg</code> for small and large input fields. Default is medium.
 
@@ -103,7 +103,7 @@ Set heights using classes like <code>.form-control-sm</code> and <code>.form-con
   <input type="text" class="form-control-fill" />
   <input type="text" class="form-control-fill form-control-lg" />`} />
 
-##### Color Variants
+## Color Variants
 
 Different colors become visible while the input is focused. By default, the input field uses the **primary** color. Use additional utility classes to modify the focus color. Like:
 
@@ -115,14 +115,14 @@ Different colors become visible while the input is focused. By default, the inpu
   <input type="text" class="form-control-fill form-control-secondary" />
   <input type="text" class="form-control-fill form-control-success" />`} />
 
-##### Disabled
+## Disabled
 
 Make input fields appear disabled by adding the `disabled` attribute.
 
 <Example class='grid mx-auto sm:grid-cols-2 gap-3 md:w-5/6' code={`<input type="text" class="form-control" placeholder="Disabled" disabled />
   <input type="text" class="form-control-fill" placeholder="Disabled" disabled />`} />
 
-##### Validation
+## Validation
 
 Indicate validation states by adding the `.is-valid` class for success state and `.is-invalid` class for error state to input fields.
 
@@ -144,11 +144,11 @@ Indicate validation states by adding the `.is-valid` class for success state and
   </div>`} />
 
 
-##### CSS Variables
+## CSS Variables
 
 The form control component is built using a set of CSS variables. These variables provide flexibility for customizing styles globally or locally.
 
-###### Global variables
+### Global variables
 
 Global variables apply shared styles across buttons, inputs, and selects. Updating these will affect all related components.
 
@@ -174,7 +174,7 @@ Global variables apply shared styles across buttons, inputs, and selects. Updati
   --input-disabled-border-color: var(--border-color-base);`}
 />
 
-###### Local variables
+### Local variables
 
 Local variables apply only to form-control, allowing fine-grained control over their appearance without affecting other elements.
 
@@ -204,14 +204,14 @@ Local variables apply only to form-control, allowing fine-grained control over t
   }`}
 />
 
-###### Icon input variables
+### Icon input variables
 
 <Example lang='sass' showPreview={false} code={`.input-group-icon {
     --input-icon-color: var(--color-active);
     --input-icon-font-size: var(--text-xl);
 }`} />
 
-###### Form Label variables
+### Form Label variables
 
 <Example lang='sass' showPreview={false} code={`.form-label {
     --input-label-color: var(--text-color-muted);
@@ -220,7 +220,7 @@ Local variables apply only to form-control, allowing fine-grained control over t
     --input-label-bg: transparent;
 }`} />
 
-###### Form text
+### Form text
 
 <Example lang='sass' showPreview={false} code={`.form-text {
     --form-text-margin-top: --spacing(1);

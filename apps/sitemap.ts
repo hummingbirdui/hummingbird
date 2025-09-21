@@ -12,15 +12,19 @@ const sitemap: Sitemap[] = [
     items: [
       {
         name: 'Introduction',
-        path: '#',
+        path: '/docs/getting-started/introduction',
       },
       {
         name: 'Installation',
         path: '/docs/getting-started/installation',
       },
       {
-        name: 'Tutorial',
-        path: '#',
+        name: 'JavaScript',
+        path: '/docs/getting-started/javascript',
+      },
+      {
+        name: 'Accessibility',
+        path: '/docs/getting-started/accessibility',
       },
     ],
   },
@@ -34,6 +38,10 @@ const sitemap: Sitemap[] = [
       {
         name: 'Next',
         path: '/docs/getting-started/next',
+      },
+      {
+        name: 'Laravel',
+        path: '/docs/getting-started/laravel',
       },
       {
         name: 'Vue',
@@ -86,8 +94,20 @@ const sitemap: Sitemap[] = [
     subHeader: 'Layout',
     items: [
       {
-        name: 'Grid',
-        path: '/docs/layout/grid',
+        name: 'Container',
+        path: '/docs/layout/container',
+      },
+      {
+        name: 'Bootstrap Grid',
+        path: '/docs/layout/bootstrap-grid',
+      },
+      {
+        name: 'Columns',
+        path: '/docs/layout/columns',
+      },
+      {
+        name: 'Gutters',
+        path: '/docs/layout/gutters',
       },
     ],
   },

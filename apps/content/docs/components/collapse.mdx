@@ -2,9 +2,25 @@
 title: Collapse
 description: Toggle the visibility of content across your project with a few classes and our JavaScript plugins.
 toc: true
+classNames:
+  component:
+  - class: collapse
+    desc: Collapse
+  inner:
+  - class: collapse-horizontal
+    desc: Accordion item component
+  - class: multi-collapse
+    desc: Accordion header component
 ---
 
-##### Example
+## Example
+
+Click the buttons below to toggle visibility of another element using class changes:
+- `.collapse` hides content
+- `.collapsing` is applied during transitions
+- `.collapse.show` displays content
+
+We generally recommend using a `<button>` with the `data-bs-target` attribute. Although not semantically ideal, you can also use an `<a>` link with the href attribute and `role="button"`. In both cases, `data-bs-toggle="collapse"` is required.
 
 <Example code={`<div class="inline-flex gap-2 mb-3">
     <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">Link with href</a>
@@ -17,7 +33,14 @@ toc: true
   </div>`
 }/>
 
-##### Horizontal
+## Horizontal
+
+The collapse plugin also supports horizontal collapsing. Add the `.collapse-horizontal` modifier class to transition the `width` instead of `height`, and make sure to set a `width` on the immediate child element. You can use custom Sass, inline styles, or our <a href="https://getbootstrap.com/docs/5.3/utilities/sizing/">width utilities</a> to do this.
+
+<div class="mb-5 alert alert-subtle-info items-start" role="alert">
+  <span class="icon-[material-symbols--info-outline] alert-icon"></span>
+  <span class="-mt-1">Please note that while the example below, a `min-height` is set to reduce excessive repaints in our docs, but this is not required. **The only requirement is setting a `width` on the child element.**</span>
+</div>
 
 <Example code={`<div class='mb-3'>
     <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample" aria-expanded="false" aria-controls="collapseWidthExample">Toggle width collapse</button>
@@ -30,7 +53,9 @@ toc: true
     </div>
   </div>`} />
 
-##### Multiple toggles and targets
+## Multiple toggles and targets
+
+A `<button>` or `<a>` element can toggle multiple elements by referencing them with a selector in its `data-bs-target` or href attribute. Conversely, multiple `<button>` or `<a>` elements can toggle the same element if each references it using `data-bs-target` or `href`.
 
 <Example code={`<div class="inline-flex gap-1 mb-3">
     <a class="btn btn-primary" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Toggle first element</a>
@@ -53,3 +78,153 @@ toc: true
       </div>
     </div>
   </div>`} />
+
+## Usage
+
+The collapse plugin employs specific classes to manage its primary functions:
+
+- `.collapse` conceals content.
+- `.collapse.show` displays content.
+- `.collapsing` is present during the transition's start and removed upon its completion.
+
+These classes are located within `_transitions.scss`.
+
+### Via Data Attributes
+
+To automatically control one or more collapsible elements, simply add `data-bs-toggle="collapse"` and a `data-bs-target` to the desired element. The `data-bs-target` attribute accepts a CSS selector, indicating which element to apply the collapse functionality to. Ensure the collapse class is also added to the collapsible element. To have it open by default, include the show class as well.
+
+To enable accordion-like group management within a collapsible area, append the `data-bs-parent="#selector"` attribute. For more comprehensive information, refer to the accordion page.
+
+### Via JavaScript
+
+Manual enablement is achieved with the following JavaScript:
+
+<Example showPreview={false} lang='js' 
+  code={`const collapseElementList = document.querySelectorAll('.collapse')
+  const collapseList = [...collapseElementList].map(collapseEl => new hummingbird.Collapse(collapseEl))
+`} />
+
+
+## Options
+
+Options can be provided through data attributes or via JavaScript. When using `data-bs-attributes`, append the option's name (e.g., `data-bs-animation="{value}"`). It is crucial to convert "camelCase" option names to "kebab-case" when passing options via data attributes. For instance, use `data-bs-custom-class="beautifier"` rather than `data-bs-customClass="beautifier"`.
+
+As of Bootstrap 5.2.0, all components support an experimental `data-bs-config` data attribute. This attribute can contain simple component configurations as a JSON string. If an element has both `data-bs-config='{"delay":0, "title":123}'` and `data-bs-title="456"` attributes, the final title value will be 456, as separate data attributes override values provided within `data-bs-config`. Additionally, existing data attributes can also house JSON values, such as `data-bs-delay='{"show":0,"hide":150}'`.
+
+The ultimate configuration object results from merging `data-bs-config`, individual `data-bs-attributes`, and JavaScript objects, where the latest provided key-value pair takes precedence over others.
+
+<HbTable>
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Type</th>
+      <th scope="col">Default</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>`parent`</td>
+      <td>selector | DOM element</td>
+      <td>`null`</td>
+      <td> If a parent is specified, all other collapsible elements within that parent will close when the current collapsible item is shown. This behavior is similar to traditional accordions and depends on the `card` class. This attribute must be set on the target collapsible area.</td>
+    </tr>
+    <tr>
+      <td>`toggle`</td>
+      <td>boolean</td>
+      <td>`true`</td>
+      <td>This option controls whether the collapsible element is toggled (shown or hidden) upon its initialization.</td>
+    </tr>
+  </tbody>
+</HbTable>
+
+## Methods
+
+<div class="alert alert-subtle-danger items-start mb-6" role="alert">
+  <span class="icon-[material-symbols--error-outline-rounded] alert-icon"></span>
+  <span class="-mt-1">**All API methods are asynchronous and initiate a transition.** They return to the caller immediately after the transition begins but before it concludes. Furthermore, a method call on a component that is already transitioning will be disregarded. More information is available in our
+  <a href="https://getbootstrap.com/docs/5.3/getting-started/javascript/#asynchronous-functions-and-transitions">JavaScript documentation</a></span>
+</div>
+
+
+These methods enable content as a collapsible element and accept an optional options object.
+
+A collapse instance can be created with the constructor, as demonstrated:
+
+<Example showPreview={false} lang='js' 
+  code={`const bsCollapse = new hummingbird.Collapse('#myCollapse', {
+    toggle: false
+})`} />
+
+<HbTable>
+  <thead>
+    <tr>
+      <th scope="col">Method</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">`dispose`</th>
+      <td>Destroys an element's collapse functionality, removing stored data from the DOM element.</td>
+    </tr>
+    <tr>
+      <th scope="row">`getInstance`</th>
+      <td>A static method allowing retrieval of the collapse instance associated with a DOM element. Usage: `hummingbird.Collapse.getInstance(element)`.</td>
+    </tr>
+    <tr>
+      <th scope="row">`getOrCreateInstance`</th>
+      <td>A static method that returns an existing collapse instance for a DOM element or creates a new one if it has not been initialized. Usage: `hummingbird.Collapse.getOrCreateInstance(element)`.</td>
+    </tr>
+    <tr>
+      <th scope="row">`hide`</th>
+      <td>Conceals a collapsible element. It **returns to the caller before the collapsible element has completed its hiding animation** (e.g., before the `hidden.bs.collapse` event occurs).</td>
+    </tr>
+    <tr>
+      <th scope="row">`show`</th>
+      <td>Displays a collapsible element. It **returns to the caller before the collapsible element has completed its showing animation** (e.g., before the `shown.bs.collapse` event occurs).</td>
+    </tr>
+    <tr>
+      <th scope="row">`toggle`</th>
+      <td>Toggles a collapsible element between its shown and hidden states. It **returns to the caller before the collapsible element has completed its animation** (i.e., before the `shown.bs.collapse` or `hidden.bs.collapse` events occur).</td>
+    </tr>
+  </tbody>
+</HbTable>
+
+## Events
+
+Bootstrap's collapse class exposes several events, providing hooks into its collapse functionality.
+
+<HbTable>
+  <thead>
+    <tr>
+      <th scope="col">Event Type</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">`hide.bs.collapse`</th>
+      <td>This event fires immediately when the `hide` method is called.</td>
+    </tr>
+    <tr>
+      <th scope="row">`hidden.bs.collapse`</th>
+      <td>This event fires when a collapse element has finished hiding from the user (waiting for CSS transitions to complete).</td>
+    </tr>
+    <tr>
+      <th scope="row">`show.bs.collapse`</th>
+      <td>This event fires immediately when the `show` instance method is called.</td>
+    </tr>
+    <tr>
+      <th scope="row">`shown.bs.collapse`</th>
+      <td>This event fires when a collapse element has finished becoming visible to the user (waiting for CSS transitions to complete).</td>
+    </tr>
+  </tbody>
+</HbTable>
+
+Example event listener:
+<Example showPreview={false} lang='js' 
+  code={`const myCollapsible = document.getElementById('myCollapsible')
+  myCollapsible.addEventListener('hidden.bs.collapse', event => {
+    // do something...
+})`} />

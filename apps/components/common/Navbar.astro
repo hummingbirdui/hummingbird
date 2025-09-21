@@ -1,16 +1,16 @@
 ---
 import logo from '@assets/images/logos/hummingbird.png';
-import SearchIcon from '@components/icons/SearchIcon.astro';
 import BulbIcon from '@components/icons/BulbIcon.astro';
 import GitHubIcon from '@components/icons/GithubIcon.astro';
 import MenuIcon from '@components/icons/MenuIcon.astro';
 import TimesIcon from '@components/icons/TimesIcon.astro';
 import { Image } from 'astro:assets';
 import BulbOffIcon from '@components/icons/BulbOffIcon.astro';
+import '@docsearch/css';
 
 const menuItems = [
-  { name: 'Docs', path: '/docs/components/buttons' },
-  { name: 'Components', path: '/components' },
+  { name: 'Docs', path: '/docs/getting-started/installation' },
+  { name: 'Components', path: '/docs/components' },
   { name: 'Examples', path: '#' },
   { name: 'Blog', path: '#' },
   { name: 'Roadmap', path: '#' },
@@ -26,13 +26,7 @@ const currentPath = Astro.url.pathname;
       <h5 class="mb-0 text-muted font-semibold hidden sm:flex">hummingbird</h5>
     </a>
     <span class="ml-1 sm:ml-4 badge badge-subtle shrink-0">v 1.0.0</span>
-    <div class="ml-8 2xl:ml-15 relative hidden lg:flex items-center basis-70">
-      <SearchIcon class="absolute left-4" />
-      <input class="form-control-fill w-full px-11" type="search" placeholder="Search" aria-label="Search" />
-      <span class="absolute right-5 badge text-muted font-normal border-0 bg-transparent pointer-events-none"
-        >CTRL K</span
-      >
-    </div>
+    <div id="docsearch" class="hidden lg:block"></div>
 
     <ul class="navbar-nav ms-auto flex-row items-center hidden xl:flex">
       {
@@ -41,7 +35,7 @@ const currentPath = Astro.url.pathname;
             <a
               href={item.path}
               class={`nav-link px-4 py-2.5 text-sm rounded-lg hover:bg-hover ${
-                currentPath.startsWith(item.path) ? 'text-primary' : ''
+                currentPath === item.path ? 'text-primary' : ''
               }`}
               aria-disabled="true"
             >
@@ -51,21 +45,22 @@ const currentPath = Astro.url.pathname;
         ))
       }
     </ul>
-
-    <button class="ml-auto 2xl:ml-0 btn btn-circle btn-subtle-neutral lg:hidden">
-      <SearchIcon />
-    </button>
+    <div id="docsearch-mobile" class="lg:hidden ml-auto"></div>
 
     <div class="mx-2 xl:mx-4 my-auto border-l h-8 xl:h-10 border-base flex lg:hidden xl:flex"></div>
 
     <button class="lg:ml-auto xl:ml-0 btn btn-circle btn-subtle-neutral" data-theme-toggle-btn>
       <BulbIcon data-theme-toggle="dark" />
-      <BulbOffIcon data-theme-toggle="light" />
+      <BulbOffIcon data-theme-toggle="light" class="hidden" />
     </button>
-    <button class="ml-2 btn max-lg:btn-circle btn-subtle-neutral">
+    <a
+      href="https://github.com/hummingbirdui/hummingbird"
+      target="_blank"
+      class="ml-2 btn max-lg:btn-circle btn-subtle-neutral"
+    >
       <GitHubIcon />
       <span class="hidden lg:flex">20.5k</span>
-    </button>
+    </a>
     <button id="drawerToggle" class="ml-6 btn btn-circle btn-subtle-neutral flex xl:hidden">
       <MenuIcon />
     </button>

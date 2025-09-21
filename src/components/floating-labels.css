@@ -64,13 +64,13 @@
       &:focus,
       &:not(:placeholder-shown) {
         & ~ .form-label {
-          @apply translate-x-[10px] translate-y-[-12px] scale-[0.85];
+          @apply translate-x-[10px] translate-y-[-10px] scale-[0.85];
         }
         &.form-control-sm ~ .form-label {
-          @apply translate-x-[7px] translate-y-[-12px] scale-[0.85];
+          @apply translate-x-[7px] translate-y-[-10px] scale-[0.85];
         }
         &.form-control-lg ~ .form-label {
-          @apply translate-x-[10px] translate-y-[-14px] scale-[0.75];
+          @apply translate-x-[10px] translate-y-[-12px] scale-[0.75];
         }
       }
     }
@@ -141,13 +141,13 @@
       &:focus,
       &:not(:placeholder-shown) {
         & + .form-label {
-          @apply translate-x-[12px] translate-y-[-12px] scale-[0.85];
+          @apply translate-x-[12px] translate-y-[-10px] scale-[0.85];
         }
         &.form-select-sm + .form-label {
-          @apply translate-x-[6px] translate-y-[-12px] scale-[0.85];
+          @apply translate-x-[6px] translate-y-[-10px] scale-[0.85];
         }
         &.form-select-lg + .form-label {
-          @apply translate-x-[9px] translate-y-[-14px] scale-[0.75];
+          @apply translate-x-[9px] translate-y-[-12px] scale-[0.75];
         }
       }
     }

@@ -1,0 +1,48 @@
+---
+title: Component Overview
+description: Hummingbird provides various UI components to improve your web applications, and we will keep refining the experience.
+toc: true
+---
+
+import { general, dataDisplay, dataEntry, feedback, navigation } from 'apps/data/components';
+import ComponentCard from '@components/sections/components/ComponentCard.astro';
+
+## General
+
+<div class="flex-2 mx-auto place-items-center grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 max-w-70 sm:max-w-full gap-6">
+{general.map((item) => (
+  <ComponentCard component={item} />
+))}
+</div>
+
+## Data Display
+
+<div class="flex-2 mx-auto place-items-center grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 max-w-70 sm:max-w-full gap-6">
+{dataDisplay.map((item) => (
+  <ComponentCard component={item} />
+))}
+</div>
+
+## Data Entry
+
+<div class="flex-2 mx-auto place-items-center grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 max-w-70 sm:max-w-full gap-6">
+{dataEntry.map((item) => (
+  <ComponentCard component={item} />
+))}
+</div>
+
+## Feedback
+
+<div class="flex-2 mx-auto place-items-center grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 max-w-70 sm:max-w-full gap-6">
+{feedback.map((item) => (
+  <ComponentCard component={item} />
+))}
+</div>
+
+## Navigation
+
+<div class="flex-2 mx-auto place-items-center grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 max-w-70 sm:max-w-full gap-6">
+{navigation.map((item) => (
+  <ComponentCard component={item} />
+))}
+</div>

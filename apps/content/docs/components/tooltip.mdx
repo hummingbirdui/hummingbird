@@ -2,27 +2,370 @@
 title: Tooltip
 description: Hover over the buttons below to see the four tooltips directions top, right, bottom, and left. Directions are mirrored when using Bootstrap in RTL.
 toc: true
+classNames:
+  component:
+    - class: tooltip
+      desc: Tooltip
+  inner:
+    - class: tooltip-arrow
+      desc: Tooltip arrow
+    - class: tooltip-inner
+      desc: Tooltip text box
 ---
 
-##### Basic Example
+## Basic Example
+
+Tooltips need to be initialized before they can be used. You can initialize them by selecting elements with the `data-bs-toggle` attribute, like this:
 
 <Example class='text-center' code={`<button type="button" class="btn btn-subtle-neutral" data-bs-toggle="tooltip" data-bs-title="Tooltip">Tooltip</button>`} />
 
-##### Directions
+## Directions
+
+Hover over the buttons below to see tooltips in all four directions: top, right, bottom, and left. Directions are mirrored in RTL layouts.
 
 <Example class='flex flex-wrap justify-center gap-2' code={`<button type="button" class="btn btn-subtle-neutral" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Tooltip on top">Tooltip on top</button>
   <button type="button" class="btn btn-subtle-neutral" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Tooltip on right">Tooltip on right</button>
   <button type="button" class="btn btn-subtle-neutral" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Tooltip on bottom">Tooltip on bottom</button>
   <button type="button" class="btn btn-subtle-neutral" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Tooltip on left">Tooltip on left</button>`} />
 
-##### Custom Tooltip
+## Custom Tooltip
+
+Add a custom tooltip using `data-bs-custom-class="custom-tooltip"` for custom styling.
 
 <Example class='text-center' code={`<button type="button" class="btn btn-subtle-neutral" data-bs-toggle="tooltip" data-bs-title="Custom Tooltip" data-bs-custom-class="custom-tooltip">Custom Tooltip</button>`} />
 
-##### Disabled elements
+## Disabled elements
 
 Elements with the disabled attribute aren’t interactive, meaning users cannot focus, hover, or click them to trigger a tooltip (or popover). As a workaround, you’ll want to trigger the tooltip from a wrapper `<div>` or `<span>`, ideally made keyboard-focusable using tabindex="0".
 
 <Example class='text-center' code={`<span class='inline-block' tabindex="0" data-bs-toggle="tooltip" data-bs-title="Disabled tooltip">
     <button class="btn btn-primary" type="button" disabled >Disabled button</button>
   </span>`} />
+
+
+## Usage
+
+The tooltip plugin dynamically generates content and markup. By default, tooltips are positioned after their trigger element. A tooltip can be triggered via JavaScript as follows:
+
+<Example showPreview={false} lang='js' code={`const exampleEl = document.getElementById('example')
+const tooltip = new bootstrap.Tooltip(exampleEl, options)
+`} />
+
+<div class="alert alert-subtle-warning items-start [&_div]:mb-0 [&_pre]:!bg-warning/10 [&_pre]:border [&_pre]:border-warning/30" role="alert">
+  <span class="icon-[material-symbols--info-outline] alert-icon"></span>
+  <div class="-mt-1 flex flex-col gap-2">
+    <span>Tooltips automatically attempt to adjust their positions when a parent container has `overflow: auto` or `overflow: scroll`, while still maintaining the original placement's positioning. The boundary option (used for the flip modifier via the `popperConfig` option) can be set to any HTMLElement to override the default value, `'clippingParents'`, such as `document.body`:</span>
+    <Example showPreview={false} lang='js' code={`const tooltip = new bootstrap.Tooltip('#example', {
+    boundary: document.body // or document.querySelector('#boundary')
+  })`} />
+  </div>
+</div>
+
+### Markup
+
+The essential markup for a tooltip includes only a `data` attribute and a `title` attribute on the HTML element intended to have a tooltip. The generated markup for a tooltip is relatively simple, though it requires a position (by default, set to `top` by the plugin).
+
+<div class="alert alert-subtle-warning items-start mb-6" role="alert">
+  <span class="icon-[material-symbols--info-outline] alert-icon"></span>
+  <span class="-mt-1"><b>To ensure tooltips are accessible to keyboard and assistive technology users</b>, they should only be added to HTML elements that are inherently keyboard-focusable and interactive (such as links or form controls). While other HTML elements can be made focusable by adding `tabindex="0"`, this can create disruptive and confusing tab stops on non-interactive elements for keyboard users. Most assistive technologies currently do not announce tooltips in such situations. Furthermore, avoid relying solely on hover as the trigger for tooltips, as this will make them inaccessible to keyboard users.</span>
+</div>
+
+<Example showPreview={false} code={`<!-- HTML to write -->
+  <a href="#" data-bs-toggle="tooltip" data-bs-title="Some tooltip text!">Hover over me</a>
+
+  <!-- Generated markup by the plugin -->
+  <div class="tooltip bs-tooltip-auto" role="tooltip">
+    <div class="tooltip-arrow"></div>
+    <div class="tooltip-inner">
+      Some tooltip text!
+    </div>
+  </div>`} />
+
+### Disabled Elements
+
+Elements with the disabled attribute are not interactive, meaning users cannot focus, hover over, or click them to trigger a tooltip (or popover). As a workaround, the tooltip should be triggered from a wrapper `<div>` or `<span>`, ideally made keyboard-focusable using `tabindex="0"`.
+
+<Example showPreview={false} code={`<span class="d-inline-block" tabindex="0" data-bs-toggle="tooltip" data-bs-title="Disabled tooltip">
+    <button class="btn btn-primary" type="button" disabled>Disabled button</button>
+</span>`} />
+
+## Options
+
+Options can be provided through data attributes or via JavaScript. When using `data-bs-attributes`, append the option's name (e.g., `data-bs-animation="{value}"`). It is crucial to convert "camelCase" option names to "kebab-case" when passing options via data attributes. For instance, use `data-bs-custom-class="beautifier"` rather than `data-bs-customClass="beautifier"`.
+
+As of Bootstrap 5.2.0, all components support an **experimental** data-bs-config data attribute. This attribute can contain simple component configurations as a JSON string. If an element has both `data-bs-config='{"delay":0, "title":123}'` and `data-bs-title="456"` attributes, the final title value will be 456, as separate data attributes override values provided within `data-bs-config`. Additionally, existing data attributes can also house JSON values, such as `data-bs-delay='{"show":0,"hide":150}'`.
+
+The ultimate configuration object results from merging `data-bs-config`, individual `data-bs-attributes`, and JavaScript objects, where the latest provided key-value pair takes precedence over others.
+
+<div class="alert alert-subtle-warning items-start mb-3" role="alert">
+  <span class="icon-[material-symbols--info-outline] alert-icon"></span>
+  <span class="-mt-1">Note that for security reasons, the `sanitize`, `sanitizeFn`, and `allowList` options cannot be supplied using data attributes.</span>
+</div>
+
+<HbTable>
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Type</th>
+      <th scope="col">Default</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td scope="row">`allowList`</td>
+      <td scope="row">object</td>
+      <td scope="row"><a href="#">Default value</a></td>
+      <td scope="row">An object specifying allowed tags and attributes. Any not explicitly allowed will be removed by the <a href="#">content sanitizer</a>. <div class="alert alert-subtle-warning items-start mt-3" role="alert"><span class="icon-[material-symbols--info-outline] alert-icon"></span>
+        <span class="-mt-1">**Exercise caution when adding to this list.** Refer to <a href="https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html">OWASP's Cross Site Scripting Prevention Cheat Sheet</a> for more information.</span></div></td>
+    </tr>
+    <tr>
+      <td scope="row">`animation`</td>
+      <td scope="row">boolean</td>
+      <td scope="row">`true`</td>
+      <td scope="row">Applies a CSS fade transition to the tooltip.</td>
+    </tr>
+    <tr>
+      <td scope="row">`boundary`</td>
+      <td scope="row">string | element</td>
+      <td scope="row">`'clippingParents'`</td>
+      <td scope="row">Defines the overflow constraint boundary of the tooltip (applies only to Popper's preventOverflow modifier). By default, it is `'clippingParents'` and can accept an HTMLElement reference (via JavaScript only). For more information, refer to Popper's <a href="https://popper.js.org/docs/v2/utils/detect-overflow/#boundary">detectOverflow documentation</a>.</td>
+    </tr>
+
+    <tr>
+      <td scope="row">`container`</td>
+      <td scope="row">string | element | false</td>
+      <td scope="row">`false`</td>
+      <td scope="row">Appends the tooltip to a specific element. Example: `container: 'body'`. This option is particularly useful for positioning the tooltip in the document flow near the triggering element, which prevents it from drifting away during a window resize.</td>
+    </tr>
+    <tr>
+      <td scope="row">`customClass`</td>
+      <td scope="row">string | function</td>
+      <td scope="row">`''`</td>
+      <td scope="row">Adds classes to the tooltip when it is shown. These classes are added in addition to any specified in the template. For multiple classes, separate them with spaces: `'class-1 class-2'`. A function returning a single string of additional class names can also be provided.</td>
+    </tr>
+    <tr>
+      <td scope="row">`delay`</td>
+      <td scope="row">number | object</td>
+      <td scope="row">`0`</td>
+      <td scope="row">Specifies the delay (in ms) for showing and hiding the tooltip. This does not apply to manual trigger types. If a number is provided, the delay is applied to both hide and show. Object structure: `delay: { "show": 500, "hide": 100 }`</td>
+    </tr>
+
+    <tr>
+      <td scope="row">`fallbackPlacements`</td>
+      <td scope="row">array</td>
+      <td scope="row">`['top', 'right', 'bottom', 'left']`</td>
+      <td scope="row">Defines fallback placements by providing a list of placements in an array (in order of preference). For more information, refer to Popper's <a href="https://popper.js.org/docs/v2/modifiers/flip/#fallbackplacements">behavior documentation</a>.</td>
+    </tr>
+    <tr>
+      <td scope="row">`html`</td>
+      <td scope="row">boolean</td>
+      <td scope="row">`false`</td>
+      <td scope="row">Allows HTML content within the tooltip. If true, HTML tags in the tooltip's `title` will be rendered. If false, the `innerText` property will be used to insert content into the DOM. For user-generated input, text is preferred to <a href="https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html">prevent XSS attacks</a>.</td>
+    </tr>
+    <tr>
+      <td scope="row">`offset`</td>
+      <td scope="row">array | string | function</td>
+      <td scope="row">`[0, 6]`</td>
+      <td scope="row">Determines the offset of the tooltip relative to its target. A string with comma-separated values, such as `data-bs-offset="10,20"`, can be passed in data attributes. When a function is used to define the offset, it receives an object (containing the Popper placement, reference, and Popper rects) as its first argument, and the triggering element's DOM node as the second. The function must return an array with two numbers: <a href="https://popper.js.org/docs/v2/modifiers/offset/#skidding-1">skidding</a> and <a href="https://popper.js.org/docs/v2/modifiers/offset/#distance-1">distance</a>. For more information, refer to Popper's <a href="https://popper.js.org/docs/v2/modifiers/offset/#options">offset documentation</a>.</td>
+    </tr>
+
+    <tr>
+      <td scope="row">`placement`</td>
+      <td scope="row">string | function</td>
+      <td scope="row">`'top'`</td>
+      <td scope="row">Specifies how to position the tooltip: auto, top, bottom, left, right. When `auto` is specified, the tooltip dynamically reorients itself. When a function is used to determine placement, it is called with the tooltip DOM node as its first argument and the triggering element DOM node as its second. The `this` context is set to the tooltip instance.</td>
+    </tr>
+    <tr>
+      <td scope="row">`popperConfig`</td>
+      <td scope="row">null | object | function</td>
+      <td scope="row">`null`</td>
+      <td scope="row">Allows modification of Bootstrap's default <a href="https://popper.js.org/docs/v2/constructors/#options">Popper configuration</a>. Refer to Popper's configuration documentation. When a function is used to create the Popper configuration, it is called with an object containing Bootstrap's default Popper configuration. This facilitates using and merging the default configuration with custom settings. The function must return a configuration object for Popper.</td>
+    </tr>
+    <tr>
+      <td scope="row">`sanitize`</td>
+      <td scope="row">boolean</td>
+      <td scope="row">`true`</td>
+      <td scope="row">Enables content sanitization. If true, the `template`, `content`, and `title` options will be sanitized. <a href="#">content sanitizer</a>. <div class="alert alert-subtle-warning items-start mt-3" role="alert"><span class="icon-[material-symbols--info-outline] alert-icon"></span>
+        <span class="-mt-1">**Exercise caution when disabling content sanitization.** Refer to <a href="https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html">OWASP's Cross Site Scripting Prevention Cheat Sheet</a> for more information. Vulnerabilities caused solely by disabling content sanitization are not considered within scope for Bootstrap’s security model.</span></div></td>
+    </tr>
+
+    <tr>
+      <td scope="row">`sanitizeFn`</td>
+      <td scope="row">null | function</td>
+      <td scope="row">`null`</td>
+      <td scope="row">Provides an alternative <a href="https://getbootstrap.com/docs/5.3/getting-started/javascript/#sanitizer">content sanitization</a> function. This can be useful if a dedicated library is preferred for sanitization.</td>
+    </tr>
+    <tr>
+      <td scope="row">`selector`</td>
+      <td scope="row">string | false</td>
+      <td scope="row">`false`</td>
+      <td scope="row">If a selector is provided, tooltip objects will be delegated to the specified targets. In practice, this applies tooltips to dynamically added DOM elements (`jQuery.on` support). See <a href="#">this issue</a> and <a href="#">an informative example</a>. **Note:** The title attribute must not be used as a selector.</td>
+    </tr>
+    <tr>
+      <td scope="row">`template`</td>
+      <td scope="row">string</td>
+      <td scope="row">
+        `'<div class="tooltip" role="tooltip"><div class="tooltip-arrow"></div><div class="tooltip-inner"></div></div>'`
+      </td>
+      <td scope="row">The base HTML used when creating the tooltip. The tooltip's `title` will be injected into the `.tooltip-inner`. The `.tooltip-arrow` will become the tooltip's arrow. The outermost wrapper element should have the `.tooltip` class and `role="tooltip"`.</td>
+    </tr>
+
+    <tr>
+      <td scope="row">`title`</td>
+      <td scope="row">string | element | function</td>
+      <td scope="row">`''`</td>
+      <td scope="row">The tooltip title. If a function is provided, it will be called with its `this` reference set to the element the popover is attached to.</td>
+    </tr>
+    <tr>
+      <td scope="row">`trigger`</td>
+      <td scope="row">string</td>
+      <td scope="row">`'hover focus'`</td>
+      <td scope="row">Specifies how the tooltip is triggered: click, hover, focus, manual. Multiple triggers can be passed, separated by a space. `'manual'` indicates the tooltip will be triggered programmatically via the `.tooltip('show')`, `.tooltip('hide')`, and `.tooltip('toggle')` methods; this value cannot be combined with any other trigger. `'hover'` on its own will result in tooltips that cannot be triggered via the keyboard and should only be used if alternative methods for conveying the same information for keyboard users are present.</td>
+    </tr>
+  </tbody>
+</HbTable>
+
+
+
+<div class="alert alert-subtle-info items-start mb-6" role="alert">
+  <span class="icon-[material-symbols--info-outline] alert-icon text-xl"></span>
+  <div class="-mt-1">
+    <h5 class="font-medium">Data Attributes for Individual Tooltips</h5>
+    <span>Options for individual tooltips can also be specified using data attributes, as previously explained.</span>
+  </div>
+</div>
+
+using function with `popperConfig`:
+
+<Example showPreview={false} lang='js'
+  code={`const tooltip = new hummingbird.Tooltip(element, {
+    popperConfig(defaultBsPopperConfig) {
+      // const newPopperConfig = {...}
+      // use defaultBsPopperConfig if needed...
+      // return newPopperConfig
+    }
+})`} 
+/>
+
+## Methods
+
+<div class="alert alert-subtle-danger items-start mb-6" role="alert">
+  <span class="icon-[material-symbols--error-outline-rounded] alert-icon text-xl"></span>
+  <span class="-mt-1">**All API methods are asynchronous and initiate a transition.** They return to the caller immediately after the transition begins but before it concludes. Furthermore, a method call on a component that is already transitioning will be disregarded. More information is available in our <a href="#">JavaScript documentation</a>.</span>
+</div>
+
+<HbTable>
+  <thead>
+    <tr>
+      <th scope="col">Method</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">`disable`</th>
+      <td>Removes the ability for an element's tooltip to be shown. The tooltip will only be able to be shown again if it is re-enabled.</td>
+    </tr>
+    <tr>
+      <th scope="row">`dispose`</th>
+      <td>Hides and destroys an element's tooltip (removing stored data on the DOM element). Tooltips created using delegation (via <a href="#options">the selector option</a>) cannot be individually destroyed on descendant trigger elements.</td>
+    </tr>
+    <tr>
+      <th scope="row">`enable`</th>
+      <td>Restores an element's tooltip with the ability to be shown. <b>Tooltips are enabled by default.</b></td>
+    </tr>
+    <tr>
+      <th scope="row">`getInstance`</th>
+      <td>A static method allowing retrieval of the tooltip instance associated with a DOM element.</td>
+    </tr>
+    <tr>
+      <th scope="row">`getOrCreateInstance`</th>
+      <td>A static method that allows retrieval of the tooltip instance associated with a DOM element, or creates a new one if it has not been initialized.</td>
+    </tr>
+    <tr>
+      <th scope="row">`hide`</th>
+      <td>Conceals an element's tooltip. <b>It returns to the caller before the tooltip has actually been hidden</b> (i.e., before the `hidden.bs.tooltip` event occurs). This is considered a "manual" triggering of the tooltip.</td>
+    </tr>
+    <tr>
+      <th scope="row">`setContent`</th>
+      <td>Provides a method to modify the tooltip's content after its initialization.</td>
+    </tr>
+    <tr>
+      <th scope="row">`show`</th>
+      <td>Reveals an element's tooltip. <b>It returns to the caller before the tooltip has actually been shown</b> (i.e., before the `shown.bs.tooltip` event occurs). This is considered a "manual" triggering of the tooltip. Tooltips with zero-length titles are never displayed.</td>
+    </tr>
+    <tr>
+      <th scope="row">`toggle`</th>
+      <td> Toggles an element's tooltip between shown and hidden states. <b>It returns to the caller before the tooltip has actually been shown or hidden</b> (i.e., before the `shown.bs.tooltip` or `hidden.bs.tooltip` events occur). This is considered a "manual" triggering of the tooltip.</td>
+    </tr>
+     <tr>
+      <th scope="row">`toggleEnabled`</th>
+      <td>Toggles the ability for an element's tooltip to be shown or hidden.</td>
+    </tr>
+    <tr>
+      <th scope="row">`update`</th>
+      <td>Updates the position of an element's tooltip.</td>
+    </tr>
+  </tbody>
+</HbTable>
+
+<Example showPreview={false} lang='js'
+  code={`const tooltip = bootstrap.Tooltip.getInstance('#example') // Returns a Bootstrap tooltip instance
+
+  // setContent example
+  tooltip.setContent({ '.tooltip-inner': 'another title' })`} 
+/>
+
+<div class="alert alert-subtle-info items-start" role="alert">
+  <span class="icon-[material-symbols--info-outline] alert-icon text-xl"></span>
+  <span class="-mt-1">The `setContent` method accepts an `object` argument, where each property-key is a valid `string` selector within the tooltip template, and each related property-value can be a `string`, `element`, `function`, or `null`.</span>
+</div>
+
+## Events
+
+<HbTable>
+  <thead>
+    <tr>
+      <th scope="col">Event Type</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">`hide.bs.tooltip`</th>
+      <td>This event fires immediately when the `hide` instance method has been called.</td>
+    </tr>
+    <tr>
+      <th scope="row">`hidden.bs.tooltip`</th>
+      <td> This event fires when the tooltip has finished being hidden from the user (waiting for CSS transitions to complete).</td>
+    </tr>
+    <tr>
+      <th scope="row">`inserted.bs.tooltip`</th>
+      <td>This event fires after the `show.bs.tooltip` event, once the tooltip template has been added to the DOM.</td>
+    </tr>
+    <tr>
+      <th scope="row">`show.bs.tooltip`</th>
+      <td>This event fires immediately when the `show` instance method is called.</td>
+    </tr>
+    <tr>
+      <th scope="row">`shown.bs.tooltip`</th>
+      <td>This event fires when the tooltip has been made visible to the user (waiting for CSS transitions to complete).</td>
+    </tr>
+  </tbody>
+</HbTable>
+
+Example event listener:
+
+<Example showPreview={false} lang='js'
+  code={`const myTooltipEl = document.getElementById('myTooltip')
+  const tooltip = bootstrap.Tooltip.getOrCreateInstance(myTooltipEl)
+
+  myTooltipEl.addEventListener('hidden.bs.tooltip', () => {
+    // do something...
+  })
+
+  tooltip.hide()`}
+/>
+
+
