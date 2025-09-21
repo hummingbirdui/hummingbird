@@ -40,6 +40,10 @@ const sitemap: Sitemap[] = [
         path: '/docs/getting-started/next',
       },
       {
+        name: 'Laravel',
+        path: '/docs/getting-started/laravel',
+      },
+      {
         name: 'Vue',
         path: '/docs/getting-started/vue',
       },
