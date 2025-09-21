@@ -32,7 +32,7 @@ export const footerLinks: FooterLink[] = [
   {
     title: 'Legal',
     links: [
-      { label: 'License (EULA)', url: '#' },
+      { label: 'License', url: '#' },
       { label: 'Privacy policy', url: '#' },
       { label: 'Terms & conditions', url: '#' },
       { label: 'Brand guideline', url: '#' },

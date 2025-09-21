@@ -2,9 +2,35 @@
 title: Navs and tabs
 description: Documentation and examples for how to use Bootstrap’s included navigation components.
 toc: true
+classNames:
+  component:
+    - class: nav
+      desc: Nav container
+  modifier:
+    - class: nav-underline
+      desc: Underlined style
+  inner:
+    - class: nav-item
+      desc: Nav item
+    - class: nav-link
+      desc: Nav link
+    - class: tab-content
+      desc: Tab content
+    - class: tab-pane
+      desc: Tab panel
+  color:
+    - class: nav-primary
+      desc: Primary color
 ---
 
 ## Examples
+
+Hummingbird’s navigation provides general markup and styles via the base `.nav` class, including active and disabled states. Built with flexbox, it offers a solid foundation, link padding for larger hit areas, and basic disabled styling.
+
+<div class="mb-5 alert alert-subtle-info items-start" role="alert">
+  <span class="icon-[material-symbols--info-outline] alert-icon"></span>
+  <span class="-mt-1">The base `.nav` component does not include an `.active` state. The examples show it for demonstration only. To indicate the active item for assistive technologies, use the `aria-current` attribute (`page` value for the current page or `true` for the current item in a set).</span>
+</div>
 
 <Example code={`<ul class="nav nav-underline">
     <li class="nav-item">
@@ -22,6 +48,8 @@ toc: true
   </ul>`} />
 
 ## Tabs
+
+Add the `.nav-tabs` class to the basic `.nav` to create a tabbed interface. Use these tabs with <a href="#javascript-behavior">JavaScript plugin</a> to build tabbable regions.
 
 <Example code={`<ul class="nav nav-tabs">
     <li class="nav-item">
@@ -70,6 +98,8 @@ toc: true
   </ul>`} />
 
 ## JavaScript behavior
+
+Use the tab JavaScript plugin either individually or via `bootstrap.js` to extend tabs and pills into tabbable panes of local content.
 
 <Example code={`<ul class="nav nav-underline mb-4" id="myTab" role="tablist">
     <li class="nav-item" role="presentation">
@@ -243,7 +273,10 @@ To incorporate a `fade-in` effect for tabs, add `.fade` to each `.tab-pane`. The
 
 ## Methods
 
-All API methods are asynchronous and initiate a transition. They return to the caller immediately after the transition begins but before it concludes. Furthermore, a method call on a component that is already transitioning will be disregarded. More information is available in our JavaScript documentation.
+<div class="alert alert-subtle-danger items-start mb-6" role="alert">
+  <span class="icon-[material-symbols--error-outline-rounded] alert-icon"></span>
+  <span class="-mt-1">**All API methods are asynchronous and initiate a transition.** They return to the caller immediately after the transition begins but before it concludes. Furthermore, a method call on a component that is already transitioning will be disregarded. More information is available in our <a href="https://getbootstrap.com/docs/5.3/getting-started/javascript/#asynchronous-functions-and-transitions">JavaScript documentation.</a></span>
+</div>
 
 These methods enable content as a tab element.
 
@@ -275,7 +308,7 @@ A tab instance can be created with the constructor, as demonstrated:
     </tr>
     <tr>
       <th scope="row">`show`</th>
-      <td>Selects the specified tab and displays its associated pane. Any other tab that was previously selected becomes unselected, and its associated pane is hidden. It returns to the caller before the tab pane has actually been shown (i.e., before the `shown.bs.tab` event occurs).</td>
+      <td>Selects the specified tab and displays its associated pane. Any other tab that was previously selected becomes unselected, and its associated pane is hidden. It **returns to the caller before the tab pane has actually been shown** (i.e., before the `shown.bs.tab` event occurs).</td>
     </tr>
   </tbody>
 </HbTable>

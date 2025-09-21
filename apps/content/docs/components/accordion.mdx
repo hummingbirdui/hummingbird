@@ -162,15 +162,41 @@ Options can be configured either through data attributes or JavaScript. When usi
 
 As of Bootstrap 5.2.0, all components support an experimental `data-bs-config` data attribute, which can contain component configuration as a JSON string. When an element possesses both `data-bs-config='{"delay":0, "title":123}'` and `data-bs-title="456"`, the final title value will be 456, as individual data attributes override values provided in `data-bs-config`. Furthermore, existing `data-bs-attributes` can also house JSON values, such as `data-bs-delay='{"show":0,"hide":150}'`.
 
-The ultimate configuration object is the result of merging `data-bs-config`, individual `data-bs-attributes`, and JavaScript objects, with the latest provided key-value pair taking precedence.
+The ultimate configuration object is the result of merging `data-bs-config`, individual `data-bs-attributes`, and `JavaScript objects` with the latest provided key-value pair taking precedence.
 
-- **parent** (selector, DOM element, default: null): If a parent is specified, all other collapsible elements within that parent will close when the current collapsible item is shown. This behavior is similar to traditional accordions and depends on the card class. This attribute must be set on the target collapsible area.
-- **toggle** (boolean, default: true): This option controls whether the collapsible element is toggled (shown or hidden) upon its initialization.
+<HbTable>
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Type</th>
+      <th scope="col">Default</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td scope="row">`parent`</td>
+      <td scope="row">selector, DOM element</td>
+      <td scope="row">`null`</td>
+      <td scope="row">If a parent is specified, all other collapsible elements within that parent will close when the current collapsible item is shown. This behavior is similar to traditional accordions and depends on the `card` class. This attribute must be set on the target collapsible area.</td>
+    </tr>
+    <tr>
+      <td scope="row">`toggle`</td>
+      <td scope="row">boolean</td>
+      <td scope="row">`true`</td>
+      <td scope="row">This option controls whether the collapsible element is toggled (shown or hidden) upon its initialization.</td>
+    </tr>
+  </tbody>
+</HbTable>
 
 
 ### Methods
 
-All API methods are asynchronous and initiate a transition. They return to the caller immediately after the transition begins, but before it concludes. Additionally, a method call on a component that is already transitioning will be disregarded. More information is available in our JavaScript documentation.
+<div class="alert alert-subtle-danger items-start mb-6" role="alert">
+  <span class="icon-[material-symbols--error-outline-rounded] alert-icon"></span>
+  <span class="-mt-1">**All API methods are asynchronous and initiate a transition.** They return to the caller immediately after the transition begins, but before it concludes. Additionally, a method call on a component that is already transitioning will be disregarded. More information is available in our
+  <a href="https://getbootstrap.com/docs/5.3/getting-started/javascript/#asynchronous-functions-and-transitions">JavaScript documentation</a></span>
+</div>
 
 These methods enable content as a collapsible element and accept an optional options object.
 
@@ -204,15 +230,15 @@ A collapse instance can be created with the constructor, as demonstrated:
     </tr>
     <tr>
       <th scope="row">`hide`</th>
-      <td>Conceals a collapsible element. It returns to the caller before the collapsible element has completed its hiding animation (e.g., before the `hidden.bs.collapse` event occurs).</td>
+      <td>Conceals a collapsible element. It **returns to the caller before the collapsible element has completed its hiding animation** (e.g., before the `hidden.bs.collapse` event occurs).</td>
     </tr>
     <tr>
       <th scope="row">`show`</th>
-      <td>Displays a collapsible element. It returns to the caller before the collapsible element has completed its showing animation (e.g., before the `shown.bs.collapse` event occurs).</td>
+      <td>Displays a collapsible element. It **returns to the caller before the collapsible element has completed its showing animation** (e.g., before the `shown.bs.collapse` event occurs).</td>
     </tr>
     <tr>
       <th scope="row">`toggle`</th>
-      <td>Toggles a collapsible element between its shown and hidden states. It returns to the caller before the collapsible element has completed its animation (i.e., before the `shown.bs.collapse` or `hidden.bs.collapse` events occur).</td>
+      <td>Toggles a collapsible element between its shown and hidden states. It **returns to the caller before the collapsible element has completed its animation** (i.e., before the `shown.bs.collapse` or `hidden.bs.collapse` events occur).</td>
     </tr>
   </tbody>
 </HbTable>
@@ -231,7 +257,7 @@ Hummingbird's collapse class exposes several events, providing hooks into its co
   <tbody>
     <tr>
       <th scope="row">`hide.bs.collapse`</th>
-      <td>This event fires immediately when the hide method is called.</td>
+      <td>This event fires immediately when the `hide` method is called.</td>
     </tr>
     <tr>
       <th scope="row">`hidden.bs.collapse`</th>
@@ -239,7 +265,7 @@ Hummingbird's collapse class exposes several events, providing hooks into its co
     </tr>
     <tr>
       <th scope="row">`show.bs.collapse`</th>
-      <td>This event fires immediately when the show instance method is called.</td>
+      <td>This event fires immediately when the `show` instance method is called.</td>
     </tr>
     <tr>
       <th scope="row">`shown.bs.collapse`</th>

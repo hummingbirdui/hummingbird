@@ -76,9 +76,7 @@
 }
 
 .astro-code {
-  @layer base {
-    @apply overflow-hidden bg-muted! text-sm p-4 rounded-lg;
-  }
+  @apply overflow-hidden bg-muted! text-sm p-4 rounded-lg;
 }
 
 .custom-tooltip {
