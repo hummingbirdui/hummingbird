@@ -141,7 +141,6 @@ const original: string = normalizeCode(rawCode);
               if (copyBtnText) copyBtnText.textContent = 'Copy Code';
             }, 1600);
           } catch (err) {
-            console.error('Clipboard copy failed:', err);
             if (copyBtnText) copyBtnText.textContent = 'Copy failed';
           }
         });

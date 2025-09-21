@@ -148,9 +148,6 @@
     @apply content-['K'] text-muted text-xs font-sans! relative mt-1;
   }
 }
-.DocSearch-Container {
-  @apply backdrop-blur-xs;
-}
 .DocSearch-Modal {
   @apply rounded-lg!;
 }

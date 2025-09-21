@@ -4,11 +4,6 @@ description: A slideshow component for cycling through elements—images or slid
 toc: true
 ---
 
-import { Image } from "astro:assets";
-import img1 from "@assets/images/carousel-1.png";
-import img2 from "@assets/images/carousel-2.png";
-import img3 from "@assets/images/carousel-3.png";
-
 ## How It Works
 - The carousel functions as a slideshow, designed for cycling through various content, whether images, text, or custom markup. Its foundation involves CSS 3D transforms and a small amount of JavaScript. It also incorporates support for previous/next navigation controls and indicators.
 - For optimal performance, carousels require manual initialization using the carousel constructor method. Without this initialization, certain event listeners—specifically those needed for touch and swipe support—will not be registered until a user explicitly activates a control or an indicator.
@@ -22,13 +17,13 @@ import img3 from "@assets/images/carousel-3.png";
 <Example code={`<div id="carouselExample" class="carousel slide">
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="/images/carousel-1.png" class="block w-full" alt="slide-1" />
+        <div class="bg-active/50 h-100 flex items-center justify-center text-4xl text-muted">Slide One</div>
       </div>
       <div class="carousel-item">
-        <img src="/images/carousel-2.png" class="block w-full" alt="slide-2" />
+        <div class="bg-active/60 h-100 flex items-center justify-center text-4xl text-muted">Slide Two</div>
       </div>
       <div class="carousel-item">
-        <img src="/images/carousel-3.png" class="block w-full" alt="slide-3" />
+        <div class="bg-active/40 h-100 flex items-center justify-center text-4xl text-muted">Slide Three</div>
       </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
@@ -51,13 +46,13 @@ import img3 from "@assets/images/carousel-3.png";
     </div>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="/images/carousel-1.png" class="block w-full" alt="slide-1" />
+        <div class="bg-active/50 h-100 flex items-center justify-center text-4xl text-muted">Slide One</div>
       </div>
       <div class="carousel-item">
-        <img src="/images/carousel-2.png" class="block w-full" alt="slide-2" />
+        <div class="bg-active/60 h-100 flex items-center justify-center text-4xl text-muted">Slide Two</div>
       </div>
       <div class="carousel-item">
-        <img src="/images/carousel-3.png" class="block w-full" alt="slide-3" />
+        <div class="bg-active/40 h-100 flex items-center justify-center text-4xl text-muted">Slide Three</div>
       </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -80,21 +75,21 @@ import img3 from "@assets/images/carousel-3.png";
     </div>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="/images/carousel-1.png" class="block w-full" alt="slide-1" />
+        <div class="bg-active/50 h-100 flex items-center justify-center text-4xl text-muted">Slide One</div>
         <div class="carousel-caption hidden md:block">
           <h5 class="text-lg font-semibold mb-0">First slide label</h5>
           <p class="mb-0">Some representative placeholder content for the first slide.</p>
         </div>
       </div>
       <div class="carousel-item">
-        <img src="/images/carousel-2.png" class="block w-full" alt="slide-2" />
+        <div class="bg-active/60 h-100 flex items-center justify-center text-4xl text-muted">Slide Two</div>
         <div class="carousel-caption hidden md:block">
           <h5 class="text-lg font-semibold mb-0">Second slide label</h5>
           <p class="mb-0">Some representative placeholder content for the second slide.</p>
         </div>
       </div>
       <div class="carousel-item">
-        <img src="/images/carousel-3.png" class="block w-full" alt="slide-3" />
+        <div class="bg-active/40 h-100 flex items-center justify-center text-4xl text-muted">Slide Three</div>
         <div class="carousel-caption hidden md:block">
           <h5 class="text-lg font-semibold mb-0">Third slide label</h5>
           <p class="mb-0">Some representative placeholder content for the third slide.</p>
@@ -116,13 +111,13 @@ import img3 from "@assets/images/carousel-3.png";
 <Example code={`<div id="carouselExampleFade" class="carousel slide carousel-fade">
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="/images/carousel-1.png" class="block w-full" alt="slide-1" />
+        <div class="bg-active/50 h-100 flex items-center justify-center text-4xl text-muted">Slide One</div>
       </div>
       <div class="carousel-item">
-        <img src="/images/carousel-2.png" class="block w-full" alt="slide-2" />
+        <div class="bg-active/60 h-100 flex items-center justify-center text-4xl text-muted">Slide Two</div>
       </div>
       <div class="carousel-item">
-        <img src="/images/carousel-3.png" class="block w-full" alt="slide-3" />
+        <div class="bg-active/40 h-100 flex items-center justify-center text-4xl text-muted">Slide Three</div>
       </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
@@ -140,13 +135,13 @@ import img3 from "@assets/images/carousel-3.png";
 <Example code={`<div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="/images/carousel-1.png" class="block w-full" alt="slide-1" />
+        <div class="bg-active/50 h-100 flex items-center justify-center text-4xl text-muted">Slide One</div>
       </div>
       <div class="carousel-item">
-        <img src="/images/carousel-2.png" class="block w-full" alt="slide-2" />
+        <div class="bg-active/60 h-100 flex items-center justify-center text-4xl text-muted">Slide Two</div>
       </div>
       <div class="carousel-item">
-        <img src="/images/carousel-3.png" class="block w-full" alt="slide-3" />
+        <div class="bg-active/40 h-100 flex items-center justify-center text-4xl text-muted">Slide Three</div>
       </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
@@ -164,13 +159,13 @@ When the `ride` option is set to `true`, rather than `carousel`, the carousel wo
 <Example code={`<div id="carouselExampleRide" class="carousel slide" data-bs-ride="true">
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="/images/carousel-1.png" class="block w-full" alt="slide-1" />
+        <div class="bg-active/50 h-100 flex items-center justify-center text-4xl text-muted">Slide One</div>
       </div>
       <div class="carousel-item">
-        <img src="/images/carousel-2.png" class="block w-full" alt="slide-2" />
+        <div class="bg-active/60 h-100 flex items-center justify-center text-4xl text-muted">Slide Two</div>
       </div>
       <div class="carousel-item">
-        <img src="/images/carousel-3.png" class="block w-full" alt="slide-3" />
+        <div class="bg-active/40 h-100 flex items-center justify-center text-4xl text-muted">Slide Three</div>
       </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="prev">
@@ -190,13 +185,13 @@ Add `data-bs-interval=""` to a `.carousel-item` to change the amount of time to 
 <Example code={`<div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active" data-bs-interval="10000">
-        <img src="/images/carousel-1.png" class="block w-full" alt="slide-1" />
+        <div class="bg-active/50 h-100 flex items-center justify-center text-4xl text-muted">Slide One</div>
       </div>
       <div class="carousel-item" data-bs-interval="2000">
-        <img src="/images/carousel-2.png" class="block w-full" alt="slide-2" />
+        <div class="bg-active/60 h-100 flex items-center justify-center text-4xl text-muted">Slide Two</div>
       </div>
       <div class="carousel-item">
-        <img src="/images/carousel-3.png" class="block w-full" alt="slide-3" />
+        <div class="bg-active/40 h-100 flex items-center justify-center text-4xl text-muted">Slide Three</div>
       </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
@@ -214,13 +209,13 @@ Add `data-bs-interval=""` to a `.carousel-item` to change the amount of time to 
 <Example code={`<div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="/images/carousel-1.png" class="block w-full" alt="slide-1" />
+        <div class="bg-active/50 h-100 flex items-center justify-center text-4xl text-muted">Slide One</div>
       </div>
       <div class="carousel-item">
-        <img src="/images/carousel-2.png" class="block w-full" alt="slide-2" />
+        <div class="bg-active/60 h-100 flex items-center justify-center text-4xl text-muted">Slide Two</div>
       </div>
       <div class="carousel-item">
-        <img src="/images/carousel-3.png" class="block w-full" alt="slide-3" />
+        <div class="bg-active/40 h-100 flex items-center justify-center text-4xl text-muted">Slide Three</div>
       </div>
     </div>
   </div>`} />
@@ -232,13 +227,13 @@ Carousels support swiping left/right on touchscreen devices to move between slid
 <Example code={`<div id="carouselExampleControlsNoTouching" class="carousel slide" data-bs-touch="false">
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="/images/carousel-1.png" class="block w-full" alt="slide-1" />
+        <div class="bg-active/50 h-100 flex items-center justify-center text-4xl text-muted">Slide One</div>
       </div>
       <div class="carousel-item">
-        <img src="/images/carousel-2.png" class="block w-full" alt="slide-2" />
+        <div class="bg-active/60 h-100 flex items-center justify-center text-4xl text-muted">Slide Two</div>
       </div>
       <div class="carousel-item">
-        <img src="/images/carousel-3.png" class="block w-full" alt="slide-3" />
+        <div class="bg-active/40 h-100 flex items-center justify-center text-4xl text-muted">Slide Three</div>
       </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="prev">

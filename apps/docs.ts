@@ -27,9 +27,9 @@ const toggleTheme = (theme: Theme) => {
   requestAnimationFrame(() => requestAnimationFrame(() => s.remove()));
 };
 
-const updateToggleThemeButton = (theme: Theme) => {
-  const moonIcon = document.querySelector('[data-theme-toggle="dark"]');
-  const sunIcon = document.querySelector('[data-theme-toggle="light"]');
+const updateToggleThemeButton = (theme: Theme, toggleThemeButton?: Element) => {
+  const moonIcon = (toggleThemeButton || document).querySelector('[data-theme-toggle="dark"]');
+  const sunIcon = (toggleThemeButton || document).querySelector('[data-theme-toggle="light"]');
   if (theme === 'dark') {
     moonIcon?.classList.add('hidden');
     sunIcon?.classList.remove('hidden');
@@ -45,13 +45,15 @@ document.addEventListener('DOMContentLoaded', () => {
     savedTheme ?? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
   toggleTheme(initialTheme);
   updateToggleThemeButton(initialTheme);
-  const toggleThemeBtn = document.querySelector('[data-theme-toggle-btn]');
-  toggleThemeBtn?.addEventListener('click', () => {
-    const current = (localStorage.getItem('theme') as Theme | null) ?? initialTheme;
-    const newTheme: Theme = current === 'dark' ? 'light' : 'dark';
-    localStorage.setItem('theme', newTheme);
-    toggleTheme(newTheme);
-    updateToggleThemeButton(newTheme);
+  const toggleThemeBtns = document.querySelectorAll('[data-theme-toggle-btn]');
+  toggleThemeBtns.forEach((button) => {
+    button?.addEventListener('click', () => {
+      const current = (localStorage.getItem('theme') as Theme | null) ?? initialTheme;
+      const newTheme: Theme = current === 'dark' ? 'light' : 'dark';
+      localStorage.setItem('theme', newTheme);
+      toggleTheme(newTheme);
+      updateToggleThemeButton(newTheme, button);
+    });
   });
 
   // preventing browser default scroll to top behavior for a tag
