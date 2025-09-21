@@ -260,9 +260,6 @@ export const navigation: Component[] = [
   },
 ];
 
-export const components: Section[] = [
-  {
-    section: 'Navigation',
-    items: [],
-  },
-];
+export const components = [...dataDisplay, ...dataEntry, ...feedback, ...navigation].sort((a, b) =>
+  a.title.localeCompare(b.title),
+);
