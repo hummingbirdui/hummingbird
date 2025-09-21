@@ -2,9 +2,35 @@
 title: Modal
 description: Use Bootstrap’s JavaScript modal plugin to add dialogs to your site for lightboxes, user notifications, or completely custom content.
 toc: true
+classNames:
+  component:
+    - class: modal
+      desc: Modal container
+  inner:
+    - class: modal-dialog
+      desc: Modal dialog
+    - class: modal-content
+      desc: Modal box
+    - class: modal-header
+      desc: Modal header
+    - class: modal-title
+      desc: Modal title
+    - class: modal-body
+      desc: Modal body
+    - class: modal-footer
+      desc: Modal footer
+  modifier:
+    - class: modal-dialog-scrollable
+      desc: Scrollable dialog
+    - class: modal-dialog-centered
+      desc: Centered dialog
+    - class: modal-fullscreen
+      desc: Fullscreen modal
 ---
 
 ## Example
+
+Click the button below to toggle a working modal. It will slide down and fade in from the top of the page.
 
 <Example class='flex justify-center' code={`<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Demo modal</button>
 
@@ -30,6 +56,8 @@ toc: true
 
 ## Static backdrop
 
+When the backdrop is set to static, the modal won’t close when clicking outside of it. Click the button below to try it.
+
 <Example class='flex justify-center' code={`<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Static backdrop modal</button>
 
   <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -54,7 +82,7 @@ toc: true
 
 ## Scrolling long content
 
-When modals become too long for the user’s viewport or device, they scroll independent of the page itself. Try the demo below to see what we mean.
+When a modal is taller than the user’s viewport or device, it scrolls independently of the page. Try the demo below to see this in action.
 
 <Example class='flex justify-center' showMarkup={false} code={`<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalScrollable">Demo modal</button>
 
@@ -78,7 +106,7 @@ When modals become too long for the user’s viewport or device, they scroll ind
     </div>
   </div>`} />
 
-You can also create a scrollable modal that allows scrolling the modal body by adding `.modal-dialog-scrollable` to `.modal-dialog`.
+You can create a scrollable modal by adding `.modal-dialog-scrollable` to `.modal-dialog`, allowing the modal body to scroll.
 
 <Example class='flex justify-center' showMarkup={false} code={`<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalBodyScrollable">Demo modal</button>
 
@@ -174,6 +202,8 @@ Add `.modal-dialog-centered` to `.modal-dialog` to vertically center the modal.
 
 ## Toggle between modals
 
+Use `data-bs-target` and `data-bs-toggle` to switch between modals, such as opening a password reset modal from a sign-in modal. **Please note multiple modals cannot be open at the same time.**
+
 <Example class='flex justify-center'
   code={`<div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered">
@@ -216,6 +246,42 @@ Add `.modal-dialog-centered` to `.modal-dialog` to vertically center the modal.
   <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Open first modal</button>`} />
 
 ## Optional sizes
+
+Modals offer three optional sizes via modifier classes on `.modal-dialog`. These sizes activate at specific breakpoints to prevent horizontal scrollbars on smaller viewports.
+
+<HbTable>
+  <thead>
+    <tr>
+      <th scope="col">Size</th>
+      <th scope="col">Class</th>
+      <th scope="col">Modal max-width</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td scope="row">Small</td>
+      <td scope="row">`.modal-sm`</td>
+      <td scope="row">`300px`</td>
+    </tr>
+    <tr>
+      <td scope="row">Default</td>
+      <td scope="row">None</td>
+      <td scope="row">`500px`</td>
+    </tr>
+    <tr>
+      <td scope="row">Large</td>
+      <td scope="row">`.modal-lg`</td>
+      <td scope="row">`800px`</td>
+    </tr>
+    <tr>
+      <td scope="row">Extra large</td>
+      <td scope="row">`.modal-xl`</td>
+      <td scope="row">`1140px`</td>
+    </tr>
+  </tbody>
+</HbTable>
+
+The default modal without any modifier class is considered the medium size modal.
 
 <Example class='flex justify-center flex-wrap gap-2' showMarkup={false}
   code={`<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalXl">Extra Large modal</button>
@@ -289,6 +355,43 @@ Add `.modal-dialog-centered` to `.modal-dialog` to vertically center the modal.
   <div class="modal-dialog modal-sm">...</div>`} />
 
 ## Fullscreen Modal
+
+You can also create a fullscreen modal that covers the user’s viewport by adding the appropriate modifier classes to `.modal-dialog`.
+
+<HbTable>
+  <thead>
+    <tr>
+      <th scope="col">Class</th>
+      <th scope="col">Availability</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td scope="row">`.modal-fullscreen`</td>
+      <td scope="row">Always</td>
+    </tr>
+    <tr>
+      <td scope="row">`.modal-fullscreen-sm-down`</td>
+      <td scope="row">`576px`</td>
+    </tr>
+    <tr>
+      <td scope="row">`.modal-fullscreen-md-down`</td>
+      <td scope="row">`768px`</td>
+    </tr>
+    <tr>
+      <td scope="row">`.modal-fullscreen-lg-down`</td>
+      <td scope="row">`992px`</td>
+    </tr>
+    <tr>
+      <td scope="row">`.modal-fullscreen-xl-down`</td>
+      <td scope="row">`1200px`</td>
+    </tr>
+    <tr>
+      <td scope="row">`.modal-fullscreen-xxl-down`</td>
+      <td scope="row">`1400px`</td>
+    </tr>
+  </tbody>
+</HbTable>
 
 <Example class='flex flex-wrap gap-2' showMarkup={false}
   code={`<!-- Full Screen Modal -->
@@ -444,27 +547,26 @@ Add `.modal-dialog-centered` to `.modal-dialog` to vertically center the modal.
 The modal plugin controls hidden content, making it visible on demand via data attributes or JavaScript. It also overrides the default scrolling behavior and generates a `.modal-backdrop`. This backdrop provides a clickable area for dismissing visible modals when a click occurs outside the modal itself.
 
 ### Via Data Attributes
-### Toggle
+#### Toggle
 To activate a modal without writing JavaScript, set `data-bs-toggle="modal"` on a controlling element, such as a button. Additionally, include a `data-bs-target="#foo"` or `href="#foo"` to specify which modal to toggle.
 
 <Example showPreview={false}
   code={`<button type="button" data-bs-toggle="modal" data-bs-target="#myModal">Launch modal</button>`} />
 
-### Dismiss
-Achieve dismissal with the `data-bs-dismiss` attribute on a button within the modal:
+#### Dismiss
+Achieve dismissal with the `data-bs-dismiss` attribute on a button **within the modal**:
 
 <Example showPreview={false}
   code={`<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 `} />
 
-Or use the the additionalon `data-bs-target` on a button outside the modal:
+Or use the the additionalon `data-bs-target` on a button **outside the modal**:
 
-<div class="bg-[#3b2f00] border-l-4 border-[#d4a017] text-[#ffd966] p-4 [&>p]:m-0">
-  While both ways to dismiss a modal are supported, keep in mind that dismissing from outside a modal 
-  does not match the <a href="https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/" class="text-[#4ea3ff]">
-    ARIA Authoring Practices Guide dialog (modal) pattern</a>. Do this at your own risk.
+<div class="alert alert-subtle-warning items-start mb-6" role="alert">
+  <span class="icon-[material-symbols--info-outline] alert-icon"></span>
+  <span class="-mt-1"> While both ways to dismiss a modal are supported, keep in mind that dismissing from outside a modal does not match the <a href="https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/">
+    ARIA Authoring Practices Guide dialog (modal) pattern</a>. Do this at your own risk.</span>
 </div>
-
 
 ### Via JavaScript
 
@@ -481,7 +583,7 @@ A modal can be created with a single line of JavaScript:
 
 Options can be provided through data attributes or via JavaScript. When using `data-bs-attributes`, append the option's name (e.g., `data-bs-animation="{value}"`). It is crucial to convert "camelCase" option names to "kebab-case" when passing options via data attributes. For instance, use `data-bs-custom-class="beautifier"` rather than `data-bs-customClass="beautifier"`.
 
-As of Bootstrap 5.2.0, all components support an experimental `data-bs-config` data attribute. This attribute can contain simple component configurations as a JSON string. If an element has both `data-bs-config='{"delay":0, "title":123}'` and `data-bs-title="456"` attributes, the final title value will be 456, as separate data attributes override values provided within `data-bs-config`. Additionally, existing data attributes can also house JSON values, such as `data-bs-delay='{"show":0,"hide":150}'`.
+As of Bootstrap 5.2.0, all components support an **experimental** `data-bs-config` data attribute. This attribute can contain simple component configurations as a JSON string. If an element has both `data-bs-config='{"delay":0, "title":123}'` and `data-bs-title="456"` attributes, the final title value will be 456, as separate data attributes override values provided within `data-bs-config`. Additionally, existing data attributes can also house JSON values, such as `data-bs-delay='{"show":0,"hide":150}'`.
 
 The ultimate configuration object results from merging `data-bs-config`, individual `data-bs-attributes`, and JavaScript objects, where the latest provided key-value pair takes precedence over others.
 
