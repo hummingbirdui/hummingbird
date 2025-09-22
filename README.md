@@ -1,35 +1,42 @@
-# Hummingbird
+<div align="center">
+   <a href="https://hbui.dev/">
+      <img  width="350" src='./public/images/logos/hummingbird-lg.svg' alt="Logo" class="w-10 h-10" />
+   </a>
 
-**An open-source system designed for rapid development, without sacrificing the granular control of utility-first CSS.**  
-Hummingbird UI is a utility-first component framework powered by [Tailwind CSS v4](https://tailwindcss.com/), offering modular components and framework-agnostic JavaScript support with builds in ESM, CJS, and UMD formats.
+   A comprehensive & open-source component library for building Tailwind-powered, sophisticated, scalable web applications.
 
-![npm](https://img.shields.io/npm/v/@hummingbirdui/hummingbird?style=flat-square)
-![license](https://img.shields.io/npm/l/@hummingbirdui/hummingbird?style=flat-square)
-![bundle size](https://img.shields.io/bundlephobia/min/@hummingbirdui/hummingbird?style=flat-square)
+   ![downloads](https://img.shields.io/npm/dt/@hummingbirdui/hummingbird?style=flat-square)
+   ![npm](https://img.shields.io/npm/v/@hummingbirdui/hummingbird?style=flat-square)
+   ![license](https://img.shields.io/npm/l/@hummingbirdui/hummingbird?style=flat-square)
+   ![bundle size](https://img.shields.io/bundlephobia/min/@hummingbirdui/hummingbird?style=flat-square)
+</div>
 
 ---
 
 ## Table of Contents
 
+- [Documentation](#-documentation)
 - [Getting Started](#-getting-started)
 - [Installation](#-installation)
-- [Usage](#-usage)
-  - [CSS](#css)
-  - [JavaScript](#javascript)
-  - [TypeScript](#typescript)
+  - [Install Tailwind CSS](#install-tailwind-css)
+  - [Install Hummingbird](#install-hummingbird)
+  - [Import CSS](#import-css)
+  - [Initialize JS plugins](#initialize-js-plugins)
+- [TypeScript Support](#typescript-support)
 - [Supported Frameworks](#-supported-frameworks)
-- [Features](#-features)
-- [Development](#-development)
-- [Build System](#-build-system)
-- [Contributing](#-contributing)
 - [License](#-license)
-- [Links](#-links)
+- [Meet the Team](#-meet-the-team)
+- [Contributors](#-contributors)
 
 ---
 
+## Documentation
+
+Comprehensive documentation is available at [hbui.dev](https://hbui.dev/).
+
 ## Getting Started
 
-Hummingbird UI provides a flexible, component-oriented utility-first system for rapidly building modern UIs. You can:
+Hummingbird is a fast, lightweight UI library built on top of Tailwind CSS utility classes. Write cleaner HTML, customize with utilities, and bring your project to life with interactive, accessible components. You can:
 
 - Use it as a CSS library
 - Import individual JS components (like alerts, dropdowns, etc.)
@@ -39,6 +46,14 @@ Hummingbird UI provides a flexible, component-oriented utility-first system for 
 
 ## Installation
 
+#### 1. Install Tailwind CSS
+
+Ensure you have a project set up with Tailwind CSS. If you haven't set up Tailwind CSS yet, follow the <a href="https://tailwindcss.com/docs/installation" target="_blank" rel="noopener noreferrer">official installation guide</a>.
+
+#### 2. Install Hummingbird
+
+Install Hummingbird via your preferred package manager:
+
 ```bash
 # Using npm
 npm install @hummingbirdui/hummingbird
@@ -47,63 +62,70 @@ npm install @hummingbirdui/hummingbird
 yarn add @hummingbirdui/hummingbird
 ````
 
----
+#### 3. Import CSS
 
-## Usage
-
-### CSS
-
-#### Using Tailwind CLI or Vite
+Import Hummingbird styles in your main CSS file (e.g., `styles.css`).
 
 ```ts
-// main.ts or main.js
-import '@hummingbirdui/hummingbird/src/index.css';
+@import "tailwindcss";
+@import "@hummingbirdui/hummingbird";
 ```
 
-#### Or include precompiled files
+#### 4. Initialize JS plugins
+
+Include Hummingbird JavaScript at the end of your HTML body.
 
 ```html
-<!-- Full -->
-<link rel="stylesheet" href="node_modules/@hummingbirdui/hummingbird/dist/hummingbird.css" />
-
-<!-- Minified -->
-<link rel="stylesheet" href="node_modules/@hummingbirdui/hummingbird/dist/hummingbird.min.css" />
+<script src="../path/to/@hummingbirdui/hummingbird/dist/hummingbird.bundle.min.js"></script>
 ```
 
----
-
-### JavaScript
-
-#### ESM
+Alternatively, You can import Hummingbird in your JavaScript entry file.
 
 ```ts
-import { Alert } from '@hummingbirdui/hummingbird';
+import '@hummingbirdui/hummingbird';
 ```
 
-#### CommonJS
+## Optimization
+
+To reduce the final bundle size, you can import only the specific JavaScript plugins you need.
+
+The below example shows how to import only the [Modal](/docs/components/modal) plugin:
 
 ```js
-const Alert = require('@hummingbirdui/hummingbird');
+// import "@hummingbirdui/hummingbird/lib/esm/scripts/alert";
+// import "@hummingbirdui/hummingbird/lib/esm/scripts/button";
+// import "@hummingbirdui/hummingbird/lib/esm/scripts/carousel";
+// import "@hummingbirdui/hummingbird/lib/esm/scripts/collapse";
+// import "@hummingbirdui/hummingbird/lib/esm/scripts/dropdown";
+import "@hummingbirdui/hummingbird/lib/esm/scripts/modal";
+// import "@hummingbirdui/hummingbird/lib/esm/scripts/offcanvas";
+// import "@hummingbirdui/hummingbird/lib/esm/scripts/popover";
+// import "@hummingbirdui/hummingbird/lib/esm/scripts/scrollspy";
+// import "@hummingbirdui/hummingbird/lib/esm/scripts/tab";
+// import "@hummingbirdui/hummingbird/lib/esm/scripts/toast";
+// import "@hummingbirdui/hummingbird/lib/esm/scripts/tooltip";
 ```
 
-#### UMD (for browsers)
+## TypeScript Support
 
-```html
-<script src="node_modules/@hummingbirdui/hummingbird/dist/hummingbird.bundle.js"></script>
-```
-
----
-
-### TypeScript
-
-Type-safe component usage:
+Hummingbird includes TypeScript definitions for all components. If you're using TypeScript, you can import Hummingbird plugins with their types.
 
 ```ts
-import type { AlertInstance } from '@hummingbirdui/hummingbird';
-
-const alert: AlertInstance = Alert.getOrCreateInstance('#myAlert');
-alert.close();
+import { Modal } from "@hummingbirdui/hummingbird";
+import { type ModalClass, type ModalInstance, type ModalOptions } from "@hummingbirdui/hummingbird";
 ```
+
+## ESM vs CJS
+
+Hummingbird supports both **ESM** and **CJS** builds so it works with different environments:
+
+* **ESM**
+  Used by modern bundlers like **Vite**, **Rollup**, and **Webpack 5+**. If your project is using ES modules (`import` syntax), this is what gets loaded automatically.
+
+* **CJS**
+  Used in **Node.js** or older tooling that relies on `require()`. If your environment doesn’t support ESM, bundlers and Node will fall back to this file.
+
+You don’t need to choose manually, your bundler or runtime will pick the right version based on your setup.
 
 ---
 
@@ -112,108 +134,62 @@ alert.close();
 | Framework | Supported |
 | --------- | --------- |
 | React     | ✅         |
+| Next.js   | ✅         |
+| Laravel   | ✅         |
 | Vue       | ✅         |
+| Nuxt.js   | ✅         |
 | Angular   | ✅         |
 | Svelte    | ✅         |
 | Astro     | ✅         |
-| Next.js   | ✅         |
-| Nuxt.js   | ✅         |
-| Laravel   | ✅         |
+| Gatsby    | ✅         |
 | Django    | ✅         |
-
----
-
-## Features
-
-* Tailwind CSS v4 powered design system
-* Component-first approach with real JavaScript behavior
-* CJS, ESM, and UMD output formats
-* TypeScript-ready with declaration files
-* Themeable utility system
-* Fast builds using Vite + esbuild
-* MDX-powered documentation via Astro
-
----
-
-## Development
-
-Run all services in development mode:
-
-```bash
-npm run dev
-```
-
-This will:
-
-* Watch and rebuild JS using Vite
-* Watch and rebuild docs using Astro
-* Watch and rebuild documentation scripts using esbuild
-
----
-
-## Build System
-
-### Build Everything
-
-```bash
-npm run build:npm
-```
-
-This will:
-
-* Clean previous `lib` and `dist` folders
-* Build `lib/esm` and `lib/cjs`
-* Build UMD bundles in `dist`
-* Build CSS (`hummingbird.css` & `hummingbird.min.css`)
-
-### Individual Commands
-
-```bash
-npm run build:lib         # Build ESM + CJS
-npm run build:styles      # Compile Tailwind CSS
-npm run build:dist        # Build UMD bundles + CSS
-npm run build:docs        # Build Astro documentation
-```
-
----
-
-## Contributing
-
-We welcome contributions from the community!
-
-### Steps to Contribute:
-
-1. **Fork** the repository
-2. **Clone** your fork:
-
-   ```bash
-   git clone https://github.com/hummingbirdui/hummingbird
-   cd hummingbird
-   ```
-3. **Install** dependencies:
-
-   ```bash
-   npm install
-   ```
-4. **Create** a feature branch:
-
-   ```bash
-   git checkout -b feat/your-feature-name
-   ```
-5. **Commit** your changes and open a pull request 🙌
-
----
 
 ## License
 
 This project is licensed under the [MIT License](./LICENSE).
 
----
+## Meet the Team
 
-## Links
+Meet the core team behind Hummingbird:
 
-* [NPM Package](https://www.npmjs.com/package/@hummingbirdui/hummingbird)
-* [GitHub Repo](https://github.com/hummingbirdui/hummingbird)
-* [Documentation (Astro)](https://hummingbirdui.github.io/hummingbird)
-* [Issue Tracker](https://github.com/hummingbirdui/hummingbird/issues)
-* Author: [Khayrul Islam](https://www.linkedin.com/in/khayrul-developer/)
+<table>
+  <tr>
+    <td align="center" width="200">
+      <img src="https://avatars.githubusercontent.com/u/877255?v=4" width="80" height="80"/><br/>
+      <sub><b>Ashraful Prium</b></sub><br/>
+      <code>prium</code><br/>
+      Founder
+    </td>
+    <td align="center" width="200">
+      <img src="https://avatars.githubusercontent.com/u/12842959?v=4" width="80" height="80"/><br/>
+      <sub><b>Muazzem Hussen Chowdhury</b></sub><br/>
+      <code>ovi003</code><br/>
+      Engineering Manager
+    </td>
+    <td align="center" width="200">
+      <img src="https://avatars.githubusercontent.com/u/86622751?v=4" width="80" height="80"/><br/>
+      <sub><b>Khayrul</b></sub><br/>
+      <code>khayrul25</code><br/>
+      Front-end Developer
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="200">
+      <img src="https://avatars.githubusercontent.com/u/141500318?v=4" width="80" height="80"/><br/>
+      <sub><b>Riazul</b></sub><br/>
+      <code>riazul01</code><br/>
+      Jr. Software Engineer
+    </td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
+
+
+## Contributors
+
+Thanks goes to these amazing people:
+
+<a href="https://github.com/hummingbirdui/hummingbird/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=hummingbirdui/hummingbird" />
+</a>
