@@ -1,4 +1,4 @@
-import hummingbird from '@assets/images/logos/hummingbird.png';
+import hummingbird from '@assets/images/logos/hummingbird.svg';
 import tailwindcss from '@assets/images/logos/tailwindcss.png';
 import bootstrap from '@assets/images/logos/bootstrap.png';
 
