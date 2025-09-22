@@ -44,7 +44,7 @@ Simple alerts use a subtle background with clear text color.
 
 ## Contained variant
 
-Contained alerts use a solid background color to clearly convey the type of message, such as success, warning, error, or information.
+Outlined alerts utilize a border and transparent background for medium emphasis. They are useful when feedback messages need to be visible without dominating the interface.
 
 <Example class='flex flex-col gap-2' 
   code={`<div class="alert" role="alert">A simple neutral alert!</div>
@@ -157,11 +157,9 @@ This example demonstrates various alert components with actionable buttons.
 
 Using the alert JavaScript plugin that uses the **Bootstrap Button plugin**, it’s possible to dismiss any alert inline. Here’s how:
 
-- Be sure you’ve loaded the alert plugin, or the compiled Hummingbird JavaScript.
-- Add a close button and the .alert-dismissible class, which adds extra padding to the right of the alert and positions the close button.
-- On the close button, add the `data-bs-dismiss="alert"` attribute, which triggers the JavaScript functionality. Be sure to use the `<button>` element with it for proper behavior across all devices.
-- To animate alerts when dismissing them, be sure to add the `.fade` and `.show` classes.
-  You can see this in action with a live demo:
+- Ensure the alert plugin or the compiled Hummingbird JavaScript is loaded.
+- On the close button, include the data-bs-dismiss="alert" attribute to enable the JavaScript functionality. Use a `<button>` element for consistent behavior across devices.
+- To enable dismissal animations, add the .fade and .show classes.
 
 <Example code={`<div class="alert alert-subtle-warning fade show" role="alert">
     <p class='mb-0'><strong>Holy guacamole!</strong> You should check in on some of those fields below.</p>
