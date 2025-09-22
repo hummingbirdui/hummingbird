@@ -79,7 +79,7 @@ A basic navbar includes branding, navigation links, dropdowns, and a search form
 
 The nav component structures navigation links within a navbar. It supports active and disabled states. Add the `.active` class on `.nav-link` to indicate the current page.
 
-Note that you should also add the `aria-current` attribute on the active `.nav-link`.
+Note that the `aria-current` attribute should also be added to the active `.nav-link`.
 
 <Example
   code={`<nav class="navbar navbar-expand-lg bg-subtle">
@@ -107,7 +107,7 @@ Note that you should also add the `aria-current` attribute on the active `.nav-l
     </div>
   </nav>`} />
 
-You can avoid list-based approaches entirely if you like.
+List-based approaches can be entirely avoided if preferred.
 
 <Example
   code={`<nav class="navbar navbar-expand-lg bg-subtle">
@@ -164,7 +164,7 @@ To use text within a navbar, use the `.navbar-text` class.
 
 ## Color schemes
 
-Navbars are flexible and support different background and color schemes to match your design.
+Navbars are flexible, supporting various background and color schemes to match design requirements.
 
 <Example showMarkup={false} class='flex flex-col gap-3' 
   code={`<nav class="navbar navbar-expand-lg bg-subtle dark">
@@ -230,7 +230,8 @@ Navbars are flexible and support different background and color schemes to match
 
 ## Containers
 
-Use any of the responsive containers such as `.sm:container`, `.md:container`, `.lg:container`, `.xl:container`, `.2xl:container` to change how wide the content in your navbar is presented.
+Any of the responsive containers like `.sm:container`, `.md:container`, `.lg:container`, `.xl:container`, .`2xl:container` can be used to adjust the width at which navbar content is presented.
+
 
 <Example code={`<nav class="navbar navbar-expand-lg bg-subtle">
     <div class="md:container">
@@ -240,7 +241,8 @@ Use any of the responsive containers such as `.sm:container`, `.md:container`, `
 
 ## Scrolling
 
-The `.navbar-nav-scroll` class allows vertical scrolling for `.navbar-nav` or other sub-components inside a collapsed navbar. This is especially useful for long navigation menus on smaller screens. By default, the scrollable area has a max height of `75vh`. You can adjust this using utility classes (e.g., `max-h-[value]`) or by overriding the `--scroll-height` CSS variable for finer control.
+The `.navbar-nav-scroll` class enables vertical scrolling for `.navbar-nav` or other sub-components within a collapsed navbar. This is particularly useful for extensive navigation menus on smaller screens. By default, the scrollable area has a maximum height of `75vh`. This can be adjusted using utility classes (e.g., `max-h-[value]`) or by overriding the `--scroll-height` CSS variable for more precise control.
+
 
 <Example
   code={`<nav class="navbar navbar-expand-lg bg-subtle">
@@ -280,7 +282,7 @@ The `.navbar-nav-scroll` class allows vertical scrolling for `.navbar-nav` or ot
 
 ## Responsive behaviors
 
-Navbars use `.navbar-toggler`, `.navbar-collapse`, and `.navbar-expand{-sm|-md|-lg|-xl|-xxl}` classes to control when content collapses into a toggleable menu. With utility classes, you can also decide when to show or hide specific elements.
+Navbars utilize `.navbar-toggler`, `.navbar-collapse`, and `.navbar-expand{-sm|-md|-lg|-xl|-xxl}` classes to manage when content collapses into a toggleable menu. Specific elements can also be shown or hidden using utility classes.
 
 For navbars that never collapse, add the `.navbar-expand` class. For navbars that always collapse, omit the `.navbar-expand` class.
 
@@ -305,7 +307,7 @@ The collapse plugin can toggle content outside the `.navbar` by matching id with
 
 ## Offcanvas
 
-Transform your expanding and collapsing navbar into an offcanvas drawer with the offcanvas component. We extend both the offcanvas default styles and use our `.navbar-expand-*` classes to create a dynamic and flexible navigation sidebar.
+Expanding and collapsing navbars can be transformed into an offcanvas drawer with the offcanvas component. Both the default offcanvas styles and `.navbar-expand-*` classes are extended to create a dynamic and flexible navigation sidebar.
 
 In the example below, to create an offcanvas navbar that is always collapsed across all breakpoints, omit the `.navbar-expand-*` class entirely.
 
@@ -347,3 +349,37 @@ In the example below, to create an offcanvas navbar that is always collapsed acr
       </div>
     </div>
   </nav>`} />
+
+## CSS variables
+
+The Navbar component is built using a set of CSS variables. These variables provide flexibility for customizing styles.
+
+<Example lang='sass' showPreview={false}
+  code={`.navbar {
+    --navbar-padding-x: --spacing(3);
+    --navbar-padding-y: --spacing(2);
+    --navbar-color: var(--text-color-muted);
+    --navbar-hover-color: var(--text-color-default);
+    --navbar-disabled-color: var(--color-disabled-color);
+    --navbar-active-color: var(--text-color-default);
+    --navbar-brand-padding-y: --spacing(1.25);
+    --navbar-brand-margin-end: --spacing(4);
+    --navbar-brand-font-size: var(--text-lg);
+    --navbar-brand-color: var(--text-color-default);
+    --navbar-brand-hover-color: var(--text-color-default);
+    --navbar-nav-link-padding-x: --spacing(2);
+  }`}
+/>
+
+<Example lang='sass' showPreview={false}
+  code={`.navbar-nav {
+    --nav-link-padding-x: 0;
+    --nav-link-padding-y: --spacing(2);
+    --nav-link-font-weight: var(--font-weight-medium);
+    --nav-link-color: var(--text-color-muted);
+    --nav-link-font-size: var(--text-base);
+    --nav-link-line-height: 1.5;
+    --nav-link-disabled-color: var(--color-disabled-color);
+    --nav-link-active-color: unset;
+  }`}
+/>
