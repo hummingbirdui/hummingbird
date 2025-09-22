@@ -15,18 +15,18 @@
 
 ## Table of Contents
 
-- [Documentation](#-documentation)
-- [Getting Started](#-getting-started)
-- [Installation](#-installation)
+- [Documentation](#documentation)
+- [Getting Started](#getting-started)
+- [Installation](#installation)
   - [Install Tailwind CSS](#install-tailwind-css)
   - [Install Hummingbird](#install-hummingbird)
   - [Import CSS](#import-css)
   - [Initialize JS plugins](#initialize-js-plugins)
 - [TypeScript Support](#typescript-support)
 - [Supported Frameworks](#-supported-frameworks)
-- [License](#-license)
-- [Meet the Team](#-meet-the-team)
-- [Contributors](#-contributors)
+- [License](#license)
+- [Meet the Team](#meet-the-team)
+- [Contributors](#contributors)
 
 ---
 

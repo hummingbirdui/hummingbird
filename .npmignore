@@ -1,6 +1,7 @@
 _gh_pages/
 node_modules/
 static/
+public/
 build/
 apps/
 public/
