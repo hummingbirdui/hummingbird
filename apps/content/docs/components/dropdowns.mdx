@@ -282,6 +282,38 @@ By default, a dropdown menu closes when clicking inside or outside of it. You ca
     </ul>
   </div>`} />
 
+## CSS variables
+
+The dropdown component is built using a set of CSS variables. These variables provide flexibility for customizing styles.
+
+<Example showPreview={false} lang='sass' code={`.dropdown-menu {
+    --dropdown-zindex: 1000;
+    --dropdown-bg: var(--background-color-default);
+    --dropdown-spacer: --spacing(0.5);
+    --dropdown-min-width: 10rem;
+    --dropdown-padding-x: 0;
+    --dropdown-padding-y: --spacing(2);
+    --dropdown-font-size: var(--text-sm);
+    --dropdown-border-width: 1px;
+    --dropdown-border-color: transparent;
+    --dropdown-box-shadow: var(--shadow-xl);
+    --dropdown-border-radius: var(--radius-lg);
+    --dropdown-link-color: var(--text-color-default);
+    --dropdown-link-hover-color: var(--text-color-default);
+    --dropdown-link-hover-bg: var(--background-color-subtle);
+    --dropdown-link-disabled-color: var(--color-disabled-color);
+    --dropdown-link-active-color: var(--color-primary);
+    --dropdown-link-active-bg: var(--color-primary-lighter);
+    --dropdown-item-padding-x: --spacing(4);
+    --dropdown-item-padding-y: --spacing(1.5);
+    --dropdown-divider-bg: var(--border-color-base);
+    --dropdown-divider-margin-y: --spacing(2);
+    --dropdown-header-padding-y: --spacing(2);
+    --dropdown-header-padding-x: --spacing(4);
+    --dropdown-header-color: var(--text-color-muted);
+    --dropdown-header-font-size: var(--text-base);
+}`} />
+
 ## Usage
 
 Through either data attributes or JavaScript, the dropdown plugin manages hidden content (dropdown menus) by toggling the `.show` class on the parent `.dropdown-menu`. The `data-bs-toggle="dropdown"` attribute is essential for closing dropdown menus at an application level, making its consistent use advisable.

@@ -43,6 +43,27 @@ Elements with the disabled attribute aren’t interactive, meaning users cannot 
   </span>`} />
 
 
+## CSS variables
+
+The tooltip component is built using a set of CSS variables. These variables provide flexibility for customizing styles.
+
+<Example showPreview={false} lang='sass' code={`.tooltip {
+    --tooltip-zindex: 1080;
+    --tooltip-max-width: 12.5rem;
+    --tooltip-padding-x: --spacing(2.5);
+    --tooltip-padding-y: --spacing(2);
+    --tooltip-bg: var(--color-dark);
+    --tooltip-color: var(--color-white);
+    --tooltip-font-size: var(--text-xs);
+    --tooltip-margin: --spacing(2);
+    --tooltip-opacity: 1;
+    --tooltip-border-radius: var(--radius-sm);
+    --tooltip-arrow-width: 0.75rem;
+    --tooltip-arrow-height: 0.53rem;
+    --tooltip-arrow-border-radius: --spacing(0.5);
+}`} />
+
+
 ## Usage
 
 The tooltip plugin dynamically generates content and markup. By default, tooltips are positioned after their trigger element. A tooltip can be triggered via JavaScript as follows:

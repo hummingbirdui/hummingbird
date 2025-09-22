@@ -347,3 +347,22 @@ In the example below, to create an offcanvas navbar that is always collapsed acr
       </div>
     </div>
   </nav>`} />
+
+## CSS variables
+
+The navbar component is built using a set of CSS variables. These variables provide flexibility for customizing styles.
+
+<Example showPreview={false} lang='sass' code={`.navbar {
+    --navbar-padding-x: --spacing(3);
+    --navbar-padding-y: --spacing(2);
+    --navbar-color: var(--text-color-muted);
+    --navbar-hover-color: var(--text-color-default);
+    --navbar-disabled-color: var(--color-disabled-color);
+    --navbar-active-color: var(--text-color-default);
+    --navbar-brand-padding-y: --spacing(1.25);
+    --navbar-brand-margin-end: --spacing(4);
+    --navbar-brand-font-size: var(--text-lg);
+    --navbar-brand-color: var(--text-color-default);
+    --navbar-brand-hover-color: var(--text-color-default);
+    --navbar-nav-link-padding-x: --spacing(2);
+}`} />

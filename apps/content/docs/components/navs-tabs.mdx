@@ -97,6 +97,23 @@ Add the `.nav-tabs` class to the basic `.nav` to create a tabbed interface. Use 
     </li>
   </ul>`} />
 
+## CSS variables
+
+The nav component is built using a set of CSS variables. These variables provide flexibility for customizing styles.
+
+<Example showPreview={false} lang='sass' code={`.nav {
+    --nav-bg: transparent;
+    --nav-link-padding-x: --spacing(4);
+    --nav-link-padding-y: --spacing(2);
+    --nav-link-font-weight: var(--font-weight-medium);
+    --nav-link-color: var(--text-color-muted);
+    --nav-link-font-size: var(--text-base);
+    --nav-link-line-height: 1.5;
+    --nav-link-disabled-color: var(--color-disabled-color);
+    --nav-link-active-color: unset;
+    --nav-link-focus-ring-color: --alpha(var(--nav-link-active-color) / 30%);
+}`} />
+
 ## JavaScript behavior
 
 Use the tab JavaScript plugin either individually or via `bootstrap.js` to extend tabs and pills into tabbable panes of local content.
