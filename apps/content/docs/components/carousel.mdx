@@ -284,12 +284,42 @@ On touch devices, carousels allow users to swipe left or right to navigate betwe
     </button>
   </div>`} />
 
+## CSS variables
+
+The carousel component is built using a set of CSS variables. These variables provide flexibility for customizing styles.
+
+<Example showPreview={false} lang='sass' code={`.carousel {
+    --carousel-transition-duration: 0.6s;
+    --carousel-control-width: 15%;
+    --carousel-control-color: var(--color-contrast);
+    --carousel-control-opacity: 0.5;
+    --carousel-control-hover-opacity: 0.9;
+    --carousel-control-icon-width: 2rem;
+    --carousel-control-icon-height: 2rem;
+    --carousel-control-prev-icon-bg: ...;
+    --carousel-control-next-icon-bg: ...;
+    --carousel-indicator-width: 1.875rem;
+    --carousel-indicator-height: 0.1875rem;
+    --carousel-indicator-spacer: --spacing(0.75);
+    --carousel-indicator-active-bg: var(--color-contrast);
+    --carousel-indicator-hit-area-height: 0.625rem;
+    --carousel-indicator-opacity: 0.5;
+    --carousel-indicator-active-opacity: 1;
+    --carousel-caption-width: 70%;
+    --carousel-caption-spacer: --spacing(5);
+    --carousel-caption-padding-y: --spacing(5);
+    --carousel-caption-color: var(--color-contrast);
+}`} />
+
 ## Usage
 
 ### Via data attributes
 Data attributes provide a straightforward method for controlling the carousel's position. The `data-bs-slide` attribute accepts the keywords prev or next, which adjust the slide's position relative to its current state. Alternatively, `data-bs-slide-to` can be used to pass a specific slide index to the carousel, for example, `data-bs-slide-to="2"`, which moves the slide position to a particular index starting from 0.
 
 ### Via JavaScript
+
+Use JavaScript in the familiar pattern of **Bootstrap’s plugins** with full additional TypeScript Support.
+
 Manual instantiation of the carousel is performed with:
 
 <Example showPreview={false} lang='js' code={`const carousel = new hummingbird.Carousel('#myCarousel')`} />
