@@ -67,6 +67,10 @@ const sitemap: Sitemap[] = [
         name: 'Astro',
         path: '/docs/getting-started/astro',
       },
+      {
+        name: 'Django',
+        path: '/docs/getting-started/django',
+      },
     ],
   },
   {
