@@ -220,6 +220,26 @@ Try the top, right, and bottom examples below.
   </div>`} />
 
 
+## CSS variables
+
+The offcanvas component is built using a set of CSS variables. These variables provide flexibility for customizing styles.
+
+<Example showPreview={false} lang='sass' code={`.offcanvas {
+    --offcanvas-zindex: 1045;
+    --offcanvas-width: 20rem;
+    --offcanvas-height: 30vh;
+    --offcanvas-padding-x: --spacing(4);
+    --offcanvas-padding-y: --spacing(4);
+    --offcanvas-color: var(--text-color-default);
+    --offcanvas-bg: var(--background-color-subtle);
+    --offcanvas-border-width: 1px;
+    --offcanvas-border-color: var(--border-color-base);
+    --offcanvas-box-shadow: var(--shadow-xl);
+    --offcanvas-transition-duration: 0.3s;
+    --offcanvas-title-line-height: 1.5;
+}`} />
+
+
 ## Usage
 
 The offcanvas plugin employs specific classes and attributes to manage its primary functions:
@@ -259,6 +279,8 @@ Alternatively, dismissal can be achieved from a button **outside the offcanvas**
 </div>
 
 ### Via JavaScript
+
+Use JavaScript in the familiar pattern of **Bootstrap’s plugins** with full additional TypeScript Support.
 
 Manual enablement is achieved with the following JavaScript:
 

@@ -542,6 +542,38 @@ You can also create a fullscreen modal that covers the user’s viewport by addi
     ...
   </div>`} />
 
+## CSS variables
+
+The modal component is built using a set of CSS variables. These variables provide flexibility for customizing styles.
+
+<Example showPreview={false} lang='sass' code={`.modal {
+    --modal-zindex: 1055;
+    --modal-width: 31.25rem;
+    --modal-padding: --spacing(4);
+    --modal-margin: --spacing(2);
+    --modal-color: var(--text-color-default);
+    --modal-bg: var(--background-color-default);
+    --modal-font-size: var(--text-base);
+    --modal-border-color: var(--border-color-light);
+    --modal-border-width: 1px;
+    --modal-border-radius: var(--radius-2xl);
+    --modal-inner-border-radius: calc(var(--modal-border-radius) - var(--modal-border-width));
+    --modal-header-padding-x: --spacing(4);
+    --modal-header-padding-y: --spacing(4);
+    --modal-header-border-color: var(--border-color-light);
+    --modal-header-border-width: 1px;
+    --modal-title-line-height: 1.5;
+    --modal-footer-padding-x: --spacing(4);
+    --modal-footer-padding-y: --spacing(4);
+    --modal-footer-bg: unset;
+    --modal-footer-border-color: var(--border-color-light);
+    --modal-footer-border-width: 1px;
+    --modal-fade-transform: translate(0, -50px);
+    --modal-show-transform: none;
+    --modal-scale-transform: scale(1.02);
+    --modal-transition-duration: 0.3s;
+}`} />
+
 ## Usage
 
 The modal plugin controls hidden content, making it visible on demand via data attributes or JavaScript. It also overrides the default scrolling behavior and generates a `.modal-backdrop`. This backdrop provides a clickable area for dismissing visible modals when a click occurs outside the modal itself.
@@ -569,6 +601,8 @@ Or use the the additionalon `data-bs-target` on a button **outside the modal**:
 </div>
 
 ### Via JavaScript
+
+Use JavaScript in the familiar pattern of **Bootstrap’s plugins** with full additional TypeScript Support.
 
 A modal can be created with a single line of JavaScript:
 
