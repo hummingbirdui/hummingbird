@@ -7,9 +7,9 @@ export const footerLinks: FooterLink[] = [
   {
     title: 'Hummingbird',
     links: [
-      { label: 'About Us', url: '#' },
-      { label: 'Documentation', url: '#' },
-      { label: 'Components', url: '#' },
+      { label: 'About Us', url: '/about' },
+      { label: 'Documentation', url: '/docs/getting-started/installation' },
+      { label: 'Components', url: '/docs/components' },
       { label: 'Examples', url: '#' },
     ],
   },
@@ -24,7 +24,7 @@ export const footerLinks: FooterLink[] = [
   {
     title: 'Community',
     links: [
-      { label: 'Github', url: '#' },
+      { label: 'Github', url: 'https://github.com/hummingbirdui/hummingbird' },
       { label: 'Discord', url: '#' },
       { label: 'Twitter', url: '#' },
     ],
@@ -32,10 +32,10 @@ export const footerLinks: FooterLink[] = [
   {
     title: 'Legal',
     links: [
-      { label: 'License', url: '#' },
-      { label: 'Privacy policy', url: '#' },
-      { label: 'Terms & conditions', url: '#' },
-      { label: 'Brand guideline', url: '#' },
+      { label: 'License', url: 'https://github.com/hummingbirdui/hummingbird?tab=MIT-1-ov-file' },
+      { label: 'Privacy policy', url: '/privacy-policy' },
+      { label: 'Terms & conditions', url: '/terms-and-conditions' },
+      { label: 'Brand guideline', url: '/brand-guideline' },
     ],
   },
 ];
