@@ -1,0 +1,21 @@
+---
+import Layout from '@layouts/Layout.astro';
+import Error404Img from '@assets/images/404.svg';
+import Error404Dark from '@assets/images/404-dark.svg';
+---
+
+<Layout>
+  <div class="mx-auto px-6 py-10 w-full max-w-150">
+    <img src={Error404Img.src} class="mx-auto mb-4 dark:hidden" alt="Error404" />
+    <img src={Error404Dark.src} class="mx-auto mb-4 hidden dark:block" alt="Error404" />
+    <h1 class="mb-4 text-[42px] text-center font-medium -tracking-[2.75px]">Whoops! Something went wrong</h1>
+    <p class="mb-6 text-muted text-base text-center">
+      The page you’re trying to reach isn’t available right now. It may have been removed, renamed, or is temporarily
+      down.
+    </p>
+    <div class="flex items-center justify-center gap-2">
+      <a href="/" class="btn btn-primary">Back to home</a>
+      <a href="#" class="btn btn-subtle-neutral">Get support</a>
+    </div>
+  </div>
+</Layout>
