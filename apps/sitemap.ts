@@ -95,7 +95,7 @@ const sitemap: Sitemap[] = [
     ],
   },
   {
-    subHeader: 'Layout',
+    subHeader: 'Layout & content',
     items: [
       {
         name: 'Container',
@@ -106,12 +106,12 @@ const sitemap: Sitemap[] = [
         path: '/docs/layout/bootstrap-grid',
       },
       {
-        name: 'Columns',
-        path: '/docs/layout/columns',
+        name: 'Reboot',
+        path: '/docs/content/reboot',
       },
       {
-        name: 'Gutters',
-        path: '/docs/layout/gutters',
+        name: 'Typography',
+        path: '/docs/content/typography',
       },
     ],
   },
@@ -159,6 +159,10 @@ const sitemap: Sitemap[] = [
   {
     subHeader: 'Components',
     items: [
+      {
+        name: 'Overview',
+        path: '/docs/components/overview',
+      },
       {
         name: 'Accordion',
         path: '/docs/components/accordion',

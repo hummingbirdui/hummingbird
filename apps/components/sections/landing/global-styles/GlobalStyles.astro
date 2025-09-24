@@ -19,15 +19,10 @@ import StyleCard from './StyleCard.astro';
       <p class="mb-6 text-muted text-center md:text-left max-w-120 md:max-w-105">
         Hummingbird employs a two-tier CSS framework that offers both global oversight and localized adaptability.
       </p>
-      <a
-        type="button"
-        href="/docs/components/buttons"
-        class="hidden md:flex -ml-4 btn btn-text-primary hover:bg-transparent"
-        >Learn more about CSS variables <ChevronIcon />
+      <a type="button" href="/docs/customize/customization" class="flex -ml-4 btn btn-text-primary hover:bg-transparent"
+        >Learn more about customization<ChevronIcon />
       </a>
-      <a href="/docs/components/buttons" type="button" class="btn btn-subtle-primary md:hidden">Browse components</a>
     </div>
-
     {
       globalStyles.slice(1).map((item, i) => (
         <GradientBorderBox color={i === 0 ? 'primary' : 'info'} class="flex flex-col border-2">

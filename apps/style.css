@@ -1,8 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap');
 @import 'tailwindcss';
 @import '../src/index.css';
-@plugin '@tailwindcss/typography';
-@plugin "@iconify/tailwind4";
 @import 'tailwind-scrollbar-hide/v4';
 @custom-variant dark (&:where(.dark, .dark *));
 
@@ -47,6 +45,10 @@
     &:has(+ :not(p)) {
       @apply mb-4;
     }
+  }
+  > ol,
+  > ul {
+    @apply pl-4;
   }
 
   .heading-anchor {
