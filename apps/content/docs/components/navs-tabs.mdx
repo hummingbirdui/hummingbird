@@ -28,7 +28,7 @@ classNames:
 Hummingbird’s navigation provides general markup and styles via the base `.nav` class, including active and disabled states. Built with flexbox, it offers a solid foundation, link padding for larger hit areas, and basic disabled styling.
 
 <div class="mb-5 alert alert-subtle-info items-start" role="alert">
-  <span class="icon-[material-symbols--info-outline] alert-icon"></span>
+  <svg class="alert-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M11 17h2v-6h-2zm1-8q.425 0 .713-.288T13 8t-.288-.712T12 7t-.712.288T11 8t.288.713T12 9m0 13q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22m0-2q3.35 0 5.675-2.325T20 12t-2.325-5.675T12 4T6.325 6.325T4 12t2.325 5.675T12 20m0-8" stroke-width="0.5" stroke="currentColor"/></svg>
   <span class="-mt-1">The base `.nav` component does not include an `.active` state. The examples show it for demonstration only. To indicate the active item for assistive technologies, use the `aria-current` attribute (`page` value for the current page or `true` for the current item in a set).</span>
 </div>
 
@@ -209,12 +209,12 @@ Dynamic tabbed interfaces, as outlined in the <a href="https://www.w3.org/WAI/AR
 In adherence to the ARIA Authoring Practices pattern, only the currently active tab receives keyboard focus. Upon initialization of the JavaScript plugin, it sets `tabindex="-1"` on all inactive tab controls. Once the active tab has focus, the cursor keys activate the previous or next tab. The Home and End keys activate the first and last tabs, respectively. The plugin adjusts the <a href="https://www.w3.org/WAI/ARIA/apg/practices/keyboard-interface/">roving tabindex</a> accordingly. However, it is important to note that the JavaScript plugin does not differentiate between horizontal and vertical tab lists regarding cursor key interactions: irrespective of the tab list’s orientation, both the up and left cursor keys navigate to the previous tab, and the down and right cursor keys navigate to the next tab.
 
 <div class="mb-3 alert alert-subtle-warning items-start" role="alert">
-  <span class="icon-[material-symbols--info-outline] alert-icon"></span>
+  <svg class="alert-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M11 17h2v-6h-2zm1-8q.425 0 .713-.288T13 8t-.288-.712T12 7t-.712.288T11 8t.288.713T12 9m0 13q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22m0-2q3.35 0 5.675-2.325T20 12t-2.325-5.675T12 4T6.325 6.325T4 12t2.325 5.675T12 20m0-8" stroke-width="0.5" stroke="currentColor"/></svg>
   <span class="-mt-1">Generally, to enhance keyboard navigation, it is recommended to make the tab panels themselves focusable, unless the first element containing meaningful content within the tab panel is already focusable. The JavaScript plugin does not handle this aspect; where appropriate, tab panels will need to be explicitly made focusable by adding `tabindex="0"` in the markup.</span>
 </div>
 
 <div class="alert alert-subtle-danger items-start" role="alert">
-  <span class="icon-[material-symbols--error-outline-rounded] alert-icon"></span>
+  <svg class="alert-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M12 17q.425 0 .713-.288T13 16t-.288-.712T12 15t-.712.288T11 16t.288.713T12 17m-1-4h2V7h-2zm1 9q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22m0-2q3.35 0 5.675-2.325T20 12t-2.325-5.675T12 4T6.325 6.325T4 12t2.325 5.675T12 20m0-8" stroke-width="0.5" stroke="currentColor"/></svg>
   <span class="-mt-1">The tab JavaScript plugin **does not** support tabbed interfaces that incorporate dropdown menus, as these introduce both usability and accessibility challenges. From a usability standpoint, the fact that the currently displayed tab's trigger element is not immediately visible (as it is inside a closed dropdown menu) can lead to confusion. From an accessibility perspective, there is currently no practical way to map this type of structure to a standard WAI ARIA pattern, which means it cannot be easily understood by users of assistive technologies.</span>
 </div>
 
@@ -291,7 +291,7 @@ To incorporate a `fade-in` effect for tabs, add `.fade` to each `.tab-pane`. The
 ## Methods
 
 <div class="alert alert-subtle-danger items-start mb-6" role="alert">
-  <span class="icon-[material-symbols--error-outline-rounded] alert-icon"></span>
+  <svg class="alert-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M12 17q.425 0 .713-.288T13 16t-.288-.712T12 15t-.712.288T11 16t.288.713T12 17m-1-4h2V7h-2zm1 9q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22m0-2q3.35 0 5.675-2.325T20 12t-2.325-5.675T12 4T6.325 6.325T4 12t2.325 5.675T12 20m0-8" stroke-width="0.5" stroke="currentColor"/></svg>
   <span class="-mt-1">**All API methods are asynchronous and initiate a transition.** They return to the caller immediately after the transition begins but before it concludes. Furthermore, a method call on a component that is already transitioning will be disregarded. More information is available in our <a href="https://getbootstrap.com/docs/5.3/getting-started/javascript/#asynchronous-functions-and-transitions">JavaScript documentation.</a></span>
 </div>
 

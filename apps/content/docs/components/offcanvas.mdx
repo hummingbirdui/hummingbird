@@ -36,7 +36,7 @@ Offcanvas functions as a sidebar component, capable of being toggled via JavaScr
 **Important Note:** Due to how CSS manages animations, the use of `margin` or `translate` on an `.offcanvas` element is not supported. Instead, utilize the class as an independent wrapping element.
 
 <div class="alert alert-subtle-info items-start" role="alert">
-  <span class="icon-[material-symbols--info-outline] alert-icon"></span>
+  <svg class="alert-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M11 17h2v-6h-2zm1-8q.425 0 .713-.288T13 8t-.288-.712T12 7t-.712.288T11 8t.288.713T12 9m0 13q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22m0-2q3.35 0 5.675-2.325T20 12t-2.325-5.675T12 4T6.325 6.325T4 12t2.325 5.675T12 20m0-8" stroke-width="0.5" stroke="currentColor"/></svg>
   <span class="-mt-1">This component's animation effect relies on the `prefers-reduced-motion` media query. Refer to the <a href="https://getbootstrap.com/docs/5.3/getting-started/accessibility/#reduced-motion">reduced motion section</a> within the accessibility documentation for more details.</span>
 </div>
 
@@ -55,7 +55,7 @@ The following offcanvas is open by default using `.show` on `.offcanvas`, which 
     <div class="offcanvas-header">
       <h6 class="offcanvas-title font-semibold" id="offcanvasExampleLabel">Offcanvas</h6>
       <button type="button" class="btn btn-icon ms-auto" data-bs-dismiss="offcanvas" aria-label="Close">
-        <span class="icon-[material-symbols--close-rounded] text-base"></span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="m12 13.4l-4.9 4.9q-.275.275-.7.275t-.7-.275t-.275-.7t.275-.7l4.9-4.9l-4.9-4.9q-.275-.275-.275-.7t.275-.7t.7-.275t.7.275l4.9 4.9l4.9-4.9q.275-.275.7-.275t.7.275t.275.7t-.275.7L13.4 12l4.9 4.9q.275.275.275.7t-.275.7t-.7.275t-.7-.275z" stroke-width="0.5" stroke="currentColor"/></svg>
       </button>
     </div>
     <div class="offcanvas-body">
@@ -78,7 +78,7 @@ When an offcanvas and its backdrop are visible, scrolling on the `<body>` elemen
     <div class="offcanvas-header">
       <h6 class="offcanvas-title font-semibold" id="offcanvasScrollingLabel">Offcanvas</h6>
       <button type="button" class="btn btn-icon ms-auto" data-bs-dismiss="offcanvas" aria-label="Close">
-        <span class="icon-[material-symbols--close-rounded] text-base"></span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="m12 13.4l-4.9 4.9q-.275.275-.7.275t-.7-.275t-.275-.7t.275-.7l4.9-4.9l-4.9-4.9q-.275-.275-.275-.7t.275-.7t.7-.275t.7.275l4.9 4.9l4.9-4.9q.275-.275.7-.275t.7.275t.275.7t-.275.7L13.4 12l4.9 4.9q.275.275.275.7t-.275.7t-.7.275t-.7-.275z" stroke-width="0.5" stroke="currentColor"/></svg>
       </button>
     </div>
     <div class="offcanvas-body">
@@ -101,7 +101,7 @@ You can also enable `<body>` scrolling with a backdrop.
     <div class="offcanvas-header">
       <h6 class="offcanvas-title font-semibold" id="offcanvasWithBothOptionsLabel">Offcanvas</h6>
       <button type="button" class="btn btn-icon ms-auto" data-bs-dismiss="offcanvas" aria-label="Close">
-        <span class="icon-[material-symbols--close-rounded] text-base"></span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="m12 13.4l-4.9 4.9q-.275.275-.7.275t-.7-.275t-.275-.7t.275-.7l4.9-4.9l-4.9-4.9q-.275-.275-.275-.7t.275-.7t.7-.275t.7.275l4.9 4.9l4.9-4.9q.275-.275.7-.275t.7.275t.275.7t-.275.7L13.4 12l4.9 4.9q.275.275.275.7t-.275.7t-.7.275t-.7-.275z" stroke-width="0.5" stroke="currentColor"/></svg>
       </button>
     </div>
     <div class="offcanvas-body">
@@ -124,7 +124,7 @@ When backdrop is set to `static`, the offcanvas does not close when clicking out
     <div class="offcanvas-header">
       <h6 class="offcanvas-title font-semibold" id="staticBackdropLabel">Offcanvas</h6>
       <button type="button" class="btn btn-icon ms-auto" data-bs-dismiss="offcanvas" aria-label="Close">
-        <span class="icon-[material-symbols--close-rounded] text-base"></span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="m12 13.4l-4.9 4.9q-.275.275-.7.275t-.7-.275t-.275-.7t.275-.7l4.9-4.9l-4.9-4.9q-.275-.275-.275-.7t.275-.7t.7-.275t.7.275l4.9 4.9l4.9-4.9q.275-.275.7-.275t.7.275t.275.7t-.275.7L13.4 12l4.9 4.9q.275.275.275.7t-.275.7t-.7.275t-.7-.275z" stroke-width="0.5" stroke="currentColor"/></svg>
       </button>
     </div>
     <div class="offcanvas-body">
@@ -158,7 +158,7 @@ To create a responsive offcanvas, replace the `.offcanvas` base class with a res
     <div class="offcanvas-header">
       <h6 class="offcanvas-title font-semibold" id="offcanvasResponsiveLabel">Responsive offcanvas</h6>
       <button type="button" class="btn btn-icon ms-auto" data-bs-dismiss="offcanvas" aria-label="Close" data-bs-target="#offcanvasResponsive">
-        <span class="icon-[material-symbols--close-rounded] text-base"></span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="m12 13.4l-4.9 4.9q-.275.275-.7.275t-.7-.275t-.275-.7t.275-.7l4.9-4.9l-4.9-4.9q-.275-.275-.275-.7t.275-.7t.7-.275t.7.275l4.9 4.9l4.9-4.9q.275-.275.7-.275t.7.275t.275.7t-.275.7L13.4 12l4.9 4.9q.275.275.275.7t-.275.7t-.7.275t-.7-.275z" stroke-width="0.5" stroke="currentColor"/></svg>
       </button>
     </div>
     <div class="offcanvas-body">
@@ -183,7 +183,7 @@ Try the top, right, and bottom examples below.
     <div class="offcanvas-header">
       <h6 class="offcanvas-title font-semibold" id="offcanvasTopLabel">Offcanvas Top</h6>
       <button type="button" class="btn btn-icon ms-auto" data-bs-dismiss="offcanvas" aria-label="Close">
-        <span class="icon-[material-symbols--close-rounded] text-base"></span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="m12 13.4l-4.9 4.9q-.275.275-.7.275t-.7-.275t-.275-.7t.275-.7l4.9-4.9l-4.9-4.9q-.275-.275-.275-.7t.275-.7t.7-.275t.7.275l4.9 4.9l4.9-4.9q.275-.275.7-.275t.7.275t.275.7t-.275.7L13.4 12l4.9 4.9q.275.275.275.7t-.275.7t-.7.275t-.7-.275z" stroke-width="0.5" stroke="currentColor"/></svg>
       </button>
     </div>
     <div class="offcanvas-body">
@@ -197,7 +197,7 @@ Try the top, right, and bottom examples below.
     <div class="offcanvas-header">
       <h6 class="offcanvas-title font-semibold" id="offcanvasRightLabel">Offcanvas Right</h6>
       <button type="button" class="btn btn-icon ms-auto" data-bs-dismiss="offcanvas" aria-label="Close">
-        <span class="icon-[material-symbols--close-rounded] text-base"></span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="m12 13.4l-4.9 4.9q-.275.275-.7.275t-.7-.275t-.275-.7t.275-.7l4.9-4.9l-4.9-4.9q-.275-.275-.275-.7t.275-.7t.7-.275t.7.275l4.9 4.9l4.9-4.9q.275-.275.7-.275t.7.275t.275.7t-.275.7L13.4 12l4.9 4.9q.275.275.275.7t-.275.7t-.7.275t-.7-.275z" stroke-width="0.5" stroke="currentColor"/></svg>
       </button>
     </div>
     <div class="offcanvas-body">
@@ -211,7 +211,7 @@ Try the top, right, and bottom examples below.
     <div class="offcanvas-header">
       <h6 class="offcanvas-title font-semibold" id="offcanvasBottomLabel">Offcanvas Bottom</h6>
       <button type="button" class="btn btn-icon ms-auto" data-bs-dismiss="offcanvas" aria-label="Close">
-        <span class="icon-[material-symbols--close-rounded] text-base"></span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="m12 13.4l-4.9 4.9q-.275.275-.7.275t-.7-.275t-.275-.7t.275-.7l4.9-4.9l-4.9-4.9q-.275-.275-.275-.7t.275-.7t.7-.275t.7.275l4.9 4.9l4.9-4.9q.275-.275.7-.275t.7.275t.275.7t-.275.7L13.4 12l4.9 4.9q.275.275.275.7t-.275.7t-.7.275t-.7-.275z" stroke-width="0.5" stroke="currentColor"/></svg>
       </button>
     </div>
     <div class="offcanvas-body">
@@ -274,7 +274,7 @@ Alternatively, dismissal can be achieved from a button **outside the offcanvas**
 />
 
 <div class="alert alert-subtle-warning items-start mb-6" role="alert">
-  <span class="icon-[material-symbols--info-outline] alert-icon"></span>
+  <svg class="alert-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M11 17h2v-6h-2zm1-8q.425 0 .713-.288T13 8t-.288-.712T12 7t-.712.288T11 8t.288.713T12 9m0 13q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22m0-2q3.35 0 5.675-2.325T20 12t-2.325-5.675T12 4T6.325 6.325T4 12t2.325 5.675T12 20m0-8" stroke-width="0.5" stroke="currentColor"/></svg>
   <span class="-mt-1">While both methods for dismissing an offcanvas are supported, it is important to note that dismissing from outside an offcanvas does not align with the <a href="https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/">ARIA Authoring Practices Guide's dialog (modal)</a> pattern. This approach should be used with caution.</span>
 </div>
 
@@ -332,7 +332,7 @@ The ultimate configuration object results from merging `data-bs-config`, individ
 ## Methods
 
 <div class="alert alert-subtle-danger items-start mb-6" role="alert">
-  <span class="icon-[material-symbols--error-outline-rounded] alert-icon"></span>
+  <svg class="alert-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M12 17q.425 0 .713-.288T13 16t-.288-.712T12 15t-.712.288T11 16t.288.713T12 17m-1-4h2V7h-2zm1 9q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22m0-2q3.35 0 5.675-2.325T20 12t-2.325-5.675T12 4T6.325 6.325T4 12t2.325 5.675T12 20m0-8" stroke-width="0.5" stroke="currentColor"/></svg>
   <span class="-mt-1">**All available API methods operate asynchronously, initiating a transition**. They complete their return to the caller immediately upon transition commencement, yet prior to its conclusion. Furthermore, any method invoked on a component currently undergoing transition will be disregarded. For more detailed information, consult the
   <a href="https://getbootstrap.com/docs/5.3/getting-started/javascript/#asynchronous-functions-and-transitions">JavaScript documentation</a></span>
 </div>
