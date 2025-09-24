@@ -125,6 +125,42 @@
   --grid-gutter-y: 0px;
   --grid-columns: 12;
   --grid-row-columns: 6;
+
+  /* reboot variables */
+  --body-bg: var(--background-color-default);
+  --body-color: var(--text-color-default);
+  --body-font-size: var(--text-base);
+  --body-font-weight: var(--font-weight-normal);
+  --hr-margin-y: --spacing(4);
+  --hr-margin-x: 0;
+  --hr-color: var(--text-color-default);
+  --hr-border-color: var(--border-color-base);
+  --headings-margin-bottom: --spacing(2);
+  --headings-font-weight: var(--font-weight-bold);
+  --h1-font-size: 48px;
+  --h1-line-height: 1;
+  --h2-font-size: 42px;
+  --h2-line-height: 1;
+  --h3-font-size: 32px;
+  --h3-line-height: 1.1;
+  --h4-font-size: 28px;
+  --h4-line-height: 1.1;
+  --h5-font-size: 24px;
+  --h5-line-height: 1.15;
+  --h6-font-size: 20px;
+  --h6-line-height: 1.2;
+  --paragraph-margin-bottom: --spacing(4);
+  --dt-font-weight: var(--font-weight-bold);
+  --anchor-color: var(--color-primary);
+  --anchor-hover-color: var(--color-primary-dark);
+  --code-color: var(--color-pink-600);
+  --code-font-size: var(--text-sm);
+  --caption-padding-y: --spacing(4);
+  --caption-padding-x: --spacing(4);
+  --caption-font-weight: var(--font-weight-medium);
+  --legend-margin-bottom: --spacing(2);
+  --legend-font-weight: var(--font-weight-medium);
+  --legend-font-size: var(--text-xl);
 }
 
 @layer {

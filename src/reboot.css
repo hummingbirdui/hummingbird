@@ -8,39 +8,60 @@
   }
 
   body {
-    @apply bg-default text-default text-base font-normal;
+    @apply bg-[var(--body-bg)]
+    text-[var(--body-color)]
+    text-[length:var(--body-font-size)]
+    font-[var(--body-font-weight)];
   }
 
   hr {
-    @apply my-4 mx-0 border-base;
+    @apply my-[var(--hr-margin-y)] mx-[var(--hr-margin-x)] border-t border-[var(--hr-border-color)];
   }
 
   h1 {
-    @apply mb-2 font-bold text-[48px] leading-[1];
+    @apply mb-[var(--headings-margin-bottom)]
+    font-[var(--headings-font-weight)]
+    text-[length:var(--h1-font-size)]
+    leading-[var(--h1-line-height)];
   }
 
   h2 {
-    @apply mb-2 font-bold text-[42px] leading-[1];
+    @apply mb-[var(--headings-margin-bottom)]
+    font-[var(--headings-font-weight)]
+    text-[length:var(--h2-font-size)]
+    leading-[var(--h2-line-height)];
   }
 
   h3 {
-    @apply mb-2 font-bold text-[32px] leading-[1.1];
+    @apply mb-[var(--headings-margin-bottom)]
+    font-[var(--headings-font-weight)]
+    text-[length:var(--h3-font-size)]
+    leading-[var(--h3-line-height)];
   }
 
   h4 {
-    @apply mb-2 font-bold text-[28px] leading-[1.1];
+    @apply mb-[var(--headings-margin-bottom)]
+    font-[var(--headings-font-weight)]
+    text-[length:var(--h4-font-size)]
+    leading-[var(--h4-line-height)];
   }
 
   h5 {
-    @apply mb-2 font-bold text-[24px] leading-[1.15];
+    @apply mb-[var(--headings-margin-bottom)]
+    font-[var(--headings-font-weight)]
+    text-[length:var(--h5-font-size)]
+    leading-[var(--h5-line-height)];
   }
 
   h6 {
-    @apply mb-2 font-bold text-[20px] leading-[1.2];
+    @apply mb-[var(--headings-margin-bottom)]
+    font-[var(--headings-font-weight)]
+    text-[length:var(--h6-font-size)]
+    leading-[var(--h6-line-height)];
   }
 
   p {
-    @apply mb-4 mt-0;
+    @apply mb-[var(--paragraph-margin-bottom)] mt-0;
   }
 
   address {
@@ -75,7 +96,7 @@
   }
 
   dt {
-    @apply font-bold;
+    @apply font-[var(--dt-font-weight)];
   }
 
   blockquote {
@@ -83,11 +104,7 @@
   }
 
   a {
-    @apply underline text-primary;
-
-    &:hover {
-      @apply text-primary-dark;
-    }
+    @apply underline text-[var(--anchor-color)] hover:text-[var(--anchor-hover-color)];
   }
 
   a:not([href]):not([class]) {
@@ -98,7 +115,7 @@
   }
 
   code {
-    @apply text-pink-600 text-sm;
+    @apply text-[var(--code-color)] text-[length:var(--code-font-size)];
     a > & {
       @apply text-inherit;
     }
@@ -109,7 +126,10 @@
   }
 
   caption {
-    @apply text-left caption-bottom font-medium p-4;
+    @apply text-left caption-bottom
+    font-[var(--caption-font-weight)]
+    px-[var(--caption-padding-x)]
+    py-[var(--caption-padding-y)];
   }
 
   label {
@@ -124,7 +144,11 @@
   }
 
   legend {
-    @apply float-left w-full p-0 mb-2 font-medium leading-normal text-xl;
+    @apply float-left w-full p-0
+    mb-[var(--legend-margin-bottom)]
+    font-[var(--legend-font-weight)]
+    leading-normal
+    text-[var(--legend-font-size)];
   }
 
   output {
