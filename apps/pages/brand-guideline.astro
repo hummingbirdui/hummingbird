@@ -19,12 +19,18 @@ import { hbLogos, hbRestrictLogos, colors, typography } from 'apps/data/brand-gu
   <p class="mb-6 tracking-normal">
     The project's official name is "Hummingbird." This name should be used in all public-facing communications.
   </p>
-  <div class="mb-14 flex items-center gap-6">
+  <div class="mb-14 flex flex-col sm:flex-row items-center gap-6">
     <div class="card flex flex-col w-full h-[162px] rounded-2xl bg-default overflow-hidden">
       <div class="grow flex items-center justify-center bg-subtle">
         <h3 class="mb-0 text-default text-[28px] font-semibold tracking-normal">Hummingbird</h3>
       </div>
-      <div class="px-4 py-2">
+      <div class="px-4 py-2 flex items-center gap-2">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="20" height="20" rx="10" fill="#07B577"></rect>
+          <path
+            d="M8.72344 12.7752C8.67344 12.7752 8.6276 12.7669 8.58594 12.7502C8.54427 12.7335 8.5026 12.7044 8.46094 12.6627L6.19844 10.4002C6.12344 10.3252 6.08594 10.2335 6.08594 10.1252C6.08594 10.0169 6.12344 9.9252 6.19844 9.8502C6.27344 9.7752 6.36094 9.7377 6.46094 9.7377C6.56094 9.7377 6.64844 9.7752 6.72344 9.8502L8.72344 11.8502L13.2609 7.3127C13.3359 7.2377 13.4255 7.2002 13.5297 7.2002C13.6339 7.2002 13.7234 7.2377 13.7984 7.3127C13.8734 7.3877 13.9109 7.47728 13.9109 7.58145C13.9109 7.68561 13.8734 7.7752 13.7984 7.8502L8.98594 12.6627C8.94427 12.7044 8.9026 12.7335 8.86094 12.7502C8.81927 12.7669 8.77344 12.7752 8.72344 12.7752Z"
+            fill="white"></path>
+        </svg>
         <p class="card-title mb-0 text-muted text-sm tracking-normal font-medium">Correct</p>
       </div>
     </div>
@@ -33,7 +39,13 @@ import { hbLogos, hbRestrictLogos, colors, typography } from 'apps/data/brand-gu
         <h3 class="text-default text-[28px] font-semibold tracking-normal">HummingBird</h3>
         <h3 class="mb-0 text-default text-[28px] font-semibold tracking-normal">hummingbird</h3>
       </div>
-      <div class="px-4 py-2">
+      <div class="px-4 py-2 flex items-center gap-2">
+        <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0.5" width="20" height="20" rx="10" fill="#F24455"></rect>
+          <path
+            d="M10.5008 10.5248L7.87578 13.1498C7.80078 13.2248 7.71328 13.2623 7.61328 13.2623C7.51328 13.2623 7.42578 13.2248 7.35078 13.1498C7.27578 13.0748 7.23828 12.9873 7.23828 12.8873C7.23828 12.7873 7.27578 12.6998 7.35078 12.6248L9.97578 9.9998L7.35078 7.3748C7.27578 7.2998 7.23828 7.2123 7.23828 7.1123C7.23828 7.0123 7.27578 6.9248 7.35078 6.8498C7.42578 6.7748 7.51328 6.7373 7.61328 6.7373C7.71328 6.7373 7.80078 6.7748 7.87578 6.8498L10.5008 9.4748L13.1258 6.8498C13.2008 6.7748 13.2883 6.7373 13.3883 6.7373C13.4883 6.7373 13.5758 6.7748 13.6508 6.8498C13.7258 6.9248 13.7633 7.0123 13.7633 7.1123C13.7633 7.2123 13.7258 7.2998 13.6508 7.3748L11.0258 9.9998L13.6508 12.6248C13.7258 12.6998 13.7633 12.7873 13.7633 12.8873C13.7633 12.9873 13.7258 13.0748 13.6508 13.1498C13.5758 13.2248 13.4883 13.2623 13.3883 13.2623C13.2883 13.2623 13.2008 13.2248 13.1258 13.1498L10.5008 10.5248Z"
+            fill="white"></path>
+        </svg>
         <p class="card-title mb-0 text-muted text-sm tracking-normal font-medium">Incorrect</p>
       </div>
     </div>
@@ -42,11 +54,11 @@ import { hbLogos, hbRestrictLogos, colors, typography } from 'apps/data/brand-gu
   <!-- logo & symbol -->
   <h3 class="mb-3.5 text-2xl font-semibold">Logo & Symbol</h3>
   <p class="mb-6 tracking-normal">
-    The official Hummingbird logo is our most recognizable brand asset and a key indicator of authenticity. The logo may
+    The official Hummingbird logo is our most recognizable brand asset and a key indicator of authenticity. The logo may
     not be used in a way that implies an endorsement, partnership, or affiliation with your project or company without
     explicit written permission. The logo may not be used as the primary logo for your own product or service.
   </p>
-  <div class="mb-14 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+  <div class="mb-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
     {
       hbLogos.map((item, i) => (
         <div
@@ -72,10 +84,10 @@ import { hbLogos, hbRestrictLogos, colors, typography } from 'apps/data/brand-gu
 
   <!-- things to avoid -->
   <div class="swiper">
-    <div class="flex items-start justify-between">
+    <div class="mb-4 flex flex-col sm:flex-row items-start justify-between">
       <div class="max-w-180">
         <h6 class="mb-3.5 text-xl font-medium">Things to avoid</h6>
-        <p class="mb-6 tracking-normal">
+        <p class="sm:mb-0 tracking-normal">
           The logo cannot imply endorsement or affiliation with your project or company without written permission. It
           also cannot serve as the primary logo for your product or service.
         </p>
@@ -106,7 +118,14 @@ import { hbLogos, hbRestrictLogos, colors, typography } from 'apps/data/brand-gu
               <div class="grow flex items-center justify-center bg-subtle">
                 <img src={item.img.src} alt="logo" />
               </div>
-              <div class="px-4 py-2">
+              <div class="px-4 py-2 flex items-center gap-2">
+                <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="0.5" width="20" height="20" rx="10" fill="#F24455" />
+                  <path
+                    d="M10.5008 10.5248L7.87578 13.1498C7.80078 13.2248 7.71328 13.2623 7.61328 13.2623C7.51328 13.2623 7.42578 13.2248 7.35078 13.1498C7.27578 13.0748 7.23828 12.9873 7.23828 12.8873C7.23828 12.7873 7.27578 12.6998 7.35078 12.6248L9.97578 9.9998L7.35078 7.3748C7.27578 7.2998 7.23828 7.2123 7.23828 7.1123C7.23828 7.0123 7.27578 6.9248 7.35078 6.8498C7.42578 6.7748 7.51328 6.7373 7.61328 6.7373C7.71328 6.7373 7.80078 6.7748 7.87578 6.8498L10.5008 9.4748L13.1258 6.8498C13.2008 6.7748 13.2883 6.7373 13.3883 6.7373C13.4883 6.7373 13.5758 6.7748 13.6508 6.8498C13.7258 6.9248 13.7633 7.0123 13.7633 7.1123C13.7633 7.2123 13.7258 7.2998 13.6508 7.3748L11.0258 9.9998L13.6508 12.6248C13.7258 12.6998 13.7633 12.7873 13.7633 12.8873C13.7633 12.9873 13.7258 13.0748 13.6508 13.1498C13.5758 13.2248 13.4883 13.2623 13.3883 13.2623C13.2883 13.2623 13.2008 13.2248 13.1258 13.1498L10.5008 10.5248Z"
+                    fill="white"
+                  />
+                </svg>
                 <p class="card-title mb-0 text-muted text-sm tracking-normal font-medium">{item.title}</p>
               </div>
             </div>
@@ -119,9 +138,10 @@ import { hbLogos, hbRestrictLogos, colors, typography } from 'apps/data/brand-gu
   <!-- color -->
   <h3 class="mb-3.5 text-2xl font-semibold">Color</h3>
   <p class="mb-6 tracking-normal">
-    Color is the base of MailBluster. It characterizes our brand and helps us to create consistent experiences across
-    marketing and products. We use color in meaningful ways in all appearances of our brand. Please don’t edit, change,
-    or add additional color to the palette.
+    Hummingbird’s official color palette is built for developers and designers alike—prioritizing accessibility, visual
+    hierarchy, and performance. Each color is assigned a clear role, from defining our primary brand identity to
+    improving contrast and legibility in the component library. Use these colors to maintain brand consistency and
+    ensure a cohesive, user-friendly experience across the ecosystem.
   </p>
   <div class="mb-14 grid grid-cols-10 gap-4">
     {
@@ -139,7 +159,7 @@ import { hbLogos, hbRestrictLogos, colors, typography } from 'apps/data/brand-gu
           </div>
         ) : (
           <div
-            class={`card rounded-2xl p-6 flex flex-col justify-between h-60 text-white ${c.span}`}
+            class={`card rounded-2xl p-6 flex flex-col justify-between h-44 sm:h-60 text-white ${c.span}`}
             style={`background-color: ${c.hex}`}
           >
             <div>
@@ -156,22 +176,25 @@ import { hbLogos, hbRestrictLogos, colors, typography } from 'apps/data/brand-gu
   <!-- typography -->
   <h3 class="mb-3.5 text-2xl font-semibold">Typography</h3>
   <p class="mb-6 tracking-normal">
-    We design to reduce the friction between people and their tools and ultimately achieve their goals. We’ve chosen a
-    full font stack that transitions from friendly and warm in marketing to simple and focused on the product to
-    accomplish this across our brand. We are here using the font Figtree for our typography.
+    Typography in Hummingbird is designed to balance aesthetics with functionality. Our goal is to reduce friction and
+    enhance readability across every part of the Hummingbird ecosystem, from the website to the code within our
+    documentation. Figtree from Google Fonts ensures scalable readability, lightweight performance, and a clean, modern
+    look across interfaces and documentation. This consistency supports faster comprehension, reduces cognitive load,
+    and maintains a developer-first, design-forward experience, aligning perfectly with our commitment to a sensible and
+    accessible developer experience.
   </p>
   <div class="mb-14 p-4 rounded-xl bg-subtle">
-    <div class="mb-6 flex justify-between">
-      <h1 class="text-[56px] text-primary font-semibold">Figtree</h1>
-      <div class="">
-        <p class="mb-1.5 text-sm text-right tracking-normal">Designer <b class="font-semibold">Erik Kennedy</b></p>
-        <p class="text-sm text-right tracking-normal">
+    <div class="mb-3 sm:mb-6 flex flex-col sm:flex-row justify-between">
+      <h1 class="mb-4 sm:mb-0 text-[56px] text-primary font-semibold">Figtree</h1>
+      <div class="sm:text-right">
+        <p class="mb-1.5 text-sm tracking-normal">Designer <b class="font-semibold">Erik Kennedy</b></p>
+        <p class="text-sm tracking-normal">
           Source <a href="https://fonts.google.com/specimen/Figtree" class="no-underline">Google Fonts</a>
         </p>
       </div>
     </div>
 
-    <div class="grid grid-cols-5 gap-2">
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2">
       {
         typography.map((item) => (
           <div class="card px-3.5 py-2 text-default flex-row gap-2 rounded-lg">
@@ -216,11 +239,25 @@ import { hbLogos, hbRestrictLogos, colors, typography } from 'apps/data/brand-gu
 
     const swiper = new Swiper('.swiper', {
       loop: true,
-      slidesPerView: 3.5,
-      spaceBetween: 16,
+      slidesPerView: 1,
+      spaceBetween: 8,
       navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
+      },
+      breakpoints: {
+        370: {
+          slidesPerView: 1.2,
+          spaceBetween: 8,
+        },
+        560: {
+          slidesPerView: 2.2,
+          spaceBetween: 12,
+        },
+        840: {
+          slidesPerView: 3.5,
+          spaceBetween: 16,
+        },
       },
     });
   </script>
