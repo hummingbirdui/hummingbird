@@ -38,7 +38,7 @@ We generally recommend using a `<button>` with the `data-bs-target` attribute. A
 The collapse plugin also supports horizontal collapsing. Add the `.collapse-horizontal` modifier class to transition the `width` instead of `height`, and make sure to set a `width` on the immediate child element. You can use custom Sass, inline styles, or our <a href="https://getbootstrap.com/docs/5.3/utilities/sizing/">width utilities</a> to do this.
 
 <div class="mb-5 alert alert-subtle-info items-start" role="alert">
-  <span class="icon-[material-symbols--info-outline] alert-icon"></span>
+  <svg class="alert-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M11 17h2v-6h-2zm1-8q.425 0 .713-.288T13 8t-.288-.712T12 7t-.712.288T11 8t.288.713T12 9m0 13q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22m0-2q3.35 0 5.675-2.325T20 12t-2.325-5.675T12 4T6.325 6.325T4 12t2.325 5.675T12 20m0-8" stroke-width="0.5" stroke="currentColor"/></svg>
   <span class="-mt-1">Please note that while the example below, a `min-height` is set to reduce excessive repaints in our docs, but this is not required. **The only requirement is setting a `width` on the child element.**</span>
 </div>
 
@@ -143,7 +143,7 @@ The ultimate configuration object results from merging `data-bs-config`, individ
 ## Methods
 
 <div class="alert alert-subtle-danger items-start mb-6" role="alert">
-  <span class="icon-[material-symbols--error-outline-rounded] alert-icon"></span>
+  <svg class="alert-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M12 17q.425 0 .713-.288T13 16t-.288-.712T12 15t-.712.288T11 16t.288.713T12 17m-1-4h2V7h-2zm1 9q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22m0-2q3.35 0 5.675-2.325T20 12t-2.325-5.675T12 4T6.325 6.325T4 12t2.325 5.675T12 20m0-8" stroke-width="0.5" stroke="currentColor"/></svg>
   <span class="-mt-1">**All API methods are asynchronous and initiate a transition.** They return to the caller immediately after the transition begins but before it concludes. Furthermore, a method call on a component that is already transitioning will be disregarded. More information is available in our
   <a href="https://getbootstrap.com/docs/5.3/getting-started/javascript/#asynchronous-functions-and-transitions">JavaScript documentation</a></span>
 </div>

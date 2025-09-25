@@ -1,13 +1,13 @@
 ---
 import { Code } from 'astro:components';
 import CardWrapper from '../CardWrapper.astro';
+import AppCode from '@components/common/AppCode.astro';
 ---
 
 <CardWrapper color="secondary" class="shadow-secondary/5 dark:shadow-secondary-darker/5">
   <h3 class="mb-4 text-base font-bold">JavaScript</h3>
-
-  <Code
-    class="!text-sm h-full !bg-muted !rounded-lg !overflow-auto scrollbar-hide"
+  <AppCode
+    class="h-full !overflow-auto scrollbar-hide"
     data-astro-code
     code={`import { Modal } from "@hummingbirdui/hummingbird";
   const myModal = new Modal('.myModal');

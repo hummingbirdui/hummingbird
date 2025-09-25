@@ -1,0 +1,211 @@
+---
+title: Reboot
+description: Reboot is a file that includes a set of CSS with element-specific changes that gives Hummingbird a clean, consistent starting point for building websites.
+toc: true
+---
+
+## CSS variables
+
+CSS variables provide a powerful way to customize and theme projects. It’s a feature in modern CSS that allows defining reusable values directly in stylesheets. CSS variables make customization easy: change a value in one place (like :root) and it updates everywhere the variable is used. Variables can be set at different levels (global, component, etc.), making them flexible.
+
+A “Reboot” stylesheet (like Hummingbird’s Reboot) resets browser styles and sets up a foundation for consistent design. Using CSS variables in Reboot makes it easy for developers to customize base styles without editing the core CSS—just override the variables.
+
+Tailwind CSS uses CSS variables for theming and customization. Hummingbird makes use of Tailwind’s CSS variable feature to define colors, typography, spacing, and more. This allows projects to easily adapt the design system to specific needs. Learn more about Hummingbird’s CSS variables in the [Theming section](/docs/customize/theming).
+
+## Headings
+
+All the headings (`h1` to `h6`) in Hummingbird are styled with CSS variables for font size, weight, line height, and margin. 
+
+<HbTable>
+  <thead>
+    <tr>
+      <th scope="col">Heading</th>
+      <th scope="col">Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">`<h1></h1>`</th>
+      <td><h1>Heading 1</h1></td>
+    </tr>
+    <tr>
+      <th scope="row">`<h2></h2>`</th>
+      <td><h2>Heading 2</h2></td>
+    </tr>
+    <tr>
+      <th scope="row">`<h3></h3>`</th>
+      <td><h3>Heading 3</h3></td>
+    </tr>
+    <tr>
+      <th scope="row">`<h4></h4>`</th>
+      <td><h4>Heading 4</h4></td>
+    </tr>
+    <tr>
+      <th scope="row">`<h5></h5>`</th>
+      <td><h5>Heading 5</h5></td>
+    </tr>
+    <tr>
+      <th scope="row">`<h6></h6>`</th>
+      <td><h6>Heading 6</h6></td>
+    </tr>
+  </tbody>
+</HbTable>
+
+## Paragraph
+
+For all paragraph (`<p>`) elements removed `margin-top` and set `margin-bottom: 1rem`.
+
+<Example code={`<p>This is an example paragraph</p>`}/>
+
+## Links
+
+Links are styled with a default `color` and an `underline` by default. On hover, the link color changes to a darker shade.
+
+<Example code={`<a href='#'>This is an example link</a>`}/>
+
+## Buttons
+By default, buttons (`<button>`) have a `cursor-pointer` style. When a button is disabled, the cursor changes to `cursor-default`.
+<Example code={`<button class='btn'>This is a button</button>
+<button class='btn' disabled>This is a disabled button</button>`}/>
+
+## Horizontal rules
+
+Default `margin-top` and `margin-bottom` for horizontal rules (`<hr>`) is set to `1rem`.
+
+<Example code={`<hr />
+  <hr class='border-danger-light' />
+  <hr class='border-t-3 border-primary-light' />`}/>
+
+## Lists
+
+By default, unordered lists (`<ul>`) use disc bullets, and ordered lists (`<ol>`) use decimal numbers. Both types of lists have a left padding of `2rem` and a bottom margin of `1rem`. Nested lists have no bottom margin.
+
+
+<Example showMarkup={false} code={`<ul>
+  <li>Item 1</li>
+  <li>Item 2
+    <ul>
+      <li>Subitem 1</li>
+      <li>Subitem 2</li>
+    </ul>
+  </li>
+  <li>Item 3</li>
+</ul>
+<ol>
+  <li>First</li>
+  <li>Second</li>
+  <li>Third</li>
+</ol>`}/>
+
+## Description Lists
+
+Terms (`<dt>`) are styled with a bold font weight, while descriptions (`<dd>`) use a regular font weight. Default margin-bottom for `<dl>` is `1rem`.
+
+<Example showMarkup={false} code={`<dl>
+  <dt>Term 1</dt>
+  <dd>Description for term 1</dd>
+  <dt>Term 2</dt>
+  <dd>Description for term 2</dd>
+</dl>`}/>
+
+## Code
+
+By default, inline code elements (`<code>`) are styled with a specific text color and font size. When a `<code>` element is nested inside an `<a>` tag, it inherits the link's text color and font size.
+
+<Example code={`This is an example of inline <code>code</code> in a sentence. <a href='#'>This is a link with <code>code</code></a>`}/>
+
+## Address
+
+The `<address>` element is styled with a bottom margin of `1rem`.
+<Example showMarkup={false} code={`<address>
+  John Doe<br />
+  123 Main St.<br />
+  Anytown, USA<br />
+  <a href="mailto:john.doe@example.com">john.doe@example.com</a>
+</address>`}/>
+
+## Blockquote
+
+By default, blockquotes (`<blockquote>`) have a bottom margin of `1rem`.
+<Example showMarkup={false} code={`<blockquote>
+  This is an example blockquote. It is used to indicate the quotation of a large section of text from another source.
+</blockquote>`}/>
+
+## Legend
+
+The `<legend>` element is styled to be a block-level element with full width, no padding, and specific margin, font weight and font size.
+
+<Example showMarkup={false} code={`<fieldset>
+  <legend>Personal Information</legend>
+  <label for="name">Name:</label>
+  <input class='form-control form-control-sm' type="text" id="name" name="name" />
+  <br />
+  <label for="email">Email:</label>
+  <input class='form-control form-control-sm' type="email" id="email" name="email" />
+</fieldset>`}/>
+
+## Captions
+
+By default, table captions (`<caption>`) are aligned to the left and positioned at the bottom of the table. They also have specific font weight and padding.
+
+<Example showMarkup={false} code={`<table class='table'>
+  <caption>This is a table caption</caption>
+  <thead>
+    <tr>    
+      <th scope="col">Header 1</th>
+      <th scope="col">Header 2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Data 1</td>
+      <td>Data 2</td>
+    </tr>
+    <tr>
+      <td>Data 3</td>
+      <td>Data 4</td>
+    </tr>
+  </tbody>
+</table>`}/>
+
+## Reboot CSS variables
+
+The following CSS variables are defined in Hummingbird's for reboot styles. Override these variables in the CSS to customize the base styles of the project.
+
+<Example lang='sass' showPreview={false}
+  code={`:root {
+    --body-bg: var(--background-color-default);
+    --body-color: var(--text-color-default);
+    --body-font-size: var(--text-base);
+    --body-font-weight: var(--font-weight-normal);
+    --hr-margin-y: --spacing(4);
+    --hr-margin-x: 0;
+    --hr-color: var(--text-color-default);
+    --hr-border-color: var(--border-color-base);
+    --headings-margin-bottom: --spacing(2);
+    --headings-font-weight: var(--font-weight-bold);
+    --h1-font-size: 48px;
+    --h1-line-height: 1;
+    --h2-font-size: 42px;
+    --h2-line-height: 1;
+    --h3-font-size: 32px;
+    --h3-line-height: 1.1;
+    --h4-font-size: 28px;
+    --h4-line-height: 1.1;
+    --h5-font-size: 24px;
+    --h5-line-height: 1.15;
+    --h6-font-size: 20px;
+    --h6-line-height: 1.2;
+    --paragraph-margin-bottom: --spacing(4);
+    --dt-font-weight: var(--font-weight-bold);
+    --anchor-color: var(--color-primary);
+    --anchor-hover-color: var(--color-primary-dark);
+    --code-color: var(--color-pink-600);
+    --code-font-size: var(--text-sm);
+    --caption-padding-y: --spacing(4);
+    --caption-padding-x: --spacing(4);
+    --caption-font-weight: var(--font-weight-medium);
+    --legend-margin-bottom: --spacing(2);
+    --legend-font-weight: var(--font-weight-medium);
+    --legend-font-size: var(--text-xl);
+  }`}/>

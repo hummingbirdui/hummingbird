@@ -1,8 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap');
 @import 'tailwindcss';
 @import '../src/index.css';
-@plugin '@tailwindcss/typography';
-@plugin "@iconify/tailwind4";
 @import 'tailwind-scrollbar-hide/v4';
 @custom-variant dark (&:where(.dark, .dark *));
 
@@ -48,6 +46,10 @@
       @apply mb-4;
     }
   }
+  > ol,
+  > ul {
+    @apply pl-4;
+  }
 
   .heading-anchor {
     @apply opacity-0 transition-opacity duration-200;
@@ -77,6 +79,9 @@
 
 .astro-code {
   @apply overflow-hidden bg-muted! text-sm p-4 rounded-lg;
+  .shiki {
+    @apply bg-transparent!;
+  }
 }
 
 .custom-tooltip {

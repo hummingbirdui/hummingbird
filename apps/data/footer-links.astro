@@ -1,0 +1,76 @@
+---
+import GithubIcon from '@components/icons/GithubIcon.astro';
+import TwitterIcon from '@components/icons/TwitterIcon.astro';
+import FacebookIcon from '@components/icons/FacebookIcon.astro';
+import DiscordIcon from '@components/icons/DiscordIcon.astro';
+import DevIcon from '@components/icons/DevIcon.astro';
+import type { AstroComponentFactory } from 'astro/runtime/server/index.js';
+
+interface FooterLink {
+  title: string;
+  links: { label: string; url: string }[];
+}
+
+interface SocialLink {
+  name: string;
+  url: string;
+  icon: AstroComponentFactory;
+}
+
+export const footerLinks: FooterLink[] = [
+  {
+    title: 'Resources',
+    links: [
+      { label: 'About Us', url: '/about' },
+      { label: 'Documentation', url: '/docs/getting-started/installation' },
+      { label: 'Components', url: '/docs/components' },
+      { label: 'Examples', url: '#' },
+    ],
+  },
+  {
+    title: 'Help Center',
+    links: [
+      { label: 'Contact us', url: '/contact' },
+      { label: 'Support us', url: '#' },
+      { label: 'Hire us', url: '#' },
+    ],
+  },
+  {
+    title: 'Policies',
+    links: [
+      { label: 'License', url: 'https://github.com/hummingbirdui/hummingbird?tab=MIT-1-ov-file' },
+      { label: 'Privacy policy', url: '/privacy-policy' },
+      { label: 'Terms & conditions', url: '/terms-and-conditions' },
+      { label: 'Brand guideline', url: '/brand-guideline' },
+    ],
+  },
+];
+
+export const socialLinks: SocialLink[] = [
+  {
+    name: 'github',
+    url: 'https://github.com/hummingbirdui/hummingbird',
+    icon: GithubIcon,
+  },
+  {
+    name: 'twitter',
+    url: '#!',
+    icon: TwitterIcon,
+  },
+  {
+    name: 'discord',
+    url: '#!',
+    icon: DiscordIcon,
+  },
+  {
+    name: 'facebook',
+    url: '#!',
+    icon: FacebookIcon,
+  },
+  {
+    name: 'dev',
+    url: '#!',
+    icon: DevIcon,
+  },
+];
+---

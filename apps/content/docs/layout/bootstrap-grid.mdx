@@ -38,19 +38,6 @@ Use the `.col` class to create equal-width columns for every screen size.
     </div>
   </div>`} />
 
-### Setting one column width
-
-Set the width of one column and let the other(s) automatically resize around it.
-
-<Example class='example-row' 
-  code={`<div class='container text-center'>
-    <div class='row'>
-      <div class='col'>1 of 3</div>
-      <div class='col-6'>2 of 3 (wider)</div>
-      <div class='col'>3 of 3</div>
-    </div>
-  </div>`} />
-
 ### Variable width content
 
 Use the `.col-auto` class to size columns based on the natural width of their content.
@@ -88,23 +75,6 @@ For grids that are the same across all breakpoints, use the `.col` and `.col-{si
     <div class="row">
       <div class="col-8">col-8</div>
       <div class="col-4">col-4</div>
-    </div>
-  </div>`} />
-
-### Stacked to horizontal
-
-Use breakpoint-specific column classes to create a stacked-to-horizontal layout, such as `.sm:col-6` to create two columns starting at the small breakpoint.
-
-<Example class='example-row' 
-  code={`<div class="container text-center">
-    <div class="row">
-      <div class="sm:col-8">sm:col-8</div>
-      <div class="sm:col-4">sm:col-4</div>
-    </div>
-    <div class="row">
-      <div class="sm:col">sm:col</div>
-      <div class="sm:col">sm:col</div>
-      <div class="sm:col">sm:col</div>
     </div>
   </div>`} />
 
@@ -150,40 +120,10 @@ Instead of specifying the number of columns per row, use the `.row-cols-{number}
 
 <Example class='example-row-cols' 
   code={`<div class="container text-center">
-    <div class="row row-cols-3">
-      <div class="col">Column</div>
-      <div class="col">Column</div>
-      <div class="col">Column</div>
-      <div class="col">Column</div>
-    </div>
-  </div>`} />
-
-<Example class='example-row-cols' 
-  code={`<div class="container text-center">
     <div class="row row-cols-auto">
       <div class="col">Column</div>
       <div class="col">Column</div>
       <div class="col">Column</div>
-      <div class="col">Column</div>
-    </div>
-  </div>`} />
-
-<Example class='example-row-cols' 
-  code={`<div class="container text-center">
-    <div class="row row-cols-4">
-      <div class="col">Column</div>
-      <div class="col">Column</div>
-      <div class="col">Column</div>
-      <div class="col">Column</div>
-    </div>
-  </div>`} />
-
-<Example class='example-row-cols' 
-  code={`<div class="container text-center">
-    <div class="row row-cols-4">
-      <div class="col">Column</div>
-      <div class="col">Column</div>
-      <div class="col-6">Column</div>
       <div class="col">Column</div>
     </div>
   </div>`} />
@@ -214,6 +154,198 @@ Nesting is easy with the Bootstrap Grid. Just add a new `.row` and set of `.col`
       </div>
     </div>
   </div>`} />
+
+## Columns
+
+Modify columns with options for alignment, ordering, and offsetting using the flexbox grid system. Column classes can also be used to control the width of non-grid elements.
+
+### Vertical alignment
+
+Use the `.items-start`, `.items-center`, and `.items-end` classes to control vertical alignment.
+
+<Example class="example-row example-row-flex-cols"
+  code={`<div class="container text-center">
+    <div class="row items-start">
+      <div class="col">One of three columns</div>
+      <div class="col">One of three columns</div>
+      <div class="col">One of three columns</div>
+    </div>
+  </div>
+`}/>
+
+Use the `.self-start`, `.self-center`, and `.self-end` classes to control vertical alignment of individual columns.
+
+<Example class="example-row example-row-flex-cols"
+  code={`<div class="container text-center">
+    <div class="row">
+      <div class="col self-start">One of three columns</div>
+      <div class="col self-center">One of three columns</div>
+      <div class="col self-end">One of three columns</div>
+    </div>
+  </div>
+`}/>
+
+### Horizontal alignment
+
+Apply the `.justify-*` classes to control horizontal alignment.
+
+<Example class="example-row"
+  code={`<div class="container text-center">
+    <div class="row justify-start">
+      <div class="col-4">One of two columns</div>
+      <div class="col-4">One of two columns</div>
+    </div>
+    <div class="row justify-center">
+      <div class="col-4">One of two columns</div>
+      <div class="col-4">One of two columns</div>
+    </div>
+    <div class="row justify-end">
+      <div class="col-4">One of two columns</div>
+      <div class="col-4">One of two columns</div>
+    </div>
+  </div>
+`}/>
+
+### Order classes
+
+Use `.order-{number}` classes to change the order of columns.
+
+<Example class="example-row"
+  code={`<div class="container text-center">
+    <div class="row">
+      <div class="col">First in DOM, no order applied</div>
+      <div class="col order-5">Second in DOM, with a larger order</div>
+      <div class="col order-1">Third in DOM, with an order of 1</div>
+    </div>
+  </div>
+`}/>
+
+### Offsetting columns
+
+Grid columns can be offset in two ways: using responsive `.offset-{size}` grid classes or margin utilities. Grid classes provide offsets that match column sizes, while margin utilities are useful for flexible layouts where the offset width is variable.
+
+#### Offset classes
+
+Use `.offset-{number}` classes to move columns to the right. For example, `.md:offset-4` moves a column over four columns on medium screens and larger.
+
+
+<Example class="example-row"
+  code={`<div class="container text-center">
+    <div class="row">
+      <div class="md:col-4">.md:col-4</div>
+      <div class="md:col-4 md:offset-4">.md:col-4 .md:offset-4</div>
+    </div>
+    <div class="row">
+      <div class="md:col-3 md:offset-3">.md:col-3 .md:offset-3</div>
+      <div class="md:col-3 md:offset-3">.md:col-3 .md:offset-3</div>
+    </div>
+    <div class="row">
+      <div class="md:col-6 md:offset-3">.md:col-6 .md:offset-3</div>
+    </div>
+  </div>
+`}/>
+
+## Gutters
+
+Gutters are the spaces between columns in the Bootstrap Grid system, used to create consistent spacing and alignment.
+
+### Horizontal gutters
+
+Use the `.gx-{size}` classes to set horizontal gutters between columns.
+
+<Example class="example-cols"
+  code={`<div class="container text-center overflow-hidden">
+    <div class="row gx-12">
+      <div class="col">
+        <div>Custom column padding</div>
+      </div>
+      <div class="col">
+        <div>Custom column padding</div>
+      </div>
+    </div>
+  </div>`} />
+
+### Vertical gutters
+
+Use the `.gy-{size}` classes to set vertical gutters between rows.
+
+<Example class="example-cols"
+  code={`<div class="container text-center">
+    <div class="row gy-12">
+      <div class="col-6">
+        <div>Custom column padding</div>
+      </div>
+      <div class="col-6">
+        <div>Custom column padding</div>
+      </div>
+      <div class="col-6">
+        <div>Custom column padding</div>
+      </div>
+      <div class="col-6">
+        <div>Custom column padding</div>
+      </div>
+    </div>
+  </div>`} />
+
+### Horizontal & vertical gutters
+
+Use the `.g-{size}` classes to set both horizontal and vertical gutters.
+
+<Example class="example-cols"
+  code={`<div class="container text-center">
+    <div class="row g-3">
+      <div class="col-6">
+        <div>Custom column padding</div>
+      </div>
+      <div class="col-6">
+        <div>Custom column padding</div>
+      </div>
+      <div class="col-6">
+        <div>Custom column padding</div>
+      </div>
+      <div class="col-6">
+        <div>Custom column padding</div>
+      </div>
+    </div>
+  </div>`} />
+
+### Row columns gutters
+
+Gutter classes can be combined with `.row-cols-{number}` classes to create gutters between rows and columns.
+
+<Example class="example-cols"
+  code={`<div class="container text-center">
+    <div class="row row-cols-2 lg:row-cols-3 g-3">
+      <div class="col">
+        <div>Row column</div>
+      </div>
+      <div class="col">
+        <div>Row column</div>
+      </div>
+      <div class="col">
+        <div>Row column</div>
+      </div>
+      <div class="col">
+        <div>Row column</div>
+      </div>
+      <div class="col">
+        <div>Row column</div>
+      </div>
+      <div class="col">
+        <div>Row column</div>
+      </div>
+    </div>
+  </div>`} />
+
+### No gutters
+
+Apply the `.g-0` class to remove all gutters between rows and columns. This removes the padding from the immediate children `.col-{size}` and negative margins from `.row`.
+
+<Example class="example-row"
+  code={`<div class="row g-0 text-center">
+    <div class="md:col-6 md:col-8">.md:col-6 .md:col-8</div>
+    <div class="col-6 md:col-4">.col-6 .md:col-4</div>
+  </div>`}/>
 
 ## CSS variables
 

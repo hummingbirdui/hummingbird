@@ -1,21 +1,19 @@
 ---
 import { Code } from 'astro:components';
 import CardWrapper from '../CardWrapper.astro';
+import AppCode from '@components/common/AppCode.astro';
 ---
 
 <CardWrapper color="secondary" class="shadow-secondary/5 dark:shadow-secondary-darker/5">
   <h3 class="mb-4 text-base font-bold">Css Variables</h3>
-
-  <Code
-    class="!text-sm grow !bg-muted !rounded-lg !overflow-auto scrollbar-hide"
-    data-astro-code
+  <AppCode
+    class="grow !overflow-auto scrollbar-hide"
     code={`.table {
   color: var(--table-color);
   background-color: var(--table-bg);
   border: 1px solid var(--table-border-color);
   border-radius: 0.25rem;
 }`}
-    themes={{ light: 'github-light', dark: 'github-dark' }}
     lang="sass"
   />
 </CardWrapper>

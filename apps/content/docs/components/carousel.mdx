@@ -29,7 +29,7 @@ classNames:
 - Nested carousels are not supported. Additionally, it is important to note that carousels, in general, can frequently present usability and accessibility challenges.
 
 <div class="alert alert-subtle-info items-start" role="alert">
-  <span class="icon-[material-symbols--info-outline] alert-icon"></span>
+  <svg class="alert-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M11 17h2v-6h-2zm1-8q.425 0 .713-.288T13 8t-.288-.712T12 7t-.712.288T11 8t.288.713T12 9m0 13q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22m0-2q3.35 0 5.675-2.325T20 12t-2.325-5.675T12 4T6.325 6.325T4 12t2.325 5.675T12 20m0-8" stroke-width="0.5" stroke="currentColor"/></svg>
   <span class="-mt-1">The animation effects of this component are influenced by the `prefers-reduced-motion` media query. Refer to the <a href="https://getbootstrap.com/docs/5.3/getting-started/accessibility/#reduced-motion">reduced motion section within our accessibility documentation</a> for further details.</span>
 </div>
 
@@ -164,7 +164,7 @@ Use `.carousel-fade` to switch from sliding to fading transitions. For certain c
 Enable autoplay by setting `data-bs-ride="carousel"`. By default, it pauses on hover (`pause` option). In browsers with the <a href="https://html.spec.whatwg.org/multipage/interaction.html#page-visibility">Page Visibility API</a>, cycling also stops when the tab isn’t visible (e.g., inactive tab or minimized window).
 
 <div class="mb-5 alert alert-subtle-info items-start" role="alert">
-  <span class="icon-[material-symbols--info-outline] alert-icon"></span>
+  <svg class="alert-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M11 17h2v-6h-2zm1-8q.425 0 .713-.288T13 8t-.288-.712T12 7t-.712.288T11 8t.288.713T12 9m0 13q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22m0-2q3.35 0 5.675-2.325T20 12t-2.325-5.675T12 4T6.325 6.325T4 12t2.325 5.675T12 20m0-8" stroke-width="0.5" stroke="currentColor"/></svg>
   <span class="-mt-1">For accessibility, avoid autoplaying carousels. If you use one, provide a button or control to pause/stop it. see <a href="https://www.w3.org/TR/wcag/#pause-stop-hide">WCAG 2.2 Success Criterion 2.2.2 Pause, Stop, Hide.</a></span>
 </div>
 
@@ -383,7 +383,7 @@ The final configuration object results from merging `data-bs-config`, individual
 
 ## Methods
 <div class="alert alert-subtle-danger items-start mb-6" role="alert">
-  <span class="icon-[material-symbols--error-outline-rounded] alert-icon"></span>
+  <svg class="alert-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M12 17q.425 0 .713-.288T13 16t-.288-.712T12 15t-.712.288T11 16t.288.713T12 17m-1-4h2V7h-2zm1 9q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22m0-2q3.35 0 5.675-2.325T20 12t-2.325-5.675T12 4T6.325 6.325T4 12t2.325 5.675T12 20m0-8" stroke-width="0.5" stroke="currentColor"/></svg>
   <span class="-mt-1">**All API methods are asynchronous and initiate a transition.** They return to the caller immediately after the transition begins but before it concludes. Furthermore, a method call on a component that is already transitioning will be disregarded. More details are available in our
   <a href="https://getbootstrap.com/docs/5.3/getting-started/javascript/#asynchronous-functions-and-transitions">JavaScript documentation.</a></span>
 </div>

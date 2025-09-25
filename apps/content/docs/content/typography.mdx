@@ -1,0 +1,91 @@
+---
+title: Typography
+description: Hummingbird's typography system is built on a solid foundation of sensible defaults, with a focus on readability and usability.
+toc: true
+---
+
+## Figtree font
+
+Hummingbird uses the [Figtree](https://fonts.google.com/specimen/Figtree) font by default. Add the following `@import` statement to your CSS or include CDN link in the `<head>` of your HTML document to load the font.
+
+<Example lang='css' showPreview={false}
+  code={`@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap');
+`} />
+
+## Uses
+
+Typography of Hummingbird follows an standard typographic scale with six levels of headings, paragraphs, and other text elements. The base font size is `16px`, and the line height is set to `1.5` for optimal readability.
+
+### Headings
+
+`h1` to `h6` headings are available, with decreasing font sizes and consistent margins.
+
+<Example showMarkup={false} code={`<h1>Heading 1</h1>
+<h2>Heading 2</h2>
+<h3>Heading 3</h3>
+<h4>Heading 4</h4>
+<h5>Heading 5</h5>
+<h6>Heading 6</h6>
+`} />
+<Example showPreview={false} code={`<h1>Heading 1</h1>
+<h2>Heading 2</h2>
+<h3>Heading 3</h3>
+<h4>Heading 4</h4>
+<h5>Heading 5</h5>
+<h6>Heading 6</h6>
+`} />
+
+### Inline elements
+
+Various inline text elements are available for emphasis and clarity.
+
+- **Bold**: Use `strong` tags for bold text.
+- *Italic*: Use `i` tags for italic text.
+- <del>Deleted text</del>: Use `del` tags for deleted text.
+- `Code`: Use `code` tags for inline code snippets.
+- <kbd>Keyboard input</kbd>: Use `kbd` tags for keyboard input representation.
+- <mark>Highlighted text</mark>: Use `mark` tags for highlighted text.
+- <u>Underlined text</u>: Use `u` tags for underlined text.
+- <small>Small text</small>: Use `small` tags for smaller text.
+- <sup>Superscript</sup>: Use `sup` tags for superscript text.
+- <sub>Subscript</sub>: Use `sub` tags for subscript text.
+- <a href="#">Links</a>: Use `a` tags for hyperlinks.
+- <em>Emphasized text</em>: Use `em` tags for emphasized text.
+
+<Example showPreview={false} code={`<p>This is a <strong>bold</strong> text.</p>
+  <p>This is an <i>italic</i> text.</p>
+  <p>This is a <del>deleted</del> text.</p>
+  <p>This is a <code>inline code</code> text.</p>
+  <p>This is a <kbd>keyboard input</kbd> text.</p>
+  <p>This is a <mark>highlighted</mark> text.</p>
+  <p>This is an <u>underlined</u> text.</p>
+  <p>This is a <small>small</small> text.</p>
+  <p>This is a <sup>superscript</sup> text.</p>
+  <p>This is a <sub>subscript</sub> text.</p>
+  <p>This is a <a href="#">link</a>.</p>
+  <p>This is an <em>emphasized</em> text.</p>
+  `} />
+
+## Font sizes
+
+Use Tailwind's font size [utilities](https://tailwindcss.com/docs/font-size) to adjust the font size of text elements.
+
+## Responsive typography
+Use Tailwind's [responsive](https://tailwindcss.com/docs/responsive-design) design utilities to adjust typography for different screen sizes.
+
+<Example showMarkup={false} code={`<h1 class="text-2xl md:text-4xl lg:text-5xl">Responsive Heading</h1>
+`} />
+<Example showPreview={false} code={`<h1 class="text-2xl md:text-4xl lg:text-5xl">Responsive Heading</h1>
+`} />
+
+## Customization
+
+
+Hummingbird's typography can be customized using Tailwind's [theme variables](https://tailwindcss.com/docs/theme#extending-the-default-theme) feature. You can modify font families, sizes, weights, and line heights using css variable under `@theme` directive.
+
+<Example lang='sass' showPreview={false}
+  code={`@theme {
+  --font-sans: 'Figtree', ui-sans-serif, system-ui, sans-serif;
+  --text-10xl: 10rem;
+  --leading-xl: 2.5;
+}`} />

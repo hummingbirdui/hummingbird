@@ -148,7 +148,7 @@ By default, a dropdown menu is positioned 100% from the top and aligned to the l
 Add `.dropdown-menu-end` to a `.dropdown-menu` to right-align the menu. When using Bootstrap in RTL, directions are mirrored, so `.dropdown-menu-end` will appear on the left side.
 
 <div class="mb-5 alert alert-subtle-info items-start" role="alert">
-  <span class="icon-[material-symbols--info-outline] alert-icon"></span>
+  <svg class="alert-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M11 17h2v-6h-2zm1-8q.425 0 .713-.288T13 8t-.288-.712T12 7t-.712.288T11 8t.288.713T12 9m0 13q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22m0-2q3.35 0 5.675-2.325T20 12t-2.325-5.675T12 4T6.325 6.325T4 12t2.325 5.675T12 20m0-8" stroke-width="0.5" stroke="currentColor"/></svg>
   <span class="-mt-0.75">**Heads up!** Dropdowns are positioned using Popper, except when they are inside a navbar.</span>
 </div>
 
@@ -231,7 +231,7 @@ Use `data-bs-offset` or `data-bs-reference` to adjust the position of a dropdown
   <div class='dropdown flex gap-1'>
     <button type="button" class="btn btn-subtle-neutral">Reference</button>
     <button class='btn btn-subtle-neutral btn-square' type="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-reference="parent">
-      <span class="icon-[material-symbols--keyboard-arrow-down-rounded] text-lg"></span>
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M12 14.975q-.2 0-.375-.062T11.3 14.7l-4.6-4.6q-.275-.275-.275-.7t.275-.7t.7-.275t.7.275l3.9 3.9l3.9-3.9q.275-.275.7-.275t.7.275t.275.7t-.275.7l-4.6 4.6q-.15.15-.325.213t-.375.062" stroke-width="0.5" stroke="currentColor"/></svg>
     </button>
     <ul class="dropdown-menu">
       <li><a class="dropdown-item" href="#">Profile</a></li>
@@ -319,7 +319,7 @@ The dropdown component is built using a set of CSS variables. These variables pr
 Through either data attributes or JavaScript, the dropdown plugin manages hidden content (dropdown menus) by toggling the `.show` class on the parent `.dropdown-menu`. The `data-bs-toggle="dropdown"` attribute is essential for closing dropdown menus at an application level, making its consistent use advisable.
 
 <div class="alert alert-subtle-info items-start" role="alert">
-  <span class="icon-[material-symbols--info-outline] alert-icon"></span>
+  <svg class="alert-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M11 17h2v-6h-2zm1-8q.425 0 .713-.288T13 8t-.288-.712T12 7t-.712.288T11 8t.288.713T12 9m0 13q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22m0-2q3.35 0 5.675-2.325T20 12t-2.325-5.675T12 4T6.325 6.325T4 12t2.325 5.675T12 20m0-8" stroke-width="0.5" stroke="currentColor"/></svg>
   <span class="-mt-1">On touch-enabled devices, opening a dropdown introduces temporary, empty mouseover handlers to the immediate children of the `<body>` element. This measure <a href="http://quirksmode.org/blog/archives/2014/02/mouse_event_bub.html">addresses an iOS event delegation quirk</a> that would otherwise prevent a tap outside the dropdown from triggering the code responsible for closing it. Once the dropdown is closed, these additional `mouseover` handlers are removed.</span>
 </div>
 
@@ -342,7 +342,7 @@ To toggle a dropdown, add `data-bs-toggle="dropdown"` to a link or button:
 Use JavaScript in the familiar pattern of **Bootstrap’s plugins** with full additional TypeScript Support.
 
 <div class="alert alert-subtle-warning items-start mb-6" role="alert">
-  <span class="icon-[material-symbols--info-outline] alert-icon"></span>
+  <svg class="alert-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M11 17h2v-6h-2zm1-8q.425 0 .713-.288T13 8t-.288-.712T12 7t-.712.288T11 8t.288.713T12 9m0 13q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22m0-2q3.35 0 5.675-2.325T20 12t-2.325-5.675T12 4T6.325 6.325T4 12t2.325 5.675T12 20m0-8" stroke-width="0.5" stroke="currentColor"/></svg>
   <span class="-mt-1">Dropdowns require `data-bs-toggle="dropdown"` on their trigger element, regardless of whether they are called via JavaScript or the data-api.</span>
 </div>
 

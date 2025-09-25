@@ -1,6 +1,6 @@
 ---
 import hummingbird from '@assets/images/logos/hummingbird.svg';
-import { footerLinks } from 'apps/data/footer-links';
+import { footerLinks, socialLinks } from 'apps/data/footer-links.astro';
 import { Image } from 'astro:assets';
 const isLanding = Astro.url.pathname === '/';
 ---
@@ -9,23 +9,30 @@ const isLanding = Astro.url.pathname === '/';
   class={`px-6 lg:px-10 ${!isLanding && "bg-cover bg-center bg-no-repeat bg-[url('/images/footer-light.png')] dark:bg-[url('/images/footer-dark.png')]"}`}
 >
   <div class="mx-auto max-w-8xl">
-    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-7 gap-8 gap-y-12 py-12">
-      <div class="col-span-2 md:col-span-4 lg:col-span-2 xl:col-span-3">
+    <div class="grid grid-cols-10 xl:grid-cols-15 xl:gap-8 gap-y-12 py-12">
+      <div class="col-span-10 xl:col-span-5">
         <div class="mb-4 flex items-center gap-2">
           <Image src={hummingbird} alt="Logo" class="w-10 h-10" />
           <span class="text-2xl font-semibold text-muted">hummingbird</span>
         </div>
-        <p class="mb-4 text-sm text-muted lg:max-w-75">
-          Crafted with care, caffeine, and clean code by ThemeWagon – 2M+ dev Stong, topping Bootstrap Marketplace.
+        <p class="mb-4 text-sm text-muted xl:max-w-75">
+          Crafted with care, caffeine, and clean code by <a
+            href="https://themewagon.com/"
+            class="text-default no-underline font-semibold">ThemeWagon</a
+          > – trusted by 2M+ Devs & Counting.
         </p>
-        <p class="text-sm text-muted">MIT for code, CC BY 4.0 for docs.</p>
+        <p class="text-sm text-muted">
+          MIT for code, <a href="https://creativecommons.org/licenses/by/4.0/" class="text-muted no-underline"
+            >CC BY 4.0</a
+          > for docs.
+        </p>
       </div>
 
       {
         footerLinks.map(({ title, links }) => (
-          <div class="col-span-1">
-            <h3 class="mb-3.75 text-sm font-bold text-subtle">{title}</h3>
-            <ul class="list-none p-0 space-y-3.75">
+          <div class="col-span-10 sm:col-span-4 md:col-span-2">
+            <h3 class="mb-5 text-sm font-bold text-subtle">{title}</h3>
+            <ul class="list-none p-0 space-y-5">
               {links.map(({ label, url }) => (
                 <li class="text-sm">
                   <a href={url} class="no-underline text-default">
@@ -37,10 +44,28 @@ const isLanding = Astro.url.pathname === '/';
           </div>
         ))
       }
+
+      <div class="col-span-10 sm:col-span-6 md:col-span-4">
+        <h3 class="mb-4 text-sm font-bold text-subtle">Newsletter</h3>
+        <div class="mb-10.5 flex gap-2 max-w-sm">
+          <input type="text" class="form-control-fill form-control-primary" placeholder="Enter your email address" />
+          <button class="btn btn-subtle-primary shrink-0">Subscribe</button>
+        </div>
+        <h3 class="mb-4 text-sm font-bold text-subtle">Stay Connected</h3>
+        <div class="flex gap-4">
+          {
+            socialLinks.map((item) => (
+              <a href={item.url} class="btn btn-subtle-neutral btn-circle">
+                <item.icon />
+              </a>
+            ))
+          }
+        </div>
+      </div>
     </div>
 
     <div class="border-t border-light py-5">
-      <p class="mb-0 text-center text-sm text-muted">hummingbird Ltd &copy; 2025, all rights reserved</p>
+      <p class="mb-0 text-center text-sm text-muted">Hummingbird Ltd &copy; 2025, all rights reserved</p>
     </div>
   </div>
 </footer>

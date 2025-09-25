@@ -1,0 +1,37 @@
+---
+import Layout from '@layouts/Layout.astro';
+---
+
+<Layout>
+  <div class="mx-auto px-6 py-10 w-full max-w-120">
+    <h1 class="mb-4 text-[42px] text-center font-medium">Contact Us</h1>
+    <p class="mb-10 text-muted text-center">
+      Hummingbird provides production-ready components. Filter by category or use-case to find what you need.
+    </p>
+
+    <form>
+      <div class="mb-6">
+        <h6 class="mb-4 text-base font-semibold">Personal Information</h6>
+        <div class="mb-2 flex gap-2">
+          <input type="text" placeholder="First name" class="form-control-fill form-control-lg" />
+          <input type="text" placeholder="Last name" class="form-control-fill form-control-lg" />
+        </div>
+        <input type="email" placeholder="Email" class="form-control-fill form-control-lg" />
+      </div>
+
+      <div class="mb-6">
+        <h6 class="mb-4 text-base font-semibold">Message</h6>
+        <input type="text" placeholder="Subject" class="mb-2 form-control-fill form-control-lg" />
+        <textarea class="form-control-fill form-control-lg" rows="4" placeholder="Write here..."></textarea>
+      </div>
+
+      <p class="mb-6 text-sm text-gray-600">
+        Submitting this form means you accept our
+        <a href="/privacy-policy" class="text-blue-500 hover:underline">privacy policy</a>, which details how we
+        collect, use, and share your personal information with third parties.
+      </p>
+
+      <button type="submit" class="w-full btn btn-primary"> Sent Message </button>
+    </form>
+  </div>
+</Layout>

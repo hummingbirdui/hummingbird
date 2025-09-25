@@ -1,0 +1,23 @@
+---
+interface Props extends astroHTML.JSX.SVGAttributes {
+  width?: string;
+  height?: string;
+  class?: string;
+  fill?: string;
+}
+
+const { width = '20', height = '20', class: className = '', fill = 'currentColor', ...rest } = Astro.props;
+---
+
+<svg width={width} height={height} viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" {...rest}>
+  <g clip-path="url(#clip0_34679_14824)">
+    <path
+      d="M13.2511 3.07031H11.0359C9.7213 3.07031 8.2591 3.62322 8.2591 5.52878C8.26551 6.19276 8.2591 6.82865 8.2591 7.5443H6.73828V9.96437H8.30616V16.9313H11.1872V9.91839H13.0888L13.2609 7.53751H11.1376C11.1376 7.53751 11.1423 6.47839 11.1376 6.17082C11.1376 5.41778 11.9211 5.46091 11.9683 5.46091C12.3411 5.46091 13.0661 5.46199 13.2522 5.46091V3.07031H13.2511Z"
+      fill={fill}></path>
+  </g>
+  <defs>
+    <clipPath id="clip0_34679_14824">
+      <rect width={width} height={height} fill="white"></rect>
+    </clipPath>
+  </defs>
+</svg>

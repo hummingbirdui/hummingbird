@@ -1,0 +1,14 @@
+---
+import { getHighlighterSingleton } from '../../libs/highlighter';
+
+// Destructure known props, collect the rest
+const { code, lang, class: cls = '', ...rest } = Astro.props;
+
+const highlighter = await getHighlighterSingleton();
+const html = (await highlighter).codeToHtml(code, {
+  lang,
+  themes: { light: 'github-light', dark: 'github-dark' },
+});
+---
+
+<div class={`astro-code ${cls}`} set:html={html} {...rest} />
