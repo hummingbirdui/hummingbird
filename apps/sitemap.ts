@@ -19,6 +19,10 @@ const sitemap: Sitemap[] = [
         path: '/docs/getting-started/installation',
       },
       {
+        name: 'Framework Guides',
+        path: '/docs/getting-started/framework-guides',
+      },
+      {
         name: 'JavaScript',
         path: '/docs/getting-started/javascript',
       },
@@ -28,51 +32,51 @@ const sitemap: Sitemap[] = [
       },
     ],
   },
-  {
-    subHeader: 'Integration guides',
-    items: [
-      {
-        name: 'React',
-        path: '/docs/getting-started/react',
-      },
-      {
-        name: 'Next',
-        path: '/docs/getting-started/next',
-      },
-      {
-        name: 'Laravel',
-        path: '/docs/getting-started/laravel',
-      },
-      {
-        name: 'Vue',
-        path: '/docs/getting-started/vue',
-      },
-      {
-        name: 'Nuxt',
-        path: '/docs/getting-started/nuxt',
-      },
-      {
-        name: 'Angular',
-        path: '/docs/getting-started/angular',
-      },
-      {
-        name: 'Svelte',
-        path: '/docs/getting-started/svelte',
-      },
-      {
-        name: 'Gatsby',
-        path: '/docs/getting-started/gatsby',
-      },
-      {
-        name: 'Astro',
-        path: '/docs/getting-started/astro',
-      },
-      {
-        name: 'Django',
-        path: '/docs/getting-started/django',
-      },
-    ],
-  },
+  // {
+  //   subHeader: 'Integration guides',
+  //   items: [
+  //     {
+  //       name: 'React',
+  //       path: '/docs/getting-started/react',
+  //     },
+  //     {
+  //       name: 'Next',
+  //       path: '/docs/getting-started/next',
+  //     },
+  //     {
+  //       name: 'Laravel',
+  //       path: '/docs/getting-started/laravel',
+  //     },
+  //     {
+  //       name: 'Vue',
+  //       path: '/docs/getting-started/vue',
+  //     },
+  //     {
+  //       name: 'Nuxt',
+  //       path: '/docs/getting-started/nuxt',
+  //     },
+  //     {
+  //       name: 'Angular',
+  //       path: '/docs/getting-started/angular',
+  //     },
+  //     {
+  //       name: 'Svelte',
+  //       path: '/docs/getting-started/svelte',
+  //     },
+  //     {
+  //       name: 'Gatsby',
+  //       path: '/docs/getting-started/gatsby',
+  //     },
+  //     {
+  //       name: 'Astro',
+  //       path: '/docs/getting-started/astro',
+  //     },
+  //     {
+  //       name: 'Django',
+  //       path: '/docs/getting-started/django',
+  //     },
+  //   ],
+  // },
   {
     subHeader: 'Customize',
     items: [
