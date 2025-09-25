@@ -9,20 +9,45 @@ import Layout from '@layouts/Layout.astro';
       Hummingbird provides production-ready components. Filter by category or use-case to find what you need.
     </p>
 
-    <form>
+    <form data-contact-form>
       <div class="mb-6">
         <h6 class="mb-4 text-base font-semibold">Personal Information</h6>
         <div class="mb-2 flex gap-2">
-          <input type="text" placeholder="First name" class="form-control-fill form-control-lg" />
-          <input type="text" placeholder="Last name" class="form-control-fill form-control-lg" />
+          <input
+            type="text"
+            placeholder="First name"
+            class="form-control-fill form-control-lg"
+            data-contact-first-name
+            required
+          />
+          <input
+            type="text"
+            placeholder="Last name"
+            class="form-control-fill form-control-lg"
+            data-contact-last-name
+            required
+          />
         </div>
-        <input type="email" placeholder="Email" class="form-control-fill form-control-lg" />
+        <input type="email" placeholder="Email" class="form-control-fill form-control-lg" data-contact-email required />
       </div>
 
       <div class="mb-6">
         <h6 class="mb-4 text-base font-semibold">Message</h6>
-        <input type="text" placeholder="Subject" class="mb-2 form-control-fill form-control-lg" />
-        <textarea class="form-control-fill form-control-lg" rows="4" placeholder="Write here..."></textarea>
+        <input
+          type="text"
+          placeholder="Subject"
+          class="mb-2 form-control-fill form-control-lg"
+          data-contact-subject
+          required
+        />
+        <textarea
+          id="message"
+          name="message"
+          class="form-control-fill form-control-lg"
+          data-contact-message
+          required
+          rows="4"
+          placeholder="Write here..."></textarea>
       </div>
 
       <p class="mb-6 text-sm text-gray-600">
@@ -30,8 +55,69 @@ import Layout from '@layouts/Layout.astro';
         <a href="/privacy-policy" class="text-blue-500 hover:underline">privacy policy</a>, which details how we
         collect, use, and share your personal information with third parties.
       </p>
+      <div class="alert alert-subtle-success mb-5 fixed z-9999 top-8 right-8 hidden" data-success-alert role="alert">
+        Message sent successfully
+      </div>
 
       <button type="submit" class="w-full btn btn-primary"> Sent Message </button>
     </form>
   </div>
 </Layout>
+
+<script>
+  import emailjs from '@emailjs/browser';
+
+  emailjs.init({ publicKey: 'x-KTkRABP7cJyXeBp' });
+
+  const firstName = document.querySelector('[data-contact-first-name]') as HTMLInputElement;
+  const lastName = document.querySelector('[data-contact-last-name]') as HTMLInputElement;
+  const email = document.querySelector('[data-contact-email]') as HTMLInputElement;
+  const subject = document.querySelector('[data-contact-subject]') as HTMLInputElement;
+  const message = document.querySelector('[data-contact-message]') as HTMLInputElement;
+  const contactForm = document.querySelector('[data-contact-form]') as HTMLFormElement;
+  const successMessage = document.querySelector('[data-success-alert]') as HTMLElement;
+
+  const inputs = [firstName, lastName, email, subject, message];
+
+  function validateField(field: HTMLInputElement) {
+    if (field.checkValidity()) {
+      field.classList.add('is-valid');
+      field.classList.remove('is-invalid');
+      return true;
+    } else {
+      field.classList.add('is-invalid');
+      field.classList.remove('is-valid');
+      return false;
+    }
+  }
+
+  inputs.forEach((input) => {
+    input.addEventListener('blur', () => validateField(input));
+  });
+
+  contactForm?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const allValid = inputs.every((input) => validateField(input));
+    if (!allValid) {
+      return;
+    }
+
+    const templateParams = {
+      firstName: firstName.value,
+      lastName: lastName.value,
+      email: email.value,
+      subject: subject.value,
+      message: message.value,
+    };
+    try {
+      await emailjs.send('service_sr25hda', 'template_6othqdq', templateParams);
+      inputs.forEach((input) => input.classList.remove('is-valid'));
+      contactForm.reset();
+      successMessage.classList.remove('hidden');
+      setTimeout(() => {
+        successMessage.classList.add('hidden');
+      }, 3000);
+    } catch {}
+  });
+</script>
