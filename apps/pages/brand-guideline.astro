@@ -1,0 +1,264 @@
+---
+import ContentLayout from '@layouts/ContentLayout.astro';
+import { hbLogos, hbRestrictLogos, colors, typography } from 'apps/data/brand-guideline';
+---
+
+<ContentLayout>
+  <h1 class="mb-4 text-3xl font-bold">Brand Assets and Guidelines</h1>
+  <p class="mb-6 text-xl tracking-normal font-light">
+    Documentation to ensure Hummingbird's name, logo, & other brand assets’ consistency and integrity.
+  </p>
+  <p class="mb-12 tracking-normal">
+    The Hummingbird brand is a core asset and a symbol of our commitment to quality, performance, and the open-source
+    community. This document provides clear guidelines for the use of the Hummingbird name, logo, and other brand
+    assets, ensuring consistency and maintaining the integrity of our identity.
+  </p>
+
+  <!-- name -->
+  <h3 class="mb-3.5 text-2xl font-semibold">Name</h3>
+  <p class="mb-6 tracking-normal">
+    The project's official name is "Hummingbird." This name should be used in all public-facing communications.
+  </p>
+  <div class="mb-14 flex flex-col sm:flex-row items-center gap-6">
+    <div class="card flex flex-col w-full h-[162px] rounded-2xl bg-default overflow-hidden">
+      <div class="grow flex items-center justify-center bg-subtle">
+        <h3 class="mb-0 text-default text-[28px] font-semibold tracking-normal">Hummingbird</h3>
+      </div>
+      <div class="px-4 py-2 flex items-center gap-2">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="20" height="20" rx="10" fill="#07B577"></rect>
+          <path
+            d="M8.72344 12.7752C8.67344 12.7752 8.6276 12.7669 8.58594 12.7502C8.54427 12.7335 8.5026 12.7044 8.46094 12.6627L6.19844 10.4002C6.12344 10.3252 6.08594 10.2335 6.08594 10.1252C6.08594 10.0169 6.12344 9.9252 6.19844 9.8502C6.27344 9.7752 6.36094 9.7377 6.46094 9.7377C6.56094 9.7377 6.64844 9.7752 6.72344 9.8502L8.72344 11.8502L13.2609 7.3127C13.3359 7.2377 13.4255 7.2002 13.5297 7.2002C13.6339 7.2002 13.7234 7.2377 13.7984 7.3127C13.8734 7.3877 13.9109 7.47728 13.9109 7.58145C13.9109 7.68561 13.8734 7.7752 13.7984 7.8502L8.98594 12.6627C8.94427 12.7044 8.9026 12.7335 8.86094 12.7502C8.81927 12.7669 8.77344 12.7752 8.72344 12.7752Z"
+            fill="white"></path>
+        </svg>
+        <p class="card-title mb-0 text-muted text-sm tracking-normal font-medium">Correct</p>
+      </div>
+    </div>
+    <div class="card flex flex-col w-full h-[162px] rounded-2xl bg-default overflow-hidden">
+      <div class="grow flex flex-col items-center justify-center bg-subtle">
+        <h3 class="text-default text-[28px] font-semibold tracking-normal">HummingBird</h3>
+        <h3 class="mb-0 text-default text-[28px] font-semibold tracking-normal">hummingbird</h3>
+      </div>
+      <div class="px-4 py-2 flex items-center gap-2">
+        <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0.5" width="20" height="20" rx="10" fill="#F24455"></rect>
+          <path
+            d="M10.5008 10.5248L7.87578 13.1498C7.80078 13.2248 7.71328 13.2623 7.61328 13.2623C7.51328 13.2623 7.42578 13.2248 7.35078 13.1498C7.27578 13.0748 7.23828 12.9873 7.23828 12.8873C7.23828 12.7873 7.27578 12.6998 7.35078 12.6248L9.97578 9.9998L7.35078 7.3748C7.27578 7.2998 7.23828 7.2123 7.23828 7.1123C7.23828 7.0123 7.27578 6.9248 7.35078 6.8498C7.42578 6.7748 7.51328 6.7373 7.61328 6.7373C7.71328 6.7373 7.80078 6.7748 7.87578 6.8498L10.5008 9.4748L13.1258 6.8498C13.2008 6.7748 13.2883 6.7373 13.3883 6.7373C13.4883 6.7373 13.5758 6.7748 13.6508 6.8498C13.7258 6.9248 13.7633 7.0123 13.7633 7.1123C13.7633 7.2123 13.7258 7.2998 13.6508 7.3748L11.0258 9.9998L13.6508 12.6248C13.7258 12.6998 13.7633 12.7873 13.7633 12.8873C13.7633 12.9873 13.7258 13.0748 13.6508 13.1498C13.5758 13.2248 13.4883 13.2623 13.3883 13.2623C13.2883 13.2623 13.2008 13.2248 13.1258 13.1498L10.5008 10.5248Z"
+            fill="white"></path>
+        </svg>
+        <p class="card-title mb-0 text-muted text-sm tracking-normal font-medium">Incorrect</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- logo & symbol -->
+  <h3 class="mb-3.5 text-2xl font-semibold">Logo & Symbol</h3>
+  <p class="mb-6 tracking-normal">
+    The official Hummingbird logo is our most recognizable brand asset and a key indicator of authenticity. The logo may
+    not be used in a way that implies an endorsement, partnership, or affiliation with your project or company without
+    explicit written permission. The logo may not be used as the primary logo for your own product or service.
+  </p>
+  <div class="mb-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    {
+      hbLogos.map((item, i) => (
+        <div
+          class={`card relative flex items-center justify-center w-full h-49 rounded-2xl ${i === 2 || i === 5 ? 'bg-gray-950' : i == 1 || i === 4 ? 'bg-white' : 'bg-default'} overflow-hidden`}
+        >
+          <img src={item.src} alt="logo" />
+          <a
+            href={item.src}
+            download={`logo-${i + 1}.svg`}
+            class="absolute top-5 right-5 btn btn-subtle-neutral btn-circle btn-sm"
+          >
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M9 11.9062C8.925 11.9062 8.85625 11.8938 8.79375 11.8687C8.73125 11.8438 8.66875 11.8 8.60625 11.7375L5.775 8.90625C5.6625 8.79375 5.60938 8.65937 5.61563 8.50312C5.62188 8.34687 5.68125 8.2125 5.79375 8.1C5.90625 7.9875 6.04062 7.93125 6.19687 7.93125C6.35312 7.93125 6.4875 7.9875 6.6 8.1L8.4375 9.95625V3.5625C8.4375 3.4 8.49062 3.26563 8.59687 3.15938C8.70312 3.05313 8.8375 3 9 3C9.1625 3 9.29688 3.05313 9.40313 3.15938C9.50938 3.26563 9.5625 3.4 9.5625 3.5625V9.95625L11.4188 8.1C11.5312 7.9875 11.6656 7.93125 11.8219 7.93125C11.9781 7.93125 12.1125 7.9875 12.225 8.1C12.3375 8.2125 12.3937 8.34687 12.3937 8.50312C12.3937 8.65937 12.3375 8.79375 12.225 8.90625L9.39375 11.7375C9.33125 11.8 9.26875 11.8438 9.20625 11.8687C9.14375 11.8938 9.075 11.9062 9 11.9062ZM4.125 15C3.825 15 3.5625 14.8875 3.3375 14.6625C3.1125 14.4375 3 14.175 3 13.875V11.7563C3 11.5938 3.05313 11.4594 3.15938 11.3531C3.26563 11.2469 3.4 11.1938 3.5625 11.1938C3.725 11.1938 3.85937 11.2469 3.96562 11.3531C4.07187 11.4594 4.125 11.5938 4.125 11.7563V13.875H13.875V11.7563C13.875 11.5938 13.9281 11.4594 14.0344 11.3531C14.1406 11.2469 14.275 11.1938 14.4375 11.1938C14.6 11.1938 14.7344 11.2469 14.8406 11.3531C14.9469 11.4594 15 11.5938 15 11.7563V13.875C15 14.175 14.8875 14.4375 14.6625 14.6625C14.4375 14.8875 14.175 15 13.875 15H4.125Z"
+                fill="currentColor"
+              />
+            </svg>
+          </a>
+        </div>
+      ))
+    }
+  </div>
+
+  <!-- things to avoid -->
+  <div class="swiper">
+    <div class="mb-4 flex flex-col sm:flex-row items-start justify-between">
+      <div class="max-w-180">
+        <h6 class="mb-3.5 text-xl font-medium">Things to avoid</h6>
+        <p class="sm:mb-0 tracking-normal">
+          The logo cannot imply endorsement or affiliation with your project or company without written permission. It
+          also cannot serve as the primary logo for your product or service.
+        </p>
+      </div>
+      <div class="flex items-center gap-2">
+        <button class="swiper-button-prev !relative !left-0 !mt-0 !btn !btn-subtle-neutral !btn-circle">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="!w-5">
+            <path
+              d="M11.2305 15.097L7.10547 10.972C7.03602 10.9026 6.98741 10.8331 6.95964 10.7637C6.93186 10.6942 6.91797 10.6178 6.91797 10.5345C6.91797 10.4512 6.93186 10.3748 6.95964 10.3053C6.98741 10.2359 7.03602 10.1664 7.10547 10.097L11.2513 5.95117C11.3763 5.82617 11.5256 5.76367 11.6992 5.76367C11.8728 5.76367 12.0221 5.82617 12.1471 5.95117C12.2721 6.07617 12.3312 6.22895 12.3242 6.40951C12.3173 6.59006 12.2513 6.74284 12.1263 6.86784L8.45964 10.5345L12.1471 14.222C12.2721 14.347 12.3346 14.4928 12.3346 14.6595C12.3346 14.8262 12.2721 14.972 12.1471 15.097C12.0221 15.222 11.8694 15.2845 11.6888 15.2845C11.5082 15.2845 11.3555 15.222 11.2305 15.097Z"
+              fill="currentColor"></path>
+          </svg>
+        </button>
+        <button class="swiper-button-next !relative !right-0 !mt-0 !btn !btn-subtle-neutral !btn-circle">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="!w-5">
+            <path
+              d="M7.37692 15.0972C7.2658 14.9583 7.20678 14.8055 7.19983 14.6388C7.19289 14.4722 7.25192 14.3263 7.37692 14.2013L11.0436 10.5347L7.35608 6.84718C7.24497 6.73606 7.19289 6.58676 7.19983 6.39926C7.20678 6.21176 7.2658 6.06245 7.37692 5.95134C7.5158 5.81245 7.66511 5.74648 7.82483 5.75343C7.98455 5.76037 8.12691 5.82634 8.25191 5.95134L12.3977 10.0972C12.4672 10.1666 12.5158 10.2361 12.5436 10.3055C12.5714 10.375 12.5852 10.4513 12.5852 10.5347C12.5852 10.618 12.5714 10.6944 12.5436 10.7638C12.5158 10.8333 12.4672 10.9027 12.3977 10.9722L8.27275 15.0972C8.14775 15.2222 8.00191 15.2812 7.83525 15.2743C7.66858 15.2673 7.5158 15.2083 7.37692 15.0972Z"
+              fill="currentColor"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="mb-14 swiper-wrapper">
+      {
+        hbRestrictLogos.map((item) => (
+          <div class="swiper-slide">
+            <div class="card flex flex-col w-full h-55 rounded-2xl bg-default overflow-hidden">
+              <div class="grow flex items-center justify-center bg-subtle">
+                <img src={item.img.src} alt="logo" />
+              </div>
+              <div class="px-4 py-2 flex items-center gap-2">
+                <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="0.5" width="20" height="20" rx="10" fill="#F24455" />
+                  <path
+                    d="M10.5008 10.5248L7.87578 13.1498C7.80078 13.2248 7.71328 13.2623 7.61328 13.2623C7.51328 13.2623 7.42578 13.2248 7.35078 13.1498C7.27578 13.0748 7.23828 12.9873 7.23828 12.8873C7.23828 12.7873 7.27578 12.6998 7.35078 12.6248L9.97578 9.9998L7.35078 7.3748C7.27578 7.2998 7.23828 7.2123 7.23828 7.1123C7.23828 7.0123 7.27578 6.9248 7.35078 6.8498C7.42578 6.7748 7.51328 6.7373 7.61328 6.7373C7.71328 6.7373 7.80078 6.7748 7.87578 6.8498L10.5008 9.4748L13.1258 6.8498C13.2008 6.7748 13.2883 6.7373 13.3883 6.7373C13.4883 6.7373 13.5758 6.7748 13.6508 6.8498C13.7258 6.9248 13.7633 7.0123 13.7633 7.1123C13.7633 7.2123 13.7258 7.2998 13.6508 7.3748L11.0258 9.9998L13.6508 12.6248C13.7258 12.6998 13.7633 12.7873 13.7633 12.8873C13.7633 12.9873 13.7258 13.0748 13.6508 13.1498C13.5758 13.2248 13.4883 13.2623 13.3883 13.2623C13.2883 13.2623 13.2008 13.2248 13.1258 13.1498L10.5008 10.5248Z"
+                    fill="white"
+                  />
+                </svg>
+                <p class="card-title mb-0 text-muted text-sm tracking-normal font-medium">{item.title}</p>
+              </div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+
+  <!-- color -->
+  <h3 class="mb-3.5 text-2xl font-semibold">Color</h3>
+  <p class="mb-6 tracking-normal">
+    Hummingbird’s official color palette is built for developers and designers alike—prioritizing accessibility, visual
+    hierarchy, and performance. Each color is assigned a clear role, from defining our primary brand identity to
+    improving contrast and legibility in the component library. Use these colors to maintain brand consistency and
+    ensure a cohesive, user-friendly experience across the ecosystem.
+  </p>
+  <div class="mb-14 grid grid-cols-10 gap-4">
+    {
+      colors.map((c) => {
+        return c.items ? (
+          <div class={`flex flex-col gap-4 h-60 ${c.span}`}>
+            {c.items.map((c, i) => (
+              <div
+                class={`card rounded-2xl p-6 flex flex-col justify-between h-full ${i === 0 ? 'text-black' : 'text-white'} ${c.bgColor}`}
+              >
+                <h3 class="font-semibold text-xl text-tight">{c.name}</h3>
+                <p class="mb-0 mt-auto font-bold tracking-normal">{c.hex}</p>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <div
+            class={`card rounded-2xl p-6 flex flex-col justify-between h-44 sm:h-60 text-white ${c.span}`}
+            style={`background-color: ${c.hex}`}
+          >
+            <div>
+              <h3 class="font-semibold text-xl text-tight">{c.name}</h3>
+              <p class="font-medium tracking-normal">{c.role}</p>
+            </div>
+            <p class="mb-0 mt-auto font-bold tracking-normal">{c.hex}</p>
+          </div>
+        );
+      })
+    }
+  </div>
+
+  <!-- typography -->
+  <h3 class="mb-3.5 text-2xl font-semibold">Typography</h3>
+  <p class="mb-6 tracking-normal">
+    Typography in Hummingbird is designed to balance aesthetics with functionality. Our goal is to reduce friction and
+    enhance readability across every part of the Hummingbird ecosystem, from the website to the code within our
+    documentation. Figtree from Google Fonts ensures scalable readability, lightweight performance, and a clean, modern
+    look across interfaces and documentation. This consistency supports faster comprehension, reduces cognitive load,
+    and maintains a developer-first, design-forward experience, aligning perfectly with our commitment to a sensible and
+    accessible developer experience.
+  </p>
+  <div class="mb-14 p-4 rounded-xl bg-subtle">
+    <div class="mb-3 sm:mb-6 flex flex-col sm:flex-row justify-between">
+      <h1 class="mb-4 sm:mb-0 text-[56px] text-primary font-semibold">Figtree</h1>
+      <div class="sm:text-right">
+        <p class="mb-1.5 text-sm tracking-normal">Designer <b class="font-semibold">Erik Kennedy</b></p>
+        <p class="text-sm tracking-normal">
+          Source <a href="https://fonts.google.com/specimen/Figtree" class="no-underline">Google Fonts</a>
+        </p>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2">
+      {
+        typography.map((item) => (
+          <div class="card px-3.5 py-2 text-default flex-row gap-2 rounded-lg">
+            <h1 class={`mb-0 text-[42px] ${item.class}`}>Aa</h1>
+            <div class="mt-0.5 font-medium tracking-normal">
+              <p class="mb-0">{item.label}</p>
+              <p class="mb-0">{item.weight}</p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+
+  <!-- fair use -->
+  <h3 class="mb-3.5 text-2xl font-semibold">Fair use</h3>
+  <p class="mb-4 tracking-normal">
+    We encourage the community to create content about Hummingbird. The use of our name and logo in articles, tutorials,
+    and public discussions is permitted, provided it adheres to these guidelines and does not imply official
+    endorsement.
+  </p>
+  <p class="mb-4 tracking-normal">
+    Any use of the Hummingbird name or logo in a manner that could cause user confusion is not permitted.
+  </p>
+  <p class="mb-4 tracking-normal">
+    This includes naming a product or service in a way that emphasizes the Hummingbird brand, such as “Hummingbird
+    Themes,” “Hummingbird Pro,” or “Hummingbird Templates,” as well as in domain names like hummingbird-dashboard.com.
+    Instead, your own brand name must be the clear and primary identity of your project.
+  </p>
+  <p class="mb-4 tracking-normal">
+    Referencing Hummingbird as the underlying technology is highly encouraged. For instance, “Admin Dashboard built with
+    Hummingbird” or “DesignKit - A UI Kit for Hummingbird” are both excellent examples of permitted use.
+  </p>
+  <p class="mb-4 tracking-normal">
+    By following these guidelines, you help us ensure that the Hummingbird brand remains a trusted and reliable mark of
+    quality for developers everywhere. Thank you for your support.
+  </p>
+
+  <script>
+    import Swiper from 'swiper/bundle';
+    import 'swiper/css/bundle';
+
+    const swiper = new Swiper('.swiper', {
+      loop: true,
+      slidesPerView: 1,
+      spaceBetween: 8,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      breakpoints: {
+        370: {
+          slidesPerView: 1.2,
+          spaceBetween: 8,
+        },
+        560: {
+          slidesPerView: 2.2,
+          spaceBetween: 12,
+        },
+        840: {
+          slidesPerView: 3.5,
+          spaceBetween: 16,
+        },
+      },
+    });
+  </script>
+</ContentLayout>

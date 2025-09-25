@@ -9,40 +9,40 @@ interface Props {
 const { feature } = Astro.props;
 const { icon: Icon, color, title, description } = feature;
 
-const cardStyleMap: Record<string, { icon: string; iconWrapper: string; overlay: string }> = {
+const cardStyleMap: Record<string, { iconStyle: string; iconWrapperStyle: string; overlay: string }> = {
   primary: {
-    icon: 'text-primary-dark',
-    iconWrapper: 'border-primary-dark bg-primary-lighter',
+    iconStyle: 'text-primary-dark',
+    iconWrapperStyle: 'border-primary-dark bg-primary-lighter',
     overlay: "bg-[url('/images/features/primary.png')]",
   },
   secondary: {
-    icon: 'text-secondary-dark',
-    iconWrapper: 'border-secondary-dark bg-secondary-lighter',
+    iconStyle: 'text-secondary-dark',
+    iconWrapperStyle: 'border-secondary-dark bg-secondary-lighter',
     overlay: "bg-[url('/images/features/secondary.png')]",
   },
   error: {
-    icon: 'text-danger-dark',
-    iconWrapper: 'border-danger-dark bg-danger-lighter',
+    iconStyle: 'text-danger-dark',
+    iconWrapperStyle: 'border-danger-dark bg-danger-lighter',
     overlay: "bg-[url('/images/features/error.png')]",
   },
   warning: {
-    icon: 'text-warning-dark',
-    iconWrapper: 'border-warning-dark bg-warning-lighter',
+    iconStyle: 'text-warning-dark',
+    iconWrapperStyle: 'border-warning-dark bg-warning-lighter',
     overlay: "bg-[url('/images/features/warning.png')]",
   },
   info: {
-    icon: 'text-info-dark',
-    iconWrapper: 'border-info-dark bg-info-lighter',
+    iconStyle: 'text-info-dark',
+    iconWrapperStyle: 'border-info-dark bg-info-lighter',
     overlay: "bg-[url('/images/features/info.png')]",
   },
   success: {
-    icon: 'text-success-dark',
-    iconWrapper: 'border-success-dark bg-success-lighter',
+    iconStyle: 'text-success-dark',
+    iconWrapperStyle: 'border-success-dark bg-success-lighter',
     overlay: "bg-[url('/images/features/success.png')]",
   },
 };
 
-const { icon: iconStyle, iconWrapper: iconWrapperStyle, overlay } = cardStyleMap[color];
+const { iconStyle, iconWrapperStyle, overlay } = cardStyleMap[color];
 ---
 
 <GradientBorderBox color={color}>

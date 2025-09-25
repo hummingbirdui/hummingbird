@@ -4,8 +4,8 @@ import BulbIcon from '@components/icons/BulbIcon.astro';
 import GitHubIcon from '@components/icons/GithubIcon.astro';
 import MenuIcon from '@components/icons/MenuIcon.astro';
 import TimesIcon from '@components/icons/TimesIcon.astro';
-import { Image } from 'astro:assets';
 import BulbOffIcon from '@components/icons/BulbOffIcon.astro';
+import { Image } from 'astro:assets';
 import '@docsearch/css';
 
 const menuItems = [
@@ -61,23 +61,26 @@ const currentPath = Astro.url.pathname;
       <GitHubIcon />
       <span class="hidden lg:flex">20.5k</span>
     </a>
-    <button id="drawerToggle" class="ml-6 btn btn-circle btn-subtle-neutral flex xl:hidden">
+    <a
+      data-bs-toggle="offcanvas"
+      href="#offcanvasExample"
+      role="button"
+      aria-controls="offcanvasExample"
+      class="ml-6 btn btn-circle btn-subtle-neutral flex xl:hidden"
+    >
       <MenuIcon />
-    </button>
+    </a>
   </div>
 </nav>
 
-<!-- Drawer -->
-<div
-  id="drawer"
-  class="fixed top-0 right-0 h-full w-80 bg-default dark:bg-subtle border-l border-transparent dark:border-light transform translate-x-full transition-transform duration-300 ease-in-out z-50"
->
+<!-- offcanvas -->
+<div id="offcanvasExample" class="offcanvas offcanvas-end" tabindex="-1" aria-labelledby="offcanvasExampleLabel">
   <div class="px-6 py-5 flex justify-between items-center">
     <a class="navbar-brand flex items-center gap-2" href="/">
       <Image src={logo} alt="Logo" class="w-10 h-10" />
       <h5 class="mb-0 text-muted font-semibold">hummingbird</h5>
     </a>
-    <button id="drawerClose" class="btn btn-square bg-transparent">
+    <button class="btn btn-square bg-transparent" data-bs-dismiss="offcanvas" aria-label="Close">
       <TimesIcon />
     </button>
   </div>
@@ -98,40 +101,3 @@ const currentPath = Astro.url.pathname;
     }
   </ul>
 </div>
-
-<div
-  id="drawerOverlay"
-  class="fixed inset-0 bg-black/50 opacity-0 pointer-events-none transition-opacity duration-300 z-40"
->
-</div>
-
-<script>
-  const drawer = document.getElementById('drawer') as HTMLElement;
-  const overlay = document.getElementById('drawerOverlay') as HTMLElement;
-  const toggleBtn = document.getElementById('drawerToggle') as HTMLButtonElement;
-  const closeBtn = document.getElementById('drawerClose') as HTMLButtonElement;
-
-  const openDrawer = () => {
-    drawer.classList.remove('translate-x-full');
-    drawer.classList.add('translate-x-0');
-
-    overlay.classList.remove('opacity-0', 'pointer-events-none');
-    overlay.classList.add('opacity-100');
-
-    document.body.classList.add('overflow-hidden');
-  };
-
-  const closeDrawer = () => {
-    drawer.classList.add('translate-x-full');
-    drawer.classList.remove('translate-x-0');
-
-    overlay.classList.add('opacity-0', 'pointer-events-none');
-    overlay.classList.remove('opacity-100');
-
-    document.body.classList.remove('overflow-hidden');
-  };
-
-  toggleBtn.addEventListener('click', openDrawer);
-  closeBtn.addEventListener('click', closeDrawer);
-  overlay.addEventListener('click', closeDrawer);
-</script>
