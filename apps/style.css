@@ -79,6 +79,9 @@
 
 .astro-code {
   @apply overflow-hidden bg-muted! text-sm p-4 rounded-lg;
+  .shiki {
+    @apply bg-transparent!;
+  }
 }
 
 .custom-tooltip {

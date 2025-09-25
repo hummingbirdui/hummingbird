@@ -3,6 +3,7 @@ import type { StyleSystem } from 'apps/data/landing/global-styles';
 import { Code } from 'astro:components';
 import CopyIcon from '@components/icons/CopyIcon.astro';
 import CheckIcon from '@components/icons/CheckIcon.astro';
+import AppCode from '@components/common/AppCode.astro';
 
 interface Props {
   style: StyleSystem;
@@ -22,13 +23,7 @@ const { style, class: className = '' } = Astro.props;
       <CopyIcon class="copy-icon" />
       <CheckIcon class="check-icon hidden text-success" />
     </button>
-    <Code
-      class="!text-sm h-full !bg-muted !rounded-lg scrollbar-hide !pt-6"
-      data-astro-code
-      code={style.code}
-      themes={{ light: 'github-light', dark: 'github-dark' }}
-      lang="sass"
-    />
+    <AppCode class="h-full scrollbar-hide !pt-6" code={style.code} lang="sass" />
   </div>
 </div>
 
