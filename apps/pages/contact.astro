@@ -16,19 +16,25 @@ import Layout from '@layouts/Layout.astro';
           <input
             type="text"
             placeholder="First name"
-            class="form-control-fill form-control-lg"
+            class="form-control-fill form-control-lg placeholder:text-muted"
             data-contact-first-name
             required
           />
           <input
             type="text"
             placeholder="Last name"
-            class="form-control-fill form-control-lg"
+            class="form-control-fill form-control-lg placeholder:text-muted"
             data-contact-last-name
             required
           />
         </div>
-        <input type="email" placeholder="Email" class="form-control-fill form-control-lg" data-contact-email required />
+        <input
+          type="email"
+          placeholder="Email"
+          class="form-control-fill form-control-lg placeholder:text-muted"
+          data-contact-email
+          required
+        />
       </div>
 
       <div class="mb-6">
@@ -36,14 +42,14 @@ import Layout from '@layouts/Layout.astro';
         <input
           type="text"
           placeholder="Subject"
-          class="mb-2 form-control-fill form-control-lg"
+          class="mb-2 form-control-fill form-control-lg placeholder:text-muted"
           data-contact-subject
           required
         />
         <textarea
           id="message"
           name="message"
-          class="form-control-fill form-control-lg"
+          class="form-control-fill form-control-lg placeholder:text-muted"
           data-contact-message
           required
           rows="4"
@@ -55,12 +61,12 @@ import Layout from '@layouts/Layout.astro';
         <a href="/privacy-policy" class="text-blue-500 hover:underline">privacy policy</a>, which details how we
         collect, use, and share your personal information with third parties.
       </p>
-      <div class="alert alert-subtle-success mb-5 fixed z-9999 top-8 right-8 hidden" data-success-alert role="alert">
-        Message sent successfully
-      </div>
 
       <button type="submit" class="w-full btn btn-primary"> Sent Message </button>
     </form>
+  </div>
+  <div class="alert alert-subtle-success mb-5 fixed z-9999 top-8 right-8 hidden" data-success-alert role="alert">
+    Message sent successfully
   </div>
 </Layout>
 

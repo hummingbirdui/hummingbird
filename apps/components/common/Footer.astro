@@ -22,7 +22,9 @@ const isLanding = Astro.url.pathname === '/';
           > – trusted by 2M+ Devs & Counting.
         </p>
         <p class="text-sm text-muted">
-          MIT for code, <a href="https://creativecommons.org/licenses/by/4.0/" class="text-muted no-underline"
+          <a href="https://github.com/hummingbirdui/hummingbird/blob/main/LICENSE" class="text-muted no-underline"
+            >MIT</a
+          > for code, <a href="https://creativecommons.org/licenses/by/4.0/" class="text-muted no-underline"
             >CC BY 4.0</a
           > for docs.
         </p>
@@ -47,10 +49,15 @@ const isLanding = Astro.url.pathname === '/';
 
       <div class="col-span-10 sm:col-span-6 md:col-span-4">
         <h3 class="mb-4 text-sm font-bold text-subtle">Newsletter</h3>
-        <div class="mb-10.5 flex gap-2 max-w-sm">
-          <input type="text" class="form-control-fill form-control-primary" placeholder="Enter your email address" />
-          <button class="btn btn-subtle-primary shrink-0">Subscribe</button>
-        </div>
+        <form class="mb-10.5 flex gap-2 max-w-sm" data-subscription-form>
+          <input
+            type="text"
+            class="form-control-fill form-control-primary"
+            data-subscription-email
+            placeholder="Enter your email address"
+          />
+          <button type="submit" class="btn btn-subtle-primary shrink-0">Subscribe</button>
+        </form>
         <h3 class="mb-4 text-sm font-bold text-subtle">Stay Connected</h3>
         <div class="flex gap-4">
           {
@@ -65,7 +72,42 @@ const isLanding = Astro.url.pathname === '/';
     </div>
 
     <div class="border-t border-light py-5">
-      <p class="mb-0 text-center text-sm text-muted">Hummingbird Ltd &copy; 2025, all rights reserved</p>
+      <p class="mb-0 text-center text-sm text-muted">Hummingbird &copy; 2025, all rights reserved</p>
     </div>
   </div>
+  <div class="alert alert-subtle-success mb-5 fixed z-9999 top-8 right-8 hidden" data-success-alert role="alert">
+    Successfully Subscribed
+  </div>
 </footer>
+<!-- <script>
+  const form = document.querySelector('[data-subscription-form]') as HTMLFormElement;
+  const email = document.querySelector('[data-subscription-email]') as HTMLInputElement;
+  const successMessage = document.querySelector('[data-success-alert]') as HTMLElement;
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    try {
+      const res = await fetch('	https://api.mailbluster.com/api/leads', {
+        method: 'POST',
+        headers: {
+          Authorization: '9889a807-bd61-4234-95fe-1936e33d961a',
+          'Content-Type': 'application/json',
+          'Cache-Control': 'no-cache',
+        },
+        body: JSON.stringify({ email: email.value }),
+      });
+      const out = await res.json();
+      if (out.ok) {
+        form.reset();
+        successMessage.classList.remove('hidden');
+        setTimeout(() => {
+          successMessage.classList.add('hidden');
+        }, 3000);
+      } else {
+        console.log('An error occurs');
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  });
+</script> -->

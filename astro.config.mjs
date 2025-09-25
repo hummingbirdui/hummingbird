@@ -5,6 +5,7 @@ import mdx from '@astrojs/mdx';
 import AutoImport from 'astro-auto-import';
 import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
+// import vercel from '@astrojs/vercel';
 
 // eslint-disable-next-line no-undef
 const isDev = process.env.NODE_ENV === 'development';
@@ -13,6 +14,7 @@ export default defineConfig({
   site: isDev ? 'http://localhost:4321/' : 'https://hbui.dev',
   srcDir: './apps',
   outDir: 'build',
+  // adapter: vercel(),
   vite: {
     plugins: [tailwindcss()],
   },
