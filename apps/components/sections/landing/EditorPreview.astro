@@ -62,15 +62,18 @@ import RefreshIcon from '@components/icons/RefreshIcon.astro';
   import cssText from '../../../style.css?inline';
   import { onThemeChange } from '@libs/utils';
 
-  const resetButton = document.getElementById('resetBtn') as HTMLButtonElement;
-  const copyButton = document.getElementById('copyBtn') as HTMLButtonElement;
-  const copyIcon = document.getElementById('copyIcon') as HTMLElement;
-  const checkIcon = document.getElementById('checkIcon') as HTMLElement;
+  const start = () => {
+    const resetButton = document.getElementById('resetBtn') as HTMLButtonElement | null;
+    const copyButton = document.getElementById('copyBtn') as HTMLButtonElement | null;
+    const copyIcon = document.getElementById('copyIcon') as HTMLElement | null;
+    const checkIcon = document.getElementById('checkIcon') as HTMLElement | null;
 
-  const preview = document.getElementById('preview') as HTMLIFrameElement;
-  const cardImg = preview.dataset.cardImg ?? '';
+    const preview = document.getElementById('preview') as HTMLIFrameElement | null;
+    if (!preview) return;
 
-  const startCode = `<div class="card p-2 shadow-lg rounded-2xl max-w-64">
+    const cardImg = preview.dataset.cardImg ?? '';
+
+    const startCode = `<div class="card p-2 shadow-lg rounded-2xl max-w-64">
   <img src="${cardImg}" class='card-img-top pb-4' alt="Hummingbird" />
   <div class="card-body p-1">
     <h4 class="card-title text-base">10 Fascinating Animal Facts</h4>
@@ -86,68 +89,89 @@ import RefreshIcon from '@components/icons/RefreshIcon.astro';
   </div>
 </div>`;
 
-  const updatePreview = (code: string) => {
-    const iframe = document.getElementById('preview') as HTMLIFrameElement;
-    const doc = iframe.contentDocument as HTMLDocument;
-    const html = doc.documentElement;
-    const body = doc.getElementById('previewCode') as HTMLElement;
-    const styleEl = doc.createElement('style');
+    const updatePreview = (code: string) => {
+      if (!preview?.contentDocument) return;
+      const doc = preview.contentDocument;
+      const body = doc.getElementById('previewCode');
+      if (!body) return;
 
-    styleEl.textContent = cssText;
-    doc.head.appendChild(styleEl);
+      const oldStyle = doc.getElementById('injected-style');
+      if (oldStyle) oldStyle.remove();
 
-    body.innerHTML = code;
+      const styleEl = doc.createElement('style');
+      styleEl.id = 'injected-style';
+      styleEl.textContent = cssText;
+      doc.head.appendChild(styleEl);
 
-    onThemeChange((theme) => {
-      if (theme === 'dark') {
-        html.classList.add('dark');
-      } else {
-        html.classList.remove('dark');
+      body.innerHTML = code;
+
+      const htmlEl = doc.documentElement;
+      onThemeChange((theme) => {
+        htmlEl.classList.toggle('dark', theme === 'dark');
+      });
+    };
+
+    const init = () => {
+      const doc = preview.contentDocument;
+      if (!doc || !doc.getElementById('previewCode')) {
+        requestAnimationFrame(init);
+        return;
       }
-    });
+
+      const editorParent = document.getElementById('editor');
+      if (!editorParent) return;
+
+      const editor = new EditorView({
+        state: EditorState.create({
+          doc: startCode,
+          extensions: [
+            html(),
+            basicSetup,
+            oneDark,
+            EditorView.updateListener.of((update) => {
+              if (update.docChanged) {
+                const code = update.state.doc.toString();
+                updatePreview(code);
+              }
+            }),
+          ],
+        }),
+        parent: editorParent,
+      });
+
+      updatePreview(startCode);
+
+      resetButton?.addEventListener('click', () => {
+        editor.dispatch({
+          changes: { from: 0, to: editor.state.doc.length, insert: startCode },
+        });
+        updatePreview(startCode);
+      });
+
+      copyButton?.addEventListener('click', async () => {
+        const code = editor.state.doc.toString();
+        try {
+          await navigator.clipboard.writeText(code);
+
+          copyIcon?.classList.add('hidden');
+          checkIcon?.classList.remove('hidden');
+
+          setTimeout(() => {
+            checkIcon?.classList.add('hidden');
+            copyIcon?.classList.remove('hidden');
+          }, 1200);
+        } catch (err) {
+          console.error('Failed to copy: ', err);
+        }
+      });
+    };
+
+    init();
   };
 
-  const editor = new EditorView({
-    state: EditorState.create({
-      doc: startCode,
-      extensions: [
-        html(),
-        basicSetup,
-        oneDark,
-        EditorView.updateListener.of((update) => {
-          if (update.docChanged) {
-            const code = update.state.doc.toString();
-            updatePreview(code);
-          }
-        }),
-      ],
-    }),
-    parent: document.getElementById('editor') as HTMLElement,
-  });
-
-  updatePreview(startCode);
-
-  resetButton.addEventListener('click', () => {
-    editor.dispatch({
-      changes: { from: 0, to: editor.state.doc.length, insert: startCode },
-    });
-    updatePreview(startCode);
-  });
-
-  copyButton.addEventListener('click', async () => {
-    const code = editor.state.doc.toString();
-    try {
-      await navigator.clipboard.writeText(code);
-
-      copyIcon.classList.add('hidden');
-      checkIcon.classList.remove('hidden');
-
-      setTimeout(() => {
-        checkIcon.classList.add('hidden');
-        copyIcon.classList.remove('hidden');
-      }, 1200);
-    } catch (err) {
-      console.error('Failed to copy: ', err);
-    }
-  });
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', start);
+  } else {
+    start();
+  }
 </script>
