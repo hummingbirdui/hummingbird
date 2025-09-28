@@ -1,7 +1,7 @@
 ---
 import sitemap from '../../sitemap';
-const pathName = Astro.originPathname;
-console.log(pathName);
+const segments = Astro.originPathname.split('/').filter(Boolean);
+const path = '/' + (segments.length > 3 ? segments.slice(0, 3) : segments).join('/') + '/';
 ---
 
 <div
@@ -36,7 +36,7 @@ console.log(pathName);
                 <a
                   href={item.path}
                   class={`list-group-item list-group-item-action rounded-lg text-sm py-2 
-                          ${pathName === item.path + '/' ? 'text-primary-dark bg-primary-lighter' : 'text-default'}`}
+                          ${path === item.path + '/' ? 'text-primary-dark bg-primary-lighter' : 'text-default'}`}
                 >
                   <span>{item.name}</span>
                 </a>

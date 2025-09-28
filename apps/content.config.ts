@@ -24,6 +24,7 @@ const docs = defineCollection({
     title: z.string(),
     description: z.string().optional(),
     toc: z.boolean().optional(),
+    redirects: z.boolean().optional(),
     classNames: classNamesSchema,
   }),
 });
