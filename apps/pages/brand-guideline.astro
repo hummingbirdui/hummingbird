@@ -3,12 +3,11 @@ import ContentLayout from '@layouts/ContentLayout.astro';
 import { hbLogos, hbRestrictLogos, colors, typography } from 'apps/data/brand-guideline';
 ---
 
-<ContentLayout>
-  <h1 class="mb-4 text-3xl font-bold">Brand Assets and Guidelines</h1>
-  <p class="mb-6 text-xl tracking-normal font-light">
-    Documentation to ensure Hummingbird's name, logo, & other brand assets’ consistency and integrity.
-  </p>
-  <p class="mb-12 tracking-normal">
+<ContentLayout
+  heading="Brand Assets and Guidelines"
+  subHeading="Documentation to ensure Hummingbird's name, logo, & other brand assets’ consistency and integrity."
+>
+  <p class="-mt-6 mb-12 tracking-normal">
     The Hummingbird brand is a core asset and a symbol of our commitment to quality, performance, and the open-source
     community. This document provides clear guidelines for the use of the Hummingbird name, logo, and other brand
     assets, ensuring consistency and maintaining the integrity of our identity.
@@ -19,7 +18,7 @@ import { hbLogos, hbRestrictLogos, colors, typography } from 'apps/data/brand-gu
   <p class="mb-6 tracking-normal">
     The project's official name is "Hummingbird." This name should be used in all public-facing communications.
   </p>
-  <div class="mb-14 flex flex-col sm:flex-row items-center gap-6">
+  <div class="mb-14 flex flex-col sm:flex-row items-center gap-4">
     <div class="card flex flex-col w-full h-[162px] rounded-2xl bg-default overflow-hidden">
       <div class="grow flex items-center justify-center bg-subtle">
         <h3 class="mb-0 text-default text-[28px] font-semibold tracking-normal">Hummingbird</h3>
@@ -58,7 +57,7 @@ import { hbLogos, hbRestrictLogos, colors, typography } from 'apps/data/brand-gu
     not be used in a way that implies an endorsement, partnership, or affiliation with your project or company without
     explicit written permission. The logo may not be used as the primary logo for your own product or service.
   </p>
-  <div class="mb-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+  <div class="mb-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
     {
       hbLogos.map((item, i) => (
         <div
@@ -240,7 +239,7 @@ import { hbLogos, hbRestrictLogos, colors, typography } from 'apps/data/brand-gu
     const swiper = new Swiper('.swiper', {
       loop: true,
       slidesPerView: 1,
-      spaceBetween: 8,
+      spaceBetween: 16,
       navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
@@ -248,15 +247,12 @@ import { hbLogos, hbRestrictLogos, colors, typography } from 'apps/data/brand-gu
       breakpoints: {
         370: {
           slidesPerView: 1.2,
-          spaceBetween: 8,
         },
         560: {
           slidesPerView: 2.2,
-          spaceBetween: 12,
         },
         840: {
           slidesPerView: 3.5,
-          spaceBetween: 16,
         },
       },
     });
