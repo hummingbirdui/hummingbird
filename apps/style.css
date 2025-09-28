@@ -219,3 +219,43 @@
 .example-row-flex-cols .row {
   @apply min-h-40 bg-info-lighter;
 }
+
+#u_column_1 {
+  @apply border-0! bg-transparent!;
+  > div {
+    @apply p-0!;
+  }
+}
+.u_content_form {
+  @apply p-0!;
+  form {
+    @apply flex! gap-2;
+    .sc-epnzzT {
+      @apply w-full!;
+      > div {
+        @apply p-0!;
+        > div {
+          @apply p-0!;
+        }
+      }
+      input {
+        @apply h-9.25! rounded-lg! border-transparent! bg-muted! text-sm! font-sans! hover:bg-highlight! focus:bg-primary-lighter! text-default! focus:shadow-none! focus:border-primary!;
+      }
+    }
+    &:last-child {
+      @apply text-nowrap;
+
+      button {
+        @layer base {
+          @apply w-full! mt-0! h-9.25! rounded-lg! py-2.25! bg-primary/15! hover:bg-primary/20! text-primary-dark! font-semibold! text-sm! font-sans!;
+        }
+      }
+    }
+  }
+}
+.powered-by {
+  @apply pb-0!;
+}
+[title='Powered by MailBluster'] {
+  @apply w-20!;
+}

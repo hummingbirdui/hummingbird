@@ -49,15 +49,10 @@ const isLanding = Astro.url.pathname === '/';
 
       <div class="col-span-10 sm:col-span-6 md:col-span-4">
         <h3 class="mb-4 text-sm font-bold text-subtle">Newsletter</h3>
-        <form class="mb-10.5 flex gap-2 max-w-sm" data-subscription-form>
-          <input
-            type="text"
-            class="form-control-fill form-control-primary"
-            data-subscription-email
-            placeholder="Enter your email address"
-          />
-          <button type="submit" class="btn btn-subtle-primary shrink-0">Subscribe</button>
-        </form>
+        <script
+          async
+          src="https://api.mailbluster.com/v1/forms/496bdf0c-9372-4a28-90bd-2bf18b3f6c93.js"
+          data-form="496bdf0c-9372-4a28-90bd-2bf18b3f6c93"></script>
         <h3 class="mb-4 text-sm font-bold text-subtle">Stay Connected</h3>
         <div class="flex gap-4">
           {
@@ -79,35 +74,3 @@ const isLanding = Astro.url.pathname === '/';
     Successfully Subscribed
   </div>
 </footer>
-<!-- <script>
-  const form = document.querySelector('[data-subscription-form]') as HTMLFormElement;
-  const email = document.querySelector('[data-subscription-email]') as HTMLInputElement;
-  const successMessage = document.querySelector('[data-success-alert]') as HTMLElement;
-
-  form?.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    try {
-      const res = await fetch('	https://api.mailbluster.com/api/leads', {
-        method: 'POST',
-        headers: {
-          Authorization: '9889a807-bd61-4234-95fe-1936e33d961a',
-          'Content-Type': 'application/json',
-          'Cache-Control': 'no-cache',
-        },
-        body: JSON.stringify({ email: email.value }),
-      });
-      const out = await res.json();
-      if (out.ok) {
-        form.reset();
-        successMessage.classList.remove('hidden');
-        setTimeout(() => {
-          successMessage.classList.add('hidden');
-        }, 3000);
-      } else {
-        console.log('An error occurs');
-      }
-    } catch (err) {
-      console.log(err);
-    }
-  });
-</script> -->
