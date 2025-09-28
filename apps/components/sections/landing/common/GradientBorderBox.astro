@@ -6,36 +6,132 @@ interface Props {
 
 const { color, class: className = '' } = Astro.props;
 
-export const getColor = (color: string) => {
+const getBgImage = (color: string) => {
   switch (color) {
     case 'primary':
-      return `bg-[linear-gradient(var(--background-color-default),var(--background-color-default)),linear-gradient(118.65deg,var(--color-primary-lighter)_0.36%,var(--color-primary-light)_99.64%)]`;
+      return `linear-gradient(var(--background-color-default), var(--background-color-default)), linear-gradient(var(--gradient-angle), var(--color-primary-lighter) 0.36%, var(--color-primary-light) 99.64%)`;
     case 'secondary':
-      return `bg-[linear-gradient(var(--background-color-default),var(--background-color-default)),linear-gradient(118.65deg,var(--color-secondary-lighter)_0.36%,var(--color-secondary-light)_99.64%)]`;
+      return `linear-gradient(var(--background-color-default), var(--background-color-default)), linear-gradient(var(--gradient-angle), var(--color-secondary-lighter) 0.36%, var(--color-secondary-light) 99.64%)`;
     case 'error':
-      return `bg-[linear-gradient(var(--background-color-default),var(--background-color-default)),linear-gradient(118.65deg,var(--color-danger-lighter)_0.36%,var(--color-danger-light)_99.64%)]`;
+      return `linear-gradient(var(--background-color-default), var(--background-color-default)), linear-gradient(var(--gradient-angle), var(--color-danger-lighter) 0.36%, var(--color-danger-light) 99.64%)`;
     case 'warning':
-      return `bg-[linear-gradient(var(--background-color-default),var(--background-color-default)),linear-gradient(118.65deg,var(--color-warning-lighter)_0.36%,var(--color-warning-light)_99.64%)]`;
+      return `linear-gradient(var(--background-color-default), var(--background-color-default)), linear-gradient(var(--gradient-angle), var(--color-warning-lighter) 0.36%, var(--color-warning-light) 99.64%)`;
     case 'info':
-      return `bg-[linear-gradient(var(--background-color-default),var(--background-color-default)),linear-gradient(118.65deg,var(--color-info-lighter)_0.36%,var(--color-info-light)_99.64%)]`;
+      return `linear-gradient(var(--background-color-default), var(--background-color-default)), linear-gradient(var(--gradient-angle), var(--color-info-lighter) 0.36%, var(--color-info-light) 99.64%)`;
     case 'success':
-      return `bg-[linear-gradient(var(--background-color-default),var(--background-color-default)),linear-gradient(118.65deg,var(--color-success-lighter)_0.36%,var(--color-success-light)_99.64%)]`;
+      return `linear-gradient(var(--background-color-default), var(--background-color-default)), linear-gradient(var(--gradient-angle), var(--color-success-lighter) 0.36%, var(--color-success-light) 99.64%)`;
     case 'secondary-dark':
-      return `bg-[linear-gradient(var(--background-color-default),var(--background-color-default)),linear-gradient(118.65deg,var(--color-secondary-lighter)_0.36%,var(--color-secondary-dark)_99.64%)]`;
+      return `linear-gradient(var(--background-color-default), var(--background-color-default)), linear-gradient(var(--gradient-angle), var(--color-secondary-lighter) 0.36%, var(--color-secondary-dark) 99.64%)`;
     case 'success-dark':
-      return `bg-[linear-gradient(var(--background-color-default),var(--background-color-default)),linear-gradient(118.65deg,var(--color-success-lighter)_0.36%,var(--color-success-dark)_99.64%)]`;
+      return `linear-gradient(var(--background-color-default), var(--background-color-default)), linear-gradient(var(--gradient-angle), var(--color-success-lighter) 0.36%, var(--color-success-dark) 99.64%)`;
     case 'primary-dark':
-      return `bg-[linear-gradient(var(--background-color-default),var(--background-color-default)),linear-gradient(118.65deg,var(--color-primary-lighter)_0.36%,var(--color-primary-dark)_99.64%)]`;
+      return `linear-gradient(var(--background-color-default), var(--background-color-default)), linear-gradient(var(--gradient-angle), var(--color-primary-lighter) 0.36%, var(--color-primary-dark) 99.64%)`;
     case 'info-dark':
-      return `bg-[linear-gradient(var(--background-color-default),var(--background-color-default)),linear-gradient(118.65deg,var(--color-info-lighter)_0.36%,var(--color-info-dark)_99.64%)]`;
+      return `linear-gradient(var(--background-color-default), var(--background-color-default)), linear-gradient(var(--gradient-angle), var(--color-info-lighter) 0.36%, var(--color-info-dark) 99.64%)`;
+    default:
+      return `linear-gradient(var(--background-color-default), var(--background-color-default)), linear-gradient(var(--gradient-angle), var(--color-primary-lighter) 0.36%, var(--color-primary-light) 99.64%)`;
   }
 };
 
-const bgColor = getColor(color);
+const bgImage = getBgImage(color);
 ---
 
 <div
-  class={`rounded-2xl overflow-hidden transition border border-transparent ${bgColor} [background-origin:border-box] [background-clip:padding-box,border-box] ${className}`}
+  class={`rotate-on-hover rounded-2xl overflow-hidden transition border border-transparent ${className}`}
+  style={`background-image: ${bgImage}; background-origin: border-box; background-clip: padding-box, border-box; --gradient-angle: 118.65deg;`}
 >
   <slot />
 </div>
+
+<style>
+  .rotate-on-hover {
+    --gradient-angle: 118.65deg;
+    border-color: transparent;
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    will-change: background;
+  }
+</style>
+
+<script type="module">
+  if (!window.__GradientCardHoverInit) {
+    window.__GradientCardHoverInit = true;
+
+    const DEFAULT_SPEED = 90;
+    const RESET_DURATION = 1000;
+
+    function initElement(el) {
+      if (!el || el.dataset.gradientInit === 'true') return;
+      el.dataset.gradientInit = 'true';
+
+      let angle = 118.65;
+      const speedAttr = el.dataset.gradientSpeed;
+      const speed = (speedAttr ? parseFloat(speedAttr) : NaN) || DEFAULT_SPEED;
+
+      let running = false;
+      let rafId = null;
+      let lastTime = 0;
+
+      function frame(now) {
+        if (!running) {
+          rafId = null;
+          return;
+        }
+        if (!lastTime) lastTime = now;
+        const dt = (now - lastTime) / 1000;
+        lastTime = now;
+        angle = (angle + speed * dt) % 360;
+        el.style.setProperty('--gradient-angle', angle + 'deg');
+        rafId = requestAnimationFrame(frame);
+      }
+
+      function start() {
+        if (running) return;
+        running = true;
+        lastTime = 0;
+        if (!rafId) rafId = requestAnimationFrame(frame);
+      }
+
+      function stop() {
+        running = false;
+        lastTime = 0;
+        if (rafId) {
+          cancelAnimationFrame(rafId);
+          rafId = null;
+        }
+
+        const startAngle = angle;
+        const endAngle = 118.65;
+        const startTime = performance.now();
+
+        function resetStep(now) {
+          const t = Math.min((now - startTime) / RESET_DURATION, 1);
+          const newAngle = startAngle + (endAngle - startAngle) * t;
+          el.style.setProperty('--gradient-angle', newAngle + 'deg');
+          if (t < 1) requestAnimationFrame(resetStep);
+          else angle = endAngle;
+        }
+        requestAnimationFrame(resetStep);
+      }
+
+      el.addEventListener('pointerenter', start, { passive: true });
+      el.addEventListener('pointerleave', stop, { passive: true });
+      el.addEventListener('pointercancel', stop, { passive: true });
+      el.addEventListener('focus', start);
+      el.addEventListener('blur', stop);
+    }
+
+    document.querySelectorAll('.rotate-on-hover').forEach(initElement);
+
+    const mo = new MutationObserver((mutations) => {
+      for (const m of mutations) {
+        for (const node of m.addedNodes) {
+          if (!(node instanceof HTMLElement)) continue;
+          if (node.matches?.('.rotate-on-hover')) initElement(node);
+          node.querySelectorAll?.('.rotate-on-hover').forEach(initElement);
+        }
+      }
+    });
+    mo.observe(document.documentElement || document.body, { childList: true, subtree: true });
+  }
+</script>

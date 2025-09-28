@@ -3,10 +3,7 @@ import ContentLayout from '@layouts/ContentLayout.astro';
 import { termsData } from 'apps/data/company';
 ---
 
-<ContentLayout>
-  <h1 class="text-3xl font-semibold mb-4">Terms and Conditions</h1>
-  <p class="mb-10 text-md text-muted">Last updated: 2025</p>
-
+<ContentLayout heading="Terms and Conditions" subHeading="Last updated: 2025">
   {
     termsData.map((item) => (
       <div class="mb-12">
