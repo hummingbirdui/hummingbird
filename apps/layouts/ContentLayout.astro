@@ -1,9 +1,15 @@
 ---
 import BaseLayout from './BaseLayout.astro';
+
+const { heading, subHeading } = Astro.props;
 ---
 
 <BaseLayout>
-  <div class="px-6 py-10 mx-auto max-w-[967px] tracking-tighter">
-    <slot />
+  <div class="px-6 py-10">
+    <div class="mx-auto max-w-219 tracking-tighter">
+      <h1 class="text-3xl mb-4">{heading}</h1>
+      {subHeading && <p class="mb-12 font-light text-xl tracking-normal">{subHeading}</p>}
+      <slot />
+    </div>
   </div>
 </BaseLayout>

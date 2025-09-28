@@ -3,10 +3,7 @@ import ContentLayout from '@layouts/ContentLayout.astro';
 import { privacyData } from 'apps/data/company';
 ---
 
-<ContentLayout>
-  <h1 class="text-3xl font-semibold mb-4">Hummingbird Privacy Policy</h1>
-  <p class="mb-10 text-md text-muted">Effective Date: 2025</p>
-
+<ContentLayout heading="Hummingbird Privacy Policy" subHeading="Effective Date: 2025">
   {
     privacyData.map((item) => (
       <div class="mb-12">

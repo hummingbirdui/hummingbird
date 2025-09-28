@@ -1,12 +1,12 @@
 ---
 import ContentLayout from '@layouts/ContentLayout.astro';
-import { aboutData } from 'apps/data/company';
+import { aboutData, teamMembers } from 'apps/data/company';
 ---
 
-<ContentLayout>
-  <h1 class="text-3xl font-semibold mb-4">Philosophy/Vision behind the most Sensible UI library</h1>
-  <p class="mb-10 text-xl text-muted">Our Mission and Guiding Principles</p>
-
+<ContentLayout
+  heading="Philosophy/Vision behind the most Sensible UI library"
+  subHeading="Our Mission and Guiding Principles"
+>
   {
     aboutData.map((item) => (
       <div class="mb-12">
@@ -26,4 +26,23 @@ import { aboutData } from 'apps/data/company';
       </div>
     ))
   }
+
+  <h2 class="text-2xl font-semibold mb-3">Meet Our Team</h2>
+  <p class="mb-6 text-muted tracking-tight">Meet the core team behind Hummingbird:</p>
+
+  <div class="grid grid-cols-4 gap-6">
+    {
+      teamMembers.map((item) => (
+        <a href="#" class="card card-action h-75 overflow-hidden">
+          <div class="grow flex items-end">
+            <img src={item.image.src} class="object-contain grayscale" alt={item.name} />
+          </div>
+          <div class="p-2 flex flex-col justify-between h-19">
+            <h6 class="card-title mb-0.5 text-base font-semibold tracking-normal">{item.name}</h6>
+            <p class="mb-0 text-xs text-muted tracking-normal">{item.role}</p>
+          </div>
+        </a>
+      ))
+    }
+  </div>
 </ContentLayout>

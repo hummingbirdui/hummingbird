@@ -1,15 +1,16 @@
-import django from '@assets/images/landing/frameworks/django.png';
-import angular from '@assets/images/landing/frameworks/angular.png';
-import laravel from '@assets/images/landing/frameworks/laravel.png';
-import nextjsL from '@assets/images/landing/frameworks/nextjs.png';
-import nextjsD from '@assets/images/landing/frameworks/nextjs-dark.png';
-import astroL from '@assets/images/landing/frameworks/astro.png';
-import astroD from '@assets/images/landing/frameworks/astro-dark.png';
-import reactL from '@assets/images/landing/frameworks/react.png';
-import reactD from '@assets/images/landing/frameworks/react-dark.png';
-import svelte from '@assets/images/landing/frameworks/svelte.png';
-import nuxt from '@assets/images/landing/frameworks/nuxt.png';
-import vue from '@assets/images/landing/frameworks/vue.png';
+import django from '@assets/images/landing/frameworks/django.svg';
+import angular from '@assets/images/landing/frameworks/angular.svg';
+import laravel from '@assets/images/landing/frameworks/laravel.svg';
+import nextjsL from '@assets/images/landing/frameworks/nextjs.svg';
+import nextjsD from '@assets/images/landing/frameworks/nextjs-dark.svg';
+import astroL from '@assets/images/landing/frameworks/astro.svg';
+import astroD from '@assets/images/landing/frameworks/astro-dark.svg';
+import reactL from '@assets/images/landing/frameworks/react.svg';
+import reactD from '@assets/images/landing/frameworks/react-dark.svg';
+import svelte from '@assets/images/landing/frameworks/svelte.svg';
+import nuxt from '@assets/images/landing/frameworks/nuxt.svg';
+import vue from '@assets/images/landing/frameworks/vue.svg';
+import gatsby from '@assets/images/landing/frameworks/gatsby.svg';
 
 interface Framework {
   name: string;
@@ -55,7 +56,7 @@ export const frameworks: Framework[] = [
   },
   {
     name: 'Gatsby',
-    logo: { light: reactL, dark: reactD },
+    logo: { light: gatsby, dark: gatsby },
     url: '/docs/getting-started/framework-guides/gatsby',
   },
   {
