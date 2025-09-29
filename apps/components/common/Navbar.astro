@@ -8,6 +8,10 @@ import BulbOffIcon from '@components/icons/BulbOffIcon.astro';
 import { Image } from 'astro:assets';
 import '@docsearch/css';
 
+interface RepoInfo {
+  stargazers_count: number;
+}
+
 const menuItems = [
   { name: 'Docs', path: '/docs/getting-started/installation' },
   { name: 'Components', path: '/docs/components/overview' },
@@ -17,6 +21,14 @@ const menuItems = [
 ];
 
 const currentPath = Astro.url.pathname;
+
+const repo: RepoInfo = await fetch("https://api.github.com/repos/hummingbirdui/hummingbird")
+  .then((res) => {
+    if (!res.ok) throw new Error("Failed to fetch GitHub repo");
+    return res.json();
+  });
+
+const stars = repo.stargazers_count;
 ---
 
 <nav class="px-6 md:px-10 sticky top-0 border-b border-light bg-default z-50">
@@ -53,12 +65,13 @@ const currentPath = Astro.url.pathname;
       <BulbIcon data-theme-toggle="dark" />
       <BulbOffIcon data-theme-toggle="light" class="hidden" />
     </button>
-    <a
+     <a
       href="https://github.com/hummingbirdui/hummingbird"
       target="_blank"
-      class="ml-2 btn btn-circle btn-subtle-neutral"
+      class="ml-2 btn max-lg:btn-circle btn-subtle-neutral"
     >
       <GitHubIcon />
+      <span class="hidden lg:flex">{stars}</span>
     </a>
     <a
       data-bs-toggle="offcanvas"
