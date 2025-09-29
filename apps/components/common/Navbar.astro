@@ -5,12 +5,9 @@ import GitHubIcon from '@components/icons/GithubIcon.astro';
 import MenuIcon from '@components/icons/MenuIcon.astro';
 import TimesIcon from '@components/icons/TimesIcon.astro';
 import BulbOffIcon from '@components/icons/BulbOffIcon.astro';
+import { getRepoData } from '@libs/github';
 import { Image } from 'astro:assets';
 import '@docsearch/css';
-
-interface RepoInfo {
-  stargazers_count: number;
-}
 
 const menuItems = [
   { name: 'Docs', path: '/docs/getting-started/installation' },
@@ -22,13 +19,8 @@ const menuItems = [
 
 const currentPath = Astro.url.pathname;
 
-const repo: RepoInfo = await fetch("https://api.github.com/repos/hummingbirdui/hummingbird")
-  .then((res) => {
-    if (!res.ok) throw new Error("Failed to fetch GitHub repo");
-    return res.json();
-  });
-
-const stars = repo.stargazers_count;
+const repo = await getRepoData();
+const stars = repo.stargazers_count ?? 2;
 ---
 
 <nav class="px-6 md:px-10 sticky top-0 border-b border-light bg-default z-50">
