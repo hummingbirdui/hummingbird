@@ -1,13 +1,7 @@
-import Prium from '@assets/images/team-members/prium.png';
-import Ovi from '@assets/images/team-members/ovi.png';
-import Khayrul from '@assets/images/team-members/khayrul.png';
-import Riazul from '@assets/images/team-members/riazul.png';
-import Pantha from '@assets/images/team-members/pantha.png';
-
 interface Member {
   name: string;
   role: string;
-  image: ImageMetadata;
+  url: string;
 }
 
 interface CompanyInfo {
@@ -23,32 +17,32 @@ export const teamMembers: Member[] = [
   {
     name: 'Ashraful Islam Prium',
     role: 'Founder',
-    image: Prium,
+    url: 'https://github.com/prium',
   },
   {
     name: 'Muazzem Hussen Chowdhury',
     role: 'Engineering Manager',
-    image: Ovi,
+    url: 'https://github.com/ovi003',
   },
   {
     name: 'Md. Khayrul Islam',
     role: 'Front-end Developer',
-    image: Khayrul,
+    url: 'https://github.com/khayrul25',
   },
   {
     name: 'Md. Riazul Islam',
     role: 'Jr. Software Engineer',
-    image: Riazul,
+    url: 'https://github.com/riazul01',
   },
   {
     name: 'Pantha Sharma',
-    role: 'UI-UX Designer',
-    image: Pantha,
+    role: 'UI/UX Designer',
+    url: '#',
   },
   {
     name: 'Qurratul Aein Rafia',
     role: 'Editorial Strategist',
-    image: Khayrul,
+    url: 'https://github.com/RafiAein',
   },
 ];
 
