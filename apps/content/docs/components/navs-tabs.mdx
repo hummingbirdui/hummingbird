@@ -9,6 +9,8 @@ classNames:
   modifier:
     - class: nav-underline
       desc: Underlined style
+    - class: nav-tabs
+      desc: Tab style
   inner:
     - class: nav-item
       desc: Nav item
@@ -21,16 +23,23 @@ classNames:
   color:
     - class: nav-primary
       desc: Primary color
+    - class: nav-secondary
+      desc: Secondary color
+    - class: nav-info
+      desc: Info color
+    - class: nav-warning
+      desc: Warning color
+    - class: nav-success
+      desc: Success color
+    - class: nav-danger
+      desc: Danger color
+    - class: nav-neutral
+      desc: Neutral color
 ---
 
 ## Examples
 
 Hummingbird’s navigation provides general markup and styles via the base `.nav` class, including active and disabled states. Built with flexbox, it offers a solid foundation, link padding for larger hit areas, and basic disabled styling.
-
-<div class="mb-5 alert alert-subtle-info items-start" role="alert">
-  <svg class="alert-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M11 17h2v-6h-2zm1-8q.425 0 .713-.288T13 8t-.288-.712T12 7t-.712.288T11 8t.288.713T12 9m0 13q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22m0-2q3.35 0 5.675-2.325T20 12t-2.325-5.675T12 4T6.325 6.325T4 12t2.325 5.675T12 20m0-8" stroke-width="0.5" stroke="currentColor"/></svg>
-  <span class="-mt-1">The base `.nav` component does not include an `.active` state. The examples show it for demonstration only. To indicate the active item for assistive technologies, use the `aria-current` attribute (`page` value for the current page or `true` for the current item in a set).</span>
-</div>
 
 <Example code={`<ul class="nav nav-underline">
     <li class="nav-item">
@@ -67,6 +76,8 @@ Add the `.nav-tabs` class to the basic `.nav` to create a tabbed interface. Use 
   </ul>`} />
 
 ## Color variants
+
+Tabs support multiple color variants. Apply a variant class such as `.nav-primary`, `.nav-secondary`, etc., to change the style.
 
 <Example class='flex flex-col gap-3' code={`<ul class="nav nav-primary">
     <li class="nav-item">
@@ -116,7 +127,7 @@ The nav component is built using a set of CSS variables. These variables provide
 
 ## JavaScript behavior
 
-Use the tab JavaScript plugin either individually or via `bootstrap.js` to extend tabs and pills into tabbable panes of local content.
+Use JavaScript in the familiar pattern of **Bootstrap’s plugins** with full additional TypeScript Support. Include the Tabs JavaScript plugin to enable navigation between tabs.
 
 <Example code={`<ul class="nav nav-underline mb-4" id="myTab" role="tablist">
     <li class="nav-item" role="presentation">

@@ -22,10 +22,9 @@ const isLanding = Astro.url.pathname === '/';
           > – trusted by 2M+ Devs & Counting.
         </p>
         <p class="text-sm text-muted">
-          <a href="https://github.com/hummingbirdui/hummingbird/blob/main/LICENSE" class="text-muted"
-            >MIT</a
-          > for code, <a href="https://creativecommons.org/licenses/by/4.0/" class="text-muted"
-            >CC BY 4.0</a
+          <a href="https://github.com/hummingbirdui/hummingbird/blob/main/LICENSE" class="text-muted">MIT</a> for code, <a
+            href="https://creativecommons.org/licenses/by/4.0/"
+            class="text-muted">CC BY 4.0</a
           > for docs.
         </p>
       </div>
@@ -53,6 +52,15 @@ const isLanding = Astro.url.pathname === '/';
           async
           src="https://api.mailbluster.com/v1/forms/496bdf0c-9372-4a28-90bd-2bf18b3f6c93.js"
           data-form="496bdf0c-9372-4a28-90bd-2bf18b3f6c93"></script>
+        <p class="text-subtle text-xs mt-1.5">
+          Our email newsletters are powered by <a
+            class="text-subtle hover:text-muted"
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://mailbluster.com/?utm_source=hummingbird&utm_medium=attribution&utm_campaign=poweredbymb"
+            >MailBluster</a
+          >
+        </p>
         <h3 class="mb-4 text-sm font-bold text-subtle">Stay Connected</h3>
         <div class="flex gap-4">
           {
@@ -74,3 +82,33 @@ const isLanding = Astro.url.pathname === '/';
     Successfully Subscribed
   </div>
 </footer>
+
+<script>
+  (function () {
+    function hasMessage(el: Element | null) {
+      return el && el.textContent.trim().length > 0;
+    }
+
+    function toggleForm() {
+      const form = document.querySelector('.u_content_form form');
+      if (!form) return;
+      const success = document.querySelector('.u_content_form .success');
+      const error = document.querySelector('.u_content_form .error');
+      if (hasMessage(success) || hasMessage(error)) {
+        form.classList.add('hidden!');
+      } else {
+        form.classList.remove('hidden');
+      }
+    }
+
+    function observe() {
+      const container = document.querySelector('.u_content_form');
+      if (!container) return;
+      toggleForm();
+      new MutationObserver(toggleForm).observe(container, { childList: true, subtree: true, characterData: true });
+    }
+
+    document.addEventListener('DOMContentLoaded', observe);
+    window.addEventListener('pageshow', observe);
+  })();
+</script>

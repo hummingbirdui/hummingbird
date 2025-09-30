@@ -5,14 +5,13 @@ import AppCode from '@components/common/AppCode.astro';
 ---
 
 <CardWrapper color="secondary" class="shadow-secondary/5 dark:shadow-secondary-darker/5">
-  <h3 class="mb-4 text-base font-bold">Css Variables</h3>
+  <h3 class="mb-4 text-base font-bold">CSS Variables</h3>
   <AppCode
     class="grow !overflow-auto scrollbar-hide"
-    code={`.table {
-  color: var(--table-color);
-  background-color: var(--table-bg);
-  border: 1px solid var(--table-border-color);
-  border-radius: 0.25rem;
+    code={`@theme {
+  --color-primary: var(--color-blue-500);
+  --color-secondary: var(--color-purple-500);
+  --color-danger: var(--color-red-500);
 }`}
     lang="sass"
   />

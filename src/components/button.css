@@ -81,7 +81,7 @@
   }
 }
 
-/* variant contained */
+/* variant filled */
 @utility btn-primary {
   @layer base {
     --btn-bg: var(--color-primary);
