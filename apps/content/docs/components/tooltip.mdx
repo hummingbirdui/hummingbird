@@ -36,7 +36,7 @@ Add a custom tooltip using `data-bs-custom-class="custom-tooltip"` for custom st
 
 ## Disabled elements
 
-Elements with the disabled attribute aren’t interactive, meaning users cannot focus, hover, or click them to trigger a tooltip (or popover). As a workaround, you’ll want to trigger the tooltip from a wrapper `<div>` or `<span>`, ideally made keyboard-focusable using tabindex="0".
+Elements with the disabled attribute aren’t interactive, meaning users cannot focus, hover, or click them to trigger a tooltip (or popover). As a workaround, you’ll want to trigger the tooltip from a wrapper `<div>` or `<span>`.
 
 <Example class='text-center' code={`<span class='inline-block' tabindex="0" data-bs-toggle="tooltip" data-bs-title="Disabled tooltip">
     <button class="btn btn-primary" type="button" disabled >Disabled button</button>

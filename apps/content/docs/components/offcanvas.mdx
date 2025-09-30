@@ -6,6 +6,16 @@ classNames:
   component:
     - class: offcanvas
       desc: Offcanvas container
+    - class: offcanvas-sm
+      desc: Make offcanvas under sm breakpoint
+    - class: offcanvas-md
+      desc: Make offcanvas under md breakpoint
+    - class: offcanvas-lg
+      desc: Make offcanvas under lg breakpoint
+    - class: offcanvas-xl
+      desc: Make offcanvas under xl breakpoint
+    - class: offcanvas-xxl
+      desc: Make offcanvas under 2xl breakpoint
   modifier:
     - class: offcanvas-start
       desc: Opens from left
@@ -29,7 +39,7 @@ classNames:
 Offcanvas functions as a sidebar component, capable of being toggled via JavaScript to emerge from the viewport's left, right, top, or bottom edges. Buttons or anchors serve as triggers, attached to specific elements for toggling, and data attributes are employed to invoke the JavaScript.
 
 - Offcanvas shares certain JavaScript code with modals; conceptually, they exhibit strong similarities, yet they remain distinct plugins.
-- Correspondingly, some <a href="https://getbootstrap.com/docs/5.3/components/offcanvas/#sass-variables">source Sass</a> variables governing offcanvas styles and dimensions are inherited from modal variables.
+- Correspondingly, some [css variables](#css-variables) governing offcanvas styles and dimensions are inherited from modal variables.
 - When displayed, offcanvas includes a default backdrop which, when clicked, conceals the offcanvas.
 - Similar to modals, only a single offcanvas element can be shown at any given time.
 
@@ -37,7 +47,10 @@ Offcanvas functions as a sidebar component, capable of being toggled via JavaScr
 
 ## Example
 
-The following offcanvas is open by default using `.show` on `.offcanvas`, which makes the panel immediately visible.
+The offcanvas component can be triggered using either an `<a>` element with href or a `<button>` element with `data-bs-target`.
+
+- Clicking a trigger shows the offcanvas panel
+- The panel can be hidden by clicking the close button (`data-bs-dismiss="offcanvas"`) or by interacting outside the panel.
 
 <Example class='flex justify-center flex-wrap gap-2'
   code={`<a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
@@ -88,7 +101,7 @@ When an offcanvas and its backdrop are visible, scrolling on the `<body>` elemen
 
 ## Body scrolling and backdrop
 
-You can also enable `<body>` scrolling with a backdrop.
+Body scrolling can also be enabled along with a backdrop.
 
 <Example class='text-center' code={`<button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">Enable both scrolling & backdrop</button>
 
@@ -143,7 +156,7 @@ Responsive offcanvas classes hide content below a specified breakpoint, while sh
 - `.offcanvas-xl`
 - `.offcanvas-xxl`
 
-To create a responsive offcanvas, replace the `.offcanvas` base class with a responsive variant and make sure your close button has an explicit `data-bs-target`.
+To create a responsive offcanvas, replace the `.offcanvas` base class with a responsive variant, and ensure the close button includes an explicit `data-bs-target`.
 
 <Example code={`<button class="btn btn-primary lg:hidden" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasResponsive" aria-controls="offcanvasResponsive">Toggle offcanvas</button>
 
@@ -163,7 +176,7 @@ To create a responsive offcanvas, replace the `.offcanvas` base class with a res
 
 ## Placement
 
-Offcanvas components have no default placement, so you must add one of the following modifier classes:
+Offcanvas components have no default placement. Add one of the following modifier classes to define placement:
 
 - `.offcanvas-start` places offcanvas on the left
 - `.offcanvas-end` places offcanvas on the right
