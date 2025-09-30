@@ -83,7 +83,7 @@ The collapse plugin employs specific classes to manage its primary functions:
 - `.collapse.show` displays content.
 - `.collapsing` is present during the transition's start and removed upon its completion.
 
-These classes are located within `_transitions.scss`.
+These classes are located within `transitions.css`.
 
 ### Via Data Attributes
 
@@ -150,7 +150,7 @@ These methods enable content as a collapsible element and accept an optional opt
 A collapse instance can be created with the constructor, as demonstrated:
 
 <Example showPreview={false} lang='js' 
-  code={`const bsCollapse = new hummingbird.Collapse('#myCollapse', {
+  code={`const myCollapse = new hummingbird.Collapse('#myCollapse', {
     toggle: false
 })`} />
 

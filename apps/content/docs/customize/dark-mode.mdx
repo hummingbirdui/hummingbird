@@ -35,7 +35,6 @@ This script manages switching between light and dark themes. It works by:
 
 - Adding or removing the `.dark` class on the `<html>` element
 - Temporarily disabling transitions and animations to avoid flicker when toggling
-- Updating the visibility of toggle icons (`[data-theme-toggle="dark"]` and `[data-theme-toggle="light"]`)
 - Storing the user’s preference in `localStorage` and restoring it automatically on page load
 
 <Example lang='js' showPreview={false} 
@@ -48,25 +47,12 @@ This script manages switching between light and dark themes. It works by:
     else html.classList.remove('dark');
     requestAnimationFrame(() => requestAnimationFrame(() => s.remove()));
   };
-
-  const updateToggleThemeButton = (theme) => {
-    const moonIcon = document.querySelector('[data-theme-toggle="dark"]');
-    const sunIcon = document.querySelector('[data-theme-toggle="light"]');
-    if (theme === 'dark') {
-      moonIcon?.classList.add('hidden');
-      sunIcon?.classList.remove('hidden');
-    } else {
-      moonIcon?.classList.remove('hidden');
-      sunIcon?.classList.add('hidden');
-    }
-  };
   
   document.addEventListener('DOMContentLoaded', () => {
     const savedTheme = localStorage.getItem('theme');
     const initialTheme = savedTheme ?? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
     
     toggleTheme(initialTheme);
-    updateToggleThemeButton(initialTheme);
     
     const toggleThemeBtn = document.querySelector('[data-theme-toggle-btn]');
     toggleThemeBtn?.addEventListener('click', () => {
@@ -74,12 +60,10 @@ This script manages switching between light and dark themes. It works by:
       const newTheme = current === 'dark' ? 'light' : 'dark';
       localStorage.setItem('theme', newTheme);
       toggleTheme(newTheme);
-      updateToggleThemeButton(newTheme);
     });
   });`}
 />
 
-If you do not plan to update the toggle theme button, you can remove the `updateToggleThemeButton` implementation.
 
 ## Toggle button markup (example)
 
@@ -87,8 +71,8 @@ Use any markup you prefer, this example matches your selectors and hides/shows i
 
 <Example lang='html' showPreview={false}
   code={`<button type="button" data-theme-toggle-btn class="btn btn-circle btn-subtle-neutral">
-    <svg data-theme-toggle="dark"><!-- moon icon --></svg>
-    <svg data-theme-toggle="light"><!-- sun icon --></svg>
+    <svg class="dark:hidden"><!-- moon icon --></svg>
+    <svg class="hidden dark:block"><!-- sun icon --></svg>
   </button>
 `}
 />

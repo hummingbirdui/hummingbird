@@ -55,8 +55,8 @@ const stars = repo.stargazers_count ?? 2;
     <div class="mx-2 xl:mx-4 my-auto border-l h-8 xl:h-10 border-base flex lg:hidden xl:flex"></div>
 
     <button class="lg:ml-auto xl:ml-0 btn btn-circle btn-subtle-neutral" data-theme-toggle-btn>
-      <BulbIcon data-theme-toggle="dark" />
-      <BulbOffIcon data-theme-toggle="light" class="hidden" />
+      <BulbIcon data-theme-toggle="dark" class="dark:hidden" />
+      <BulbOffIcon data-theme-toggle="light" class="hidden dark:block" />
     </button>
     <a
       href="https://github.com/hummingbirdui/hummingbird"
