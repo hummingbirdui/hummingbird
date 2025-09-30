@@ -1,6 +1,6 @@
 ---
 title: Laravel
-description: This guide explains how to set up Hummingbird with Laravel using Tailwind CSS. It covers project setup, configuration, and usage so you can quickly build and style components in your Laravel app.
+description: This guide explains how to set up Hummingbird with Laravel using Tailwind CSS. It covers project setup, configuration, and usage for quickly building and styling components in a Laravel app.
 redirects: true
 ---
 
@@ -8,17 +8,17 @@ redirects: true
 
 #### 1. Install Tailwind CSS
 
-Follow the <a href="https://tailwindcss.com/docs/installation/framework-guides/laravel" target="_blank" rel="noopener noreferrer">official installation guide</a> to install Tailwind CSS in your Laravel project.
+Follow the <a href="https://tailwindcss.com/docs/installation/framework-guides/laravel" target="_blank" rel="noopener noreferrer">official installation guide</a> to install Tailwind CSS in a Laravel project.
 
 #### 2. Install Hummingbird
 
-Install Hummingbird via your preferred package manager:
+Install Hummingbird via preferred package manager:
 
 <Example lang='bash' showPreview={false} code={`npm install @hummingbirdui/hummingbird`} />
 
 #### 3. Import CSS
 
-Import Hummingbird styles in your main CSS file (e.g., `app.css`).
+Import Hummingbird styles in the main CSS file (e.g., `app.css`).
 
 <Example lang='css' showPreview={false} 
   code={`@import "tailwindcss";
@@ -31,13 +31,13 @@ Import Hummingbird styles in your main CSS file (e.g., `app.css`).
 
 #### 4. Initialize JS plugins
 
-Import all of the Hummingbird scripts in your main JavaScript file (e.g., `app.js`).
+Import all of the Hummingbird scripts in the main JavaScript file (e.g., `app.js`).
 <Example lang='js' showPreview={false}
   code={`import "@hummingbirdui/hummingbird";`} />
 
 **Using Bundle**
 
-Include Hummingbird javascript at the end of your blade layotu file.
+Include Hummingbird javascript at the end of the blade layout file.
 
 <Example lang='html' showPreview={false} 
   code={`<script src="../path/to/@hummingbirdui/hummingbird/dist/hummingbird.bundle.min.js"></script>`} />
@@ -45,7 +45,7 @@ Include Hummingbird javascript at the end of your blade layotu file.
 
 ## Optimization
 
-Reduce the final bundle size, you can import only the specific JavaScript plugins you need. The below example demonstrates how to import only the `modal` script.
+To reduce the final bundle size, import only the specific JavaScript plugins required. The example below demonstrates importing only the `modal` script.
 
 <Example lang='js' showPreview={false} 
   code={`// import "@hummingbirdui/hummingbird/lib/esm/scripts/alert";
@@ -64,7 +64,7 @@ Reduce the final bundle size, you can import only the specific JavaScript plugin
 
 ## JavaScript API
 
-Hummingbird also provides a JavaScript API for programmatic control of components. For example, you can toggle a modal manually using the API.
+Hummingbird also provides a JavaScript API for programmatic control of components. For example, a modal can be toggled manually using the API.
 
 Here’s how to initialize and use the [Modal](/docs/components/modal) component:
 
