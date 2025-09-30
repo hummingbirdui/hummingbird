@@ -162,7 +162,7 @@ const accordionCollapseList = [...accordionCollapseElementList].map(accordionCol
 
 Options can be configured either through data attributes or JavaScript. When using `data-bs-attributes`, append the option's name (e.g., `data-bs-animation="{value}"`). It is crucial to convert "camelCase" option names to "kebab-case" when passed via data attributes. For instance, use `data-bs-custom-class="beautifier"` rather than `data-bs-customClass="beautifier"`.
 
-As of Bootstrap 5.2.0, all components support an experimental `data-bs-config` data attribute, which can contain component configuration as a JSON string. When an element possesses both `data-bs-config='{"delay":0, "title":123}'` and `data-bs-title="456"`, the final title value will be 456, as individual data attributes override values provided in `data-bs-config`. Furthermore, existing `data-bs-attributes` can also house JSON values, such as `data-bs-delay='{"show":0,"hide":150}'`.
+Collapse component support `data-bs-config` data attribute, which can contain component configuration as a JSON string. When an element possesses both `data-bs-config='{"delay":0, "title":123}'` and `data-bs-title="456"`, the final title value will be 456, as individual data attributes override values provided in `data-bs-config`. Furthermore, existing `data-bs-attributes` can also house JSON values, such as `data-bs-delay='{"show":0,"hide":150}'`.
 
 The ultimate configuration object is the result of merging `data-bs-config`, individual `data-bs-attributes`, and `JavaScript objects` with the latest provided key-value pair taking precedence.
 
