@@ -30,17 +30,12 @@ import { aboutData, teamMembers } from 'apps/data/company';
   <h2 class="text-2xl font-semibold mb-3">Meet Our Team</h2>
   <p class="mb-6 text-muted tracking-tight">Meet the core team behind Hummingbird:</p>
 
-  <div class="grid grid-cols-4 gap-6">
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
     {
       teamMembers.map((item) => (
-        <a href="#" class="card card-action h-75 overflow-hidden">
-          <div class="grow flex items-end">
-            <img src={item.image.src} class="object-contain grayscale" alt={item.name} />
-          </div>
-          <div class="p-2 flex flex-col justify-between h-19">
-            <h6 class="card-title mb-0.5 text-base font-semibold tracking-normal">{item.name}</h6>
-            <p class="mb-0 text-xs text-muted tracking-normal">{item.role}</p>
-          </div>
+        <a href={item.url} class="p-4 card card-action flex flex-col justify-between bg-subtle h-26 overflow-hidden hover:border-primary">
+          <h6 class="card-title text-primary text-base font-semibold tracking-normal">{item.name}</h6>
+          <p class="mb-0 text-xs text-muted tracking-normal">{item.role}</p>
         </a>
       ))
     }
