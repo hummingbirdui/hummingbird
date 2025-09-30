@@ -1,6 +1,6 @@
 ---
 title: Django
-description: This guide explains how to set up Hummingbird with Django using Tailwind CSS. It covers project setup, configuration, and usage so you can quickly build and style components in your Django app.
+description: This guide explains how to set up Hummingbird with Django using Tailwind CSS. It covers project setup, configuration, and usage for quickly building and styling components in a Django app.
 redirects: true
 ---
 
@@ -9,10 +9,10 @@ redirects: true
 Follow the steps to create a new Django project and install Tailwind CSS with HummingBird to get the full benefits of the component library.
 
 #### 1. Prerequisites
-Make sure that you have both <a href="https://nodejs.org/en/download/" target="_blank" rel="noopener noreferrer">Node.js</a> and <a href="https://www.python.org/downloads/" target="_blank" rel="noopener noreferrer">Python</a> installed on your local machine.
+Make sure that both <a href="https://nodejs.org/en/download/" target="_blank" rel="noopener noreferrer">Node.js</a> and <a href="https://www.python.org/downloads/" target="_blank" rel="noopener noreferrer">Python</a> installed on the local machine.
 
 #### 2. Install Django
-Install Django on your device by following the official installation guide or by running the following command in the terminal:
+Install Django on a device by following the official installation guide or by running the following command in the terminal:
 
 <Example lang='bash' showPreview={false} code={`python -m pip install Django`} />
 
@@ -43,7 +43,7 @@ Create a new `templates/` directory inside the project folder and then update th
 
 #### 3. Installed django-compressor
 
-Installed `django-compressor` by running the following command in your terminal:
+Installed `django-compressor` by running the following command in the terminal:
 <Example lang='bash' showPreview={false} code={`python -m pip install django-compressor`} />
 
 Add `compressor` and `hummingbirdapp` to the `INSTALLED_APPS` list inside the `settings.py` file:
@@ -170,7 +170,7 @@ Awesome! Now you have a working Django project locally. Let’s continue by inst
 <Example lang='css' showPreview={false} 
   code={`@import "tailwindcss";`} />
 
-3. Run the CLI tool to scan your source files for classes and build your CSS.
+3. Run the CLI tool to scan source files for classes and build the CSS.
 
 <Example lang='bash' showPreview={false} code={`npx @tailwindcss/cli -i ./static/src/styles.css -o ./static/src/output.css --watch
 `} />
@@ -194,7 +194,7 @@ Awesome! Now you have a working Django project locally. Let’s continue by inst
     └── js
 `} />
 
-4. Copy the `hummingbird.bundle.js` file from `node_modules/@hummingbirdui/hummingbird/dist/` to `static/vendor/js/`. You can use the command below to do that:
+4. Copy the `hummingbird.bundle.js` file from `node_modules/@hummingbirdui/hummingbird/dist/` to `static/vendor/js/`. The following command can be used to do that:
 
 <Example lang='bash' showPreview={false} code={`cp node_modules/@hummingbirdui/hummingbird/dist/hummingbird.bundle.js static/vendor/js/`} />
 
@@ -204,7 +204,6 @@ Awesome! Now you have a working Django project locally. Let’s continue by inst
   code={`<script src="{% static 'vendor/js/hummingbird.bundle.js' %}"></script>`} />
 
 
-Now you have successfully installed HummingBird in your Django project. You can start using the components right away.
-
+Hummingbird has now been successfully installed in the Django project. Components can be used immediately.
 
 **Note:** If the python command doesn't work, try using python3 instead.

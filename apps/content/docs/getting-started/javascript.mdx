@@ -1,6 +1,6 @@
 ---
 title: JavaScript - Hummingbird
-description: This guide provides an overview of Hummingbird's JavaScript components, including how to initialize and use them in your projects.
+description: This guide provides an overview of Hummingbird's JavaScript components, including how to initialize and use them in projects.
 toc: true
 ---
 
@@ -17,7 +17,7 @@ Plugins can be included individually or all at once.
 ```
 <br/>
 
-Alternatively, You can import Hummingbird in your JavaScript entry file. 
+Alternatively, import Hummingbird in the JavaScript entry file. 
 
 ```js
 import "@hummingbirdui/hummingbird";
@@ -30,7 +30,7 @@ import "@hummingbirdui/hummingbird";
 ```
 <br/>
 
-Alternatively, You can import individual plugins in your JavaScript file.
+Alternatively, individual plugins can be imported into a JavaScript file.
 
 ```js
 import "@hummingbirdui/hummingbird/lib/esm/scripts/modal";
@@ -38,9 +38,9 @@ import "@hummingbirdui/hummingbird/lib/esm/scripts/modal";
 
 ## Optimization
 
-To reduce the final bundle size, you can import only the specific JavaScript plugins you need.
+To reduce the final bundle size, import only the specific JavaScript plugins needed.
 
-The below example shows how to import only the [Modal](/docs/components/modal) plugin:
+The example below shows how to import only the [Modal](/docs/components/modal) plugin:
 
 <Example lang='js' showPreview={false} 
   code={`// import "@hummingbirdui/hummingbird/lib/esm/scripts/alert";
@@ -59,7 +59,7 @@ The below example shows how to import only the [Modal](/docs/components/modal) p
 
 ## JavaScript API
 
-Hummingbird also provides a JavaScript API for programmatic control of components. For example, you can toggle an modal manually using the API.
+Hummingbird also provides a JavaScript API for programmatic control of components. For example, any modal can be manually toggled using the API.
 
 Here’s how to initialize and use the [Modal](/docs/components/modal) component:
 
@@ -98,7 +98,7 @@ openBtn.addEventListener("click", () => {
 
 ## TypeScript Support
 
-Hummingbird includes TypeScript definitions for all components. If you're using TypeScript, you can import Hummingbird plugins with their types.
+Hummingbird includes TypeScript definitions for all components. Import Hummingbird plugins with their types while using TypeScript.
 
 ```ts
 import { Modal } from "@hummingbirdui/hummingbird";
@@ -110,19 +110,19 @@ import { type ModalClass, type ModalInstance, type ModalOptions } from "@humming
 Hummingbird supports both **ESM** and **CJS** builds so it works with different environments:
 
 * **ESM**
-  Used by modern bundlers like **Vite**, **Rollup**, and **Webpack 5+**. If your project is using ES modules (`import` syntax), this is what gets loaded automatically.
+  Used by modern bundlers like **Vite**, **Rollup**, and **Webpack 5+**. If the project  is using ES modules (`import` syntax), this is what gets loaded automatically.
 
 * **CJS**
-  Used in **Node.js** or older tooling that relies on `require()`. If your environment doesn’t support ESM, bundlers and Node will fall back to this file.
+  Used in **Node.js** or older tooling that relies on `require()`. If the environment doesn’t support ESM, bundlers and Node will fall back to this file.
 
 You don’t need to choose manually, your bundler or runtime will pick the right version based on your setup.
 
 ## Integration with Frameworks
 
-Hummingbird can be integrated into various JavaScript frameworks like [React](./react), [Vue](./vue), [Angular](./angular), etc. While Hummingbird is primarily designed for use with plain HTML and JavaScript, you can still leverage its components within these frameworks by following best practices for DOM manipulation and component lifecycle management.
+Hummingbird can be integrated into various JavaScript frameworks, including [React](./react), [Vue](./vue), [Angular](./angular), and more. Leverage its components within these frameworks by following best practices for DOM manipulation and component lifecycle management.
 
 Follow the framework-specific guidelines to ensure smooth integration and optimal performance.
 
 ## Dependencies
 
-Some JavaScript components depend on [Popper](https://popper.js.org/docs/v2/) for positioning elements like dropdowns, tooltips and popovers. Make sure to include Popper.js in your project if you're using these components or use `himmingbird.bundle.min.js` which includes Popper.js.
+Some JavaScript components rely on [Popper](https://popper.js.org/docs/v2/) for positioning elements, such as dropdowns, tooltips, and pop-overs. When using these components, include `Popper.js` in the project, or use `himmingbird.bundle.min.js`, which includes `Popper.js`.
