@@ -35,7 +35,7 @@ Include Hummingbird JavaScript at the end of your HTML body.
 <Example lang='html' showPreview={false} 
   code={`<script src="../path/to/@hummingbirdui/hummingbird/dist/hummingbird.bundle.min.js"></script>`} />
 
-Alternatively, You can import Hummingbird in your JavaScript entry file.
+Alternatively, when using a build system (e.g., Vite or Webpack), you can include Hummingbird by importing it in your JavaScript entry file.
 
 <Example lang='js' showPreview={false} 
   code={`import '@hummingbirdui/hummingbird';`} />
@@ -58,12 +58,12 @@ Here’s how to initialize and use the [Modal](/docs/components/modal) component
 
 ```js
 import { Modal } from "@hummingbirdui/hummingbird";
-  const openBtn = document.querySelector("[data-open-demo-modal]");
-  const myModal = new Modal(".modal");
+const openBtn = document.querySelector("[data-open-demo-modal]");
+const myModal = new Modal(".modal");
 
-  openBtn.addEventListener("click", () => {
-    myModal.show();
-  });
+openBtn.addEventListener("click", () => {
+  myModal.show();
+});
 ```
 
 ### TypeScript Support

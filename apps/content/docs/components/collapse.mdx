@@ -6,7 +6,7 @@ classNames:
   component:
   - class: collapse
     desc: Collapse
-  inner:
+  modifier:
   - class: collapse-horizontal
     desc: Accordion item component
   - class: multi-collapse
@@ -15,12 +15,13 @@ classNames:
 
 ## Example
 
-Click the buttons below to toggle visibility of another element using class changes:
+Use the collapse component to toggle visibility with class changes:
+
 - `.collapse` hides content
-- `.collapsing` is applied during transitions
+- `.collapsing` applies during transitions
 - `.collapse.show` displays content
 
-We generally recommend using a `<button>` with the `data-bs-target` attribute. Although not semantically ideal, you can also use an `<a>` link with the href attribute and `role="button"`. In both cases, `data-bs-toggle="collapse"` is required.
+Use a `<button>` with `data-bs-target` (recommended), or an `<a>` with href and `role="button"`. In both cases, include `data-bs-toggle="collapse"`.
 
 <Example code={`<div class="inline-flex gap-2 mb-3">
     <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">Link with href</a>
@@ -35,19 +36,14 @@ We generally recommend using a `<button>` with the `data-bs-target` attribute. A
 
 ## Horizontal
 
-The collapse plugin also supports horizontal collapsing. Add the `.collapse-horizontal` modifier class to transition the `width` instead of `height`, and make sure to set a `width` on the immediate child element. You can use custom Sass, inline styles, or our <a href="https://getbootstrap.com/docs/5.3/utilities/sizing/">width utilities</a> to do this.
-
-<div class="mb-5 alert alert-subtle-info items-start" role="alert">
-  <svg class="alert-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M11 17h2v-6h-2zm1-8q.425 0 .713-.288T13 8t-.288-.712T12 7t-.712.288T11 8t.288.713T12 9m0 13q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22m0-2q3.35 0 5.675-2.325T20 12t-2.325-5.675T12 4T6.325 6.325T4 12t2.325 5.675T12 20m0-8" stroke-width="0.5" stroke="currentColor"/></svg>
-  <span class="-mt-1">Please note that while the example below, a `min-height` is set to reduce excessive repaints in our docs, but this is not required. **The only requirement is setting a `width` on the child element.**</span>
-</div>
+The collapse plugin supports horizontal collapsing. Add the `.collapse-horizontal` class to transition the width instead of the height, and define a width on the immediate child element.
 
 <Example code={`<div class='mb-3'>
     <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample" aria-expanded="false" aria-controls="collapseWidthExample">Toggle width collapse</button>
   </div>
-  <div style="min-height: 120px;">
+  <div class='min-h-30'>
     <div class="collapse collapse-horizontal" id="collapseWidthExample">
-      <div class="card card-body" style="width: 300px;">
+      <div class="card card-body w-75">
         This is some placeholder content for a horizontal collapse. It’s hidden by default and shown when triggered.
       </div>
     </div>
@@ -55,7 +51,7 @@ The collapse plugin also supports horizontal collapsing. Add the `.collapse-hori
 
 ## Multiple toggles and targets
 
-A `<button>` or `<a>` element can toggle multiple elements by referencing them with a selector in its `data-bs-target` or href attribute. Conversely, multiple `<button>` or `<a>` elements can toggle the same element if each references it using `data-bs-target` or `href`.
+A `<button>` or `<a>` can control multiple elements by listing them in its `data-bs-target` or href attribute. Conversely, multiple `<button>` or `<a>` elements can control the same target if they reference it with `data-bs-target` or `href`.
 
 <Example code={`<div class="inline-flex gap-1 mb-3">
     <a class="btn btn-primary" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Toggle first element</a>

@@ -1,6 +1,6 @@
 {
   "name": "@hummingbirdui/hummingbird",
-  "version": "0.0.0-insiders.2.0",
+  "version": "0.0.0-insiders.2.2",
   "description": "An open-source system designed for rapid development, without sacrificing the granular control of utility-first CSS.",
   "keywords": [
     "hummingbird",
@@ -38,7 +38,9 @@
     "lib/esm/**/*.{js,js.map,d.ts}",
     "lib/cjs/**/*.{js,js.map,d.ts}",
     "src/index.css",
+    "src/reboot.css",
     "src/components/**/*.css",
+    "src/layout/**/*.css",
     "src/theme/**/*.css"
   ],
   "author": "Hummingbird UI",
