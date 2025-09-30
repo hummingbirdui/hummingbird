@@ -36,7 +36,7 @@ Add a custom tooltip using `data-bs-custom-class="custom-tooltip"` for custom st
 
 ## Disabled elements
 
-Elements with the disabled attribute aren’t interactive, meaning users cannot focus, hover, or click them to trigger a tooltip (or popover). As a workaround, you’ll want to trigger the tooltip from a wrapper `<div>` or `<span>`, ideally made keyboard-focusable using tabindex="0".
+Elements with the disabled attribute aren’t interactive, meaning users cannot focus, hover, or click them to trigger a tooltip (or popover). As a workaround, you’ll want to trigger the tooltip from a wrapper `<div>` or `<span>`.
 
 <Example class='text-center' code={`<span class='inline-block' tabindex="0" data-bs-toggle="tooltip" data-bs-title="Disabled tooltip">
     <button class="btn btn-primary" type="button" disabled >Disabled button</button>
@@ -71,14 +71,14 @@ Use JavaScript in the familiar pattern of **Bootstrap’s plugins** with full ad
 The tooltip plugin dynamically generates content and markup. By default, tooltips are positioned after their trigger element. A tooltip can be triggered via JavaScript as follows:
 
 <Example showPreview={false} lang='js' code={`const exampleEl = document.getElementById('example')
-const tooltip = new bootstrap.Tooltip(exampleEl, options)
+const tooltip = new hummingbird.Tooltip(exampleEl, options)
 `} />
 
 <div class="alert alert-subtle-warning items-start [&_div]:mb-0 [&_pre]:!bg-warning/10 [&_pre]:border [&_pre]:border-warning/30" role="alert">
   <svg class="alert-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M11 17h2v-6h-2zm1-8q.425 0 .713-.288T13 8t-.288-.712T12 7t-.712.288T11 8t.288.713T12 9m0 13q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22m0-2q3.35 0 5.675-2.325T20 12t-2.325-5.675T12 4T6.325 6.325T4 12t2.325 5.675T12 20m0-8" stroke-width="0.5" stroke="currentColor"/></svg>
   <div class="-mt-1 flex flex-col gap-2">
     <span>Tooltips automatically attempt to adjust their positions when a parent container has `overflow: auto` or `overflow: scroll`, while still maintaining the original placement's positioning. The boundary option (used for the flip modifier via the `popperConfig` option) can be set to any HTMLElement to override the default value, `'clippingParents'`, such as `document.body`:</span>
-    <Example showPreview={false} lang='js' code={`const tooltip = new bootstrap.Tooltip('#example', {
+    <Example showPreview={false} lang='js' code={`const tooltip = new hummingbird.Tooltip('#example', {
     boundary: document.body // or document.querySelector('#boundary')
   })`} />
   </div>
@@ -116,7 +116,7 @@ Elements with the disabled attribute are not interactive, meaning users cannot f
 
 Options can be provided through data attributes or via JavaScript. When using `data-bs-attributes`, append the option's name (e.g., `data-bs-animation="{value}"`). It is crucial to convert "camelCase" option names to "kebab-case" when passing options via data attributes. For instance, use `data-bs-custom-class="beautifier"` rather than `data-bs-customClass="beautifier"`.
 
-As of Bootstrap 5.2.0, all components support an **experimental** data-bs-config data attribute. This attribute can contain simple component configurations as a JSON string. If an element has both `data-bs-config='{"delay":0, "title":123}'` and `data-bs-title="456"` attributes, the final title value will be 456, as separate data attributes override values provided within `data-bs-config`. Additionally, existing data attributes can also house JSON values, such as `data-bs-delay='{"show":0,"hide":150}'`.
+Tooltip component support data-bs-config data attribute. This attribute can contain simple component configurations as a JSON string. If an element has both `data-bs-config='{"delay":0, "title":123}'` and `data-bs-title="456"` attributes, the final title value will be 456, as separate data attributes override values provided within `data-bs-config`. Additionally, existing data attributes can also house JSON values, such as `data-bs-delay='{"show":0,"hide":150}'`.
 
 The ultimate configuration object results from merging `data-bs-config`, individual `data-bs-attributes`, and JavaScript objects, where the latest provided key-value pair takes precedence over others.
 
@@ -275,7 +275,7 @@ using function with `popperConfig`:
 
 <div class="alert alert-subtle-danger items-start mb-6" role="alert">
   <svg class="alert-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="currentColor" d="M12 17q.425 0 .713-.288T13 16t-.288-.712T12 15t-.712.288T11 16t.288.713T12 17m-1-4h2V7h-2zm1 9q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22m0-2q3.35 0 5.675-2.325T20 12t-2.325-5.675T12 4T6.325 6.325T4 12t2.325 5.675T12 20m0-8" stroke-width="0.5" stroke="currentColor"/></svg>
-  <span class="-mt-1">**All API methods are asynchronous and initiate a transition.** They return to the caller immediately after the transition begins but before it concludes. Furthermore, a method call on a component that is already transitioning will be disregarded. More information is available in our <a href="#">JavaScript documentation</a>.</span>
+  <span class="-mt-1">**All API methods are asynchronous and initiate a transition.** They return to the caller immediately after the transition begins but before it concludes. Furthermore, a method call on a component that is already transitioning will be disregarded. More information is available in Bootstrap's <a href="#">JavaScript documentation</a>.</span>
 </div>
 
 <HbTable>
@@ -334,7 +334,7 @@ using function with `popperConfig`:
 </HbTable>
 
 <Example showPreview={false} lang='js'
-  code={`const tooltip = bootstrap.Tooltip.getInstance('#example') // Returns a Bootstrap tooltip instance
+  code={`const tooltip = hummingbird.Tooltip.getInstance('#example') // Returns a hummingbird tooltip instance
 
   // setContent example
   tooltip.setContent({ '.tooltip-inner': 'another title' })`} 
@@ -382,7 +382,7 @@ Example event listener:
 
 <Example showPreview={false} lang='js'
   code={`const myTooltipEl = document.getElementById('myTooltip')
-  const tooltip = bootstrap.Tooltip.getOrCreateInstance(myTooltipEl)
+  const tooltip = hummingbird.Tooltip.getOrCreateInstance(myTooltipEl)
 
   myTooltipEl.addEventListener('hidden.bs.tooltip', () => {
     // do something...

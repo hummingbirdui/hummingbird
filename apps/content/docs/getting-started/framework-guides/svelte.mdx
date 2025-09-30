@@ -1,6 +1,6 @@
 ---
 title: Svelte
-description: This guide explains how to set up Hummingbird with Svelte and SvelteKit using Tailwind CSS. It covers project setup, configuration, and usage so you can quickly build and style components in your Svelte app.
+description: This guide explains how to set up Hummingbird with Svelte and SvelteKit using Tailwind CSS. It covers project setup, configuration, and usage for quickly building and styling components in a Svelte app.
 redirects: true
 ---
 
@@ -8,17 +8,17 @@ redirects: true
 
 #### 1. Install Tailwind CSS
 
-Follow the <a href="https://tailwindcss.com/docs/installation/framework-guides/sveltekit" target="_blank" rel="noopener noreferrer">official installation guide</a> to install Tailwind CSS in your Svelte project.
+Follow the <a href="https://tailwindcss.com/docs/installation/framework-guides/sveltekit" target="_blank" rel="noopener noreferrer">official installation guide</a> to install Tailwind CSS in a Svelte project.
 
 #### 2. Install Hummingbird
 
-Install Hummingbird via your preferred package manager:
+Install Hummingbird via preferred package manager:
 
 <Example lang='bash' showPreview={false} code={`npm install @hummingbirdui/hummingbird`} />
 
 #### 3. Import CSS
 
-Import Hummingbird styles in your main CSS file (e.g., `app.css`).
+Import Hummingbird styles in the main CSS file (e.g., `app.css`).
 
 <Example lang='css' showPreview={false} 
   code={`@import "tailwindcss";
@@ -26,7 +26,7 @@ Import Hummingbird styles in your main CSS file (e.g., `app.css`).
 
 #### 4. Initialize JS plugins
 
-Import Hummingbird inside `afterNavigate` in your root `+layout.svelte`. The `afterNavigate` lifecycle hook ensures that the scripts load after each route navigation.
+Import Hummingbird inside `afterNavigate` in the root `+layout.svelte`. The `afterNavigate` lifecycle hook ensures that the scripts load after each route navigation.
 
 <Example lang='svelte' showPreview={false}
   code={`<!-- +layout.svelte -->
@@ -43,7 +43,7 @@ Import Hummingbird inside `afterNavigate` in your root `+layout.svelte`. The `af
 
 ## Optimization
 
-Reduce the final bundle size, you can import only the specific JavaScript plugins you need. The below example demonstrates how to import only the `modal` script.
+To reduce the final bundle size, import only the specific JavaScript plugins required. The example below demonstrates importing only the `modal` script.
 
 <Example lang='svelte' showPreview={false}
   code={`<!-- +layout.svelte -->
@@ -71,7 +71,7 @@ Reduce the final bundle size, you can import only the specific JavaScript plugin
 
 ## JavaScript API
 
-Hummingbird also provides a JavaScript API for programmatic control of components. For example, you can toggle an modal manually using the API.
+Hummingbird also provides a JavaScript API for programmatic control of components. For example, a modal can be toggled manually using the API.
 
 Here’s how to initialize and use the [Modal](/docs/components/modal) component:
 

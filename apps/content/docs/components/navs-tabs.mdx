@@ -150,7 +150,7 @@ Use JavaScript in the familiar pattern of **Bootstrap’s plugins** with full ad
     <div class="tab-pane fade" id="disabled-tab-pane" role="tabpanel" aria-labelledby="disabled-tab" tabindex="0">Disabled</div>
   </div>`} />
 
-To help fit your needs, this works with `<ul>`-based markup, as shown above, or with any arbitrary “roll your own” markup. Note that if you’re using `<nav>`, you shouldn’t add role="tablist" directly to it, as this would override the element’s native role as a navigation landmark. Instead, switch to an alternative element (in the example below, a simple `<div>`) and wrap the `<nav>` around it.
+Tabs work with `<ul>` based markup, as shown above, or with any custom markup. When using `<nav>`, avoid adding role="tablist" directly, since it overrides the element’s native role as a navigation landmark. Instead, wrap the `<nav>` around another element (for example, a `<div>`) and apply `role="tablist"` there.
 
 <Example code={`<nav>
     <div class="nav nav-underline mb-4" id="nav-tab" role="tablist">
@@ -167,7 +167,7 @@ To help fit your needs, this works with `<ul>`-based markup, as shown above, or 
     <div class="tab-pane fade" id="nav-disabled" role="tabpanel" aria-labelledby="nav-disabled-tab" tabindex="0">Disabled</div>
   </div>`} />
 
-The tabs plugin also works with lift nav & color variants.
+The tabs plugin also works with nav tabs & color variants.
 
 <Example code={`<ul class="nav nav-tabs mb-4" id="nav-tab-lift" role="tablist">
     <li class="nav-item" role="presentation">
@@ -280,10 +280,10 @@ Individual tabs can be activated in several ways:
 
 <Example showPreview={false} lang='js'
   code={`const triggerEl = document.querySelector('#myTab button[data-bs-target="#profile"]')
-  bootstrap.Tab.getInstance(triggerEl).show() // Select tab by name
+  hummingbird.Tab.getInstance(triggerEl).show() // Select tab by name
 
   const triggerFirstTabEl = document.querySelector('#myTab li:first-child button')
-  bootstrap.Tab.getInstance(triggerFirstTabEl).show() // Select first tab`} 
+  hummingbird.Tab.getInstance(triggerFirstTabEl).show() // Select first tab`} 
 />
 
 ## Fade Effect
@@ -303,7 +303,7 @@ To incorporate a `fade-in` effect for tabs, add `.fade` to each `.tab-pane`. The
 
 <div class="alert alert-subtle-danger items-start mb-6" role="alert">
   <svg class="alert-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M12 17q.425 0 .713-.288T13 16t-.288-.712T12 15t-.712.288T11 16t.288.713T12 17m-1-4h2V7h-2zm1 9q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22m0-2q3.35 0 5.675-2.325T20 12t-2.325-5.675T12 4T6.325 6.325T4 12t2.325 5.675T12 20m0-8" stroke-width="0.5" stroke="currentColor"/></svg>
-  <span class="-mt-1">**All API methods are asynchronous and initiate a transition.** They return to the caller immediately after the transition begins but before it concludes. Furthermore, a method call on a component that is already transitioning will be disregarded. More information is available in our <a href="https://getbootstrap.com/docs/5.3/getting-started/javascript/#asynchronous-functions-and-transitions">JavaScript documentation.</a></span>
+  <span class="-mt-1">**All API methods are asynchronous and initiate a transition.** They return to the caller immediately after the transition begins but before it concludes. Furthermore, a method call on a component that is already transitioning will be disregarded. More information is available in Bootstrap's <a href="https://getbootstrap.com/docs/5.3/getting-started/javascript/#asynchronous-functions-and-transitions">JavaScript documentation.</a></span>
 </div>
 
 These methods enable content as a tab element.

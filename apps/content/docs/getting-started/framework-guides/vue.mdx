@@ -1,6 +1,6 @@
 ---
 title: Vue
-description: This guide explains how to set up Hummingbird with Vue 3 using Tailwind CSS. It covers project setup, configuration, and usage so you can quickly build and style components in your Vue app.
+description: This guide explains how to set up Hummingbird with Vue 3 using Tailwind CSS. It covers project setup, configuration, and usage for quickly building and styling components in a Vue app.
 redirects: true
 ---
 
@@ -9,17 +9,17 @@ redirects: true
 
 #### 1. Install Tailwind CSS
 
-Follow the <a href="https://tailwindcss.com/docs/installation" target="_blank" rel="noopener noreferrer">official installation guide</a> to install Tailwind CSS in your Vue project.
+Follow the <a href="https://tailwindcss.com/docs/installation" target="_blank" rel="noopener noreferrer">official installation guide</a> to install Tailwind CSS in a Vue project.
 
 #### 2. Install Hummingbird
 
-Install Hummingbird via your preferred package manager:
+Install Hummingbird via preferred package manager:
 
 <Example lang='bash' showPreview={false} code={`npm install @hummingbirdui/hummingbird`} />
 
 #### 3. Import CSS
 
-Import Hummingbird styles in your main CSS file (e.g., `main.css`).
+Import Hummingbird styles in the main CSS file (e.g., `main.css`).
 
 <Example lang='css' showPreview={false} 
   code={`/* main.css */
@@ -47,7 +47,7 @@ To use Hummingbird in a Vue 3 project, import the full library inside the `onMou
 
 ## Optimization
 
-Reduce the final bundle size, you can import only the specific JavaScript plugins you need. The below example demonstrates how to import only the `modal` script.
+To reduce the final bundle size, import only the specific JavaScript plugins required. The example below demonstrates importing only the `modal` script.
 
 <Example lang='vue' showPreview={false} 
   code={`<script setup>
@@ -76,7 +76,7 @@ Reduce the final bundle size, you can import only the specific JavaScript plugin
 
 ## JavaScript API
 
-Hummingbird also provides a JavaScript API for programmatic control of components. For example, you can toggle an modal manually using the API.
+Hummingbird also provides a JavaScript API for programmatic control of components. For example, a modal can be toggled manually using the API.
 
 Here’s how to initialize and use the [Modal](/docs/components/modal) component:
 

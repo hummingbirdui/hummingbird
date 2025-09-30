@@ -8,6 +8,7 @@ import BulbOffIcon from '@components/icons/BulbOffIcon.astro';
 import { getRepoData } from '@libs/github';
 import { Image } from 'astro:assets';
 import '@docsearch/css';
+import { VERSION } from 'apps/const';
 
 const menuItems = [
   { name: 'Docs', path: '/docs/getting-started/installation' },
@@ -29,7 +30,7 @@ const stars = repo.stargazers_count ?? 2;
       <Image src={logo} alt="Logo" class="w-10 h-10" />
       <h5 class="mb-0 text-muted font-semibold hidden sm:flex">hummingbird</h5>
     </a>
-    <span class="ml-1 sm:ml-4 badge badge-subtle shrink-0">v 1.0.0</span>
+    <span class="ml-1 sm:ml-4 badge badge-subtle shrink-0">{VERSION}</span>
     <div id="docsearch" class="hidden lg:block"></div>
 
     <ul class="navbar-nav ms-auto flex-row items-center hidden xl:flex">
@@ -54,10 +55,10 @@ const stars = repo.stargazers_count ?? 2;
     <div class="mx-2 xl:mx-4 my-auto border-l h-8 xl:h-10 border-base flex lg:hidden xl:flex"></div>
 
     <button class="lg:ml-auto xl:ml-0 btn btn-circle btn-subtle-neutral" data-theme-toggle-btn>
-      <BulbIcon data-theme-toggle="dark" />
-      <BulbOffIcon data-theme-toggle="light" class="hidden" />
+      <BulbIcon data-theme-toggle="dark" class="dark:hidden" />
+      <BulbOffIcon data-theme-toggle="light" class="hidden dark:block" />
     </button>
-     <a
+    <a
       href="https://github.com/hummingbirdui/hummingbird"
       target="_blank"
       class="ml-2 btn max-lg:btn-circle btn-subtle-neutral"
@@ -67,9 +68,9 @@ const stars = repo.stargazers_count ?? 2;
     </a>
     <a
       data-bs-toggle="offcanvas"
-      href="#offcanvasExample"
+      href="#mainNavOffcanvas"
       role="button"
-      aria-controls="offcanvasExample"
+      aria-controls="mainNavOffcanvas"
       class="ml-6 btn btn-circle btn-subtle-neutral flex xl:hidden"
     >
       <MenuIcon />
@@ -78,7 +79,7 @@ const stars = repo.stargazers_count ?? 2;
 </nav>
 
 <!-- offcanvas -->
-<div id="offcanvasExample" class="offcanvas offcanvas-end" tabindex="-1" aria-labelledby="offcanvasExampleLabel">
+<div id="mainNavOffcanvas" class="offcanvas offcanvas-end" tabindex="-1" aria-labelledby="mainNavOffcanvasLabel">
   <div class="px-6 py-5 flex justify-between items-center">
     <a class="navbar-brand flex items-center gap-2" href="/">
       <Image src={logo} alt="Logo" class="w-10 h-10" />

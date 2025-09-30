@@ -27,24 +27,11 @@ const toggleTheme = (theme: Theme) => {
   requestAnimationFrame(() => requestAnimationFrame(() => s.remove()));
 };
 
-const updateToggleThemeButton = (theme: Theme, toggleThemeButton?: Element) => {
-  const moonIcon = (toggleThemeButton || document).querySelector('[data-theme-toggle="dark"]');
-  const sunIcon = (toggleThemeButton || document).querySelector('[data-theme-toggle="light"]');
-  if (theme === 'dark') {
-    moonIcon?.classList.add('hidden');
-    sunIcon?.classList.remove('hidden');
-  } else {
-    moonIcon?.classList.remove('hidden');
-    sunIcon?.classList.add('hidden');
-  }
-};
-
 document.addEventListener('DOMContentLoaded', () => {
   const savedTheme = localStorage.getItem('theme') as Theme | null;
   const initialTheme: Theme =
     savedTheme ?? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
   toggleTheme(initialTheme);
-  updateToggleThemeButton(initialTheme);
   const toggleThemeBtns = document.querySelectorAll('[data-theme-toggle-btn]');
   toggleThemeBtns.forEach((button) => {
     button?.addEventListener('click', () => {
@@ -52,7 +39,6 @@ document.addEventListener('DOMContentLoaded', () => {
       const newTheme: Theme = current === 'dark' ? 'light' : 'dark';
       localStorage.setItem('theme', newTheme);
       toggleTheme(newTheme);
-      updateToggleThemeButton(newTheme, button);
     });
   });
 

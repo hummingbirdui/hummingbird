@@ -1,13 +1,13 @@
 ---
 title: React & React Router Framework mode
-description: This guide explains how to set up Hummingbird with React + Vite using Tailwind CSS. It covers project setup, configuration, and usage so you can quickly build and style components in your React app.
+description: This guide explains how to set up Hummingbird with React + Vite using Tailwind CSS. It covers project setup, configuration, and usage for quickly building and styling components in a React app.
 redirects: true
 ---
 
 ## Installation
 
 #### 1. Install Tailwind CSS
-Follow the <a href="https://tailwindcss.com/docs/installation" target="_blank" rel="noopener noreferrer">official installation guide</a> to install Tailwind CSS in your React project.
+Follow the <a href="https://tailwindcss.com/docs/installation" target="_blank" rel="noopener noreferrer">official installation guide</a> to install Tailwind CSS in a React project.
 
 #### 2. Install Hummingbird
 Install Hummingbird via preferred package manager:
@@ -16,7 +16,7 @@ Install Hummingbird via preferred package manager:
 
 #### 3. Import CSS
 
-Import Hummingbird styles in your main CSS file (e.g., `index.css` or `app.css`).
+Import Hummingbird styles in the main CSS file (e.g., `index.css` or `app.css`).
 
 <Example lang='css' showPreview={false} 
   code={`@import "tailwindcss";
@@ -24,7 +24,7 @@ Import Hummingbird styles in your main CSS file (e.g., `index.css` or `app.css`)
 
 #### 4. Initialize JS plugins
 
-Initialize hummingbird at the root of your application, for example in `App.js` or `App.tsx`.
+Initialize hummingbird at the root of the application, for example in `App.js` or `App.tsx`.
 
 <Example lang='js' showPreview={false}
   code={`import { useEffect } from "react";
@@ -53,7 +53,7 @@ Initialize hummingbird at the root of your application, for example in `App.js` 
 
 ## Optimization
 
-Reduce the final bundle size, you can import only the specific JavaScript plugins you need. The below example demonstrates how to import only the `modal` script.
+To reduce the final bundle size, import only the specific JavaScript plugins that are needed. The example below demonstrates how to import only the `modal` script.
 
 <Example lang='js' showPreview={false}
   code={`import { useEffect } from "react";
@@ -96,7 +96,7 @@ Reduce the final bundle size, you can import only the specific JavaScript plugin
 
 ## JavaScript API
 
-Hummingbird also provides a JavaScript API for programmatic control of components. For example, you can toggle a modal manually using the API.
+Hummingbird also provides a JavaScript API for programmatic control of components. For example, a modal can be toggled manually using the API.
 
 Here’s how to initialize and use the [Modal](/docs/components/modal) component:
 
