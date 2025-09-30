@@ -78,7 +78,7 @@
 }
 
 .astro-code {
-  @apply overflow-hidden bg-muted! text-sm p-4 rounded-lg;
+  @apply overflow-y-hidden bg-muted! text-sm p-4 rounded-lg;
   .shiki {
     @apply bg-transparent!;
   }
@@ -252,10 +252,10 @@
       }
     }
   }
+  .success {
+    @apply border-transparent! bg-success-lighter! text-success-darker! px-4! py-3.5 font-sans! font-medium text-base!;
+  }
 }
 .powered-by {
-  @apply pb-0!;
-}
-[title='Powered by MailBluster'] {
-  @apply w-20!;
+  @apply hidden!;
 }
