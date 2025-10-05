@@ -123,6 +123,9 @@
   --docsearch-footer-shadow: none;
   --docsearch-footer-height: --spacing(12);
 }
+.DocSearch-Container {
+  @apply z-2000!;
+}
 
 .DocSearch.DocSearch-Button {
   @apply ml-8 2xl:ml-15 w-[37px] lg:w-70 h-[37px] bg-muted lg:px-4 lg:rounded-lg hover:shadow-none focus:shadow-none hover:bg-highlight;
