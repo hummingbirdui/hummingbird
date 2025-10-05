@@ -40,7 +40,7 @@ The basic card component offers a flexible and structured container for displayi
 - **Body:** Contains the main content, such as text and images.
 - **Footer:** Ideal for actions, like buttons or links.
 
-<Example class='flex justify-center' code={`<div class="card max-w-[18rem]">
+<Example class='flex justify-center' code={`<div class="card max-w-72">
     <div class="card-header">
       <p class='mb-0'>Basic Card</p>
     </div>
@@ -60,7 +60,7 @@ Cards support flexible image placement using utility classes.
 
 Use `.card-img-top`, `.card-img-bottom`, `.card-img-left`, or `.card-img-right` to place images on any side of the card.
 
-<Example class='flex justify-center' code={`<div class="card max-w-[22rem]">
+<Example class='flex justify-center' code={`<div class="card max-w-88">
     <img src="/images/1.png" alt="Hummingbird" class='card-img-top' />
     <div class="card-body">
       <h4 class="card-title">Hummingbirds</h4>
@@ -76,7 +76,7 @@ Use `.card-img-top`, `.card-img-bottom`, `.card-img-left`, or `.card-img-right` 
 
 A card action turns the entire card into a clickable element, allowing navigation or interaction when selected. Use `.card-action` along with `.card`.
 
-<Example class='flex justify-center' code={`<a href="#" class="card card-action max-w-[22rem]">
+<Example class='flex justify-center' code={`<a href="#" class="card card-action max-w-88">
     <img src="/images/1.png" alt="Hummingbird" class='card-img-top' />
     <div class="card-body">
       <h4 class="card-title">Hummingbirds</h4>
@@ -88,7 +88,7 @@ A card action turns the entire card into a clickable element, allowing navigatio
 
 Combine components and utility classes to create richer layouts with customized spacing, alignment, and behavior.
 
-<Example class='flex justify-center' code={`<div class="card max-w-[22rem]">
+<Example class='flex justify-center' code={`<div class="card max-w-88">
     <div class="card-header border-0">
       <div class="flex items-center">
         <div class="avatar avatar-lg me-4">
@@ -124,7 +124,7 @@ Combine components and utility classes to create richer layouts with customized 
 
 Place content over an image using the `.card-img-overlay` class.
 
-<Example class='flex justify-center' code={`<div class="card card-img-overlay max-w-[22rem]">
+<Example class='flex justify-center' code={`<div class="card card-img-overlay max-w-88">
     <img src="/images/2.png" alt="Hummingbird" class="card-img-top" />
     <div class="card-body flex flex-col items-start">
       <h4 class="card-title">Hummingbirds</h4>
@@ -137,7 +137,7 @@ Place content over an image using the `.card-img-overlay` class.
 
 Use the `.card-aside` layout to place images or media alongside card content, either on the left or right.
 
-<Example class='flex flex-col items-center gap-3' code={`<div class="card card-aside max-w-[30rem]">
+<Example class='flex flex-col items-center gap-3' code={`<div class="card card-aside max-w-120">
     <div class="flex items-center justify-center">
       <img src="/images/3.png" alt="Hummingbird" class='card-img-left' />
     </div>
@@ -148,7 +148,7 @@ Use the `.card-aside` layout to place images or media alongside card content, ei
     </div>
   </div>
 
-  <div class="card card-aside max-w-[30rem]">
+  <div class="card card-aside max-w-120">
     <div class="card-body">
       <h4 class="card-title">Violetear</h4>
       <p class="mb-0">The violetears are hummingbirds of the genus Colibri.</p>
