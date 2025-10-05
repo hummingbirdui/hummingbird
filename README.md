@@ -22,11 +22,14 @@
   - [Install Hummingbird](#install-hummingbird)
   - [Import CSS](#import-css)
   - [Initialize JS plugins](#initialize-js-plugins)
+- [Optimization](#optimization)
 - [TypeScript Support](#typescript-support)
-- [Supported Frameworks](#-supported-frameworks)
+- [ESM vs CJS](#esm-vs-cjs)
+- [Supported Frameworks](#supported-frameworks)
 - [License](#license)
 - [Meet the Team](#meet-the-team)
 - [Contributors](#contributors)
+
 
 ---
 
