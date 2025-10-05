@@ -78,7 +78,7 @@
 }
 
 .astro-code {
-  @apply overflow-y-hidden !bg-muted text-sm p-4 rounded-lg;
+  @apply overflow-scroll !bg-muted text-sm p-4 rounded-lg;
   .shiki {
     @apply !bg-transparent;
   }
