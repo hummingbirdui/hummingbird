@@ -98,10 +98,10 @@ import darkLgImage from '@assets/images/landing/light-dark/dark-lg.png';
     const rect = container.getBoundingClientRect();
     let x: number;
 
-    if (e instanceof TouchEvent) {
+     if ("touches" in e) {
       x = e.touches[0].clientX - rect.left;
     } else {
-      x = e.clientX - rect.left;
+      x = (e as MouseEvent).clientX - rect.left;
     }
 
     if (x < 18) x = 18;

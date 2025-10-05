@@ -1,6 +1,6 @@
 ---
 import ContentLayout from '@layouts/ContentLayout.astro';
-import { hbLogos, hbRestrictLogos, colors, typography } from 'apps/data/brand-guideline';
+import { hbLogos, colors, typography } from 'apps/data/brand-guideline';
 ---
 
 <ContentLayout
@@ -82,7 +82,7 @@ import { hbLogos, hbRestrictLogos, colors, typography } from 'apps/data/brand-gu
   </div>
 
   <!-- things to avoid -->
-  <div class="swiper">
+  <div id="carouselExampleInterval" class="pb-14 carousel slide">
     <div class="mb-4 flex flex-col sm:flex-row items-start justify-between">
       <div class="max-w-180">
         <h6 class="mb-3.5 text-xl font-medium">Things to avoid</h6>
@@ -92,14 +92,24 @@ import { hbLogos, hbRestrictLogos, colors, typography } from 'apps/data/brand-gu
         </p>
       </div>
       <div class="flex items-center gap-2">
-        <button class="swiper-button-prev !relative !left-0 !mt-0 !btn !btn-subtle-neutral !btn-circle">
+        <button
+          class="carousel-control-prev !relative !btn !btn-subtle-neutral !btn-circle"
+          type="button"
+          data-bs-target="#carouselExampleInterval"
+          data-bs-slide="prev"
+        >
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="!w-5">
             <path
               d="M11.2305 15.097L7.10547 10.972C7.03602 10.9026 6.98741 10.8331 6.95964 10.7637C6.93186 10.6942 6.91797 10.6178 6.91797 10.5345C6.91797 10.4512 6.93186 10.3748 6.95964 10.3053C6.98741 10.2359 7.03602 10.1664 7.10547 10.097L11.2513 5.95117C11.3763 5.82617 11.5256 5.76367 11.6992 5.76367C11.8728 5.76367 12.0221 5.82617 12.1471 5.95117C12.2721 6.07617 12.3312 6.22895 12.3242 6.40951C12.3173 6.59006 12.2513 6.74284 12.1263 6.86784L8.45964 10.5345L12.1471 14.222C12.2721 14.347 12.3346 14.4928 12.3346 14.6595C12.3346 14.8262 12.2721 14.972 12.1471 15.097C12.0221 15.222 11.8694 15.2845 11.6888 15.2845C11.5082 15.2845 11.3555 15.222 11.2305 15.097Z"
               fill="currentColor"></path>
           </svg>
         </button>
-        <button class="swiper-button-next !relative !right-0 !mt-0 !btn !btn-subtle-neutral !btn-circle">
+        <button
+          class="carousel-control-next !relative !btn !btn-subtle-neutral !btn-circle"
+          type="button"
+          data-bs-target="#carouselExampleInterval"
+          data-bs-slide="next"
+        >
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="!w-5">
             <path
               d="M7.37692 15.0972C7.2658 14.9583 7.20678 14.8055 7.19983 14.6388C7.19289 14.4722 7.25192 14.3263 7.37692 14.2013L11.0436 10.5347L7.35608 6.84718C7.24497 6.73606 7.19289 6.58676 7.19983 6.39926C7.20678 6.21176 7.2658 6.06245 7.37692 5.95134C7.5158 5.81245 7.66511 5.74648 7.82483 5.75343C7.98455 5.76037 8.12691 5.82634 8.25191 5.95134L12.3977 10.0972C12.4672 10.1666 12.5158 10.2361 12.5436 10.3055C12.5714 10.375 12.5852 10.4513 12.5852 10.5347C12.5852 10.618 12.5714 10.6944 12.5436 10.7638C12.5158 10.8333 12.4672 10.9027 12.3977 10.9722L8.27275 15.0972C8.14775 15.2222 8.00191 15.2812 7.83525 15.2743C7.66858 15.2673 7.5158 15.2083 7.37692 15.0972Z"
@@ -109,29 +119,7 @@ import { hbLogos, hbRestrictLogos, colors, typography } from 'apps/data/brand-gu
       </div>
     </div>
 
-    <div class="mb-14 swiper-wrapper">
-      {
-        hbRestrictLogos.map((item) => (
-          <div class="swiper-slide">
-            <div class="card flex flex-col w-full h-55 rounded-2xl bg-default overflow-hidden">
-              <div class="grow flex items-center justify-center bg-subtle">
-                <img src={item.img.src} alt="logo" />
-              </div>
-              <div class="px-4 py-2 flex items-center gap-2">
-                <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect x="0.5" width="20" height="20" rx="10" fill="#F24455" />
-                  <path
-                    d="M10.5008 10.5248L7.87578 13.1498C7.80078 13.2248 7.71328 13.2623 7.61328 13.2623C7.51328 13.2623 7.42578 13.2248 7.35078 13.1498C7.27578 13.0748 7.23828 12.9873 7.23828 12.8873C7.23828 12.7873 7.27578 12.6998 7.35078 12.6248L9.97578 9.9998L7.35078 7.3748C7.27578 7.2998 7.23828 7.2123 7.23828 7.1123C7.23828 7.0123 7.27578 6.9248 7.35078 6.8498C7.42578 6.7748 7.51328 6.7373 7.61328 6.7373C7.71328 6.7373 7.80078 6.7748 7.87578 6.8498L10.5008 9.4748L13.1258 6.8498C13.2008 6.7748 13.2883 6.7373 13.3883 6.7373C13.4883 6.7373 13.5758 6.7748 13.6508 6.8498C13.7258 6.9248 13.7633 7.0123 13.7633 7.1123C13.7633 7.2123 13.7258 7.2998 13.6508 7.3748L11.0258 9.9998L13.6508 12.6248C13.7258 12.6998 13.7633 12.7873 13.7633 12.8873C13.7633 12.9873 13.7258 13.0748 13.6508 13.1498C13.5758 13.2248 13.4883 13.2623 13.3883 13.2623C13.2883 13.2623 13.2008 13.2248 13.1258 13.1498L10.5008 10.5248Z"
-                    fill="white"
-                  />
-                </svg>
-                <p class="card-title mb-0 text-muted text-sm tracking-normal font-medium">{item.title}</p>
-              </div>
-            </div>
-          </div>
-        ))
-      }
-    </div>
+    <div id="carousel-wrapper" class="carousel-inner"></div>
   </div>
 
   <!-- color -->
@@ -231,30 +219,86 @@ import { hbLogos, hbRestrictLogos, colors, typography } from 'apps/data/brand-gu
     By following these guidelines, you help us ensure that the Hummingbird brand remains a trusted and reliable mark of
     quality for developers everywhere. Thank you for your support.
   </p>
-
-  <script>
-    import Swiper from 'swiper/bundle';
-    import 'swiper/css/bundle';
-
-    const swiper = new Swiper('.swiper', {
-      loop: true,
-      slidesPerView: 1,
-      spaceBetween: 16,
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-      breakpoints: {
-        370: {
-          slidesPerView: 1.2,
-        },
-        560: {
-          slidesPerView: 2.2,
-        },
-        840: {
-          slidesPerView: 3.5,
-        },
-      },
-    });
-  </script>
 </ContentLayout>
+
+<script>
+  import { hbRestrictLogos, type HbRestrictLogo } from 'apps/data/brand-guideline';
+
+  const data = {
+    xs: JSON.parse(
+      `{ "items": ${JSON.stringify([
+        [hbRestrictLogos[0]],
+        [hbRestrictLogos[1]],
+        [hbRestrictLogos[2]],
+        [hbRestrictLogos[3]],
+        [hbRestrictLogos[4]],
+      ])} }`,
+    ),
+    sm: JSON.parse(
+      `{ "items": ${JSON.stringify([
+        [hbRestrictLogos[0], hbRestrictLogos[1]],
+        [hbRestrictLogos[2], hbRestrictLogos[3]],
+        [hbRestrictLogos[4], hbRestrictLogos[0]],
+      ])} }`,
+    ),
+    md: JSON.parse(
+      `{ "items": ${JSON.stringify([
+        [hbRestrictLogos[0], hbRestrictLogos[1], hbRestrictLogos[2]],
+        [hbRestrictLogos[3], hbRestrictLogos[4], hbRestrictLogos[0]],
+      ])} }`,
+    ),
+  };
+
+  const getActiveData = () => {
+    if (window.matchMedia('(min-width: 890px)').matches) {
+      return data.md.items;
+    } else if (window.matchMedia('(min-width: 640px)').matches) {
+      return data.sm.items;
+    }
+    return data.xs.items;
+  };
+
+  const renderCarousel = (items: HbRestrictLogo[][]) => {
+    const wrapper = document.getElementById('carousel-wrapper') as HTMLElement;
+    if (!wrapper) return;
+
+    wrapper.innerHTML = items
+      .map(
+        (group, i) => `
+      <div class="carousel-item ${i === 0 ? 'active' : ''}">
+        <div class="flex items-center justify-between gap-4">
+          ${group
+            .map(
+              (item) => `
+            <div class="card flex flex-col w-full h-55 rounded-2xl bg-default overflow-hidden">
+              <div class="grow flex items-center justify-center bg-subtle">
+                <img src="${item.img.src}" alt="logo" />
+              </div>
+
+              <div class="px-4 py-2 flex items-center gap-2">
+                <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="0.5" width="20" height="20" rx="10" fill="#F24455" />
+                  <path
+                    d="M10.5008 10.5248L7.87578 13.1498C7.80078 13.2248 7.71328 13.2623 7.61328 13.2623C7.51328 13.2623 7.42578 13.2248 7.35078 13.1498C7.27578 13.0748 7.23828 12.9873 7.23828 12.8873C7.23828 12.7873 7.27578 12.6998 7.35078 12.6248L9.97578 9.9998L7.35078 7.3748C7.27578 7.2998 7.23828 7.2123 7.23828 7.1123C7.23828 7.0123 7.27578 6.9248 7.35078 6.8498C7.42578 6.7748 7.51328 6.7373 7.61328 6.7373C7.71328 6.7373 7.80078 6.7748 7.87578 6.8498L10.5008 9.4748L13.1258 6.8498C13.2008 6.7748 13.2883 6.7373 13.3883 6.7373C13.4883 6.7373 13.5758 6.7748 13.6508 6.8498C13.7258 6.9248 13.7633 7.0123 13.7633 7.1123C13.7633 7.2123 13.7258 7.2998 13.6508 7.3748L11.0258 9.9998L13.6508 12.6248C13.7258 12.6998 13.7633 12.7873 13.7633 12.8873C13.7633 12.9873 13.7258 13.0748 13.6508 13.1498C13.5758 13.2248 13.4883 13.2623 13.3883 13.2623C13.2883 13.2623 13.2008 13.2248 13.1258 13.1498L10.5008 10.5248Z"
+                    fill="white"
+                  />
+                </svg>
+                <p class="card-title mb-0 text-muted text-sm tracking-normal font-medium">${item.title}</p>
+              </div>
+            </div>`,
+            )
+            .join('')}
+        </div>
+      </div>
+    `,
+      )
+      .join('');
+  };
+
+  const updateCarousel = () => {
+    renderCarousel(getActiveData());
+  };
+
+  updateCarousel();
+  window.addEventListener('resize', updateCarousel);
+</script>
