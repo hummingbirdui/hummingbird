@@ -105,6 +105,10 @@
   @apply !m-0 flex items-center;
 }
 
+.hero-slide {
+  @apply -ml-17 2xl:ml-0 transform scale-80 2xl:scale-100;
+}
+
 /* Search */
 .DocSearch {
   --docsearch-key-shadow: none;
