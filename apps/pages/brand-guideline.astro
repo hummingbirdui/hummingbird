@@ -82,7 +82,7 @@ import { hbLogos, colors, typography } from 'apps/data/brand-guideline';
   </div>
 
   <!-- things to avoid -->
-  <div id="carouselExampleInterval" class="pb-14 carousel slide">
+  <div id="things-to-avoid-carousel" class="pb-14 carousel slide">
     <div class="mb-4 flex flex-col sm:flex-row items-start justify-between">
       <div class="max-w-180">
         <h6 class="mb-3.5 text-xl font-medium">Things to avoid</h6>
@@ -95,7 +95,7 @@ import { hbLogos, colors, typography } from 'apps/data/brand-guideline';
         <button
           class="carousel-control-prev !relative !btn !btn-subtle-neutral !btn-circle"
           type="button"
-          data-bs-target="#carouselExampleInterval"
+          data-bs-target="#things-to-avoid-carousel"
           data-bs-slide="prev"
         >
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="!w-5">
@@ -107,7 +107,7 @@ import { hbLogos, colors, typography } from 'apps/data/brand-guideline';
         <button
           class="carousel-control-next !relative !btn !btn-subtle-neutral !btn-circle"
           type="button"
-          data-bs-target="#carouselExampleInterval"
+          data-bs-target="#things-to-avoid-carousel"
           data-bs-slide="next"
         >
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="!w-5">
@@ -238,19 +238,19 @@ import { hbLogos, colors, typography } from 'apps/data/brand-guideline';
       `{ "items": ${JSON.stringify([
         [hbRestrictLogos[0], hbRestrictLogos[1]],
         [hbRestrictLogos[2], hbRestrictLogos[3]],
-        [hbRestrictLogos[4], hbRestrictLogos[0]],
+        [hbRestrictLogos[4]],
       ])} }`,
     ),
     md: JSON.parse(
       `{ "items": ${JSON.stringify([
         [hbRestrictLogos[0], hbRestrictLogos[1], hbRestrictLogos[2]],
-        [hbRestrictLogos[3], hbRestrictLogos[4], hbRestrictLogos[0]],
+        [hbRestrictLogos[3], hbRestrictLogos[4]],
       ])} }`,
     ),
   };
 
   const getActiveData = () => {
-    if (window.matchMedia('(min-width: 890px)').matches) {
+    if (window.matchMedia('(min-width: 768px)').matches) {
       return data.md.items;
     } else if (window.matchMedia('(min-width: 640px)').matches) {
       return data.sm.items;
@@ -266,7 +266,7 @@ import { hbLogos, colors, typography } from 'apps/data/brand-guideline';
       .map(
         (group, i) => `
       <div class="carousel-item ${i === 0 ? 'active' : ''}">
-        <div class="flex items-center justify-between gap-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
           ${group
             .map(
               (item) => `
