@@ -89,10 +89,6 @@
   --tooltip-color: var(--color-contrast);
 }
 
-.slide {
-  @apply -ml-17 2xl:ml-0 transform scale-80 2xl:scale-100;
-}
-
 .cm-editor {
   @apply h-full text-sm bg-transparent;
 }
