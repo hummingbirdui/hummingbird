@@ -18,10 +18,10 @@
 - [Documentation](#documentation)
 - [Getting Started](#getting-started)
 - [Installation](#installation)
-  - [Install Tailwind CSS](#install-tailwind-css)
-  - [Install Hummingbird](#install-hummingbird)
-  - [Import CSS](#import-css)
-  - [Initialize JS plugins](#initialize-js-plugins)
+  - [Install Tailwind CSS](#1-install-tailwind-css)
+  - [Install Hummingbird](#2-install-hummingbird)
+  - [Import CSS](#3-import-css)
+  - [Initialize JS plugins](#4-initialize-js-plugins)
 - [Optimization](#optimization)
 - [TypeScript Support](#typescript-support)
 - [ESM vs CJS](#esm-vs-cjs)
@@ -29,9 +29,6 @@
 - [License](#license)
 - [Meet the Team](#meet-the-team)
 - [Contributors](#contributors)
-
-
----
 
 ## Documentation
 
@@ -45,15 +42,13 @@ Hummingbird is a fast, lightweight UI library built on top of Tailwind CSS utili
 - Import individual JS components (like alerts, dropdowns, etc.)
 - Integrate with React, Vue, Astro, or any modern JS framework
 
----
-
 ## Installation
 
-#### 1. Install Tailwind CSS
+### 1. Install Tailwind CSS
 
 Ensure you have a project set up with Tailwind CSS. If you haven't set up Tailwind CSS yet, follow the <a href="https://tailwindcss.com/docs/installation" target="_blank" rel="noopener noreferrer">official installation guide</a>.
 
-#### 2. Install Hummingbird
+### 2. Install Hummingbird
 
 Install Hummingbird via your preferred package manager:
 
@@ -65,7 +60,7 @@ npm install @hummingbirdui/hummingbird
 yarn add @hummingbirdui/hummingbird
 ````
 
-#### 3. Import CSS
+### 3. Import CSS
 
 Import Hummingbird styles in your main CSS file (e.g., `styles.css`).
 
@@ -74,7 +69,7 @@ Import Hummingbird styles in your main CSS file (e.g., `styles.css`).
 @import "@hummingbirdui/hummingbird";
 ```
 
-#### 4. Initialize JS plugins
+### 4. Initialize JS plugins
 
 Include Hummingbird JavaScript at the end of your HTML body.
 
@@ -129,8 +124,6 @@ Hummingbird supports both **ESM** and **CJS** builds so it works with different 
   Used in **Node.js** or older tooling that relies on `require()`. If your environment doesn’t support ESM, bundlers and Node will fall back to this file.
 
 You don’t need to choose manually, your bundler or runtime will pick the right version based on your setup.
-
----
 
 ## Supported Frameworks
 
