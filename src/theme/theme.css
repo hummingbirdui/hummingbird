@@ -163,7 +163,7 @@
   --legend-font-size: var(--text-xl);
 }
 
-@layer {
+@layer base {
   @variant dark {
     /* Background colors */
     --background-color-subtle: var(--color-gray-900);

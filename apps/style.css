@@ -2,16 +2,12 @@
 @import 'tailwindcss';
 @import '../src/index.css';
 @import 'tailwind-scrollbar-hide/v4';
-@custom-variant dark (&:where(.dark, .dark *));
+@custom-variant dark (&:is(.dark, .dark *), .dark);
 
 @theme {
   --container-8xl: 95rem;
   --navbar-height: --spacing(20.5);
   --anchor-header-offset: 120px;
-}
-
-.disable-transitions * {
-  @apply !transition-none;
 }
 
 .docs-sidebar {
