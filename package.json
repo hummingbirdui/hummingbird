@@ -86,7 +86,7 @@
     "@typescript-eslint/parser": "^8.32.1",
     "astro": "^5.13.10",
     "astro-auto-import": "^0.4.4",
-    "bootstrap": "^5.3.3",
+    "bootstrap": "^5.3.8",
     "codemirror": "^6.0.2",
     "cross-env": "^7.0.3",
     "dropzone": "^6.0.0-beta.2",
