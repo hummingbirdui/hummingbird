@@ -40,12 +40,14 @@ Include Hummingbird javascript at the end of the HTML body.
 <Example lang='html' showPreview={false} 
   code={`<script src="../path/to/@hummingbirdui/hummingbird/dist/hummingbird.bundle.min.js"></script>`} />
 
-Alternatively, Hummingbird can be imported in the JavaScript entry file.
+Alternatively, if using a build system (like Vite or Webpack), import Hummingbird directly in the JavaScript entry file.
 
 <Example lang='js' showPreview={false} 
   code={`import '@hummingbirdui/hummingbird';`} />
 
 **Optimization:**  To reduce the final bundle size, only the specific JavaScript plugins needed can be imported. Follow the [optimization](./javascript#optimization) approach in the JavaScript section.
+
+**Dependencies:** Some components require [Popper](https://popper.js.org/docs/v2/) for positioning. See the [dependencies](./javascript#dependencies) section for more details.
 
 Learn more about Hummingbird’s JavaScript components in the [JavaScript section](./javascript).
 
@@ -60,6 +62,17 @@ Here’s how to initialize and use the [Modal](/docs/components/modal) component
 <div class="modal">...</div>
 ```
 <br/>
+
+```js
+const openBtn = document.querySelector("[data-open-demo-modal]");
+const myModal = new window.hummingbird.Modal(".modal");
+
+openBtn.addEventListener("click", () => {
+  myModal.show();
+});
+```
+<br/>
+When using a build system such as Vite or Webpack, import [Modal](/docs/components/modal) as shown below.
 
 ```js
 import { Modal } from "@hummingbirdui/hummingbird";

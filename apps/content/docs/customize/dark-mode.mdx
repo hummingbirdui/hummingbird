@@ -6,13 +6,13 @@ toc: true
 
 ## Enable dark mode
 
-Add the custom variant in your main CSS so Tailwind will apply any dark: utilities inside a .dark scope.
+Add the custom variant in your main CSS so Tailwind will apply any `dark:` utilities inside a `.dark` scope.
 
 <Example lang='css' showPreview={false}
   code={`@custom-variant dark (&:where(.dark, .dark *));`}
 />
 
-You will typically add/remove the `.dark` class on the `<html>` element.
+The `.dark` class is typically added or removed on the `<html>` element.
 
 ## Set the initial theme
 
@@ -67,7 +67,7 @@ This script manages switching between light and dark themes. It works by:
 
 ## Toggle button markup (example)
 
-Use any markup you prefer, this example matches your selectors and hides/shows icons based on the current state.
+Any preferred markup can be used for toggling icon visibility based on the current state.
 
 <Example lang='html' showPreview={false}
   code={`<button type="button" data-theme-toggle-btn class="btn btn-circle btn-subtle-neutral">

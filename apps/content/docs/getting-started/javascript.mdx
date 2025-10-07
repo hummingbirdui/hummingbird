@@ -17,7 +17,7 @@ Plugins can be included individually or all at once.
 ```
 <br/>
 
-Alternatively, import Hummingbird in the JavaScript entry file. 
+Alternatively, if using a build system (like Vite or Webpack), import Hummingbird directly in the JavaScript entry file.
 
 ```js
 import "@hummingbirdui/hummingbird";
@@ -87,6 +87,17 @@ Here’s how to initialize and use the [Modal](/docs/components/modal) component
 <br/>
 
 ```js
+const openBtn = document.querySelector("[data-open-demo-modal]");
+const myModal = new window.hummingbird.Modal(".modal");
+
+openBtn.addEventListener("click", () => {
+  myModal.show();
+});
+```
+<br/>
+When using a build system such as Vite or Webpack, import [Modal](/docs/components/modal) as shown below.
+
+```js
 import { Modal } from "@hummingbirdui/hummingbird";
 const openBtn = document.querySelector("[data-open-demo-modal]");
 const myModal = new Modal(".modal");
@@ -125,4 +136,11 @@ Follow the framework-specific guidelines to ensure smooth integration and optima
 
 ## Dependencies
 
-Some JavaScript components rely on [Popper](https://popper.js.org/docs/v2/) for positioning elements, such as dropdowns, tooltips, and pop-overs. When using these components, include `Popper.js` in the project, or use `himmingbird.bundle.min.js`, which includes `Popper.js`.
+Some JavaScript components rely on [Popper](https://popper.js.org/docs/v2/) for positioning elements, such as dropdowns, tooltips, and popovers. When using these components, include `Popper.js` in the project, or use `himmingbird.bundle.min.js`, which includes `Popper.js`.
+
+Include `popper.min.js` along with `hummingbird.min.js`, if `hummingbird.bundle.min.js` is not included.
+
+```js
+<script src="../path/to/@popperjs/core/dist/umd/popper.min.js"></script>
+<script src="../path/to/@hummingbirdui/hummingbird/dist/hummingbird.min.js"></script>
+```
