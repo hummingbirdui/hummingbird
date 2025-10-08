@@ -3,7 +3,7 @@
       <img  width="350" src='./public/images/logos/hummingbird-lg.svg' alt="Logo" class="w-10 h-10" />
    </a>
 
-   A comprehensive & open-source component library for building Tailwind-powered, sophisticated, scalable web applications.
+   The most sensible component system for Tailwind.
 
    ![downloads](https://img.shields.io/npm/dt/@hummingbirdui/hummingbird?style=flat-square)
    ![npm](https://img.shields.io/npm/v/@hummingbirdui/hummingbird?style=flat-square)
