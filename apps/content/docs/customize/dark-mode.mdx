@@ -4,7 +4,9 @@ description: This guide explains how to enable and manage dark mode in a way con
 toc: true
 ---
 
-## Enable dark mode
+## Toggling dark mode manually
+
+#### 1. Custom Dark Mode Selector
 
 To control the dark theme using a custom CSS selector instead of the `prefers-color-scheme` media query, redefine the dark variant to use the desired selector:
 
@@ -14,7 +16,7 @@ To control the dark theme using a custom CSS selector instead of the `prefers-co
 
 The `.dark` class is typically added or removed on the `<html>` element.
 
-## Set the initial theme
+#### 2. Set the initial theme
 
 Add this inline script inside the `<head>` tag to ensure the correct theme is applied before the page renders. This prevents flash issue and respects both the user’s saved preference in localStorage and their system’s `prefers-color-scheme` setting.
 
@@ -29,7 +31,7 @@ Add this inline script inside the `<head>` tag to ensure the correct theme is ap
   </script>`}
 />
 
-## Theme toggle script
+#### 3. Theme toggle script
 
 This script manages switching between light and dark themes. It works by:
 
@@ -65,7 +67,7 @@ This script manages switching between light and dark themes. It works by:
 />
 
 
-## Toggle button markup (example)
+#### 4. Toggle button markup (example)
 
 Any preferred markup can be used for toggling icon visibility based on the current state.
 
@@ -92,8 +94,22 @@ To apply additional styling specifically for dark mode, use the `dark:` variant 
 In addition to using the `dark:` variant, Hummingbird’s theme variables can be directly overridden within a dark scope:
 
 <Example lang='sass' showPreview={false}
-  code={`@variant dark {
-    --color-primary: var(--color-blue-400);
-    --color-secondary: var(--color-purple-400);
+  code={`:root, :host { 
+    @variant dark {
+      --color-primary: var(--color-blue-400);
+      --color-secondary: var(--color-purple-400);
+    }
   }`}
+/>
+
+See all available variables in the [Theming](./theming#hummingbird-theme-variables) section.
+
+## Simplified Dark Mode in Hummingbird
+
+Hummingbird includes a predefined set of color variables that automatically adjust for dark mode, eliminating the need for additional dark mode classes. Components can switch to dark mode by adding the `.dark` class to a parent element.
+
+To enable this behavior, add the custom dark mode variant to the CSS file after importing Tailwind and Hummingbird styles.
+
+<Example lang='css' showPreview={false}
+  code={`@custom-variant dark (&:is(.dark, .dark *), .dark);`}
 />
