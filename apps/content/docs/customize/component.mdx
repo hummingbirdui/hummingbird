@@ -1,6 +1,6 @@
 ---
-title: Customization
-description: Although Hummingbird works well out of the box, it can be customized to fit a project's unique design requirements.
+title: Component customization
+description: Hummingbird components can be customized using theme variables, utility classes, or custom CSS to match specific design needs.
 toc: true
 ---
 
@@ -14,7 +14,7 @@ This section explains how to customize Hummingbird to better fit a project's des
 <button class="btn">Base Button</button>
 ```
 
-#### 1. Hummingbird utility
+#### Option 1: Hummingbird utility
 
 Hummingbird’s utility classes allow easy modification of a button’s appearance. For example, the color, variant, size, and other properties can be adjusted as needed.
 
@@ -31,7 +31,7 @@ Hummingbird’s utility classes allow easy modification of a button’s appearan
 <button class="btn btn-text-info">Info</button>
 ```
 
-#### 2. Tailwind utility
+#### Option 2: Tailwind utility
 
 Customization can be done using Tailwind utility classes. For example, rounded pill buttons can be created by adding the rounded-full class. All other Tailwind utility classes can be applied as well.
 
@@ -44,7 +44,7 @@ Customization can be done using Tailwind utility classes. For example, rounded p
 <button class="btn btn-subtle-secondary px-12 rounded-full hover:shadow-2xs">Pill Button</button>
 ```
 
-<h4 class='font-medium'>3. <code class='text-base'>@apply</code> directive</h4>
+<h4 class='font-medium'>Option 3: <code class='text-base'>@apply</code> directive</h4>
 
 Customization can also be done within a CSS file using Tailwind CSS’s `@apply` directive.
 
@@ -60,7 +60,7 @@ Hummingbird components are styled using a set of CSS variables. These variables 
 
 For example, to update or customize the Button component, override its CSS variables:
 
-#### 1. Global variables
+#### Option 1: Global variables
 
 Override the theme variables globally under `@theme`. This will apply the changes across all components in the project.
 
@@ -73,7 +73,7 @@ Override the theme variables globally under `@theme`. This will apply the change
     --color-disabled-color: var(--color-gray-500);
   }`}/>
 
-#### 2. Local variables
+#### Option 2: Local variables
 
 Override the component variables locally under specific components classes or in the custom CSS class. This will apply the changes only to that specific component.
 

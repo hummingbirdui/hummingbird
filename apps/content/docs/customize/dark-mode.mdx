@@ -6,10 +6,10 @@ toc: true
 
 ## Enable dark mode
 
-Add the custom variant in your main CSS so Tailwind will apply any `dark:` utilities inside a `.dark` scope.
+To control the dark theme using a custom CSS selector instead of the `prefers-color-scheme` media query, redefine the dark variant to use the desired selector:
 
 <Example lang='css' showPreview={false}
-  code={`@custom-variant dark (&:where(.dark, .dark *));`}
+  code={`@custom-variant dark (&:is(.dark, .dark *), .dark);`}
 />
 
 The `.dark` class is typically added or removed on the `<html>` element.
@@ -79,9 +79,9 @@ Any preferred markup can be used for toggling icon visibility based on the curre
 
 ## How to use
 
-Hummingbird supports dark mode out of the box, and all components are fully compatible with it. You don’t need to add any extra configuration to enable dark mode styles.
+Hummingbird supports dark mode out of the box, and all components are fully compatible with it. No additional configuration is required to enable dark mode styles.
 
-If you want to apply additional styling specifically for dark mode, use the `dark:` variant alongside your utility classes. This ensures that elements automatically adjust their appearance whenever the `.dark` class is active.
+To apply additional styling specifically for dark mode, use the `dark:` variant alongside utility classes. This ensures that elements automatically adjust their appearance whenever the `.dark` class is active.
 
 <Example lang='html' showPreview={false}
   code={`<div class="bg-subtle text-primary dark:text-secondary">
@@ -89,7 +89,7 @@ If you want to apply additional styling specifically for dark mode, use the `dar
   </div>`}
 />
 
-In addition to using the `dark:` variant, you can directly override Hummingbird’s theme variables inside a dark scope:
+In addition to using the `dark:` variant, Hummingbird’s theme variables can be directly overridden within a dark scope:
 
 <Example lang='sass' showPreview={false}
   code={`@variant dark {

@@ -1,6 +1,6 @@
 ---
 title: Colors
-description: Hummingbird provide a small set of semantic color variables, which makes it easy to apply and customize consistently across your project.
+description: Hummingbird provide a small set of semantic color variables, which makes it easy to apply and customize consistently across the project.
 toc: true
 ---
 
@@ -12,15 +12,15 @@ Instead of applying fixed Tailwind palette classes like:
 - `bg-green-600`
 - `border-blue-700` etc.
 
-It’s better to rely on semantic color classes. Semantic colors are mapped to your design tokens and automatically adapt when you change themes.
+It is recommended to rely on semantic color classes. Semantic colors are mapped to design tokens and automatically adapt when themes change.
 
-For example, you can use:
+For example,
 
 - `text-subtle`
 - `bg-secondary`
 - `border-light` etc.
 
-This way, you’re not tied to a specific palette value (`blue-500`, `green-600`, etc.). Instead, your components reference semantic roles (`primary`, `secondary`, `warning`), which makes your UI easier to maintain, brand, and theme.
+This approach prevents dependence on specific palette values (`blue-500`, `green-600`, etc.). Instead, components reference semantic roles (`primary`, `secondary`, `warning`), making the UI easier to maintain, brand, and theme.
 
 Behind the scenes, each semantic color class points to a CSS variable. Updating or overriding that variable updates the color everywhere it’s used.
 
@@ -338,13 +338,13 @@ Hummingbird provides a minimal but complete set of color roles:
 
 ## How to use
 
-Now you can use semantic color classes like:
+Use semantic color classes like:
 
 - `bg-primary`
 - `text-muted`
 - `border-base`
 
-These classes use your theme’s color variables, so your UI stays consistent when you customize or switch themes.
+These classes use theme’s color variables, so the UI stays consistent when customizing or switching themes.
 
 ```html
 <button class="bg-primary text-contrast hover:bg-primary-dark">
@@ -361,7 +361,7 @@ These classes use your theme’s color variables, so your UI stays consistent wh
 
 ## Customize color
 
-You can override any color by redefining its CSS variable inside a `@theme` block after you import Hummingbird UI:
+Override any color by redefining its CSS variable inside a `@theme` block after importing Hummingbird:
 
 ```css
 @import "tailwindcss";

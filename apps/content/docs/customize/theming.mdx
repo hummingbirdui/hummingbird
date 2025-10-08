@@ -14,6 +14,8 @@ Hummingbird UI is built on Tailwind CSS v4 and exposes a set of theme variables 
 
 - Create multiple themes (e.g. light/dark/forest) by overriding the theme variables within a theme scope like `@variant dark{}`, or `[data-theme="dark"]{}`.
 
+- Reboot provides a base CSS reset with element-specific styles for consistent design across browsers.
+
 ## Hummingbird Theme Variables
 
 Hummingbird UI provides a small, consistent set of semantic tokens as Tailwind theme variables. These variables create utilities and can be overridden later to change the look and feel without changing the HTML.
@@ -158,6 +160,12 @@ Hummingbird use a small set of theme variables. By overriding these variables wi
   --color-secondary: var(--color-purple-600);
 }
 ```
+
+## Reboot
+
+Reboot is a foundational stylesheet that resets browser defaults and applies basic element styles. It provides a clean, consistent starting point for building interfaces and ensures visual consistency across browsers.
+
+For more details, follow the [Reboot](/docs/content/reboot) documentation.
 
 ## Tailwind theme variable namespaces
 
