@@ -2,16 +2,16 @@ import docsearch from '@docsearch/js';
 
 docsearch({
   container: '#docsearch',
-  appId: '07LKLL0LSI',
+  appId: '9WZCQJVTTL',
   indexName: 'humming_docs',
-  apiKey: '9b81cd758669ab6de5219db657938910',
+  apiKey: 'b2804af869f12be7d3c1f06e61e48e0d',
   placeholder: 'Search',
 });
 docsearch({
   container: '#docsearch-mobile',
-  appId: '07LKLL0LSI',
+  appId: '9WZCQJVTTL',
   indexName: 'humming_docs',
-  apiKey: '9b81cd758669ab6de5219db657938910',
+  apiKey: 'b2804af869f12be7d3c1f06e61e48e0d',
   placeholder: 'Search',
 });
 
