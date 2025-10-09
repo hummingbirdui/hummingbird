@@ -163,84 +163,87 @@
   --legend-font-size: var(--text-xl);
 }
 
-@layer {
-  @variant dark {
-    /* Background colors */
-    --background-color-subtle: var(--color-gray-900);
-    --background-color-muted: var(--color-gray-800);
-    --background-color-default: var(--color-gray-950);
-    --background-color-highlight: var(--color-gray-700);
-    --background-color-emphasis: var(--color-gray-600);
+@layer theme {
+  :root,
+  :host {
+    @variant dark {
+      /* Background colors */
+      --background-color-subtle: var(--color-gray-900);
+      --background-color-muted: var(--color-gray-800);
+      --background-color-default: var(--color-gray-950);
+      --background-color-highlight: var(--color-gray-700);
+      --background-color-emphasis: var(--color-gray-600);
 
-    /* Text colors */
-    --text-color-subtle: var(--color-gray-500);
-    --text-color-muted: var(--color-gray-400);
-    --text-color-default: var(--color-gray-100);
-    --text-color-highlight: var(--color-gray-50);
-    --text-color-emphasis: var(--color-white);
+      /* Text colors */
+      --text-color-subtle: var(--color-gray-500);
+      --text-color-muted: var(--color-gray-400);
+      --text-color-default: var(--color-gray-100);
+      --text-color-highlight: var(--color-gray-50);
+      --text-color-emphasis: var(--color-white);
 
-    /* neutral */
-    --color-light: var(--color-gray-800);
-    --color-dark: var(--color-gray-700);
-    --color-contrast: var(--color-gray-950);
+      /* neutral */
+      --color-light: var(--color-gray-800);
+      --color-dark: var(--color-gray-700);
+      --color-contrast: var(--color-gray-950);
 
-    /* primary */
-    --color-primary-lighter: var(--color-blue-950);
-    --color-primary-light: var(--color-blue-700);
-    --color-primary: var(--color-blue-400);
-    --color-primary-dark: var(--color-blue-300);
-    --color-primary-darker: var(--color-blue-100);
+      /* primary */
+      --color-primary-lighter: var(--color-blue-950);
+      --color-primary-light: var(--color-blue-700);
+      --color-primary: var(--color-blue-400);
+      --color-primary-dark: var(--color-blue-300);
+      --color-primary-darker: var(--color-blue-100);
 
-    /* secondary */
-    --color-secondary-lighter: var(--color-purple-950);
-    --color-secondary-light: var(--color-purple-700);
-    --color-secondary: var(--color-purple-400);
-    --color-secondary-dark: var(--color-purple-300);
-    --color-secondary-darker: var(--color-purple-100);
+      /* secondary */
+      --color-secondary-lighter: var(--color-purple-950);
+      --color-secondary-light: var(--color-purple-700);
+      --color-secondary: var(--color-purple-400);
+      --color-secondary-dark: var(--color-purple-300);
+      --color-secondary-darker: var(--color-purple-100);
 
-    /* danger */
-    --color-danger-lighter: var(--color-red-950);
-    --color-danger-light: var(--color-red-600);
-    --color-danger: var(--color-red-400);
-    --color-danger-dark: var(--color-red-300);
-    --color-danger-darker: var(--color-red-200);
+      /* danger */
+      --color-danger-lighter: var(--color-red-950);
+      --color-danger-light: var(--color-red-600);
+      --color-danger: var(--color-red-400);
+      --color-danger-dark: var(--color-red-300);
+      --color-danger-darker: var(--color-red-200);
 
-    /* warning */
-    --color-warning-lighter: var(--color-orange-950);
-    --color-warning-light: var(--color-orange-800);
-    --color-warning: var(--color-orange-400);
-    --color-warning-dark: var(--color-orange-300);
-    --color-warning-darker: var(--color-orange-200);
+      /* warning */
+      --color-warning-lighter: var(--color-orange-950);
+      --color-warning-light: var(--color-orange-800);
+      --color-warning: var(--color-orange-400);
+      --color-warning-dark: var(--color-orange-300);
+      --color-warning-darker: var(--color-orange-200);
 
-    /* success */
-    --color-success-lighter: var(--color-green-950);
-    --color-success-light: var(--color-green-700);
-    --color-success: var(--color-green-400);
-    --color-success-dark: var(--color-green-300);
-    --color-success-darker: var(--color-green-200);
+      /* success */
+      --color-success-lighter: var(--color-green-950);
+      --color-success-light: var(--color-green-700);
+      --color-success: var(--color-green-400);
+      --color-success-dark: var(--color-green-300);
+      --color-success-darker: var(--color-green-200);
 
-    /* info */
-    --color-info-lighter: var(--color-sky-950);
-    --color-info-light: var(--color-sky-700);
-    --color-info: var(--color-sky-400);
-    --color-info-dark: var(--color-sky-300);
-    --color-info-darker: var(--color-sky-200);
+      /* info */
+      --color-info-lighter: var(--color-sky-950);
+      --color-info-light: var(--color-sky-700);
+      --color-info: var(--color-sky-400);
+      --color-info-dark: var(--color-sky-300);
+      --color-info-darker: var(--color-sky-200);
 
-    /* borders */
-    --border-color-light: var(--color-gray-800);
-    --border-color-base: var(--color-gray-700);
-    --border-color-dark: var(--color-gray-600);
+      /* borders */
+      --border-color-light: var(--color-gray-800);
+      --border-color-base: var(--color-gray-700);
+      --border-color-dark: var(--color-gray-600);
 
-    /* actions */
-    --color-active: var(--color-gray-500);
-    --color-hover: var(--color-gray-700);
-    --color-selected: var(--color-gray-900);
-    --color-disabled-color: var(--color-gray-500);
-    --color-disabled: var(--color-gray-700);
-    --color-focus: var(--color-gray-700);
+      /* actions */
+      --color-active: var(--color-gray-500);
+      --color-hover: var(--color-gray-700);
+      --color-selected: var(--color-gray-900);
+      --color-disabled-color: var(--color-gray-500);
+      --color-disabled: var(--color-gray-700);
+      --color-focus: var(--color-gray-700);
 
-    /* Shadows */
-    --shadow-xl:
-      0px 12px 51px 0px rgba(0, 0, 0, 0.6), 0px 3px 24px 0px rgba(0, 0, 0, 0.56), 0px 1px 16px 0px rgba(0, 0, 0, 0.1);
+      /* Shadows */
+      --shadow-xl:
+        0px 12px 51px 0px rgba(0, 0, 0, 0.6), 0px 3px 24px 0px rgba(0, 0, 0, 0.56), 0px 1px 16px 0px rgba(0, 0, 0, 0.1);
+    }
   }
 }

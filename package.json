@@ -1,6 +1,6 @@
 {
   "name": "@hummingbirdui/hummingbird",
-  "version": "0.0.0-insiders.2.2",
+  "version": "0.0.0-insiders.3.0",
   "description": "An open-source system designed for rapid development, without sacrificing the granular control of utility-first CSS.",
   "keywords": [
     "hummingbird",
@@ -52,9 +52,9 @@
     "build:css": "cross-env NODE_ENV=production npx @tailwindcss/cli -i src/index.css -o dist/hummingbird.css",
     "build:css:min": "cross-env NODE_ENV=production npx @tailwindcss/cli -i src/index.css -o dist/hummingbird.min.css --minify",
     "build:styles": "run-s build:css build:css:min",
-    "build:dist": "run-s build:dist:default build:dist:bundle build:styles",
     "build:dist:default": "vite build",
     "build:dist:bundle": "vite build --mode bundle",
+    "build:dist": "run-s build:dist:default build:dist:bundle build:styles",
     "build:lib": "vite build --config vite.lib.config.js",
     "clean:lib": "shx rm -rf lib",
     "clean:dist": "shx rm -rf dist",
@@ -62,7 +62,7 @@
     "build:docs": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "publish": "gh-pages -d build -b gh-pages"
+    "deploy": "gh-pages -d build -b gh-pages"
   },
   "devDependencies": {
     "@astrojs/mdx": "^4.3.6",
@@ -86,7 +86,7 @@
     "@typescript-eslint/parser": "^8.32.1",
     "astro": "^5.13.10",
     "astro-auto-import": "^0.4.4",
-    "bootstrap": "^5.3.3",
+    "bootstrap": "^5.3.8",
     "codemirror": "^6.0.2",
     "cross-env": "^7.0.3",
     "dropzone": "^6.0.0-beta.2",

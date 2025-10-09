@@ -2,9 +2,10 @@
 import BreadcrumbBar from '@components/docs/BreadcrumbBar.astro';
 import Sidebar from '@components/docs/Sidebar.astro';
 import Toc from '@components/docs/Toc.astro';
+import InfoIcon from '@components/icons/InfoIcon.astro';
 import BaseLayout from '@layouts/BaseLayout.astro';
 import { frameworks } from 'apps/data/frameworks';
-const { headings, title, description, toc, redirects, classNames } = Astro.props;
+const { headings, title, description, toc, redirects, classNames, attributeComponent, attributeLink } = Astro.props;
 const pathName = Astro.originPathname;
 
 interface ClassTableRow {
@@ -22,6 +23,21 @@ interface ClassTableRow {
         <div class={`py-10 lg:ps-10 xl:${toc || redirects ? 'pe-10' : 'pe-0'}`}>
           <h1 class="mb-4 text-[32px]">{title}</h1>
           <p class="text-xl mb-10 font-light">{description}</p>
+          {
+            attributeComponent && (
+              (attributeComponent === 'Dropdown' || attributeComponent === 'Tooltip') && <p>{attributeComponent}s use the <a href="https://popper.js.org/docs/v2/">Popper</a> library for dynamic positioning and viewport detection. Include <code>popper.min.js</code> before Hummingbird’s JavaScript, or use <code>hummingbird.bundle.min.js</code> / <code>hummingbird.bundle.js</code>, which include Popper. See the <a href="/docs/getting-started/javascript#dependencies">dependencies</a> section for more details.</p>
+              <div class="alert alert-subtle-info mb-8" role="alert">
+                <InfoIcon class="alert-icon" />
+                <span>
+                  {attributeComponent} components integrate{' '}
+                  <a href={attributeLink} target="_blank">
+                    Bootstrap's JavaScript
+                  </a>{' '}
+                  plugins for interactivity, paired with custom styling for a unique and consistent user experience.
+                </span>
+              </div>
+            )
+          }
           {
             classNames && (
               <div class="overflow-auto rounded-t-2xl max-h-84 mb-12">

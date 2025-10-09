@@ -1,12 +1,12 @@
 ---
-title: Customization
-description: Though Hummingbird works great out of the box, you can customize it to fit your project's unique design needs.
+title: Component customization
+description: Hummingbird components can be customized using theme variables, utility classes, or custom CSS to match specific design needs.
 toc: true
 ---
 
 ## Using Utility Classes
 
-Lets dive into how you can customize Hummingbird to better fit your project's design needs. Suppose you want to customize button component:
+This section explains how to customize Hummingbird to better fit a project's design needs. For example, consider customizing the button component:
 
 <button class="btn mb-4">Base Button</button>
 
@@ -14,8 +14,9 @@ Lets dive into how you can customize Hummingbird to better fit your project's de
 <button class="btn">Base Button</button>
 ```
 
-#### 1. Hummingbird utility
-Using Hummingbird's utility classes, you can easily modify the button's appearance. For example you can change it's color, variants, size etc.
+#### Option 1: Hummingbird utility
+
+Hummingbird’s utility classes allow easy modification of a button’s appearance. For example, the color, variant, size, and other properties can be adjusted as needed.
 
 <div class='flex flex-wrap gap-2 mb-4'>
   <button class="btn btn-primary">Primary</button>
@@ -30,9 +31,9 @@ Using Hummingbird's utility classes, you can easily modify the button's appearan
 <button class="btn btn-text-info">Info</button>
 ```
 
-#### 2. Tailwind utility
+#### Option 2: Tailwind utility
 
-You can customize using tailwind utility classes. For example, you can create rounded pill buttons by adding `rounded-full` class, you can all other tailwind utility classes as well.
+Customization can be done using Tailwind utility classes. For example, rounded pill buttons can be created by adding the rounded-full class. All other Tailwind utility classes can be applied as well.
 
 <div class='flex flex-wrap gap-2 mb-4'>
   <button class="btn btn-primary rounded-full">Pill Button</button>
@@ -43,9 +44,9 @@ You can customize using tailwind utility classes. For example, you can create ro
 <button class="btn btn-subtle-secondary px-12 rounded-full hover:shadow-2xs">Pill Button</button>
 ```
 
-<h4 class='font-medium'>3. <code class='text-base'>@apply</code> directive</h4>
+<h4 class='font-medium'>Option 3: <code class='text-base'>@apply</code> directive</h4>
 
-You can customize inside CSS file using Tailwind CSS `@apply` directive,
+Customization can also be done within a CSS file using Tailwind CSS’s `@apply` directive.
 
 ```css
 @utility btn {
@@ -55,13 +56,13 @@ You can customize inside CSS file using Tailwind CSS `@apply` directive,
 
 ## Using CSS variables
 
-Hummingbird components are styled using a set of CSS variables. These variables make it easy to customize styles either globally (across your entire project) or locally (for a specific component).
+Hummingbird components are styled using a set of CSS variables. These variables make it easy to customize styles either globally (across entire project) or locally (for a specific component).
 
-For example, to update or customize the Button component, you can override its CSS variables:
+For example, to update or customize the Button component, override its CSS variables:
 
-#### 1. Global variables
+#### Option 1: Global variables
 
-Override the theme variables globally under `@theme`. This will apply the changes across all components in your project.
+Override the theme variables globally under `@theme`. This will apply the changes across all components in the project.
 
 <Example lang='sass' showPreview={false}
   code={`@theme {
@@ -72,7 +73,7 @@ Override the theme variables globally under `@theme`. This will apply the change
     --color-disabled-color: var(--color-gray-500);
   }`}/>
 
-#### 2. Local variables
+#### Option 2: Local variables
 
 Override the component variables locally under specific components classes or in the custom CSS class. This will apply the changes only to that specific component.
 

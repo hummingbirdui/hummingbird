@@ -4,7 +4,7 @@ description: This guide provides an overview of Hummingbird's JavaScript compone
 toc: true
 ---
 
-Hummingbird creates interactive components using **Bootstrap’s JavaScript plugins**. Hummingbird ensures smooth interactivity, accessibility, and consistent behavior across browsers. With built-in TypeScript support, every plugin is type-safe and developer-friendly, making it easier to extend, customize, and integrate into modern workflows.
+Hummingbird creates interactive components using <a href="https://getbootstrap.com/docs/5.3/getting-started/javascript/" target='_blank'>Bootstrap's JavaScript plugins</a>. Hummingbird ensures smooth interactivity, accessibility, and consistent behavior across browsers. With built-in TypeScript support, every plugin is type-safe and developer-friendly, making it easier to extend, customize, and integrate into modern workflows.
 
 ## Include Plugins
 
@@ -17,7 +17,7 @@ Plugins can be included individually or all at once.
 ```
 <br/>
 
-Alternatively, import Hummingbird in the JavaScript entry file. 
+Alternatively, if using a build system (like Vite or Webpack), import Hummingbird directly in the JavaScript entry file.
 
 ```js
 import "@hummingbirdui/hummingbird";
@@ -87,6 +87,17 @@ Here’s how to initialize and use the [Modal](/docs/components/modal) component
 <br/>
 
 ```js
+const openBtn = document.querySelector("[data-open-demo-modal]");
+const myModal = new window.hummingbird.Modal(".modal");
+
+openBtn.addEventListener("click", () => {
+  myModal.show();
+});
+```
+<br/>
+When using a build system such as Vite or Webpack, import [Modal](/docs/components/modal) as shown below.
+
+```js
 import { Modal } from "@hummingbirdui/hummingbird";
 const openBtn = document.querySelector("[data-open-demo-modal]");
 const myModal = new Modal(".modal");
@@ -121,8 +132,15 @@ You don’t need to choose manually, your bundler or runtime will pick the right
 
 Hummingbird can be integrated into various JavaScript frameworks, including [React](./react), [Vue](./vue), [Angular](./angular), and more. Leverage its components within these frameworks by following best practices for DOM manipulation and component lifecycle management.
 
-Follow the framework-specific guidelines to ensure smooth integration and optimal performance.
+Follow the [framework-specific guidelines](https://hbui.dev/docs/getting-started/framework-guides/) to ensure smooth integration and optimal performance.
 
 ## Dependencies
 
-Some JavaScript components rely on [Popper](https://popper.js.org/docs/v2/) for positioning elements, such as dropdowns, tooltips, and pop-overs. When using these components, include `Popper.js` in the project, or use `himmingbird.bundle.min.js`, which includes `Popper.js`.
+Some JavaScript components rely on [Popper](https://popper.js.org/docs/v2/) for positioning elements, such as dropdowns, tooltips, and popovers. When using these components, include `Popper.js` in the project, or use `himmingbird.bundle.min.js`, which includes `Popper.js`.
+
+Include `popper.min.js` along with `hummingbird.min.js`, if `hummingbird.bundle.min.js` is not included.
+
+```js
+<script src="../path/to/@popperjs/core/dist/umd/popper.min.js"></script>
+<script src="../path/to/@hummingbirdui/hummingbird/dist/hummingbird.min.js"></script>
+```

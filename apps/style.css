@@ -2,16 +2,12 @@
 @import 'tailwindcss';
 @import '../src/index.css';
 @import 'tailwind-scrollbar-hide/v4';
-@custom-variant dark (&:where(.dark, .dark *));
+@custom-variant dark (&:where(.dark, .dark *), .dark);
 
 @theme {
   --container-8xl: 95rem;
   --navbar-height: --spacing(20.5);
-  --anchor-header-offset: 120px;
-}
-
-.disable-transitions * {
-  @apply !transition-none;
+  --anchor-header-offset: 7.5rem;
 }
 
 .docs-sidebar {
@@ -78,7 +74,7 @@
 }
 
 .astro-code {
-  @apply overflow-y-hidden !bg-muted text-sm p-4 rounded-lg;
+  @apply overflow-scroll !bg-muted text-sm p-4 rounded-lg;
   .shiki {
     @apply !bg-transparent;
   }
@@ -103,6 +99,10 @@
 
 .dz-default {
   @apply !m-0 flex items-center;
+}
+
+.hero-slide {
+  @apply -ml-17 2xl:ml-0 transform scale-80 2xl:scale-100;
 }
 
 /* Search */

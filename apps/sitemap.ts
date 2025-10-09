@@ -32,57 +32,12 @@ const sitemap: Sitemap[] = [
       },
     ],
   },
-  // {
-  //   subHeader: 'Integration guides',
-  //   items: [
-  //     {
-  //       name: 'React',
-  //       path: '/docs/getting-started/react',
-  //     },
-  //     {
-  //       name: 'Next',
-  //       path: '/docs/getting-started/next',
-  //     },
-  //     {
-  //       name: 'Laravel',
-  //       path: '/docs/getting-started/laravel',
-  //     },
-  //     {
-  //       name: 'Vue',
-  //       path: '/docs/getting-started/vue',
-  //     },
-  //     {
-  //       name: 'Nuxt',
-  //       path: '/docs/getting-started/nuxt',
-  //     },
-  //     {
-  //       name: 'Angular',
-  //       path: '/docs/getting-started/angular',
-  //     },
-  //     {
-  //       name: 'Svelte',
-  //       path: '/docs/getting-started/svelte',
-  //     },
-  //     {
-  //       name: 'Gatsby',
-  //       path: '/docs/getting-started/gatsby',
-  //     },
-  //     {
-  //       name: 'Astro',
-  //       path: '/docs/getting-started/astro',
-  //     },
-  //     {
-  //       name: 'Django',
-  //       path: '/docs/getting-started/django',
-  //     },
-  //   ],
-  // },
   {
     subHeader: 'Customize',
     items: [
       {
-        name: 'Customization',
-        path: '/docs/customize/customization',
+        name: 'Component',
+        path: '/docs/customize/component',
       },
       {
         name: 'Theming',
@@ -240,8 +195,8 @@ const sitemap: Sitemap[] = [
         path: '/docs/components/table',
       },
       {
-        name: 'Tooltip',
-        path: '/docs/components/tooltip',
+        name: 'Tooltips',
+        path: '/docs/components/tooltips',
       },
     ],
   },
