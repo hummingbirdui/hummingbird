@@ -3,14 +3,14 @@ import docsearch from '@docsearch/js';
 docsearch({
   container: '#docsearch',
   appId: '9WZCQJVTTL',
-  indexName: 'humming_docs',
+  indexName: 'hummingbird_docs',
   apiKey: 'b2804af869f12be7d3c1f06e61e48e0d',
   placeholder: 'Search',
 });
 docsearch({
   container: '#docsearch-mobile',
   appId: '9WZCQJVTTL',
-  indexName: 'humming_docs',
+  indexName: 'hummingbird_docs',
   apiKey: 'b2804af869f12be7d3c1f06e61e48e0d',
   placeholder: 'Search',
 });
