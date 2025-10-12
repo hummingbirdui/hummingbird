@@ -118,7 +118,10 @@
   --docsearch-footer-background: var(--background-color-default);
   --docsearch-footer-shadow: none;
   --docsearch-footer-height: --spacing(12);
+  --docsearch-text-color: var(--text-color-default);
+  --docsearch-hit-color: var(--text-color-muted);
 }
+
 .DocSearch-Container {
   @apply z-2000!;
 }
@@ -151,7 +154,13 @@
   }
 }
 .DocSearch-Modal {
-  @apply rounded-lg!;
+  @apply rounded-lg! max-md:max-w-[calc(100%-48px)]! max-md:max-h-[calc(100vh-48px)]! mx-auto! mt-6!;
+  @variant dark {
+    @apply border border-base;
+  }
+}
+.DocSearch-Cancel {
+  @apply hidden!;
 }
 .DocSearch-SearchBar {
   @apply p-0!;
@@ -169,7 +178,7 @@
   @apply text-subtle!;
 }
 .DocSearch-Footer {
-  @apply border-t border-light;
+  @apply border-t border-light max-md:rounded-b-lg!;
 }
 .DocSearch-Commands {
   @apply hidden!;
