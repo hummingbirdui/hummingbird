@@ -25,7 +25,6 @@ interface ClassTableRow {
           <p class="text-xl mb-10 font-light">{description}</p>
           {
             attributeComponent && (
-              (attributeComponent === 'Dropdown' || attributeComponent === 'Tooltip') && <p>{attributeComponent}s use the <a href="https://popper.js.org/docs/v2/">Popper</a> library for dynamic positioning and viewport detection. Include <code>popper.min.js</code> before Hummingbird’s JavaScript, or use <code>hummingbird.bundle.min.js</code> / <code>hummingbird.bundle.js</code>, which include Popper. See the <a href="/docs/getting-started/javascript#dependencies">dependencies</a> section for more details.</p>
               <div class="alert alert-subtle-info mb-8" role="alert">
                 <InfoIcon class="alert-icon" />
                 <span>
@@ -36,6 +35,17 @@ interface ClassTableRow {
                   plugins for interactivity, paired with custom styling for a unique and consistent user experience.
                 </span>
               </div>
+            )
+          }
+          {
+            (attributeComponent === 'Dropdown' || attributeComponent === 'Tooltip') && (
+              <p>
+                {attributeComponent}s use the <a href="https://popper.js.org/docs/v2/">Popper</a> library for dynamic
+                positioning and viewport detection. Include <code>popper.min.js</code> before Hummingbird’s JavaScript,
+                or use <code>hummingbird.bundle.min.js</code> / <code>hummingbird.bundle.js</code>, which include
+                Popper. See the <a href="/docs/getting-started/javascript#dependencies">dependencies</a> section for
+                more details.
+              </p>
             )
           }
           {
