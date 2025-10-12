@@ -5,6 +5,7 @@ import FacebookIcon from '@components/icons/FacebookIcon.astro';
 import DiscordIcon from '@components/icons/DiscordIcon.astro';
 import DevIcon from '@components/icons/DevIcon.astro';
 import type { AstroComponentFactory } from 'astro/runtime/server/index.js';
+import InstagramIcon from '@components/icons/InstagramIcon.astro';
 
 interface FooterLink {
   title: string;
@@ -51,23 +52,28 @@ export const socialLinks: SocialLink[] = [
     icon: GithubIcon,
   },
   {
-    name: 'twitter',
-    url: '#!',
-    icon: TwitterIcon,
-  },
-  {
-    name: 'discord',
-    url: '#!',
-    icon: DiscordIcon,
-  },
-  {
     name: 'facebook',
     url: 'https://www.facebook.com/HummingbirdUI/',
     icon: FacebookIcon,
   },
   {
+    name: 'instagram',
+    url: 'https://www.instagram.com/hummingbird.ui',
+    icon: InstagramIcon,
+  },
+  {
+    name: 'twitter',
+    url: 'https://x.com/Hummingbird_UI',
+    icon: TwitterIcon,
+  },
+  {
+    name: 'discord',
+    url: 'https://discord.gg/eTTSWTNk',
+    icon: DiscordIcon,
+  },
+  {
     name: 'dev',
-    url: '#!',
+    url: 'https://dev.to/hummingbirdui',
     icon: DevIcon,
   },
 ];

@@ -13,9 +13,7 @@ import { VERSION } from 'apps/const';
 const menuItems = [
   { name: 'Docs', path: '/docs/getting-started/installation' },
   { name: 'Components', path: '/docs/components/overview' },
-  // { name: 'Examples', path: '#' },
-  { name: 'Blog', path: '#' },
-  // { name: 'Roadmap', path: '#' },
+  { name: 'Blog', path: 'https://hummingbirdui.medium.com/' },
 ];
 
 const currentPath = Astro.url.pathname;
@@ -24,7 +22,7 @@ const repo = await getRepoData();
 const stars = repo.stargazers_count ?? 2;
 ---
 
-<nav class="px-6 md:px-10 sticky top-0 border-b border-light bg-default z-1045">
+<nav class="px-6 md:px-10 sticky top-0 border-b border-light bg-default z-1035">
   <div class="mx-auto py-5 flex items-center w-full max-w-8xl">
     <a class="navbar-brand flex items-center gap-2" href="/">
       <Image src={logo} alt="Logo" class="w-10 h-10" />
@@ -43,6 +41,7 @@ const stars = repo.stargazers_count ?? 2;
                 currentPath === item.path ? 'text-primary' : ''
               }`}
               aria-disabled="true"
+              target={item.name === 'Blog' ? '_blank' : undefined}
             >
               {item.name}
             </a>
@@ -71,7 +70,7 @@ const stars = repo.stargazers_count ?? 2;
       href="#mainNavOffcanvas"
       role="button"
       aria-controls="mainNavOffcanvas"
-      class="ml-6 btn btn-circle btn-subtle-neutral flex xl:hidden"
+      class="ml-2 sm:ml-6 btn btn-circle btn-subtle-neutral flex xl:hidden"
     >
       <MenuIcon />
     </a>
