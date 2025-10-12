@@ -114,13 +114,14 @@ Redefine theme variables by declaring them in `@theme` after importing Hummingbi
 
 ### Spacing
 
-Customize spacing scale by overriding `--spacing-*` variables:
+Customize spacing by overriding the default spacing variable or defining new ones as needed.
 
 ```css
 @theme {
-  --spacing-1: 4px;
-  --spacing-2: 8px;
-  --spacing-3: 12px;
+  --spacing: 4px;
+
+  /* Custom spacing */
+  --spacing-lg: 16px;
 }
 ```
 
@@ -135,7 +136,8 @@ Customize and add new responsive breakpoints by overriding `--breakpoint-*` vari
   --breakpoint-lg: 64rem;
   --breakpoint-xl: 80rem;
   --breakpoint-2xl: 96rem;
-  /* new */
+
+  /* Custom breakpoint */
   --breakpoint-3xl: 120rem;
 }
 ```

@@ -23,6 +23,12 @@ Alternatively, if using a build system (like Vite or Webpack), import Hummingbir
 import "@hummingbirdui/hummingbird";
 ```
 <br/>
+Another quickest way to include Hummingbird script in a project is via CDN link.
+
+<Example lang='html' showPreview={false} 
+  code={`<script src="https://cdn.jsdelivr.net/npm/@hummingbirdui/hummingbird@0.0.0-insiders.3.0/dist/hummingbird.bundle.min.js"></script>`} />
+
+<br/>
 **Include Individual Plugins:**
 
 ```html
@@ -56,6 +62,18 @@ The example below shows how to import only the [Modal](/docs/components/modal) p
   // import "@hummingbirdui/hummingbird/lib/esm/scripts/toast";
   // import "@hummingbirdui/hummingbird/lib/esm/scripts/tooltip";
 `} />
+
+The example below demonstrates how to efficiently control the [Modal](/docs/components/modal) component programmatically by importing only the Modal plugin.
+
+<Example lang='js' showPreview={false} 
+  code={`import Modal from "@hummingbirdui/hummingbird/lib/esm/scripts/modal";
+  const openBtn = document.querySelector("[data-open-demo-modal]");
+  const myModal = new Modal(".modal");
+
+  openBtn.addEventListener("click", () => {
+    myModal.show();
+  });`}
+/>
 
 ## JavaScript API
 
