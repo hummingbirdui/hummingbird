@@ -674,3 +674,102 @@ The ultimate configuration object results from merging `data-bs-config`, individ
     </tr>
   </tbody>
 </HbTable>
+
+## Methods
+
+<div class="alert alert-subtle-danger items-start mb-6" role="alert">
+  <svg class="alert-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M12 17q.425 0 .713-.288T13 16t-.288-.712T12 15t-.712.288T11 16t.288.713T12 17m-1-4h2V7h-2zm1 9q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22m0-2q3.35 0 5.675-2.325T20 12t-2.325-5.675T12 4T6.325 6.325T4 12t2.325 5.675T12 20m0-8" stroke-width="0.5" stroke="currentColor"/></svg>
+  <span class="-mt-1">**All available API methods operate asynchronously, initiating a transition**. They complete their return to the caller immediately upon transition commencement, yet prior to its conclusion. Furthermore, any method invoked on a component currently undergoing transition will be disregarded. For more detailed information, consult the
+  <a href="https://getbootstrap.com/docs/5.3/getting-started/javascript/#asynchronous-functions-and-transitions">JavaScript documentation</a></span>
+</div>
+
+### Supplying Options
+
+Content can be activated as a modal by providing an optional options object.
+
+<Example showPreview={false} lang='js'
+  code={`const myModal = new hummingbird.Modal('#myModal', {
+    keyboard: false
+  })
+`} />
+
+<HbTable>
+  <thead>
+    <tr>
+      <th scope="col">Method</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td scope="row">`dispose`</td>
+      <td scope="row">Destroys a modal element, removing associated data from its DOM element.</td>
+    </tr>
+    <tr>
+      <td scope="row">`getInstance`</td>
+      <td scope="row">A static method for retrieving the modal instance linked to a specific DOM element.</td>
+    </tr>
+    <tr>
+      <td scope="row">`getOrCreateInstance`</td>
+      <td scope="row">A static method for either retrieving an existing modal instance associated with a DOM element or creating a new one if it has not been initialized.</td>
+    </tr>
+    <tr>
+      <td scope="row">`handleUpdate`</td>
+      <td scope="row">Allows for manual adjustment of the modal's position if its height changes while open, such as when a scrollbar becomes visible.</td>
+    </tr>
+    <tr>
+      <td scope="row">`hide`</td>
+      <td scope="row">Manually conceals a modal, returning control to the caller before the modal is actually hidden (i.e., before the `hidden.bs.modal` event occurs).</td>
+    </tr>
+    <tr>
+      <td scope="row">`show`</td>
+      <td scope="row">Manually reveals a modal, returning control to the caller before the modal is actually shown (i.e., before the `shown.bs.modal` event occurs). A DOM element can also be passed as an argument, which will be accessible in modal events via the `relatedTarget` property. For example: `const modalToggle = document.getElementById('toggleMyModal'); myModal.show(modalToggle)`.</td>
+    </tr>
+    <tr>
+      <td scope="row">`toggle`</td>
+      <td scope="row">Manually switches the state of a modal (between shown and hidden), returning control to the caller before the modal is actually shown or hidden (i.e., before the `shown.bs.modal` or `hidden.bs.modal` event occurs).</td>
+    </tr>
+  </tbody>
+</HbTable>
+
+## Events
+
+The modal class provides a series of events for integrating with modal functionality. All modal events are triggered directly on the modal element itself (i.e., on the `<div class="modal">`).
+
+<HbTable>
+  <thead>
+    <tr>
+      <th scope="col">Event</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td scope="row">`hide.bs.modal`</td>
+      <td scope="row">This event triggers immediately upon the `hide` instance method's invocation. It can be prevented by calling `event.preventDefault()`. Refer to the <a target="_blank" href="https://getbootstrap.com/docs/5.3/getting-started/javascript/#events">JavaScript events documentation</a> for further details on event prevention.</td>
+    </tr>
+    <tr>
+      <td scope="row">`hidden.bs.modal`</td>
+      <td scope="row">This event triggers after the modal has completed its transition to a hidden state from the user's view (it awaits the completion of CSS transitions).</td>
+    </tr>
+    <tr>
+      <td scope="row">`hidePrevented.bs.modal`</td>
+      <td scope="row">This event triggers when a modal is displayed, its backdrop is `static`, and an external click occurs. It also triggers when the escape key is pressed while the `keyboard` option is set to `false`.</td>
+    </tr>
+    <tr>
+      <td scope="row">`show.bs.modal`</td>
+      <td scope="row">This event triggers immediately when the `show` instance method is called. If the event is caused by a click, the originating clicked element is accessible through the `relatedTarget` property of the event.</td>
+    </tr>
+    <tr>
+      <td scope="row">`shown.bs.modal`</td>
+      <td scope="row">This event triggers once the modal has become visible to the user (it awaits the completion of CSS transitions). If the event is caused by a click, the originating clicked element is accessible through the `relatedTarget` property of the event.</td>
+    </tr>
+  </tbody>
+</HbTable>
+
+<Example showPreview={false} lang='js'
+  code={`const myModalEl = document.getElementById('myModal')
+  myModalEl.addEventListener('hidden.bs.modal', event => {
+    // perform actions...
+  })
+`} />
