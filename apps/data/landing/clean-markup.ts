@@ -10,21 +10,21 @@ export const tabsData: TabData[] = [
     id: 'tailwindcss',
     label: 'Tailwind CSS',
     active: true,
-    code: `<div class="w-75 h-full border border-[#c9d0de] dark:border-[#282c32] rounded-2xl overflow-hidden">
+    code: `<div class="w-75 h-full border border-gray-300 dark:border-gray-600 rounded-2xl overflow-hidden">
   <img src='./images/nature.png' class="h-1/2 w-full object-cover" alt="card-image" />
   <div class="p-4 h-1/2 flex flex-col">
     <div class="flex justify-between">
       <div>
-        <h4 class="mb-1 text-xl text-[#1d2025] dark:text-white">Bali Getaway</h4>
-        <p class="text-xs text-[#a4abb9] dark:text-[#7c8491]">5 Days · 4 Nights</p>
+        <h4 class="mb-1 text-xl text-gray-800 dark:text-white">Bali Getaway</h4>
+        <p class="text-xs text-gray-400 dark:text-gray-500">5 Days · 4 Nights</p>
       </div>
-      <h6 class="text-base text-[#1d2025] dark:text-white">$499 pp</h6>
+      <h6 class="text-base text-gray-800 dark:text-white">$499 pp</h6>
     </div>
-    <p class="text-sm text-[#505763] dark:text-[#a4abb9]">
+    <p class="text-sm text-gray-600 dark:text-gray-400">
       Discover the beauty of Bali with guided tours, luxury resorts, and unforgettable sunsets. Perfect for
       families.
     </p>
-    <button class="mt-auto w-full h-9 text-sm text-[#fff] dark:text-[#1d2025] font-semibold bg-[#1d2025] dark:bg-[#c9d0de] rounded-lg"
+    <button class="mt-auto w-full h-9 text-sm text-white dark:text-gray-800 font-semibold bg-gray-800 dark:bg-gray-300 rounded-lg"
       >Book now</button
     >
   </div>
