@@ -12,16 +12,14 @@ Plugins can be included individually or all at once.
 
 **Include All Plugins:**
 
-```html
-<script src="../path/to/@hummingbirdui/hummingbird/dist/hummingbird.bundle.min.js"></script>
-```
+<Example lang='html' showPreview={false} 
+  code={`<script src="../path/to/@hummingbirdui/hummingbird/dist/hummingbird.bundle.min.js"></script>`} />
 <br/>
 
 Alternatively, if using a build system (like Vite or Webpack), import Hummingbird directly in the JavaScript entry file.
 
-```js
-import "@hummingbirdui/hummingbird";
-```
+<Example lang='js' showPreview={false} 
+  code={`import "@hummingbirdui/hummingbird";`} />
 <br/>
 Another quickest way to include Hummingbird script in a project is via CDN link.
 
@@ -31,16 +29,14 @@ Another quickest way to include Hummingbird script in a project is via CDN link.
 <br/>
 **Include Individual Plugins:**
 
-```html
-<script src="../path/to/@hummingbirdui/hummingbird/lib/esm/scripts/modal.js"></script>
-```
+<Example lang='html' showPreview={false} 
+  code={`<script src="../path/to/@hummingbirdui/hummingbird/lib/esm/scripts/modal.js"></script>
+`} />
 <br/>
 
 Alternatively, individual plugins can be imported into a JavaScript file.
-
-```js
-import "@hummingbirdui/hummingbird/lib/esm/scripts/modal";
-```
+<Example lang='js' showPreview={false} 
+  code={`import "@hummingbirdui/hummingbird/lib/esm/scripts/modal";`} />
 
 ## Optimization
 
@@ -81,58 +77,55 @@ Hummingbird also provides a JavaScript API for programmatic control of component
 
 Here’s how to initialize and use the [Modal](/docs/components/modal) component:
 
-```html
-<button class="btn btn-primary" data-open-demo-modal>Open Modal</button>
-<div class="modal" id="demo-modal" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Demo Modal</h5>
-        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <p>This is a demo modal.</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+<Example lang='html' showPreview={false} 
+  code={`<button class="btn btn-primary" data-open-demo-modal>Open Modal</button>
+  <div class="modal" id="demo-modal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Demo Modal</h5>
+          <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>This is a demo modal.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary me-2" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
       </div>
     </div>
-  </div>
-</div>
-```
+  </div>`} />
 
 <br/>
 
-```js
-const openBtn = document.querySelector("[data-open-demo-modal]");
+<Example lang='js' showPreview={false} 
+  code={`const openBtn = document.querySelector("[data-open-demo-modal]");
 const myModal = new window.hummingbird.Modal(".modal");
 
 openBtn.addEventListener("click", () => {
   myModal.show();
-});
-```
+});`} />
+
 <br/>
 When using a build system such as Vite or Webpack, import [Modal](/docs/components/modal) as shown below.
 
-```js
-import { Modal } from "@hummingbirdui/hummingbird";
+<Example lang='js' showPreview={false} 
+  code={`import { Modal } from "@hummingbirdui/hummingbird";
 const openBtn = document.querySelector("[data-open-demo-modal]");
 const myModal = new Modal(".modal");
 
 openBtn.addEventListener("click", () => {
   myModal.show();
-});
-```
+});`} />
 
 ## TypeScript Support
 
 Hummingbird includes TypeScript definitions for all components. Import Hummingbird plugins with their types while using TypeScript.
 
-```ts
-import { Modal } from "@hummingbirdui/hummingbird";
-import { type ModalClass, type ModalInstance, type ModalOptions } from "@hummingbirdui/hummingbird";
-```
+<Example lang='ts' showPreview={false} 
+  code={`import { Modal } from "@hummingbirdui/hummingbird";
+import { type ModalClass, type ModalInstance, type ModalOptions } from "@hummingbirdui/hummingbird";`} />
 
 ## ESM vs CJS
 
@@ -158,7 +151,6 @@ Some JavaScript components rely on [Popper](https://popper.js.org/docs/v2/) for 
 
 Include `popper.min.js` along with `hummingbird.min.js`, if `hummingbird.bundle.min.js` is not included.
 
-```js
-<script src="../path/to/@popperjs/core/dist/umd/popper.min.js"></script>
-<script src="../path/to/@hummingbirdui/hummingbird/dist/hummingbird.min.js"></script>
-```
+<Example lang='js' showPreview={false} 
+  code={`<script src="../path/to/@popperjs/core/dist/umd/popper.min.js"></script>
+<script src="../path/to/@hummingbirdui/hummingbird/dist/hummingbird.min.js"></script>`} />

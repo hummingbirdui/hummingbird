@@ -1,6 +1,6 @@
 ---
 title: Introduction
-description: A comprehensive &  open-source component system for building Tailwind-powered, sophisticated, scalable web applications. 
+description: A comprehensive & open-source component system for building Tailwind-powered, sophisticated, scalable web applications. 
 toc: true
 ---
 
@@ -33,7 +33,7 @@ Import Hummingbird styles in the main CSS file (e.g., `styles.css`).
   code={`@import "tailwindcss";
   @import "@hummingbirdui/hummingbird";`} />
 
-#### 4. Initialize JS plugins
+#### 4. Initialize JavaScript plugins
 
 Include Hummingbird javascript at the end of the HTML body.
 
@@ -58,7 +58,7 @@ Learn more about Hummingbird’s JavaScript components in the [JavaScript sectio
 
 ### JavaScript API
 
-Hummingbird also provides a JavaScript API for programmatic control of components. For example, an modal can be toggled manually using the API.
+Hummingbird also provides a JavaScript API for programmatic control of components. For example, the modal can be toggled manually using the API.
 
 Here’s how to initialize and use the [Modal](/docs/components/modal) component:
 
@@ -77,7 +77,7 @@ openBtn.addEventListener("click", () => {
 });
 ```
 <br/>
-When using a build system such as Vite or Webpack, import [Modal](/docs/components/modal) as shown below.
+When using a build system such as Vite or Webpack, import [Modal](/docs/components/modal) as shown below:
 
 ```js
 import { Modal } from "@hummingbirdui/hummingbird";
@@ -100,13 +100,13 @@ import { type ModalClass, type ModalInstance, type ModalOptions } from "@humming
 
 ### ESM vs CJS
 
-Hummingbird supports both **ESM** and **CJS** builds so it works with different environments:
+Hummingbird supports both **ESM** and **CJS** builds, so it works with different environments:
 
-* **ESM**
+* **ESM:**
   Used by modern bundlers like **Vite**, **Rollup**, and **Webpack 5+**. If a project is using ES modules (import syntax), this is what gets loaded automatically.
 
 
-* **CJS**
+* **CJS:**
   Used in **Node.js** or older tooling that relies on `require()`. If the environment doesn’t support ESM, bundlers and Node will fall back to this file.
 
 No manual choice is required; the bundler or runtime will select the correct version based on the setup.

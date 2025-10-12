@@ -8,11 +8,11 @@ toc: true
 
 Hummingbird UI is built on Tailwind CSS v4 and exposes a set of theme variables (design tokens) for colors, typography, shadows, and more.
 
-- Use our theme variables (like `--color-primary` and `--shadow-md`) via standard Tailwind utilities (for example `bg-primary`, `text-primary`, `shadow-md`).
+- Use our theme variables (like `--color-primary` and `--shadow-md`) via standard Tailwind utilities (for example, `bg-primary`, `text-primary`, `shadow-md`).
 
-- Override any theme variables globally by redefining it in an `@theme { ... }` block after importing our CSS.
+- Override any theme variables globally by redefining them in an `@theme { ... }` block after importing our CSS.
 
-- Create multiple themes (e.g. light/dark/forest) by overriding the theme variables within a theme scope like `@variant dark{}`, or `[data-theme="dark"]{}`.
+- Create multiple themes (e.g., light/dark/forest) by overriding the theme variables within a theme scope like `@variant dark{}`, or `[data-theme="dark"]{}`.
 
 - Reboot provides a base CSS reset with element-specific styles for consistent design across browsers.
 
@@ -144,7 +144,7 @@ Customize and add new responsive breakpoints by overriding `--breakpoint-*` vari
 
 ## Multiple themes
 
-Hummingbird use a small set of theme variables. By overriding these variables within a new theme scope, multiple themes can be created.
+Hummingbird uses a small set of theme variables. By overriding these variables within a new theme scope, multiple themes can be created.
 
 ```sass
 @theme {
@@ -171,7 +171,7 @@ For more details, follow the [Reboot](/docs/content/reboot) documentation.
 
 ## Tailwind theme variable namespaces
 
-Tailwind Theme variables are defined in namespaces and each namespace corresponds to one or more utility class or variant APIs.
+Tailwind Theme variables are defined in namespaces, and each namespace corresponds to one or more utility classes or variant APIs.
 
 Defining new theme variables in these namespaces will make new corresponding utilities and variants available in the project:
 
