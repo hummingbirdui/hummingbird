@@ -13,9 +13,7 @@ import { VERSION } from 'apps/const';
 const menuItems = [
   { name: 'Docs', path: '/docs/getting-started/installation' },
   { name: 'Components', path: '/docs/components/overview' },
-  // { name: 'Examples', path: '#' },
-  { name: 'Blog', path: '#' },
-  // { name: 'Roadmap', path: '#' },
+  { name: 'Blog', path: 'https://hummingbirdui.medium.com/' },
 ];
 
 const currentPath = Astro.url.pathname;
@@ -43,6 +41,7 @@ const stars = repo.stargazers_count ?? 2;
                 currentPath === item.path ? 'text-primary' : ''
               }`}
               aria-disabled="true"
+              target={item.name === 'Blog' ? '_blank' : undefined}
             >
               {item.name}
             </a>
