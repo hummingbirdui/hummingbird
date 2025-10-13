@@ -10,35 +10,27 @@
   --anchor-header-offset: 7.5rem;
 }
 
-::-webkit-scrollbar {
+:root[data-os='windows'] ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
 }
-
-::-webkit-scrollbar-track {
-  background: transparent;
+:root[data-os='windows'] ::-webkit-scrollbar-track {
+  background: var(--color-gray-100);
 }
-
-::-webkit-scrollbar-thumb {
-  background-color: transparent;
+:root[data-os='windows'] ::-webkit-scrollbar-thumb {
+  background-color: var(--color-gray-400);
   border-radius: 9999px;
 }
 
-.dark ::-webkit-scrollbar-track {
-  background: red;
+:root[data-os='windows'].dark ::-webkit-scrollbar-track {
+  background: var(--color-gray-800);
+}
+:root[data-os='windows'].dark ::-webkit-scrollbar-thumb {
+  background-color: var(--color-gray-600);
 }
 
-.dark ::-webkit-scrollbar-thumb {
-  background-color: red;
-}
-
-html {
-  /* scrollbar-width: thin; */
-  scrollbar-color: #111;
-}
-
-.dark html {
-  scrollbar-color: #111;
+.astro-code::-webkit-scrollbar-track {
+  background: transparent !important;
 }
 
 .docs-sidebar {
@@ -105,7 +97,7 @@ html {
 }
 
 .astro-code {
-  @apply overflow-scroll !bg-muted text-sm p-4 rounded-lg;
+  @apply overflow-auto !bg-muted text-sm p-4 rounded-lg;
   .shiki {
     @apply !bg-transparent;
   }

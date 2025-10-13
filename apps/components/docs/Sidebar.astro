@@ -5,7 +5,7 @@ const path = '/' + (segments.length > 3 ? segments.slice(0, 3) : segments).join(
 ---
 
 <div
-  class="docs-sidebar offcanvas-lg offcanvas-start lg:sticky top-[calc(var(--navbar-height)+53px)] lg:top-[var(--navbar-height)] w-60 lg:max-h-[calc(100dvh-var(--navbar-height))] overflow-y-auto z-1034"
+  class="docs-sidebar offcanvas-lg offcanvas-start lg:sticky top-[calc(var(--navbar-height)+53px)] lg:top-[var(--navbar-height)] w-60 lg:max-h-[calc(100dvh-var(--navbar-height))] overflow-hidden z-1034"
   tabindex="-1"
   id="sidebarOffcanvas"
   aria-labelledby="sidebarOffcanvasLabel"
@@ -50,7 +50,7 @@ const path = '/' + (segments.length > 3 ? segments.slice(0, 3) : segments).join(
 </div>
 
 <script>
-  const sidebar = document.querySelector('.docs-sidebar');
+  const sidebar = document.querySelector('.docs-sidebar') as HTMLElement;
   function scrollToActive() {
     const activeLink = document.querySelector('.list-group-item.active');
     if (!activeLink || !sidebar) return;
@@ -60,6 +60,10 @@ const path = '/' + (segments.length > 3 ? segments.slice(0, 3) : segments).join(
 
     const relativeTop = activeRect.top - sidebarRect.top + sidebar.scrollTop;
     const top = relativeTop - (sidebar.clientHeight - activeLink.clientHeight) / 2;
+
+    setTimeout(() => {
+      sidebar.classList.add('overflow-y-auto');
+    }, 100);
 
     sidebar.scrollTo({ top, behavior: 'auto' });
   }

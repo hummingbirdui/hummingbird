@@ -49,4 +49,8 @@ document.addEventListener('DOMContentLoaded', () => {
       event.preventDefault();
     }
   });
+
+  if (/Windows NT/i.test(navigator.userAgent)) {
+    document.documentElement.setAttribute('data-os', 'windows');
+  }
 });
