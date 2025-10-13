@@ -5,17 +5,18 @@ import CloseIcon from '@components/icons/CloseIcon.astro';
 import ErrorIcon from '@components/icons/ErrorIcon.astro';
 import { comparisons, frameworks } from 'apps/data/landing/comparisons';
 import { Image } from 'astro:assets';
+import { undefined } from 'astro:schema';
 
 const getIcon = (featureState: string) => {
   switch (featureState) {
     case 'yes':
-      return { icon: CheckIcon, color: 'text-primary-light' };
+      return { icon: CheckIcon, color: 'text-primary' };
     case 'no':
-      return { icon: CloseIcon, color: 'text-[var(--color-gray-300)] dark:text-[var(--color-gray-700)]' };
+      return { icon: CloseIcon, color: 'text-[var(--color-gray-300)] dark:text-[var(--color-gray-600)]' };
     case 'partial':
-      return { icon: ErrorIcon, color: 'text-[var(--color-blue-200)] dark:text-[var(--color-blue-800)]' };
-    case 'highlight':
-      return { icon: StarIcon, color: 'text-primary-light' };
+      return { icon: ErrorIcon, color: 'text-[var(--color-blue-200)] dark:text-[var(--color-blue-700)]' };
+    case 'strong':
+      return { icon: StarIcon, color: 'text-primary' };
   }
 };
 ---
@@ -61,7 +62,15 @@ const getIcon = (featureState: string) => {
                     .filter(Boolean)
                     .join(' ')}
                 >
-                  {Icon && <Icon class={`mx-auto ${color}`} />}
+                  {Icon && (
+                    <Icon
+                      class={`mx-auto outline-0 ${color}`}
+                      data-bs-toggle={'tooltip'}
+                      data-bs-placement="top"
+                      data-bs-title={value === 'strong' || value === 'partial' ? value : undefined}
+                      data-bs-custom-class="table-tooltip"
+                    />
+                  )}
                 </td>
               );
             })}

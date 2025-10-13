@@ -10,6 +10,37 @@
   --anchor-header-offset: 7.5rem;
 }
 
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  border-radius: 9999px;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: red;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background-color: red;
+}
+
+html {
+  /* scrollbar-width: thin; */
+  scrollbar-color: #111;
+}
+
+.dark html {
+  scrollbar-color: #111;
+}
+
 .docs-sidebar {
   ~ .offcanvas-backdrop {
     @apply z-8;
@@ -103,6 +134,10 @@
 
 .hero-slide {
   @apply -ml-17 2xl:ml-0 transform scale-80 2xl:scale-100;
+}
+
+.table-tooltip {
+  @apply capitalize;
 }
 
 /* Search */
