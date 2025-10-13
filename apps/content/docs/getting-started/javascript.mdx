@@ -129,15 +129,15 @@ import { type ModalClass, type ModalInstance, type ModalOptions } from "@humming
 
 ## ESM vs CJS
 
-Hummingbird supports both **ESM** and **CJS** builds so it works with different environments:
+Hummingbird supports both **ESM** and **CJS** builds, so it works with different environments:
 
-* **ESM**
+* **ESM:**
   Used by modern bundlers like **Vite**, **Rollup**, and **Webpack 5+**. If the project  is using ES modules (`import` syntax), this is what gets loaded automatically.
 
-* **CJS**
+* **CJS:**
   Used in **Node.js** or older tooling that relies on `require()`. If the environment doesn’t support ESM, bundlers and Node will fall back to this file.
 
-You don’t need to choose manually, your bundler or runtime will pick the right version based on your setup.
+No manual choice is required; the bundler or runtime will select the correct version based on the setup.
 
 ## Integration with Frameworks
 

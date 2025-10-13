@@ -60,7 +60,7 @@ Filled alerts use solid background colors for high emphasis. They are best suite
 
 ## Outlined variant
 
-Outlined alerts use a border and transparent background to provide medium emphasis. They are useful when you want feedback messages to be visible without dominating the interface.
+Outlined alerts use a border and transparent background to provide medium emphasis. They are useful for feedback messages to be visible without dominating the interface.
 
 <Example class='flex flex-col gap-2' 
   code={`<div class="alert alert-outline" role="alert">A simple neutral outline alert!</div>
@@ -213,7 +213,7 @@ or on a button outside the alert using the additional data-bs-target as demonstr
 
 ### Methods
 
-You can create an alert instance with the alert constructor, for example:
+Create an alert instance with the alert constructor, for example:
 
 <Example showPreview={false} lang='js'
   code={`const myAlert = new hummingbird.Alert('#myAlert')`}
@@ -239,11 +239,11 @@ This makes an alert listen for click events on descendant elements which have th
     </tr>
     <tr>
       <th scope="row">`getInstance`</th>
-      <td>Static method which allows you to get the alert instance associated to a DOM element. For example: `hummingbird.Alert.getInstance(alert)`.</td>
+      <td>A static method that allows getting the alert instance associated with a DOM element. For example: `hummingbird.Alert.getInstance(alert)`.</td>
     </tr>
     <tr>
       <th scope="row">`getOrCreateInstance`</th>
-      <td>Static method which returns an alert instance associated to a DOM element or create a new one in case it wasn’t initialized. You can use it like this: `hummingbird.Alert.getOrCreateInstance(element)`.</td>
+      <td>Static method which returns an alert instance associated to a DOM element or create a new one in case it wasn’t initialized. Use it like: `hummingbird.Alert.getOrCreateInstance(element)`.</td>
     </tr>
   </tbody>
 </HbTable>
