@@ -6,6 +6,7 @@ docsearch({
   indexName: 'hummingbird_docs',
   apiKey: 'b2804af869f12be7d3c1f06e61e48e0d',
   placeholder: 'Search',
+  maxResultsPerGroup: 15,
 });
 docsearch({
   container: '#docsearch-mobile',
@@ -13,6 +14,7 @@ docsearch({
   indexName: 'hummingbird_docs',
   apiKey: 'b2804af869f12be7d3c1f06e61e48e0d',
   placeholder: 'Search',
+  maxResultsPerGroup: 15,
 });
 
 type Theme = 'dark' | 'light';
