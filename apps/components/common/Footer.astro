@@ -41,6 +41,13 @@ const isLanding = Astro.url.pathname === '/';
                   </a>
                 </li>
               ))}
+              {title === 'Help Center' && (
+                <li class="text-sm">
+                  <span class="no-underline text-default cursor-pointer select-none" data-open-support-widget>
+                    Support
+                  </span>
+                </li>
+              )}
             </ul>
           </div>
         ))
@@ -85,6 +92,15 @@ const isLanding = Astro.url.pathname === '/';
 </footer>
 
 <script>
+  // Add global type declaration for OneDeskWidget
+  declare global {
+    interface Window {
+      OneDeskWidget: {
+        open: () => void;
+      };
+    }
+  }
+
   (function () {
     function hasMessage(el: Element | null) {
       return el && el.textContent.trim().length > 0;
@@ -111,5 +127,11 @@ const isLanding = Astro.url.pathname === '/';
 
     document.addEventListener('DOMContentLoaded', observe);
     window.addEventListener('pageshow', observe);
+
+    // Support widget open
+    const widgetOpenBtn = document.querySelector('[data-open-support-widget]');
+    widgetOpenBtn?.addEventListener('click', () => {
+      window.OneDeskWidget.open();
+    });
   })();
 </script>

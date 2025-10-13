@@ -25,6 +25,11 @@ const isLanding = Astro.url.pathname === '/';
   <body>
     <Navbar />
     <slot />
+    <script
+      type="text/javascript"
+      src="https://cdn.onedesk.so/widgets/onedesk-widget.js?widgetId=0199d79b-f8eb-7ab1-94f0-9337181f59fa"
+      async
+      defer></script>
     {!isLanding && <Footer />}
     <script src="../../static/docs.js"></script>
     <script src="../../static/hummingbird.bundle.min.js"></script>
