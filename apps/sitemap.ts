@@ -127,16 +127,16 @@ const sitemap: Sitemap[] = [
         path: '/docs/components/accordion',
       },
       {
-        name: 'Alert',
-        path: '/docs/components/alert',
+        name: 'Alerts',
+        path: '/docs/components/alerts',
       },
       {
-        name: 'Avatar',
-        path: '/docs/components/avatar',
+        name: 'Avatars',
+        path: '/docs/components/avatars',
       },
       {
-        name: 'Badge',
-        path: '/docs/components/badge',
+        name: 'Badges',
+        path: '/docs/components/badges',
       },
       {
         name: 'Breadcrumb',
@@ -191,8 +191,8 @@ const sitemap: Sitemap[] = [
         path: '/docs/components/offcanvas',
       },
       {
-        name: 'Table',
-        path: '/docs/components/table',
+        name: 'Tables',
+        path: '/docs/components/tables',
       },
       {
         name: 'Tooltips',

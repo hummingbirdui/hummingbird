@@ -6,12 +6,12 @@ toc: true
 
 ## Toggling dark mode manually
 
-#### 1. Custom Dark Mode Selector
+#### 1. Custom dark mode selector
 
 To control the dark theme using a custom CSS selector instead of the `prefers-color-scheme` media query, redefine the dark variant to use the desired selector:
 
 <Example lang='css' showPreview={false}
-  code={`@custom-variant dark (&:is(.dark, .dark *), .dark);`}
+  code={`@custom-variant dark (&:where(.dark, .dark *), .dark);`}
 />
 
 The `.dark` class is typically added or removed on the `<html>` element.
@@ -104,12 +104,12 @@ In addition to using the `dark:` variant, Hummingbird’s theme variables can be
 
 See all available variables in the [Theming](./theming#hummingbird-theme-variables) section.
 
-## Simplified Dark Mode in Hummingbird
+## Simplified dark mode in Hummingbird
 
 Hummingbird includes a predefined set of color variables that automatically adjust for dark mode, eliminating the need for additional dark mode classes. Components can switch to dark mode by adding the `.dark` class to a parent element.
 
 To enable this behavior, add the custom dark mode variant to the CSS file after importing Tailwind and Hummingbird styles.
 
 <Example lang='css' showPreview={false}
-  code={`@custom-variant dark (&:is(.dark, .dark *), .dark);`}
+  code={`@custom-variant dark (&:where(.dark, .dark *), .dark);`}
 />

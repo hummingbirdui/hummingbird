@@ -6,11 +6,11 @@ toc: true
 
 Hummingbird creates interactive components using <a href="https://getbootstrap.com/docs/5.3/getting-started/javascript/" target='_blank'>Bootstrap's JavaScript plugins</a>. Hummingbird ensures smooth interactivity, accessibility, and consistent behavior across browsers. With built-in TypeScript support, every plugin is type-safe and developer-friendly, making it easier to extend, customize, and integrate into modern workflows.
 
-## Include Plugins
+## Include plugins
 
 Plugins can be included individually or all at once.
 
-**Include All Plugins:**
+**Include all plugins:**
 
 <Example lang='html' showPreview={false} 
   code={`<script src="../path/to/@hummingbirdui/hummingbird/dist/hummingbird.bundle.min.js"></script>`} />
@@ -27,7 +27,7 @@ Another quickest way to include Hummingbird script in a project is via CDN link.
   code={`<script src="https://cdn.jsdelivr.net/npm/@hummingbirdui/hummingbird@0.0.0-insiders.3.0/dist/hummingbird.bundle.min.js"></script>`} />
 
 <br/>
-**Include Individual Plugins:**
+**Include individual plugins:**
 
 <Example lang='html' showPreview={false} 
   code={`<script src="../path/to/@hummingbirdui/hummingbird/lib/esm/scripts/modal.js"></script>
@@ -119,7 +119,7 @@ openBtn.addEventListener("click", () => {
   myModal.show();
 });`} />
 
-## TypeScript Support
+## TypeScript support
 
 Hummingbird includes TypeScript definitions for all components. Import Hummingbird plugins with their types while using TypeScript.
 
@@ -139,7 +139,7 @@ Hummingbird supports both **ESM** and **CJS** builds so it works with different 
 
 You don’t need to choose manually, your bundler or runtime will pick the right version based on your setup.
 
-## Integration with Frameworks
+## Integration with frameworks
 
 Hummingbird can be integrated into various JavaScript frameworks, including [React](./react), [Vue](./vue), [Angular](./angular), and more. Leverage its components within these frameworks by following best practices for DOM manipulation and component lifecycle management.
 
@@ -147,7 +147,7 @@ Follow the [framework-specific guidelines](https://hbui.dev/docs/getting-started
 
 ## Dependencies
 
-Some JavaScript components rely on [Popper](https://popper.js.org/docs/v2/) for positioning elements, such as dropdowns, tooltips, and popovers. When using these components, include `Popper.js` in the project, or use `himmingbird.bundle.min.js`, which includes `Popper.js`.
+Some JavaScript components rely on [Popper](https://popper.js.org/docs/v2/) for positioning elements, such as dropdowns, tooltips, and popovers. When using these components, include `Popper.js` in the project, or use `hummingbird.bundle.min.js`, which includes `Popper.js`.
 
 Include `popper.min.js` along with `hummingbird.min.js`, if `hummingbird.bundle.min.js` is not included.
 

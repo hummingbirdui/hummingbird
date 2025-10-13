@@ -10,14 +10,14 @@ Hummingbird is designed with accessibility in mind, following best practices to 
 
 The overall accessibility of any project built with Hummingbird depends largely on the author’s markup, additional styling, and scripting. When implemented correctly, Hummingbird makes it possible to create websites and applications that meet <a href='https://www.w3.org/TR/wcag/' target='_blank'>WCAG 2.2</a> (A/AA/AAA), <a href='https://www.section508.gov/' target='_blank'>Section 508</a>, and similar accessibility standards and requirements.
 
-## Interactive Components
+## Interactive components
 
 Hummingbird builds on **Bootstrap’s** interactive components such as modals, dropdowns, tooltips, etc., ensuring they work seamlessly across touch, mouse, and keyboard inputs. These components include essential WAI-ARIA roles and attributes for accessibility, making them understandable and operable with assistive technologies like screen readers. In some cases, developers may extend Hummingbird components with additional ARIA roles or JavaScript behaviors to better convey specific functionality.
 
-## Color Contrast
+## Color contrast
 
 Hummingbird's default color palette is designed to provide sufficient contrast between text and background colors, used throughout the components. This helps ensure that text is readable for users with visual impairments. However, developers should always verify color contrast ratios in their specific implementations to meet accessibility standards. WCAG recommends text color contrast ratios of at least 4.5.1 and non-text color contrast ratios of at least 3:1.
 
-## Visually Hidden Content
+## Visually hidden content
 
 Hummingbird provides utility classes for visually hiding content while keeping it accessible to screen readers. This is useful for providing additional context or information that may not be relevant for all users but is important for those using assistive technologies. Developers can use the `.sr-only` class to hide elements visually while still making them available to screen readers.

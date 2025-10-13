@@ -46,14 +46,14 @@ classNames:
       desc: Invalid state
 ---
 
-## Basic Text Field
+## Basic text field
 
 The Basic Text Field component provides a simple input field with two variations: Filled and Outlined.
 
 <Example class='grid mx-auto sm:grid-cols-2 gap-3 md:w-5/6' code={`<input type="text" class="form-control" />
 <input type="text" class="form-control-fill" />`} />
 
-## Text Field with label
+## Text field with label
 
 Wrap the `<label>` and `<input>` inside a `.form-field` container for proper spacing. Apply the `.form-label` class on the label.
 
@@ -66,7 +66,7 @@ Wrap the `<label>` and `<input>` inside a `.form-field` container for proper spa
     <input type="text" class="form-control-fill" />
   </div>`} />
 
-## Text Field with icon
+## Text field with icon
 
 Icons can be placed at the **start** or **end** of the input field. Use `.form-control-icon-start` or `.form-control-icon-end` class on the icon.
 
@@ -103,7 +103,7 @@ Set heights using classes like <code>.form-control-sm</code> and <code>.form-con
   <input type="text" class="form-control-fill" />
   <input type="text" class="form-control-fill form-control-lg" />`} />
 
-## Color Variants
+## Color variants
 
 Different colors become visible while the input is focused. By default, the input field uses the **primary** color. Use additional utility classes to modify the focus color. Like:
 
@@ -144,7 +144,7 @@ Indicate validation states by adding the `.is-valid` class for the success state
   </div>`} />
 
 
-## CSS Variables
+## CSS variables
 
 The form control component is built using a set of CSS variables. These variables provide flexibility for customizing styles globally or locally.
 
@@ -211,7 +211,7 @@ Local variables apply only to form-control, allowing fine-grained control over t
     --input-icon-font-size: var(--text-xl);
 }`} />
 
-### Form Label variables
+### Form label variables
 
 <Example lang='sass' showPreview={false} code={`.form-label {
     --input-label-color: var(--text-color-muted);
