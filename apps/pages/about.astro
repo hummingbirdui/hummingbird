@@ -3,10 +3,7 @@ import ContentLayout from '@layouts/ContentLayout.astro';
 import { aboutData, teamMembers } from 'apps/data/company';
 ---
 
-<ContentLayout
-  heading="Philosophy/Vision behind the most Sensible UI library"
-  subHeading="Our Mission and Guiding Principles"
->
+<ContentLayout heading="Guiding Principles" subHeading="Vision behind the most Sensible component system for Tailwind">
   {
     aboutData.map((item) => (
       <div class="mb-12">
@@ -33,7 +30,10 @@ import { aboutData, teamMembers } from 'apps/data/company';
   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
     {
       teamMembers.map((item) => (
-        <a href={item.url} class="p-4 card card-action flex flex-col justify-between bg-subtle h-26 overflow-hidden hover:border-primary">
+        <a
+          href={item.url}
+          class="p-4 card card-action flex flex-col justify-between bg-subtle h-26 overflow-hidden hover:border-primary"
+        >
           <h6 class="card-title text-primary text-base font-semibold tracking-normal">{item.name}</h6>
           <p class="mb-0 text-xs text-muted tracking-normal">{item.role}</p>
         </a>

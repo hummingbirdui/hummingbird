@@ -11,11 +11,11 @@ const { url, image, title, count } = component;
 
 <a
   href={url}
-  class="card card-action flex flex-col w-full aspect-[149/137] rounded-2xl bg-default overflow-hidden hover:border-primary"
+  class="card card-action flex flex-col h-full w-full rounded-2xl bg-default overflow-hidden hover:border-primary"
 >
-  <div class="grow flex items-center justify-center bg-subtle">
-    <img src={image.light.src} class="object-contain dark:hidden" alt={title} />
-    <img src={image.dark.src} class="object-cover hidden dark:flex" alt={title} />
+  <div class="grow flex items-center justify-center bg-subtle p-4 aspect-4/3">
+    <img src={image.light.src} class="dark:hidden" alt={title} />
+    <img src={image.dark.src} class="hidden dark:flex" alt={title} />
   </div>
   <div class="px-4 py-3">
     <h6 class="card-title mb-0.5 text-base font-semibold">{title}</h6>

@@ -377,7 +377,7 @@ The default modal without any modifier class is considered the medium size modal
   <div class="modal-dialog modal-lg">...</div>
   <div class="modal-dialog modal-sm">...</div>`} />
 
-## Fullscreen Modal
+## Fullscreen modal
 
 Create a fullscreen modal that covers the user’s viewport by adding the appropriate modifier classes to `.modal-dialog`.
 
@@ -601,7 +601,7 @@ The modal component is built using a set of CSS variables. These variables provi
 
 The modal plugin controls hidden content, making it visible on demand via data attributes or JavaScript. It also overrides the default scrolling behavior and generates a `.modal-backdrop`. This backdrop provides a clickable area for dismissing visible modals when a click occurs outside the modal itself.
 
-### Via Data Attributes
+### Via data attributes
 #### Toggle
 To activate a modal without writing JavaScript, set `data-bs-toggle="modal"` on a controlling element, such as a button. Additionally, include a `data-bs-target="#foo"` or `href="#foo"` to specify which modal to toggle.
 
@@ -620,7 +620,7 @@ Or use the the additionalon `data-bs-target` on a button **outside the modal**:
 <div class="alert alert-subtle-warning items-start mb-6" role="alert">
   <svg class="alert-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M11 17h2v-6h-2zm1-8q.425 0 .713-.288T13 8t-.288-.712T12 7t-.712.288T11 8t.288.713T12 9m0 13q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22m0-2q3.35 0 5.675-2.325T20 12t-2.325-5.675T12 4T6.325 6.325T4 12t2.325 5.675T12 20m0-8" stroke-width="0.5" stroke="currentColor"/></svg>
   <span class="-mt-1"> While both ways to dismiss a modal are supported, keep in mind that dismissing from outside a modal does not match the <a href="https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/">
-    ARIA Authoring Practices Guide dialog (modal) pattern</a>. Do this at your own risk.</span>
+    ARIA Authoring Practices Guide dialog (modal) pattern</a>. Evaluate the risks before proceeding.</span>
 </div>
 
 ### Via JavaScript
@@ -683,7 +683,7 @@ The ultimate configuration object results from merging `data-bs-config`, individ
   <a href="https://getbootstrap.com/docs/5.3/getting-started/javascript/#asynchronous-functions-and-transitions">JavaScript documentation</a></span>
 </div>
 
-### Supplying Options
+### Supplying options
 
 Content can be activated as a modal by providing an optional options object.
 

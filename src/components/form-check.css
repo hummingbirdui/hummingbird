@@ -103,10 +103,16 @@
       --form-check-input-border-color: var(--form-check-input-checked-bg);
       &[type='checkbox'] {
         --form-check-bg-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='%23fff' d='m9.55 15.15l8.475-8.475q.3-.3.7-.3t.7.3t.3.713t-.3.712l-9.175 9.2q-.3.3-.7.3t-.7-.3L4.55 13q-.3-.3-.288-.712t.313-.713t.713-.3t.712.3z'/%3E%3C/svg%3E");
+        @variant dark {
+          --form-check-bg-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='%2307080a' d='m9.55 15.15l8.475-8.475q.3-.3.7-.3t.7.3t.3.713t-.3.712l-9.175 9.2q-.3.3-.7.3t-.7-.3L4.55 13q-.3-.3-.288-.712t.313-.713t.713-.3t.712.3z'/%3E%3C/svg%3E");
+        }
       }
 
       &[type='radio'] {
         --form-check-bg-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Cpath fill='%23fff' stroke='%23fff' stroke-width='4' d='M24 33a9 9 0 1 0 0-18a9 9 0 0 0 0 18Z'/%3E%3C/svg%3E");
+        @variant dark {
+          --form-check-bg-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Cpath fill='%2307080a' stroke='%2307080a' stroke-width='4' d='M24 33a9 9 0 1 0 0-18a9 9 0 0 0 0 18Z'/%3E%3C/svg%3E");
+        }
       }
     }
 
@@ -190,6 +196,9 @@
         @apply bg-[position:right_center];
         &[type='checkbox'] {
           --form-check-bg-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e");
+          @variant dark {
+            --form-check-bg-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%2307080a'/%3e%3c/svg%3e");
+          }
         }
       }
       &:disabled {
@@ -213,7 +222,7 @@
         }
       }
       @variant dark {
-        --form-check-bg-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23DBE6EB'/%3e%3c/svg%3e");
+        --form-check-bg-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%231d2025'/%3e%3c/svg%3e");
       }
     }
   }

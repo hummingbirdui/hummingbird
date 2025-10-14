@@ -24,8 +24,8 @@ export const comparisons: Comparison[] = [
   { feature: 'Ready-to-use components', hummingbird: 'yes', tailwindcss: 'partial', bootstrap: 'yes' },
   { feature: 'Clean, semantic HTML', hummingbird: 'yes', tailwindcss: 'partial', bootstrap: 'yes' },
   { feature: 'Pre-built dark mode', hummingbird: 'yes', tailwindcss: 'partial', bootstrap: 'no' },
-  { feature: 'Utility-first approach', hummingbird: 'highlight', tailwindcss: 'yes', bootstrap: 'no' },
-  { feature: 'Advanced customization', hummingbird: 'highlight', tailwindcss: 'no', bootstrap: 'partial' },
+  { feature: 'Utility-first approach', hummingbird: 'strong', tailwindcss: 'yes', bootstrap: 'no' },
+  { feature: 'Advanced customization', hummingbird: 'strong', tailwindcss: 'no', bootstrap: 'partial' },
   { feature: 'Accessibility-first design', hummingbird: 'yes', tailwindcss: 'partial', bootstrap: 'yes' },
   { feature: 'Zero unused CSS', hummingbird: 'yes', tailwindcss: 'yes', bootstrap: 'no' },
 ];

@@ -1,7 +1,7 @@
 @utility badge {
   @layer base {
     --badge-bg: var(--color-dark);
-    --badge-color: var(--color-white);
+    --badge-color: var(--color-contrast);
     --badge-font-size: var(--text-xs);
     --badge-padding-y: --spacing(0.75);
     --badge-padding-x: --spacing(1.5);
