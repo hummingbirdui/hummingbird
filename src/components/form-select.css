@@ -59,6 +59,7 @@
 
 @utility form-select {
   @layer base {
+    --input-bg: var(--background-color-default);
     --form-select-font-size: var(--input-btn-font-size);
     --form-select-radius: var(--input-btn-radius);
     --form-select-padding-x: var(--input-btn-padding-x);
@@ -83,6 +84,7 @@
     pr-[var(--form-select-padding-right)]
     py-[var(--form-select-padding-y)]
     bg-[image:var(--form-select-indicator)]
+    bg-[var(--input-bg)]
     bg-no-repeat
     bg-[position:right_var(--form-select-padding-x)_center]
     bg-[length:var(--form-select-bg-size)];
