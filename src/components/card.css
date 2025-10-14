@@ -118,7 +118,7 @@
 
 @utility card-img-overlay {
   @layer components {
-    --card-title-color: var(--color-contrast);
+    --card-title-color: var(--color-white);
     --card-border-width: 0px;
     @apply overflow-hidden rounded-lg;
     img {
@@ -127,7 +127,7 @@
     .card-body {
       @apply absolute top-0 right-0 bottom-0 left-0
       p-[var(--card-padding-x)]
-      rounded-[var(--card-border-radius)] text-contrast;
+      rounded-[var(--card-border-radius)] text-white;
     }
   }
 }
