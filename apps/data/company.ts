@@ -31,7 +31,7 @@ export const teamMembers: Member[] = [
   },
   {
     name: 'Md. Riazul Islam',
-    role: 'Jr. Software Engineer',
+    role: 'Software Engineer',
     url: 'https://github.com/riazul01',
   },
   {

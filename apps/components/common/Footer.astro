@@ -31,12 +31,12 @@ const isLanding = Astro.url.pathname === '/';
 
       {
         footerLinks.map(({ title, links }) => (
-          <div class="col-span-10 sm:col-span-4 md:col-span-2">
+          <div class="col-span-5 sm:col-span-4 md:col-span-2">
             <h3 class="mb-5 text-sm font-bold text-subtle">{title}</h3>
             <ul class="list-none p-0 space-y-5">
               {links.map(({ label, url }) => (
                 <li class="text-sm">
-                  <a href={url} class="no-underline text-default">
+                  <a href={url} target={label === 'Blog' ? '_blank' : undefined} class="no-underline text-default">
                     {label}
                   </a>
                 </li>

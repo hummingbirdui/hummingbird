@@ -29,6 +29,10 @@
   background-color: var(--color-gray-600);
 }
 
+:root[data-os='windows'] ::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
 .astro-code::-webkit-scrollbar-track {
   background: transparent !important;
 }
