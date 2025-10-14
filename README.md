@@ -13,7 +13,7 @@
 
 ---
 
-## Table of Contents
+## Table of contents
 
 - [Documentation](#documentation)
 - [Getting Started](#getting-started)
@@ -34,13 +34,13 @@
 
 Comprehensive documentation is available at [hbui.dev](https://hbui.dev/).
 
-## Getting Started
+## Getting started
 
 Hummingbird is a fast, lightweight UI library built on top of Tailwind CSS utility classes. Write cleaner HTML, customize with utilities, and bring your project to life with interactive, accessible components. You can:
 
 - Use it as a CSS library
-- Import individual JS components (like alerts, dropdowns, etc.)
-- Integrate with React, Vue, Astro, or any modern JS framework
+- Import individual JS components (like Modal, Dropdowns, etc.)
+- Integrate with React, Vue, Angular, Astro, or any modern JS framework
 
 ## Installation
 
@@ -77,17 +77,23 @@ Include Hummingbird JavaScript at the end of your HTML body.
 <script src="../path/to/@hummingbirdui/hummingbird/dist/hummingbird.bundle.min.js"></script>
 ```
 
-Alternatively, You can import Hummingbird in your JavaScript entry file.
+Alternatively, if using a build system (like Vite or Webpack), import Hummingbird directly in the JavaScript entry file.
 
 ```ts
 import '@hummingbirdui/hummingbird';
+```
+
+Another quickest way to include Hummingbird script in a project is via CDN link.
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/@hummingbirdui/hummingbird@0.0.0-insiders.3.0/dist/hummingbird.bundle.min.js"></script>
 ```
 
 ## Optimization
 
 To reduce the final bundle size, you can import only the specific JavaScript plugins you need.
 
-The below example shows how to import only the [Modal](/docs/components/modal) plugin:
+The below example shows how to import only the Modal plugin:
 
 ```js
 // import "@hummingbirdui/hummingbird/lib/esm/scripts/alert";
@@ -104,7 +110,19 @@ import "@hummingbirdui/hummingbird/lib/esm/scripts/modal";
 // import "@hummingbirdui/hummingbird/lib/esm/scripts/tooltip";
 ```
 
-## TypeScript Support
+The example below demonstrates how to efficiently control the Modal component programmatically by importing only the Modal plugin.
+
+```js
+import Modal from "@hummingbirdui/hummingbird/lib/esm/scripts/modal";
+const openBtn = document.querySelector("[data-open-demo-modal]");
+const myModal = new Modal(".modal");
+
+openBtn.addEventListener("click", () => {
+  myModal.show();
+});
+```
+
+## TypeScript support
 
 Hummingbird includes TypeScript definitions for all components. If you're using TypeScript, you can import Hummingbird plugins with their types.
 
@@ -125,7 +143,7 @@ Hummingbird supports both **ESM** and **CJS** builds, so it works with different
 
 No manual choice is required; the bundler or runtime will select the correct version based on the setup.
 
-## Supported Frameworks
+## Supported frameworks
 
 | Framework | Supported |
 | --------- | --------- |
@@ -144,7 +162,7 @@ No manual choice is required; the bundler or runtime will select the correct ver
 
 This project is licensed under the [MIT License](./LICENSE).
 
-## Meet the Team
+## Meet the team
 
 Meet the core team behind Hummingbird:
 
@@ -164,7 +182,7 @@ Meet the core team behind Hummingbird:
     </td>
     <td align="center" width="200">
       <img src="https://avatars.githubusercontent.com/u/86622751?v=4" width="80" height="80"/><br/>
-      <sub><b>Khayrul</b></sub><br/>
+      <sub><b>Khayrul Islam</b></sub><br/>
       <code>khayrul25</code><br/>
       Front-end Developer
     </td>
@@ -172,12 +190,22 @@ Meet the core team behind Hummingbird:
   <tr>
     <td align="center" width="200">
       <img src="https://avatars.githubusercontent.com/u/141500318?v=4" width="80" height="80"/><br/>
-      <sub><b>Riazul</b></sub><br/>
+      <sub><b>Riazul Islam</b></sub><br/>
       <code>riazul01</code><br/>
       Jr. Software Engineer
     </td>
-    <td></td>
-    <td></td>
+    <td align="center" width="200">
+      <img src="https://avatars.githubusercontent.com/u/110757982?v=4" width="80" height="80"/><br/>
+      <sub><b>Qurratul Aein Rafia</b></sub><br/>
+      <code>RafiAein</code><br/>
+      Editorial Strategist
+    </td>
+    <td align="center" width="200">
+      <img src="https://avatars.githubusercontent.com/u/236851058?v=4" width="80" height="80"/><br/>
+      <sub><b>Pantha Sharma</b></sub><br/>
+      <code>Pantha-25</code><br/>
+      UI/UX Designer
+    </td>
   </tr>
 </table>
 
