@@ -261,6 +261,11 @@
     @apply p-0!;
   }
 }
+.u_row {
+  .container {
+    @apply max-w-full!;
+  }
+}
 .u_content_form {
   @apply p-0!;
   form {
