@@ -1,7 +1,7 @@
 ---
 import { components } from 'apps/data/components';
 import SectionWrapper from '../common/SectionWrapper.astro';
-import ComponentCard from './ComponentCard.astro';
+import ComponentCard from '@components/sections/components/ComponentCard.astro';
 ---
 
 <SectionWrapper
@@ -23,6 +23,6 @@ import ComponentCard from './ComponentCard.astro';
   <div
     class="flex-2 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 w-full max-w-65 sm:max-w-134 md:max-w-172 lg:max-w-203 xl:max-w-188 2xl:max-w-203"
   >
-    {components.slice(0, 9).map((item, i, arr) => <ComponentCard component={item} isLast={i === arr.length - 1} />)}
+    {components.slice(0, 9).map((item) => <ComponentCard component={item} />)}
   </div>
 </SectionWrapper>

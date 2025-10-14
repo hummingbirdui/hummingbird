@@ -21,11 +21,11 @@ export const frameworks: Framework[] = [
 ];
 
 export const comparisons: Comparison[] = [
-  { feature: 'Ready-to-use components', hummingbird: 'yes', tailwindcss: 'partial', bootstrap: 'yes' },
-  { feature: 'Clean, semantic HTML', hummingbird: 'yes', tailwindcss: 'partial', bootstrap: 'yes' },
-  { feature: 'Pre-built dark mode', hummingbird: 'yes', tailwindcss: 'partial', bootstrap: 'no' },
-  { feature: 'Utility-first approach', hummingbird: 'strong', tailwindcss: 'yes', bootstrap: 'no' },
-  { feature: 'Advanced customization', hummingbird: 'strong', tailwindcss: 'no', bootstrap: 'partial' },
-  { feature: 'Accessibility-first design', hummingbird: 'yes', tailwindcss: 'partial', bootstrap: 'yes' },
+  { feature: 'Ready-to-use components', hummingbird: 'yes', tailwindcss: 'Partial', bootstrap: 'yes' },
+  { feature: 'Clean, semantic HTML', hummingbird: 'yes', tailwindcss: 'Partial', bootstrap: 'yes' },
+  { feature: 'Pre-built dark mode', hummingbird: 'yes', tailwindcss: 'Partial', bootstrap: 'no' },
+  { feature: 'Utility-first approach', hummingbird: 'Enhanced', tailwindcss: 'yes', bootstrap: 'no' },
+  { feature: 'Advanced customization', hummingbird: 'Enhanced', tailwindcss: 'no', bootstrap: 'Partial' },
+  { feature: 'Accessibility-first design', hummingbird: 'yes', tailwindcss: 'Partial', bootstrap: 'yes' },
   { feature: 'Zero unused CSS', hummingbird: 'yes', tailwindcss: 'yes', bootstrap: 'no' },
 ];

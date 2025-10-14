@@ -32,7 +32,7 @@ const uploadedImages = [
           <img src={item.image.src} alt="Uploaded preview" class="object-cover w-full h-full rounded-lg" />
           <button
             type="button"
-            class="remove-btn h-3 w-3 flex items-center justify-center absolute -top-1 -right-1 text-contrast bg-dark rounded-full"
+            class="remove-btn h-3 w-3 flex items-center justify-center absolute -top-1 -right-1 text-white bg-dark rounded-full"
           >
             <svg width="9" height="8" viewBox="0 0 9 8" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path
@@ -50,7 +50,7 @@ const uploadedImages = [
     import Dropzone from 'dropzone';
     Dropzone.autoDiscover = false;
 
-    const dz = new Dropzone('#my-dropzone', {
+    new Dropzone('#my-dropzone', {
       url: '/api/upload',
       maxFilesize: 2,
       acceptedFiles: 'image/*',
