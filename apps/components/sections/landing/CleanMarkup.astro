@@ -14,9 +14,9 @@ import AppCode from '@components/common/AppCode.astro';
     subtitle="Ditch long utility class strings. Hummingbird gives you complete freedom of pixel-perfect tweaks - plus full Tailwind flexibility."
   />
 
-  <div class="flex flex-col md:flex-row md:h-112 gap-6">
+  <div class="flex flex-col lg:flex-row lg:h-112 gap-6">
     <!-- code tabs -->
-    <div class="p-6 relative flex flex-col flex-1 max-h-88 md:max-h-none overflow-hidden bg-muted rounded-2xl">
+    <div class="p-6 relative flex flex-col flex-1 max-h-88 lg:max-h-none overflow-hidden bg-muted rounded-2xl">
       <nav class="border-b border-base">
         <div class="nav nav-underline gap-1" role="tablist">
           {
@@ -63,25 +63,19 @@ import AppCode from '@components/common/AppCode.astro';
     </div>
 
     <!-- card -->
-    <div class="w-75 h-full mx-auto shrink-0">
-      <div class="card h-full rounded-2xl overflow-hidden">
-        <img src={cardImage.src} class="card-img-top object-cover h-58 md:h-1/2" alt="card-image" />
-        <div class="card-body">
-          <div class="flex justify-between">
-            <div>
-              <h4 class="card-title">Bali Getaway</h4>
-              <p class="text-xs text-subtle">5 Days · 4 Nights</p>
-            </div>
-            <h6 class="text-default text-base">$499 pp</h6>
+    <div class="m-auto w-full max-w-90 shrink-0">
+      <div class="card w-full">
+        <div class="card-body space-y-3">
+          <h1 class="card-title mb-4 text-center">Sign In</h1>
+          <div class="form-field">
+            <label class="form-label">Email</label>
+            <input type="text" class="form-control" />
           </div>
-
-          <p class="mb-0">
-            Discover the beauty of Bali with guided tours, luxury resorts, and unforgettable sunsets. Perfect for
-            families.
-          </p>
-        </div>
-        <div class="card-footer p-4">
-          <button class="btn btn-neutral w-full">Book now</button>
+          <div class="form-field mb-5">
+            <label class="form-label">Password</label>
+            <input type="text" class="form-control" />
+          </div>
+          <button class="btn btn-neutral w-full">Sign in</button>
         </div>
       </div>
     </div>
