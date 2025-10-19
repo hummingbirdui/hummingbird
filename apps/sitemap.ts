@@ -162,6 +162,10 @@ const sitemap: Sitemap[] = [
         name: 'Collapse',
         path: '/docs/components/collapse',
       },
+       {
+        name: 'Close Button',
+        path: '/docs/components/close-button',
+      },
       {
         name: 'Dropdowns',
         path: '/docs/components/dropdowns',
