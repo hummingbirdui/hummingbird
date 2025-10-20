@@ -1,0 +1,335 @@
+@utility pagination {
+  @layer base {
+    --pagination-color: var(--text-color-default);
+    --pagination-font-size: var(--text-sm);
+    --pagination-padding-x: --spacing(1.5);
+    --pagination-padding-y: --spacing(1.5);
+    --pagination-width: unset;
+    --pagination-height: 2rem;
+    --pagination-border-width: 1px;
+    --pagination-border-color: transparent;
+    --pagination-radius: var(--radius-md);
+
+    --pagination-hover-bg: var(--color-hover);
+    --pagination-active-bg: var(--color-primary);
+    --pagination-active-color: var(--color-white);
+    --pagination-active-border-color: transparent;
+    --pagination-disabled-opacity: 0.35;
+
+    @apply flex items-center gap-1 list-none m-0 p-0;
+  }
+}
+
+@utility page-link {
+  @layer base {
+    @apply flex items-center justify-center text-center gap-1
+    px-[var(--pagination-padding-x)]
+    py-[var(--pagination-padding-y)]
+    text-[var(--pagination-color)]
+    text-[length:var(--pagination-font-size)] font-normal
+    h-[var(--pagination-height)]
+    w-[var(--pagination-width)] min-w-8
+    border-[length:var(--pagination-border-width)]
+    border-solid border-[var(--pagination-border-color)]
+    rounded-[var(--pagination-radius)]
+    no-underline transition-all duration-200;
+
+    &:hover {
+      @apply bg-[var(--pagination-hover-bg)];
+    }
+
+    &.active {
+      @apply text-[var(--pagination-active-color)] bg-[var(--pagination-active-bg)] border-[var(--pagination-active-border-color)];
+    }
+
+    &:disabled,
+    &.disabled {
+      @apply pointer-events-none select-none opacity-[var(--pagination-disabled-opacity)];
+    }
+  }
+}
+
+/* ------------------
+   Pagination Sizes
+-------------------- */
+@utility pagination-sm {
+  @layer base {
+    --pagination-height: 1.5rem;
+    --pagination-padding-x: --spacing(0.5);
+    --pagination-padding-y: --spacing(0.5);
+
+    .page-link {
+      @apply min-w-6;
+    }
+  }
+}
+@utility pagination-lg {
+  @layer base {
+    --pagination-height: 2.5rem;
+    --pagination-padding-x: --spacing(2.5);
+    --pagination-padding-y: --spacing(2.5);
+
+    .page-link {
+      @apply min-w-10;
+    }
+  }
+}
+
+/* ------------------
+  Pagination Colors
+-------------------- */
+@utility pagination-primary {
+  @layer base {
+    --pagination-active-bg: var(--color-primary);
+  }
+}
+@utility pagination-secondary {
+  @layer base {
+    --pagination-active-bg: var(--color-secondary);
+  }
+}
+@utility pagination-danger {
+  @layer base {
+    --pagination-active-bg: var(--color-danger);
+  }
+}
+@utility pagination-warning {
+  @layer base {
+    --pagination-active-bg: var(--color-warning);
+  }
+}
+@utility pagination-success {
+  @layer base {
+    --pagination-active-bg: var(--color-success);
+  }
+}
+@utility pagination-info {
+  @layer base {
+    --pagination-active-bg: var(--color-info);
+  }
+}
+@utility pagination-neutral {
+  @layer base {
+    --pagination-active-bg: var(--color-dark);
+  }
+}
+
+/* ----------------
+  Rounded Variant
+------------------ */
+@utility pagination-rounded {
+  @layer base {
+    --pagination-radius: calc(infinity * 1px);
+  }
+}
+
+/* ---------------
+  Subtle Variant
+----------------- */
+@utility pagination-subtle-primary {
+  @layer base {
+    --pagination-active-bg: --alpha(var(--color-primary) / 15%);
+    --pagination-active-color: var(--color-primary-dark);
+  }
+}
+@utility pagination-subtle-secondary {
+  @layer base {
+    --pagination-active-bg: --alpha(var(--color-secondary) / 15%);
+    --pagination-active-color: var(--color-secondary-dark);
+  }
+}
+@utility pagination-subtle-info {
+  @layer base {
+    --pagination-active-bg: --alpha(var(--color-info) / 15%);
+    --pagination-active-color: var(--color-info-dark);
+  }
+}
+@utility pagination-subtle-success {
+  @layer base {
+    --pagination-active-bg: --alpha(var(--color-success) / 15%);
+    --pagination-active-color: var(--color-success-dark);
+  }
+}
+@utility pagination-subtle-warning {
+  @layer base {
+    --pagination-active-bg: --alpha(var(--color-warning) / 15%);
+    --pagination-active-color: var(--color-warning-dark);
+  }
+}
+@utility pagination-subtle-danger {
+  @layer base {
+    --pagination-active-bg: --alpha(var(--color-danger) / 15%);
+    --pagination-active-color: var(--color-danger-dark);
+  }
+}
+@utility pagination-subtle-neutral {
+  @layer base {
+    --pagination-active-bg: var(--background-color-muted);
+    --pagination-active-color: var(--text-color-emphasis);
+  }
+}
+
+/* -----------------
+  Outlined Variant
+------------------- */
+@utility pagination-outlined-primary {
+  @layer base {
+    --pagination-active-color: var(--color-white);
+    --pagination-active-bg: var(--color-primary);
+    --pagination-border-color: var(--background-color-emphasis);
+  }
+}
+@utility pagination-outlined-secondary {
+  @layer base {
+    --pagination-active-color: var(--color-white);
+    --pagination-active-bg: var(--color-secondary);
+    --pagination-border-color: var(--background-color-emphasis);
+  }
+}
+@utility pagination-outlined-danger {
+  @layer base {
+    --pagination-active-color: var(--color-white);
+    --pagination-active-bg: var(--color-danger);
+    --pagination-border-color: var(--background-color-emphasis);
+  }
+}
+@utility pagination-outlined-warning {
+  @layer base {
+    --pagination-active-color: var(--color-white);
+    --pagination-active-bg: var(--color-warning);
+    --pagination-border-color: var(--background-color-emphasis);
+  }
+}
+@utility pagination-outlined-success {
+  @layer base {
+    --pagination-active-color: var(--color-white);
+    --pagination-active-bg: var(--color-success);
+    --pagination-border-color: var(--background-color-emphasis);
+  }
+}
+@utility pagination-outlined-info {
+  @layer base {
+    --pagination-active-color: var(--color-white);
+    --pagination-active-bg: var(--color-info);
+    --pagination-border-color: var(--background-color-emphasis);
+  }
+}
+@utility pagination-outlined-neutral {
+  @layer base {
+    --pagination-active-color: var(--color-white);
+    --pagination-active-bg: var(--color-dark);
+    --pagination-border-color: var(--background-color-emphasis);
+  }
+}
+
+/* ---------------
+  Subtle Variant
+----------------- */
+@utility pagination-subtle-outlined-primary {
+  @layer base {
+    --pagination-active-bg: --alpha(var(--color-primary) / 15%);
+    --pagination-active-color: var(--color-primary-dark);
+    --pagination-border-color: var(--background-color-emphasis);
+    --pagination-active-border-color: --alpha(var(--color-primary) / 50%);
+  }
+}
+@utility pagination-subtle-outlined-secondary {
+  @layer base {
+    --pagination-active-bg: --alpha(var(--color-secondary) / 15%);
+    --pagination-active-color: var(--color-secondary-dark);
+    --pagination-border-color: var(--background-color-emphasis);
+    --pagination-active-border-color: --alpha(var(--color-secondary) / 50%);
+  }
+}
+@utility pagination-subtle-outlined-info {
+  @layer base {
+    --pagination-active-bg: --alpha(var(--color-info) / 15%);
+    --pagination-active-color: var(--color-info-dark);
+    --pagination-border-color: var(--background-color-emphasis);
+    --pagination-active-border-color: --alpha(var(--color-info) / 50%);
+  }
+}
+@utility pagination-subtle-outlined-success {
+  @layer base {
+    --pagination-active-bg: --alpha(var(--color-success) / 15%);
+    --pagination-active-color: var(--color-success-dark);
+    --pagination-border-color: var(--background-color-emphasis);
+    --pagination-active-border-color: --alpha(var(--color-success) / 50%);
+  }
+}
+@utility pagination-subtle-outlined-warning {
+  @layer base {
+    --pagination-active-bg: --alpha(var(--color-warning) / 15%);
+    --pagination-active-color: var(--color-warning-dark);
+    --pagination-border-color: var(--background-color-emphasis);
+    --pagination-active-border-color: --alpha(var(--color-warning) / 50%);
+  }
+}
+@utility pagination-subtle-outlined-danger {
+  @layer base {
+    --pagination-active-bg: --alpha(var(--color-danger) / 15%);
+    --pagination-active-color: var(--color-danger-dark);
+    --pagination-border-color: var(--background-color-emphasis);
+    --pagination-active-border-color: --alpha(var(--color-danger) / 50%);
+  }
+}
+@utility pagination-subtle-outlined-neutral {
+  @layer base {
+    --pagination-active-bg: var(--background-color-muted);
+    --pagination-active-color: var(--text-color-emphasis);
+    --pagination-border-color: var(--background-color-emphasis);
+    --pagination-active-border-color: var(--background-color-emphasis);
+  }
+}
+
+/* -----------------
+  Table Pagination
+------------------- */
+@utility table-pagination {
+  --pagination-info-color: var(--text-color-muted);
+  --pagination-info-link-color: var(--color-primary);
+  --pagination-mini-padding-x: --spacing(6);
+  --pagination-mini-padding-y: --spacing(2);
+  --pagination-mini-bg: var(--background-color-subtle);
+
+  @layer base {
+    @apply flex items-center justify-between px-[var(--pagination-mini-padding-x)] py-[var(--pagination-mini-padding-y)] bg-[var(--pagination-mini-bg)] rounded-lg;
+  }
+}
+@utility pagination-info {
+  @layer base {
+    @apply text-xs text-[var(--pagination-info-color)] font-light;
+    & > p {
+      @apply mb-0;
+    }
+  }
+}
+@utility pagination-count {
+  @layer base {
+    @apply font-semibold;
+  }
+}
+@utility pagination-link {
+  @layer base {
+    @apply ml-1 text-[var(--pagination-info-link-color)] font-semibold no-underline;
+
+    &:hover {
+      @apply text-[var(--pagination-info-link-color)] underline;
+    }
+  }
+}
+
+/* -------------
+  Mini Variant
+--------------- */
+@utility pagination-mini {
+  --pagination-color: var(--color-primary);
+  --pagination-height: 1.875rem;
+  @layer base {
+    @apply gap-2;
+    .page-link,
+    .page-link > p {
+      @apply mb-0 font-semibold;
+    }
+  }
+}

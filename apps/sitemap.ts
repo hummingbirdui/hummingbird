@@ -191,6 +191,10 @@ const sitemap: Sitemap[] = [
         path: '/docs/components/offcanvas',
       },
       {
+        name: 'Pagination',
+        path: '/docs/components/pagination',
+      },
+      {
         name: 'Tables',
         path: '/docs/components/tables',
       },
