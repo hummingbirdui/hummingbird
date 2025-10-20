@@ -71,7 +71,7 @@
   }
   > ol,
   > ul {
-    @apply pl-4;
+    @apply ps-4;
   }
 
   .heading-anchor {
