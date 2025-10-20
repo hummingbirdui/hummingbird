@@ -191,6 +191,10 @@ const sitemap: Sitemap[] = [
         path: '/docs/components/offcanvas',
       },
       {
+        name: 'Scrollspy',
+        path: '/docs/components/scrollspy',
+      },
+      {
         name: 'Tables',
         path: '/docs/components/tables',
       },

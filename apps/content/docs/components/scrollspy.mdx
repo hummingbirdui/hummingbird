@@ -1,0 +1,174 @@
+---
+title: Scrollspy
+description: Scrollspy automatically highlights navigation links based on the section currently visible in the viewport.
+toc: true
+attributeComponent: Scrollspy
+attributeLink: https://getbootstrap.com/docs/5.3/components/scrollspy/
+---
+
+## Examples
+
+### Navbar
+
+Scroll the area below to see how scrollspy automatically updates the active nav link based on scroll position within the content area. Open the dropdown to see the scrollspy working with dropdowns.
+
+<Example code={`<nav id="scrollspy-navbar" class="navbar navbar-expand bg-subtle mb-3">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="#scrollspyHeading1">First</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#scrollspyHeading2">Second</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Dropdown</a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#scrollspyHeading3">Third</a></li>
+          <li><a class="dropdown-item" href="#scrollspyHeading4">Fourth</a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item" href="#scrollspyHeading5">Fifth</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+  <div data-bs-spy="scroll" data-bs-target="#scrollspy-navbar" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" class="bg-subtle p-3 h-50 overflow-y-auto" tabindex="0">
+    <h5 id="scrollspyHeading1">First heading</h5>
+    <p>Welcome to our demo page! This section introduces the concept of scrollspy and explains how it enhances navigation. As users scroll, the navigation updates automatically to reflect the current section, helping visitors stay oriented even on long pages. The smooth transition between sections creates a seamless browsing experience and encourages users to explore more content without confusion.</p>
+    <h5 id="scrollspyHeading2">Second heading</h5>
+    <p>Scrollspy provides dynamic navigation feedback, making it easier for users to track their location on the page. As visitors move through different sections, the active navigation link changes in real time, creating an intuitive reading flow. This is especially useful on documentation pages, tutorials, and long-form content where multiple topics are presented in sequence. The visual cue from the navigation also improves engagement, guiding readers naturally from one section to the next.</p>
+    <h5 id="scrollspyHeading3">Third heading</h5>
+    <p>Scrollspy is ideal for any multi-section layout, such as product pages, educational tutorials, and dashboards. It helps users understand which part of the page they are viewing and makes it simple to jump between sections without losing context. By linking the navigation to the scroll position, users feel more in control, and content becomes more accessible. Even lengthy pages feel organized and approachable when scrollspy is implemented effectively.</p>
+    <h5 id="scrollspyHeading4">Fourth heading</h5>
+    <p>To get the most out of scrollspy, ensure each section is clearly defined with distinct headings and sufficient content to trigger scrolling. Consistent formatting and spacing make the page easier to read and prevent confusion about the current section. Navigation should remain visible or sticky so users can always see which section is active, and the highlighted link should align accurately with the section content. A well-implemented scrollspy creates a smooth, engaging, and professional user experience.</p>
+    <h5 id="scrollspyHeading5">Fifth heading</h5>
+    <p>Scrollspy enhances long pages by connecting the navigation with content sections, helping users stay oriented as they explore. It makes complex layouts more digestible and increases usability by giving clear visual feedback. Whether for tutorials, dashboards, or marketing pages, scrollspy ensures that users can move efficiently through content while maintaining context, resulting in a polished and user-friendly design.</p>
+  </div>`} />
+
+### Nested navigation
+
+Scrollspy supports nested `.nav` elements. When a nested `.nav` item becomes `.active`, its parent items are also marked as `.active`. Scroll the area beside the navbar to see the active classes update dynamically.
+
+<Example code={`<div class="row">
+    <div class="col-5 sm:col-4">
+      <nav id="tab-scrollspy" class="h-full">
+        <nav class="nav nav-primary flex-col h-full">
+          <a class="nav-link" href="#item-1">Item 1</a>
+          <nav class="nav nav-primary flex-col">
+            <a class="nav-link ms-3 my-1" href="#item-1-1">Item 1-1</a>
+            <a class="nav-link ms-3 my-1" href="#item-1-2">Item 1-2</a>
+          </nav>
+          <a class="nav-link" href="#item-2">Item 2</a>
+          <a class="nav-link" href="#item-3">Item 3</a>
+          <nav class="nav nav-primary flex-col">
+            <a class="nav-link ms-3 my-1" href="#item-3-1">Item 3-1</a>
+            <a class="nav-link ms-3 my-1" href="#item-3-2">Item 3-2</a>
+          </nav>
+        </nav>
+      </nav>
+    </div>
+
+    <div class="col-7 sm:col-8">
+      <div data-bs-spy="scroll" data-bs-target="#tab-scrollspy" data-bs-smooth-scroll="true" class="h-100 overflow-y-scroll" tabindex="0">
+        <div id="item-1">
+          <h5>Item 1</h5>
+          <p>This section introduces the scrollspy concept and explains its purpose. Scrollspy allows navigation links to highlight dynamically as the user scrolls through the page, giving a clear sense of location and improving usability. Proper sectioning ensures that each part of the page is easily identifiable, even on long-form content or multi-section layouts.</p>
+          <p>Keep in mind that the JavaScript plugin selects the most relevant element when multiple targets are visible. Ensuring clear separation between sections helps maintain accurate highlighting.</p>
+        </div>
+        <div id="item-1-1">
+          <h6>Item 1-1</h6>
+          <p>Here, we dive deeper into how scrollspy determines the active section. The plugin calculates which element is most prominently visible in the viewport and highlights its corresponding navigation link. Understanding this behavior helps in designing layouts that avoid overlapping content or multiple visible targets at once.</p>
+          <p>Understanding this mechanism is essential for building pages where content overlaps or where multiple sections are visible at the same time. Developers need to carefully structure the page to avoid conflicting active states, which could confuse users. For example, on a documentation page with dense technical content, adding sufficient padding and section height ensures that the active link always corresponds to the section most relevant to the reader.</p>
+        </div>
+        <div id="item-1-2">
+          <h6>Item 1-2</h6>
+          <p>To ensure scrollspy works smoothly, keep sections clearly separated and give each section sufficient height. Avoid placing multiple active targets in the same viewport simultaneously, as this can cause inaccurate highlighting. Testing on different screen sizes is also important to maintain consistent behavior.</p>
+          <p>Additionally, maintaining consistent styling, spacing, and padding across sections helps prevent visual confusion. Sticky or fixed navigation bars are recommended so that users can always see which section is active. Testing across different screen sizes and devices is crucial, as viewport height changes can affect which section is considered active. Following these best practices ensures that scrollspy enhances usability rather than causing frustration.</p>
+        </div>
+        <div id="item-2">
+          <h5>Item 2</h5>
+          <p>This section covers practical implementation strategies. Scrollspy can be paired with sticky navigation bars, smooth scrolling, and offset adjustments to create an intuitive experience. It’s commonly used on documentation pages, tutorials, and product landing pages where users need to track their reading position easily.</p>
+          <p>It’s also important to account for offsets, especially when using sticky headers. The offset determines how far from the top of the viewport a section must appear before it is considered active. Fine-tuning this value ensures that the correct navigation link is highlighted even when fixed headers obscure part of the section. Developers can also use scrollspy in combination with other interactive components, such as collapsible sections, tabs, or modal windows, for complex page layouts.</p>
+        </div>
+        <div id="item-3">
+          <h5>Item 3</h5>
+          <p>Scrollspy also supports nested sections, which is useful for complex content structures. Nested items allow users to see sub-sections of a main topic without losing context. Proper configuration ensures smooth highlighting even when multiple nested sections are visible simultaneously.</p>
+          <p>Advanced usage also includes handling multiple active targets. Careful section design, unique IDs, and consistent offsets ensure the plugin correctly identifies the active section, even when multiple elements are visible at once. Developers must consider responsiveness, as viewport height changes can affect which section is highlighted.</p>
+        </div>
+        <div id="item-3-1">
+          <h6>Item 3-1</h6>
+          <p>This example demonstrates how sub-items are tracked independently within a parent section. Each sub-section has its own navigation link that becomes active as users scroll, giving precise control over detailed content areas.</p>
+          <p>For instance, a multi-part tutorial might have a main chapter as the parent section and detailed lessons as sub-items. As the user scrolls through each lesson, the sub-item navigation highlights individually, while the parent section remains visible in the navigation hierarchy. This structure allows readers to track their progress easily without losing sight of the overall chapter or topic. Keep in mind that the JavaScript plugin selects the most relevant element when multiple targets are visible. Ensuring clear separation between sections helps maintain accurate highlighting.</p>
+        </div>
+        <div id="item-3-2">
+          <h6>Item 3-2</h6>
+          <p>When using nested scrollspy targets, it’s crucial to maintain sufficient spacing between sub-sections to avoid overlapping highlights. Very short or closely spaced sections can result in flickering active states or confusion about which link is selected. Consistent section styling, padding, and headings help ensure smooth navigation highlighting. Proper testing across multiple devices and screen sizes guarantees a reliable experience for all users.</p>
+        </div>
+      </div>
+    </div>
+  </div>`} />
+
+### List group
+
+List groups can also be used as scrollspy navigation. Scroll the area beside the list group to see the active classes update.
+
+<Example code={`<div class="row">
+    <div class="col-4">
+      <div id="list-example" class="list-group">
+        <a class="list-group-item list-group-item-action" href="#list-item-1">Item 1</a>
+        <a class="list-group-item list-group-item-action" href="#list-item-2">Item 2</a>
+        <a class="list-group-item list-group-item-action" href="#list-item-3">Item 3</a>
+        <a class="list-group-item list-group-item-action" href="#list-item-4">Item 4</a>
+      </div>
+    </div>
+    <div class="col-8">
+      <div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-smooth-scroll="true" class="h-70 overflow-y-auto" tabindex="0">
+        <h4 id="list-item-1">Item 1</h4>
+        <p>Welcome to this scrollspy demo section. As you move down the page, notice how the navigation link updates automatically to reflect the section currently in view. This creates a smoother browsing experience and helps users stay aware of where they are on a long page.</p>
+        <p>Scrollspy is commonly used in documentation, dashboards, and multi-section layouts. It enhances usability by linking scrolling behavior with navigation elements, ensuring that the interface remains intuitive and easy to follow.</p>
+        <h4 id="list-item-2">Item 2</h4>
+        <p>The scrollspy functionality continuously monitors the user’s scroll position within the page. As you move past different content sections, the corresponding navigation item becomes active. This feature provides immediate visual feedback, making it easier to locate and revisit specific sections.</p>
+        <p>Behind the scenes, the JavaScript plugin calculates which section is visible in the viewport and updates the navigation state accordingly. Proper spacing and unique section identifiers help the scrollspy determine which part of the page should be highlighted.</p>
+        <h4 id="list-item-3">Item 3</h4>
+        <p>Scrollspy can be applied to many real-world scenarios. It’s ideal for long-form documentation, user guides, and educational pages where readers need to navigate through structured content efficiently. On corporate websites, it can help highlight key areas like company overview, services, and contact sections without requiring page reloads.</p>
+        <p>For developers, scrollspy simplifies navigation in single-page applications by keeping the user’s focus aligned with their position. It’s also useful in dashboards or analytics tools, where users frequently move between different content blocks or metrics.</p>
+        <h4 id="list-item-4">Item 4</h4>
+        <p>Scrollspy adds polish and professionalism to web interfaces by enhancing the relationship between navigation and content. It keeps users oriented, reduces confusion, and creates a sense of flow as they explore a page.</p>
+        <p>When implemented with thoughtful spacing, accessible markup, and smooth scrolling effects, scrollspy can dramatically improve the user experience. Whether for tutorials, product overviews, or landing pages, it’s a lightweight yet powerful feature that helps users stay connected to their content journey.</p>
+      </div>
+    </div>
+  </div>`} />
+
+### Simple anchors
+
+Scrollspy can also be used with basic anchor links or buttons. Scroll the area beside the links to see the active classes update automatically.
+
+<Example code={`<div class="row">
+    <div class="col-5 sm:col-4">
+      <div id="simple-list-example" class="flex flex-col gap-2 text-center">
+        <a class="p-2 rounded text-info active:bg-info-lighter active:font-semibold" href="#simple-list-item-1">Item 1</a>
+        <a class="p-2 rounded text-info active:bg-info-lighter active:font-semibold" href="#simple-list-item-2">Item 2</a>
+        <a class="p-2 rounded text-info active:bg-info-lighter active:font-semibold" href="#simple-list-item-3">Item 3</a>
+        <a class="p-2 rounded text-info active:bg-info-lighter active:font-semibold" href="#simple-list-item-4">Item 4</a>
+        <a class="p-2 rounded text-info active:bg-info-lighter active:font-semibold" href="#simple-list-item-5">Item 5</a>
+      </div>
+    </div>
+    <div class="col-7 sm:col-8">
+      <div data-bs-spy="scroll" data-bs-target="#simple-list-example" data-bs-offset="0" data-bs-smooth-scroll="true" class="h-70 overflow-y-auto" tabindex="0">
+        <h4 id="simple-list-item-1">Item 1</h4>
+        <p>Welcome to this scrollspy demo section. As you move down the page, notice how the navigation link updates automatically to reflect the section currently in view. This creates a smoother browsing experience and helps users stay aware of where they are on a long page.</p>
+        <p>Scrollspy is commonly used in documentation, dashboards, and multi-section layouts. It enhances usability by linking scrolling behavior with navigation elements, ensuring that the interface remains intuitive and easy to follow.</p>
+        <h4 id="simple-list-item-2">Item 2</h4>
+        <p>The scrollspy functionality continuously monitors the user’s scroll position within the page. As you move past different content sections, the corresponding navigation item becomes active. This feature provides immediate visual feedback, making it easier to locate and revisit specific sections.</p>
+        <p>Behind the scenes, the JavaScript plugin calculates which section is visible in the viewport and updates the navigation state accordingly. Proper spacing and unique section identifiers help the scrollspy determine which part of the page should be highlighted.</p>
+        <h4 id="simple-list-item-3">Item 3</h4>
+         <p>Scrollspy can be applied to many real-world scenarios. It’s ideal for long-form documentation, user guides, and educational pages where readers need to navigate through structured content efficiently. On corporate websites, it can help highlight key areas like company overview, services, and contact sections without requiring page reloads.</p>
+        <p>For developers, scrollspy simplifies navigation in single-page applications by keeping the user’s focus aligned with their position. It’s also useful in dashboards or analytics tools, where users frequently move between different content blocks or metrics.</p>
+        <h4 id="simple-list-item-4">Item 4</h4>
+        <p>Scrollspy adds polish and professionalism to web interfaces by enhancing the relationship between navigation and content. It keeps users oriented, reduces confusion, and creates a sense of flow as they explore a page.</p>
+        <p>When implemented with thoughtful spacing, accessible markup, and smooth scrolling effects, scrollspy can dramatically improve the user experience. Whether for tutorials, product overviews, or landing pages, it’s a lightweight yet powerful feature that helps users stay connected to their content journey.</p>
+        <h4 id="simple-list-item-5">Item 5</h4>
+        <p>This is some placeholder content for the scrollspy page. Note that as you scroll down the page, the appropriate navigation link is highlighted. It’s repeated throughout the component example. We keep adding some more example copy here to emphasize the scrolling and highlighting.</p>
+      </div>
+    </div>
+  </div>`} />
