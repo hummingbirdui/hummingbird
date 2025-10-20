@@ -23,9 +23,14 @@
 
     &[class*='avatar-status-']::before {
       @apply content-[''] 
-    absolute right-[14%] bottom-[14%] 
-    rounded-full w-2 h-2 
-    scale-100 translate-x-[50%] translate-y-[50%];
+      absolute end-[14%] bottom-[14%] 
+      rounded-full w-2 h-2 
+      scale-100 translate-x-[50%] translate-y-[50%];
+    }
+    @variant rtl {
+      &[class*='avatar-status-']::before {
+        @apply -translate-x-[50%];
+      }
     }
   }
 }

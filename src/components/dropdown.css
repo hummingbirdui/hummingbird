@@ -59,7 +59,7 @@
     rounded-[var(--dropdown-border-radius)];
 
     &[data-bs-popper] {
-      @apply top-full left-0 mt-[var(--dropdown-spacer)];
+      @apply top-full start-0 mt-[var(--dropdown-spacer)];
     }
 
     &.show {
@@ -76,7 +76,7 @@
   @layer base {
     --bs-position: start;
     &[data-bs-popper] {
-      @apply right-auto left-0;
+      @apply end-auto start-0;
     }
   }
 }
@@ -84,7 +84,7 @@
   @layer base {
     --bs-position: end;
     &[data-bs-popper] {
-      @apply right-0 left-auto;
+      @apply end-0 start-auto;
     }
   }
 }
@@ -101,7 +101,7 @@
   @layer base {
     @apply relative;
     .dropdown-menu[data-bs-popper] {
-      @apply top-0 right-auto left-full mt-0 ml-[var(--dropdown-spacer)];
+      @apply top-0 end-auto start-full mt-0 ms-[var(--dropdown-spacer)];
     }
   }
 }
@@ -109,7 +109,7 @@
   @layer base {
     @apply relative;
     .dropdown-menu[data-bs-popper] {
-      @apply top-0 right-full left-auto mt-0 mr-[var(--dropdown-spacer)];
+      @apply top-0 end-full start-auto mt-0 me-[var(--dropdown-spacer)];
     }
   }
 }

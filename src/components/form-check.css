@@ -5,7 +5,7 @@
 }
 @utility form-check-inline {
   @layer base {
-    @apply inline-flex items-center mr-2;
+    @apply inline-flex items-center me-2;
   }
 }
 @utility form-check-input-wrapper {

@@ -48,7 +48,7 @@
       @apply shrink-0
       w-[var(--accordion-btn-icon-width)]
       h-[var(--accordion-btn-icon-width)]
-      ml-auto
+      ms-auto
       content-['']
       bg-[image:var(--accordion-btn-icon)]
       bg-no-repeat

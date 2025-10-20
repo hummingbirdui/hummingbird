@@ -11,7 +11,7 @@
     --nav-link-active-color: unset;
     --nav-link-focus-ring-color: --alpha(var(--nav-link-active-color) / 30%);
 
-    @apply flex flex-wrap pl-0 mb-0 list-none
+    @apply flex flex-wrap ps-0 mb-0 list-none
     bg-[var(--nav-bg)];
     .nav-link.active,
     .show > .nav-link {

@@ -10,7 +10,7 @@
       transition-transform duration-200
       cursor-text
       leading-[1.5]
-      translate-x-[16px] translate-y-[13px] scale-[1];
+      ltr:translate-x-[16px] rtl:-translate-x-[16px] translate-y-[13px] scale-[1];
     }
 
     /* Form control */
@@ -37,13 +37,13 @@
       &:focus,
       &:not(:placeholder-shown) {
         & ~ .form-label {
-          @apply translate-x-[10px] translate-y-[4px] scale-[0.85];
+          @apply ltr:translate-x-[10px] rtl:-translate-x-[10px] translate-y-[4px] scale-[0.85];
         }
         &.form-control-sm ~ .form-label {
-          @apply translate-x-[6px] translate-y-[2px] scale-[0.85];
+          @apply ltr:translate-x-[6px] rtl:-translate-x-[6px] translate-y-[2px] scale-[0.85];
         }
         &.form-control-lg ~ .form-label {
-          @apply translate-x-[10px] translate-y-[4px] scale-[0.75];
+          @apply ltr:translate-x-[10px] rtl:-translate-x-[10px] translate-y-[4px] scale-[0.75];
         }
       }
     }
@@ -64,13 +64,13 @@
       &:focus,
       &:not(:placeholder-shown) {
         & ~ .form-label {
-          @apply translate-x-[10px] translate-y-[-10px] scale-[0.85];
+          @apply ltr:translate-x-[10px] rtl:-translate-x-[10px] translate-y-[-10px] scale-[0.85];
         }
         &.form-control-sm ~ .form-label {
-          @apply translate-x-[7px] translate-y-[-10px] scale-[0.85];
+          @apply ltr:translate-x-[7px] rtl:-translate-x-[7px] translate-y-[-10px] scale-[0.85];
         }
         &.form-control-lg ~ .form-label {
-          @apply translate-x-[10px] translate-y-[-12px] scale-[0.75];
+          @apply ltr:translate-x-[10px] rtl:-translate-x-[10px] translate-y-[-12px] scale-[0.75];
         }
       }
     }
@@ -78,14 +78,14 @@
     .form-control-sm {
       --input-padding-y: --spacing(1.5);
       & ~ .form-label {
-        @apply translate-x-[12px] translate-y-[10px] scale-[1];
+        @apply ltr:translate-x-[12px] rtl:-translate-x-[12px] translate-y-[10px] scale-[1];
       }
     }
     .form-control-lg {
       --input-padding-y: --spacing(2.5);
       --input-padding-x: --spacing(5);
       & ~ .form-label {
-        @apply text-base translate-x-[20px] translate-y-[14px] scale-[1];
+        @apply text-base ltr:translate-x-[20px] rtl:-translate-x-[20px] translate-y-[14px] scale-[1];
       }
     }
 
@@ -113,13 +113,13 @@
       &:focus,
       &:not(:placeholder-shown) {
         & + .form-label {
-          @apply translate-x-[12px] translate-y-[4px] scale-[0.85];
+          @apply ltr:translate-x-[12px] rtl:-translate-x-[12px] translate-y-[4px] scale-[0.85];
         }
         &.form-select-sm + .form-label {
-          @apply translate-x-[6px] translate-y-[2px] scale-[0.85];
+          @apply ltr:translate-x-[6px] rtl:-translate-x-[6px] translate-y-[2px] scale-[0.85];
         }
         &.form-select-lg + .form-label {
-          @apply translate-x-[9px] translate-y-[4px] scale-[0.75];
+          @apply ltr:translate-x-[9px] rtl:-translate-x-[9px] translate-y-[4px] scale-[0.75];
         }
       }
     }
@@ -141,13 +141,13 @@
       &:focus,
       &:not(:placeholder-shown) {
         & + .form-label {
-          @apply translate-x-[12px] translate-y-[-10px] scale-[0.85];
+          @apply ltr:translate-x-[12px] rtl:-translate-x-[12px] translate-y-[-10px] scale-[0.85];
         }
         &.form-select-sm + .form-label {
-          @apply translate-x-[6px] translate-y-[-10px] scale-[0.85];
+          @apply ltr:translate-x-[6px] rtl:-translate-x-[6px] translate-y-[-10px] scale-[0.85];
         }
         &.form-select-lg + .form-label {
-          @apply translate-x-[9px] translate-y-[-12px] scale-[0.75];
+          @apply ltr:translate-x-[9px] rtl:-translate-x-[9px] translate-y-[-12px] scale-[0.75];
         }
       }
     }
@@ -155,14 +155,14 @@
     .form-select-sm {
       --form-select-padding-y: --spacing(1.5);
       & + .form-label {
-        @apply translate-x-[12px] translate-y-[10px] scale-[1];
+        @apply ltr:translate-x-[12px] rtl:-translate-x-[12px] translate-y-[10px] scale-[1];
       }
     }
     .form-select-lg {
       --form-select-padding-y: --spacing(2.5);
       --form-select-padding-x: --spacing(5);
       & + .form-label {
-        @apply text-base translate-x-[20px] translate-y-[14px] scale-[1];
+        @apply text-base ltr:translate-x-[20px] rtl:-translate-x-[20px] translate-y-[14px] scale-[1];
       }
     }
   }
@@ -174,25 +174,25 @@
       ~ .form-floating {
         .form-control-fill {
           ~ .form-label {
-            @apply translate-x-[43px] translate-y-[13px] scale-[1];
+            @apply ltr:translate-x-[43px] rtl:-translate-x-[43px] translate-y-[13px] scale-[1];
           }
           &.form-control-sm ~ .form-label {
-            @apply translate-x-[34px] translate-y-[10px] scale-[1];
+            @apply ltr:translate-x-[34px] rtl:-translate-x-[34px] translate-y-[10px] scale-[1];
           }
           &.form-control-lg ~ .form-label {
-            @apply translate-x-[52px] translate-y-[15px] scale-[1];
+            @apply ltr:translate-x-[52px] rtl:-translate-x-[52px] translate-y-[15px] scale-[1];
           }
           &:focus-within,
           &:focus,
           &:not(:placeholder-shown) {
             ~ .form-label {
-              @apply translate-x-[37px] translate-y-[4px] scale-[0.85];
+              @apply ltr:translate-x-[37px] rtl:-translate-x-[37px] translate-y-[4px] scale-[0.85];
             }
             &.form-control-sm ~ .form-label {
-              @apply translate-x-[28px] translate-y-[2px] scale-[0.85];
+              @apply ltr:translate-x-[28px] rtl:-translate-x-[28px] translate-y-[2px] scale-[0.85];
             }
             &.form-control-lg ~ .form-label {
-              @apply translate-x-[38px] translate-y-[4px] scale-[0.75];
+              @apply ltr:translate-x-[38px] rtl:-translate-x-[38px] translate-y-[4px] scale-[0.75];
             }
           }
         }
