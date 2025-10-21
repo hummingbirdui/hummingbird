@@ -1,6 +1,6 @@
 import BsScrollspy from 'bootstrap/js/dist/scrollspy';
 
-export interface ScrollspyOption {
+export interface ScrollspyOptions {
   offset: number;
   method: 'auto' | 'offset' | 'position';
   rootMargin: string;
@@ -22,10 +22,10 @@ export interface ScrollspyClass {
   readonly VERSION: string;
   readonly DATA_KEY: string;
   readonly EVENT_KEY: string;
-  new (element: string | Element, options?: Partial<ScrollspyOption>): ScrollspyInstance;
+  new (element: string | Element, options?: Partial<ScrollspyOptions>): ScrollspyInstance;
   getInstance(element: string | Element): ScrollspyInstance | null;
-  getOrCreateInstance(element: string | Element, config?: Partial<ScrollspyOption>): ScrollspyInstance;
-  Default: ScrollspyOption;
+  getOrCreateInstance(element: string | Element, config?: Partial<ScrollspyOptions>): ScrollspyInstance;
+  Default: ScrollspyOptions;
   Events: typeof ScrollspyEvents;
 }
 

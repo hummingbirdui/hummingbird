@@ -43,7 +43,7 @@ export { default as Tab, type TabInstance, type TabClass } from './scripts/tab';
 
 export {
   default as ScrollSpy,
-  type ScrollspyOption,
+  type ScrollspyOptions,
   type ScrollspyInstance,
   type ScrollspyClass,
 } from './scripts/scrollspy';
