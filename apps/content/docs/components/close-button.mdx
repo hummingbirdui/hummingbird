@@ -1,0 +1,59 @@
+---
+title: Close Button
+description: A simple, reusable close button for dismissing elements such as modals, toasts, drawers, and alerts.
+toc: true
+classNames:
+  component:
+  - class: 'btn-close'
+    desc: Button
+  color:
+  - class: btn-close-white
+    desc: White color
+  modifier:
+  - class: btn-close-circle
+    desc: Circle shape
+---
+
+## Example
+
+Use the `.btn-close` utility to add a dismiss or close action to any component. The default style is minimal and fully customizable with utility classes. Modify the CSS variables to replace the default `background-image`, and include accessible text using `aria-label` for screen readers.
+
+<Example class="flex gap-2"
+  code={`<button class="btn-close" aria-label="close"></button>
+  <button class="btn-close btn-close-circle" aria-label="close"></button>`}
+/>
+
+## Disable state
+
+Disabled close buttons have reduced `opacity` and ignore user interactions, with `pointer-events-none` and `select-none` preventing hover or active states.
+
+<Example 
+  code={`<button class="btn-close" aria-label="close" disabled></button>`}
+/>
+
+## White variant
+
+Use the `.btn-close-white` class to make the default `.btn-close` white.
+
+<Example class="dark"
+  code={`<button class="btn-close btn-close-white" aria-label="close"></button>`}
+/>
+
+## CSS variables
+
+The close button component is built using a set of CSS variables. These variables provide flexibility for customizing styles.
+
+<Example showPreview={false} lang='sass' code={`.btn-close {
+    --btn-close-color: var(--text-color-default);
+    --btn-close-hover-bg: var(--background-color-muted);
+    --btn-close-bg: ...;
+    --btn-close-width: 0.75rem;
+    --btn-close-height: 0.75rem;
+    --btn-close-opacity: 0.5;
+    --btn-close-hover-opacity: 0.75;
+    --btn-close-focus-opacity: 1;
+    --btn-close-disabled-opacity: 0.25;
+    --btn-close-padding: --spacing(1.5);
+    --btn-close-radius: var(--radius-sm);
+  }`} />
+
