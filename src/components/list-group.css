@@ -17,7 +17,7 @@
     --list-group-disabled-color: var(--color-disabled-color);
 
     @apply relative flex flex-col
-    pl-0 mb-0 list-none
+    ps-0 mb-0 list-none
     py-[var(--list-group-padding-y)]
     bg-[var(--list-group-bg)]
     rounded-[var(--list-group-border-radius)];

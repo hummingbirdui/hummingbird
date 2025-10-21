@@ -22,12 +22,13 @@
     rounded-[var(--form-select-radius)]
     border-[length:var(--form-select-border-width)]
     border-[var(--input-border-color)]
-    pl-[var(--form-select-padding-x)]
-    pr-[var(--form-select-padding-right)]
+    ps-[var(--form-select-padding-x)]
+    pe-[var(--form-select-padding-right)]
     py-[var(--form-select-padding-y)]
     bg-[image:var(--form-select-indicator)]
     bg-no-repeat
-    bg-[position:right_var(--form-select-padding-x)_center]
+    ltr:bg-[position:right_var(--form-select-padding-x)_center]
+    rtl:bg-[position:left_var(--form-select-padding-x)_center]
     bg-[length:var(--form-select-bg-size)];
 
     &:is(:disabled, [disabled]) {
@@ -80,13 +81,14 @@
     rounded-[var(--form-select-radius)]
     border-[length:var(--form-select-border-width)]
     border-[var(--input-border-color)]
-    pl-[var(--form-select-padding-x)]
-    pr-[var(--form-select-padding-right)]
+    ps-[var(--form-select-padding-x)]
+    pe-[var(--form-select-padding-right)]
     py-[var(--form-select-padding-y)]
     bg-[image:var(--form-select-indicator)]
     bg-[var(--input-bg)]
     bg-no-repeat
-    bg-[position:right_var(--form-select-padding-x)_center]
+    ltr:bg-[position:right_var(--form-select-padding-x)_center]
+    rtl:bg-[position:left_var(--form-select-padding-x)_center]
     bg-[length:var(--form-select-bg-size)];
 
     &:is(:disabled, [disabled]) {

@@ -32,7 +32,7 @@
 @utility navbar-brand {
   @layer base {
     @apply py-[var(--navbar-brand-padding-y)]
-    mr-[var(--navbar-brand-margin-end)]
+    me-[var(--navbar-brand-margin-end)]
     text-[length:var(--navbar-brand-font-size)]
     text-[var(--navbar-brand-color)]
     no-underline
@@ -58,7 +58,7 @@
     --nav-link-active-color: unset;
 
     @apply flex flex-col
-    pl-0 mb-0
+    ps-0 mb-0
     list-none;
 
     .nav-link {

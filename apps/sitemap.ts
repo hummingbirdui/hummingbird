@@ -30,6 +30,10 @@ const sitemap: Sitemap[] = [
         name: 'Accessibility',
         path: '/docs/getting-started/accessibility',
       },
+      {
+        name: 'RTL',
+        path: '/docs/getting-started/rtl',
+      },
     ],
   },
   {
@@ -193,6 +197,10 @@ const sitemap: Sitemap[] = [
       {
         name: 'Offcanvas',
         path: '/docs/components/offcanvas',
+      },
+      {
+        name: 'Scrollspy',
+        path: '/docs/components/scrollspy',
       },
       {
         name: 'Tables',
