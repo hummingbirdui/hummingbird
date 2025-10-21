@@ -17,18 +17,18 @@
 
     > :not(.btn-check:first-child) + .btn,
     > .btn-group:not(:first-child) {
-      @apply -ml-[var(--input-btn-border-width)];
+      @apply -ms-[var(--input-btn-border-width)];
     }
 
     > .btn:not(:last-child):not([data-bs-toggle='dropdown']),
     > .btn-group:not(:last-child) > .btn {
-      @apply rounded-r-none;
+      @apply rounded-e-none;
     }
 
     > .btn:nth-child(n + 3),
     > :not(.btn-check) + .btn,
     > .btn-group:not(:first-child) > .btn {
-      @apply rounded-l-none;
+      @apply rounded-s-none;
     }
   }
 }

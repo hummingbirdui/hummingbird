@@ -30,6 +30,10 @@ const sitemap: Sitemap[] = [
         name: 'Accessibility',
         path: '/docs/getting-started/accessibility',
       },
+      {
+        name: 'RTL',
+        path: '/docs/getting-started/rtl',
+      },
     ],
   },
   {

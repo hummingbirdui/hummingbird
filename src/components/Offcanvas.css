@@ -41,20 +41,20 @@
 
 @utility offcanvas-start {
   @layer base {
-    @apply top-0 left-0
+    @apply top-0 start-0
     w-[var(--offcanvas-width)]
-    dark:border-r-[length:var(--offcanvas-border-width)]
-    border-r-[var(--offcanvas-border-color)]
-    -translate-x-full;
+    dark:border-e-[length:var(--offcanvas-border-width)]
+    border-[var(--offcanvas-border-color)]
+    ltr:-translate-x-full rtl:translate-x-full;
   }
 }
 @utility offcanvas-end {
   @layer base {
-    @apply top-0 right-0
+    @apply top-0 end-0
     w-[var(--offcanvas-width)]
-    dark:border-l-[length:var(--offcanvas-border-width)]
-    border-l-[var(--offcanvas-border-color)]
-    translate-x-full;
+    dark:border-s-[length:var(--offcanvas-border-width)]
+    border-[var(--offcanvas-border-color)]
+    ltr:translate-x-full rtl:-translate-x-full;
   }
 }
 @utility offcanvas-top {

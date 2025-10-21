@@ -10,7 +10,15 @@ interface Props {
   showPreview?: boolean;
 }
 
-const { code: rawCode, class: className, id, lang = 'html', showMarkup = true, showPreview = true } = Astro.props;
+const {
+  code: rawCode,
+  class: className,
+  id,
+  lang = 'html',
+  showMarkup = true,
+  showPreview = true,
+  ...rest
+} = Astro.props;
 
 function normalizeCode(input: unknown): string {
   if (typeof input === 'string') return input;
@@ -24,7 +32,7 @@ const original: string = normalizeCode(rawCode);
 <div class={`mb-6 ${showPreview ? 'border border-light rounded-2xl' : ''}`} id={id}>
   {
     showPreview && (
-      <div class={`px-6 py-8 ${className ?? ''}`}>
+      <div class={`px-6 py-8 ${className ?? ''}`} {...rest}>
         <Fragment set:html={original} />
       </div>
     )
