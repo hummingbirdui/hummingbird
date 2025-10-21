@@ -3,6 +3,7 @@
 @import '../src/index.css';
 @import 'tailwind-scrollbar-hide/v4';
 @custom-variant dark (&:where(.dark, .dark *), .dark);
+@custom-variant active (&:active, &.active);
 
 @theme {
   --container-8xl: 95rem;
