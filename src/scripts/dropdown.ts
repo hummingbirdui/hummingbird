@@ -22,10 +22,10 @@ export interface DropdownInstance {
 }
 
 enum DropdownEvents {
-  SHOW = 'show.bs.dropdown',
-  SHOWN = 'shown.bs.dropdown',
-  HIDE = 'hide.bs.dropdown',
-  HIDDEN = 'hidden.bs.dropdown',
+  show = 'show.bs.dropdown',
+  shown = 'shown.bs.dropdown',
+  hide = 'hide.bs.dropdown',
+  hidden = 'hidden.bs.dropdown',
 }
 
 export interface DropdownClass {
