@@ -23,7 +23,10 @@
 @utility page-item {
   @layer base {
     &.active > .page-link {
-      @apply text-[var(--pagination-active-color)] bg-[var(--pagination-active-bg)] border-transparent focus-visible:ring-[--alpha(var(--pagination-active-ring-color)/25%)];
+      @apply text-[var(--pagination-active-color)] 
+      bg-[var(--pagination-active-bg)]
+      border-transparent 
+      focus-visible:ring-[--alpha(var(--pagination-active-ring-color)/25%)];
     }
 
     &.disabled > .page-link,
