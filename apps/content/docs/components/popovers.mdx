@@ -1,0 +1,120 @@
+---
+title: Popovers
+description: Popovers provide brief, contextual information or actions when users hover, focus, or click on an element.
+toc: true
+attributeComponent: Popover
+attributeLink: https://getbootstrap.com/docs/5.3/components/popovers/
+---
+
+## Basic example
+
+Add a popover to an element by adding the `data-bs-toggle="popover"` attribute. Set popover content with the `data-bs-content` attribute.
+
+<Example code={`<button type="button" class="btn btn-subtle-neutral" data-bs-toggle="popover" data-bs-content="Here’s some exciting content to explore and enjoy.">Toggle basic popover</button>`} />
+
+## Directions
+
+Popovers can be placed in different directions: top, right, bottom, and left. Use the `data-bs-placement` attribute to specify the placement.
+
+<Example class='flex flex-wrap justify-center gap-2'
+  code={`<button type="button" class="btn btn-subtle-neutral" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="top" data-bs-content="Top popover">
+    Popover on top
+  </button>
+  <button type="button" class="btn btn-subtle-neutral" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="Right popover">
+    Popover on right
+  </button>
+  <button type="button" class="btn btn-subtle-neutral" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-content="Bottom popover">
+    Popover on bottom
+  </button>
+  <button type="button" class="btn btn-subtle-neutral" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="left" data-bs-content="Left popover">
+    Popover on left
+  </button>`} />
+
+## Popover with title
+
+Add a title to your popover by using the `data-bs-title` attribute.
+
+<Example code={`<button type="button" class="btn btn-subtle-neutral" data-bs-toggle="popover" data-bs-title="Popover title" data-bs-content="Here’s some exciting content to explore and enjoy.">Toggle basic popover</button>`} />
+
+## Custom container
+
+If parent element styles interfere with a popover, specify a custom container so the popover’s HTML is rendered within that element. This is useful for responsive tables, input groups, and similar layouts.
+
+<Example lang='js' showPreview={false} code={`const popover = new hummingbird.Popover('.example-popover', {
+    container: 'body'
+  })`} />
+
+When using popovers inside a modal dialog, set a custom container to ensure the popover is appended to the modal. This is important for interactive elements, as modals trap focus, preventing users from interacting with popovers outside the modal.
+
+<Example lang='js' showPreview={false} code={`const popover = new hummingbird.Popover('.example-popover', {
+    container: '.modal-body'
+  })`} />
+
+## Custom popovers
+
+Popovers can be customized using CSS variables. Assign a custom class with `data-bs-custom-class="custom-popover"` to scope styles, and override specific CSS variables for a unique appearance.
+
+<Example lang='sass' showPreview={false}
+  code={`.custom-popover {
+    --popover-max-width: 15rem;
+    --popover-border-color: var(--color-info);
+    --popover-header-bg: var(--color-info);
+    --popover-header-color: var(--color-contrast);
+    --popover-body-padding-x: --spacing(4);
+    --popover-body-padding-y: --spacing(3);
+  }`} />
+
+<Example code={`<button type="button" class="btn btn-subtle-info"
+    data-bs-toggle="popover" data-bs-placement="right"
+    data-bs-custom-class="custom-popover"
+    data-bs-title="Custom popover"
+    data-bs-content="This popover is themed via CSS variables.">
+    Custom popover
+</button>`} />
+
+## Dismiss on next click
+
+Use focus to close the popover upon the next click outside the toggle element.
+
+<Example code={`<a tabindex="0" class="btn btn-subtle-danger" role="button" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-title="Dismissible popover" data-bs-content="Here’s some exciting content to explore and enjoy.">Dismissible popover</a>`} />
+
+<Example lang='js' showPreview={false} code={`const popover = new hummingbird.Popover('.popover-dismiss', {
+    trigger: 'focus'
+  })`} />
+
+## Disabled elements 
+
+Disabled elements can’t trigger popovers since they’re non-interactive. To enable popovers, wrap them in a focusable `<div>` or `<span>` with `tabindex="0"`. For better feedback, use `data-bs-trigger="hover focus"` so the popover appears on hover or focus instead of click on a disabled element.
+
+  <Example code={`<span class="inline-block" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="Disabled popover">
+    <button class="btn btn-primary" type="button" disabled>Disabled button</button>
+  </span>`} />
+
+## CSS variables
+
+Popover components utilize several CSS variables for customization. Below is a list of available CSS variables that can be overridden to modify the appearance of popovers:
+
+<Example lang="sass" showPreview={false} 
+  code={`.popover {
+    --popover-zindex: 1070;
+    --popover-max-width: 16rem;
+    --popover-font-size: var(--text-sm);
+    --popover-bg: var(--background-color-default);
+    --popover-border-width: 1px;
+    --popover-border-color: var(--border-color-light);
+    --popover-border-radius: var(--radius-lg);
+    --popover-box-shadow: var(--shadow-xl);
+    --popover-header-padding-x: --spacing(4);
+    --popover-header-padding-y: --spacing(3);
+    --popover-margin: --spacing(2);
+    --popover-header-font-size: var(--text-base);
+    --popover-header-color: var(--text-color-default);
+    --popover-header-bg: var(--background-color-default);
+    --popover-body-padding-x: --spacing(4);
+    --popover-body-padding-y: --spacing(3);
+    --popover-body-color: var(--text-color-default);
+    --popover-arrow-width: 0.85rem;
+    --popover-arrow-height: 0.62rem;
+    --popover-arrow-border-radius: --spacing(0.5);
+    --popover-arrow-border-color: var(--popover-border-color);
+  }`} />
