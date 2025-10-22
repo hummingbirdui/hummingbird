@@ -30,6 +30,10 @@ const sitemap: Sitemap[] = [
         name: 'Accessibility',
         path: '/docs/getting-started/accessibility',
       },
+      {
+        name: 'RTL',
+        path: '/docs/getting-started/rtl',
+      },
     ],
   },
   {
@@ -162,6 +166,10 @@ const sitemap: Sitemap[] = [
         name: 'Collapse',
         path: '/docs/components/collapse',
       },
+       {
+        name: 'Close Button',
+        path: '/docs/components/close-button',
+      },
       {
         name: 'Dropdowns',
         path: '/docs/components/dropdowns',
@@ -193,6 +201,10 @@ const sitemap: Sitemap[] = [
       {
         name: 'Pagination',
         path: '/docs/components/pagination',
+      },
+      {
+        name: 'Scrollspy',
+        path: '/docs/components/scrollspy',
       },
       {
         name: 'Tables',

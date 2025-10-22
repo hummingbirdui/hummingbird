@@ -160,13 +160,13 @@
     &:has(> .form-control-icon-start) {
       .form-control-fill,
       .form-control {
-        @apply pl-[var(--input-icon-spacing)];
+        @apply ps-[var(--input-icon-spacing)];
       }
     }
     &:has(> .form-control-icon-end) {
       .form-control-fill,
       .form-control {
-        @apply pr-[var(--input-icon-spacing)];
+        @apply pe-[var(--input-icon-spacing)];
       }
     }
 
@@ -188,14 +188,14 @@
 
 @utility form-control-icon-start {
   @layer base {
-    @apply absolute z-1 top-[50%] left-[var(--input-padding-x)] translate-y-[-50%]
+    @apply absolute z-1 top-[50%] start-[var(--input-padding-x)] translate-y-[-50%]
     text-[length:var(--input-icon-font-size)]
     text-[var(--input-icon-color)];
   }
 }
 @utility form-control-icon-end {
   @layer base {
-    @apply absolute z-1 top-[50%] right-[var(--input-padding-x)] translate-y-[-50%]
+    @apply absolute z-1 top-[50%] end-[var(--input-padding-x)] translate-y-[-50%]
     text-[length:var(--input-icon-font-size)]
     text-[var(--input-icon-color)];
   }
