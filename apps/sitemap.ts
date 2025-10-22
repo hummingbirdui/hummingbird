@@ -166,7 +166,7 @@ const sitemap: Sitemap[] = [
         name: 'Collapse',
         path: '/docs/components/collapse',
       },
-       {
+      {
         name: 'Close Button',
         path: '/docs/components/close-button',
       },
@@ -201,6 +201,10 @@ const sitemap: Sitemap[] = [
       {
         name: 'Pagination',
         path: '/docs/components/pagination',
+      },
+      {
+        name: 'Popovers',
+        path: '/docs/components/popovers',
       },
       {
         name: 'Scrollspy',

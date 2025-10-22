@@ -39,7 +39,7 @@ export {
   type OffcanvasClass,
 } from './scripts/offcanvas';
 
-export { default as Tab, type TabInstance, type TabClass } from './scripts/tab';
+export { default as Popover, type PopoverOptions, type PopoverInstance, type PopoverClass } from './scripts/popover';
 
 export {
   default as ScrollSpy,
@@ -47,5 +47,7 @@ export {
   type ScrollspyInstance,
   type ScrollspyClass,
 } from './scripts/scrollspy';
+
+export { default as Tab, type TabInstance, type TabClass } from './scripts/tab';
 
 export { default as Tooltip, type TooltipOptions, type TooltipInstance, type TooltipClass } from './scripts/tooltip';

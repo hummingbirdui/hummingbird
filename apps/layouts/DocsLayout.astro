@@ -24,7 +24,9 @@ interface ClassTableRow {
           <h1 class="mb-4 text-[32px]">{title}</h1>
           <p class="text-xl mb-10 font-light">{description}</p>
           {
-            (attributeComponent === 'Dropdown' || attributeComponent === 'Tooltip') && (
+            (attributeComponent === 'Dropdown' ||
+              attributeComponent === 'Tooltip' ||
+              attributeComponent === 'Popover') && (
               <p>
                 {attributeComponent}s use the <a href="https://popper.js.org/docs/v2/">Popper</a> library for dynamic
                 positioning and viewport detection. Include <code>popper.min.js</code> before Hummingbird’s JavaScript,

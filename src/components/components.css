@@ -7,6 +7,7 @@
 @import './button.css';
 @import './card.css';
 @import './carousel.css';
+@import './close.css';
 @import './dropdown.css';
 @import './floating-labels.css';
 @import './form-check.css';
@@ -21,7 +22,7 @@
 @import './navbar.css';
 @import './offcanvas.css';
 @import './pagination.css';
+@import './popover.css';
 @import './table.css';
 @import './tooltip.css';
 @import './transitions.css';
-@import './close.css';
