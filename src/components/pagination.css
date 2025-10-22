@@ -13,7 +13,6 @@
     --pagination-hover-bg: var(--color-hover);
     --pagination-active-bg: var(--color-primary);
     --pagination-active-color: var(--color-white);
-    --pagination-active-border-color: transparent;
     --pagination-disabled-opacity: 0.35;
 
     @apply flex items-center gap-1 list-none m-0 p-0;
@@ -38,20 +37,26 @@
       @apply bg-[var(--pagination-hover-bg)];
     }
 
+    &:focus {
+      @apply outline-0;
+    }
+
+    &:focus-visible {
+      @apply ring-4 ring-primary-lighter;
+    }
+
     &.active {
-      @apply text-[var(--pagination-active-color)] bg-[var(--pagination-active-bg)] border-[var(--pagination-active-border-color)];
+      @apply text-[var(--pagination-active-color)] bg-[var(--pagination-active-bg)];
     }
 
     &:disabled,
     &.disabled {
-      @apply pointer-events-none select-none opacity-[var(--pagination-disabled-opacity)];
+      @apply pointer-events-none opacity-[var(--pagination-disabled-opacity)];
     }
   }
 }
 
-/* ------------------
-   Pagination Sizes
--------------------- */
+/* pagination sizes */
 @utility pagination-sm {
   @layer base {
     --pagination-height: 1.5rem;
@@ -75,9 +80,14 @@
   }
 }
 
-/* ------------------
-  Pagination Colors
--------------------- */
+/* circle variant */
+@utility pagination-circle {
+  @layer base {
+    --pagination-radius: calc(infinity * 1px);
+  }
+}
+
+/* filled variant */
 @utility pagination-primary {
   @layer base {
     --pagination-active-bg: var(--color-primary);
@@ -114,18 +124,7 @@
   }
 }
 
-/* ----------------
-  Rounded Variant
------------------- */
-@utility pagination-rounded {
-  @layer base {
-    --pagination-radius: calc(infinity * 1px);
-  }
-}
-
-/* ---------------
-  Subtle Variant
------------------ */
+/* subtle variant */
 @utility pagination-subtle-primary {
   @layer base {
     --pagination-active-bg: --alpha(var(--color-primary) / 15%);
@@ -169,9 +168,7 @@
   }
 }
 
-/* -----------------
-  Outlined Variant
-------------------- */
+/* outlined variant */
 @utility pagination-outlined-primary {
   @layer base {
     --pagination-active-color: var(--color-white);
@@ -222,83 +219,10 @@
   }
 }
 
-/* ---------------
-  Subtle Variant
------------------ */
-@utility pagination-subtle-outlined-primary {
-  @layer base {
-    --pagination-active-bg: --alpha(var(--color-primary) / 15%);
-    --pagination-active-color: var(--color-primary-dark);
-    --pagination-border-color: var(--background-color-emphasis);
-    --pagination-active-border-color: --alpha(var(--color-primary) / 50%);
-  }
-}
-@utility pagination-subtle-outlined-secondary {
-  @layer base {
-    --pagination-active-bg: --alpha(var(--color-secondary) / 15%);
-    --pagination-active-color: var(--color-secondary-dark);
-    --pagination-border-color: var(--background-color-emphasis);
-    --pagination-active-border-color: --alpha(var(--color-secondary) / 50%);
-  }
-}
-@utility pagination-subtle-outlined-info {
-  @layer base {
-    --pagination-active-bg: --alpha(var(--color-info) / 15%);
-    --pagination-active-color: var(--color-info-dark);
-    --pagination-border-color: var(--background-color-emphasis);
-    --pagination-active-border-color: --alpha(var(--color-info) / 50%);
-  }
-}
-@utility pagination-subtle-outlined-success {
-  @layer base {
-    --pagination-active-bg: --alpha(var(--color-success) / 15%);
-    --pagination-active-color: var(--color-success-dark);
-    --pagination-border-color: var(--background-color-emphasis);
-    --pagination-active-border-color: --alpha(var(--color-success) / 50%);
-  }
-}
-@utility pagination-subtle-outlined-warning {
-  @layer base {
-    --pagination-active-bg: --alpha(var(--color-warning) / 15%);
-    --pagination-active-color: var(--color-warning-dark);
-    --pagination-border-color: var(--background-color-emphasis);
-    --pagination-active-border-color: --alpha(var(--color-warning) / 50%);
-  }
-}
-@utility pagination-subtle-outlined-danger {
-  @layer base {
-    --pagination-active-bg: --alpha(var(--color-danger) / 15%);
-    --pagination-active-color: var(--color-danger-dark);
-    --pagination-border-color: var(--background-color-emphasis);
-    --pagination-active-border-color: --alpha(var(--color-danger) / 50%);
-  }
-}
-@utility pagination-subtle-outlined-neutral {
-  @layer base {
-    --pagination-active-bg: var(--background-color-muted);
-    --pagination-active-color: var(--text-color-emphasis);
-    --pagination-border-color: var(--background-color-emphasis);
-    --pagination-active-border-color: var(--background-color-emphasis);
-  }
-}
-
-/* -----------------
-  Table Pagination
-------------------- */
-@utility table-pagination {
-  --pagination-info-color: var(--text-color-muted);
-  --pagination-info-link-color: var(--color-primary);
-  --pagination-mini-padding-x: --spacing(6);
-  --pagination-mini-padding-y: --spacing(2);
-  --pagination-mini-bg: var(--background-color-subtle);
-
-  @layer base {
-    @apply flex items-center justify-between px-[var(--pagination-mini-padding-x)] py-[var(--pagination-mini-padding-y)] bg-[var(--pagination-mini-bg)] rounded-lg;
-  }
-}
+/* table pagination */
 @utility pagination-info {
   @layer base {
-    @apply text-xs text-[var(--pagination-info-color)] font-light;
+    @apply text-xs text-[var(--text-color-muted)] font-light;
     & > p {
       @apply mb-0;
     }
@@ -311,25 +235,10 @@
 }
 @utility pagination-link {
   @layer base {
-    @apply ml-1 text-[var(--pagination-info-link-color)] font-semibold no-underline;
+    @apply ml-1 text-[var(--color-primary)] font-semibold no-underline;
 
     &:hover {
-      @apply text-[var(--pagination-info-link-color)] underline;
-    }
-  }
-}
-
-/* -------------
-  Mini Variant
---------------- */
-@utility pagination-mini {
-  --pagination-color: var(--color-primary);
-  --pagination-height: 1.875rem;
-  @layer base {
-    @apply gap-2;
-    .page-link,
-    .page-link > p {
-      @apply mb-0 font-semibold;
+      @apply text-[var(--color-primary)] underline;
     }
   }
 }
