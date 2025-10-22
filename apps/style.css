@@ -95,7 +95,6 @@
   .astro-code,
   .astro-code span {
     @apply text-[var(--shiki-dark)]! font-[var(--shiki-dark-font-weight)]!;
-    /* background-color: var(--shiki-dark-bg) !important; */
     font-style: var(--shiki-dark-font-style) !important;
     text-decoration: var(--shiki-dark-text-decoration) !important;
   }
