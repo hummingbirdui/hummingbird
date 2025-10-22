@@ -19,7 +19,7 @@ export default {
   Modal,
   Offcanvas,
   Popover,
-  Tab,
   Scrollspy,
+  Tab,
   Tooltip,
 };
