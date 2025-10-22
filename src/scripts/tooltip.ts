@@ -40,11 +40,11 @@ export interface TooltipInstance {
 }
 
 enum TooltipEvents {
-  SHOW = 'show.bs.tooltip',
-  SHOWN = 'shown.bs.tooltip',
-  HIDE = 'hide.bs.tooltip',
-  HIDDEN = 'hidden.bs.tooltip',
-  INSERTED = 'inserted.bs.tooltip',
+  show = 'show.bs.tooltip',
+  shown = 'shown.bs.tooltip',
+  hide = 'hide.bs.tooltip',
+  hidden = 'hidden.bs.tooltip',
+  inserted = 'inserted.bs.tooltip',
 }
 
 export interface TooltipClass {
