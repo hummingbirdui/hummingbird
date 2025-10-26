@@ -8,6 +8,7 @@ import Offcanvas from './scripts/offcanvas';
 import Popover from './scripts/popover';
 import Tab from './scripts/tab';
 import Scrollspy from './scripts/scrollspy';
+import { Toast } from 'bootstrap';
 import Tooltip from './scripts/tooltip';
 
 export default {
@@ -21,5 +22,6 @@ export default {
   Popover,
   Scrollspy,
   Tab,
+  Toast,
   Tooltip,
 };

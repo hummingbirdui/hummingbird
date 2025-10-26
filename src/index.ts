@@ -50,4 +50,6 @@ export {
 
 export { default as Tab, type TabInstance, type TabClass } from './scripts/tab';
 
+export { default as Toast, type ToastOptions, type ToastInstance, type ToastClass } from './scripts/toast';
+
 export { default as Tooltip, type TooltipOptions, type TooltipInstance, type TooltipClass } from './scripts/tooltip';
