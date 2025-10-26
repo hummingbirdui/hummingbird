@@ -1,5 +1,13 @@
 import docsearch from '@docsearch/js';
 
+declare global {
+  interface Window {
+    hummingbird: {
+      Toast: any;
+    };
+  }
+}
+
 docsearch({
   container: '#docsearch',
   appId: '9WZCQJVTTL',
@@ -54,5 +62,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (/Windows NT/i.test(navigator.userAgent)) {
     document.documentElement.setAttribute('data-os', 'windows');
+  }
+
+  // Toast examples
+  const toastTrigger = document.getElementById('liveToastBtn');
+  const toastLiveExample = document.getElementById('liveToast');
+  const toastPlacement = document.getElementById('toastPlacement');
+  const toastPlacementSelect = document.getElementById('selectToastPlacement') as HTMLSelectElement;
+
+  if (toastTrigger) {
+    const toastBootstrap = window.hummingbird.Toast.getOrCreateInstance(toastLiveExample);
+    toastTrigger.addEventListener('click', () => {
+      toastBootstrap.show();
+    });
+  }
+
+  if (toastPlacement) {
+    toastPlacementSelect.addEventListener('change', function () {
+      if (!toastPlacement.dataset.originalClass) {
+        toastPlacement.dataset.originalClass = toastPlacement.className;
+      }
+
+      toastPlacement.className = `${toastPlacement.dataset.originalClass} ${this.value}`;
+    });
   }
 });

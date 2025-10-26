@@ -1,0 +1,274 @@
+---
+title: Toasts
+description: The Toast component provides feedback messages that appear temporarily at the edge of the viewport. They can display success, warning, error, or informational states using flexible styles.
+toc: true
+attributeComponent: Toast
+attributeLink: https://getbootstrap.com/docs/5.3/components/toast/
+classNames:
+  component:
+  - class: toast
+    desc: Toast component
+  - class: toast-container
+    desc: Container for stacking toasts
+  inner:
+  - class: toast-header
+    desc: Toast header content
+  - class: toast-body
+    desc: Toast body content
+---
+
+## Basic example
+
+Basic toast can be created with the `.toast` class. Write the toast content within a `.toast-body` container.
+
+<Example code={`<div class="toast show" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="toast-body">
+      Operation completed successfully.
+    </div>
+  </div>`} />
+
+## Dismissing
+
+Add a dismiss button with `data-bs-dismiss="toast"` attribute within the toast.
+
+<Example code={`<div class="toast show" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="flex">
+      <div class="toast-body">
+        Operation completed successfully.
+      </div>
+      <button type="button" class="btn-close m-auto me-2" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+  </div>`} />
+
+## Toast with title
+
+To add a title, include a `.toast-header` and customize it with additional content like timestamps or icons.
+
+<Example code={`<div class="toast show" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="toast-header">
+      <strong class="me-auto">Hummingbird</strong>
+      <small>10 mins ago</small>
+      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+    <div class="toast-body">
+      Operation completed successfully.
+    </div>
+  </div>`} />
+
+
+## Live example
+
+Click the button below to show a toast (hidden by default).
+
+<Example code={`<button type="button" class="btn btn-primary" id="liveToastBtn">Show live toast</button>
+
+  <div class="toast-container fixed top-0 end-0 p-4">
+    <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="toast-header">
+        <strong class="me-auto">Hummingbird</strong>
+        <small>10 mins ago</small>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+      <div class="toast-body">
+        Operation completed successfully.
+      </div>
+    </div>
+  </div>`} />
+
+The following JavaScript initializes the toast and shows it when the button is clicked.
+
+<Example lang='js' showPreview={false} code={`const toastTrigger = document.getElementById('liveToastBtn');
+  const toastLiveExample = document.getElementById('liveToast');
+
+  if (toastTrigger) {
+    const myToast = hummingbird.Toast.getOrCreateInstance(toastLiveExample);
+    toastTrigger.addEventListener('click', () => {
+      myToast.show();
+    });
+  }
+`} />
+
+## Use with Alerts
+
+All alert variants can be used within toasts for contextual feedback messages. An icon and a dismiss button can be added for better user experience.
+
+<Example class='flex flex-col gap-2' 
+  code={`<div class="toast show" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="alert alert-subtle-warning" role="alert">
+      <svg class="alert-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M2.725 21q-.275 0-.5-.137t-.35-.363t-.137-.488t.137-.512l9.25-16q.15-.25.388-.375T12 3t.488.125t.387.375l9.25 16q.15.25.138.513t-.138.487t-.35.363t-.5.137zm1.725-2h15.1L12 6zM12 18q.425 0 .713-.288T13 17t-.288-.712T12 16t-.712.288T11 17t.288.713T12 18m0-3q.425 0 .713-.288T13 14v-3q0-.425-.288-.712T12 10t-.712.288T11 11v3q0 .425.288.713T12 15m0-2.5" stroke-width="0.5" stroke="currentColor"/></svg>
+      <span>This ia a warning message.</span>
+      <button class='btn btn-icon btn-icon-warning ms-auto shrink-0' data-bs-dismiss="toast" >
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="m12 13.4l-4.9 4.9q-.275.275-.7.275t-.7-.275t-.275-.7t.275-.7l4.9-4.9l-4.9-4.9q-.275-.275-.275-.7t.275-.7t.7-.275t.7.275l4.9 4.9l4.9-4.9q.275-.275.7-.275t.7.275t.275.7t-.275.7L13.4 12l4.9 4.9q.275.275.275.7t-.275.7t-.7.275t-.7-.275z" stroke-width="0.5" stroke="currentColor"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="toast show" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="alert alert-outline-success" role="alert">
+      <svg class="alert-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="m10.6 16.6l7.05-7.05l-1.4-1.4l-5.65 5.65l-2.85-2.85l-1.4 1.4zM12 22q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22m0-2q3.35 0 5.675-2.325T20 12t-2.325-5.675T12 4T6.325 6.325T4 12t2.325 5.675T12 20m0-8" stroke-width="0.5" stroke="currentColor"/></svg>
+      <span>This is a success message.</span>
+      <button class='btn btn-sm btn-circle btn-outline-success ms-auto' data-bs-dismiss="toast">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="m12 13.4l-4.9 4.9q-.275.275-.7.275t-.7-.275t-.275-.7t.275-.7l4.9-4.9l-4.9-4.9q-.275-.275-.275-.7t.275-.7t.7-.275t.7.275l4.9 4.9l4.9-4.9q.275-.275.7-.275t.7.275t.275.7t-.275.7L13.4 12l4.9 4.9q.275.275.275.7t-.275.7t-.7.275t-.7-.275z" stroke-width="0.5" stroke="currentColor"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="toast show" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="alert alert-danger" role="alert">
+      <svg class="alert-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M12 17q.425 0 .713-.288T13 16t-.288-.712T12 15t-.712.288T11 16t.288.713T12 17m-1-4h2V7h-2zm1 9q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22m0-2q3.35 0 5.675-2.325T20 12t-2.325-5.675T12 4T6.325 6.325T4 12t2.325 5.675T12 20m0-8" stroke-width="0.5" stroke="currentColor"/></svg>
+      <span>This is a error message.</span>
+      <button class='btn btn-sm btn-circle btn-danger ms-auto' data-bs-dismiss="toast">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="m12 13.4l-4.9 4.9q-.275.275-.7.275t-.7-.275t-.275-.7t.275-.7l4.9-4.9l-4.9-4.9q-.275-.275-.275-.7t.275-.7t.7-.275t.7.275l4.9 4.9l4.9-4.9q.275-.275.7-.275t.7.275t.275.7t-.275.7L13.4 12l4.9 4.9q.275.275.275.7t-.275.7t-.7.275t-.7-.275z" stroke-width="0.5" stroke="currentColor"/></svg>
+      </button>
+    </div>
+  </div>`} />
+
+## Stacking
+
+Make toasts stack vertically by placing them within a `.toast-container`.
+
+<Example class="[&>.toast-container]:static" code={`<div class="toast-container">
+    <div class="toast show" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="toast-header">
+        <strong class="me-auto">Hummingbird</strong>
+        <small>just now</small>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+      <div class="toast-body">
+        See? Just like this.
+      </div>
+    </div>
+
+    <div class="toast show" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="toast-header">
+        <strong class="me-auto">Hummingbird</strong>
+        <small>2 seconds ago</small>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+      <div class="toast-body">
+        Heads up, toasts will stack automatically
+      </div>
+    </div>
+  </div>`} />
+
+## Custom content
+
+Toasts can be customized with additional elements such as action buttons or by using utilities and other Hummingbird components.
+
+<Example code={`<div class="toast show" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="toast-body">
+      Operation completed successfully.
+    </div>
+    <div class="border-t border-light py-2 px-3 flex justify-end gap-2">
+      <button class="btn btn-sm btn-subtle-primary">Action</button>
+      <button class="btn btn-sm btn-subtle-secondary">Close</button>
+    </div>
+  </div>`} />
+
+## Placement
+
+Toasts can be positioned with custom classes. Use utilities like `.top-0`, `.end-0`, `.bottom-0`, `.start-0` and `.translate` to place toasts in different corners of the viewport.
+
+<Example code={`<form>
+    <div class="form-field mb-4">
+      <label for="selectToastPlacement" class="form-label">Toast placement</label>
+      <select class="form-select-fill" id="selectToastPlacement">
+        <option value="" selected>Select a position...</option>
+        <option value="top-0 start-0">Top left</option>
+        <option value="top-0 start-1/2 -translate-x-1/2">Top center</option>
+        <option value="top-0 end-0">Top right</option>
+        <option value="top-1/2 start-0 -translate-y-1/2">Middle left</option>
+        <option value="top-1/2 start-1/2 -translate-1/2">Middle center</option>
+        <option value="top-1/2 end-0 -translate-y-1/2">Middle right</option>
+        <option value="bottom-0 start-0">Bottom left</option>
+        <option value="bottom-0 start-1/2 -translate-x-1/2">Bottom center</option>
+        <option value="bottom-0 end-0">Bottom right</option>
+      </select>
+    </div>
+  </form>
+  <div aria-live="polite" aria-atomic="true" class="bg-muted relative rounded-lg h-100">
+    <div class="toast-container p-4" id="toastPlacement">
+      <div class="toast show">
+        <div class="toast-header">
+          <strong class="me-auto">Hummingbird</strong>
+          <small>10 mins ago</small>
+        </div>
+        <div class="toast-body">
+          Hello, world! This is a toast message.
+        </div>
+      </div>
+    </div>
+  </div>`} />
+
+For systems that generate multiple notifications, a wrapping element can be used to allow toasts to stack efficiently.
+
+<Example class='h-70' code={`<div aria-live="polite" aria-atomic="true" class="relative">
+    <!-- Position it: -->
+    <!-- - .toast-container for spacing between toasts -->
+    <!-- - .top-0 & .end-0 to position the toasts in the upper right corner -->
+    <!-- - .p-4 to prevent the toasts from sticking to the edge of the container  -->
+    <div class="toast-container top-0 end-0">
+
+      <!-- Then put toasts within -->
+      <div class="toast show" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+          <strong class="me-auto">Hummingbird</strong>
+          <small>just now</small>
+          <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body">
+          See? Just like this.
+        </div>
+      </div>
+
+      <div class="toast show" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+          <strong class="me-auto">Hummingbird</strong>
+          <small>2 seconds ago</small>
+          <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body">
+          Heads up, toasts will stack automatically
+        </div>
+      </div>
+    </div>
+  </div>`} />
+
+Enhance the the positioning further by using flexbox utilities to align toasts vertically and horizontally within a container.
+
+<Example class="h-70" code={`<!-- Flexbox container for aligning the toasts -->
+  <div aria-live="polite " aria-atomic="true" class="flex justify-center items-center w-full h-full">
+
+    <!-- Then put toasts within -->
+    <div class="toast show" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="toast-header">
+        <strong class="me-auto">Hummingbird</strong>
+        <small>11 mins ago</small>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+      <div class="toast-body">
+        Hello, world! This is a toast message.
+      </div>
+    </div>
+  </div>`} />
+
+## CSS variables
+
+Toast component utilize several CSS variables for customization. Below is a list of available CSS variables that can be overridden to modify the appearance of Toasts:
+
+<Example lang="sass" showPreview={false} 
+  code={`.toast {
+    --toast-zindex: 1090;
+    --toast-padding-x: --spacing(4);
+    --toast-padding-y: --spacing(2);
+    --toast-spacing: --spacing(6);
+    --toast-max-width: 21.875rem;
+    --toast-font-size: var(--text-sm);
+    --toast-color: var(--text-color-default);
+    --toast-bg: var(--background-color-subtle);
+    --toast-border-width: 1px;
+    --toast-border-color: transparent;
+    --toast-border-radius: var(--radius-lg);
+    --toast-box-shadow: var(--shadow-xs);
+    --toast-header-color: var(--text-color-default);
+    --toast-header-bg: var(--background-color-subtle);
+    --toast-header-border-color: var(--border-color-base);
+  }`} />
