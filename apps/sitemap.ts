@@ -206,6 +206,10 @@ const sitemap: Sitemap[] = [
         name: 'Popovers',
         path: '/docs/components/popovers',
       },
+       {
+        name: 'Progress',
+        path: '/docs/components/progress',
+      },
       {
         name: 'Scrollspy',
         path: '/docs/components/scrollspy',

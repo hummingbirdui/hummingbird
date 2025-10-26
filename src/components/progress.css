@@ -1,0 +1,105 @@
+@utility progress {
+  @layer base {
+    --progress-height: --spacing(1);
+    --progress-font-size: var(--text-xs);
+    --progress-bg: var(--color-light);
+    --progress-radius: var(--radius-md);
+    --progress-bar-color: var(--color-contrast);
+    --progress-bar-bg: var(--color-primary);
+
+    @apply flex overflow-hidden items-stretch
+    h-[var(--progress-height)]
+    bg-[var(--progress-bg)]
+    text-[length:var(--progress-font-size)]
+    rounded-[var(--progress-radius)];
+  }
+}
+
+@utility progress-bar {
+  @layer base {
+    @apply flex flex-col justify-center
+    text-[var(--progress-bar-color)]
+    text-center
+    whitespace-nowrap
+    bg-[var(--progress-bar-bg)];
+  }
+}
+
+/* stacked container */
+@utility progress-stacked {
+  --stacked-progress-radius: var(--radius-md);
+  --progress-bg: var(--background-color-muted);
+  @layer base {
+    @apply flex gap-0.5 bg-[var(--progress-bg)] rounded-[var(--stacked-progress-radius)] overflow-hidden;
+    & > .progress {
+      @apply h-full rounded-none;
+    }
+    & > .progress > .progress-bar {
+      @apply w-full;
+    }
+  }
+}
+
+/* color variants */
+@utility progress-primary {
+  @layer base {
+    --progress-bar-bg: var(--color-primary);
+  }
+}
+@utility progress-secondary {
+  @layer base {
+    --progress-bar-bg: var(--color-secondary);
+  }
+}
+@utility progress-success {
+  @layer base {
+    --progress-bar-bg: var(--color-success);
+  }
+}
+@utility progress-info {
+  @layer base {
+    --progress-bar-bg: var(--color-info);
+  }
+}
+@utility progress-warning {
+  @layer base {
+    --progress-bar-bg: var(--color-warning);
+  }
+}
+@utility progress-danger {
+  @layer base {
+    --progress-bar-bg: var(--color-danger);
+  }
+}
+@utility progress-neutral {
+  @layer base {
+    --progress-bar-bg: var(--color-dark);
+  }
+}
+
+/* striped variant */
+@utility progress-bar-striped {
+  @layer base {
+    @apply bg-[linear-gradient(45deg,rgba(255,255,255,0.15)_25%,transparent_25%,transparent_50%,rgba(255,255,255,0.15)_50%,rgba(255,255,255,0.15)_75%,transparent_75%,transparent)]
+    bg-[length:0.75rem_0.75rem];
+  }
+}
+
+/* animation variant */
+@utility progress-bar-animated {
+  @layer base {
+    @media (prefers-reduced-motion: no-preference) {
+      animation: progress-bar-stripes 1s linear infinite;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      animation: none;
+    }
+  }
+}
+
+/* keyframes */
+@keyframes progress-bar-stripes {
+  0% {
+    background-position-x: 0.75rem;
+  }
+}
