@@ -1,0 +1,160 @@
+/* border spinner */
+@utility spinner-border {
+  @layer base {
+    --spinner-size: 2rem;
+    --spinner-border-width: --spacing(1);
+    --spinner-color: currentcolor;
+    --spinner-animation-speed: 0.75s;
+    --spinner-animation-name: spinner-border;
+
+    @apply inline-block
+    size-[var(--spinner-size)]
+    align-middle
+    rounded-full
+    shrink-0
+    border-[length:var(--spinner-border-width)]
+    border-[var(--spinner-color)]
+    border-r-transparent
+    animate-[var(--spinner-animation-name)_var(--spinner-animation-speed)_linear_infinite];
+  }
+}
+
+@utility spinner-border-sm {
+  @layer base {
+    --spinner-size: 1rem;
+    --spinner-border-width: --spacing(0.75);
+  }
+}
+
+@keyframes spinner-border {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* growing spinner */
+@utility spinner-grow {
+  @layer base {
+    --spinner-animation-name: spinner-grow;
+    @apply spinner-border
+    border-0
+    opacity-0
+    bg-[var(--spinner-color)]
+    animate-[var(--spinner-animation-name)_var(--spinner-animation-speed)_linear_infinite];
+  }
+}
+
+@utility spinner-grow-sm {
+  @layer base {
+    --spinner-size: 1rem;
+  }
+}
+
+@keyframes spinner-grow {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    opacity: 1;
+    transform: none;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* accessibility: reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .spinner-border,
+  .spinner-grow {
+    --spinner-animation-speed: 1.5s;
+  }
+}
+
+/* bar loader */
+@utility loader-bar {
+  @layer base {
+    --progress-height: --spacing(1);
+    --progress-bg: --alpha(var(--color-primary) / 25%);
+    --progress-bar-bg: var(--color-primary);
+
+    @apply relative h-[var(--progress-height)] bg-[var(--progress-bg)] overflow-hidden;
+
+    &::before {
+      @apply absolute
+      content-['']
+      top-0
+      left-0
+      origin-left
+      h-full
+      bg-[var(--progress-bar-bg)]
+      animate-[loader-bar1_2.1s_cubic-bezier(0.65,0.815,0.735,0.395)_infinite]
+    }
+
+    &::after {
+      @apply absolute
+      content-['']
+      top-0
+      left-0
+      origin-left
+      h-full
+      bg-[var(--progress-bar-bg)]
+      animate-[loader-bar2_2.1s_cubic-bezier(0.165,0.84,0.44,1)_1.15s_infinite];
+    }
+  }
+}
+
+@utility loader-bar-secondary {
+  --progress-bg: --alpha(var(--color-secondary) / 25%);
+  --progress-bar-bg: var(--color-secondary);
+}
+
+@utility loader-bar-warning {
+  --progress-bg: --alpha(var(--color-warning) / 25%);
+  --progress-bar-bg: var(--color-warning);
+}
+
+@utility loader-bar-danger {
+  --progress-bg: --alpha(var(--color-danger) / 25%);
+  --progress-bar-bg: var(--color-danger);
+}
+
+@utility loader-bar-info {
+  --progress-bg: --alpha(var(--color-info) / 25%);
+  --progress-bar-bg: var(--color-info);
+}
+
+@utility loader-bar-success {
+  --progress-bg: --alpha(var(--color-success) / 25%);
+  --progress-bar-bg: var(--color-success);
+}
+
+@keyframes loader-bar1 {
+  0% {
+    left: -35%;
+    right: 100%;
+  }
+  60% {
+    left: 100%;
+    right: -90%;
+  }
+  100% {
+    left: 100%;
+    right: -90%;
+  }
+}
+
+@keyframes loader-bar2 {
+  0% {
+    left: -200%;
+    right: 100%;
+  }
+  60% {
+    left: 107%;
+    right: -8%;
+  }
+  100% {
+    left: 107%;
+    right: -8%;
+  }
+}
