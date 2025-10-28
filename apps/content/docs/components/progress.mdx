@@ -24,7 +24,7 @@ classNames:
 
 ## Basic Progress
 
-The Basic progress uses the `.progress` container and `.progress-bar` for the filled portion. Control progress by setting class `w-{value}` and updating `aria-valuenow-{0–100}`. `aria-valuemin` and `aria-valuemax` define the range. Tailwind classes can customize size, color, and rounded corners.
+The basic progress uses the `.progress` container and `.progress-bar` for the filled portion. Control progress with `w-{value}` and `aria-valuenow`, defining the range with `aria-valuemin` and `aria-valuemax`.
 
 <Example class="flex flex-col gap-3"
   code={`<div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
@@ -46,35 +46,32 @@ The Basic progress uses the `.progress` container and `.progress-bar` for the fi
 
 ## Backgrounds
 
-The Backgrounds progress bars use modifier classes like `.progress-{color}`, to change the bar's color.
+The backgrounds progress bars use modifier classes like `.progress-{color}`, to change the bar's color.
 
 <Example class="flex flex-col gap-3"
-  code={`<div class="progress progress-primary" role="progressbar" aria-label="Background example" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
-    <div class="progress-bar w-1/5"></div>
+  code={`<div class="progress" role="progressbar" aria-label="Background example" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+    <div class="progress-bar bg-primary w-1/5"></div>
   </div>
-  <div class="progress progress-secondary" role="progressbar" aria-label="Background example" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
-    <div class="progress-bar w-3/10"></div>
+  <div class="progress" role="progressbar" aria-label="Background example" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+    <div class="progress-bar bg-secondary w-3/10"></div>
   </div>
-  <div class="progress progress-warning" role="progressbar" aria-label="Background example" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
-    <div class="progress-bar w-2/5"></div>
+  <div class="progress" role="progressbar" aria-label="Background example" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+    <div class="progress-bar bg-warning w-2/5"></div>
   </div>
-  <div class="progress progress-danger" role="progressbar" aria-label="Background example" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
-    <div class="progress-bar w-1/2"></div>
+  <div class="progress" role="progressbar" aria-label="Background example" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+    <div class="progress-bar bg-danger w-1/2"></div>
   </div>
-  <div class="progress progress-success" role="progressbar" aria-label="Background example" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
-    <div class="progress-bar w-3/5"></div>
+  <div class="progress" role="progressbar" aria-label="Background example" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+    <div class="progress-bar bg-info w-3/5"></div>
   </div>
-  <div class="progress progress-info" role="progressbar" aria-label="Background example" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
-    <div class="progress-bar w-7/10"></div>
-  </div>
-  <div class="progress progress-neutral" role="progressbar" aria-label="Background example" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
-    <div class="progress-bar w-4/5"></div>
+  <div class="progress" role="progressbar" aria-label="Background example" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+    <div class="progress-bar bg-success w-7/10"></div>
   </div>`}
 />
 
 ## Height
 
-The Height of progress bars can be easily adjusted using Tailwind’s `h-{value}` classes on the `.progress` container. Change values like `h-2`, `h-3`, `h-[16px]`, etc., to increase or decrease the bar's height.
+Adjust progress bar height using Tailwind's `h-{value}` on the `.progress` container.
 
 <Example class="flex flex-col gap-3"
   code={`<div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
@@ -90,39 +87,39 @@ The Height of progress bars can be easily adjusted using Tailwind’s `h-{value}
 
 ## Labels
 
-The Labels feature allows adding text inside the `.progress-bar` to show progress values. Simply place the label content within the bar, e.g., `25%`, `50%`, or `75%`, for clear visual feedback.
+Add label content like `25%` or `50%` inside the `.progress-bar` to show progress values.
 
 <Example class="flex flex-col gap-3"
   code={`<div class="progress h-3" role="progressbar" aria-label="Height example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
     <div class="progress-bar w-1/4">25%</div>
   </div>
-  <div class="progress progress-danger h-3" role="progressbar" aria-label="Height example" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
-    <div class="progress-bar w-1/2">50%</div>
+  <div class="progress h-3" role="progressbar" aria-label="Height example" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+    <div class="progress-bar bg-danger w-1/2">50%</div>
   </div>
-  <div class="progress progress-success h-3" role="progressbar" aria-label="Height example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-    <div class="progress-bar w-3/4">75%</div>
+  <div class="progress h-3" role="progressbar" aria-label="Height example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+    <div class="progress-bar bg-success w-3/4">75%</div>
   </div>`}
 />
 
 ## Multiple bars
 
-The Multiple bars feature allows stacking several `.progress` bars in a single container using the `.progress-stacked` wrapper. Each bar can have its own `width`, `color`, and `aria` attributes for accessible segmented progress.
+Use the `.progress-stacked` wrapper to stack multiple progress bars in one container.
 
 <Example code={`<div class="progress-stacked h-3">
-    <div class="progress progress-primary w-1/5" role="progressbar" aria-label="Segment one" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+    <div class="progress w-1/5" role="progressbar" aria-label="Segment one" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
       <div class="progress-bar"></div>
     </div>
-    <div class="progress progress-secondary w-3/20" role="progressbar" aria-label="Segment two" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100">
-      <div class="progress-bar"></div>
+    <div class="progress w-3/20" role="progressbar" aria-label="Segment two" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100">
+      <div class="progress-bar bg-secondary"></div>
     </div>
-    <div class="progress progress-danger w-1/20" role="progressbar" aria-label="Segment three" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">
-      <div class="progress-bar"></div>
+    <div class="progress w-1/20" role="progressbar" aria-label="Segment three" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">
+      <div class="progress-bar bg-danger"></div>
     </div>
-    <div class="progress progress-info w-1/4" role="progressbar" aria-label="Segment four" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-      <div class="progress-bar"></div>
+    <div class="progress w-1/4" role="progressbar" aria-label="Segment four" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+      <div class="progress-bar bg-info"></div>
     </div>
-    <div class="progress progress-success w-1/5" role="progressbar" aria-label="Segment five" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
-      <div class="progress-bar"></div>
+    <div class="progress w-1/5" role="progressbar" aria-label="Segment five" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+      <div class="progress-bar bg-success"></div>
     </div>
   </div>`}
 />
@@ -130,29 +127,29 @@ The Multiple bars feature allows stacking several `.progress` bars in a single c
 
 ## Striped
 
-The Striped variant adds a striped pattern to the `.progress-bar` by including the `.progress-bar-striped` class. Combine with `background` classes and `width` utilities for styled, visually distinct progress bars.
+Apply the `.progress-bar-striped` class to add a striped pattern to the `.progress-bar`.
 
 <Example class="flex flex-col gap-3"
-  code={`<div class="progress progress-primary h-3">
+  code={`<div class="progress h-3">
     <div class="progress-bar progress-bar-striped w-1/5"></div>
   </div>
-  <div class="progress progress-secondary h-3">
-    <div class="progress-bar progress-bar-striped w-3/10"></div>
+  <div class="progress h-3">
+    <div class="progress-bar progress-bar-striped bg-secondary w-3/10"></div>
   </div>
-  <div class="progress progress-danger h-3">
-    <div class="progress-bar progress-bar-striped w-2/5"></div>
+  <div class="progress h-3">
+    <div class="progress-bar progress-bar-striped bg-danger w-2/5"></div>
   </div>
-  <div class="progress progress-warning h-3">
-    <div class="progress-bar progress-bar-striped w-3/5"></div>
+  <div class="progress h-3">
+    <div class="progress-bar progress-bar-striped bg-warning w-3/5"></div>
   </div>
-  <div class="progress progress-success h-3">
-    <div class="progress-bar progress-bar-striped w-4/5"></div>
+  <div class="progress h-3">
+    <div class="progress-bar progress-bar-striped bg-success w-4/5"></div>
   </div>`}
 />
 
 ## Animated stripes
 
-The Animated stripes variant animates the striped `.progress-bar` by adding `.progress-bar-animated`. Use it with `.progress-bar-striped` and `width` classes to create a dynamic, moving progress effect.
+Add `.progress-bar-animated` with `.progress-bar-striped` to create moving striped progress bars.
 
 <Example code={`<div class="progress h-3">
     <div class="progress-bar progress-bar-striped progress-bar-animated w-3/5"></div>
@@ -161,9 +158,10 @@ The Animated stripes variant animates the striped `.progress-bar` by adding `.pr
 
 ## Circular Progress
 
-The Circular Progress uses an SVG circle to display progress. Change the size by updating the `size-` Tailwind class. Adjust progress by modifying `stroke-dashoffset="calc(251.2px - (251.2px * {percentage}) / 100)"`, where `{percentage}` sets the completion. Tailwind classes handle color, rotation, and smooth transitions.
+The circular progress component uses an SVG circle to visualize progress.
 
-The `stroke-dasharray` defines the pattern of dashes and gaps used to paint the stroke. A value of `251.2` (approximately `2 * Math.PI * 40` for a radius of 40) means the entire circumference is a single dash.
+- **Size:** Controlled with Tailwind's `size-{value}` class.
+- **Progress:** Adjust the completion by changing the `{percentage}` in: `stroke-dashoffset="calc(251.2px - (251.2px * {percentage}) / 100)"`
 
 <Example class="flex items-center justify-center" code={`<div class="size-40">
     <svg class="size-full" viewBox="0 0 100 100">
@@ -193,7 +191,7 @@ The `stroke-dasharray` defines the pattern of dashes and gaps used to paint the 
 
 ## Circular Label
 
-The Circular Progress with Labels lets you display a central label inside the progress circle, and change the bar color using Tailwind color classes like `text-danger`, `text-info`, or `text-success` etc. Labels are placed in the center using `absolute` positioning.
+The circular progress with labels displays a central label inside the circle.
 
 <Example class="flex flex-wrap items-center justify-center gap-3" code={`<!-- progress lable 25% -->
   <div class="relative size-40">
@@ -297,6 +295,7 @@ The progress component is built using a set of CSS variables. These variables pr
     --progress-radius: var(--radius-md);
     --progress-bar-color: var(--color-contrast);
     --progress-bar-bg: var(--color-primary);
+    --progress-stripe-size: 0.75rem;
   }`}
 />
 
