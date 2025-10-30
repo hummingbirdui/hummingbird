@@ -1,0 +1,67 @@
+@utility progress {
+  @layer base {
+    --progress-height: --spacing(1);
+    --progress-font-size: var(--text-xs);
+    --progress-bg: var(--color-light);
+    --progress-radius: var(--radius-md);
+    --progress-bar-color: var(--color-contrast);
+    --progress-bar-bg: var(--color-primary);
+    --progress-stripe-size: 0.75rem;
+
+    @apply flex overflow-hidden items-stretch
+    h-[var(--progress-height)]
+    bg-[var(--progress-bg)]
+    text-[length:var(--progress-font-size)]
+    rounded-[var(--progress-radius)];
+  }
+}
+
+@utility progress-bar {
+  @layer base {
+    @apply flex flex-col justify-center
+    text-[var(--progress-bar-color)]
+    text-center
+    whitespace-nowrap
+    bg-[var(--progress-bar-bg)];
+  }
+}
+
+/* stacked container */
+@utility progress-stacked {
+  @layer base {
+    @apply progress gap-0.5;
+    & > .progress {
+      @apply h-full rounded-none overflow-visible;
+    }
+    & > .progress > .progress-bar {
+      @apply w-full;
+    }
+  }
+}
+
+/* striped variant */
+@utility progress-bar-striped {
+  @layer base {
+    @apply bg-[linear-gradient(45deg,rgba(255,255,255,0.15)_25%,transparent_25%,transparent_50%,rgba(255,255,255,0.15)_50%,rgba(255,255,255,0.15)_75%,transparent_75%,transparent)]
+    bg-[length:var(--progress-stripe-size)_var(--progress-stripe-size)];
+  }
+}
+
+/* animation variant */
+@utility progress-bar-animated {
+  @layer base {
+    @media (prefers-reduced-motion: no-preference) {
+      @apply animate-[progress-bar-stripes_1s_linear_infinite];
+    }
+    @media (prefers-reduced-motion: reduce) {
+      @apply animate-none;
+    }
+  }
+}
+
+/* keyframes */
+@keyframes progress-bar-stripes {
+  0% {
+    background-position-x: var(--progress-stripe-size);
+  }
+}

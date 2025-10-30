@@ -1,0 +1,302 @@
+---
+title: Progress
+description: A versatile progress component with linear and circular styles, supporting colors, labels, stacked bars, stripes, and animations.
+toc: true
+classNames:
+  component:
+    - class: progress
+      desc: Progress container
+  inner:
+    - class: progress-bar
+      desc: Filled bar
+  color:
+    - class: progress-{color}
+      desc: Color variant
+  style:
+    - class: progress-stacked
+      desc: Stacked bars
+    - class: progress-bar-striped
+      desc: Striped style
+  modifier:
+    - class: progress-bar-animated
+      desc: Animated stripes
+---
+
+## Basic Progress
+
+The basic progress uses the `.progress` container and `.progress-bar` for the filled portion. Control progress with `w-{value}` and `aria-valuenow`, defining the range with `aria-valuemin` and `aria-valuemax`.
+
+<Example class="flex flex-col gap-3"
+  code={`<div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+    <div class="progress-bar"></div>
+  </div>
+  <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+    <div class="progress-bar w-1/4"></div>
+  </div>
+  <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+    <div class="progress-bar w-1/2"></div>
+  </div>
+  <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+    <div class="progress-bar w-3/4"></div>
+  </div>
+  <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+    <div class="progress-bar w-full"></div>
+  </div>`}
+/>
+
+## Backgrounds
+
+The backgrounds progress bars use modifier classes like `.progress-{color}`, to change the bar's color.
+
+<Example class="flex flex-col gap-3"
+  code={`<div class="progress" role="progressbar" aria-label="Background example" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+    <div class="progress-bar bg-primary w-1/5"></div>
+  </div>
+  <div class="progress" role="progressbar" aria-label="Background example" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+    <div class="progress-bar bg-secondary w-3/10"></div>
+  </div>
+  <div class="progress" role="progressbar" aria-label="Background example" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+    <div class="progress-bar bg-warning w-2/5"></div>
+  </div>
+  <div class="progress" role="progressbar" aria-label="Background example" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+    <div class="progress-bar bg-danger w-1/2"></div>
+  </div>
+  <div class="progress" role="progressbar" aria-label="Background example" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+    <div class="progress-bar bg-info w-3/5"></div>
+  </div>
+  <div class="progress" role="progressbar" aria-label="Background example" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+    <div class="progress-bar bg-success w-7/10"></div>
+  </div>`}
+/>
+
+## Height
+
+Adjust progress bar height using Tailwind's `h-{value}` on the `.progress` container.
+
+<Example class="flex flex-col gap-3"
+  code={`<div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+    <div class="progress-bar w-2/5"></div>
+  </div>
+  <div class="progress h-2" role="progressbar" aria-label="Basic example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+    <div class="progress-bar w-2/5"></div>
+  </div>
+  <div class="progress h-3" role="progressbar" aria-label="Basic example" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+    <div class="progress-bar w-2/5"></div>
+  </div>`}
+/>
+
+## Labels
+
+Add label content like `25%` or `50%` inside the `.progress-bar` to show progress values.
+
+<Example class="flex flex-col gap-3"
+  code={`<div class="progress h-3" role="progressbar" aria-label="Height example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+    <div class="progress-bar w-1/4">25%</div>
+  </div>
+  <div class="progress h-3" role="progressbar" aria-label="Height example" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+    <div class="progress-bar bg-danger w-1/2">50%</div>
+  </div>
+  <div class="progress h-3" role="progressbar" aria-label="Height example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+    <div class="progress-bar bg-success w-3/4">75%</div>
+  </div>`}
+/>
+
+## Multiple bars
+
+Use the `.progress-stacked` wrapper to stack multiple progress bars in one container.
+
+<Example code={`<div class="progress-stacked h-3">
+    <div class="progress w-1/5" role="progressbar" aria-label="Segment one" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+      <div class="progress-bar"></div>
+    </div>
+    <div class="progress w-3/20" role="progressbar" aria-label="Segment two" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100">
+      <div class="progress-bar bg-secondary"></div>
+    </div>
+    <div class="progress w-1/20" role="progressbar" aria-label="Segment three" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">
+      <div class="progress-bar bg-danger"></div>
+    </div>
+    <div class="progress w-1/4" role="progressbar" aria-label="Segment four" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+      <div class="progress-bar bg-info"></div>
+    </div>
+    <div class="progress w-1/5" role="progressbar" aria-label="Segment five" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+      <div class="progress-bar bg-success"></div>
+    </div>
+  </div>`}
+/>
+
+
+## Striped
+
+Apply the `.progress-bar-striped` class to add a striped pattern to the `.progress-bar`.
+
+<Example class="flex flex-col gap-3"
+  code={`<div class="progress h-3">
+    <div class="progress-bar progress-bar-striped w-1/5"></div>
+  </div>
+  <div class="progress h-3">
+    <div class="progress-bar progress-bar-striped bg-secondary w-3/10"></div>
+  </div>
+  <div class="progress h-3">
+    <div class="progress-bar progress-bar-striped bg-danger w-2/5"></div>
+  </div>
+  <div class="progress h-3">
+    <div class="progress-bar progress-bar-striped bg-warning w-3/5"></div>
+  </div>
+  <div class="progress h-3">
+    <div class="progress-bar progress-bar-striped bg-success w-4/5"></div>
+  </div>`}
+/>
+
+## Animated stripes
+
+Add `.progress-bar-animated` with `.progress-bar-striped` to create moving striped progress bars.
+
+<Example code={`<div class="progress h-3">
+    <div class="progress-bar progress-bar-striped progress-bar-animated w-3/5"></div>
+  </div>`}
+/>
+
+## Circular Progress
+
+The circular progress component uses an SVG circle to visualize progress.
+
+- **Size:** Controlled with Tailwind's `size-{value}` class.
+- **Progress:** Adjust the completion by changing the `{percentage}` in: `stroke-dashoffset="calc(251.2px - (251.2px * {percentage}) / 100)"`
+
+<Example class="flex items-center justify-center" code={`<div class="size-40">
+    <svg class="size-full" viewBox="0 0 100 100">
+      <circle
+        class="stroke-current text-light"
+        stroke-width="8"
+        cx="50"
+        cy="50"
+        r="40"
+        fill="none"
+      ></circle>
+
+      <circle
+        class="stroke-current text-primary -rotate-90 origin-[50%_50%]"
+        stroke-width="8"
+        cx="50"
+        cy="50"
+        r="40"
+        fill="none"
+        stroke-linecap="round"
+        stroke-dasharray="251.2"
+        stroke-dashoffset="calc(251.2px - (251.2px * 35) / 100)"
+      ></circle>
+    </svg>
+  </div>`}/>
+
+
+## Circular Label
+
+The circular progress with labels displays a central label inside the circle.
+
+<Example class="flex flex-wrap items-center justify-center gap-3" code={`<!-- progress lable 25% -->
+  <div class="relative size-40">
+    <svg class="size-full" viewBox="0 0 100 100">
+      <circle
+        class="stroke-current text-light"
+        stroke-width="8"
+        cx="50"
+        cy="50"
+        r="40"
+        fill="none"
+      ></circle>
+
+      <circle
+        class="stroke-current text-danger -rotate-90 origin-[50%_50%]"
+        stroke-width="8"
+        cx="50"
+        cy="50"
+        r="40"
+        fill="none"
+        stroke-linecap="round"
+        stroke-dasharray="251.2"
+        stroke-dashoffset="calc(251.2px - (251.2px * 25) / 100)"
+      ></circle>
+    </svg>
+
+    <div class="absolute top-1/2 left-1/2 transform -translate-1/2">
+      <span class="text-center text-2xl">25%</span>
+    </div>
+  </div>
+
+  <!-- progress lable 50% -->
+  <div class="relative size-40">
+    <svg class="size-full" viewBox="0 0 100 100">
+      <circle
+        class="stroke-current text-light"
+        stroke-width="8"
+        cx="50"
+        cy="50"
+        r="40"
+        fill="none"
+      ></circle>
+
+      <circle
+        class="stroke-current text-info -rotate-90 origin-[50%_50%]"
+        stroke-width="8"
+        cx="50"
+        cy="50"
+        r="40"
+        fill="none"
+        stroke-linecap="round"
+        stroke-dasharray="251.2"
+        stroke-dashoffset="calc(251.2px - (251.2px * 50) / 100)"
+      ></circle>
+    </svg>
+
+    <div class="absolute top-1/2 left-1/2 transform -translate-1/2">
+      <span class="text-center text-2xl">50%</span>
+    </div>
+  </div>
+
+  <!-- progress lable 75% -->
+  <div class="relative size-40">
+    <svg class="size-full" viewBox="0 0 100 100">
+      <circle
+        class="stroke-current text-light"
+        stroke-width="8"
+        cx="50"
+        cy="50"
+        r="40"
+        fill="none"
+      ></circle>
+
+      <circle
+        class="stroke-current text-success -rotate-90 origin-[50%_50%]"
+        stroke-width="8"
+        cx="50"
+        cy="50"
+        r="40"
+        fill="none"
+        stroke-linecap="round"
+        stroke-dasharray="251.2"
+        stroke-dashoffset="calc(251.2px - (251.2px * 75) / 100)"
+      ></circle>
+    </svg>
+
+    <div class="absolute top-1/2 left-1/2 transform -translate-1/2">
+      <span class="text-center text-2xl">75%</span>
+    </div>
+  </div>`}/>
+
+## CSS variables
+
+The progress component is built using a set of CSS variables. These variables provide flexibility for customizing styles.
+
+<Example lang='sass' showPreview={false}
+  code={`.progress {
+    --progress-height: --spacing(1);
+    --progress-font-size: var(--text-xs);
+    --progress-bg: var(--color-light);
+    --progress-radius: var(--radius-md);
+    --progress-bar-color: var(--color-contrast);
+    --progress-bar-bg: var(--color-primary);
+    --progress-stripe-size: 0.75rem;
+  }`}
+/>
+
+
