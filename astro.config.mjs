@@ -21,7 +21,7 @@ export default defineConfig({
 
   integrations: [
     AutoImport({
-      imports: ['@components/docs/Example.astro', '@components/docs/HbTable.astro'],
+      imports: ['@components/docs/Example.astro', '@components/docs/HbTable.astro', '@components/docs/HbAlert.astro'],
     }),
     mdx(),
   ],

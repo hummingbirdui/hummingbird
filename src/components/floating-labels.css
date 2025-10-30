@@ -4,13 +4,19 @@
     > .form-label {
       --input-label-font-weight: 400;
       --input-label-font-size: var(--text-sm);
+      --floating-label-translate-x: 16px;
+      --floating-label-translate-y: 13px;
+      --floating-label-scale: 1;
 
       @apply absolute top-0
       inline-block 
       transition-transform duration-200
       cursor-text
       leading-[1.5]
-      ltr:translate-x-[16px] rtl:-translate-x-[16px] translate-y-[13px] scale-[1];
+      ltr:translate-x-[var(--floating-label-translate-x)]
+      rtl:-translate-x-[var(--floating-label-translate-x)]
+      translate-y-[var(--floating-label-translate-y)]
+      scale-[var(--floating-label-scale)];
     }
 
     /* Form control */
@@ -18,7 +24,8 @@
       --floating-label-padding-top: --spacing(5.25);
       --floating-label-padding-bottom: --spacing(1);
 
-      @apply pt-[var(--floating-label-padding-top)] pb-[var(--floating-label-padding-bottom)];
+      @apply pt-[var(--floating-label-padding-top)]
+      pb-[var(--floating-label-padding-bottom)];
 
       &::placeholder {
         @apply text-transparent;
@@ -37,13 +44,19 @@
       &:focus,
       &:not(:placeholder-shown) {
         & ~ .form-label {
-          @apply ltr:translate-x-[10px] rtl:-translate-x-[10px] translate-y-[4px] scale-[0.85];
+          --floating-label-translate-x: 10px;
+          --floating-label-translate-y: 4px;
+          --floating-label-scale: 0.85;
         }
         &.form-control-sm ~ .form-label {
-          @apply ltr:translate-x-[6px] rtl:-translate-x-[6px] translate-y-[2px] scale-[0.85];
+          --floating-label-translate-x: 8px;
+          --floating-label-translate-y: 2px;
+          --floating-label-scale: 0.85;
         }
         &.form-control-lg ~ .form-label {
-          @apply ltr:translate-x-[10px] rtl:-translate-x-[10px] translate-y-[4px] scale-[0.75];
+          --floating-label-translate-x: 10px;
+          --floating-label-translate-y: 4px;
+          --floating-label-scale: 0.75;
         }
       }
     }
@@ -64,13 +77,19 @@
       &:focus,
       &:not(:placeholder-shown) {
         & ~ .form-label {
-          @apply ltr:translate-x-[10px] rtl:-translate-x-[10px] translate-y-[-10px] scale-[0.85];
+          --floating-label-translate-x: 10px;
+          --floating-label-translate-y: -10px;
+          --floating-label-scale: 0.85;
         }
         &.form-control-sm ~ .form-label {
-          @apply ltr:translate-x-[7px] rtl:-translate-x-[7px] translate-y-[-10px] scale-[0.85];
+          --floating-label-translate-x: 8px;
+          --floating-label-translate-y: -10px;
+          --floating-label-scale: 0.85;
         }
         &.form-control-lg ~ .form-label {
-          @apply ltr:translate-x-[10px] rtl:-translate-x-[10px] translate-y-[-12px] scale-[0.75];
+          --floating-label-translate-x: 10px;
+          --floating-label-translate-y: -12px;
+          --floating-label-scale: 0.75;
         }
       }
     }
@@ -78,14 +97,19 @@
     .form-control-sm {
       --input-padding-y: --spacing(1.5);
       & ~ .form-label {
-        @apply ltr:translate-x-[12px] rtl:-translate-x-[12px] translate-y-[10px] scale-[1];
+        --floating-label-translate-x: 12px;
+        --floating-label-translate-y: 10px;
+        --floating-label-scale: 1;
       }
     }
     .form-control-lg {
       --input-padding-y: --spacing(2.5);
       --input-padding-x: --spacing(5);
       & ~ .form-label {
-        @apply text-base ltr:translate-x-[20px] rtl:-translate-x-[20px] translate-y-[14px] scale-[1];
+        --input-label-font-size: var(--text-base);
+        --floating-label-translate-x: 20px;
+        --floating-label-translate-y: 14px;
+        --floating-label-scale: 1;
       }
     }
 
@@ -94,7 +118,8 @@
       --floating-label-padding-top: --spacing(5.25);
       --floating-label-padding-bottom: --spacing(1);
 
-      @apply pt-[var(--floating-label-padding-top)] pb-[var(--floating-label-padding-bottom)];
+      @apply pt-[var(--floating-label-padding-top)]
+      pb-[var(--floating-label-padding-bottom)];
 
       &::placeholder {
         @apply text-transparent;
@@ -113,13 +138,19 @@
       &:focus,
       &:not(:placeholder-shown) {
         & + .form-label {
-          @apply ltr:translate-x-[12px] rtl:-translate-x-[12px] translate-y-[4px] scale-[0.85];
+          --floating-label-translate-x: 12px;
+          --floating-label-translate-y: 4px;
+          --floating-label-scale: 0.85;
         }
         &.form-select-sm + .form-label {
-          @apply ltr:translate-x-[6px] rtl:-translate-x-[6px] translate-y-[2px] scale-[0.85];
+          --floating-label-translate-x: 10px;
+          --floating-label-translate-y: 2px;
+          --floating-label-scale: 0.85;
         }
         &.form-select-lg + .form-label {
-          @apply ltr:translate-x-[9px] rtl:-translate-x-[9px] translate-y-[4px] scale-[0.75];
+          --floating-label-translate-x: 14px;
+          --floating-label-translate-y: 4px;
+          --floating-label-scale: 0.75;
         }
       }
     }
@@ -141,13 +172,19 @@
       &:focus,
       &:not(:placeholder-shown) {
         & + .form-label {
-          @apply ltr:translate-x-[12px] rtl:-translate-x-[12px] translate-y-[-10px] scale-[0.85];
+          --floating-label-translate-x: 12px;
+          --floating-label-translate-y: -10px;
+          --floating-label-scale: 0.85;
         }
         &.form-select-sm + .form-label {
-          @apply ltr:translate-x-[6px] rtl:-translate-x-[6px] translate-y-[-10px] scale-[0.85];
+          --floating-label-translate-x: 8px;
+          --floating-label-translate-y: -10px;
+          --floating-label-scale: 0.85;
         }
         &.form-select-lg + .form-label {
-          @apply ltr:translate-x-[9px] rtl:-translate-x-[9px] translate-y-[-12px] scale-[0.75];
+          --floating-label-translate-x: 14px;
+          --floating-label-translate-y: -12px;
+          --floating-label-scale: 0.75;
         }
       }
     }
@@ -155,14 +192,19 @@
     .form-select-sm {
       --form-select-padding-y: --spacing(1.5);
       & + .form-label {
-        @apply ltr:translate-x-[12px] rtl:-translate-x-[12px] translate-y-[10px] scale-[1];
+        --floating-label-translate-x: 12px;
+        --floating-label-translate-y: 10px;
+        --floating-label-scale: 1;
       }
     }
     .form-select-lg {
       --form-select-padding-y: --spacing(2.5);
       --form-select-padding-x: --spacing(5);
       & + .form-label {
-        @apply text-base ltr:translate-x-[20px] rtl:-translate-x-[20px] translate-y-[14px] scale-[1];
+        --input-label-font-size: var(--text-base);
+        --floating-label-translate-x: 20px;
+        --floating-label-translate-y: -14px;
+        --floating-label-scale: 1;
       }
     }
   }
@@ -174,25 +216,37 @@
       ~ .form-floating {
         .form-control-fill {
           ~ .form-label {
-            @apply ltr:translate-x-[43px] rtl:-translate-x-[43px] translate-y-[13px] scale-[1];
+            --floating-label-translate-x: 43px;
+            --floating-label-translate-y: 13px;
+            --floating-label-scale: 1;
           }
           &.form-control-sm ~ .form-label {
-            @apply ltr:translate-x-[34px] rtl:-translate-x-[34px] translate-y-[10px] scale-[1];
+            --floating-label-translate-x: 34px;
+            --floating-label-translate-y: 10px;
+            --floating-label-scale: 1;
           }
           &.form-control-lg ~ .form-label {
-            @apply ltr:translate-x-[52px] rtl:-translate-x-[52px] translate-y-[15px] scale-[1];
+            --floating-label-translate-x: 52px;
+            --floating-label-translate-y: 15px;
+            --floating-label-scale: 1;
           }
           &:focus-within,
           &:focus,
           &:not(:placeholder-shown) {
             ~ .form-label {
-              @apply ltr:translate-x-[37px] rtl:-translate-x-[37px] translate-y-[4px] scale-[0.85];
+              --floating-label-translate-x: 37px;
+              --floating-label-translate-y: 4px;
+              --floating-label-scale: 0.85;
             }
             &.form-control-sm ~ .form-label {
-              @apply ltr:translate-x-[28px] rtl:-translate-x-[28px] translate-y-[2px] scale-[0.85];
+              --floating-label-translate-x: 28px;
+              --floating-label-translate-y: 2px;
+              --floating-label-scale: 0.85;
             }
             &.form-control-lg ~ .form-label {
-              @apply ltr:translate-x-[38px] rtl:-translate-x-[38px] translate-y-[4px] scale-[0.75];
+              --floating-label-translate-x: 38px;
+              --floating-label-translate-y: 4px;
+              --floating-label-scale: 0.75;
             }
           }
         }

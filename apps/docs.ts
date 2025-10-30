@@ -1,4 +1,5 @@
 import docsearch from '@docsearch/js';
+import Choices from 'choices.js';
 
 declare global {
   interface Window {
@@ -87,3 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
+// Pass single element
+const hbChoices = document.querySelectorAll('[data-choices="data-choices"]');
+hbChoices.forEach((choice) => new Choices(choice, { removeItemButton: true }));

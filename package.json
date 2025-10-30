@@ -41,7 +41,8 @@
     "src/reboot.css",
     "src/components/**/*.css",
     "src/layout/**/*.css",
-    "src/theme/**/*.css"
+    "src/theme/**/*.css",
+    "src/plugins/**/*.css"
   ],
   "author": "Hummingbird UI",
   "scripts": {
@@ -86,6 +87,7 @@
     "astro": "^5.14.4",
     "astro-auto-import": "^0.4.4",
     "bootstrap": "^5.3.8",
+    "choices.js": "^11.1.0",
     "codemirror": "^6.0.2",
     "cross-env": "^7.0.3",
     "dropzone": "^6.0.0-beta.2",
