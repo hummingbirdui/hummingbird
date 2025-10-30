@@ -1,0 +1,76 @@
+@utility toast {
+  @layer base {
+    --toast-zindex: 1090;
+    --toast-padding-x: --spacing(4);
+    --toast-padding-y: --spacing(2);
+    --toast-spacing: --spacing(6);
+    --toast-max-width: 21.875rem;
+    --toast-font-size: var(--text-sm);
+    --toast-color: var(--text-color-default);
+    --toast-bg: var(--background-color-subtle);
+    --toast-border-width: 1px;
+    --toast-border-color: transparent;
+    --toast-border-radius: var(--radius-lg);
+    --toast-box-shadow: var(--shadow-xs);
+    --toast-header-color: var(--text-color-default);
+    --toast-header-bg: var(--background-color-subtle);
+    --toast-header-border-color: var(--border-color-base);
+
+    @apply w-[var(--toast-max-width)] max-w-full
+    text-[length:var(--toast-font-size)]
+    text-[var(--toast-color)]
+    bg-[var(--toast-bg)]
+    pointer-events-auto
+    bg-clip-padding
+    shadow-[var(--toast-box-shadow)]
+    rounded-[var(--toast-border-radius)];
+
+    &:not(:has(.alert)) {
+      @apply border-[length:var(--toast-border-width)] border-[var(--toast-border-color)];
+      @variant dark {
+        --toast-border-color: var(--border-color-light);
+      }
+    }
+
+    &.showing {
+      @apply opacity-0;
+    }
+
+    &:not(.show) {
+      @apply hidden;
+    }
+  }
+}
+
+@utility toast-container {
+  @layer base {
+    --toast-zindex: 1090;
+
+    @apply absolute z-[var(--toast-zindex)]
+    w-max max-w-full
+    pointer-events-none;
+
+    > :not(:last-child) {
+      @apply mb-[var(--toast-spacing)];
+    }
+  }
+}
+
+@utility toast-header {
+  @apply flex items-center
+  px-[var(--toast-padding-x)] py-[var(--toast-padding-y)]
+  text-[var(--toast-header-color)]
+  bg-[var(--toast-header-bg)]
+  bg-clip-padding
+  border-b-[length:var(--toast-border-width)]
+  border-[var(--toast-header-border-color)]
+  rounded-t-[calc(var(--toast-border-radius)-var(--toast-border-width))];
+
+  .btn-close {
+    @apply -me-[calc(0.5*var(--toast-padding-x))] ms-[var(--toast-padding-x)];
+  }
+}
+
+@utility toast-body {
+  @apply p-[var(--toast-padding-x)] break-words;
+}

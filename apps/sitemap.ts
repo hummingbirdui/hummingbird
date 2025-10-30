@@ -215,6 +215,10 @@ const sitemap: Sitemap[] = [
         path: '/docs/components/tables',
       },
       {
+        name: 'Toasts',
+        path: '/docs/components/toasts',
+      },
+      {
         name: 'Tooltips',
         path: '/docs/components/tooltips',
       },
