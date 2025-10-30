@@ -41,7 +41,8 @@
     "src/reboot.css",
     "src/components/**/*.css",
     "src/layout/**/*.css",
-    "src/theme/**/*.css"
+    "src/theme/**/*.css",
+    "src/plugins/**/*.css"
   ],
   "author": "Hummingbird UI",
   "scripts": {
