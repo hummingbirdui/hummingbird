@@ -113,7 +113,7 @@
   --input-bg: var(--background-color-muted);
   --input-color: var(--text-color-default);
   --input-border-color: var(--border-color-base);
-  --input-disabled-bg: var(--background-color-highlight);
+  --input-disabled-bg: var(--color-disabled);
   --input-hover-bg: var(--background-color-highlight);
   --input-focus-bg: var(--color-primary-lighter);
   --input-hover-border-color: var(--text-color-subtle);
