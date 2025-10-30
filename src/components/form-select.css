@@ -13,7 +13,7 @@
 
     @apply w-full
     appearance-none
-    inline-flex items-center justify-center 
+    block
     transition duration-200
     leading-[var(--form-select-line-height)]
     bg-[var(--input-bg)]
@@ -73,7 +73,7 @@
 
     @apply w-full
     appearance-none
-    inline-flex items-center justify-center
+    block
     transition duration-200
     leading-[var(--form-select-line-height)]
     text-[length:var(--form-select-font-size)]
@@ -104,8 +104,7 @@
 
     &:focus-within,
     &:focus {
-      @apply outline-0;
-      @apply border-[var(--input-focus-border-color)];
+      @apply outline-0 border-[var(--input-focus-border-color)];
     }
 
     &.is-invalid {

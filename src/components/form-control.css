@@ -14,7 +14,7 @@
 
     @apply w-full
     appearance-none
-    inline-flex items-center justify-center
+    block
     transition duration-200
     leading-[var(--input-line-height)]
     bg-[var(--input-bg)]
@@ -93,7 +93,7 @@
     --input-icon-spacing: --spacing(11);
 
     @apply w-full
-    inline-flex items-center justify-center
+    block
     appearance-none
     transition duration-200
     leading-[var(--input-line-height)]
