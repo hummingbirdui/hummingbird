@@ -2,6 +2,7 @@
 @import 'tailwindcss';
 @import '../src/index.css';
 @import 'tailwind-scrollbar-hide/v4';
+@import '../src/plugins/plugins.css';
 @custom-variant dark (&:where(.dark, .dark *), .dark);
 @custom-variant active (&:active, &.active);
 

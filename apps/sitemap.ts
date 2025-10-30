@@ -117,6 +117,10 @@ const sitemap: Sitemap[] = [
         name: 'Input Group',
         path: '/docs/components/input-group',
       },
+      {
+        name: 'Advance Select',
+        path: '/docs/components/advance-select',
+      },
     ],
   },
   {

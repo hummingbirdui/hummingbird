@@ -1,0 +1,74 @@
+---
+title: Advance Select
+description: Advance select inputs with search and multi-select capabilities.
+toc: true
+---
+
+## Text Input
+
+<Example code={`<input type="text" class='form-control' id="name" name="name" data-choices="data-choices" />`} />
+
+## Multiple select input
+
+<Example code={`<select class="form-select" aria-label="Outlined example with label" data-choices="data-choices" multiple>
+    <option value="">Select organizer...</option>
+    <option>Massachusetts Institute of Technology</option>
+    <option>University of Chicago</option>
+    <option>GSAS Open Labs At Harvard</option>
+    <option>California Institute of Technology</option>
+  </select>`} />
+
+## Single select input
+
+<Example code={`<select class="form-select" aria-label="Outlined example with label" data-choices="data-choices" select-one>
+    <option value="">Select organizer...</option>
+    <option>Massachusetts Institute of Technology</option>
+    <option>University of Chicago</option>
+    <option>GSAS Open Labs At Harvard</option>
+    <option>California Institute of Technology</option>
+  </select>`} />
+
+## Sizes
+
+<Example class='grid grid-cols-3 gap-2 items-center' code={`<select class="form-select form-select-sm" aria-label="Outlined example with label" data-choices="data-choices" select-one>
+    <option value="">Select organizer...</option>
+    <option>Massachusetts Institute of Technology</option>
+    <option>University of Chicago</option>
+    <option>GSAS Open Labs At Harvard</option>
+    <option>California Institute of Technology</option>
+  </select>
+  <select class="form-select" aria-label="Outlined example with label" data-choices="data-choices" select-one>
+    <option value="">Select organizer...</option>
+    <option>Massachusetts Institute of Technology</option>
+    <option>University of Chicago</option>
+    <option>GSAS Open Labs At Harvard</option>
+    <option>California Institute of Technology</option>
+  </select>
+  <select class="form-select form-select-lg" aria-label="Outlined example with label" data-choices="data-choices" select-one>
+    <option value="">Select organizer...</option>
+    <option>Massachusetts Institute of Technology</option>
+    <option>University of Chicago</option>
+    <option>GSAS Open Labs At Harvard</option>
+    <option>California Institute of Technology</option>
+  </select>`} />
+
+## Floating Labels
+
+<Example class="grid grid-cols-2 gap-3" code={`<div class="form-floating form-field">
+    <select class="form-select" aria-label="Filled floating label example" data-choices="data-choices" multiple>
+      <option value="">Select option</option>
+      <option value="1">One</option>
+      <option value="2">Two</option>
+      <option value="3">Three</option>
+    </select>
+    <label class="form-label" for="floatingInput">Options</label>
+  </div>
+  <div class="form-floating form-field">
+    <select class="form-select-fill" aria-label="Filled floating label example" data-choices="data-choices" multiple>
+      <option value="">Select option</option>
+      <option value="1">One</option>
+      <option value="2">Two</option>
+      <option value="3">Three</option>
+    </select>
+    <label class="form-label" for="floatingInput">Options</label>
+  </div>`} />
