@@ -25,6 +25,9 @@
     .choices__item {
       @apply cursor-default;
     }
+    .choices__button {
+      @apply cursor-default;
+    }
   }
 
   [hidden] {
@@ -136,6 +139,18 @@
   }
   &:has(.choices__input.form-control-lg) {
     @apply form-control-lg;
+  }
+  &:has(.choices__input.form-control-fill.is-invalid, .choices__input.form-select-fill.is-invalid) {
+    @apply bg-[var(--color-danger-lighter)] border-[var(--color-danger)];
+  }
+  &:has(.choices__input.form-control-fill.is-valid, .choices__input.form-select-fill.is-valid) {
+    @apply bg-[var(--color-success-lighter)] border-[var(--color-success)];
+  }
+  &:has(.choices__input.form-control.is-invalid, .choices__input.form-select.is-invalid) {
+    @apply border-[var(--color-danger)];
+  }
+  &:has(.choices__input.form-control.is-valid, .choices__input.form-select.is-valid) {
+    @apply border-[var(--color-success)];
   }
 }
 
