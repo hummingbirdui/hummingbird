@@ -1,4 +1,5 @@
 import docsearch from '@docsearch/js';
+import Choices from 'choices.js';
 
 docsearch({
   container: '#docsearch',
@@ -56,3 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.documentElement.setAttribute('data-os', 'windows');
   }
 });
+
+// Pass single element
+const hbChoices = document.querySelectorAll('[data-choices="data-choices"]');
+hbChoices.forEach((choice) => new Choices(choice, { removeItemButton: true }));
