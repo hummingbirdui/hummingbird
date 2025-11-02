@@ -207,10 +207,14 @@ const sitemap: Sitemap[] = [
         path: '/docs/components/pagination',
       },
       {
+        name: 'Placeholders',
+        path: '/docs/components/placeholders',
+      },
+      {
         name: 'Popovers',
         path: '/docs/components/popovers',
       },
-       {
+      {
         name: 'Progress',
         path: '/docs/components/progress',
       },
