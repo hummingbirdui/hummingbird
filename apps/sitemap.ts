@@ -175,6 +175,10 @@ const sitemap: Sitemap[] = [
         path: '/docs/components/close-button',
       },
       {
+        name: 'Divider',
+        path: '/docs/components/divider',
+      },
+      {
         name: 'Dropdowns',
         path: '/docs/components/dropdowns',
       },

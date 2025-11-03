@@ -1,0 +1,77 @@
+/* horizontal */
+@utility hr-label-line {
+  @layer base {
+    @apply content-[''] flex-1 border-t border-light;
+  }
+}
+
+@utility hr-label {
+  @layer base {
+    @apply py-3 flex items-center text-sm text-default;
+
+    &::before {
+      @apply hr-label-line me-4;
+    }
+    &::after {
+      @apply hr-label-line ms-4;
+    }
+    &.label-start {
+      &::before {
+        content: none;
+      }
+      &::after {
+        @apply hr-label-line ms-4;
+      }
+    }
+    &.label-end {
+      &::before {
+        @apply hr-label-line me-4;
+      }
+      &::after {
+        content: none;
+      }
+    }
+  }
+}
+
+/* vertical */
+@utility vr {
+  @layer base {
+    @apply inline-block self-stretch border-s border-light min-h-6;
+  }
+}
+
+@utility vr-label-line {
+  @layer base {
+    @apply content-[''] flex-1 border-s border-light;
+  }
+}
+
+@utility vr-label {
+  @layer base {
+    @apply flex flex-col items-center text-sm text-default min-h-20;
+
+    &::before {
+      @apply vr-label-line mb-3;
+    }
+    &::after {
+      @apply vr-label-line mt-3;
+    }
+    &.label-start {
+      &::after {
+        @apply vr-label-line mt-3;
+      }
+      &::before {
+        content: none;
+      }
+    }
+    &.label-end {
+      &::before {
+        @apply vr-label-line mb-3;
+      }
+      &::after {
+        content: none;
+      }
+    }
+  }
+}
