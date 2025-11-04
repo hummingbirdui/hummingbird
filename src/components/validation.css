@@ -1,0 +1,358 @@
+:root {
+  --form-valid-bg: var(--color-success-lighter);
+  --form-valid-color: var(--color-success);
+  --form-valid-border-color: var(--color-success-light);
+  --form-valid-focus-border-color: var(--color-success);
+  --form-invalid-bg: var(--color-danger-lighter);
+  --form-invalid-color: var(--color-danger);
+  --form-invalid-border-color: var(--color-danger-light);
+  --form-invalid-focus-border-color: var(--color-danger);
+  --form-feedback-margin-top: --spacing(1);
+  --form-feedback-font-size: var(--text-sm);
+  --form-feedback-tooltip-padding-y: --spacing(1);
+  --form-feedback-tooltip-padding-x: --spacing(2);
+  --form-feedback-tooltip-color: var(--color-contrast);
+  --form-feedback-tooltip-border-radius: var(--radius-sm);
+}
+
+@utility valid-feedback {
+  @layer base {
+    @apply hidden w-full
+    mt-[var(--form-feedback-margin-top)]
+    text-[length:var(--form-feedback-font-size)]
+    text-[var(--form-valid-color)];
+  }
+}
+
+@utility valid-tooltip {
+  @layer base {
+    @apply absolute top-full z-5 hidden max-w-full
+    py-[var(--form-feedback-tooltip-padding-y)]
+    px-[var(--form-feedback-tooltip-padding-x)]
+    mt-0.5
+    text-[length:var(--form-feedback-font-size)]
+    text-[var(--form-feedback-tooltip-color)]
+    bg-[var(--form-valid-color)]
+    rounded-[var(--form-feedback-tooltip-border-radius)];
+  }
+}
+
+@utility invalid-feedback {
+  @layer base {
+    @apply hidden w-full
+    mt-[var(--form-feedback-margin-top)]
+    text-[length:var(--form-feedback-font-size)]
+    text-[var(--form-invalid-color)];
+  }
+}
+
+@utility invalid-tooltip {
+  @layer base {
+    @apply absolute top-full z-5 hidden max-w-full
+    py-[var(--form-feedback-tooltip-padding-y)]
+    px-[var(--form-feedback-tooltip-padding-x)]
+    mt-0.5
+    text-[length:var(--form-feedback-font-size)]
+    text-[var(--form-feedback-tooltip-color)]
+    bg-[var(--form-invalid-color)]
+    rounded-[var(--form-feedback-tooltip-border-radius)];
+  }
+}
+
+@utility was-validated {
+  @layer base {
+    :valid ~ .valid-feedback,
+    :valid ~ .valid-tooltip {
+      @apply block;
+    }
+    .form-control:valid,
+    .form-select:valid {
+      @apply border-[var(--form-valid-border-color)];
+      &:focus {
+        @apply border-[var(--form-valid-focus-border-color)];
+      }
+    }
+    .form-control-fill:valid,
+    .form-select-fill:valid {
+      @apply bg-[var(--form-valid-bg)] border-[var(--form-valid-border-color)];
+      &:focus {
+        @apply border-[var(--form-valid-focus-border-color)];
+      }
+    }
+    .form-check-input:valid {
+      @apply border-[var(--form-valid-color)];
+      &:checked {
+        @apply bg-[var(--form-valid-color)];
+      }
+      ~ .form-check-label {
+        @apply text-[var(--form-valid-color)];
+      }
+    }
+    :invalid ~ .invalid-feedback,
+    :invalid ~ .invalid-tooltip {
+      @apply block;
+    }
+    .form-control:invalid,
+    .form-select:invalid {
+      @apply border-[var(--form-invalid-border-color)];
+      &:focus {
+        @apply border-[var(--form-invalid-focus-border-color)];
+      }
+    }
+    .form-control-fill:invalid,
+    .form-select-fill:invalid {
+      @apply bg-[var(--form-invalid-bg)] border-[var(--form-invalid-border-color)];
+      &:focus {
+        @apply border-[var(--form-invalid-focus-border-color)];
+      }
+    }
+    .form-control-fill {
+      &:invalid {
+        &::file-selector-button {
+          @apply bg-[var(--form-invalid-color)]
+        text-contrast;
+        }
+      }
+      &:valid {
+        &::file-selector-button {
+          @apply bg-[var(--form-valid-color)]
+        text-contrast;
+        }
+      }
+    }
+    .form-check-input:invalid {
+      @apply border-[var(--form-invalid-color)];
+      &:checked {
+        @apply bg-[var(--form-invalid-color)];
+      }
+      ~ .form-check-label {
+        @apply text-[var(--form-invalid-color)];
+      }
+    }
+    .form-check {
+      &:has(.form-check-input:valid) {
+        .form-check-label {
+          @apply text-[var(--form-valid-color)];
+        }
+        .valid-feedback,
+        .valid-tooltip {
+          @apply block;
+        }
+      }
+      &:has(.form-check-input:invalid) {
+        .form-check-label {
+          @apply text-[var(--form-invalid-color)];
+        }
+        .invalid-feedback,
+        .invalid-tooltip {
+          @apply block;
+        }
+      }
+    }
+    .form-field {
+      &:has(.form-control:valid),
+      &:has(.form-control-fill:valid),
+      &:has(.form-select:valid),
+      &:has(.form-select-fill:valid) {
+        .form-label {
+          @apply text-[var(--form-valid-color)];
+        }
+      }
+      &:has(.form-control:invalid),
+      &:has(.form-control-fill:invalid),
+      &:has(.form-select:invalid),
+      &:has(.form-select-fill:invalid) {
+        .form-label {
+          @apply text-[var(--form-invalid-color)];
+        }
+      }
+    }
+  }
+}
+
+@utility is-valid {
+  @layer base {
+    ~ .valid-feedback,
+    ~ .valid-tooltip {
+      @apply block;
+    }
+  }
+}
+
+@utility is-invalid {
+  @layer base {
+    ~ .invalid-feedback,
+    ~ .invalid-tooltip {
+      @apply block;
+    }
+  }
+}
+
+@utility form-control {
+  @layer base {
+    &.is-valid {
+      @apply border-[var(--form-valid-border-color)];
+      &:focus {
+        @apply border-[var(--form-valid-focus-border-color)];
+      }
+    }
+    &.is-invalid {
+      @apply border-[var(--form-invalid-border-color)];
+      &:focus {
+        @apply border-[var(--form-invalid-focus-border-color)];
+      }
+    }
+  }
+}
+@utility form-control-fill {
+  @layer base {
+    &.is-valid {
+      @apply bg-[var(--form-valid-bg)] border-[var(--form-valid-border-color)];
+      &:focus {
+        @apply border-[var(--form-valid-focus-border-color)];
+      }
+      &::file-selector-button {
+        @apply bg-[var(--form-valid-color)]
+      text-contrast;
+      }
+    }
+    &.is-invalid {
+      @apply bg-[var(--form-invalid-bg)] border-[var(--form-invalid-border-color)];
+      &:focus {
+        @apply border-[var(--form-invalid-focus-border-color)];
+      }
+      &::file-selector-button {
+        @apply bg-[var(--form-invalid-color)]
+      text-contrast;
+      }
+    }
+  }
+}
+
+@utility form-select {
+  @layer base {
+    &.is-valid {
+      @apply border-[var(--form-valid-border-color)];
+      &:focus {
+        @apply border-[var(--form-valid-focus-border-color)];
+      }
+    }
+    &.is-invalid {
+      @apply border-[var(--form-invalid-border-color)];
+      &:focus {
+        @apply border-[var(--form-invalid-focus-border-color)];
+      }
+    }
+  }
+}
+@utility form-select-fill {
+  @layer base {
+    &.is-valid {
+      @apply bg-[var(--form-valid-bg)] border-[var(--form-valid-border-color)];
+      &:focus {
+        @apply border-[var(--form-valid-focus-border-color)];
+      }
+    }
+    &.is-invalid {
+      @apply bg-[var(--form-invalid-bg)] border-[var(--form-invalid-border-color)];
+      &:focus {
+        @apply border-[var(--form-invalid-focus-border-color)];
+      }
+    }
+  }
+}
+
+@utility form-field {
+  @layer base {
+    &:has(.form-control.is-valid),
+    &:has(.form-control-fill.is-valid),
+    &:has(.form-select.is-valid),
+    &:has(.form-select-fill.is-valid) {
+      .form-label {
+        @apply text-[var(--form-valid-color)];
+      }
+    }
+    &:has(.form-control.is-invalid),
+    &:has(.form-control-fill.is-invalid),
+    &:has(.form-select.is-invalid),
+    &:has(.form-select-fill.is-invalid) {
+      .form-label {
+        @apply text-[var(--form-invalid-color)];
+      }
+    }
+  }
+}
+
+@utility form-check-input {
+  @layer base {
+    &.is-valid {
+      @apply border-[var(--form-valid-color)];
+      &:checked {
+        @apply bg-[var(--form-valid-color)];
+      }
+      ~ .form-check-label {
+        @apply text-[var(--form-valid-color)];
+      }
+    }
+    &.is-invalid {
+      @apply border-[var(--form-invalid-color)];
+      &:checked {
+        @apply bg-[var(--form-invalid-color)];
+      }
+      ~ .form-check-label {
+        @apply text-[var(--form-invalid-color)];
+      }
+    }
+  }
+}
+
+@utility form-check-inline {
+  @layer base {
+    .form-check-input ~ .valid-feedback,
+    .form-check-input ~ .invalid-feedback {
+      @apply ms-2;
+    }
+  }
+}
+
+@utility form-check {
+  @layer base {
+    &:has(.form-check-input.is-valid) {
+      .form-check-label {
+        @apply text-[var(--form-valid-color)];
+      }
+      .valid-feedback,
+      .valid-tooltip {
+        @apply block;
+      }
+    }
+    &:has(.form-check-input.is-invalid) {
+      .form-check-label {
+        @apply text-[var(--form-invalid-color)];
+      }
+      .invalid-feedback,
+      .invalid-tooltip {
+        @apply block;
+      }
+    }
+  }
+}
+
+@utility input-group {
+  @layer base {
+    .form-control:not(:focus):valid,
+    .form-control-fill:not(:focus):valid,
+    .form-select:not(:focus):valid,
+    .form-select-fill:not(:focus):valid,
+    .form-floating:not(:focus-within):valid {
+      @apply z-3;
+    }
+    .form-control:not(:focus):invalid,
+    .form-control-fill:not(:focus):invalid,
+    .form-select:not(:focus):invalid,
+    .form-select-fill:not(:focus):invalid,
+    .form-floating:not(:focus-within):invalid {
+      @apply z-4;
+    }
+  }
+}
