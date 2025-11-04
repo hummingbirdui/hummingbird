@@ -118,6 +118,10 @@ const sitemap: Sitemap[] = [
         path: '/docs/components/input-group',
       },
       {
+        name: 'Validation',
+        path: '/docs/components/validation',
+      },
+      {
         name: 'Advance Select',
         path: '/docs/components/advance-select',
       },
@@ -210,7 +214,7 @@ const sitemap: Sitemap[] = [
         name: 'Popovers',
         path: '/docs/components/popovers',
       },
-       {
+      {
         name: 'Progress',
         path: '/docs/components/progress',
       },
