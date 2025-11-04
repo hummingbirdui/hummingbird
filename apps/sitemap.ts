@@ -175,6 +175,10 @@ const sitemap: Sitemap[] = [
         path: '/docs/components/close-button',
       },
       {
+        name: 'Custom Scrollbar',
+        path: '/docs/components/custom-scrollbar',
+      },
+      {
         name: 'Dropdowns',
         path: '/docs/components/dropdowns',
       },
