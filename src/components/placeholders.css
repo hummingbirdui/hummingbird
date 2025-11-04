@@ -3,9 +3,10 @@
     --placeholder-opacity-max: 0.15;
     --placeholder-opacity-min: 0.05;
     --placeholder-bg: currentcolor;
+    --placeholder-height: 1em;
 
     @apply inline-block
-    min-h-[1em]
+    min-h-[var(--placeholder-height)]
     align-middle
     cursor-wait
     bg-[var(--placeholder-bg)]
@@ -20,17 +21,17 @@
 /* sizing */
 @utility placeholder-xs {
   @layer base {
-    @apply min-h-[0.6em];
+    --placeholder-height: 0.6em;
   }
 }
 @utility placeholder-sm {
   @layer base {
-    @apply min-h-[0.8em];
+    --placeholder-height: 0.8em;
   }
 }
 @utility placeholder-lg {
   @layer base {
-    @apply min-h-[1.2em];
+    --placeholder-height: 1.2em;
   }
 }
 
