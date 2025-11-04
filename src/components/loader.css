@@ -17,6 +17,9 @@
     border-r-transparent
     animate-[var(--spinner-animation-name)_var(--spinner-animation-speed)_linear_infinite];
   }
+  @variant motion-reduce {
+    --spinner-animation-speed: 1.5s;
+  }
 }
 
 @utility spinner-border-sm {
@@ -42,6 +45,9 @@
     bg-[var(--spinner-color)]
     animate-[var(--spinner-animation-name)_var(--spinner-animation-speed)_linear_infinite];
   }
+  @variant motion-reduce {
+    --spinner-animation-speed: 1.5s;
+  }
 }
 
 @utility spinner-grow-sm {
@@ -63,22 +69,16 @@
   }
 }
 
-/* accessibility: reduced motion */
-@media (prefers-reduced-motion: reduce) {
-  .spinner-border,
-  .spinner-grow {
-    --spinner-animation-speed: 1.5s;
-  }
-}
-
 /* bar loader */
 @utility loader-bar {
   @layer base {
-    --progress-height: --spacing(1);
-    --progress-bg: --alpha(var(--color-primary) / 25%);
-    --progress-bar-bg: var(--color-primary);
+    --loader-bar-height: --spacing(1);
+    --loader-bar-bg: --alpha(var(--color-primary) / 25%);
+    --loader-bar-animate-bg: var(--color-primary);
+    --loader-bar-animation-speed: 2.1s;
+    --loader-bar-animation-delay: 1.15s;
 
-    @apply relative h-[var(--progress-height)] bg-[var(--progress-bg)] overflow-hidden;
+    @apply relative h-[var(--loader-bar-height)] bg-[var(--loader-bar-bg)] overflow-hidden;
 
     &::before {
       @apply absolute
@@ -87,8 +87,8 @@
       left-0
       origin-left
       h-full
-      bg-[var(--progress-bar-bg)]
-      animate-[loader-bar1_2.1s_cubic-bezier(0.65,0.815,0.735,0.395)_infinite]
+      bg-[var(--loader-bar-animate-bg)]
+      animate-[loader-bar1_var(--loader-bar-animation-speed)_cubic-bezier(0.65,0.815,0.735,0.395)_infinite];
     }
 
     &::after {
@@ -98,35 +98,39 @@
       left-0
       origin-left
       h-full
-      bg-[var(--progress-bar-bg)]
-      animate-[loader-bar2_2.1s_cubic-bezier(0.165,0.84,0.44,1)_1.15s_infinite];
+      bg-[var(--loader-bar-animate-bg)]
+      animate-[loader-bar2_var(--loader-bar-animation-speed)_cubic-bezier(0.165,0.84,0.44,1)_var(--loader-bar-animation-delay)_infinite];
     }
+  }
+  @variant motion-reduce {
+    --loader-bar-animation-speed: 3.5s;
+    --loader-bar-animation-delay: 2.1s;
   }
 }
 
 @utility loader-bar-secondary {
-  --progress-bg: --alpha(var(--color-secondary) / 25%);
-  --progress-bar-bg: var(--color-secondary);
+  --loader-bar-bg: --alpha(var(--color-secondary) / 25%);
+  --loader-bar-animate-bg: var(--color-secondary);
 }
 
 @utility loader-bar-warning {
-  --progress-bg: --alpha(var(--color-warning) / 25%);
-  --progress-bar-bg: var(--color-warning);
+  --loader-bar-bg: --alpha(var(--color-warning) / 25%);
+  --loader-bar-animate-bg: var(--color-warning);
 }
 
 @utility loader-bar-danger {
-  --progress-bg: --alpha(var(--color-danger) / 25%);
-  --progress-bar-bg: var(--color-danger);
+  --loader-bar-bg: --alpha(var(--color-danger) / 25%);
+  --loader-bar-animate-bg: var(--color-danger);
 }
 
 @utility loader-bar-info {
-  --progress-bg: --alpha(var(--color-info) / 25%);
-  --progress-bar-bg: var(--color-info);
+  --loader-bar-bg: --alpha(var(--color-info) / 25%);
+  --loader-bar-animate-bg: var(--color-info);
 }
 
 @utility loader-bar-success {
-  --progress-bg: --alpha(var(--color-success) / 25%);
-  --progress-bar-bg: var(--color-success);
+  --loader-bar-bg: --alpha(var(--color-success) / 25%);
+  --loader-bar-animate-bg: var(--color-success);
 }
 
 @keyframes loader-bar1 {

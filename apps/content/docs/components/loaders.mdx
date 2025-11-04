@@ -108,7 +108,7 @@ Add the `.spinner-border-sm` or `.spinner-grow-sm` class to create a smaller ver
   </div>`}
 />
 
-Or, use Tailwind’s `size-{value}` utility with `.spinner-border` or `.spinner-grow` to set custom spinner dimensions.
+Or, use Tailwind’s `size-*` utility with `.spinner-border` or `.spinner-grow` to set custom spinner dimensions.
 
 <Example class="flex gap-2" code={`<div class="spinner-border size-12" role="status">
     <span class="sr-only">Loading...</span>
@@ -162,7 +162,7 @@ Apply the color modifier class `loader-bar-{color}` along with `.loader-bar` to 
 
 ## CSS variables
 
-The Navbar component is built using a set of CSS variables. These variables provide flexibility for customizing styles.
+The Loader component is built using a set of CSS variables. These variables provide flexibility for customizing styles.
 
 <Example lang='sass' showPreview={false}
   code={`.spinner-border {
@@ -176,8 +176,10 @@ The Navbar component is built using a set of CSS variables. These variables prov
 
 <Example lang='sass' showPreview={false}
   code={`.loader-bar {
-    --progress-height: --spacing(1);
-    --progress-bg: --alpha(var(--color-primary) / 25%);
-    --progress-bar-bg: var(--color-primary);
+    --loader-bar-height: --spacing(1);
+    --loader-bar-bg: --alpha(var(--color-primary) / 25%);
+    --loader-bar-animate-bg: var(--color-primary);
+    --loader-bar-animation-speed: 2.1s;
+    --loader-bar-animation-delay: 1.15s;
   }`}
 />
