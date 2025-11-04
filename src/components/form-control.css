@@ -39,12 +39,6 @@
       bg-[var(--input-focus-bg)]
       border-[var(--input-focus-border-color)];
     }
-    &.is-invalid {
-      @apply bg-[var(--color-danger-lighter)] border-[var(--color-danger)];
-    }
-    &.is-valid {
-      @apply bg-[var(--color-success-lighter)] border-[var(--color-success)];
-    }
     &[type='file'] {
       overflow: hidden;
 
@@ -65,16 +59,6 @@
     }
     &:hover:not(:disabled):not([readonly])::file-selector-button {
       --file-selector-btn-bg: var(--file-selector-btn-hover-bg);
-    }
-    &.is-invalid::file-selector-button {
-      --file-selector-btn-bg: var(--color-danger);
-      --file-selector-btn-color: var(--color-contrast);
-      --file-selector-btn-hover-bg: var(--color-danger-dark);
-    }
-    &.is-valid::file-selector-button {
-      --file-selector-btn-bg: var(--color-success);
-      --file-selector-btn-color: var(--color-contrast);
-      --file-selector-btn-hover-bg: var(--color-success-dark);
     }
     &:is(:disabled, [disabled])::file-selector-button {
       --file-selector-btn-bg: var(--background-color-muted);
@@ -119,13 +103,6 @@
       @variant hover {
         @apply border-[var(--input-disabled-border-color)];
       }
-    }
-
-    &.is-invalid {
-      @apply border-[var(--color-danger)];
-    }
-    &.is-valid {
-      @apply border-[var(--color-success)];
     }
 
     &[type='file'] {
@@ -301,18 +278,6 @@
     &:where(:has(.form-control-warning, .form-select-warning)):focus-within {
       .form-label {
         --input-label-color: var(--color-warning);
-      }
-    }
-    &:where(:has(.is-invalid)),
-    &:where(:has(.is-invalid)):focus-within {
-      .form-label {
-        --input-label-color: var(--color-danger);
-      }
-    }
-    &:where(:has(.is-valid)),
-    &:where(:has(.is-valid)):focus-within {
-      .form-label {
-        --input-label-color: var(--color-success);
       }
     }
     &:has(input[disabled]) {
