@@ -4,7 +4,7 @@ description: Advance select inputs with search and multi-select capabilities.
 toc: true
 ---
 
-<HbAlert type="info">The Advance Select component uses the unstyled, headless version of <a href="https://github.com/Choices-js/Choices" target="_blank">Choices.js</a> plugin for its functionality. Styling provided by Hummingbird.</HbAlert>
+<HbAlert type="info">The Advance Select component uses the unstyled, headless version of <a href="https://choices-js.github.io/Choices/" target="_blank">Choices.js</a> plugin for its functionality. Styling provided by Hummingbird. Follow the <a href="https://github.com/Choices-js/Choices" target="_blank">Choices.js documentation</a> for initialization.</HbAlert>
 
 ## How to use
 
@@ -17,17 +17,17 @@ toc: true
 Import styles after importing Tailwind and Hummingbird CSS:
 
 <Example showPreview={false} lang='css'
-  code={`@import "@hummingbirdui/hummingbird/choices";`} />
+  code={`@import '@hummingbirdui/hummingbird/src/plugins/choices.css';`} />
 
 #### 3. Initialization
 
-Initialize multiple elements with the `data-choices="data-choices"` attribute by adding the following JavaScript code.
+Basic initialization example with remove item button enabled:
 
 <Example showPreview={false} lang='js'
-  code={`const elements = document.querySelectorAll('[data-choices="data-choices"]');
-  elements.forEach((element) => new Choices(element, { removeItemButton: true }));`} />
+  code={`const element = document.querySelector('[data-choices="data-choices"]');
+  const choices = new Choices(element, { removeItemButton: true });`} />
 
-Follow the official <a href="https://github.com/Choices-js/Choices" target="_blank">Choices.js documentation</a> for more options and configurations.
+For more options and configuration guidance, refer to the <a href="https://github.com/Choices-js/Choices" target="_blank">Choices.js documentation</a>.
 
 ## Text Input
 

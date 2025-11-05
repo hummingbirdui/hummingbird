@@ -1,0 +1,320 @@
+---
+title: Validation
+description: Improve user experience by offering clear, actionable feedback through HTML5 form validation, using either native browser validation or custom styling and JavaScript for enhanced control.
+toc: true
+---
+
+## Custom validation styles
+
+Add the `novalidate` attribute to the `<form>` to disable the browser’s default feedback but still provides access to validation APIs in JavaScript. On submit, validation can prevent form submission and display feedback. Fields then show `:invalid` and `:valid` states, with custom colors, borders, focus styles.
+
+<Example code={`<form class="needs-validation" novalidate>
+    <div class="grid sm:grid-cols-3 gap-3 mb-4">
+      <div class="form-field">
+        <label for="validationCustom01" class="form-label">First name</label>
+        <input type="text" class="form-control" id="validationCustom01" value="Alice" required/>
+        <div class="valid-feedback">Looks good!</div>
+      </div>
+      <div class="form-field">
+        <label for="validationCustom02" class="form-label">Last name</label>
+        <input type="text" class="form-control" id="validationCustom02" value="Johnson" required/>
+        <div class="valid-feedback">Looks good!</div>
+      </div>
+      <div class="form-field">
+        <label for="validationCustomUsername" class="form-label">Username</label>
+        <div class="input-group has-validation">
+          <span class="input-group-text" id="inputGroupPrepend">@</span>
+          <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required/>
+          <div class="invalid-feedback">Please choose a username.</div>
+        </div>
+      </div>
+    </div>
+    <div class="grid sm:grid-cols-3 gap-3">
+      <div class="form-field">
+        <label for="validationCustom03" class="form-label">City</label>
+        <input type="text" class="form-control" id="validationCustom03" required/>
+        <div class="invalid-feedback">Please provide a valid city.</div>
+      </div>
+      <div class="form-field">
+        <label for="validationCustom04" class="form-label">State</label>
+        <select class="form-select" id="validationCustom04" required>
+          <option selected disabled value="">Choose...</option>
+          <option>...</option>
+        </select>
+        <div class="invalid-feedback">Please select a valid state.</div>
+      </div>
+      <div class="form-field">
+        <label for="validationCustom05" class="form-label">Zip</label>
+        <input type="text" class="form-control" id="validationCustom05" required/>
+        <div class="invalid-feedback">Please provide a valid zip.</div>
+      </div>
+    </div>
+    <div class="form-check my-4">
+      <label for="invalidCheck" class="form-check-input-wrapper">
+        <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required />
+      </label>
+      <label for="invalidCheck" class="form-check-label">
+        Agree to terms and conditions
+        <div class="invalid-feedback">You must agree before submitting.</div>
+      </label>
+    </div>
+    <button class="btn btn-primary" type="submit">Submit form</button>
+  </form>`} />
+
+<Example showPreview={false} lang="js"
+  code={`// Example starter JavaScript for disabling form submissions if there are invalid fields
+  (() => {
+    'use strict'
+
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    const forms = document.querySelectorAll('.needs-validation')
+
+    // Loop over them and prevent submission
+    Array.from(forms).forEach(form => {
+      form.addEventListener('submit', event => {
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+        }
+
+        form.classList.add('was-validated')
+      }, false)
+    })
+  })()`}/>
+
+## Browser defaults
+
+By default, form controls use the browser's native validation styles. This means that when a user submits a form with invalid fields, the browser will display its own validation messages and styles.
+
+<Example code={`<form>
+    <div class="grid sm:grid-cols-3 gap-3 mb-4">
+      <div class="form-field">
+        <label for="validationDefault01" class="form-label">First name</label>
+        <input type="text" class="form-control" id="validationDefault01" value="Alice" required/>
+      </div>
+      <div class="form-field">
+        <label for="validationDefault02" class="form-label">Last name</label>
+        <input type="text" class="form-control" id="validationDefault02" value="Johnson" required/>
+      </div>
+      <div class="form-field">
+        <label for="validationDefaultUsername" class="form-label">Username</label>
+        <div class="input-group">
+          <span class="input-group-text" id="inputGroupPrepend">@</span>
+          <input type="text" class="form-control" id="validationDefaultUsername" aria-describedby="inputGroupPrepend" required/>
+        </div>
+      </div>
+    </div>
+    <div class="grid sm:grid-cols-3 gap-3">
+      <div class="form-field">
+        <label for="validationDefault03" class="form-label">City</label>
+        <input type="text" class="form-control" id="validationDefault03" required/>
+      </div>
+      <div class="form-field">
+        <label for="validationDefault04" class="form-label">State</label>
+        <select class="form-select" id="validationDefault04" required>
+          <option selected disabled value="">Choose...</option>
+          <option>...</option>
+        </select>
+      </div>
+      <div class="form-field">
+        <label for="validationDefault05" class="form-label">Zip</label>
+        <input type="text" class="form-control" id="validationDefault05" required/>
+      </div>
+    </div>
+    <div class="form-check my-4">
+      <label for="invalidCheckDefault" class="form-check-input-wrapper">
+        <input class="form-check-input" type="checkbox" value="" id="invalidCheckDefault" required />
+      </label>
+      <label for="invalidCheckDefault" class="form-check-label">
+        Agree to terms and conditions
+      </label>
+    </div>
+    <button class="btn btn-primary" type="submit">Submit form</button>
+  </form>`} />
+
+## Server-side
+
+When server-side validation is used, add the `.is-valid` or `.is-invalid` classes to the form controls based on the validation results from the server. The feedback messages can be displayed using the `.valid-feedback` and `.invalid-feedback` classes.
+
+<Example code={`<form>
+    <div class="grid sm:grid-cols-3 gap-3 mb-4">
+      <div class="form-field">
+        <label for="validationServer01" class="form-label">First name</label>
+        <input type="text" class="form-control is-valid" id="validationServer01" value="Alice" required/>
+        <div class="valid-feedback">Looks good!</div>
+      </div>
+      <div class="form-field">
+        <label for="validationServer02" class="form-label">Last name</label>
+        <input type="text" class="form-control is-valid" id="validationServer02" value="Johnson" required/>
+        <div class="valid-feedback">Looks good!</div>
+      </div>
+      <div class="form-field">
+        <label for="validationServerUsername" class="form-label">Username</label>
+        <div class="input-group has-validation">
+          <span class="input-group-text" id="inputGroupPrepend">@</span>
+          <input type="text" class="form-control is-invalid" id="validationServerUsername" aria-describedby="inputGroupPrepend" required/>
+          <div class="invalid-feedback">Please choose a username.</div>
+        </div>
+      </div>
+    </div>
+    <div class="grid sm:grid-cols-3 gap-3">
+      <div class="form-field">
+        <label for="validationServer03" class="form-label">City</label>
+        <input type="text" class="form-control is-invalid" id="validationServer03" required/>
+        <div class="invalid-feedback">Please provide a valid city.</div>
+      </div>
+      <div class="form-field">
+        <label for="validationServer04" class="form-label">State</label>
+        <select class="form-select is-invalid" id="validationServer04" required>
+          <option selected disabled value="">Choose...</option>
+          <option>...</option>
+        </select>
+        <div class="invalid-feedback">Please select a valid state.</div>
+      </div>
+      <div class="form-field">
+        <label for="validationServer05" class="form-label">Zip</label>
+        <input type="text" class="form-control is-invalid" id="validationServer05" required/>
+        <div class="invalid-feedback">Please provide a valid zip.</div>
+      </div>
+    </div>
+    <div class="form-check my-4">
+      <label for="invalidCheckServer" class="form-check-input-wrapper">
+        <input class="form-check-input is-invalid" type="checkbox" value="" id="invalidCheckServer" required />
+      </label>
+      <label for="invalidCheckServer" class="form-check-label">
+        Agree to terms and conditions
+        <div class="invalid-feedback">You must agree before submitting.</div>
+      </label>
+    </div>
+    <button class="btn btn-primary" type="submit">Submit form</button>
+  </form>`} />
+
+## Supported elements
+
+Validation styles can be applied to the following form controls:
+- Text inputs
+- Textareas
+- Select menus
+- Checkboxes
+- Radio buttons
+
+<Example 
+  code={`<form class="was-validated">
+    <div class="form-field mb-3">
+      <label for="validationTextarea" class="form-label">Textarea</label>
+      <textarea class="form-control" id="validationTextarea" placeholder="Required example textarea" required></textarea>
+      <div class="invalid-feedback">
+        Please enter a message in the textarea.
+      </div>
+    </div>
+
+    <div class="form-check mb-3">
+      <label for="validationFormCheck1" class="form-check-input-wrapper">
+        <input type="checkbox" class="form-check-input" id="validationFormCheck1" required>
+      </label>
+      <label class="form-check-label" for="validationFormCheck1">
+        Check this checkbox
+        <div class="invalid-feedback">Example invalid feedback text</div>
+      </label>
+    </div>
+
+    <div class="form-check">
+      <label for="validationFormCheck2" class="form-check-input-wrapper">
+        <input type="radio" class="form-check-input" id="validationFormCheck2" name="radio-stacked" required>
+      </label>
+      <label class="form-check-label" for="validationFormCheck2">Toggle this radio</label>
+    </div>
+    <div class="form-check mb-3">
+      <label for="validationFormCheck3" class="form-check-input-wrapper">
+        <input type="radio" class="form-check-input" id="validationFormCheck3" name="radio-stacked" required>
+      </label>
+      <label class="form-check-label" for="validationFormCheck3">Or toggle this other radio</label>
+    </div>
+
+    <div class="mb-3">
+      <select class="form-select" required aria-label="select example">
+        <option value="">Open this select menu</option>
+        <option value="1">One</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+      </select>
+      <div class="invalid-feedback">Example invalid select feedback</div>
+    </div>
+
+    <div class="mb-3">
+      <input type="file" class="form-control" aria-label="file example" required>
+      <div class="invalid-feedback">Example invalid form file feedback</div>
+    </div>
+
+    <button class="btn btn-primary" type="submit" disabled>Submit form</button>
+  </form>`} />
+
+## Tooltips
+
+For an alternative feedback display, use tooltips to show validation messages. Add the `.valid-tooltip` and `.invalid-tooltip` classes to the feedback elements to display them as tooltips. Make sure the parent element has `relative` class for proper positioning.
+
+<Example code={`<form class="needs-validation" novalidate>
+    <div class="grid sm:grid-cols-3 gap-3 mb-4">
+      <div class="form-field relative">
+        <label for="validationTooltip01" class="form-label">First name</label>
+        <input type="text" class="form-control" id="validationTooltip01" value="Alice" required/>
+        <div class="valid-tooltip">Looks good!</div>
+      </div>
+      <div class="form-field relative">
+        <label for="validationTooltip02" class="form-label">Last name</label>
+        <input type="text" class="form-control" id="validationTooltip02" value="Johnson" required/>
+        <div class="valid-tooltip">Looks good!</div>
+      </div>
+      <div class="form-field relative">
+        <label for="validationTooltipUsername" class="form-label">Username</label>
+        <div class="input-group has-validation">
+          <span class="input-group-text" id="inputGroupPrepend">@</span>
+          <input type="text" class="form-control" id="validationTooltipUsername" aria-describedby="inputGroupPrepend" required/>
+          <div class="invalid-tooltip">Please choose a username.</div>
+        </div>
+      </div>
+    </div>
+    <div class="grid sm:grid-cols-3 gap-3">
+      <div class="form-field relative">
+        <label for="validationTooltip03" class="form-label">City</label>
+        <input type="text" class="form-control" id="validationTooltip03" required/>
+        <div class="invalid-tooltip">Please provide a valid city.</div>
+      </div>
+      <div class="form-field relative">
+        <label for="validationTooltip04" class="form-label">State</label>
+        <select class="form-select" id="validationTooltip04" required>
+          <option selected disabled value="">Choose...</option>
+          <option>...</option>
+        </select>
+        <div class="invalid-tooltip">Please select a valid state.</div>
+      </div>
+      <div class="form-field relative">
+        <label for="validationTooltip05" class="form-label">Zip</label>
+        <input type="text" class="form-control" id="validationTooltip05" required/>
+        <div class="invalid-tooltip">Please provide a valid zip.</div>
+      </div>
+    </div>
+    <button class="btn btn-primary mt-4" type="submit">Submit form</button>
+  </form>`} />
+
+## CSS variables
+
+The validation styles make use of CSS variables for easy customization. Override the following variables to change the appearance of validation states:
+
+<Example lang="sass" showPreview={false}
+  code={`:root {
+    --form-valid-bg: var(--color-success-lighter);
+    --form-valid-color: var(--color-success);
+    --form-valid-border-color: var(--color-success-light);
+    --form-valid-focus-border-color: var(--color-success);
+    --form-invalid-bg: var(--color-danger-lighter);
+    --form-invalid-color: var(--color-danger);
+    --form-invalid-border-color: var(--color-danger-light);
+    --form-invalid-focus-border-color: var(--color-danger);
+    --form-feedback-margin-top: --spacing(1);
+    --form-feedback-font-size: var(--text-sm);
+    --form-feedback-tooltip-padding-y: --spacing(1);
+    --form-feedback-tooltip-padding-x: --spacing(2);
+    --form-feedback-tooltip-color: var(--color-contrast);
+    --form-feedback-tooltip-border-radius: var(--radius-sm);
+  }`} />

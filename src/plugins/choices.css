@@ -141,16 +141,28 @@
     @apply form-control-lg;
   }
   &:has(.choices__input.form-control-fill.is-invalid, .choices__input.form-select-fill.is-invalid) {
-    @apply bg-[var(--color-danger-lighter)] border-[var(--color-danger)];
+    @apply bg-[var(--form-invalid-bg)] border-[var(--form-invalid-border-color)];
+    &:focus {
+      @apply border-[var(--form-invalid-focus-border-color)];
+    }
   }
   &:has(.choices__input.form-control-fill.is-valid, .choices__input.form-select-fill.is-valid) {
-    @apply bg-[var(--color-success-lighter)] border-[var(--color-success)];
+    @apply bg-[var(--form-valid-bg)] border-[var(--form-valid-border-color)];
+    &:focus {
+      @apply border-[var(--form-valid-focus-border-color)];
+    }
   }
   &:has(.choices__input.form-control.is-invalid, .choices__input.form-select.is-invalid) {
-    @apply border-[var(--color-danger)];
+    @apply border-[var(--form-invalid-border-color)];
+    &:focus {
+      @apply border-[var(--form-invalid-focus-border-color)];
+    }
   }
   &:has(.choices__input.form-control.is-valid, .choices__input.form-select.is-valid) {
-    @apply border-[var(--color-success)];
+    @apply border-[var(--form-valid-border-color)];
+    &:focus {
+      @apply border-[var(--form-valid-focus-border-color)];
+    }
   }
 }
 
