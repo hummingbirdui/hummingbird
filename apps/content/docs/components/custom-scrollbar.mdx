@@ -1,0 +1,90 @@
+---
+title: Custom Scrollbar
+description: A custom scrollbar modifies the default browser scrollbars appearance to match the websites design and improve overall user experience.
+toc: true
+---
+
+import { dummyData } from 'apps/data/dummy';
+
+## Basic usage
+
+Add the `.scrollbar` class to a scrollable container to apply the custom scrollbar style.
+
+<Example showMarkup={false} code={`<div class="scrollbar h-80 overflow-auto pe-5">
+    ${dummyData.map((item) => `<div class="mb-8">
+      <h3 class="text-2xl font-semibold mb-3">${item.title}</h3>
+      <p class="text-muted tracking-tight">${item.desc}</p>
+    </div>`).join('')}
+  </div>`}
+/>
+
+<Example showPreview={false} code={`<div class="scrollbar h-80 overflow-auto">
+    ...
+  </div>`}
+/>
+
+## Rounded bars
+
+Use the `.scrollbar-rounded` class with `.scrollbar` to make the scrollbar rounded.
+
+<Example showMarkup={false} code={`<div class="scrollbar scrollbar-rounded h-80 overflow-auto pe-5">
+    ${dummyData.map((item) => `<div class="mb-8">
+      <h3 class="text-2xl font-semibold mb-3">${item.title}</h3>
+      <p class="text-muted tracking-tight">${item.desc}</p>
+    </div>`).join('')}
+  </div>`}
+/>
+
+<Example showPreview={false} code={`<div class="scrollbar scrollbar-rounded h-80 overflow-auto">
+    ...
+  </div>`}
+/>
+
+## Custom colors and sizes
+
+Customize the scrollbar colors by using `[&::-webkit-scrollbar-thumb]:bg-{color}` for the thumb and `[&::-webkit-scrollbar-track]:bg-{color}` for the track.
+Adjust the scrollbar size using `[&::-webkit-scrollbar]:w-*` for vertical scrollbar width and `[&::-webkit-scrollbar]:h-*` for horizontal scrollbar height.
+
+<Example showMarkup={false} code={`<div class="scrollbar [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-thumb]:bg-warning [&::-webkit-scrollbar-track]:bg-gray-700 h-80 overflow-auto pe-5">
+    ${dummyData.map((item) => `<div class="mb-8">
+      <h3 class="text-2xl font-semibold mb-3">${item.title}</h3>
+      <p class="text-muted tracking-tight">${item.desc}</p>
+    </div>`).join('')}
+  </div>`}
+/>
+
+<Example showPreview={false} code={`<div class="scrollbar [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-thumb]:bg-warning [&::-webkit-scrollbar-track]:bg-gray-700 h-80 overflow-auto">
+    ...
+  </div>`}
+/>
+
+## Corners
+
+By default, scrollbar corners are `transparent`. Customize them by adding the `[&::-webkit-scrollbar-corner]:bg-{color}` class to set a background color.
+
+<Example showMarkup={false} code={`<div class="scrollbar [&::-webkit-scrollbar-corner]:bg-info h-80 overflow-auto pe-5">
+    <div class="w-300">
+      ${dummyData.map((item) => `<div class="mb-8">
+        <h3 class="text-2xl font-semibold mb-3">${item.title}</h3>
+        <p class="text-muted tracking-tight">${item.desc}</p>
+      </div>`).join('')}
+    </div>
+  </div>`}
+/>
+
+<Example showPreview={false} code={`<div class="scrollbar [&::-webkit-scrollbar-corner]:bg-info h-80 overflow-auto">
+    ...
+  </div>`}
+/>
+
+## CSS variables
+
+The custom scrollbar component is built using a set of CSS variables. These variables provide flexibility for customizing styles.
+
+<Example lang='sass' showPreview={false}
+  code={`.scrollbar {
+    --scrollbar-size: --spacing(3);
+    --scrollbar-thumb-color: var(--background-color-emphasis);
+    --scrollbar-track-color: var(--background-color-muted);
+  }`}
+/>

@@ -70,14 +70,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const toastLiveExample = document.getElementById('liveToast');
   const toastPlacement = document.getElementById('toastPlacement');
   const toastPlacementSelect = document.getElementById('selectToastPlacement') as HTMLSelectElement;
-
   if (toastTrigger) {
     const toastBootstrap = window.hummingbird.Toast.getOrCreateInstance(toastLiveExample);
     toastTrigger.addEventListener('click', () => {
       toastBootstrap.show();
     });
   }
-
   if (toastPlacement) {
     toastPlacementSelect.addEventListener('change', function () {
       if (!toastPlacement.dataset.originalClass) {
@@ -87,8 +85,26 @@ document.addEventListener('DOMContentLoaded', () => {
       toastPlacement.className = `${toastPlacement.dataset.originalClass} ${this.value}`;
     });
   }
-});
 
-// Pass single element
-const hbChoices = document.querySelectorAll('[data-choices="data-choices"]');
-hbChoices.forEach((choice) => new Choices(choice, { removeItemButton: true }));
+  // Choices
+  const hbChoices = document.querySelectorAll('[data-choices="data-choices"]');
+  hbChoices.forEach((choice) => new Choices(choice, { removeItemButton: true }));
+
+  // Form validation
+  const forms = document.querySelectorAll('.needs-validation') as NodeListOf<HTMLFormElement>;
+
+  Array.from(forms).forEach((form) => {
+    form.addEventListener(
+      'submit',
+      (event) => {
+        if (!form.checkValidity()) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+
+        form.classList.add('was-validated');
+      },
+      false,
+    );
+  });
+});

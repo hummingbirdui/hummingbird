@@ -8,6 +8,7 @@
 @import './card.css';
 @import './carousel.css';
 @import './close.css';
+@import './custom-scrollbar.css';
 @import './divider.css';
 @import './dropdown.css';
 @import './floating-labels.css';
@@ -18,14 +19,17 @@
 @import './input-group.css';
 @import './link.css';
 @import './list-group.css';
+@import './loader.css';
 @import './modal.css';
 @import './nav.css';
 @import './navbar.css';
 @import './offcanvas.css';
 @import './pagination.css';
+@import './placeholders.css';
 @import './popover.css';
 @import './progress.css';
 @import './table.css';
 @import './toasts.css';
 @import './tooltip.css';
 @import './transitions.css';
+@import './validation.css';

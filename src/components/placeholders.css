@@ -1,0 +1,72 @@
+@utility placeholder {
+  @layer base {
+    --placeholder-opacity-max: 0.15;
+    --placeholder-opacity-min: 0.05;
+    --placeholder-bg: currentcolor;
+    --placeholder-height: 1em;
+
+    @apply inline-block
+    min-h-[var(--placeholder-height)]
+    align-middle
+    cursor-wait
+    bg-[var(--placeholder-bg)]
+    opacity-[var(--placeholder-opacity-max)];
+
+    &.btn::before {
+      @apply inline-block content-[''];
+    }
+  }
+}
+
+/* sizing */
+@utility placeholder-xs {
+  @layer base {
+    --placeholder-height: 0.6em;
+  }
+}
+@utility placeholder-sm {
+  @layer base {
+    --placeholder-height: 0.8em;
+  }
+}
+@utility placeholder-lg {
+  @layer base {
+    --placeholder-height: 1.2em;
+  }
+}
+
+/* glow animation */
+@utility placeholder-glow {
+  @layer base {
+    .placeholder {
+      @apply animate-[placeholder-glow_2s_ease-in-out_infinite];
+    }
+  }
+}
+
+@keyframes placeholder-glow {
+  50% {
+    opacity: var(--placeholder-opacity-min);
+  }
+}
+
+/* wave animation */
+@utility placeholder-wave {
+  @layer base {
+    --placeholder-opacity-min: 0.5;
+
+    @apply [mask-image:linear-gradient(90deg,_black_55%,_rgba(0,0,0,calc(1_-_var(--placeholder-opacity-min)))_75%,_black_95%)]
+    [mask-size:200%_100%]
+    animate-[placeholder-wave_2s_linear_infinite];
+
+    @variant dark {
+      --placeholder-opacity-min: 0.25;
+    }
+  }
+}
+
+@keyframes placeholder-wave {
+  100% {
+    mask-position: -200% 0%;
+  }
+}
