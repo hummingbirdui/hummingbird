@@ -191,6 +191,10 @@ const sitemap: Sitemap[] = [
         path: '/docs/components/link',
       },
       {
+        name: 'Loader',
+        path: '/docs/components/loaders',
+      },
+      {
         name: 'Modal',
         path: '/docs/components/modal',
       },
