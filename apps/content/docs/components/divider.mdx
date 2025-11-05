@@ -1,0 +1,70 @@
+---
+title: Divider
+description: A versatile component used to separate content with horizontal or vertical lines, helping organize sections and improve visual hierarchy in layouts.
+toc: true
+classNames:
+  component:
+  - class: hr-label
+    desc: Horizontal divider with label
+  - class: vr-label
+    desc: Vertical divider with label
+  modifier:
+  - class: label-start
+    desc: Align label start
+  - class: label-end
+    desc: Align label end
+---
+
+## Divider horizontal
+
+Add horizontal dividers using `<hr/>`, and adjust color or thickness with border utility classes.
+
+<Example code={`<hr>
+  <hr class="border-primary"/>
+  <hr class="border-t-2 border-danger"/>
+  <hr class="border-t-4 border-success"/>`}
+/>
+
+## Divider vertical
+
+Add vertical dividers using `.vr` class, and adjust color, height, or thickness with border utility classes.
+
+<Example class="space-x-8" code={`<div class="vr"></div>
+  <div class="vr border-secondary h-10"></div>
+  <div class="vr border-s-2 border-warning h-20"></div>
+  <div class="vr border-s-4 border-info h-30"></div>`}
+/>
+
+## Divider horizontal with label
+
+Add labeled horizontal dividers using `.hr-label`, and position text with `.label-start`, `.label-end`, or center by default.
+
+<Example code={`<div class="hr-label label-start">START</div>
+  <div class="hr-label">CENTER</div>
+  <div class="hr-label label-end">END</div>`}
+/>
+
+## Divider vertical with label
+
+Add labeled vertical dividers using `.vr-label`, and position text with `.label-start`, `.label-end`, or center by default.
+
+<Example class="flex w-full justify-around" code={`<div class="vr-label label-start">START</div>
+  <div class="vr-label">CENTER</div>
+  <div class="vr-label label-end">END</div>`}
+/>
+
+## Colors and sizes
+
+Customize lebeled divider color and thickness using `before:` and `after:` border utility classes for precise control and visual styling.
+
+<Example code={`<div class="hr-label label-start after:border-primary after:border-t-2">START</div>
+  <div class="hr-label before:border-success before:border-t-4 after:border-success after:border-t-4">CENTER</div>
+  <div class="hr-label label-end before:border-warning before:border-t-6">END</div>`}
+/>
+
+<Example class="flex w-full justify-around" code={`<div class="vr-label label-start after:border-primary after:border-s-2">START</div>
+  <div class="vr-label before:border-success before:border-s-4 after:border-success after:border-s-4">CENTER</div>
+  <div class="vr-label label-end before:border-warning before:border-s-6">END</div>`}
+/>
+
+

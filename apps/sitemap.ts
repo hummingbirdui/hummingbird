@@ -183,6 +183,10 @@ const sitemap: Sitemap[] = [
         path: '/docs/components/custom-scrollbar',
       },
       {
+        name: 'Divider',
+        path: '/docs/components/divider',
+      },
+      {
         name: 'Dropdowns',
         path: '/docs/components/dropdowns',
       },
