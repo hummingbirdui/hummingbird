@@ -1,5 +1,6 @@
 import docsearch from '@docsearch/js';
 import Choices from 'choices.js';
+import noUiSliderInit from './plugins/noUISlider';
 
 declare global {
   interface Window {
@@ -107,4 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
       false,
     );
   });
+
+  // Plugin initialization
+  noUiSliderInit();
 });
