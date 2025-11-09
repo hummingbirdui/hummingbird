@@ -4,7 +4,7 @@ description: Advance select inputs with search and multi-select capabilities.
 toc: true
 ---
 
-<HbAlert type="info">The Advance Select component uses the unstyled, headless version of <a href="https://choices-js.github.io/Choices/" target="_blank">Choices.js</a> plugin for its functionality. Styling provided by Hummingbird. Follow the <a href="https://github.com/Choices-js/Choices" target="_blank">Choices.js documentation</a> for initialization.</HbAlert>
+<HbAlert type="info">The Advance Select component uses the headless (unstyled) <a href="https://choices-js.github.io/Choices/" target="_blank">Choices.js</a> plugin for its core functionality, while Hummingbird handles the visual styling. Please refer to the official <a href="https://github.com/Choices-js/Choices" target="_blank">Choices.js documentation</a> for initialization instructions.</HbAlert>
 
 ## How to use
 
@@ -39,7 +39,7 @@ Text input with Choices.js. Functionality can be extended using Choices.js optio
 
 Select input with multiple selection enabled by adding `multiple` attribute.
 
-<Example code={`<select class="form-select-fill" aria-label="Outlined example with label" data-choices="data-choices" multiple>
+<Example code={`<select class="form-select" aria-label="Outlined example with label" data-choices="data-choices" multiple>
     <option value="">Select organizer...</option>
     <option>Massachusetts Institute of Technology</option>
     <option>University of Chicago</option>
@@ -155,3 +155,13 @@ Advance select can also be used with floating labels.
     <option>preset-3</option>
     <option>preset-4</option>
   </select>`} />
+
+## Customization
+
+### CSS Variables
+
+Advanced select component inherits styles from `form-control` and `form-select` classes. Any CSS variables defined for these classes can be overridden to customize the appearance of the advance select component. Follow the [form control](/docs/components/form-control#css-variables) and [select](/docs/components/select#css-variables) documentation for available CSS variables.
+
+### Choices.js Classes
+
+Customization also can be done via overriding Choices.js default classes.
