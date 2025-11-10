@@ -1,4 +1,5 @@
 import docsearch from '@docsearch/js';
+import dropzoneInit from './plugins/dropzone';
 import Choices from 'choices.js';
 
 declare global {
@@ -87,6 +88,8 @@ document.addEventListener('DOMContentLoaded', () => {
       toastPlacement.className = `${toastPlacement.dataset.originalClass} ${this.value}`;
     });
   }
+
+  dropzoneInit();
 });
 
 // Pass single element
