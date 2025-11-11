@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 // @ts-check
 import tailwindcss from '@tailwindcss/vite';
 import { defineConfig } from 'astro/config';
@@ -5,16 +6,17 @@ import mdx from '@astrojs/mdx';
 import AutoImport from 'astro-auto-import';
 import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
-// import vercel from '@astrojs/vercel';
+import { loadEnv } from 'vite';
+const { PUBLIC_STAGING_SITE_URL, PUBLIC_SITE_URL } = loadEnv(process.env.NODE_ENV, process.cwd(), '');
 
-// eslint-disable-next-line no-undef
 const isDev = process.env.NODE_ENV === 'development';
+const isStaging = process.env.NODE_ENV === 'staging';
+const site = isDev ? 'http://localhost:4321/' : isStaging ? PUBLIC_STAGING_SITE_URL : PUBLIC_SITE_URL;
 
 export default defineConfig({
-  site: isDev ? 'http://localhost:4321/' : 'https://hbui.dev',
+  site: site,
   srcDir: './apps',
   outDir: 'build',
-  // adapter: vercel(),
   vite: {
     plugins: [tailwindcss()],
   },
