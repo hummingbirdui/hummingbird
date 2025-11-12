@@ -13,8 +13,37 @@ const isDev = process.env.NODE_ENV === 'development';
 const isStaging = process.env.NODE_ENV === 'staging';
 const site = isDev ? 'http://localhost:4321/' : isStaging ? PUBLIC_STAGING_SITE_URL : PUBLIC_SITE_URL;
 
+// Get current git branch
+function getCurrentBranch() {
+  try {
+    return execSync('git rev-parse --abbrev-ref HEAD', { encoding: 'utf8' }).trim();
+  } catch {
+    return 'main';
+  }
+}
+
+// Map branches to base paths
+const branchToBase = {
+  main: '/',
+  'v1.0': '/v1.0',
+  'v3.0': '/v3.0',
+  // Add more versions as needed
+};
+
+// Determine base path
+function getBasePath() {
+  // In development, always use root
+  if (isDev) return '/';
+
+  const currentBranch = getCurrentBranch();
+  return branchToBase[currentBranch] || '/';
+}
+
+const base = getBasePath();
+
 export default defineConfig({
   site: site,
+  base: base,
   srcDir: './apps',
   outDir: 'build',
   vite: {

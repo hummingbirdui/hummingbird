@@ -63,8 +63,8 @@
     "build:docs": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "deploy": "gh-pages -d build -b gh-pages",
-    "deploy:staging": "cross-env NODE_ENV=staging echo \"staging.hbui.dev\" > build/CNAME && gh-pages -d build -r https://github.com/hummingbirdui/staging.git -b gh-pages"
+    "deploy": "node deploy-version.js production",
+    "deploy:staging": "node deploy-version.js staging"
   },
   "devDependencies": {
     "@astrojs/mdx": "^4.3.6",

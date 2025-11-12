@@ -1,0 +1,235 @@
+/* eslint-disable no-undef */
+import { execSync } from 'child_process';
+import path from 'path';
+import fs from 'fs';
+
+const versionConfig = {
+  main: { base: '/', dest: '.' },
+  'v1.0': { base: '/v1.0', dest: 'v1.0' },
+  'v3.0': { base: '/v3.0', dest: 'v3.0' },
+};
+
+const deployTargets = {
+  production: {
+    repo: 'https://github.com/hummingbirdui/hummingbird.git',
+    branch: 'gh-pages',
+    domain: 'hbui.dev',
+  },
+  staging: {
+    repo: 'https://github.com/hummingbirdui/staging.git',
+    branch: 'gh-pages',
+    domain: 'staging.hbui.dev',
+  },
+};
+
+function exec(command, options = {}) {
+  console.log(`\n> ${command}`);
+  try {
+    return execSync(command, { stdio: 'inherit', ...options });
+  } catch {
+    throw new Error(`Command failed: ${command}`);
+  }
+}
+
+function execQuiet(command) {
+  try {
+    return execSync(command, { encoding: 'utf8' }).trim();
+  } catch {
+    throw new Error(`Command failed: ${command}`);
+  }
+}
+
+function getCurrentBranch() {
+  return execQuiet('git rev-parse --abbrev-ref HEAD');
+}
+
+function hasUncommittedChanges() {
+  const status = execQuiet('git status --porcelain');
+  return status.length > 0;
+}
+
+function branchExists(branch) {
+  try {
+    execQuiet(`git rev-parse --verify ${branch}`);
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+function getVersionFromBranch(branch) {
+  const entry = Object.entries(versionConfig).find(([b]) => b === branch);
+  return entry ? { branch, ...entry[1] } : null;
+}
+
+function createCNAME(domain, buildPath) {
+  const cnamePath = path.join(buildPath, 'CNAME');
+  fs.writeFileSync(cnamePath, domain);
+  console.log(`✓ Created CNAME file with domain: ${domain}`);
+}
+
+function deployVersion(targetBranch, environment) {
+  console.log(`\n========================================`);
+  console.log(`📦 Branch: ${targetBranch}`);
+  console.log(`🌍 Environment: ${environment}`);
+  console.log(`========================================`);
+
+  if (!branchExists(targetBranch)) {
+    console.error(`\n❌ Branch '${targetBranch}' does not exist`);
+    process.exit(1);
+  }
+
+  const versionInfo = getVersionFromBranch(targetBranch);
+  if (!versionInfo) {
+    console.error(`\n❌ Branch '${targetBranch}' is not configured`);
+    console.log('Available branches:', Object.keys(versionConfig).join(', '));
+    process.exit(1);
+  }
+
+  const target = deployTargets[environment];
+  const currentBranch = getCurrentBranch();
+  const needsCheckout = currentBranch !== targetBranch;
+
+  try {
+    if (needsCheckout) {
+      console.log(`\n📌 Current branch: ${currentBranch}`);
+
+      if (hasUncommittedChanges()) {
+        console.log('💾 Stashing uncommitted changes...');
+        exec('git stash');
+      }
+
+      console.log(`\n🔄 Checking out ${targetBranch}...`);
+      exec(`git checkout ${targetBranch}`);
+
+      console.log('📥 Pulling latest changes...');
+      exec('git pull origin ' + targetBranch);
+    }
+
+    console.log('\n📦 Installing dependencies...');
+    exec('npm ci');
+
+    console.log('\n🔨 Building...');
+    const nodeEnv = environment === 'staging' ? 'staging' : 'production';
+    exec(`cross-env NODE_ENV=${nodeEnv} npm run build:docs`);
+
+    console.log(`\n📝 Creating CNAME file...`);
+    createCNAME(target.domain, 'build');
+
+    console.log(`\n🚀 Deploying...`);
+    const destFlag = versionInfo.dest === '.' ? '' : `--dest ${versionInfo.dest}`;
+    const repoFlag = `-r ${target.repo}`;
+    const branchFlag = `-b ${target.branch}`;
+
+    exec(`gh-pages -d build ${repoFlag} ${branchFlag} ${destFlag} --add --nojekyll`);
+
+    const deployUrl =
+      versionInfo.base === '/' ? `https://${target.domain}` : `https://${target.domain}${versionInfo.base}`;
+
+    console.log(`\n✅ Successfully deployed!`);
+    console.log(`📍 Live at: ${deployUrl}`);
+  } catch (error) {
+    console.error(`\n❌ Deployment failed:`, error.message);
+    process.exit(1);
+  } finally {
+    if (needsCheckout) {
+      console.log(`\n🔄 Returning to ${currentBranch}...`);
+      exec(`git checkout ${currentBranch}`);
+
+      try {
+        const stashList = execQuiet('git stash list');
+        if (stashList) {
+          console.log('📂 Restoring stashed changes...');
+          exec('git stash pop');
+        }
+      } catch {
+        // No stash to pop
+      }
+    }
+  }
+
+  console.log('\n========================================');
+  console.log('🎉 Deployment complete!');
+  console.log('========================================\n');
+}
+
+function deployAll(environment) {
+  console.log(`\n🚀 Deploying all versions to ${environment}...\n`);
+
+  const target = deployTargets[environment];
+
+  console.log('Versions to deploy:\n');
+  Object.keys(versionConfig).forEach((branch) => {
+    const info = getVersionFromBranch(branch);
+    const url = info.base === '/' ? `https://${target.domain}` : `https://${target.domain}${info.base}`;
+    console.log(`  ✓ ${branch} → ${url}`);
+  });
+
+  console.log('\n');
+
+  for (const branch of Object.keys(versionConfig)) {
+    deployVersion(branch, environment);
+  }
+
+  console.log('\n========================================');
+  console.log('✅ All versions deployed!');
+  console.log('========================================\n');
+}
+
+function showHelp() {
+  console.log(`
+📚 Documentation Deployer
+
+Usage:
+  npm run deploy <options>
+  npm run deploy:staging <options>
+
+Options:
+  --version <branch>    Deploy specific version (default: main)
+  --all                 Deploy all configured versions
+  --help                Show this help
+
+Examples:
+  npm run deploy                          # Deploy main to production
+  npm run deploy --version docs-v2.0      # Deploy v2.0 to production
+  npm run deploy --all                    # Deploy all to production
+
+  npm run deploy:staging                  # Deploy main to staging
+  npm run deploy:staging --version docs-v2.0
+  npm run deploy:staging --all
+
+Available versions:
+${Object.entries(versionConfig)
+  .map(([branch, config]) => `  ${branch.padEnd(20)} → ${config.base}`)
+  .join('\n')}
+  `);
+}
+
+// Parse CLI arguments
+const args = process.argv.slice(2);
+const environment = args[0]; // 'production' or 'staging' passed from npm script
+
+if (!environment || args.includes('--help') || args.includes('-h')) {
+  showHelp();
+  process.exit(0);
+}
+
+if (!deployTargets[environment]) {
+  console.error(`❌ Invalid environment: ${environment}`);
+  process.exit(1);
+}
+
+const restArgs = args.slice(1); // Remove environment arg
+
+if (restArgs.includes('--all')) {
+  deployAll(environment);
+} else {
+  let targetBranch = 'main'; // default
+
+  const versionIndex = restArgs.indexOf('--version');
+  if (versionIndex !== -1 && restArgs[versionIndex + 1]) {
+    targetBranch = restArgs[versionIndex + 1];
+  }
+
+  deployVersion(targetBranch, environment);
+}
