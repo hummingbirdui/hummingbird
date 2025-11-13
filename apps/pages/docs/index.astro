@@ -1,7 +1,8 @@
 ---
-import { SITE_TITLE } from '../../const';
+import { getConfig } from '@libs/config';
 
 const url = new URL('/docs/getting-started/installation', Astro.site);
+const { title } = getConfig();
 ---
 
 <!doctype html>
@@ -9,7 +10,7 @@ const url = new URL('/docs/getting-started/installation', Astro.site);
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{SITE_TITLE}</title>
+    <title>{title}</title>
     <link rel="canonical" href={url} />
     <meta name="robots" content="noindex" />
     <meta http-equiv="refresh" content={`0; url=${url}`} />

@@ -1,9 +1,10 @@
 ---
 import '../style.css';
-import { SITE_DESCRIPTION, SITE_TITLE } from '../const';
 import Navbar from '@components/common/Navbar.astro';
 import Head from '@components/core/Head.astro';
 import Footer from '@components/common/Footer.astro';
+import { getConfig } from '@libs/config';
+const { title: SITE_TITLE, description: SITE_DESCRIPTION } = getConfig();
 const { frontmatter } = Astro.props;
 const title = Astro.props.title ?? frontmatter?.title ?? SITE_TITLE;
 const description = frontmatter?.description ? frontmatter.description : SITE_DESCRIPTION;

@@ -7,14 +7,17 @@ import AutoImport from 'astro-auto-import';
 import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import { loadEnv } from 'vite';
+import { getBasePath } from './deploy-config.js';
 const { PUBLIC_STAGING_SITE_URL, PUBLIC_SITE_URL } = loadEnv(process.env.NODE_ENV, process.cwd(), '');
 
 const isDev = process.env.NODE_ENV === 'development';
 const isStaging = process.env.NODE_ENV === 'staging';
 const site = isDev ? 'http://localhost:4321/' : isStaging ? PUBLIC_STAGING_SITE_URL : PUBLIC_SITE_URL;
+const base = getBasePath(isDev);
 
 export default defineConfig({
   site: site,
+  base: base,
   srcDir: './apps',
   outDir: 'build',
   vite: {

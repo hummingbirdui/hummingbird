@@ -2,6 +2,8 @@
 import HeroCards from './HeroCards.astro';
 import CopyIcon from '@components/icons/CopyIcon.astro';
 import CheckIcon from '@components/icons/CheckIcon.astro';
+import { getConfig } from '@libs/config';
+const { docVersion } = getConfig();
 ---
 
 <section id="hero" class="relative px-4 sm:px-6 lg:px-10 xl:h-180 overflow-hidden">
@@ -25,8 +27,10 @@ import CheckIcon from '@components/icons/CheckIcon.astro';
         id="links"
         class="flex flex-col sm:flex-row items-center justify-center [@media(min-width:1368px)]:justify-start gap-4"
       >
-        <a href="/docs/getting-started/installation" type="button" class="btn btn-primary btn-lg w-full sm:w-auto"
-          >Get Started</a
+        <a
+          href=`/${docVersion}/docs/getting-started/installation`
+          type="button"
+          class="btn btn-primary btn-lg w-full sm:w-auto">Get Started</a
         >
         <div
           class="w-full sm:w-auto flex items-center justify-center sm:justify-start gap-1 bg-muted text-sm font-mono pl-2 pr-0 sm:pl-4 sm:pr-2 h-11 rounded-lg"
