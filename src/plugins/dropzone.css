@@ -4,15 +4,24 @@
 }
 
 .dropzone {
+  --dropzone-padding: --spacing(6);
+  --dropzone-bg: var(--background-color-subtle);
+  --dropzone-border-color: var(--border-color-base);
+  --dropzone-border-radius: var(--radius-xl);
+  --dropzone-hover-border-color: var(--color-primary);
+  --dropzone-hover-bg: --alpha(var(--color-primary) / 5%);
+  --dropzone-avatar-overlay: --alpha(var(--color-contrast) / 70%);
+  --dropzone-avatar-size: --spacing(40);
+
   @layer base {
-    @apply p-6
-    bg-subtle
+    @apply p-[var(--dropzone-padding)]
+    bg-[var(--dropzone-bg)]
     border
     border-dashed
-    border-base
-    rounded-xl
-    hover:border-primary
-    hover:bg-primary/5
+    border-[var(--dropzone-border-color)]
+    rounded-[var(--dropzone-border-radius)]
+    hover:border-[var(--dropzone-hover-border-color)]
+    hover:bg-[var(--dropzone-hover-bg)]
     transition
     duration-300;
 
@@ -65,8 +74,8 @@
       &.dz-file-preview {
         .dz-image {
           @apply bg-gradient-to-b
-        from-[var(--background-color-subtle)]
-        to-[var(--background-color-muted)];
+          from-[var(--background-color-subtle)]
+          to-[var(--background-color-muted)];
         }
         .dz-details {
           @apply opacity-100;
@@ -91,7 +100,7 @@
         @apply p-8 
         text-xs
         text-center 
-        text-black/90 
+        text-default
         leading-[150%]
         min-w-full 
         max-w-full 
@@ -136,12 +145,11 @@
       }
 
       &.dz-success .dz-success-mark {
-        animation: passing-through 3s cubic-bezier(0.77, 0, 0.175, 1);
+        @apply animate-[passing-through_3s_cubic-bezier(0.77,0,0.175,1)];
       }
 
       &.dz-error .dz-error-mark {
-        @apply opacity-100;
-        animation: slide-in 3s cubic-bezier(0.77, 0, 0.175, 1);
+        @apply opacity-100 animate-[slide-in_3s_cubic-bezier(0.77,0,0.175,1)];
       }
 
       .dz-success-mark,
@@ -166,7 +174,7 @@
       }
 
       &:not(.dz-processing) .dz-progress {
-        animation: pulse 6s ease infinite;
+        @apply animate-[pulse_6s_ease_infinite];
       }
 
       .dz-progress {
@@ -237,11 +245,22 @@
       }
     }
 
+    /* avatar dropzone */
     &.dropzone-avatar {
-      @apply relative p-0 size-40 rounded-full overflow-hidden;
+      @apply relative 
+      p-0 
+      size-[var(--dropzone-avatar-size)] 
+      rounded-full 
+      overflow-hidden;
 
       .dz-message {
-        @apply absolute m-0 size-full flex items-center justify-center z-1000;
+        @apply absolute 
+        m-0 
+        size-full 
+        flex 
+        items-center 
+        justify-center 
+        z-1000;
       }
 
       &.dz-started .dz-message {
@@ -249,7 +268,7 @@
       }
 
       &.dz-started:hover .dz-message {
-        @apply opacity-100 visible bg-white/70;
+        @apply opacity-100 visible bg-[var(--dropzone-avatar-overlay)];
       }
 
       .dz-preview {
@@ -280,11 +299,19 @@
 }
 
 .dz-list-preview {
+  --dz-list-padding: --spacing(2);
+  --dz-list-bg: var(--background-color-subtle);
+  --dz-list-border-radius: var(--radius-lg);
+
   @layer base {
     @apply mt-4 space-y-2;
 
     .dz-preview {
-      @apply relative p-2 flex items-center gap-3 bg-subtle rounded-lg;
+      @apply relative 
+      p-[var(--dz-list-padding)] 
+      flex items-center gap-3 
+      bg-[var(--dz-list-bg)] 
+      rounded-[var(--dz-list-border-radius)];
 
       .dz-image {
         @apply size-13 border border-light rounded-lg overflow-hidden;
@@ -302,6 +329,12 @@
 }
 
 .dz-thumbnail-preview {
+  --dz-dropbox-size: --spacing(15);
+  --dz-thumbnail-size: --spacing(14);
+  --dz-thumbnail-border-width: 1px;
+  --dz-thumbnail-border-color: var(--border-color-light);
+  --dz-thumbnail-border-radius: var(--radius-lg);
+
   @layer base {
     @apply mt-4 flex flex-wrap items-center gap-2;
 
@@ -309,7 +342,11 @@
       @apply relative;
 
       .dz-image {
-        @apply size-14 border border-light rounded-lg overflow-hidden;
+        @apply size-[var(--dz-thumbnail-size)] 
+        border-[length:var(--dz-thumbnail-border-width)] 
+        border-[var(--dz-thumbnail-border-color)] 
+        rounded-[var(--dz-thumbnail-border-radius)] 
+        overflow-hidden;
 
         & > img {
           @apply object-cover size-full;
@@ -322,8 +359,8 @@
         -right-1 
         size-3 
         flex items-center justify-center 
-        text-white dark:text-black
-        bg-dark dark:bg-white 
+        text-contrast
+        bg-dark dark:bg-white
         rounded-full;
       }
     }
@@ -332,11 +369,11 @@
       @apply mt-0;
 
       .dz-image {
-        @apply size-15;
+        @apply size-[var(--dz-dropbox-size)];
       }
 
       .dropzone {
-        @apply p-0 size-15 rounded-lg order-last;
+        @apply p-0 size-[var(--dz-dropbox-size)] rounded-lg order-last;
 
         .dz-message {
           @apply m-0 size-full flex items-center justify-center;

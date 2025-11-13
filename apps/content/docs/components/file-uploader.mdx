@@ -284,3 +284,31 @@ Use the `dz-dropbox-preview` modifier with `dz-thumbnail-preview` to create a bo
     },
   });`}
 />
+
+## CSS variables
+
+File uploader styles can be customized using the following CSS variables.
+
+<Example showPreview={false} lang='sass' code={`.dropzone {
+    --dropzone-padding: --spacing(6);
+    --dropzone-bg: var(--background-color-subtle);
+    --dropzone-border-color: var(--border-color-base);
+    --dropzone-border-radius: var(--radius-xl);
+    --dropzone-hover-border-color: var(--color-primary);
+    --dropzone-hover-bg: --alpha(var(--color-primary) / 5%);
+    --dropzone-avatar-overlay: --alpha(var(--color-contrast) / 70%);
+    --dropzone-avatar-size: --spacing(40);
+  }
+  .dz-list-preview {
+    --dz-list-padding: --spacing(2);
+    --dz-list-bg: var(--background-color-subtle);
+    --dz-list-border-radius: var(--radius-lg);
+  }
+  .dz-thumbnail-preview {
+    --dz-dropbox-size: --spacing(15);
+    --dz-thumbnail-size: --spacing(14);
+    --dz-thumbnail-border-width: 1px;
+    --dz-thumbnail-border-color: var(--border-color-light);
+    --dz-thumbnail-border-radius: var(--radius-lg);
+  }`} 
+/>
