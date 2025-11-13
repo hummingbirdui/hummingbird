@@ -2,23 +2,20 @@
 import { execSync } from 'child_process';
 import path from 'path';
 import fs from 'fs';
-
-const versionConfig = {
-  main: { base: '/', dest: '.' },
-  'v1.0': { base: '/v1.0', dest: 'v1.0' },
-  'v3.0': { base: '/v3.0', dest: 'v3.0' },
-};
+import { loadEnv } from 'vite';
+import { docVersions } from './deploy-config.js';
+const { PUBLIC_STAGING_SITE_URL, PUBLIC_SITE_URL } = loadEnv(process.env.NODE_ENV, process.cwd(), '');
 
 const deployTargets = {
   production: {
     repo: 'https://github.com/hummingbirdui/hummingbird.git',
     branch: 'gh-pages',
-    domain: 'hbui.dev',
+    domain: PUBLIC_SITE_URL,
   },
   staging: {
     repo: 'https://github.com/hummingbirdui/staging.git',
     branch: 'gh-pages',
-    domain: 'staging.hbui.dev',
+    domain: PUBLIC_STAGING_SITE_URL,
   },
 };
 
@@ -58,7 +55,7 @@ function branchExists(branch) {
 }
 
 function getVersionFromBranch(branch) {
-  const entry = Object.entries(versionConfig).find(([b]) => b === branch);
+  const entry = Object.entries(docVersions).find(([b]) => b === branch);
   return entry ? { branch, ...entry[1] } : null;
 }
 
@@ -82,7 +79,7 @@ function deployVersion(targetBranch, environment) {
   const versionInfo = getVersionFromBranch(targetBranch);
   if (!versionInfo) {
     console.error(`\n❌ Branch '${targetBranch}' is not configured`);
-    console.log('Available branches:', Object.keys(versionConfig).join(', '));
+    console.log('Available branches:', Object.keys(docVersions).join(', '));
     process.exit(1);
   }
 
@@ -159,7 +156,7 @@ function deployAll(environment) {
   const target = deployTargets[environment];
 
   console.log('Versions to deploy:\n');
-  Object.keys(versionConfig).forEach((branch) => {
+  Object.keys(docVersions).forEach((branch) => {
     const info = getVersionFromBranch(branch);
     const url = info.base === '/' ? `https://${target.domain}` : `https://${target.domain}${info.base}`;
     console.log(`  ✓ ${branch} → ${url}`);
@@ -167,7 +164,7 @@ function deployAll(environment) {
 
   console.log('\n');
 
-  for (const branch of Object.keys(versionConfig)) {
+  for (const branch of Object.keys(docVersions)) {
     deployVersion(branch, environment);
   }
 
@@ -199,7 +196,7 @@ Examples:
   npm run deploy:staging --all
 
 Available versions:
-${Object.entries(versionConfig)
+${Object.entries(docVersions)
   .map(([branch, config]) => `  ${branch.padEnd(20)} → ${config.base}`)
   .join('\n')}
   `);

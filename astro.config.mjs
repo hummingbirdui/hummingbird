@@ -7,39 +7,13 @@ import AutoImport from 'astro-auto-import';
 import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import { loadEnv } from 'vite';
+import { getBasePath } from './deploy-config.js';
 const { PUBLIC_STAGING_SITE_URL, PUBLIC_SITE_URL } = loadEnv(process.env.NODE_ENV, process.cwd(), '');
 
 const isDev = process.env.NODE_ENV === 'development';
 const isStaging = process.env.NODE_ENV === 'staging';
 const site = isDev ? 'http://localhost:4321/' : isStaging ? PUBLIC_STAGING_SITE_URL : PUBLIC_SITE_URL;
-
-// Get current git branch
-function getCurrentBranch() {
-  try {
-    return execSync('git rev-parse --abbrev-ref HEAD', { encoding: 'utf8' }).trim();
-  } catch {
-    return 'main';
-  }
-}
-
-// Map branches to base paths
-const branchToBase = {
-  main: '/',
-  'v1.0': '/v1.0',
-  'v3.0': '/v3.0',
-  // Add more versions as needed
-};
-
-// Determine base path
-function getBasePath() {
-  // In development, always use root
-  if (isDev) return '/';
-
-  const currentBranch = getCurrentBranch();
-  return branchToBase[currentBranch] || '/';
-}
-
-const base = getBasePath();
+const base = getBasePath(isDev);
 
 export default defineConfig({
   site: site,

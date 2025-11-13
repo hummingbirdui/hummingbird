@@ -63,8 +63,8 @@
     "build:docs": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "deploy": "node deploy-version.js production",
-    "deploy:staging": "node deploy-version.js staging"
+    "deploy": "node deployment.js production",
+    "deploy:staging": "node deployment.js staging"
   },
   "devDependencies": {
     "@astrojs/mdx": "^4.3.6",
@@ -85,7 +85,7 @@
     "@types/node": "^22.13.1",
     "@typescript-eslint/eslint-plugin": "^8.32.1",
     "@typescript-eslint/parser": "^8.32.1",
-    "astro": "^5.14.4",
+    "astro": "^5.15.5",
     "astro-auto-import": "^0.4.4",
     "bootstrap": "^5.3.8",
     "choices.js": "^11.1.0",
