@@ -3,12 +3,12 @@ import '../style.css';
 import Navbar from '@components/common/Navbar.astro';
 import Head from '@components/core/Head.astro';
 import Footer from '@components/common/Footer.astro';
-import { getConfig } from '@libs/config';
+import { getConfig, getVersionedPath } from '@libs/config';
 const { title: SITE_TITLE, description: SITE_DESCRIPTION } = getConfig();
 const { frontmatter } = Astro.props;
 const title = Astro.props.title ?? frontmatter?.title ?? SITE_TITLE;
 const description = frontmatter?.description ? frontmatter.description : SITE_DESCRIPTION;
-const isLanding = Astro.url.pathname === '/';
+const isLanding = Astro.url.pathname === getVersionedPath('/');
 ---
 
 <!doctype html>

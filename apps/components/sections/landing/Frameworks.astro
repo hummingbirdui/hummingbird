@@ -13,6 +13,7 @@ import reactD from '@assets/images/landing/frameworks/react-dark.svg';
 import svelte from '@assets/images/landing/frameworks/svelte.svg';
 import nuxt from '@assets/images/landing/frameworks/nuxt.svg';
 import vue from '@assets/images/landing/frameworks/vue.svg';
+import { getVersionedPath } from '@libs/config';
 
 const opacities = [
   'opacity-20',
@@ -62,7 +63,7 @@ const opacities = [
         & easy DIYs.
       </p>
       <a
-        href="/docs/getting-started/framework-guides"
+        href={getVersionedPath('/docs/getting-started/framework-guides')}
         type="button"
         class="self-center xl:self-start btn btn-subtle-primary">View integration guides</a
       >
@@ -112,13 +113,13 @@ const opacities = [
       >
       </div>
       <a
-        href="/docs/getting-started/framework-guides/django"
+        href={getVersionedPath('/docs/getting-started/framework-guides/django')}
         class="h-[62px] md:h-20 lg:h-25 xl:h-[110px] 2xl:h-[134px] aspect-square rounded-lg border border-light hover:border-primary bg-default flex items-center justify-center"
       >
         <Image src={django} alt="django" class="w-12 lg:w-16 object-contain" />
       </a>
       <a
-        href="/docs/getting-started/framework-guides/vue"
+        href={getVersionedPath('/docs/getting-started/framework-guides/vue')}
         class="h-[62px] md:h-20 lg:h-25 xl:h-[110px] 2xl:h-[134px] aspect-square rounded-lg border border-light hover:border-primary bg-default flex items-center justify-center"
       >
         <Image src={vue} alt="vue" class="w-12 lg:w-16 object-contain" />
@@ -140,19 +141,19 @@ const opacities = [
       >
       </div>
       <a
-        href="/docs/getting-started/framework-guides/nuxt"
+        href={getVersionedPath('/docs/getting-started/framework-guides/nuxt')}
         class="h-[62px] md:h-20 lg:h-25 xl:h-[110px] 2xl:h-[134px] aspect-square rounded-lg border border-light hover:border-primary bg-default flex items-center justify-center"
       >
         <Image src={nuxt} alt="nuxt" class="w-12 lg:w-16 object-contain" />
       </a>
       <a
-        href="/docs/getting-started/framework-guides/laravel"
+        href={getVersionedPath('/docs/getting-started/framework-guides/laravel')}
         class="h-[62px] md:h-20 lg:h-25 xl:h-[110px] 2xl:h-[134px] aspect-square rounded-lg border border-light hover:border-primary bg-default flex items-center justify-center"
       >
         <Image src={laravel} alt="laravel" class="w-12 lg:w-16 object-contain" />
       </a>
       <a
-        href="/docs/getting-started/framework-guides/next"
+        href={getVersionedPath('/docs/getting-started/framework-guides/next')}
         class="h-[62px] md:h-20 lg:h-25 xl:h-[110px] 2xl:h-[134px] aspect-square rounded-lg border border-light hover:border-primary bg-default flex items-center justify-center"
       >
         <img src={nextjsL.src} alt="nextjs" class="w-12 lg:w-16 object-contain dark:hidden" />
@@ -172,26 +173,26 @@ const opacities = [
       </div>
 
       <a
-        href="/docs/getting-started/framework-guides/react"
+        href={getVersionedPath('/docs/getting-started/framework-guides/react')}
         class="h-[62px] md:h-20 lg:h-25 xl:h-[110px] 2xl:h-[134px] aspect-square rounded-lg border border-light hover:border-primary bg-default flex items-center justify-center"
       >
         <img src={reactL.src} alt="react" class="w-12 lg:w-16 object-contain dark:hidden" />
         <img src={reactD.src} alt="react" class="w-12 lg:w-16 object-contain hidden dark:block" />
       </a>
       <a
-        href="/docs/getting-started/framework-guides/angular"
+        href={getVersionedPath('/docs/getting-started/framework-guides/angular')}
         class="h-[62px] md:h-20 lg:h-25 xl:h-[110px] 2xl:h-[134px] aspect-square rounded-lg border border-light hover:border-primary bg-default flex items-center justify-center"
       >
         <Image src={angular} alt="angular" class="w-12 lg:w-16 object-contain" />
       </a>
       <a
-        href="/docs/getting-started/framework-guides/svelte"
+        href={getVersionedPath('/docs/getting-started/framework-guides/svelte')}
         class="h-[62px] md:h-20 lg:h-25 xl:h-[110px] 2xl:h-[134px] aspect-square rounded-lg border border-light hover:border-primary bg-default flex items-center justify-center"
       >
         <Image src={svelte} alt="svelte" class="w-12 lg:w-16 object-contain" />
       </a>
       <a
-        href="/docs/getting-started/framework-guides/astro"
+        href={getVersionedPath('/docs/getting-started/framework-guides/astro')}
         class="h-[62px] md:h-20 lg:h-25 xl:h-[110px] 2xl:h-[134px] aspect-square rounded-lg border border-light hover:border-primary bg-default flex items-center justify-center"
       >
         <img src={astroL.src} alt="astro" class="w-10 lg:w-13 object-contain dark:hidden" />

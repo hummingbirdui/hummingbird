@@ -2,8 +2,7 @@
 import HeroCards from './HeroCards.astro';
 import CopyIcon from '@components/icons/CopyIcon.astro';
 import CheckIcon from '@components/icons/CheckIcon.astro';
-import { getConfig } from '@libs/config';
-const { docVersion } = getConfig();
+import { getVersionedPath } from '@libs/config';
 ---
 
 <section id="hero" class="relative px-4 sm:px-6 lg:px-10 xl:h-180 overflow-hidden">
@@ -28,7 +27,7 @@ const { docVersion } = getConfig();
         class="flex flex-col sm:flex-row items-center justify-center [@media(min-width:1368px)]:justify-start gap-4"
       >
         <a
-          href=`/${docVersion}/docs/getting-started/installation`
+          href=`${getVersionedPath('/docs/getting-started/installation')}`
           type="button"
           class="btn btn-primary btn-lg w-full sm:w-auto">Get Started</a
         >

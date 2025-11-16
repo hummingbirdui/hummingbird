@@ -1,4 +1,5 @@
 ---
+import { getVersionedPath } from '@libs/config';
 import sitemap from '../../sitemap';
 const segments = Astro.originPathname.split('/').filter(Boolean);
 const path = '/' + (segments.length > 3 ? segments.slice(0, 3) : segments).join('/') + '/';
@@ -35,7 +36,7 @@ const path = '/' + (segments.length > 3 ? segments.slice(0, 3) : segments).join(
             <div class="list-group w-full bg-transparent gap-0.5">
               {category.items.map((item) => (
                 <a
-                  href={item.path}
+                  href={getVersionedPath(item.path)}
                   class={`list-group-item list-group-item-action rounded-lg text-sm py-2 
                           ${path === item.path + '/' ? 'active text-primary-dark bg-primary-lighter' : 'text-default'}`}
                 >
