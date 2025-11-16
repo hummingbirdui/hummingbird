@@ -1,0 +1,105 @@
+---
+title: Date & Time picker
+description: A simple and customizable date-time picker built with flatpickr.js, offering clean UI, easy setup, and precise date and time selection.
+toc: true
+---
+
+<HbAlert type="info">The Date & Time picker component uses the  <a href="https://flatpickr.js.org/" target="_blank" class="text-default no-underline">**flatpickr.js**</a> plugin for its core functionality, while Hummingbird handles the visual styling. Please refer to the official <a href="https://flatpickr.js.org/getting-started/" target="_blank">flatpickr.js documentation</a> for initialization instructions.</HbAlert>
+
+## How to use
+
+#### 1. Install flatpickr.js
+
+<Example lang="bash" showPreview={false} code={`$ npm i flatpickr --save`} />
+
+#### 2. Import CSS
+
+Import styles after importing Tailwind and Hummingbird CSS:
+
+<Example showPreview={false} lang='css'
+  code={`@import '@hummingbirdui/hummingbird/src/plugins/flatpickr.css';`} />
+
+#### 3. Initialization
+
+<Example showPreview={false} lang='js'
+  code={`import flatpickr from "flatpickr";
+
+  // If using flatpickr in a framework, its recommended to pass the element directly
+  flatpickr(element, {});
+
+  // Otherwise, selectors are also supported
+  flatpickr("#myID", {});
+
+  // creates multiple instances
+  flatpickr(".anotherSelector");`}
+/>
+
+
+## Date picker
+
+<Example code={`<input id="datepicker" type="text" class="form-control" placeholder="dd-mm-yyyy" />`} />
+<Example lang='js' showPreview={false}
+  code={`flatpickr('#datepicker', { dateFormat: 'd-m-Y' });`} 
+/>
+
+## Time picker
+
+<Example code={`<input id="timepicker" type="text" class="form-control" placeholder="hh:mm" />`} />
+<Example lang='js' showPreview={false}
+  code={`flatpickr('#timepicker', { enableTime: true, noCalendar: true, dateFormat: 'H:i' });`} 
+/>
+
+## Date Time picker
+
+<Example code={`<input id="datetimepicker" type="text" class="form-control" placeholder="dd-mm-yyyy hh:mm" />`} />
+<Example lang='js' showPreview={false}
+  code={`flatpickr('#datetimepicker', { enableTime: true, dateFormat: 'd-m-Y H:i' });`} 
+/>
+
+## Date Range picker
+
+<Example code={`<input id="rangepicker" type="text" class="form-control" placeholder="d-m-y to d-m-y" />`} />
+<Example lang='js' showPreview={false}
+  code={`flatpickr('#rangepicker', { mode: 'range', dateFormat: 'd-m-Y' });`} 
+/>
+
+## Multiple dates
+
+<Example code={`<input id="multiple-dates" type="text" class="form-control" placeholder="dd-mm-yyyy" />`} />
+<Example lang='js' showPreview={false}
+  code={`flatpickr('#multiple-dates', { mode: 'multiple', dateFormat: 'd-m-Y' });`} 
+/>
+
+## External elements
+
+<Example code={`<div id="external-elements" class="input-group-icon">
+    <input type="text" class="form-control" placeholder="dd-mm-yyyy" data-input />
+    <svg class="form-control-icon-end" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="currentColor" d="M5 22q-.825 0-1.412-.587T3 20V6q0-.825.588-1.412T5 4h1V3q0-.425.288-.712T7 2t.713.288T8 3v1h8V3q0-.425.288-.712T17 2t.713.288T18 3v1h1q.825 0 1.413.588T21 6v14q0 .825-.587 1.413T19 22zm0-2h14V10H5zM5 8h14V6H5zm0 0V6z"/></svg>
+  </div>`}
+/>
+<Example lang='js' showPreview={false}
+  code={`flatpickr('#external-elements', { wrap: true, dateFormat: 'd-m-Y' });`} 
+/>
+
+## Inline Calendar
+
+<Example code={`<div id="inline-calendar" class="input-group-icon">
+    <input type="text" class="form-control" placeholder="dd-mm-yyyy" data-input />
+    <svg class="form-control-icon-end" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="currentColor" d="M5 22q-.825 0-1.412-.587T3 20V6q0-.825.588-1.412T5 4h1V3q0-.425.288-.712T7 2t.713.288T8 3v1h8V3q0-.425.288-.712T17 2t.713.288T18 3v1h1q.825 0 1.413.588T21 6v14q0 .825-.587 1.413T19 22zm0-2h14V10H5zM5 8h14V6H5zm0 0V6z"/></svg>
+  </div>
+  <div id="datepicker-inline"></div>`}
+/>
+<Example lang='js' showPreview={false}
+  code={`flatpickr('#inline-calendar', {
+    wrap: true,
+    inline: true,
+    appendTo: document.querySelector('#datepicker-inline'),
+  });`}
+/>
+
+
+
+
+
+
+

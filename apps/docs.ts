@@ -1,4 +1,5 @@
 import docsearch from '@docsearch/js';
+import flatpickrInit from './plugins/flatpickr';
 import Choices from 'choices.js';
 
 declare global {
@@ -85,6 +86,8 @@ document.addEventListener('DOMContentLoaded', () => {
       toastPlacement.className = `${toastPlacement.dataset.originalClass} ${this.value}`;
     });
   }
+
+  flatpickrInit();
 
   // Choices
   const hbChoices = document.querySelectorAll('[data-choices="data-choices"]');

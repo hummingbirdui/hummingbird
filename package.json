@@ -118,5 +118,8 @@
   "publishConfig": {
     "access": "public"
   },
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "flatpickr": "^4.6.13"
+  }
 }
