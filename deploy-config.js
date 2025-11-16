@@ -3,7 +3,6 @@ import { execSync } from 'child_process';
 export const docVersions = {
   main: { base: '/', dest: '.' },
   'v1.0': { base: '/v1.0', dest: 'v1.0' },
-  'v3.0': { base: '/v3.0', dest: 'v3.0' },
 };
 
 function getCurrentBranch() {

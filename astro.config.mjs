@@ -8,6 +8,7 @@ import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import { loadEnv } from 'vite';
 import { getBasePath } from './deploy-config.js';
+import { remarkBasePath } from './apps/libs/remark.ts';
 const { PUBLIC_STAGING_SITE_URL, PUBLIC_SITE_URL } = loadEnv(process.env.NODE_ENV, process.cwd(), '');
 
 const isDev = process.env.NODE_ENV === 'development';
@@ -26,11 +27,19 @@ export default defineConfig({
 
   integrations: [
     AutoImport({
-      imports: ['@components/docs/Example.astro', '@components/docs/HbTable.astro', '@components/docs/HbAlert.astro'],
+      imports: [
+        '@components/docs/Example.astro',
+        '@components/docs/HbTable.astro',
+        '@components/docs/HbAlert.astro',
+        {
+          './apps/libs/config.ts': ['getVersionedPath'],
+        },
+      ],
     }),
     mdx(),
   ],
   markdown: {
+    remarkPlugins: [[remarkBasePath, base]],
     shikiConfig: {
       themes: {
         light: 'github-light',
