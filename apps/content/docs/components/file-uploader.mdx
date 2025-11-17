@@ -284,3 +284,72 @@ Use the `dz-dropbox-preview` modifier with `dz-thumbnail-preview` to create a bo
     },
   });`}
 />
+
+## CSS variables
+
+File uploader styles can be customized using the following CSS variables.
+
+<Example showPreview={false} lang='sass' code={`.dropzone {
+    --dropzone-padding: --spacing(6);
+    --dropzone-bg: var(--background-color-subtle);
+    --dropzone-border-color: var(--border-color-base);
+    --dropzone-border-radius: var(--radius-xl);
+    --dropzone-hover-border-color: var(--color-primary);
+    --dropzone-hover-bg: --alpha(var(--color-primary) / 5%);
+    --dropzone-avatar-overlay: --alpha(var(--color-contrast) / 70%);
+    --dropzone-avatar-size: --spacing(40);
+
+    --dropzone-preview-margin: --spacing(4);
+    --dropzone-preview-size: --spacing(30);
+    --dropzone-preview-border-radius: var(--radius-xl);
+
+    --dropzone-details-padding: --spacing(8);
+    --dropzone-details-font-size: var(--text-xs);
+    --dropzone-details-color: var(--text-color-default);
+    --dropzone-details-bg: var(--background-color-muted);
+    --dropzone-details-border-radius: var(--radius-sm);
+
+    --dropzone-mark-size: --spacing(12);
+    --dropzone-mark-bg: --alpha(var(--color-dark) / 80%);
+    --dropzone-error-mark-bg: --alpha(var(--color-danger) / 80%);
+    --dropzone-success-mark-bg: --alpha(var(--color-success) / 80%);
+    --dropzone-mark-border-radius: calc(infinity * 1px);
+
+    --dropzone-progress-mark-height: --spacing(5);
+    --dropzone-progress-mark-border-width: 3px;
+    --dropzone-progress-mark-border-color: --alpha(var(--color-dark) / 80%);
+    --dropzone-progress-mark-border-radius: var(--radius-xl);
+    --dropzone-progress-mark-bg: --alpha(var(--color-dark) / 80%);
+    --dropzone-progress-mark-upload-bg: var(--color-white);
+    --dropzone-progress-mark-upload-radius: var(--radius-2xl);
+
+    --dropzone-error-message-padding: --spacing(2);
+    --dropzone-error-message-color: var(--color-white);
+    --dropzone-error-message-font-size: var(--text-xs);
+    --dropzone-error-message-width: --spacing(35);
+    --dropzone-error-message-bg: var(--color-danger-dark);
+    --dropzone-error-message-border-radius: var(--radius-lg);
+  }
+  .dz-list-preview {
+    --dz-list-padding: --spacing(2);
+    --dz-list-font-size: var(--text-sm);
+    --dz-list-bg: var(--background-color-subtle);
+    --dz-list-border-radius: var(--radius-lg);
+    --dz-list-image-size: --spacing(13);
+    --dz-list-image-border-width: 1px;
+    --dz-list-image-border-color: var(--border-color-light);
+    --dz-list-image-border-radius: var(--radius-lg);
+  }
+  .dz-thumbnail-preview {
+    --dz-dropbox-size: --spacing(15);
+    --dz-thumbnail-size: --spacing(14);
+    --dz-thumbnail-border-width: 1px;
+    --dz-thumbnail-border-color: var(--border-color-light);
+    --dz-thumbnail-border-radius: var(--radius-lg);
+    --dz-thumbnail-remove-btn-size: --spacing(3);
+    --dz-thumbnail-remove-btn-bg: var(--color-dark);
+    --dz-thumbnail-remove-btn-color: var(--color-white);
+    --dz-thumbnail-remove-btn-radius: calc(infinity * 1px);
+  }`}
+/>
+
