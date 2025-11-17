@@ -186,7 +186,6 @@ Local variables apply only to form-control, allowing fine-grained control over t
     --input-padding-y: var(--input-btn-padding-y);
     --input-line-height: var(--input-btn-line-height);
     --input-border-width: var(--input-btn-border-width);
-    --input-icon-spacing: --spacing(11);
   }
 
   .form-control-fill {
@@ -200,7 +199,6 @@ Local variables apply only to form-control, allowing fine-grained control over t
     --file-selector-btn-bg: var(--background-color-highlight);
     --file-selector-btn-color: var(--text-color-default);
     --file-selector-btn-hover-bg: var(--background-color-emphasis);
-    --input-icon-spacing: --spacing(11);
   }`}
 />
 
@@ -209,6 +207,8 @@ Local variables apply only to form-control, allowing fine-grained control over t
 <Example lang='sass' showPreview={false} code={`.input-group-icon {
     --input-icon-color: var(--color-active);
     --input-icon-font-size: var(--text-xl);
+    --input-icon-padding: --spacing(11);
+    --input-icon-spacing: var(--input-btn-padding-x);
 }`} />
 
 ### Form label variables
