@@ -1,6 +1,9 @@
 import docsearch from '@docsearch/js';
 import flatpickrInit from './plugins/flatpickr';
+import dropzoneInit from './plugins/dropzone';
+import { getConfig } from '@libs/config';
 import Choices from 'choices.js';
+import noUiSliderInit from './plugins/noUISlider';
 
 declare global {
   interface Window {
@@ -12,17 +15,17 @@ declare global {
 
 docsearch({
   container: '#docsearch',
-  appId: '9WZCQJVTTL',
-  indexName: 'hummingbird_docs',
-  apiKey: 'b2804af869f12be7d3c1f06e61e48e0d',
+  appId: getConfig().algolia.appId,
+  indexName: getConfig().algolia.indexName,
+  apiKey: getConfig().algolia.apiKey,
   placeholder: 'Search',
   maxResultsPerGroup: 15,
 });
 docsearch({
   container: '#docsearch-mobile',
-  appId: '9WZCQJVTTL',
-  indexName: 'hummingbird_docs',
-  apiKey: 'b2804af869f12be7d3c1f06e61e48e0d',
+  appId: getConfig().algolia.appId,
+  indexName: getConfig().algolia.indexName,
+  apiKey: getConfig().algolia.apiKey,
   placeholder: 'Search',
   maxResultsPerGroup: 15,
 });
@@ -86,6 +89,9 @@ document.addEventListener('DOMContentLoaded', () => {
       toastPlacement.className = `${toastPlacement.dataset.originalClass} ${this.value}`;
     });
   }
+  
+  dropzoneInit();
+});
 
   flatpickrInit();
 
@@ -110,4 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
       false,
     );
   });
+
+  // Plugin initialization
+  noUiSliderInit();
 });

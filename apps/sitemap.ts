@@ -121,9 +121,18 @@ const sitemap: Sitemap[] = [
         name: 'Validation',
         path: '/docs/components/validation',
       },
+    ],
+  },
+  {
+    subHeader: 'Advanced Forms',
+    items: [
       {
-        name: 'Advance Select',
-        path: '/docs/components/advance-select',
+        name: 'Advanced Select',
+        path: '/docs/forms/advanced-forms/advanced-select',
+      },
+      {
+        name: 'Advanced Range',
+        path: '/docs/forms/advanced-forms/advanced-range',
       },
     ],
   },
@@ -195,6 +204,10 @@ const sitemap: Sitemap[] = [
         path: '/docs/components/date-time-picker',
       },
       {
+        name: 'File uploader',
+        path: '/docs/components/file-uploader',
+      },
+      {
         name: 'List Group',
         path: '/docs/components/list-group',
       },
@@ -253,6 +266,10 @@ const sitemap: Sitemap[] = [
       {
         name: 'Tooltips',
         path: '/docs/components/tooltips',
+      },
+      {
+        name: 'Video',
+        path: '/docs/components/video',
       },
     ],
   },

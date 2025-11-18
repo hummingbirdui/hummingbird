@@ -4,6 +4,7 @@ import ChevronIcon from '@components/icons/ChevronIcon.astro';
 import GradientBorderBox from '../common/GradientBorderBox.astro';
 import SectionWrapper from '../common/SectionWrapper.astro';
 import StyleCard from './StyleCard.astro';
+import { getVersionedPath } from '@libs/config';
 ---
 
 <SectionWrapper id="global-styles" class="py-20 max-w-260">
@@ -19,7 +20,10 @@ import StyleCard from './StyleCard.astro';
       <p class="mb-6 text-muted text-center md:text-left max-w-120 md:max-w-105">
         Hummingbird employs a two-tier CSS framework that offers both global oversight and localized adaptability.
       </p>
-      <a type="button" href="/docs/customize/customization" class="flex -ml-4 btn btn-text-primary hover:bg-transparent"
+      <a
+        type="button"
+        href={getVersionedPath('/docs/customize/component')}
+        class="flex -ml-4 btn btn-text-primary hover:bg-transparent"
         >Learn more about customization<ChevronIcon />
       </a>
     </div>

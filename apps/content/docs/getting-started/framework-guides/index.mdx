@@ -8,7 +8,7 @@ import { frameworks } from 'apps/data/frameworks';
 <div class="mx-auto place-items-center grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 max-w-70 sm:max-w-full gap-6">
 {frameworks.map((item) => (
     <a
-        href={item.url}
+        href={getVersionedPath(item.url)}
         class="h-54 w-full rounded-lg border border-light hover:border-primary bg-default no-underline flex flex-col items-center justify-center"
     >
         <img src={item.logo.light.src} alt="astro" class="mb-5 w-20 object-contain dark:hidden" />

@@ -1,0 +1,208 @@
+---
+title: Advance Range Slider
+description: A lightweight range slider with advanced features for better user experience.
+toc: true
+classNames:
+  color:
+    - class: Default
+      desc: Primary color
+    - class: advanced-range-secondary
+      desc: Secondary color
+    - class: advanced-range-info
+      desc: Info color
+    - class: advanced-range-success
+      desc: Success color
+    - class: advanced-range-warning
+      desc: Warning color
+    - class: advanced-range-danger
+      desc: Danger color
+    - class: advanced-range-neutral
+      desc: Neutral color
+  size:
+    - class: advanced-range-sm
+      desc: Small size
+    - class: default
+      desc: Medium size (default)
+    - class: advanced-range-lg
+      desc: Large size
+---
+
+<HbAlert type="info">The Advanced Range Slider component uses the headless (unstyled) <a href="https://refreshless.com/nouislider/examples/" target="_blank">noUiSlider</a> plugin for its core functionality, while Hummingbird handles the visual styling. Please refer to the official <a href="https://refreshless.com/nouislider/" target="_blank">noUiSlider documentation</a> for initialization instructions.</HbAlert>
+
+## How to use
+
+#### 1. Install noUiSlider
+
+<Example lang="bash" showPreview={false} code={`npm install nouislider`} />
+
+#### 2. Import CSS
+
+Import styles after importing Tailwind and Hummingbird CSS:
+
+<Example showPreview={false} lang='css'
+  code={`@import '@hummingbirdui/hummingbird/src/plugins/nouislider.css';`} />
+
+#### 3. Initialization
+
+Basic initialization example with two handles:
+
+<Example showPreview={false} lang='js'
+  code={`const slider = document.querySelector('[data-nouislider="basic-example"]');
+
+  noUiSlider.create(slider, {
+    start: [20, 80],
+    connect: true,
+    range: {
+      min: 0,
+      max: 100,
+    },
+  });`} />
+
+For more options and configuration guidance, refer to the <a href="https://refreshless.com/nouislider/" target="_blank">noUiSlider documentation</a>.
+
+## Basic Example
+
+<Example code={`<div data-nouislider="basic-example"></div>`} />
+
+## Single Handle
+
+<Example code={`<div data-nouislider="single-handle"></div>`} />
+<Example showPreview={false} lang='js'
+  code={`const singleHandleSlider = document.querySelector('[data-nouislider="single-handle"]');
+
+  noUiSlider.create(singleHandleSlider, {
+    start: [20],
+    connect: 'lower',
+    range: {
+      min: 0,
+      max: 100,
+    },
+  });`} />
+
+## Steps
+<Example code={`<div data-nouislider="steps-slider"></div>`} />
+<Example showPreview={false} lang='js'
+  code={`const stepsSlider = document.querySelector('[data-nouislider="steps-slider"]');
+
+  noUiSlider.create(stepsSlider, {
+    start: [20, 80],
+    connect: true,
+    range: {
+      min: 0,
+      max: 100,
+    },
+    step: 10,
+  });`} />
+
+## With Tooltips
+
+<Example code={`<div data-nouislider="with-tooltips"></div>`} />
+<Example showPreview={false} lang='js'
+  code={`const tooltipSlider = document.querySelector('[data-nouislider="with-tooltips"]');
+
+  noUiSlider.create(tooltipSlider, {
+    start: [20, 80],
+    connect: true,
+    range: {
+      min: 0,
+      max: 100,
+    },
+    tooltips: true,
+  });`} />
+
+## Vertical Slider
+<Example class='h-80 flex justify-center' code={`<div data-nouislider="vertical-slider" class="h-64"></div>`} />
+<Example showPreview={false} lang='js'
+  code={`const verticalSlider = document.querySelector('[data-nouislider="vertical-slider"]');
+
+  noUiSlider.create(verticalSlider, {
+    start: [20, 80],
+    connect: true,
+    range: {
+      min: 0,
+      max: 100,
+    },
+    tooltips: true,
+    orientation: 'vertical',
+  });`} />
+
+## Pips
+
+<Example class='pb-18' code={`<div data-nouislider="pips-slider"></div>`} />
+<Example showPreview={false} lang='js'
+  code={`const pipsSlider = document.querySelector('[data-nouislider="pips-slider"]');
+
+  noUiSlider.create(pipsSlider, {
+    start: [100, 500],
+    connect: true,
+    range: {
+      min: 0,
+      max: 100,
+    },
+    tooltips: true,
+    pips: {
+      mode: 'steps',
+      values: [0, 125, 250, 375, 500],
+      stepped: true,
+      density: 25,
+    },
+  });`} />
+
+## Sizes
+
+Adjust the size using classes like `.advanced-range-sm` and `.advanced-range-lg` for small and large sliders. Default is medium.
+
+<Example class='flex flex-col gap-8' code={`<div class="advanced-range-sm" data-nouislider="size-variant"></div>
+  <div data-nouislider="size-variant"></div>
+  <div class="advanced-range-lg" data-nouislider="size-variant"></div>
+  `} />
+
+## Colors
+
+Use `.noUi-{color}` classes to change the slider color.
+
+<Example class='flex flex-col gap-8' code={`<div data-nouislider="color-slider"></div>
+  <div class="advanced-range-secondary" data-nouislider="color-slider"></div>
+  <div class="advanced-range-info" data-nouislider="color-slider"></div>
+  <div class="advanced-range-success" data-nouislider="color-slider"></div>
+  <div class="advanced-range-warning" data-nouislider="color-slider"></div>
+  <div class="advanced-range-danger" data-nouislider="color-slider"></div>
+  <div class="advanced-range-neutral" data-nouislider="color-slider"></div>
+  `} />
+
+## Disabled Slider
+
+Add `disabled` attribute to disable the slider.
+
+<Example code={`<div data-nouislider="disabled-slider" disabled></div>`} />
+
+## Customization
+
+### CSS Variables
+
+The Advanced Range Slider component utilizes several CSS variables for customization. Override these variables in the CSS to modify the appearance of the slider. Here are some of the key CSS variables used:
+
+<Example lang='sass' showPreview={false}
+  code={`.noUi-target {
+    --ar-color: var(--color-primary);
+    --ar-handle-width: --spacing(5);
+    --ar-handle-height: --spacing(5);
+    --ar-handle-border-radius: calc(infinity * 1px);
+    --ar-handle-box-shadow: --alpha(var(--ar-color) / 16%) 0px 0px 0px 8px;
+    --ar-handle-active-box-shadow: --alpha(var(--ar-color) / 16%) 0px 0px 0px 14px;
+    --ar-track-size: --spacing(1.5);
+    --ar-track-border-radius: var(--radius-xl);
+    --ar-horizontal-handle-right: --spacing(-2.5);
+    --ar-horizontal-handle-top: --spacing(-2);
+    --ar-vertical-handle-right: -6.5px;
+    --ar-vertical-handle-bottom: --spacing(-2.5);
+    --ar-disabled-bg: var(--color-disabled);
+    --ar-connect-disabled-bg: var(--color-disabled-color);
+    --ar-tooltip-color: var(--color-white);
+    --ar-tooltip-bg: var(--color-dark);
+    --ar-tooltip-font-size: var(--text-xs);
+  }`} />
+
+### noUiSlider Classes
+
+Customization also can be done via overriding noUiSlider default classes. Follow the <a href="https://refreshless.com/nouislider/more/#section-styling" target="_blank">noUiSlider styling documentation</a> for more details.
