@@ -121,9 +121,18 @@ const sitemap: Sitemap[] = [
         name: 'Validation',
         path: '/docs/components/validation',
       },
+    ],
+  },
+  {
+    subHeader: 'Advanced Forms',
+    items: [
       {
-        name: 'Advance Select',
-        path: '/docs/components/advance-select',
+        name: 'Advanced Select',
+        path: '/docs/forms/advanced-forms/advanced-select',
+      },
+      {
+        name: 'Advanced Range',
+        path: '/docs/forms/advanced-forms/advanced-range',
       },
     ],
   },
