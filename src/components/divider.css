@@ -1,0 +1,46 @@
+/* horizontal */
+@utility hr-label {
+  @layer base {
+    @apply py-3 flex items-center text-sm text-default;
+
+    &::before {
+      @apply content-[''] flex-1 border-t border-light me-4;
+    }
+    &::after {
+      @apply content-[''] flex-1 border-t border-light ms-4;
+    }
+  }
+}
+
+/* vertical */
+@utility vr {
+  @layer base {
+    @apply inline-block self-stretch border-s border-light min-h-6;
+  }
+}
+
+@utility vr-label {
+  @layer base {
+    @apply flex flex-col items-center text-sm text-default min-h-20;
+
+    &::before {
+      @apply content-[''] flex-1 border-s border-light mb-3;
+    }
+    &::after {
+      @apply content-[''] flex-1 border-s border-light mt-3;
+    }
+  }
+}
+
+/* modifiers */
+@utility label-start {
+  &::before {
+    @apply content-none;
+  }
+}
+
+@utility label-end {
+  &::after {
+    @apply content-none;
+  }
+}

@@ -1,0 +1,185 @@
+---
+title: Loader
+description: A visual indicator to show loading states. Supports spinners, bars, and pulsing effects, fully customizable with Tailwind utility classes.
+toc: true
+classNames:
+  component:
+    - class: spinner-border
+      desc: Border spinner
+    - class: spinner-grow
+      desc: Growing spinner
+    - class: loader-bar
+      desc: Bar loader
+  style:
+    - class: loader-bar-{color}
+      desc: Bar loader colors
+  size:
+    - class: spinner-border-sm
+      desc: Border spinner small
+    - class: spinner-grow-sm
+      desc: Growing spinner small
+---
+
+## Border spinner
+
+Add the `.spinner-border` class to create a circular loading spinner. Include a `<span class="sr-only">Loading...</span>` for screen-reader accessibility.
+
+<Example code={`<div class="spinner-border" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>`}
+/>
+
+Apply the color utility class `text-{color}` along with `.spinner-border` to change the spinner's color.
+
+<Example class='flex gap-2'
+  code={`<div class="spinner-border text-primary" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+  <div class="spinner-border text-secondary" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+  <div class="spinner-border text-success" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+  <div class="spinner-border text-danger" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+  <div class="spinner-border text-warning" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+  <div class="spinner-border text-info" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+  <div class="spinner-border text-light" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+  <div class="spinner-border text-dark" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>`}
+/>
+
+
+## Growing spinner
+
+Add the `.spinner-grow` class to create a pulsing loading indicator that grows and fades.
+
+<Example code={`<div class="spinner-grow" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>`}
+/>
+
+Apply the color utility class `text-{color}` along with `.spinner-grow` to change the spinner's color.
+
+<Example class='flex gap-2' code={`<div class="spinner-grow text-primary" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+  <div class="spinner-grow text-secondary" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+  <div class="spinner-grow text-success" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+  <div class="spinner-grow text-danger" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+  <div class="spinner-grow text-warning" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+  <div class="spinner-grow text-info" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+  <div class="spinner-grow text-light" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+  <div class="spinner-grow text-dark" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>`}
+/>
+
+## Size
+
+Add the `.spinner-border-sm` or `.spinner-grow-sm` class to create a smaller version of the spinner.
+
+<Example class="flex gap-2" code={`<div class="spinner-border spinner-border-sm" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+  <div class="spinner-grow spinner-grow-sm" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>`}
+/>
+
+Or, use Tailwind’s `size-*` utility with `.spinner-border` or `.spinner-grow` to set custom spinner dimensions.
+
+<Example class="flex gap-2" code={`<div class="spinner-border size-12" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+  <div class="spinner-grow size-12" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>`}
+/>
+
+## Buttons
+
+Place a `.spinner-border` inside a disabled `.btn` to indicate a loading state. Combine with text or use `.btn-square` for icon-only buttons.
+
+<Example class="flex gap-2" code={`<button class="btn btn-square btn-primary" type="button" disabled>
+    <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+    <span class="sr-only">Loading...</span>
+  </button>
+  <button class="btn btn-primary" type="button" disabled>
+    <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+    Loading...
+  </button>`}
+/>
+
+Or, use `.spinner-grow` for a grow animation inside disabled buttons.
+
+<Example class="flex gap-2" code={`<button class="btn btn-square btn-primary" type="button" disabled>
+    <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+    <span class="sr-only">Loading...</span>
+  </button>
+  <button class="btn btn-primary" type="button" disabled>
+    <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+    Loading...
+  </button>`}
+/>
+
+## Bar Loader
+
+Add the `.loader-bar` class to display a horizontal loading bar animation showing progress or activity.
+
+<Example code={`<div class="loader-bar"></div>`}/>
+
+Apply the color modifier class `loader-bar-{color}` along with `.loader-bar` to change the bar's color.
+
+<Example class="flex flex-col gap-3" code={`<div class="loader-bar"></div>
+  <div class="loader-bar loader-bar-secondary"></div>
+  <div class="loader-bar loader-bar-warning"></div>
+  <div class="loader-bar loader-bar-danger"></div>
+  <div class="loader-bar loader-bar-info"></div>
+  <div class="loader-bar loader-bar-success"></div>`}
+/>
+
+## CSS variables
+
+The Loader component is built using a set of CSS variables. These variables provide flexibility for customizing styles.
+
+<Example lang='sass' showPreview={false}
+  code={`.spinner-border {
+    --spinner-size: 2rem;
+    --spinner-border-width: --spacing(1);
+    --spinner-color: currentcolor;
+    --spinner-animation-speed: 0.75s;
+    --spinner-animation-name: spinner-border;
+  }`}
+/>
+
+<Example lang='sass' showPreview={false}
+  code={`.loader-bar {
+    --loader-bar-height: --spacing(1);
+    --loader-bar-bg: --alpha(var(--color-primary) / 25%);
+    --loader-bar-animate-bg: var(--color-primary);
+    --loader-bar-animation-speed: 2.1s;
+    --loader-bar-animation-delay: 1.15s;
+  }`}
+/>

@@ -1,4 +1,5 @@
 ---
+import { getVersionedPath } from '@libs/config';
 import SectionWrapper from './common/SectionWrapper.astro';
 ---
 
@@ -15,5 +16,7 @@ import SectionWrapper from './common/SectionWrapper.astro';
     to finally have it all.
   </p>
 
-  <a href="/docs/getting-started/introduction" type="button" class="mx-auto btn btn-primary">Explore Hummingbird</a>
+  <a href={getVersionedPath('/docs/getting-started/introduction')} type="button" class="mx-auto btn btn-primary"
+    >Explore Hummingbird</a
+  >
 </SectionWrapper>

@@ -1,4 +1,5 @@
 ---
+import { getVersionedPath } from '@libs/config';
 import type { Component } from 'apps/data/components';
 
 interface Props {
@@ -10,7 +11,7 @@ const { url, image, title, count } = component;
 ---
 
 <a
-  href={url}
+  href={getVersionedPath(url)}
   class="card card-action flex flex-col h-full w-full rounded-2xl bg-default overflow-hidden hover:border-primary"
 >
   <div class="grow flex items-center justify-center bg-subtle p-4 aspect-4/3">

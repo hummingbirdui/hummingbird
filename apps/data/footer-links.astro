@@ -9,7 +9,7 @@ import InstagramIcon from '@components/icons/InstagramIcon.astro';
 
 interface FooterLink {
   title: string;
-  links: { label: string; url: string }[];
+  links: { label: string; url: string; external?: boolean }[];
 }
 
 interface SocialLink {
@@ -25,13 +25,13 @@ export const footerLinks: FooterLink[] = [
       { label: 'About Us', url: '/about' },
       { label: 'Documentation', url: '/docs/getting-started/installation' },
       { label: 'Components', url: '/docs/components/overview' },
-      { label: 'Blog', url: 'https://hummingbirdui.medium.com/' },
+      { label: 'Blog', url: 'https://hummingbirdui.medium.com/', external: true },
     ],
   },
   {
     title: 'Policies',
     links: [
-      { label: 'License', url: 'https://github.com/hummingbirdui/hummingbird/blob/main/LICENSE' },
+      { label: 'License', url: 'https://github.com/hummingbirdui/hummingbird/blob/main/LICENSE', external: true },
       { label: 'Privacy policy', url: '/privacy-policy' },
       { label: 'Terms & conditions', url: '/terms-and-conditions' },
       { label: 'Brand guideline', url: '/brand-guideline' },
@@ -40,8 +40,8 @@ export const footerLinks: FooterLink[] = [
   {
     title: 'Help Center',
     links: [
-      { label: 'Contact us', url: 'mailto:hello@hbui.dev' },
-      { label: 'Hire us', url: 'https://themewagon.com/hire-us' },
+      { label: 'Contact us', url: 'mailto:hello@hbui.dev', external: true },
+      { label: 'Hire us', url: 'https://themewagon.com/hire-us', external: true },
     ],
   },
 ];

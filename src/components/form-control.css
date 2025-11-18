@@ -10,7 +10,6 @@
     --file-selector-btn-bg: var(--background-color-highlight);
     --file-selector-btn-color: var(--text-color-default);
     --file-selector-btn-hover-bg: var(--background-color-emphasis);
-    --input-icon-spacing: --spacing(11);
 
     @apply w-full
     appearance-none
@@ -39,12 +38,6 @@
       bg-[var(--input-focus-bg)]
       border-[var(--input-focus-border-color)];
     }
-    &.is-invalid {
-      @apply bg-[var(--color-danger-lighter)] border-[var(--color-danger)];
-    }
-    &.is-valid {
-      @apply bg-[var(--color-success-lighter)] border-[var(--color-success)];
-    }
     &[type='file'] {
       overflow: hidden;
 
@@ -66,16 +59,6 @@
     &:hover:not(:disabled):not([readonly])::file-selector-button {
       --file-selector-btn-bg: var(--file-selector-btn-hover-bg);
     }
-    &.is-invalid::file-selector-button {
-      --file-selector-btn-bg: var(--color-danger);
-      --file-selector-btn-color: var(--color-contrast);
-      --file-selector-btn-hover-bg: var(--color-danger-dark);
-    }
-    &.is-valid::file-selector-button {
-      --file-selector-btn-bg: var(--color-success);
-      --file-selector-btn-color: var(--color-contrast);
-      --file-selector-btn-hover-bg: var(--color-success-dark);
-    }
     &:is(:disabled, [disabled])::file-selector-button {
       --file-selector-btn-bg: var(--background-color-muted);
     }
@@ -90,7 +73,6 @@
     --input-padding-y: var(--input-btn-padding-y);
     --input-line-height: var(--input-btn-line-height);
     --input-border-width: var(--input-btn-border-width);
-    --input-icon-spacing: --spacing(11);
 
     @apply w-full
     block
@@ -121,13 +103,6 @@
       }
     }
 
-    &.is-invalid {
-      @apply border-[var(--color-danger)];
-    }
-    &.is-valid {
-      @apply border-[var(--color-success)];
-    }
-
     &[type='file'] {
       overflow: hidden;
 
@@ -153,27 +128,28 @@
   @layer base {
     --input-icon-color: var(--color-active);
     --input-icon-font-size: var(--text-xl);
-    --input-padding-x: var(--input-btn-padding-x);
+    --input-icon-padding: --spacing(11);
+    --input-icon-spacing: var(--input-btn-padding-x);
 
     @apply relative;
 
     &:has(> .form-control-icon-start) {
       .form-control-fill,
       .form-control {
-        @apply ps-[var(--input-icon-spacing)];
+        @apply ps-[var(--input-icon-padding)];
       }
     }
     &:has(> .form-control-icon-end) {
       .form-control-fill,
       .form-control {
-        @apply pe-[var(--input-icon-spacing)];
+        @apply pe-[var(--input-icon-padding)];
       }
     }
 
     &:has(.form-control-sm) {
       .form-control-icon-start,
       .form-control-icon-end {
-        --input-padding-x: --spacing(3);
+        --input-icon-spacing: --spacing(3);
         --input-icon-font-size: var(--text-sm);
       }
     }
@@ -188,14 +164,14 @@
 
 @utility form-control-icon-start {
   @layer base {
-    @apply absolute z-1 top-[50%] start-[var(--input-padding-x)] translate-y-[-50%]
+    @apply absolute z-1 top-[50%] start-[var(--input-icon-spacing)] translate-y-[-50%]
     text-[length:var(--input-icon-font-size)]
     text-[var(--input-icon-color)];
   }
 }
 @utility form-control-icon-end {
   @layer base {
-    @apply absolute z-1 top-[50%] end-[var(--input-padding-x)] translate-y-[-50%]
+    @apply absolute z-1 top-[50%] end-[var(--input-icon-spacing)] translate-y-[-50%]
     text-[length:var(--input-icon-font-size)]
     text-[var(--input-icon-color)];
   }
@@ -207,7 +183,7 @@
     --input-padding-y: --spacing(1.25);
     --input-radius: var(--radius-sm);
     --input-line-height: 1.25;
-    --input-icon-spacing: --spacing(8.5);
+    --input-icon-padding: --spacing(8.5);
   }
 }
 
@@ -215,7 +191,7 @@
   @layer base {
     --input-padding-y: --spacing(2.25);
     --input-font-size: var(--text-base);
-    --input-icon-spacing: --spacing(12);
+    --input-icon-padding: --spacing(12);
   }
 }
 @utility form-control-primary {
@@ -301,18 +277,6 @@
     &:where(:has(.form-control-warning, .form-select-warning)):focus-within {
       .form-label {
         --input-label-color: var(--color-warning);
-      }
-    }
-    &:where(:has(.is-invalid)),
-    &:where(:has(.is-invalid)):focus-within {
-      .form-label {
-        --input-label-color: var(--color-danger);
-      }
-    }
-    &:where(:has(.is-valid)),
-    &:where(:has(.is-valid)):focus-within {
-      .form-label {
-        --input-label-color: var(--color-success);
       }
     }
     &:has(input[disabled]) {

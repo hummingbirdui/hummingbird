@@ -1,0 +1,59 @@
+---
+title: Video
+description: The video component uses the HTML5 video element to embed video content in your application. It supports various attributes and events to control playback and enhance user experience.
+toc: true
+---
+
+## Basic example
+
+Use the `<video>` element to embed video content in an application. The `w-full` class ensures the video takes up the full width of its container.
+
+<Example code={`<video controls class="w-full">
+    <source src="/videos/hummingbird.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>`} />
+
+## Autoplay
+
+To make a video play automatically when the page loads, use the `autoplay` attribute. Note that some browsers may require the video to be muted for autoplay to work.
+
+<Example code={`<video controls autoplay class="w-full">
+    <source src="/videos/hummingbird.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>`} />
+
+## Muted
+
+To mute a video by default, use the `muted` attribute.
+
+<Example code={`<video controls muted class="w-full">
+    <source src="/videos/hummingbird.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>`} />
+
+## Loop
+
+To make a video loop continuously, use the `loop` attribute.
+
+<Example code={`<video controls loop class="w-full">
+    <source src="/videos/hummingbird.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>`} />
+
+## Size
+
+Adjust the size of the video using Tailwind CSS width and height utility classes.
+
+<Example code={`<video controls class="w-80 h-60">
+    <source src="/videos/hummingbird.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>`} />
+
+## Custom styles
+
+Apply custom styles to the video element using Tailwind CSS classes.
+
+<Example code={`<video controls class="max-w-150 h-auto rounded-lg border border-base">
+    <source src="/videos/hummingbird.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>`} />

@@ -118,8 +118,21 @@ const sitemap: Sitemap[] = [
         path: '/docs/components/input-group',
       },
       {
-        name: 'Advance Select',
-        path: '/docs/components/advance-select',
+        name: 'Validation',
+        path: '/docs/components/validation',
+      },
+    ],
+  },
+  {
+    subHeader: 'Advanced Forms',
+    items: [
+      {
+        name: 'Advanced Select',
+        path: '/docs/forms/advanced-forms/advanced-select',
+      },
+      {
+        name: 'Advanced Range',
+        path: '/docs/forms/advanced-forms/advanced-range',
       },
     ],
   },
@@ -175,6 +188,14 @@ const sitemap: Sitemap[] = [
         path: '/docs/components/close-button',
       },
       {
+        name: 'Custom Scrollbar',
+        path: '/docs/components/custom-scrollbar',
+      },
+      {
+        name: 'Divider',
+        path: '/docs/components/divider',
+      },
+      {
         name: 'Dropdowns',
         path: '/docs/components/dropdowns',
       },
@@ -189,6 +210,10 @@ const sitemap: Sitemap[] = [
       {
         name: 'Link',
         path: '/docs/components/link',
+      },
+      {
+        name: 'Loader',
+        path: '/docs/components/loaders',
       },
       {
         name: 'Modal',
@@ -211,10 +236,14 @@ const sitemap: Sitemap[] = [
         path: '/docs/components/pagination',
       },
       {
+        name: 'Placeholders',
+        path: '/docs/components/placeholders',
+      },
+      {
         name: 'Popovers',
         path: '/docs/components/popovers',
       },
-       {
+      {
         name: 'Progress',
         path: '/docs/components/progress',
       },
@@ -233,6 +262,10 @@ const sitemap: Sitemap[] = [
       {
         name: 'Tooltips',
         path: '/docs/components/tooltips',
+      },
+      {
+        name: 'Video',
+        path: '/docs/components/video',
       },
     ],
   },

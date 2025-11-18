@@ -1,12 +1,11 @@
 ---
 import BreadcrumbBar from '@components/docs/BreadcrumbBar.astro';
+import FrameworkSidebar from '@components/docs/FrameworkSidebar.astro';
 import Sidebar from '@components/docs/Sidebar.astro';
 import Toc from '@components/docs/Toc.astro';
 import InfoIcon from '@components/icons/InfoIcon.astro';
 import BaseLayout from '@layouts/BaseLayout.astro';
-import { frameworks } from 'apps/data/frameworks';
 const { headings, title, description, toc, redirects, classNames, attributeComponent, attributeLink } = Astro.props;
-const pathName = Astro.originPathname;
 
 interface ClassTableRow {
   class: string;
@@ -20,7 +19,7 @@ interface ClassTableRow {
     <div class="lg:grid lg:grid-cols-[15rem_1fr] max-w-8xl mx-auto h-full">
       <Sidebar />
       <main class=`content-wrapper xl:grid ${toc || redirects ? 'lg:grid-cols-[1fr_16.75rem]' : ''}`>
-        <div class={`py-10 lg:ps-10 xl:${toc || redirects ? 'pe-10' : 'pe-0'}`}>
+        <div class={`py-10 lg:ps-10 min-w-0 xl:${toc || redirects ? 'pe-10' : 'pe-0'}`}>
           <h1 class="mb-4 text-[32px]">{title}</h1>
           <p class="text-xl mb-10 font-light">{description}</p>
           {
@@ -163,57 +162,7 @@ interface ClassTableRow {
             </div>
           )
         }
-        {
-          redirects && (
-            <div class="min-w-67 ps-10 py-10 sticky top-[var(--navbar-height)] h-max hidden xl:block">
-              <a
-                href="/docs/getting-started/framework-guides"
-                class="-ml-1 mb-4 btn btn-link text-default no-underline"
-              >
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 20 20"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="!w-5"
-                >
-                  <path
-                    d="M11.2305 15.097L7.10547 10.972C7.03602 10.9026 6.98741 10.8331 6.95964 10.7637C6.93186 10.6942 6.91797 10.6178 6.91797 10.5345C6.91797 10.4512 6.93186 10.3748 6.95964 10.3053C6.98741 10.2359 7.03602 10.1664 7.10547 10.097L11.2513 5.95117C11.3763 5.82617 11.5256 5.76367 11.6992 5.76367C11.8728 5.76367 12.0221 5.82617 12.1471 5.95117C12.2721 6.07617 12.3312 6.22895 12.3242 6.40951C12.3173 6.59006 12.2513 6.74284 12.1263 6.86784L8.45964 10.5345L12.1471 14.222C12.2721 14.347 12.3346 14.4928 12.3346 14.6595C12.3346 14.8262 12.2721 14.972 12.1471 15.097C12.0221 15.222 11.8694 15.2845 11.6888 15.2845C11.5082 15.2845 11.3555 15.222 11.2305 15.097Z"
-                    fill="currentColor"
-                  />
-                </svg>
-                Back to frameworks
-              </a>
-              {frameworks.map((item) => (
-                <a
-                  href={item.url}
-                  class={`${pathName === item.url + '/' ? 'text-primary' : 'text-muted'} mb-4 ps-4 no-underline flex items-center justify-between`}
-                >
-                  <div class="flex items-center gap-3">
-                    <img src={item.logo.light.src} alt="astro" class="w-6 object-contain dark:hidden" />
-                    <img src={item.logo.dark.src} alt="astro" class="w-6 object-contain hidden dark:block" />
-                    <h6 class="mb-0 text-base font-medium">{item.name}</h6>
-                  </div>
-
-                  <svg
-                    width="20"
-                    height="20"
-                    viewBox="0 0 20 20"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="!w-5"
-                  >
-                    <path
-                      d="M7.37692 15.0972C7.2658 14.9583 7.20678 14.8055 7.19983 14.6388C7.19289 14.4722 7.25192 14.3263 7.37692 14.2013L11.0436 10.5347L7.35608 6.84718C7.24497 6.73606 7.19289 6.58676 7.19983 6.39926C7.20678 6.21176 7.2658 6.06245 7.37692 5.95134C7.5158 5.81245 7.66511 5.74648 7.82483 5.75343C7.98455 5.76037 8.12691 5.82634 8.25191 5.95134L12.3977 10.0972C12.4672 10.1666 12.5158 10.2361 12.5436 10.3055C12.5714 10.375 12.5852 10.4513 12.5852 10.5347C12.5852 10.618 12.5714 10.6944 12.5436 10.7638C12.5158 10.8333 12.4672 10.9027 12.3977 10.9722L8.27275 15.0972C8.14775 15.2222 8.00191 15.2812 7.83525 15.2743C7.66858 15.2673 7.5158 15.2083 7.37692 15.0972Z"
-                      fill="currentColor"
-                    />
-                  </svg>
-                </a>
-              ))}
-            </div>
-          )
-        }
+        {redirects && <FrameworkSidebar />}
       </main>
     </div>
   </div>

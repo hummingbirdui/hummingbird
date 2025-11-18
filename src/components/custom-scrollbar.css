@@ -1,0 +1,19 @@
+@utility scrollbar {
+  @layer base {
+    --scrollbar-size: --spacing(3);
+    --scrollbar-thumb-color: var(--background-color-emphasis);
+    --scrollbar-track-color: var(--background-color-muted);
+
+    @apply [&::-webkit-scrollbar]:w-[var(--scrollbar-size)]
+    [&::-webkit-scrollbar]:h-[var(--scrollbar-size)]
+    [&::-webkit-scrollbar-track]:bg-[var(--scrollbar-track-color)]
+    [&::-webkit-scrollbar-thumb]:bg-[var(--scrollbar-thumb-color)]
+    [&::-webkit-scrollbar-corner]:bg-transparent;
+  }
+}
+
+@utility scrollbar-rounded {
+  @layer base {
+    @apply [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:rounded-full;
+  }
+}

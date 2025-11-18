@@ -1,0 +1,276 @@
+/* Functional styling;
+ * These styles are required for noUiSlider to function.
+ * You don't need to change these rules to apply your design.
+ */
+.noUi-target {
+  --ar-color: var(--color-primary);
+  --ar-handle-width: --spacing(5);
+  --ar-handle-height: --spacing(5);
+  --ar-handle-border-radius: calc(infinity * 1px);
+  --ar-handle-box-shadow: --alpha(var(--ar-color) / 16%) 0px 0px 0px 8px;
+  --ar-handle-active-box-shadow: --alpha(var(--ar-color) / 16%) 0px 0px 0px 14px;
+  --ar-track-size: --spacing(1.5);
+  --ar-track-border-radius: var(--radius-xl);
+  --ar-horizontal-handle-right: --spacing(-2.5);
+  --ar-horizontal-handle-top: --spacing(-2);
+  --ar-vertical-handle-right: -6.5px;
+  --ar-vertical-handle-bottom: --spacing(-2.5);
+  --ar-disabled-bg: var(--color-disabled);
+  --ar-connect-disabled-bg: var(--color-disabled-color);
+  --ar-tooltip-color: var(--color-white);
+  --ar-tooltip-bg: var(--color-dark);
+  --ar-tooltip-font-size: var(--text-xs);
+
+  @apply relative bg-[--alpha(var(--ar-color)/30%)] rounded-[var(--ar-track-border-radius)];
+}
+.noUi-target,
+.noUi-target * {
+  @apply touch-none select-none box-border;
+}
+.noUi-base,
+.noUi-connects {
+  @apply w-full h-full relative z-1;
+}
+/* Wrapper for all connect elements.
+ */
+.noUi-connects {
+  @apply overflow-hidden z-0 rounded-[var(--ar-track-border-radius)];
+}
+.noUi-connect,
+.noUi-origin {
+  @apply will-change-transform
+  absolute z-1 top-0 end-0
+  w-full h-full
+  origin-[0_0]
+  transform-flat;
+}
+/* Offset direction
+ */
+.noUi-txt-dir-rtl {
+  &.noUi-horizontal {
+    .noUi-origin {
+      @apply left-0 right-auto;
+    }
+    .noUi-handle {
+      @apply -left-2.5 right-auto;
+    }
+  }
+}
+/* Give origins 0 height/width so they don't interfere with clicking the
+ * connect elements.
+ */
+.noUi-handle {
+  @apply absolute backface-hidden
+  rounded-full bg-[var(--ar-color)] cursor-pointer;
+  &:hover,
+  &:focus {
+    @apply shadow-[var(--ar-handle-box-shadow)];
+  }
+}
+.noUi-touch-area {
+  @apply w-full h-full;
+}
+.noUi-state-tap {
+  .noUi-connect,
+  .noUi-origin {
+    @apply transition-transform duration-300;
+  }
+}
+.noUi-state-drag * {
+  @apply cursor-[inherit]!;
+}
+/* Handles and cursors;
+ */
+.noUi-draggable {
+  @apply cursor-ew-resize;
+}
+
+/* Slider size and handle placement;
+ */
+.noUi-horizontal {
+  @apply h-[var(--ar-track-size)];
+  .noUi-handle {
+    @apply w-[var(--ar-handle-width)] h-[var(--ar-handle-width)] 
+    right-[var(--ar-horizontal-handle-right)]
+    top-[var(--ar-horizontal-handle-top)];
+  }
+  .noUi-origin {
+    @apply h-0;
+    > .noUi-tooltip {
+      @apply translate-x-1/2 left-auto bottom-2.5;
+    }
+  }
+  .noUi-tooltip {
+    @apply -translate-x-1/2 left-1/2 bottom-full mb-1;
+  }
+}
+
+.noUi-vertical {
+  @apply w-[var(--ar-track-size)];
+  .noUi-handle {
+    @apply w-[var(--ar-handle-width)] h-[var(--ar-handle-width)]
+    right-[var(--ar-vertical-handle-right)]
+    bottom-[var(--ar-vertical-handle-bottom)];
+  }
+  .noUi-origin {
+    @apply -top-full w-0;
+    > .noUi-tooltip {
+      @apply -translate-y-4.5 top-auto right-7;
+    }
+  }
+  .noUi-draggable {
+    @apply cursor-ns-resize;
+  }
+  .noUi-tooltip {
+    @apply -translate-y-1/2 top-1/2 right-full mr-1;
+  }
+}
+/* Styling;
+ * Giving the connect element a border radius causes issues with using transform: scale
+ */
+.noUi-connect {
+  @apply bg-[var(--ar-color)];
+}
+
+.noUi-active {
+  @apply shadow-[var(--ar-handle-active-box-shadow)];
+  &:hover,
+  &:focus {
+    @apply shadow-[var(--ar-handle-active-box-shadow)];
+  }
+}
+
+/* Disabled state;
+ */
+[disabled] {
+  .noUi-connect {
+    @apply bg-[var(--ar-connect-disabled-bg)];
+  }
+  &.noUi-target {
+    @apply bg-[var(--ar-disabled-bg)] cursor-not-allowed;
+  }
+  &.noUi-handle,
+  .noUi-handle {
+    @apply bg-[var(--ar-connect-disabled-bg)] cursor-not-allowed;
+  }
+}
+/* Base;
+ *
+ */
+.noUi-pips,
+.noUi-pips * {
+  @apply box-border;
+}
+.noUi-pips {
+  @apply absolute text-muted;
+}
+/* Values;
+ *
+ */
+.noUi-value {
+  @apply absolute whitespace-nowrap text-center;
+}
+.noUi-value-sub {
+  @apply text-xs text-subtle;
+}
+/* Markings;
+ *
+ */
+.noUi-marker {
+  @apply absolute bg-emphasis;
+}
+.noUi-marker-sub {
+  @apply bg-highlight;
+}
+.noUi-marker-large {
+  @apply bg-emphasis;
+}
+/* Horizontal layout;
+ *
+ */
+.noUi-pips-horizontal {
+  @apply py-2.5 h-20 top-full left-0 w-full;
+}
+.noUi-value-horizontal {
+  @apply -translate-x-1/2 translate-y-1/2 mt-1;
+}
+.noUi-rtl .noUi-value-horizontal {
+  @apply translate-1/2;
+}
+.noUi-marker-horizontal {
+  &.noUi-marker {
+    @apply -ml-[1px] w-0.5 h-1.5;
+  }
+  &.noUi-marker-sub {
+    @apply h-2.5;
+  }
+  &.noUi-marker-large {
+    @apply h-4;
+  }
+}
+
+/* Vertical layout;
+ *
+ */
+.noUi-pips-vertical {
+  @apply px-2.5 h-full top-0 left-full;
+}
+.noUi-value-vertical {
+  @apply -translate-y-1/2 ml-6;
+}
+.noUi-rtl .noUi-value-vertical {
+  @apply translate-y-1/2;
+}
+.noUi-marker-vertical {
+  &.noUi-marker {
+    @apply w-1.5 h-0.5 -mt-[1px];
+  }
+  &.noUi-marker-sub {
+    @apply w-2.5;
+  }
+  &.noUi-marker-large {
+    @apply w-4;
+  }
+}
+.noUi-tooltip {
+  @apply block absolute rounded-sm
+  bg-[var(--ar-tooltip-bg)]
+  text-[var(--ar-tooltip-color)]
+  text-[length:var(--ar-tooltip-font-size)]
+  px-2.5 py-2
+  text-center whitespace-nowrap;
+}
+
+.advanced-range-sm {
+  --ar-handle-width: --spacing(3);
+  --ar-handle-height: --spacing(3);
+  --ar-track-size: --spacing(0.75);
+  --ar-horizontal-handle-top: --spacing(-1);
+  --ar-vertical-handle-right: -4px;
+}
+.advanced-range-lg {
+  --ar-handle-width: --spacing(6);
+  --ar-handle-height: --spacing(6);
+  --ar-track-size: --spacing(2.5);
+  --ar-horizontal-handle-top: --spacing(-2);
+  --ar-vertical-handle-right: -7px;
+}
+
+.advanced-range-secondary {
+  --ar-color: var(--color-secondary);
+}
+.advanced-range-info {
+  --ar-color: var(--color-info);
+}
+.advanced-range-success {
+  --ar-color: var(--color-success);
+}
+.advanced-range-warning {
+  --ar-color: var(--color-warning);
+}
+.advanced-range-danger {
+  --ar-color: var(--color-danger);
+}
+.advanced-range-neutral {
+  --ar-color: var(--text-color-default);
+}

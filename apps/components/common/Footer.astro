@@ -1,8 +1,9 @@
 ---
 import hummingbird from '@assets/images/logos/hummingbird.svg';
+import { getVersionedPath } from '@libs/config';
 import { footerLinks, socialLinks } from 'apps/data/footer-links.astro';
 import { Image } from 'astro:assets';
-const isLanding = Astro.url.pathname === '/';
+const isLanding = Astro.url.pathname === getVersionedPath('/');
 ---
 
 <footer
@@ -34,9 +35,13 @@ const isLanding = Astro.url.pathname === '/';
           <div class="col-span-5 sm:col-span-4 md:col-span-2">
             <h3 class="mb-5 text-sm font-bold text-subtle">{title}</h3>
             <ul class="list-none p-0 space-y-5">
-              {links.map(({ label, url }) => (
+              {links.map(({ label, url, external }) => (
                 <li class="text-sm">
-                  <a href={url} target={label === 'Blog' ? '_blank' : undefined} class="no-underline text-default">
+                  <a
+                    href={external ? url : getVersionedPath(url)}
+                    target={external ? '_blank' : undefined}
+                    class="no-underline text-default"
+                  >
                     {label}
                   </a>
                 </li>

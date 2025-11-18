@@ -4,7 +4,7 @@ description: Hummingbird provides various UI components to improve web applicati
 toc: true
 ---
 
-import { general, dataDisplay, dataEntry, feedback, navigation } from 'apps/data/components';
+import { general, dataDisplay, dataEntry, feedback, navigation, layout } from 'apps/data/components';
 import ComponentCard from '@components/sections/components/ComponentCard.astro';
 
 ## General
@@ -43,6 +43,14 @@ import ComponentCard from '@components/sections/components/ComponentCard.astro';
 
 <div class="flex-2 mx-auto place-items-center grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 max-w-70 sm:max-w-full gap-6">
 {navigation.map((item) => (
+  <ComponentCard component={item} />
+))}
+</div>
+
+## Layout
+
+<div class="flex-2 mx-auto place-items-center grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 max-w-70 sm:max-w-full gap-6">
+{layout.map((item) => (
   <ComponentCard component={item} />
 ))}
 </div>
