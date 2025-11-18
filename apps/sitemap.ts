@@ -83,43 +83,43 @@ const sitemap: Sitemap[] = [
     items: [
       {
         name: 'Form Control',
-        path: '/docs/components/form-control',
+        path: '/docs/forms/form-control',
       },
       {
         name: 'Floating labels',
-        path: '/docs/components/floating-labels',
+        path: '/docs/forms/floating-labels',
       },
       {
         name: 'Select',
-        path: '/docs/components/select',
+        path: '/docs/forms/select',
       },
       {
         name: 'File Input',
-        path: '/docs/components/file-input',
+        path: '/docs/forms/file-input',
       },
       {
         name: 'Checkbox',
-        path: '/docs/components/checkbox',
+        path: '/docs/forms/checkbox',
       },
       {
         name: 'Radio',
-        path: '/docs/components/radio',
+        path: '/docs/forms/radio',
       },
       {
         name: 'Switch',
-        path: '/docs/components/switch',
+        path: '/docs/forms/switch',
       },
       {
         name: 'Range',
-        path: '/docs/components/range',
+        path: '/docs/forms/range',
       },
       {
         name: 'Input Group',
-        path: '/docs/components/input-group',
+        path: '/docs/forms/input-group',
       },
       {
         name: 'Validation',
-        path: '/docs/components/validation',
+        path: '/docs/forms/validation',
       },
     ],
   },
@@ -129,6 +129,14 @@ const sitemap: Sitemap[] = [
       {
         name: 'Advanced Select',
         path: '/docs/forms/advanced-forms/advanced-select',
+      },
+      {
+        name: 'Date Time Picker',
+        path: '/docs/forms/advanced-forms/date-time-picker',
+      },
+      {
+        name: 'File Uploader',
+        path: '/docs/forms/advanced-forms/file-uploader',
       },
       {
         name: 'Advanced Range',
@@ -200,14 +208,6 @@ const sitemap: Sitemap[] = [
         path: '/docs/components/dropdowns',
       },
       {
-        name: 'Date Time picker',
-        path: '/docs/components/date-time-picker',
-      },
-      {
-        name: 'File uploader',
-        path: '/docs/components/file-uploader',
-      },
-      {
         name: 'List Group',
         path: '/docs/components/list-group',
       },
@@ -216,7 +216,7 @@ const sitemap: Sitemap[] = [
         path: '/docs/components/link',
       },
       {
-        name: 'Loader',
+        name: 'Loaders',
         path: '/docs/components/loaders',
       },
       {

@@ -110,7 +110,7 @@ export interface Section {
 
 export const general: Component[] = [
   {
-    title: 'Button',
+    title: 'Buttons',
     url: '/docs/components/buttons',
     count: 11,
     image: { light: button, dark: buttonDark },
@@ -124,7 +124,7 @@ export const general: Component[] = [
   {
     title: 'Close Button',
     url: '/docs/components/close-button',
-    count: 12,
+    count: 3,
     image: { light: closeButton, dark: closeButtonDark },
   },
   {
@@ -137,14 +137,14 @@ export const general: Component[] = [
 
 export const dataDisplay: Component[] = [
   {
-    title: 'Avatar',
-    url: '/docs/components/avatar',
+    title: 'Avatars',
+    url: '/docs/components/avatars',
     count: 7,
     image: { light: avatar, dark: avatarDark },
   },
   {
-    title: 'Badge',
-    url: '/docs/components/badge',
+    title: 'Badges',
+    url: '/docs/components/badges',
     count: 10,
     image: { light: badge, dark: badgeDark },
   },
@@ -161,21 +161,21 @@ export const dataDisplay: Component[] = [
     image: { light: listGroup, dark: listGroupDark },
   },
   {
-    title: 'Table',
-    url: '/docs/components/table',
+    title: 'Tables',
+    url: '/docs/components/tables',
     count: 13,
     image: { light: table, dark: tableDark },
   },
   {
-    title: 'Tooltip',
-    url: '/docs/components/tooltip',
+    title: 'Tooltips',
+    url: '/docs/components/tooltips',
     count: 4,
     image: { light: tooltip, dark: tooltipDark },
   },
   {
     title: 'Video',
     url: '/docs/components/video',
-    count: 4,
+    count: 6,
     image: { light: video, dark: videoDark },
   },
 ];
@@ -184,87 +184,87 @@ export const dataEntry: Component[] = [
   {
     title: 'Advanced Range',
     url: '/docs/forms/advanced-forms/advanced-range',
-    count: 6,
+    count: 9,
     image: { light: advancedRange, dark: advancedRangeDark },
   },
   {
     title: 'Advanced Select',
     url: '/docs/forms/advanced-forms/advanced-select',
-    count: 6,
+    count: 7,
     image: { light: advancedSelect, dark: advancedSelectDark },
   },
   {
     title: 'Checkbox',
-    url: '/docs/components/checkbox',
+    url: '/docs/forms/checkbox',
     count: 6,
     image: { light: checkbox, dark: checkboxDark },
   },
   {
     title: 'File Input',
-    url: '/docs/components/file-input',
+    url: '/docs/forms/file-input',
     count: 7,
     image: { light: fileInput, dark: fileInputDark },
   },
   {
     title: 'Floating labels',
-    url: '/docs/components/floating-labels',
+    url: '/docs/forms/floating-labels',
     count: 8,
     image: { light: floatingLabels, dark: floatingLabelsDark },
   },
   {
     title: 'Form Controls',
-    url: '/docs/components/form-control',
+    url: '/docs/forms/form-control',
     count: 8,
     image: { light: formControls, dark: formControlsDark },
   },
   {
     title: 'Form Validation',
-    url: '/docs/components/form-validation',
-    count: 8,
+    url: '/docs/forms/validation',
+    count: 5,
     image: { light: validation, dark: validationDark },
   },
   {
     title: 'Input Group',
-    url: '/docs/components/input-group',
+    url: '/docs/forms/input-group',
     count: 12,
     image: { light: inputGroup, dark: inputGroupDark },
   },
   {
     title: 'Radio',
-    url: '/docs/components/radio',
+    url: '/docs/forms/radio',
     count: 6,
     image: { light: radio, dark: radioDark },
   },
   {
     title: 'Range',
-    url: '/docs/components/range',
+    url: '/docs/forms/range',
     count: 6,
     image: { light: range, dark: rangeDark },
   },
   {
     title: 'Select',
-    url: '/docs/components/select',
+    url: '/docs/forms/select',
     count: 6,
     image: { light: select, dark: selectDark },
   },
   {
     title: 'Switch',
-    url: '/docs/components/switch',
+    url: '/docs/forms/switch',
     count: 4,
     image: { light: swItch, dark: swItchDark },
   },
   {
     title: 'File Uploader',
-    url: '/docs/components/file-uploader',
-    count: 4,
+    url: '/docs/forms/advanced-forms/file-uploader',
+    count: 5,
     image: { light: uploader, dark: uploaderDark },
   },
 ];
 
 export const feedback: Component[] = [
   {
-    title: 'Alert',
-    url: '/docs/components/alert',
+    title: 'Alerts',
+    url: '/docs/components/alerts',
     count: 6,
     image: { light: alert, dark: alertDark },
   },
@@ -275,32 +275,32 @@ export const feedback: Component[] = [
     image: { light: modal, dark: modalDark },
   },
   {
-    title: 'Placeholder',
-    url: '/docs/components/placeholder',
-    count: 8,
+    title: 'Placeholders',
+    url: '/docs/components/placeholders',
+    count: 6,
     image: { light: placeholder, dark: placeholderDark },
   },
   {
-    title: 'Popover',
-    url: '/docs/components/popover',
-    count: 8,
+    title: 'Popovers',
+    url: '/docs/components/popovers',
+    count: 7,
     image: { light: popover, dark: popoverDark },
   },
   {
     title: 'Progress',
     url: '/docs/components/progress',
-    count: 8,
+    count: 9,
     image: { light: progress, dark: progressDark },
   },
   {
-    title: 'Loader',
-    url: '/docs/components/loader',
-    count: 8,
+    title: 'Loaders',
+    url: '/docs/components/loaders',
+    count: 5,
     image: { light: loader, dark: loaderDark },
   },
   {
-    title: 'Toast',
-    url: '/docs/components/toast',
+    title: 'Toasts',
+    url: '/docs/components/toasts',
     count: 8,
     image: { light: toast, dark: toastDark },
   },
@@ -332,7 +332,7 @@ export const navigation: Component[] = [
     image: { light: collapse, dark: collapseDark },
   },
   {
-    title: 'Dropdown',
+    title: 'Dropdowns',
     url: '/docs/components/dropdowns',
     count: 15,
     image: { light: dropdown, dark: dropdownDark },
@@ -358,13 +358,13 @@ export const navigation: Component[] = [
   {
     title: 'Pagination',
     url: '/docs/components/pagination',
-    count: 7,
+    count: 10,
     image: { light: pagination, dark: paginationDark },
   },
   {
     title: 'Scrollspy',
     url: '/docs/components/scrollspy',
-    count: 7,
+    count: 4,
     image: { light: scrollspy, dark: scrollspyDark },
   },
 ];
@@ -373,13 +373,13 @@ export const layout: Component[] = [
   {
     title: 'Custom Scrollbar',
     url: '/docs/components/custom-scrollbar',
-    count: 7,
+    count: 4,
     image: { light: customScrollbar, dark: customScrollbarDark },
   },
   {
     title: 'Divider',
     url: '/docs/components/divider',
-    count: 7,
+    count: 5,
     image: { light: divider, dark: dividerDark },
   },
 ];
