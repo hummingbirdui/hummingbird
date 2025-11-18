@@ -28,6 +28,8 @@ const getBgImage = (color: string) => {
       return `linear-gradient(var(--background-color-default), var(--background-color-default)), linear-gradient(var(--gradient-angle), var(--color-primary-lighter) 0.36%, var(--color-primary-dark) 99.64%)`;
     case 'info-dark':
       return `linear-gradient(var(--background-color-default), var(--background-color-default)), linear-gradient(var(--gradient-angle), var(--color-info-lighter) 0.36%, var(--color-info-dark) 99.64%)`;
+    case 'error-dark':
+      return `linear-gradient(var(--background-color-default), var(--background-color-default)), linear-gradient(var(--gradient-angle), var(--color-danger-lighter) 0.36%, var(--color-danger-dark) 99.64%)`;
     default:
       return `linear-gradient(var(--background-color-default), var(--background-color-default)), linear-gradient(var(--gradient-angle), var(--color-primary-lighter) 0.36%, var(--color-primary-light) 99.64%)`;
   }

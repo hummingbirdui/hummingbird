@@ -8,7 +8,7 @@ import { getVersionedPath } from '@libs/config';
 
 <SectionWrapper
   id="interactive-components"
-  class="lg:!pt-40 max-w-315 flex flex-col lg:flex-row items-center justify-between gap-10 sm:gap-30 lg:gap-8 xl:gap-10"
+  class="lg:!pt-40 max-w-315 flex flex-col lg:flex-row items-center justify-between gap-10"
 >
   <div class="flex flex-col items-center lg:items-start">
     <h1 class="mb-4 text-[28px] md:text-[32px] lg:text-[42px] text-center lg:text-left font-medium tracking-tighter">
@@ -28,6 +28,6 @@ import { getVersionedPath } from '@libs/config';
   </div>
 
   <div class="shrink-0 grid grid-cols-2 sm:grid-cols-3 gap-4">
-    {jsComponents.map((item, i, arr) => <ComponentCard component={item} index={i} isLast={i === arr.length - 1} />)}
+    {jsComponents.map((item, i, arr) => <ComponentCard component={item} />)}
   </div>
 </SectionWrapper>
