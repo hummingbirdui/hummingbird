@@ -19,7 +19,7 @@ classNames:
     desc: Circular avatar uploader
 ---
 
-<HbAlert type="info">The File Uploader component uses the  <a href="https://www.dropzone.dev/" target="_blank" class="text-default no-underline">**Dropzone.js**</a> plugin for its core functionality, while Hummingbird handles the visual styling. Please refer to the official <a href="https://docs.dropzone.dev/" target="_blank">Dropzone.js documentation</a> for initialization instructions.</HbAlert>
+<HbAlert type="info">The File Uploader component uses the  <a href="https://www.dropzone.dev/" target="_blank">Dropzone.js</a> plugin for its core functionality, while Hummingbird handles the visual styling. Please refer to the official <a href="https://docs.dropzone.dev/" target="_blank">Dropzone.js documentation</a> for initialization instructions.</HbAlert>
 
 ## How to use
 
@@ -86,8 +86,8 @@ Use `dz-list-preview` to display files in a list style, `dz-preview-template` to
   </div>`} 
 />
 
-<Example lang="js" showPreview={false} code={`const previewsContainer = document.querySelector('[data-dz-preview="dz-list-preview"]') as HTMLElement;
-  const previewTemplate = previewsContainer.querySelector('.dz-preview-template') as HTMLElement;
+<Example lang="js" showPreview={false} code={`const previewsContainer = document.querySelector('[data-dz-preview="dz-list-preview"]');
+  const previewTemplate = previewsContainer.querySelector('.dz-preview-template');
 
   new Dropzone('[data-dropzone="dropzone-list-preview"]', {
     previewsContainer,
@@ -139,8 +139,8 @@ Use `dz-thumbnail-preview` to display files as thumbnails, `dz-preview-template`
   </div>`}
 />
 
-<Example lang="js" showPreview={false} code={`const previewsContainer = document.querySelector('[data-dz-preview="dz-thumbnail-preview"]') as HTMLElement;
-  const previewTemplate = previewsContainer.querySelector('.dz-preview-template') as HTMLElement;
+<Example lang="js" showPreview={false} code={`const previewsContainer = document.querySelector('[data-dz-preview="dz-thumbnail-preview"]');
+  const previewTemplate = previewsContainer.querySelector('.dz-preview-template');
 
   new Dropzone('[data-dropzone="dropzone-thumbnail-preview"]', {
     previewsContainer,
@@ -215,8 +215,8 @@ Use the `dz-dropbox-preview` modifier with `dz-thumbnail-preview` to create a bo
   </div>`}
 />
 
-<Example lang="js" showPreview={false} code={`const previewsContainer = document.querySelector('[data-dz-preview="dz-dropbox-preview"]') as HTMLElement;
-  const previewTemplate = previewsContainer.querySelector('.dz-preview-template') as HTMLElement;
+<Example lang="js" showPreview={false} code={`const previewsContainer = document.querySelector('[data-dz-preview="dz-dropbox-preview"]');
+  const previewTemplate = previewsContainer.querySelector('.dz-preview-template');
 
   new Dropzone('[data-dropzone="file-dropbox"]', {
     previewsContainer,
@@ -269,8 +269,8 @@ Use the `dz-dropbox-preview` modifier with `dz-thumbnail-preview` to create a bo
   </div>`}
 />
 
-<Example lang="js" showPreview={false} code={`const previewsContainer = document.querySelector('[data-dz-preview="dz-single-preview"]') as HTMLElement;
-  const previewTemplate = previewsContainer.querySelector('.dz-preview-template') as HTMLElement;
+<Example lang="js" showPreview={false} code={`const previewsContainer = document.querySelector('[data-dz-preview="dz-single-preview"]');
+  const previewTemplate = previewsContainer.querySelector('.dz-preview-template');
 
   new Dropzone('[data-dropzone="dropzone-single"]', {
     previewsContainer,
