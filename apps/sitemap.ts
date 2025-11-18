@@ -191,8 +191,8 @@ const sitemap: Sitemap[] = [
         path: '/docs/components/dropdowns',
       },
       {
-        name: 'DateTime Picker',
-        path: '/docs/components/datetime-picker',
+        name: 'Date Time picker',
+        path: '/docs/components/date-time-picker',
       },
       {
         name: 'List Group',

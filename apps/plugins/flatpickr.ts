@@ -6,6 +6,14 @@ const flatpickrInit = () => {
   flatpickr('#datetimepicker', { enableTime: true, dateFormat: 'd-m-Y H:i' });
   flatpickr('#rangepicker', { mode: 'range', dateFormat: 'd-m-Y' });
   flatpickr('#multiple-dates', { mode: 'multiple', dateFormat: 'd-m-Y' });
+  flatpickr('#disabled-dates', {
+    dateFormat: 'd-m-Y',
+    disable: [
+      function (date) {
+        return date.getDay() === 5 || date.getDay() === 6;
+      },
+    ],
+  });
   flatpickr('#external-elements', { wrap: true, dateFormat: 'd-m-Y' });
   flatpickr('#inline-calendar', {
     wrap: true,
