@@ -272,3 +272,138 @@ Toast component utilize several CSS variables for customization. Below is a list
     --toast-header-bg: var(--background-color-subtle);
     --toast-header-border-color: var(--border-color-base);
   }`} />
+
+## Usage
+
+Toasts are initialized via JavaScript:
+
+<Example lang="js" showPreview={false} code={`const toastElList = document.querySelectorAll('.toast')
+const toastList = [...toastElList].map(toastEl => new hummingbird.Toast(toastEl, option))`} />
+
+## Triggers
+
+Dismissal can be achieved with the `data-bs-dismiss="toast"` attribute on a button within the toast:
+
+<Example showPreview={false} 
+  code={`<button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>`} 
+/>
+
+Alternatively, dismissal can be triggered from a button **outside the toast** by including the `data-bs-target` attribute:
+
+<Example showPreview={false} 
+  code={`<button type="button" class="btn-close" data-bs-dismiss="toast" data-bs-target="#my-toast" aria-label="Close"></button>`} 
+/>
+
+## Options
+
+Options can be passed via data attributes or JavaScript. To pass an option via a data attribute, append its name to `data-bs-`, such as `data-bs-animation="true"`. The case type of the option name must be converted from “camelCase” to “kebab-case” when using data attributes.
+
+All components support an experimental `data-bs-config` attribute that can house simple component configuration as a JSON string. The final configuration object is a merged result where separate data attributes override values given on `data-bs-config`.
+
+
+<HbTable>
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Type</th>
+      <th scope="col">Default</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td scope="row">`animation`</td>
+      <td scope="row">boolean</td>
+      <td scope="row">`true`</td>
+      <td scope="row">Applies a CSS fade transition to the toast.</td>
+    </tr>
+     <tr>
+      <td scope="row">`autohide`</td>
+      <td scope="row">boolean</td>
+      <td scope="row">`true`</td>
+      <td scope="row">Automatically hides the toast after the delay period.</td>
+    </tr>
+     <tr>
+      <td scope="row">`delay`</td>
+      <td scope="row">number</td>
+      <td scope="row">`5000`</td>
+      <td scope="row">The delay in milliseconds before the toast is automatically hidden.</td>
+    </tr>
+  </tbody>
+</HbTable>
+
+## Methods
+
+<HbAlert type="danger">**All API methods are asynchronous and initiate a transition.** They return to the caller as soon as the transition starts but before it ends. Method calls on a transitioning component will be ignored.</HbAlert>
+
+<HbTable>
+  <thead>
+    <tr>
+      <th scope="col">Method</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td scope="row">`dispose`</td>
+      <td scope="row">Hides an element’s toast. The toast element remains on the DOM but will no longer be shown.</td>
+    </tr>
+    <tr>
+      <td scope="row">`getInstance`</td>
+      <td scope="row">A static method that retrieves the toast instance associated with a DOM element.</td>
+    </tr>
+    <tr>
+      <td scope="row">`getOrCreateInstance`</td>
+      <td scope="row">A static method that retrieves the toast instance for a DOM element, or creates a new one if it wasn't initialized.</td>
+    </tr>
+    <tr>
+      <td scope="row">`hide`</td>
+      <td scope="row">Hides an element’s toast. This method must be called manually if `autohide` is set to `false`. Returns to the caller before the toast has actually been hidden.</td>
+    </tr>
+    <tr>
+      <td scope="row">`isShown`</td>
+      <td scope="row">Returns a boolean value indicating the toast's visibility state.</td>
+    </tr>
+    <tr>
+      <td scope="row">`show`</td>
+      <td scope="row">Reveals an element’s toast. This method must be called manually; otherwise, the toast will not be shown. Returns to the caller before the toast has actually been shown.</td>
+    </tr>
+  </tbody>
+</HbTable>
+
+## Events
+
+<HbTable>
+  <thead>
+    <tr>
+      <th scope="col">Event</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td scope="row">`hide.bs.toast`</td>
+      <td scope="row">This event is fired immediately when the `hide` instance method has been called.</td>
+    </tr>
+    <tr>
+      <td scope="row">`hidden.bs.toast`</td>
+      <td scope="row">This event is fired when the toast has finished being hidden from the user.</td>
+    </tr>
+    <tr>
+      <td scope="row">`show.bs.toast`</td>
+      <td scope="row">This event fires immediately when the `show` instance method is called.</td>
+    </tr>
+    <tr>
+      <td scope="row">`shown.bs.toast`</td>
+      <td scope="row">This event is fired when the toast has been made visible to the user.</td>
+    </tr>
+  </tbody>
+</HbTable>
+
+<Example lang="js" showPreview={false} 
+  code={`const myToastEl = document.getElementById('myToast');
+  myToastEl.addEventListener('hidden.bs.toast', () => {
+    // do something...
+  });`} 
+/>
+
