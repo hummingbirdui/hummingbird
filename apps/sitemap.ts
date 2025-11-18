@@ -200,6 +200,10 @@ const sitemap: Sitemap[] = [
         path: '/docs/components/dropdowns',
       },
       {
+        name: 'Date Time picker',
+        path: '/docs/components/date-time-picker',
+      },
+      {
         name: 'File uploader',
         path: '/docs/components/file-uploader',
       },

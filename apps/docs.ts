@@ -1,4 +1,5 @@
 import docsearch from '@docsearch/js';
+import flatpickrInit from './plugins/flatpickr';
 import dropzoneInit from './plugins/dropzone';
 import { getConfig } from '@libs/config';
 import Choices from 'choices.js';
@@ -91,6 +92,8 @@ document.addEventListener('DOMContentLoaded', () => {
   
   dropzoneInit();
 });
+
+  flatpickrInit();
 
   // Choices
   const hbChoices = document.querySelectorAll('[data-choices="data-choices"]');
