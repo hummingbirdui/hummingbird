@@ -1,10 +1,23 @@
 ---
 title: Scrollspy
-description: Scrollspy automatically highlights navigation links based on the section currently visible in the viewport.
+description: Scrollspy automatically updates navigation or list group components based on scroll position, indicating which link is currently active in the viewport.
 toc: true
 attributeComponent: Scrollspy
 attributeLink: https://getbootstrap.com/docs/5.3/components/scrollspy/
 ---
+
+## How it works
+
+Scrollspy toggles the .active class on anchor (`<a>`) elements when the element with the `id` referenced by the anchor’s `href` is scrolled into view. It is best used with a Hummingbird [nav component](/docs/components/navs-tabs) or [list group](/docs/components/list-group) but will function with any anchor elements on the page.
+
+- To implement, Scrollspy requires two elements: a navigation, list group, or a simple set of links, and a scrollable container. The scrollable container can be the `<body>` or a custom element with a defined `height` and `overflow-y: scroll`.
+
+- On the scrollable container, add `data-bs-spy="scroll"` and `data-bs-target="#navId"`, where navId is the unique id of the associated navigation. If there is no focusable element inside the scrollable container, a `tabindex="0"` attribute must be included to ensure keyboard accessibility.
+
+- As the spied container is scrolled, an `.active` class is added to and removed from the anchor links within the associated navigation. Links must have resolvable `id` targets; otherwise, they are ignored. For example, `<a href="#home">Home</a>` must correspond to an element like `<div id="home"></div>`.
+
+- Target elements that are not visible are ignored.
+
 
 ## Examples
 
@@ -171,4 +184,134 @@ Scrollspy can also be used with basic anchor links or buttons. Scroll the area b
         <p>This is some placeholder content for the scrollspy page. Note that as you scroll down the page, the appropriate navigation link is highlighted. It’s repeated throughout the component example. We keep adding some more example copy here to emphasize the scrolling and highlighting.</p>
       </div>
     </div>
-  </div>`} />
+  </div>`} 
+/>
+
+## Usage
+
+### Via data attributes
+
+To add scrollspy behavior to a topbar navigation, add `data-hb-spy="scroll"` to the element to be spied on (typically the `<body>`). Then, add the `data-hb-target` attribute with the `id` or class name of the parent element of any `.nav` component.
+
+<Example showPreview={false} code={`<body data-bs-spy="scroll" data-bs-target="#navbar-example">
+    ...
+    <div id="navbar-example">
+      <ul class="nav nav-tabs" role="tablist">
+        ...
+      </ul>
+    </div>
+    ...
+  </body>`} 
+/>
+
+### Via javascript
+
+<Example lang="js" showPreview={false} code={`const scrollSpy = new hummingbird.ScrollSpy(document.body, {
+    target: '#navbar-example'
+  })`} 
+/>
+
+## Options
+
+Options can be passed via data attributes or JavaScript. To pass an option via a data attribute, append its name to `data-bs-`, such as `data-bs-smooth-scroll="true"`. The case type of the option name must be converted from “camelCase” to “kebab-case” when using data attributes.
+
+All components support an experimental `data-bs-config` attribute that can house simple component configuration as a JSON string. The final configuration object is a merged result where separate data attributes override values given on `data-bs-config`.
+
+<HbTable>
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Type</th>
+      <th scope="col">Default</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td scope="row">`rootMargin`</td>
+      <td scope="row">string</td>
+      <td scope="row">`0px 0px -25%`</td>
+      <td scope="row">Valid `IntersectionObserver` <a href="https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver/rootMargin" target="_blank">rootMargin</a> units used when calculating scroll position.</td>
+    </tr>
+    <tr>
+      <td scope="row">`smoothScroll`</td>
+      <td scope="row">boolean</td>
+      <td scope="row">`false`</td>
+      <td scope="row">Enables smooth scrolling when a link referring to a Scrollspy observable is clicked.</td>
+    </tr>
+    <tr>
+      <td scope="row">`target`</td>
+      <td scope="row">string, DOM element</td>
+      <td scope="row">`null`</td>
+      <td scope="row">Specifies the element to which the Scrollspy plugin is applied.</td>
+    </tr>
+    <tr>
+      <td scope="row">`threshold`</td>
+      <td scope="row">array</td>
+      <td scope="row">`[0.1, 0.5, 1]`</td>
+      <td scope="row">Valid `IntersectionObserver` <a href="https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver/IntersectionObserver#threshold" target="_blank">threshold</a> input used when calculating scroll position.</td>
+    </tr>
+  </tbody>
+</HbTable>
+
+<HbAlert type="warning">Note: The offset and method options are deprecated as of v5.1.3 and have been replaced by `rootMargin`.</HbAlert>
+
+## Methods
+
+<HbTable>
+  <thead>
+    <tr>
+      <th scope="col">Method</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td scope="row">`dispose`</td>
+      <td scope="row">Destroys an element’s scrollspy instance and removes stored data from the DOM element.</td>
+    </tr>
+    <tr>
+      <td scope="row">`getInstance`</td>
+      <td scope="row">A static method that retrieves the scrollspy instance associated with a DOM element.</td>
+    </tr>
+    <tr>
+      <td scope="row">`getOrCreateInstance`</td>
+      <td scope="row">A static method that retrieves the scrollspy instance for a DOM element, or creates a new one if it wasn't initialized.</td>
+    </tr>
+    <tr>
+      <td scope="row">`refresh`</td>
+      <td scope="row">When adding or removing elements from the DOM, the refresh method must be called to update the scrollspy instance.</td>
+    </tr>
+  </tbody>
+</HbTable>
+
+Here’s an example using the refresh method:
+
+<Example lang="js" showPreview={false} code={`const dataSpyList = document.querySelectorAll('[data-bs-spy="scroll"]');
+  dataSpyList.forEach(dataSpyEl => {
+    hummingbird.ScrollSpy.getInstance(dataSpyEl).refresh();
+  })`}
+/>
+
+## Events
+
+<HbTable>
+  <thead>
+    <tr>
+      <th scope="col">Event</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td scope="row">`activate.bs.scrollspy`</td>
+      <td scope="row">This event fires on the scroll element whenever a new anchor is activated by the scrollspy.</td>
+    </tr>
+  </tbody>
+</HbTable>
+
+<Example lang="js" showPreview={false} code={`const firstScrollSpyEl = document.querySelector('[data-bs-spy="scroll"]')
+  firstScrollSpyEl.addEventListener('activate.bs.scrollspy', () => {
+    // do something...
+  })`}
+/>

@@ -129,3 +129,243 @@ Popover components utilize several CSS variables for customization. Below is a l
     --popover-arrow-border-radius: --spacing(0.5);
     --popover-arrow-border-color: var(--popover-border-color);
   }`} />
+
+## Usage
+
+Enable popovers via JavaScript:
+
+<Example lang='js' showPreview={false} code={`const exampleEl = document.getElementById('example');
+  const popover = new hummingbird.Popover(exampleEl, options);`}
+/>
+
+<HbAlert type="warning">Popovers should only be attached to keyboard focusable and interactive HTML elements like links or form control for optimal accessibility. 
+While other elements can be made focusable by adding `tabindex="0"`, this practice can create confusing tab stops for keyboard users, and most assistive technologies do not announce popovers in this situation. 
+Furthermore, relying solely on hover as the trigger is discouraged, as this makes popovers impossible to trigger for keyboard users.<br/><br/>
+Excessive content within popovers should be avoided when using the `html` option. When displayed, a popover's content is tied to the trigger element with the `aria-describedby` attribute. This causes the entire content to be announced to assistive technology users as one long, uninterrupted stream.<br/><br/>
+Popovers do not manage keyboard focus order. Their placement in the DOM can be random, so adding interactive elements like forms or links requires careful consideration, as it may lead to an illogical focus order or render the popover's content unreachable for keyboard users. In these cases, a modal dialog is often a more appropriate and accessible solution.</HbAlert>
+
+## Options
+
+Options can be passed via data attributes or JavaScript. To pass an option via a data attribute, append its name to `data-bs-`, as in `data-bs-animation="{value}"`. 
+When passing options as data attributes, the option name's case type must be converted from “camelCase” to “kebab-case”. For example, `data-bs-custom-class="beautifier"` is used instead of `data-bs-customClass="beautifier"`.
+
+All components support an **experimental** reserved data attribute, `data-bs-config`, which can house simple component configuration as a JSON string. When an element has both `data-bs-config='{"delay":0, "title":123}'` and `data-bs-title="456"` attributes, the final title value will be `456`, as separate data attributes will override values given on `data-bs-config`. Additionally, existing data attributes are able to house JSON values, such as `data-bs-delay='{"show":0,"hide":150}'`.
+
+The final configuration object is the merged result of `data-bs-config`, `data-bs-`, and the `JavaScript object`, where the latest given key-value pair overrides the others.
+
+<HbAlert type="warning">Note: For security reasons, the `sanitize`, `sanitizeFn`, and `allowList` options cannot be supplied using data attributes.</HbAlert>
+
+<HbTable>
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Type</th>
+      <th scope="col">Default</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td scope="row">`allowList`</td>
+      <td scope="row">object</td>
+      <td scope="row"><a href="https://getbootstrap.com/docs/5.3/getting-started/javascript/#sanitizer" target="_blank">Default value</a></td>
+      <td scope="row">An object of allowed tags and attributes. Those not explicitly allowed will be removed. Caution should be exercised when modifying this list.</td>
+    </tr>
+    <tr>
+      <td scope="row">`animation`</td>
+      <td scope="row">boolean</td>
+      <td scope="row">`true`</td>
+      <td scope="row">Applies a CSS fade transition to the popover.</td>
+    </tr>
+    <tr>
+      <td scope="row">`boundary`</td>
+      <td scope="row">string, element</td>
+      <td scope="row">`'clippingParents'`</td>
+      <td scope="row">The overflow constraint boundary of the popover. Accepts an HTMLElement reference (via JavaScript only).</td>
+    </tr>
+    <tr>
+      <td scope="row">`container`</td>
+      <td scope="row">string, element, false</td>
+      <td scope="row">`false`</td>
+      <td scope="row">Appends the popover to a specific element. Example: `container: 'body'`. This prevents the popover from detaching from the trigger element during a window resize.</td>
+    </tr>
+    <tr>
+      <td scope="row">`content`</td>
+      <td scope="row">string, element, function</td>
+      <td scope="row">`''`</td>
+      <td scope="row">The popover’s text content. If a function is given, its `this` context is set to the attachment element.</td>
+    </tr>
+    <tr>
+      <td scope="row">`customClass`</td>
+      <td scope="row">string, function</td>
+      <td scope="row">`''`</td>
+      <td scope="row">Adds classes to the popover when shown. Multiple classes can be separated by spaces. A function can also be passed to return a string of class names.</td>
+    </tr>
+    <tr>
+      <td scope="row">`delay`</td>
+      <td scope="row">number, object</td>
+      <td scope="row">`0`</td>
+      <td scope="row">Delay for showing and hiding in milliseconds (ms). Does not apply to the manual trigger type. If a number is supplied, it applies to both `hide/show`. An object can be structured as: `delay: { "show": 500, "hide": 100 }`</td>
+    </tr>
+    <tr>
+      <td scope="row">`fallbackPlacements`</td>
+      <td scope="row">string, array</td>
+      <td scope="row">`['top', 'right', 'bottom', 'left']`</td>
+      <td scope="row">Defines fallback placements by providing an ordered array of preferences.</td>
+    </tr>
+    <tr>
+      <td scope="row">`html`</td>
+      <td scope="row">boolean</td>
+      <td scope="row">`false`</td>
+      <td scope="row">Allows HTML in the popover. If true, HTML tags are rendered. If false, the `innerText` property is used. Prefer text when dealing with user-generated input to prevent XSS attacks.</td>
+    </tr>
+    <tr>
+      <td scope="row">`offset`</td>
+      <td scope="row">number, string, function</td>
+      <td scope="row">`[0, 8]`</td>
+      <td scope="row">The popover's offset relative to its target. A string with comma-separated values can be passed via data attributes (e.g., `data-bs-offset="10,20"`).</td>
+    </tr>
+    <tr>
+      <td scope="row">`placement`</td>
+      <td scope="row">string, function</td>
+      <td scope="row">`'right'`</td>
+      <td scope="row">How to position the popover: auto, top, bottom, left, right. `auto` dynamically reorients the popover.</td>
+    </tr>
+    <tr>
+      <td scope="row">`popperConfig`</td>
+      <td scope="row">null, object, function</td>
+      <td scope="row">`null`</td>
+      <td scope="row">Used to change Hummingbird's default <a href="https://popper.js.org/docs/v2/constructors/#options" target="_blank">Popper configuration</a>. A function can be used to merge the default configuration with a custom one.</td>
+    </tr>
+    <tr>
+      <td scope="row">`sanitize`</td>
+      <td scope="row">boolean</td>
+      <td scope="row">`true`</td>
+      <td scope="row">Enables <a href="https://getbootstrap.com/docs/5.3/getting-started/javascript/#sanitizer" target="_blank">content sanitization</a> for the template, content, and title options. Disabling sanitization should be done with caution.</td>
+    </tr>
+    <tr>
+      <td scope="row">`sanitizeFn`</td>
+      <td scope="row">null, function</td>
+      <td scope="row">`null`</td>
+      <td scope="row">Provides an alternative <a href="https://getbootstrap.com/docs/5.3/getting-started/javascript/#sanitizer" target="_blank">content sanitization</a> function, allowing the use of a dedicated sanitization library.</td>
+    </tr>
+    <tr>
+      <td scope="row">`selector`</td>
+      <td scope="row">string, false</td>
+      <td scope="row">`false`</td>
+      <td scope="row">If a selector is provided, popover objects are delegated to the specified targets. This is useful for applying popovers to dynamically added DOM elements.</td>
+    </tr>
+    <tr>
+      <td scope="row">`template`</td>
+      <td scope="row">string</td>
+      <td scope="row">`'<div class="popover" role="tooltip"><div class="popover-arrow"></div><h3 class="popover-header"></h3><div class="popover-body"></div></div>'`</td>
+      <td scope="row">The base HTML used to create the popover. The `.popover` class and `role="tooltip"` are required on the outermost element.</td>
+    </tr>
+    <tr>
+      <td scope="row">`title`</td>
+      <td scope="row">string, element, function</td>
+      <td scope="row">`''`</td>
+      <td scope="row">The popover title. If a function is given, its `this` context is set to the attachment element.</td>
+    </tr>
+    <tr>
+      <td scope="row">`trigger`</td>
+      <td scope="row">string</td>
+      <td scope="row">`click`</td>
+      <td scope="row">How the popover is triggered: click, hover, focus, manual. Multiple triggers can be passed, separated by a space. manual cannot be combined with other triggers.</td>
+    </tr>
+  </tbody>
+</HbTable>
+
+## Methods
+
+<HbAlert type="danger">**All API methods are asynchronous and initiate a transition**. They return to the caller as soon as the transition starts but before it ends. Method calls on a transitioning component will be ignored.</HbAlert>
+
+<HbTable>
+  <thead>
+    <tr>
+      <th scope="col">Method</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td scope="row">`disable`</td>
+      <td scope="row">Removes the ability for a popover to be shown. It must be re-enabled to be shown again.</td>
+    </tr>
+    <tr>
+      <td scope="row">`dispose`</td>
+      <td scope="row">Hides and destroys an element’s popover, removing stored data from the DOM element.</td>
+    </tr>
+    <tr>
+      <td scope="row">`enable`</td>
+      <td scope="row">Gives a popover the ability to be shown. **Popovers are enabled by default**.</td>
+    </tr>
+    <tr>
+      <td scope="row">`getInstance`</td>
+      <td scope="row">A static method that retrieves the popover instance associated with a DOM element.</td>
+    </tr>
+    <tr>
+      <td scope="row">`getOrCreateInstance`</td>
+      <td scope="row">A static method that retrieves the popover instance for a DOM element, or creates a new one if it wasn't initialized.</td>
+    </tr>
+    <tr>
+      <td scope="row">`hide`</td>
+      <td scope="row">Hides an element’s popover. This is considered a “manual” trigger.</td>
+    </tr>
+    <tr>
+      <td scope="row">`setContent`</td>
+      <td scope="row">Provides a method for changing a popover’s content after its initialization. Accepts an object where keys are selectors within the template.</td>
+    </tr>
+     <tr>
+      <td scope="row">`show`</td>
+      <td scope="row">Reveals an element’s popover. This is considered a “manual” trigger. Popovers with zero-length title and content are never displayed.</td>
+    </tr>
+     <tr>
+      <td scope="row">`toggle`</td>
+      <td scope="row">Toggles an element’s popover. This is considered a “manual” trigger.</td>
+    </tr>
+    <tr>
+      <td scope="row">`toggleEnabled`</td>
+      <td scope="row">Toggles the ability for a popover to be shown or hidden.</td>
+    </tr>
+    <tr>
+      <td scope="row">`update`</td>
+      <td scope="row">Updates the position of an element’s popover.</td>
+    </tr>
+  </tbody>
+</HbTable>
+
+<HbAlert type="info">The `setContent` method takes an object as an argument. Each property-key is a valid `string` option in the popover template, and each property-value can be a `string` | `element` | `function` | `null`.</HbAlert>
+
+## Events
+
+<HbTable>
+  <thead>
+    <tr>
+      <th scope="col">Event</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td scope="row">`hide.bs.popover`</td>
+      <td scope="row">This event is fired immediately when the hide instance method has been called.</td>
+    </tr>
+    <tr>
+      <td scope="row">`hidden.bs.popover`</td>
+      <td scope="row">This event is fired when the popover has finished being hidden (waits for CSS transitions to complete).</td>
+    </tr>
+    <tr>
+      <td scope="row">`inserted.bs.popover`</td>
+      <td scope="row">This event is fired after the `show.bs.popover` event when the template has been added to the DOM.</td>
+    </tr>
+    <tr>
+      <td scope="row">`show.bs.popover`</td>
+      <td scope="row">This event fires immediately when the `show` instance method is called.</td>
+    </tr>
+    <tr>
+      <td scope="row">`shown.bs.popover`</td>
+      <td scope="row">This event is fired when the popover has been made visible (waits for CSS transitions to complete).</td>
+    </tr>
+  </tbody>
+</HbTable>
