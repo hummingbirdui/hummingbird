@@ -2,8 +2,8 @@ import docsearch from '@docsearch/js';
 import flatpickrInit from './plugins/flatpickr';
 import dropzoneInit from './plugins/dropzone';
 import { getConfig } from '@libs/config';
-import Choices from 'choices.js';
 import noUiSliderInit from './plugins/noUISlider';
+import choicesInit from './plugins/choices';
 
 declare global {
   interface Window {
@@ -89,15 +89,6 @@ document.addEventListener('DOMContentLoaded', () => {
       toastPlacement.className = `${toastPlacement.dataset.originalClass} ${this.value}`;
     });
   }
-  
-  dropzoneInit();
-});
-
-  flatpickrInit();
-
-  // Choices
-  const hbChoices = document.querySelectorAll('[data-choices="data-choices"]');
-  hbChoices.forEach((choice) => new Choices(choice, { removeItemButton: true }));
 
   // Form validation
   const forms = document.querySelectorAll('.needs-validation') as NodeListOf<HTMLFormElement>;
@@ -117,6 +108,8 @@ document.addEventListener('DOMContentLoaded', () => {
     );
   });
 
-  // Plugin initialization
+  choicesInit();
+  dropzoneInit();
+  flatpickrInit();
   noUiSliderInit();
 });
