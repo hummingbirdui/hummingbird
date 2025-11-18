@@ -1,4 +1,5 @@
 import docsearch from '@docsearch/js';
+import dropzoneInit from './plugins/dropzone';
 import { getConfig } from '@libs/config';
 import Choices from 'choices.js';
 import noUiSliderInit from './plugins/noUISlider';
@@ -87,6 +88,9 @@ document.addEventListener('DOMContentLoaded', () => {
       toastPlacement.className = `${toastPlacement.dataset.originalClass} ${this.value}`;
     });
   }
+  
+  dropzoneInit();
+});
 
   // Choices
   const hbChoices = document.querySelectorAll('[data-choices="data-choices"]');

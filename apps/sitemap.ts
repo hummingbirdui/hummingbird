@@ -200,6 +200,10 @@ const sitemap: Sitemap[] = [
         path: '/docs/components/dropdowns',
       },
       {
+        name: 'File uploader',
+        path: '/docs/components/file-uploader',
+      },
+      {
         name: 'List Group',
         path: '/docs/components/list-group',
       },

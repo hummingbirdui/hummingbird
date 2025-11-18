@@ -1,0 +1,483 @@
+.dropzone,
+.dropzone * {
+  @apply box-border;
+}
+
+.dropzone {
+  --dropzone-padding: --spacing(6);
+  --dropzone-bg: var(--background-color-subtle);
+  --dropzone-border-color: var(--border-color-base);
+  --dropzone-border-radius: var(--radius-xl);
+  --dropzone-hover-border-color: var(--color-primary);
+  --dropzone-hover-bg: --alpha(var(--color-primary) / 5%);
+  --dropzone-avatar-overlay: --alpha(var(--color-contrast) / 70%);
+  --dropzone-avatar-size: --spacing(40);
+
+  --dropzone-preview-margin: --spacing(4);
+  --dropzone-preview-size: --spacing(30);
+  --dropzone-preview-border-radius: var(--radius-xl);
+
+  --dropzone-details-padding: --spacing(8);
+  --dropzone-details-font-size: var(--text-xs);
+  --dropzone-details-color: var(--text-color-default);
+  --dropzone-details-bg: var(--background-color-muted);
+  --dropzone-details-border-radius: var(--radius-sm);
+
+  --dropzone-mark-size: --spacing(12);
+  --dropzone-mark-bg: --alpha(var(--color-dark) / 80%);
+  --dropzone-error-mark-bg: --alpha(var(--color-danger) / 80%);
+  --dropzone-success-mark-bg: --alpha(var(--color-success) / 80%);
+  --dropzone-mark-border-radius: calc(infinity * 1px);
+
+  --dropzone-progress-mark-height: --spacing(5);
+  --dropzone-progress-mark-border-width: 3px;
+  --dropzone-progress-mark-border-color: --alpha(var(--color-dark) / 80%);
+  --dropzone-progress-mark-border-radius: var(--radius-xl);
+  --dropzone-progress-mark-bg: --alpha(var(--color-dark) / 80%);
+  --dropzone-progress-mark-upload-bg: var(--color-white);
+  --dropzone-progress-mark-upload-radius: var(--radius-2xl);
+
+  --dropzone-error-message-padding: --spacing(2);
+  --dropzone-error-message-color: var(--color-white);
+  --dropzone-error-message-font-size: var(--text-xs);
+  --dropzone-error-message-width: --spacing(35);
+  --dropzone-error-message-bg: var(--color-danger-dark);
+  --dropzone-error-message-border-radius: var(--radius-lg);
+
+  @layer base {
+    @apply p-[var(--dropzone-padding)]
+    bg-[var(--dropzone-bg)]
+    border
+    border-dashed
+    border-[var(--dropzone-border-color)]
+    rounded-[var(--dropzone-border-radius)]
+    hover:border-[var(--dropzone-hover-border-color)]
+    hover:bg-[var(--dropzone-hover-bg)]
+    transition
+    duration-300;
+
+    &.dz-clickable {
+      @apply cursor-pointer;
+
+      * {
+        @apply cursor-default;
+      }
+
+      .dz-message,
+      .dz-message * {
+        @apply cursor-pointer;
+      }
+    }
+
+    &.dz-started .dz-message {
+      @apply hidden;
+    }
+
+    &.dz-drag-hover {
+      @apply opacity-50;
+    }
+
+    .dz-message {
+      @apply text-center my-3;
+
+      & > p {
+        @apply mb-0;
+      }
+
+      .dz-button {
+        @apply p-0 border-0 bg-transparent cursor-pointer outline-none;
+      }
+    }
+
+    .dz-preview {
+      @apply relative 
+      inline-block 
+      align-top 
+      m-[var(--dropzone-preview-margin)]
+      size-[var(--dropzone-preview-size)] 
+      rounded-[var(--dropzone-preview-border-radius)];
+
+      &:hover {
+        @apply z-50;
+        .dz-details {
+          @apply opacity-100;
+        }
+      }
+
+      &.dz-file-preview {
+        .dz-image {
+          @apply bg-gradient-to-b
+          from-[var(--background-color-subtle)]
+          to-[var(--background-color-muted)];
+        }
+        .dz-details {
+          @apply opacity-100;
+        }
+      }
+
+      &.dz-image-preview {
+        @apply bg-white;
+        .dz-details {
+          @apply transition-opacity duration-200 ease-linear;
+        }
+      }
+
+      .dz-remove {
+        @apply text-sm text-center block cursor-pointer border-0;
+        &:hover {
+          @apply underline;
+        }
+      }
+
+      .dz-details {
+        @apply p-[var(--dropzone-details-padding)]
+        text-[length:var(--dropzone-details-font-size)]
+        text-[var(--dropzone-details-color)]
+        text-center 
+        leading-[150%]
+        min-w-full 
+        max-w-full 
+        absolute
+        inset-0 
+        opacity-0 
+        z-20;
+
+        .dz-size {
+          @apply mb-4 text-base;
+        }
+
+        .dz-filename {
+          @apply whitespace-nowrap;
+          &:hover span {
+            @apply border border-light
+            bg-[var(--dropzone-details-bg)];
+          }
+          &:not(:hover) {
+            @apply overflow-hidden text-ellipsis;
+          }
+          &:not(:hover) span {
+            @apply border border-transparent;
+          }
+        }
+
+        .dz-filename span,
+        .dz-size span {
+          @apply px-1
+          bg-[var(--dropzone-details-bg)]
+          rounded-[var(--dropzone-details-border-radius)];
+        }
+      }
+
+      &:hover .dz-image img {
+        @apply scale-[1.05] blur-sm;
+      }
+
+      .dz-image {
+        @apply rounded-xl overflow-hidden size-full relative block z-10;
+
+        img {
+          @apply block;
+        }
+      }
+
+      .dz-success-mark,
+      .dz-error-mark {
+        @apply block
+        absolute top-1/2 left-1/2
+        transform -translate-1/2
+        pointer-events-none opacity-0 z-50
+        bg-[var(--dropzone-mark-bg)] 
+        rounded-[var(--dropzone-mark-border-radius)];
+
+        svg {
+          @apply block size-[var(--dropzone-mark-size)] fill-white;
+        }
+      }
+
+      &.dz-success .dz-success-mark {
+        @apply bg-[var(--dropzone-success-mark-bg)] 
+        animate-[passing-through_3s_cubic-bezier(0.77,0,0.175,1)];
+      }
+
+      &.dz-error .dz-error-mark {
+        @apply opacity-100 
+        bg-[var(--dropzone-error-mark-bg)] 
+        animate-[slide-in_3s_cubic-bezier(0.77,0,0.175,1)];
+      }
+
+      &.dz-processing .dz-progress {
+        @apply opacity-100 transition-all duration-200 ease-linear;
+      }
+
+      &.dz-complete .dz-progress {
+        @apply opacity-0 transition-opacity duration-400 ease-in;
+      }
+
+      &:not(.dz-processing) .dz-progress {
+        @apply animate-[pulse_6s_ease_infinite];
+      }
+
+      .dz-progress {
+        @apply -mt-2.5
+        absolute
+        top-1/2
+        left-3/20
+        right-3/20
+        h-[var(--dropzone-progress-mark-height)]
+        border-[length:var(--dropzone-progress-mark-border-width)]
+        border-[var(--dropzone-progress-mark-border-color)]
+        rounded-[var(--dropzone-progress-mark-border-radius)]
+        bg-[var(--dropzone-progress-mark-bg)]
+        pointer-events-none
+        overflow-hidden
+        opacity-100
+        z-50;
+
+        .dz-upload {
+          @apply block
+          relative
+          h-full
+          w-0
+          transition-[width]
+          duration-300
+          ease-in-out
+          bg-[var(--dropzone-progress-mark-upload-bg)]
+          rounded-[var(--dropzone-progress-mark-upload-radius)];
+        }
+      }
+
+      &.dz-error .dz-error-message {
+        @apply block;
+      }
+
+      &.dz-error:hover .dz-error-message {
+        @apply opacity-100 pointer-events-auto;
+      }
+
+      .dz-error-message {
+        @apply p-[var(--dropzone-error-message-padding)]
+        text-[length:var(--dropzone-error-message-font-size)] 
+        text-[var(--dropzone-error-message-color)]
+        w-[var(--dropzone-error-message-width)]
+        absolute
+        top-32
+        -left-2.5
+        hidden
+        opacity-0
+        transition-opacity
+        duration-300
+        ease-in
+        rounded-[var(--dropzone-error-message-border-radius)]
+        bg-[var(--dropzone-error-message-bg)]
+        pointer-events-none
+        z-100;
+
+        &::after {
+          @apply content-[''] 
+          absolute 
+          -top-1.5
+          left-16 
+          border-[6px] 
+          border-t-0 
+          border-transparent 
+          border-b-[var(--dropzone-error-message-bg)];
+        }
+      }
+    }
+
+    /* avatar dropzone */
+    &.dropzone-avatar {
+      @apply relative 
+      p-0 
+      size-[var(--dropzone-avatar-size)] 
+      rounded-full 
+      overflow-hidden;
+
+      .dz-message {
+        @apply absolute 
+        m-0 
+        size-full 
+        flex 
+        items-center 
+        justify-center 
+        z-1000;
+      }
+
+      &.dz-started .dz-message {
+        @apply opacity-0 invisible transition duration-200;
+      }
+
+      &.dz-started:hover .dz-message {
+        @apply opacity-100 visible bg-[var(--dropzone-avatar-overlay)];
+      }
+
+      .dz-preview {
+        @apply m-0 size-full pointer-events-none;
+
+        .dz-image {
+          @apply size-full;
+
+          & > img {
+            @apply size-full object-cover;
+          }
+        }
+
+        &:hover .dz-image img {
+          @apply scale-100 blur-none;
+        }
+
+        .dz-details,
+        .dz-progress,
+        .dz-error-message,
+        .dz-success-mark,
+        .dz-error-mark {
+          @apply hidden;
+        }
+      }
+    }
+  }
+}
+
+.dz-list-preview {
+  --dz-list-padding: --spacing(2);
+  --dz-list-font-size: var(--text-sm);
+  --dz-list-bg: var(--background-color-subtle);
+  --dz-list-border-radius: var(--radius-lg);
+  --dz-list-image-size: --spacing(13);
+  --dz-list-image-border-width: 1px;
+  --dz-list-image-border-color: var(--border-color-light);
+  --dz-list-image-border-radius: var(--radius-lg);
+
+  @layer base {
+    @apply mt-4 space-y-2;
+
+    .dz-preview {
+      @apply relative 
+      p-[var(--dz-list-padding)] 
+      flex items-center gap-3 
+      bg-[var(--dz-list-bg)] 
+      rounded-[var(--dz-list-border-radius)];
+
+      .dz-image {
+        @apply size-[var(--dz-list-image-size)] 
+        border-[length:var(--dz-list-image-border-width)]
+        border-[var(--dz-list-image-border-color)]
+        rounded-[var(--dz-list-image-border-radius)]
+        overflow-hidden;
+
+        & > img {
+          @apply object-cover size-full;
+        }
+      }
+
+      .dz-file-info {
+        @apply flex-1 
+        flex flex-col gap-1.5 
+        text-[var(--dz-list-font-size)]
+        truncate;
+      }
+    }
+  }
+}
+
+.dz-thumbnail-preview {
+  --dz-dropbox-size: --spacing(15);
+  --dz-thumbnail-size: --spacing(14);
+  --dz-thumbnail-border-width: 1px;
+  --dz-thumbnail-border-color: var(--border-color-light);
+  --dz-thumbnail-border-radius: var(--radius-lg);
+  --dz-thumbnail-remove-btn-size: --spacing(3);
+  --dz-thumbnail-remove-btn-bg: var(--color-dark);
+  --dz-thumbnail-remove-btn-color: var(--color-white);
+  --dz-thumbnail-remove-btn-radius: calc(infinity * 1px);
+
+  @layer base {
+    @apply mt-4 flex flex-wrap items-center gap-2;
+
+    .dz-preview {
+      @apply relative;
+
+      .dz-image {
+        @apply size-[var(--dz-thumbnail-size)] 
+        border-[length:var(--dz-thumbnail-border-width)] 
+        border-[var(--dz-thumbnail-border-color)] 
+        rounded-[var(--dz-thumbnail-border-radius)] 
+        overflow-hidden;
+
+        & > img {
+          @apply object-cover size-full;
+        }
+      }
+
+      .dz-file-remove {
+        @apply absolute 
+        -top-1 
+        -right-1 
+        flex items-center justify-center 
+        size-[var(--dz-thumbnail-remove-btn-size)]
+        text-[var(--dz-thumbnail-remove-btn-color)]
+        bg-[var(--dz-thumbnail-remove-btn-bg)]
+        rounded-[var(--dz-thumbnail-remove-btn-radius)];
+      }
+    }
+
+    &.dz-dropbox-preview {
+      @apply mt-0;
+
+      .dz-image {
+        @apply size-[var(--dz-dropbox-size)];
+      }
+
+      .dropzone {
+        @apply p-0 size-[var(--dz-dropbox-size)] rounded-lg order-last;
+
+        .dz-message {
+          @apply m-0 size-full flex items-center justify-center;
+        }
+
+        &.dz-started .dz-message {
+          @apply flex;
+        }
+      }
+    }
+  }
+}
+
+@keyframes passing-through {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  30%,
+  70% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+}
+
+@keyframes slide-in {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  30% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  10% {
+    transform: scale(1.1);
+  }
+  20% {
+    transform: scale(1);
+  }
+}
