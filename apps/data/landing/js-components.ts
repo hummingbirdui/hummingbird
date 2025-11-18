@@ -40,7 +40,7 @@ export const jsComponents: JSComponent[] = [
     description: 'Show important notices and feedback.',
     image: { light: alert, dark: alertDark },
     color: 'primary',
-    link: '/docs/components/alert',
+    link: '/docs/components/alerts#javascript-behavior',
   },
   {
     title: 'Dropdown',
@@ -61,7 +61,7 @@ export const jsComponents: JSComponent[] = [
     description: 'Control button states for interactions.',
     image: { light: button, dark: buttonDark },
     color: 'secondary-dark',
-    link: '/docs/components/buttons',
+    link: '/docs/components/buttons#button-plugin',
   },
   {
     title: 'Modal',
@@ -96,7 +96,7 @@ export const jsComponents: JSComponent[] = [
     description: 'Display quick feedback messages instantly.',
     image: { light: toast, dark: toastDark },
     color: 'success',
-    link: '/docs/components/toast',
+    link: '/docs/components/toasts',
   },
   {
     title: 'Collapse',
@@ -110,13 +110,13 @@ export const jsComponents: JSComponent[] = [
     description: 'Attach small contextual info popups.',
     image: { light: popover, dark: popoverDark },
     color: 'primary',
-    link: '/docs/components/popover',
+    link: '/docs/components/popovers',
   },
   {
     title: 'Tooltip',
     description: 'Reveal small descriptive text on hover.',
     image: { light: tooltip, dark: tooltipDark },
     color: 'secondary-dark',
-    link: '/docs/components/tooltip',
+    link: '/docs/components/tooltips',
   },
 ];

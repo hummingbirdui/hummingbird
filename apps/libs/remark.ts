@@ -71,8 +71,6 @@ type AnyNode = Node & {
 // Main remark plugin
 export function remarkBasePath(base = '/') {
   return function remarkBasePathPlugin(ast: Node, file: VFile & { data?: any }) {
-    console.log(`🔧 remarkBasePath processing with base: "${base}"`);
-
     // Handle frontmatter
     if (containsFrontmatter(file?.data?.astro)) {
       replaceInFrontmatter(file.data.astro.frontmatter, base);

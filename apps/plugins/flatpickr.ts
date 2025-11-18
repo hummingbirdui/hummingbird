@@ -14,8 +14,9 @@ const flatpickrInit = () => {
       },
     ],
   });
-  flatpickr('#external-elements', { wrap: true, dateFormat: 'd-m-Y' });
-  flatpickr('#inline-calendar', {
+
+  flatpickr('#external-el', { wrap: true, dateFormat: 'd-m-Y' });
+  flatpickr('#inline-calendar-el', {
     wrap: true,
     inline: true,
     appendTo: document.querySelector('#datepicker-inline') as HTMLElement,
