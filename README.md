@@ -192,7 +192,7 @@ Meet the core team behind Hummingbird:
       <img src="https://avatars.githubusercontent.com/u/141500318?v=4" width="80" height="80"/><br/>
       <sub><b>Riazul Islam</b></sub><br/>
       <code>riazul01</code><br/>
-      Jr. Software Engineer
+      Software Engineer
     </td>
     <td align="center" width="200">
       <img src="https://avatars.githubusercontent.com/u/110757982?v=4" width="80" height="80"/><br/>
