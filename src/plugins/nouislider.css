@@ -109,7 +109,7 @@
   @apply w-[var(--ar-track-size)];
   .noUi-handle {
     @apply w-[var(--ar-handle-width)] h-[var(--ar-handle-width)]
-    right-[var(--ar-vertical-handle-right)]
+    end-[var(--ar-vertical-handle-right)]
     bottom-[var(--ar-vertical-handle-bottom)];
   }
   .noUi-origin {
