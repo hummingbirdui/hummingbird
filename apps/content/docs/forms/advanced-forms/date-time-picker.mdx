@@ -113,79 +113,72 @@ Import styles after importing Tailwind and Hummingbird CSS:
 
 ## CSS variables
 
-Date & Time picker styles can be customized using the following CSS variables.
+Date & Time picker styles can be customized using the following CSS variables:
 
 <Example showPreview={false} lang='sass' code={`.flatpickr-calendar {
-    --flatpickr-width: --spacing(77);
-    --flatpickr-font-size: var(--text-sm);
-    --flatpickr-color: var(--text-color-default);
-    --flatpickr-shadow: var(--shadow-lg);
-    --flatpickr-bg: var(--background-color-muted);
-    --flatpickr-border-width: 1px;
-    --flatpickr-border-color: transparent;
-    --flatpickr-border-radius: var(--radius-md);
+    --dtp-width: --spacing(77);
+    --dtp-font-size: var(--text-sm);
+    --dtp-color: var(--text-color-default);
+    --dtp-shadow: var(--shadow-lg);
+    --dtp-bg: var(--background-color-muted);
+    --dtp-border-width: 1px;
+    --dtp-border-color: transparent;
+    --dtp-border-radius: var(--radius-md);
 
-    --flatpickr-disabled-opacity: 0.3;
+    --dtp-disabled-opacity: 0.3;
 
-    --flatpickr-months-padding-x: --spacing(4);
-    --flatpickr-months-padding-y: --spacing(3);
-    --flatpickr-month-padding: --spacing(1);
-    --flatpickr-month-font-size: var(--text-lg);
-    --flatpickr-month-font-weight: var(--font-weight-semibold);
+    --dtp-months-padding-x: --spacing(4);
+    --dtp-months-padding-y: --spacing(3);
+    --dtp-month-padding: --spacing(1);
+    --dtp-month-font-size: var(--text-lg);
+    --dtp-month-font-weight: var(--font-weight-semibold);
 
-    --flatpickr-year-width: --spacing(17);
-    --flatpickr-year-padding: --spacing(1);
-    --flatpickr-year-font-size: var(--text-lg);
-    --flatpickr-year-font-weight: var(--font-weight-semibold);
-    --flatpickr-year-hover-bg: transparent;
+    --dtp-year-width: --spacing(17);
+    --dtp-year-padding: --spacing(1);
+    --dtp-year-font-size: var(--text-lg);
+    --dtp-year-font-weight: var(--font-weight-semibold);
+    --dtp-year-hover-bg: transparent;
 
-    --flatpickr-months-btn-size: --spacing(8);
-    --flatpickr-months-btn-icon-size: --spacing(3.5);
-    --flatpickr-months-btn-color: var(--text-color-muted);
-    --flatpickr-months-btn-radius: var(--radius-md);
-    --flatpickr-months-btn-bg: transparent;
+    --dtp-months-btn-size: --spacing(8);
+    --dtp-months-btn-icon-size: --spacing(3.5);
+    --dtp-months-btn-color: var(--text-color-muted);
+    --dtp-months-btn-radius: var(--radius-md);
+    --dtp-months-btn-bg: transparent;
 
-    --flatpickr-inner-padding: --spacing(4);
-    --flatpickr-weekday-color: var(--text-color-default);
-    --flatpickr-weekday-font-size: var(--text-xs);
-    --flatpickr-weekday-font-weight: var(--font-weight-semibold);
-    --flatpickr-weekday-bg: transparent;
+    --dtp-inner-padding: --spacing(4);
+    --dtp-weekday-color: var(--text-color-default);
+    --dtp-weekday-font-size: var(--text-xs);
+    --dtp-weekday-font-weight: var(--font-weight-semibold);
+    --dtp-weekday-bg: transparent;
 
-    --flatpickr-day-size: --spacing(9);
-    --flatpickr-day-color: var(--text-color-default);
-    --flatpickr-day-font-size: var(--text-xs);
-    --flatpickr-day-font-weight: var(--font-weight-semibold);
-    --flatpickr-day-border-radius: var(--radius-md);
-    --flatpickr-day-bg: transparent;
-    --flatpickr-day-hover-bg: var(--background-color-highlight);
-    --flatpickr-day-selected-color: var(--color-white);
-    --flatpickr-day-selected-bg: var(--color-primary);
-    --flatpickr-day-range-color: var(--text-color-default);
-    --flatpickr-day-range-bg: var(--background-color-highlight);
+    --dtp-day-size: --spacing(9);
+    --dtp-day-color: var(--text-color-default);
+    --dtp-day-font-size: var(--text-xs);
+    --dtp-day-font-weight: var(--font-weight-semibold);
+    --dtp-day-border-radius: var(--radius-md);
+    --dtp-day-bg: transparent;
+    --dtp-day-hover-bg: var(--background-color-highlight);
+    --dtp-day-selected-color: var(--color-white);
+    --dtp-day-selected-bg: var(--color-primary);
+    --dtp-day-range-color: var(--text-color-default);
+    --dtp-day-range-bg: var(--background-color-highlight);
 
-    --flatpickr-today-color: var(--color-white);
-    --flatpickr-today-bg: var(--color-primary);
-    --flatpickr-today-hover-bg: --alpha(var(--color-primary) / 90%);
+    --dtp-today-color: var(--color-white);
+    --dtp-today-bg: var(--color-primary);
+    --dtp-today-hover-bg: --alpha(var(--color-primary) / 90%);
 
-    --flatpickr-timepickr-height: --spacing(10);
-    --flatpickr-timepickr-border-width: 1px;
-    --flatpickr-timepickr-border-color: var(--border-color-light);
-    --flatpickr-timepickr-hover-bg: var(--background-color-subtle);
-    --flatpickr-time-separator-color: var(--text-muted);
+    --dtp-timepickr-height: --spacing(10);
+    --dtp-timepickr-border-width: 1px;
+    --dtp-timepickr-border-color: var(--border-color-light);
+    --dtp-timepickr-hover-bg: var(--background-color-subtle);
+    --dtp-time-separator-color: var(--text-muted);
 
-    --flatpickr-spinner-color: var(--border-color-dark);
-    --flatpickr-spinner-width: --spacing(3.5);
-    --flatpickr-spinner-arrow-size: --spacing(1);
-    --flatpickr-spinner-border-width: 1px;
-    --flatpickr-spinner-border-color: var(--border-color-light);
-    --flatpickr-spinner-active-bg: var(--background-color-muted);
-    --flatpickr-spinner-bg: transparent;
+    --dtp-spinner-color: var(--border-color-dark);
+    --dtp-spinner-width: --spacing(3.5);
+    --dtp-spinner-arrow-size: --spacing(1);
+    --dtp-spinner-border-width: 1px;
+    --dtp-spinner-border-color: var(--border-color-light);
+    --dtp-spinner-active-bg: var(--background-color-muted);
+    --dtp-spinner-bg: transparent;
   }`}
 />
-
-
-
-
-
-
-

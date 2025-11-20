@@ -384,6 +384,59 @@ export const layout: Component[] = [
   },
 ];
 
-export const components = [...dataDisplay, ...dataEntry, ...feedback, ...navigation, ...layout].sort((a, b) =>
-  a.title.localeCompare(b.title),
-);
+export const components = [
+  {
+    title: 'Accordion',
+    url: '/docs/components/accordion',
+    count: 2,
+    image: { light: accordion, dark: accordionDark },
+  },
+  {
+    title: 'Alerts',
+    url: '/docs/components/alerts',
+    count: 6,
+    image: { light: alert, dark: alertDark },
+  },
+  {
+    title: 'Avatars',
+    url: '/docs/components/avatars',
+    count: 7,
+    image: { light: avatar, dark: avatarDark },
+  },
+  {
+    title: 'Buttons',
+    url: '/docs/components/buttons',
+    count: 11,
+    image: { light: button, dark: buttonDark },
+  },
+  {
+    title: 'Carousel',
+    url: '/docs/components/carousel',
+    count: 9,
+    image: { light: carousel, dark: carouselDark },
+  },
+  {
+    title: 'Checkbox',
+    url: '/docs/forms/checkbox',
+    count: 6,
+    image: { light: checkbox, dark: checkboxDark },
+  },
+  {
+    title: 'Dropdowns',
+    url: '/docs/components/dropdowns',
+    count: 15,
+    image: { light: dropdown, dark: dropdownDark },
+  },
+  {
+    title: 'Form Controls',
+    url: '/docs/forms/form-control',
+    count: 8,
+    image: { light: formControls, dark: formControlsDark },
+  },
+  {
+    title: 'Range',
+    url: '/docs/forms/range',
+    count: 6,
+    image: { light: range, dark: rangeDark },
+  },
+];
