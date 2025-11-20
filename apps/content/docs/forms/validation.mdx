@@ -1,12 +1,12 @@
 ---
 title: Validation
-description: Improve user experience by offering clear, actionable feedback through HTML5 form validation, using either native browser validation or custom styling and JavaScript for enhanced control.
+description: Improve the user experience by providing clear, actionable feedback via HTML5 form validation, either through native browser validation or custom styling and JavaScript for greater control.
 toc: true
 ---
 
 ## Custom validation styles
 
-Add the `novalidate` attribute to the `<form>` to disable the browser’s default feedback but still provides access to validation APIs in JavaScript. On submit, validation can prevent form submission and display feedback. Fields then show `:invalid` and `:valid` states, with custom colors, borders, focus styles.
+Add the `novalidate` attribute to the `<form>` to disable the browser’s default feedback, but still provide access to validation APIs in JavaScript. Validation can prevent form submission and display feedback on submission. Input fields then show `:invalid` and `:valid` states, with custom colors, borders, and focus styles.
 
 <Example code={`<form class="needs-validation" novalidate>
     <div class="grid sm:grid-cols-3 gap-3 mb-4">
