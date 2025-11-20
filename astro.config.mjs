@@ -23,6 +23,7 @@ export default defineConfig({
   outDir: 'build',
   vite: {
     plugins: [tailwindcss()],
+    logLevel: 'error',
   },
 
   integrations: [
