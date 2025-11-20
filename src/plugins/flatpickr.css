@@ -1,80 +1,80 @@
 .flatpickr-calendar {
-  --flatpickr-width: --spacing(77);
-  --flatpickr-font-size: var(--text-sm);
-  --flatpickr-color: var(--text-color-default);
-  --flatpickr-shadow: var(--shadow-lg);
-  --flatpickr-bg: var(--background-color-muted);
-  --flatpickr-border-width: 1px;
-  --flatpickr-border-color: transparent;
-  --flatpickr-border-radius: var(--radius-md);
+  --dtp-width: --spacing(77);
+  --dtp-font-size: var(--text-sm);
+  --dtp-color: var(--text-color-default);
+  --dtp-shadow: var(--shadow-lg);
+  --dtp-bg: var(--background-color-muted);
+  --dtp-border-width: 1px;
+  --dtp-border-color: transparent;
+  --dtp-border-radius: var(--radius-md);
 
-  --flatpickr-disabled-opacity: 0.3;
+  --dtp-disabled-opacity: 0.3;
 
-  --flatpickr-months-padding-x: --spacing(4);
-  --flatpickr-months-padding-y: --spacing(3);
-  --flatpickr-month-padding: --spacing(1);
-  --flatpickr-month-font-size: var(--text-lg);
-  --flatpickr-month-font-weight: var(--font-weight-semibold);
+  --dtp-months-padding-x: --spacing(4);
+  --dtp-months-padding-y: --spacing(3);
+  --dtp-month-padding: --spacing(1);
+  --dtp-month-font-size: var(--text-lg);
+  --dtp-month-font-weight: var(--font-weight-semibold);
 
-  --flatpickr-year-width: --spacing(17);
-  --flatpickr-year-padding: --spacing(1);
-  --flatpickr-year-font-size: var(--text-lg);
-  --flatpickr-year-font-weight: var(--font-weight-semibold);
-  --flatpickr-year-hover-bg: transparent;
+  --dtp-year-width: --spacing(17);
+  --dtp-year-padding: --spacing(1);
+  --dtp-year-font-size: var(--text-lg);
+  --dtp-year-font-weight: var(--font-weight-semibold);
+  --dtp-year-hover-bg: transparent;
 
-  --flatpickr-months-btn-size: --spacing(8);
-  --flatpickr-months-btn-icon-size: --spacing(3.5);
-  --flatpickr-months-btn-color: var(--text-color-muted);
-  --flatpickr-months-btn-radius: var(--radius-md);
-  --flatpickr-months-btn-bg: transparent;
+  --dtp-months-btn-size: --spacing(8);
+  --dtp-months-btn-icon-size: --spacing(3.5);
+  --dtp-months-btn-color: var(--text-color-muted);
+  --dtp-months-btn-radius: var(--radius-md);
+  --dtp-months-btn-bg: transparent;
 
-  --flatpickr-inner-padding: --spacing(4);
-  --flatpickr-weekday-color: var(--text-color-default);
-  --flatpickr-weekday-font-size: var(--text-xs);
-  --flatpickr-weekday-font-weight: var(--font-weight-semibold);
-  --flatpickr-weekday-bg: transparent;
+  --dtp-inner-padding: --spacing(4);
+  --dtp-weekday-color: var(--text-color-default);
+  --dtp-weekday-font-size: var(--text-xs);
+  --dtp-weekday-font-weight: var(--font-weight-semibold);
+  --dtp-weekday-bg: transparent;
 
-  --flatpickr-day-size: --spacing(9);
-  --flatpickr-day-color: var(--text-color-default);
-  --flatpickr-day-font-size: var(--text-xs);
-  --flatpickr-day-font-weight: var(--font-weight-semibold);
-  --flatpickr-day-border-radius: var(--radius-md);
-  --flatpickr-day-bg: transparent;
-  --flatpickr-day-hover-bg: var(--background-color-highlight);
-  --flatpickr-day-selected-color: var(--color-white);
-  --flatpickr-day-selected-bg: var(--color-primary);
-  --flatpickr-day-range-color: var(--text-color-default);
-  --flatpickr-day-range-bg: var(--background-color-highlight);
+  --dtp-day-size: --spacing(9);
+  --dtp-day-color: var(--text-color-default);
+  --dtp-day-font-size: var(--text-xs);
+  --dtp-day-font-weight: var(--font-weight-semibold);
+  --dtp-day-border-radius: var(--radius-md);
+  --dtp-day-bg: transparent;
+  --dtp-day-hover-bg: var(--background-color-highlight);
+  --dtp-day-selected-color: var(--color-white);
+  --dtp-day-selected-bg: var(--color-primary);
+  --dtp-day-range-color: var(--text-color-default);
+  --dtp-day-range-bg: var(--background-color-highlight);
 
-  --flatpickr-today-color: var(--color-white);
-  --flatpickr-today-bg: var(--color-primary);
-  --flatpickr-today-hover-bg: --alpha(var(--color-primary) / 90%);
+  --dtp-today-color: var(--color-white);
+  --dtp-today-bg: var(--color-primary);
+  --dtp-today-hover-bg: --alpha(var(--color-primary) / 90%);
 
-  --flatpickr-timepickr-height: --spacing(10);
-  --flatpickr-timepickr-border-width: 1px;
-  --flatpickr-timepickr-border-color: var(--border-color-light);
-  --flatpickr-timepickr-hover-bg: var(--background-color-subtle);
-  --flatpickr-time-separator-color: var(--text-muted);
+  --dtp-timepickr-height: --spacing(10);
+  --dtp-timepickr-border-width: 1px;
+  --dtp-timepickr-border-color: var(--border-color-light);
+  --dtp-timepickr-hover-bg: var(--background-color-subtle);
+  --dtp-time-separator-color: var(--text-muted);
 
-  --flatpickr-spinner-color: var(--border-color-dark);
-  --flatpickr-spinner-width: --spacing(3.5);
-  --flatpickr-spinner-arrow-size: --spacing(1);
-  --flatpickr-spinner-border-width: 1px;
-  --flatpickr-spinner-border-color: var(--border-color-light);
-  --flatpickr-spinner-active-bg: var(--background-color-muted);
-  --flatpickr-spinner-bg: transparent;
+  --dtp-spinner-color: var(--border-color-dark);
+  --dtp-spinner-width: --spacing(3.5);
+  --dtp-spinner-arrow-size: --spacing(1);
+  --dtp-spinner-border-width: 1px;
+  --dtp-spinner-border-color: var(--border-color-light);
+  --dtp-spinner-active-bg: var(--background-color-muted);
+  --dtp-spinner-bg: transparent;
 
   @apply absolute
-  w-[var(--flatpickr-width)]
-  text-[length:var(--flatpickr-font-size)]
-  text-[var(--flatpickr-color)]
+  w-[var(--dtp-width)]
+  text-[length:var(--dtp-font-size)]
+  text-[var(--dtp-color)]
   text-center
   leading-6
-  shadow-[var(--flatpickr-shadow)]
-  bg-[var(--flatpickr-bg)]
-  rounded-[var(--flatpickr-border-radius)]
-  border-[length:var(--flatpickr-border-width)]
-  border-[var(--flatpickr-border-color)]
+  shadow-[var(--dtp-shadow)]
+  bg-[var(--dtp-bg)]
+  rounded-[var(--dtp-border-radius)]
+  border-[length:var(--dtp-border-width)]
+  border-[var(--dtp-border-color)]
   touch-manipulation
   overflow-hidden
   box-border
@@ -83,12 +83,12 @@
   hidden;
 
   @variant dark {
-    --flatpickr-border-color: var(--border-color-base);
+    --dtp-border-color: var(--border-color-base);
   }
 
   .flatpickr-months {
-    @apply px-[var(--flatpickr-months-padding-x)] 
-    py-[var(--flatpickr-months-padding-y)] 
+    @apply px-[var(--dtp-months-padding-x)] 
+    py-[var(--dtp-months-padding-y)] 
     flex items-center;
 
     .flatpickr-month {
@@ -105,9 +105,9 @@
         leading-none;
 
         .flatpickr-monthDropdown-months {
-          @apply p-[var(--flatpickr-month-padding)]
-          text-[length:var(--flatpickr-month-font-size)]
-          font-[var(--flatpickr-month-font-weight)]
+          @apply p-[var(--dtp-month-padding)]
+          text-[length:var(--dtp-month-font-size)]
+          font-[var(--dtp-month-font-weight)]
           cursor-pointer
           leading-6
           align-[initial]
@@ -117,19 +117,19 @@
         }
 
         .numInputWrapper {
-          @apply w-[var(--flatpickr-year-width)]
+          @apply w-[var(--dtp-year-width)]
           inline-block
           bg-transparent;
 
           @variant dark {
-            --flatpickr-spinner-border-color: var(--border-color-base);
+            --dtp-spinner-border-color: var(--border-color-base);
           }
 
           input {
             &.cur-year {
-              @apply p-[var(--flatpickr-year-padding)]
-              text-[length:var(--flatpickr-year-font-size)]
-              font-[var(--flatpickr-year-font-weight)]
+              @apply p-[var(--dtp-year-padding)]
+              text-[length:var(--dtp-year-font-size)]
+              font-[var(--dtp-year-font-weight)]
               inline-block
               cursor-text
               align-[initial]
@@ -142,12 +142,12 @@
 
               &[disabled],
               &[disabled]:hover {
-                @apply opacity-[var(--flatpickr-disabled-opacity)]
+                @apply opacity-[var(--dtp-disabled-opacity)]
                 pointer-events-none;
               }
             }
             &:hover {
-              @apply bg-[var(--flatpickr-year-hover-bg)];
+              @apply bg-[var(--dtp-year-hover-bg)];
             }
           }
         }
@@ -156,10 +156,10 @@
 
     .flatpickr-prev-month,
     .flatpickr-next-month {
-      @apply size-[var(--flatpickr-months-btn-size)]
-      text-[var(--flatpickr-months-btn-color)]
-      rounded-[var(--flatpickr-months-btn-radius)]
-      bg-[var(--flatpickr-months-btn-bg)]
+      @apply size-[var(--dtp-months-btn-size)]
+      text-[var(--dtp-months-btn-color)]
+      rounded-[var(--dtp-months-btn-radius)]
+      bg-[var(--dtp-months-btn-bg)]
       flex 
       items-center 
       justify-center
@@ -171,7 +171,7 @@
 
       svg {
         @apply fill-current
-        size-[var(--flatpickr-months-btn-icon-size)];
+        size-[var(--dtp-months-btn-icon-size)];
 
         path {
           @apply fill-inherit transition-[fill] duration-100;
@@ -181,14 +181,14 @@
         @apply text-default;
       }
       &.flatpickr-disabled {
-        @apply opacity-[var(--flatpickr-disabled-opacity)] 
+        @apply opacity-[var(--dtp-disabled-opacity)] 
         pointer-events-none;
       }
     }
   }
 
   .flatpickr-innerContainer {
-    @apply p-[var(--flatpickr-inner-padding)] 
+    @apply p-[var(--dtp-inner-padding)] 
     pt-0 
     flex 
     box-border 
@@ -225,24 +225,24 @@
     .flatpickr-weekday {
       @apply block
       text-center 
-      text-[length:var(--flatpickr-weekday-font-size)]
-      text-[var(--flatpickr-weekday-color)]
-      font-[var(--flatpickr-weekday-font-weight)]
+      text-[length:var(--dtp-weekday-font-size)]
+      text-[var(--dtp-weekday-color)]
+      font-[var(--dtp-weekday-font-weight)]
       leading-none
       cursor-default
-      bg-[var(--flatpickr-weekday-bg)];
+      bg-[var(--dtp-weekday-bg)];
     }
 
     .flatpickr-day {
       @apply m-auto
       relative
       text-center 
-      text-[var(--flatpickr-day-color)]
-      font-[var(--flatpickr-day-font-weight)]
-      size-[var(--flatpickr-day-size)]
-      leading-[var(--flatpickr-day-size)]
-      bg-[var(--flatpickr-day-bg)] 
-      rounded-[var(--flatpickr-day-border-radius)]
+      text-[var(--dtp-day-color)]
+      font-[var(--dtp-day-font-weight)]
+      size-[var(--dtp-day-size)]
+      leading-[var(--dtp-day-size)]
+      bg-[var(--dtp-day-bg)] 
+      rounded-[var(--dtp-day-border-radius)]
       cursor-pointer
       inline-block
       box-border
@@ -250,11 +250,11 @@
       duration-200;
 
       &.today {
-        @apply text-[var(--flatpickr-today-color)] 
-        bg-[var(--flatpickr-today-bg)];
+        @apply text-[var(--dtp-today-color)] 
+        bg-[var(--dtp-today-bg)];
 
         &:hover {
-          @apply bg-[var(--flatpickr-today-hover-bg)];
+          @apply bg-[var(--dtp-today-hover-bg)];
         }
       }
       &.inRange,
@@ -269,8 +269,8 @@
       &.prevMonthDay:focus,
       &.nextMonthDay:focus {
         @apply cursor-pointer 
-        text-[var(--flatpickr-day-range-color)]
-        bg-[var(--flatpickr-day-range-bg)];
+        text-[var(--dtp-day-range-color)]
+        bg-[var(--dtp-day-range-bg)];
       }
       &.inRange,
       &.prevMonthDay.inRange,
@@ -295,8 +295,8 @@
       &.selected.nextMonthDay,
       &.startRange.nextMonthDay,
       &.endRange.nextMonthDay {
-        @apply text-[var(--flatpickr-day-selected-color)]
-        bg-[var(--flatpickr-day-selected-bg)]
+        @apply text-[var(--dtp-day-selected-color)]
+        bg-[var(--dtp-day-selected-bg)]
         opacity-100;
       }
 
@@ -305,16 +305,16 @@
       &.notAllowed,
       &.notAllowed.prevMonthDay,
       &.notAllowed.nextMonthDay {
-        @apply opacity-[var(--flatpickr-disabled-opacity)];
+        @apply opacity-[var(--dtp-disabled-opacity)];
       }
       &.flatpickr-disabled,
       &.flatpickr-disabled:hover {
-        @apply opacity-[var(--flatpickr-disabled-opacity)] 
+        @apply opacity-[var(--dtp-disabled-opacity)] 
         bg-transparent 
         cursor-not-allowed;
       }
       &:hover {
-        @apply bg-[var(--flatpickr-day-hover-bg)];
+        @apply bg-[var(--dtp-day-hover-bg)];
       }
       &.hidden {
         @apply invisible;
@@ -335,18 +335,18 @@
     span {
       @apply absolute
       right-0
-      w-[var(--flatpickr-spinner-width)] h-1/2
+      w-[var(--dtp-spinner-width)] h-1/2
       py-0 pr-1 pl-0.5
       leading-[50%]
       opacity-0
       cursor-pointer
-      bg-[var(--flatpickr-spinner-bg)]
-      border-[length:var(--flatpickr-spinner-border-width)]
-      border-[var(--flatpickr-spinner-border-color)]
+      bg-[var(--dtp-spinner-bg)]
+      border-[length:var(--dtp-spinner-border-width)]
+      border-[var(--dtp-spinner-border-color)]
       box-border;
 
       &:active {
-        @apply bg-[var(--flatpickr-spinner-active-bg)];
+        @apply bg-[var(--dtp-spinner-active-bg)];
       }
       &::after {
         @apply absolute content-[''] block;
@@ -357,9 +357,9 @@
         &::after {
           @apply top-1/4 
           border-x-transparent 
-          border-x-[length:var(--flatpickr-spinner-arrow-size)] 
-          border-b-[length:var(--flatpickr-spinner-arrow-size)] 
-          border-b-[var(--flatpickr-spinner-color)];
+          border-x-[length:var(--dtp-spinner-arrow-size)] 
+          border-b-[length:var(--dtp-spinner-arrow-size)] 
+          border-b-[var(--dtp-spinner-color)];
         }
       }
       &.arrowDown {
@@ -368,9 +368,9 @@
         &::after {
           @apply top-2/5
           border-x-transparent
-          border-x-[length:var(--flatpickr-spinner-arrow-size)]
-          border-t-[length:var(--flatpickr-spinner-arrow-size)]
-          border-t-[var(--flatpickr-spinner-color)];
+          border-x-[length:var(--dtp-spinner-arrow-size)]
+          border-t-[length:var(--dtp-spinner-arrow-size)]
+          border-t-[var(--dtp-spinner-color)];
         }
       }
       svg {
@@ -418,11 +418,11 @@
   &.hasTime {
     .flatpickr-time {
       @apply h-10 
-      border-t-[length:var(--flatpickr-timepickr-border-width)] 
-      border-[var(--flatpickr-timepickr-border-color)];
+      border-t-[length:var(--dtp-timepickr-border-width)] 
+      border-[var(--dtp-timepickr-border-color)];
 
       @variant dark {
-        --flatpickr-timepickr-border-color: var(--border-color-base);
+        --dtp-timepickr-border-color: var(--border-color-base);
       }
     }
   }
@@ -438,8 +438,8 @@
 
 .flatpickr-time {
   @apply text-center
-  max-h-[var(--flatpickr-timepickr-height)]
-  leading-[var(--flatpickr-timepickr-height)]
+  max-h-[var(--dtp-timepickr-height)]
+  leading-[var(--dtp-timepickr-height)]
   outline-0
   flex
   box-border
@@ -448,7 +448,7 @@
   .numInputWrapper {
     @apply flex-1 
     w-2/5 
-    h-[var(--flatpickr-timepickr-height)] 
+    h-[var(--dtp-timepickr-height)] 
     float-left;
 
     input {
@@ -473,7 +473,7 @@
   }
 
   .flatpickr-time-separator {
-    @apply text-[var(--flatpickr-time-separator-color)]
+    @apply text-[var(--dtp-time-separator-color)]
     leading-[inherit]
     font-bold
     h-[inherit]
@@ -504,7 +504,7 @@
   .flatpickr-am-pm:hover,
   input:focus,
   .flatpickr-am-pm:focus {
-    @apply bg-[var(--flatpickr-timepickr-hover-bg)];
+    @apply bg-[var(--dtp-timepickr-hover-bg)];
   }
 }
 
