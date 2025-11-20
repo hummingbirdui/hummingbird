@@ -151,7 +151,7 @@
   }
   &.noUi-handle,
   .noUi-handle {
-    @apply bg-[var(--ar-connect-disabled-bg)] cursor-not-allowed;
+    @apply bg-[var(--ar-connect-disabled-bg)] cursor-not-allowed hover:shadow-none focus:shadow-none;
   }
 }
 /* Base;
