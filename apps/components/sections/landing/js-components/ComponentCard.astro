@@ -13,17 +13,17 @@ const { color, image, title, description, link } = component;
 ---
 
 <GradientBorderBox color={color} class="grid">
-  <div class="card card-img-overlay max-w-50 h-36 md:h-full">
+  <a href={getVersionedPath(link)} class="card card-img-overlay max-w-50 h-36 md:h-full">
     <img src={image.light.src} class="card-img h-full brightness-100 dark:hidden object-cover" alt={title} />
     <img src={image.dark.src} class="card-img brightness-100 hidden dark:inline object-cover" alt={title} />
     <div class="card-body p-4 pb-2 md:p-6 md:pb-4.5">
       <h4 class="card-title mb-4 text-lg md:text-xl text-default font-medium">{title}</h4>
       <p class="text-muted line-clamp-2 xl:line-clamp-none mb-3">{description}</p>
       <div class="text-end">
-        <a href={getVersionedPath(link)} class="btn btn-icon btn-sm">
+        <button class="btn btn-icon btn-sm">
           <ArrowIcon class="text-default" />
-        </a>
+        </button>
       </div>
     </div>
-  </div>
+  </a>
 </GradientBorderBox>
