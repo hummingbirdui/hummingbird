@@ -108,7 +108,6 @@ const currentPath = Astro.url.pathname;
     const element = document.querySelector('.stars-count') as HTMLElement;
     if (!element) return;
 
-    // Check if we have cached data (valid for 10 minutes)
     const cacheKey = `github-stars-hummingbirdui-hummingbird`;
     const cached = localStorage.getItem(cacheKey);
 
@@ -132,7 +131,6 @@ const currentPath = Astro.url.pathname;
       const data = await response.json();
       const stars = data.stargazers_count;
 
-      // Cache the result
       localStorage.setItem(
         cacheKey,
         JSON.stringify({
@@ -144,7 +142,6 @@ const currentPath = Astro.url.pathname;
       element.textContent = stars.toLocaleString();
     } catch (error) {
       console.error('Error fetching GitHub stars:', error);
-      // If we have old cached data, use it even if expired
       if (cached) {
         const { stars } = JSON.parse(cached);
         element.textContent = stars.toLocaleString();

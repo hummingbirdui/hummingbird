@@ -95,6 +95,8 @@ import divider from '@assets/images/components/light/divider.svg';
 import dividerDark from '@assets/images/components/dark/divider-dark.svg';
 import customScrollbar from '@assets/images/components/light/custom-scrollbar.svg';
 import customScrollbarDark from '@assets/images/components/dark/custom-scrollbar-dark.svg';
+import dtp from '@assets/images/components/light/dtp.svg';
+import dtpDark from '@assets/images/components/dark/dtp-dark.svg';
 
 export interface Component {
   title: string;
@@ -198,6 +200,12 @@ export const dataEntry: Component[] = [
     url: '/docs/forms/checkbox',
     count: 6,
     image: { light: checkbox, dark: checkboxDark },
+  },
+  {
+    title: 'Date & Time Pickers',
+    url: '/docs/forms/advanced-forms/date-time-picker',
+    count: 6,
+    image: { light: dtp, dark: dtpDark },
   },
   {
     title: 'File Input',
