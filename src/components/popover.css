@@ -9,7 +9,7 @@
   --popover-box-shadow: var(--shadow-xl);
   --popover-header-padding-x: --spacing(4);
   --popover-header-padding-y: --spacing(3);
-  --popover-margin: --spacing(2);
+  --popover-margin: --spacing(1);
   --popover-header-font-size: var(--text-base);
   --popover-header-color: var(--text-color-default);
   --popover-header-bg: var(--background-color-default);

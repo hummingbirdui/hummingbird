@@ -6,7 +6,7 @@
   --tooltip-bg: var(--color-dark);
   --tooltip-color: var(--color-white);
   --tooltip-font-size: var(--text-xs);
-  --tooltip-margin: --spacing(2);
+  --tooltip-margin: --spacing(1);
   --tooltip-opacity: 1;
   --tooltip-border-radius: var(--radius-sm);
   --tooltip-arrow-width: 0.75rem;
