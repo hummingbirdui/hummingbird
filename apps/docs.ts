@@ -1,11 +1,10 @@
 import docsearch from '@docsearch/js';
+import { getConfig } from '@libs/config';
+import { Toast } from '../src/index.ts';
 import flatpickrInit from './plugins/flatpickr';
 import dropzoneInit from './plugins/dropzone';
-import { getConfig } from '@libs/config';
 import noUiSliderInit from './plugins/noUISlider';
 import choicesInit from './plugins/choices';
-
-declare const hummingbird: any;
 
 docsearch({
   container: '#docsearch',
@@ -65,11 +64,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Toast examples
   const toastTrigger = document.getElementById('liveToastBtn');
-  const toastLiveExample = document.getElementById('liveToast');
+  const toastLiveExample = document.getElementById('liveToast') as HTMLElement;
   const toastPlacement = document.getElementById('toastPlacement');
   const toastPlacementSelect = document.getElementById('selectToastPlacement') as HTMLSelectElement;
   if (toastTrigger) {
-    const hbToast = hummingbird.Toast.getOrCreateInstance(toastLiveExample);
+    const hbToast = Toast.getOrCreateInstance(toastLiveExample);
     toastTrigger.addEventListener('click', () => {
       hbToast.show();
     });
