@@ -204,7 +204,7 @@ export const dataEntry: Component[] = [
   {
     title: 'Date & Time Pickers',
     url: '/docs/forms/advanced-forms/date-time-picker',
-    count: 6,
+    count: 8,
     image: { light: dtp, dark: dtpDark },
   },
   {
