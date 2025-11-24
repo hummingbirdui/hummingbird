@@ -6,7 +6,7 @@ import overlayDark from '@assets/images/landing/table/table-overlay-d.png';
 import overlayLight from '@assets/images/landing/table/table-overlay-l.png';
 ---
 
-<SectionWrapper id="comparison">
+<SectionWrapper id="comparison" class="!py-60 -my-40 bg-cover bg-center bg-no-repeat bg-[url('/images/backgrounds/table-bg-l.png')] dark:bg-[url('/images/backgrounds/table-bg-d.png')]">
   <SectionHeader
     title="An evolved approach"
     subtitle="Hummingbird's utility-first approach delivers smaller bundles, better performance, and advanced customization by eliminating unused CSS."
@@ -17,12 +17,12 @@ import overlayLight from '@assets/images/landing/table/table-overlay-l.png';
     <div class="relative w-238 mx-auto">
       <img
         src={overlayDark.src}
-        class="absolute top-0 left-[238px] w-[238px] h-142 pointer-events-none rounded-2xl z-10 hidden dark:block"
+        class="absolute top-0 left-1/4 w-1/4 h-142 pointer-events-none rounded-2xl z-10 hidden dark:block"
         alt="table-overlay"
       />
       <img
         src={overlayLight.src}
-        class="absolute top-0 left-[238px] w-[238px] h-142 pointer-events-none rounded-2xl z-10 dark:hidden"
+        class="absolute top-0 left-1/4 w-1/4 h-142 pointer-events-none rounded-2xl z-10 dark:hidden"
         alt="table-overlay"
       />
       <ComparisonTable />
