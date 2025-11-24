@@ -165,9 +165,9 @@ Toasts can be customized with additional elements such as action buttons or by u
 
 ## Placement
 
-Toasts can be positioned with custom classes. Use utilities like `.top-0`, `.end-0`, `.bottom-0`, `.start-0` and `.translate` to place toasts in different corners of the viewport.
+Toasts can be positioned with custom classes. Use utilities like `.top-*`, `.end-*`, `.bottom-*`, `.start-*` and `.translate-*` to place toasts in different corners of the viewport.
 
-<Example code={`<form>
+<Example class="[&_.toast-container]:z-10" code={`<form>
     <div class="form-field mb-4">
       <label for="selectToastPlacement" class="form-label">Toast placement</label>
       <select class="form-select-fill" id="selectToastPlacement">
@@ -200,7 +200,7 @@ Toasts can be positioned with custom classes. Use utilities like `.top-0`, `.end
 
 For systems that generate multiple notifications, a wrapping element can be used to allow toasts to stack efficiently.
 
-<Example class='h-70' code={`<div aria-live="polite" aria-atomic="true" class="relative">
+<Example class='h-70 [&_.toast-container]:z-10' code={`<div aria-live="polite" aria-atomic="true" class="relative">
     <!-- Position it: -->
     <!-- - .toast-container for spacing between toasts -->
     <!-- - .top-0 & .end-0 to position the toasts in the upper right corner -->

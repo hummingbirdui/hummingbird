@@ -8,7 +8,7 @@ attributeLink: https://getbootstrap.com/docs/5.3/components/scrollspy/
 
 ## How it works
 
-Scrollspy toggles the .active class on anchor (`<a>`) elements when the element with the `id` referenced by the anchor’s `href` is scrolled into view. It is best used with a Hummingbird [nav component](/docs/components/navs-tabs) or [list group](/docs/components/list-group) but will function with any anchor elements on the page.
+Scrollspy toggles the `.active` class on anchor (`<a>`) elements when the element with the `id` referenced by the anchor’s `href` is scrolled into view. It is best used with a Hummingbird [nav component](/docs/components/navs-tabs) or [list group](/docs/components/list-group) but will function with any anchor elements on the page.
 
 - To implement, Scrollspy requires two elements: a navigation, list group, or a simple set of links, and a scrollable container. The scrollable container can be the `<body>` or a custom element with a defined `height` and `overflow-y: scroll`.
 
@@ -191,7 +191,7 @@ Scrollspy can also be used with basic anchor links or buttons. Scroll the area b
 
 ### Via data attributes
 
-To add scrollspy behavior to a topbar navigation, add `data-hb-spy="scroll"` to the element to be spied on (typically the `<body>`). Then, add the `data-hb-target` attribute with the `id` or class name of the parent element of any `.nav` component.
+To add scrollspy behavior to a topbar navigation, add `data-bs-spy="scroll"` to the element to be spied on (typically the `<body>`). Then, add the `data-bs-target` attribute with the `id` or class name of the parent element of any `.nav` component.
 
 <Example showPreview={false} code={`<body data-bs-spy="scroll" data-bs-target="#navbar-example">
     ...
