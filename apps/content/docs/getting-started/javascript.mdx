@@ -101,23 +101,25 @@ Here’s how to initialize and use the [Modal](/docs/components/modal) component
 
 <Example lang='js' showPreview={false} 
   code={`const openBtn = document.querySelector("[data-open-demo-modal]");
-const myModal = new window.hummingbird.Modal(".modal");
+  const myModal = new window.hummingbird.Modal(".modal");
 
-openBtn.addEventListener("click", () => {
-  myModal.show();
-});`} />
+  openBtn.addEventListener("click", () => {
+    myModal.show();
+  });`} 
+/>
 
 <br/>
 When using a build system such as Vite or Webpack, import [Modal](/docs/components/modal) as shown below.
 
 <Example lang='js' showPreview={false} 
   code={`import { Modal } from "@hummingbirdui/hummingbird";
-const openBtn = document.querySelector("[data-open-demo-modal]");
-const myModal = new Modal(".modal");
+  const openBtn = document.querySelector("[data-open-demo-modal]");
+  const myModal = new Modal(".modal");
 
-openBtn.addEventListener("click", () => {
-  myModal.show();
-});`} />
+  openBtn.addEventListener("click", () => {
+    myModal.show();
+  });`}
+/>
 
 ## TypeScript support
 
