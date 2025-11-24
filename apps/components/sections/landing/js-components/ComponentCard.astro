@@ -1,5 +1,4 @@
 ---
-import ArrowIcon from '@components/icons/ArrowIcon.astro';
 import GradientBorderBox from '../common/GradientBorderBox.astro';
 import type { JSComponent } from 'apps/data/landing/js-components';
 import { getVersionedPath } from '@libs/config';
@@ -12,18 +11,13 @@ const { component } = Astro.props;
 const { color, image, title, description, link } = component;
 ---
 
-<GradientBorderBox color={color} class="grid">
+<GradientBorderBox color={color}>
   <a href={getVersionedPath(link)} class="card card-img-overlay max-w-50 h-36 md:h-full">
     <img src={image.light.src} class="card-img h-full brightness-100 dark:hidden object-cover" alt={title} />
     <img src={image.dark.src} class="card-img brightness-100 hidden dark:inline object-cover" alt={title} />
     <div class="card-body p-4 pb-2 md:p-6 md:pb-4.5">
       <h4 class="card-title mb-4 text-lg md:text-xl text-default font-medium">{title}</h4>
-      <p class="text-muted line-clamp-2 xl:line-clamp-none mb-3">{description}</p>
-      <div class="text-end">
-        <button class="btn btn-icon btn-sm">
-          <ArrowIcon class="text-default" />
-        </button>
-      </div>
+      <p class="mb-0 text-muted line-clamp-3 leading-[1.6]">{description}</p>
     </div>
   </a>
 </GradientBorderBox>
