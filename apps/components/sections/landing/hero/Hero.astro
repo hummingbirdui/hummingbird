@@ -3,9 +3,19 @@ import HeroCards from './HeroCards.astro';
 import CopyIcon from '@components/icons/CopyIcon.astro';
 import CheckIcon from '@components/icons/CheckIcon.astro';
 import { getVersionedPath } from '@libs/config';
+import gridLeftL from '@assets/images/landing/grids/grid-left-l.png';
+import gridLeftD from '@assets/images/landing/grids/grid-left-d.png';
 ---
 
-<section id="hero" class="relative px-4 sm:px-6 lg:px-10 xl:h-180 overflow-hidden">
+<section
+  id="hero"
+  class="relative px-4 sm:px-6 lg:px-10 xl:h-180 overflow-hidden bg-cover bg-top bg-no-repeat bg-[url('/images/backgrounds/hero-bg-l.png')] dark:bg-[url('/images/backgrounds/hero-bg-d.png')]"
+>
+  <div class="absolute w-240 -top-70 lg:-top-38 -left-30 -z-10">
+    <img src={gridLeftD.src} class="hidden dark:block object-contain" />
+    <img src={gridLeftL.src} class="dark:hidden object-contain" />
+  </div>
+
   <div class="mx-auto flex justify-between gap-10 h-full max-w-8xl">
     <div class="my-auto py-24 sm:py-29 md:py-37 w-full [@media(min-width:1368px)]:w-186 shrink-0">
       <h1
@@ -17,14 +27,14 @@ import { getVersionedPath } from '@libs/config';
         <span>like Tailwind</span>
       </h1>
       <p
-        class="mb-10 lg:mb-16 mx-auto [@media(min-width:1368px)]:mx-0 text-muted text-base sm:text-[21px] text-center [@media(min-width:1368px)]:text-left -tracking-[1px] leading-[1.2] max-w-2xl"
+        class="mb-10 lg:mb-20 mx-auto [@media(min-width:1368px)]:mx-0 text-muted text-base sm:text-[21px] text-center [@media(min-width:1368px)]:text-left -tracking-[1px] leading-[1.2] max-w-2xl"
       >
         An open-source system sensibly designed for rapid development, without sacrificing the granular control of
         utility-first CSS.
       </p>
       <section
         id="links"
-        class="flex flex-col sm:flex-row items-center justify-center [@media(min-width:1368px)]:justify-start gap-4"
+        class="flex flex-col sm:flex-row items-center justify-center [@media(min-width:1368px)]:justify-start gap-2 lg:gap-4"
       >
         <a
           href=`${getVersionedPath('/docs/getting-started/installation')}`

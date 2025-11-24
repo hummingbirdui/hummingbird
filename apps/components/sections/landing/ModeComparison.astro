@@ -4,37 +4,47 @@ import SectionWrapper from './common/SectionWrapper.astro';
 import ArrowRangeIcon from '@components/icons/ArrowRangeIcon.astro';
 import lightLgImage from '@assets/images/landing/light-dark/light-lg.png';
 import darkLgImage from '@assets/images/landing/light-dark/dark-lg.png';
+import gridRightL from '@assets/images/landing/grids/grid-right-l.png';
+import gridRightD from '@assets/images/landing/grids/grid-right-d.png';
 ---
 
-<SectionWrapper id="mode-comparison" class="max-w-5xl">
-  <SectionHeader
-    title="Dark mode, perfected."
-    subtitle="Hummingbird's dark mode offers automatic detection or manual toggle, ensuring optimal contrast and a sleek appearance."
-  />
+<div class="relative">
+  <div class="absolute w-240 -top-28 -right-46 -z-10">
+    <img src={gridRightD.src} class="hidden dark:block object-contain" />
+    <img src={gridRightL.src} class="dark:hidden object-contain" />
+  </div>
 
-  <div
-    id="slider-container"
-    class="mx-auto relative select-none w-full max-w-82 sm:max-w-136 md:max-w-170 lg:max-w-236 aspect-[328/536] sm:aspect-[544/536] md:aspect-[680/548] lg:aspect-[944/566] rounded-3xl border-2 border-light overflow-hidden"
-  >
-    <img id="light-image" src={lightLgImage.src} class="absolute inset-0 h-full w-full object-cover object-center" />
-
-    <img
-      id="dark-image"
-      src={darkLgImage.src}
-      class="absolute inset-0 h-full w-full object-cover object-center bg-default"
-      style="clip-path: inset(0 0 0 50%);"
+  <SectionWrapper id="mode-comparison" class="max-w-5xl">
+    <SectionHeader
+      title="Dark mode, perfected."
+      subtitle="Hummingbird's dark mode offers automatic detection or manual toggle, ensuring optimal contrast and a sleek appearance."
     />
 
     <div
-      id="slider"
-      class="absolute top-0 left-1/2 h-full w-0.75 bg-primary cursor-col-resize flex items-center justify-center"
+      id="slider-container"
+      class="mx-auto relative select-none w-full max-w-82 sm:max-w-136 md:max-w-170 lg:max-w-236 aspect-[328/536] sm:aspect-[544/536] md:aspect-[680/548] lg:aspect-[944/566] rounded-3xl border-2 border-light overflow-hidden"
     >
-      <button class="absolute btn btn-primary btn-icon rounded-full border border-white dark:border-primary-lighter cursor-ew-resize shadow-md"
-        ><ArrowRangeIcon /></button
+      <img id="light-image" src={lightLgImage.src} class="absolute inset-0 h-full w-full object-cover object-center" />
+
+      <img
+        id="dark-image"
+        src={darkLgImage.src}
+        class="absolute inset-0 h-full w-full object-cover object-center bg-default"
+        style="clip-path: inset(0 0 0 50%);"
+      />
+
+      <div
+        id="slider"
+        class="absolute top-0 left-1/2 h-full w-0.75 bg-primary cursor-col-resize flex items-center justify-center"
       >
+        <button
+          class="absolute btn btn-primary btn-icon rounded-full border border-white dark:border-primary-lighter cursor-ew-resize shadow-md"
+          ><ArrowRangeIcon /></button
+        >
+      </div>
     </div>
-  </div>
-</SectionWrapper>
+  </SectionWrapper>
+</div>
 
 <script>
   const container = document.getElementById('slider-container') as HTMLDivElement;
@@ -98,7 +108,7 @@ import darkLgImage from '@assets/images/landing/light-dark/dark-lg.png';
     const rect = container.getBoundingClientRect();
     let x: number;
 
-     if ("touches" in e) {
+    if ('touches' in e) {
       x = e.touches[0].clientX - rect.left;
     } else {
       x = (e as MouseEvent).clientX - rect.left;

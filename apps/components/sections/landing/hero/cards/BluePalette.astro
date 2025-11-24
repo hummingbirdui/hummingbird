@@ -2,17 +2,17 @@
 import CardWrapper from '../CardWrapper.astro';
 
 const colors = [
-  '--color-blue-50',
-  '--color-blue-100',
-  '--color-blue-200',
-  '--color-blue-300',
-  '--color-blue-400',
-  '--color-blue-500',
-  '--color-blue-600',
-  '--color-blue-700',
-  '--color-blue-800',
-  '--color-blue-900',
-  '--color-blue-950',
+  '50:#ebf5ff',
+  '100:#d1e8ff',
+  '200:#a3d2ff',
+  '300:#7abeff',
+  '400:#4da7ff',
+  '500:#1e90ff',
+  '600:#0074e6',
+  '700:#0058ad',
+  '800:#003970',
+  '900:#001c38',
+  '950:#00101f',
 ];
 ---
 
@@ -21,12 +21,12 @@ const colors = [
 
   <div class="grid grid-cols-11 gap-1 grow">
     {
-      colors.map((variable) => {
-        const label = variable.split('-').pop();
+      colors.map((item) => {
+        const color = item.split(':');
         return (
-          <div class="flex flex-col h-full">
-            <p class="mb-1 text-xs text-center text-subtle">{label}</p>
-            <div class="rounded-sm grow" style={{ backgroundColor: `var(${variable})` }} />
+          <div class="flex flex-col h-full" data-bs-toggle="tooltip" data-bs-title={color[1]}>
+            <p class="mb-1 text-xs text-center text-subtle">{color[0]}</p>
+            <div class="rounded-sm grow" style={{ backgroundColor: color[1] }} />
           </div>
         );
       })

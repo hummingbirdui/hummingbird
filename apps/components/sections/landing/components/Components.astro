@@ -24,7 +24,7 @@ import { getVersionedPath } from '@libs/config';
   </div>
 
   <div
-    class="flex-2 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 w-full max-w-65 sm:max-w-134 md:max-w-172 lg:max-w-203 xl:max-w-188 2xl:max-w-203"
+    class="flex-2 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 w-full max-w-65 sm:max-w-134 md:max-w-172 lg:max-w-203 xl:max-w-188 2xl:max-w-203 [&>.card]:last-of-type:hidden [&>.card]:md:last-of-type:grid"
   >
     {components.slice(0, 9).map((item) => <ComponentCard component={item} />)}
   </div>
