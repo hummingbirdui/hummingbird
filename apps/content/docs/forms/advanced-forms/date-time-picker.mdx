@@ -37,42 +37,42 @@ Import styles after importing Tailwind and Hummingbird CSS:
 
 ## Date picker
 
-<Example code={`<input id="datepicker" type="text" class="form-control" placeholder="dd-mm-yyyy" />`} />
+<Example class="mx-auto max-w-98" code={`<input id="datepicker" type="text" class="form-control" placeholder="dd-mm-yyyy" />`} />
 <Example lang='js' showPreview={false}
-  code={`flatpickr('#datepicker', { dateFormat: 'd-m-Y' });`} 
+  code={`flatpickr('#datepicker', { dateFormat: 'd-m-Y' });`}
 />
 
 ## Time picker
 
-<Example code={`<input id="timepicker" type="text" class="form-control" placeholder="hh:mm" />`} />
+<Example class="mx-auto max-w-98" code={`<input id="timepicker" type="text" class="form-control" placeholder="hh:mm" />`} />
 <Example lang='js' showPreview={false}
   code={`flatpickr('#timepicker', { enableTime: true, noCalendar: true, dateFormat: 'H:i' });`} 
 />
 
 ## Date Time picker
 
-<Example code={`<input id="datetimepicker" type="text" class="form-control" placeholder="dd-mm-yyyy hh:mm" />`} />
+<Example class="mx-auto max-w-98" code={`<input id="datetimepicker" type="text" class="form-control" placeholder="dd-mm-yyyy hh:mm" />`} />
 <Example lang='js' showPreview={false}
   code={`flatpickr('#datetimepicker', { enableTime: true, dateFormat: 'd-m-Y H:i' });`} 
 />
 
 ## Date Range picker
 
-<Example code={`<input id="rangepicker" type="text" class="form-control" placeholder="d-m-y to d-m-y" />`} />
+<Example class="mx-auto max-w-98" code={`<input id="rangepicker" type="text" class="form-control" placeholder="d-m-y to d-m-y" />`} />
 <Example lang='js' showPreview={false}
   code={`flatpickr('#rangepicker', { mode: 'range', dateFormat: 'd-m-Y' });`} 
 />
 
 ## Multiple dates
 
-<Example code={`<input id="multiple-dates" type="text" class="form-control" placeholder="dd-mm-yyyy" />`} />
+<Example class="mx-auto max-w-98" code={`<input id="multiple-dates" type="text" class="form-control" placeholder="dd-mm-yyyy" />`} />
 <Example lang='js' showPreview={false}
   code={`flatpickr('#multiple-dates', { mode: 'multiple', dateFormat: 'd-m-Y' });`} 
 />
 
 ## Disabled dates
 
-<Example code={`<input id="disabled-dates" type="text" class="form-control" placeholder="dd-mm-yyyy" />`} />
+<Example class="mx-auto max-w-98" code={`<input id="disabled-dates" type="text" class="form-control" placeholder="dd-mm-yyyy" />`} />
 <Example lang='js' showPreview={false}
   code={`flatpickr('#disabled-dates', {
     dateFormat: 'd-m-Y',
@@ -86,7 +86,7 @@ Import styles after importing Tailwind and Hummingbird CSS:
 
 ## External elements
 
-<Example code={`<div id="external-el" class="input-group-icon">
+<Example class="mx-auto max-w-98" code={`<div id="external-el" class="input-group-icon">
     <input type="text" class="form-control" placeholder="dd-mm-yyyy" data-input />
     <svg class="form-control-icon-end" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="currentColor" d="M5 22q-.825 0-1.412-.587T3 20V6q0-.825.588-1.412T5 4h1V3q0-.425.288-.712T7 2t.713.288T8 3v1h8V3q0-.425.288-.712T17 2t.713.288T18 3v1h1q.825 0 1.413.588T21 6v14q0 .825-.587 1.413T19 22zm0-2h14V10H5zM5 8h14V6H5zm0 0V6z"/></svg>
   </div>`}
@@ -97,7 +97,7 @@ Import styles after importing Tailwind and Hummingbird CSS:
 
 ## Inline Calendar
 
-<Example code={`<div id="inline-calendar-el" class="input-group-icon">
+<Example class="mx-auto max-w-98" code={`<div id="inline-calendar-el" class="input-group-icon">
     <input type="text" class="form-control" placeholder="dd-mm-yyyy" data-input />
     <svg class="form-control-icon-end" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="currentColor" d="M5 22q-.825 0-1.412-.587T3 20V6q0-.825.588-1.412T5 4h1V3q0-.425.288-.712T7 2t.713.288T8 3v1h8V3q0-.425.288-.712T17 2t.713.288T18 3v1h1q.825 0 1.413.588T21 6v14q0 .825-.587 1.413T19 22zm0-2h14V10H5zM5 8h14V6H5zm0 0V6z"/></svg>
   </div>
@@ -125,7 +125,8 @@ Date & Time picker styles can be customized using the following CSS variables:
     --dtp-border-color: transparent;
     --dtp-border-radius: var(--radius-md);
 
-    --dtp-disabled-opacity: 0.3;
+    --dtp-disabled-opacity: 0.15;
+    --dtp-muted-day-opacity: 0.3;
 
     --dtp-months-padding-x: --spacing(4);
     --dtp-months-padding-y: --spacing(3);

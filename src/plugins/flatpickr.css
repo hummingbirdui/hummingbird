@@ -8,7 +8,8 @@
   --dtp-border-color: transparent;
   --dtp-border-radius: var(--radius-md);
 
-  --dtp-disabled-opacity: 0.3;
+  --dtp-disabled-opacity: 0.15;
+  --dtp-muted-day-opacity: 0.3;
 
   --dtp-months-padding-x: --spacing(4);
   --dtp-months-padding-y: --spacing(3);
@@ -305,7 +306,7 @@
       &.notAllowed,
       &.notAllowed.prevMonthDay,
       &.notAllowed.nextMonthDay {
-        @apply opacity-[var(--dtp-disabled-opacity)];
+        @apply opacity-[var(--dtp-muted-day-opacity)];
       }
       &.flatpickr-disabled,
       &.flatpickr-disabled:hover {
