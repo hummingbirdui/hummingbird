@@ -5,13 +5,7 @@ import { getConfig } from '@libs/config';
 import noUiSliderInit from './plugins/noUISlider';
 import choicesInit from './plugins/choices';
 
-declare global {
-  interface Window {
-    hummingbird: {
-      Toast: any;
-    };
-  }
-}
+declare const hummingbird: any;
 
 docsearch({
   container: '#docsearch',
@@ -75,9 +69,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const toastPlacement = document.getElementById('toastPlacement');
   const toastPlacementSelect = document.getElementById('selectToastPlacement') as HTMLSelectElement;
   if (toastTrigger) {
-    const toastBootstrap = window.hummingbird.Toast.getOrCreateInstance(toastLiveExample);
+    const hbToast = hummingbird.Toast.getOrCreateInstance(toastLiveExample);
     toastTrigger.addEventListener('click', () => {
-      toastBootstrap.show();
+      hbToast.show();
     });
   }
   if (toastPlacement) {
