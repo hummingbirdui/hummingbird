@@ -57,7 +57,7 @@ Create a wrapper component that dynamically imports Hummingbird whenever the rou
 Add the wrapper to `layout.tsx` so Hummingbird scripts are included globally, making components available across all pages.
 
 <Example lang='js' showPreview={false}
-  code={`import HummingbirdUI from "./components/HumminhbirdUI";
+  code={`import HummingbirdUI from "./components/HummingbirdUI";
 
   export default function RootLayout({children,}: Readonly<{children: React.ReactNode;}>) {
     return (
