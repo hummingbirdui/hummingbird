@@ -27,6 +27,7 @@
 - [ESM vs CJS](#esm-vs-cjs)
 - [Supported Frameworks](#supported-frameworks)
 - [License](#license)
+- [Contribution guidelines](#contribution-guidelines)
 - [Meet the Team](#meet-the-team)
 - [Contributors](#contributors)
 
@@ -161,6 +162,57 @@ No manual choice is required; the bundler or runtime will select the correct ver
 ## License
 
 This project is licensed under the [MIT License](./LICENSE).
+
+## Contribution guidelines
+
+To contribute code:
+
+1. **Fork the repository** to your own GitHub account.
+
+2. **Clone your fork** locally:
+   ```sh
+   git clone https://github.com/your-username/hummingbird.git
+   cd hummingbird
+   ```
+
+3. **Install dependencies**:
+   ```sh
+   npm install
+   ```
+
+4. **Start the development server**:
+   This will start the documentation site locally, allowing you to see changes in real-time.
+   ```sh
+   npm start
+   ```
+   The site will typically be available at `http://localhost:4321` (or another port if 4321 is busy).
+
+5. **Create a new branch** for your feature or bug fix:
+   ```sh
+   git checkout -b feature-or-bugfix-name
+   ```
+
+6. **Make your changes**:
+   - If modifying the library, work in `src/`.
+   - If updating documentation, work in `apps/`.
+
+7. **Build the project** (optional but recommended before committing):
+   To ensure everything builds correctly:
+   ```sh
+   npm run build:npm
+   ```
+
+8. **Commit your changes**:
+   ```sh
+   git commit -m "Your descriptive commit message"
+   ```
+
+9. **Push your changes** to your fork:
+   ```sh
+   git push origin feature-or-bugfix-name
+   ```
+
+10. **Open a pull request** against the `main` branch.
 
 ## Meet the team
 

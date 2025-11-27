@@ -37,32 +37,69 @@ We welcome feature requests! Before submitting a request, check the existing [Is
 - How would you expect it to work?
 - Any alternatives you've considered
 
+## Prerequisites
+
+Before you begin, ensure you have the following installed:
+- [Node.js](https://nodejs.org/) (v18 or higher recommended)
+- [npm](https://www.npmjs.com/) (comes with Node.js)
+
+## Project Structure
+
+- `src/`: Contains the core Hummingbird library source code (CSS, components, plugins).
+- `apps/`: Contains the documentation site and examples.
+- `lib/`: Generated output for the library (do not edit directly).
+- `dist/`: Distribution files (do not edit directly).
+
 ## Development Workflow
 
 To contribute code:
+
 1. **Fork the repository** to your own GitHub account.
+
 2. **Clone your fork** locally:
    ```sh
    git clone https://github.com/your-username/hummingbird.git
    cd hummingbird
    ```
+
 3. **Install dependencies**:
    ```sh
    npm install
    ```
-4. **Create a new branch** for your feature or bug fix:
+
+4. **Start the development server**:
+   This will start the documentation site locally, allowing you to see changes in real-time.
+   ```sh
+   npm start
+   ```
+   The site will typically be available at `http://localhost:4321` (or another port if 4321 is busy).
+
+5. **Create a new branch** for your feature or bug fix:
    ```sh
    git checkout -b feature-or-bugfix-name
    ```
-5. **Make changes and commit**:
+
+6. **Make your changes**:
+   - If modifying the library, work in `src/`.
+   - If updating documentation, work in `apps/`.
+
+7. **Build the project** (optional but recommended before committing):
+   To ensure everything builds correctly:
+   ```sh
+   npm run build:npm
+   ```
+
+8. **Commit your changes**:
    ```sh
    git commit -m "Your descriptive commit message"
    ```
-6. **Push your changes** to your fork:
+
+9. **Push your changes** to your fork:
    ```sh
    git push origin feature-or-bugfix-name
    ```
-7. **Open a pull request** against the `main` branch.
+
+10. **Open a pull request** against the `main` branch.
 
 ## Code Guidelines
 
