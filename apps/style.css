@@ -34,6 +34,13 @@
   background: transparent;
 }
 
+.disable-transition *,
+.disable-transition *::before,
+.disable-transition *::after {
+  transition: none !important;
+  animation: none !important;
+}
+
 .astro-code::-webkit-scrollbar-track {
   background: transparent !important;
 }

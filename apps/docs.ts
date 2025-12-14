@@ -23,31 +23,53 @@ docsearch({
   maxResultsPerGroup: 15,
 });
 
-type Theme = 'dark' | 'light';
+type Theme = 'dark' | 'light' | 'system';
 
-const toggleTheme = (theme: Theme) => {
-  const s = document.createElement('style');
-  s.textContent = '*,*::before,*::after{transition:none!important;animation:none!important}';
-  document.head.appendChild(s);
+const THEME_KEY = 'theme';
+
+const THEMES = {
+  LIGHT: 'light',
+  DARK: 'dark',
+  SYSTEM: 'system',
+};
+
+//  helpers for managing theme state
+const getSystemTheme = () => (window.matchMedia('(prefers-color-scheme: dark)').matches ? THEMES.DARK : THEMES.LIGHT);
+const getStoredTheme = (): Theme => (localStorage.getItem(THEME_KEY) as Theme) ?? (THEMES.SYSTEM as Theme);
+const resolveTheme = (theme: Theme) => (theme === THEMES.SYSTEM ? getSystemTheme() : theme);
+
+const applyTheme = (theme: Theme) => {
   const html = document.documentElement;
-  if (theme === 'dark') html.classList.add('dark');
-  else html.classList.remove('dark');
-  requestAnimationFrame(() => requestAnimationFrame(() => s.remove()));
+  const resolvedTheme = resolveTheme(theme);
+  html.classList.add('disable-transition');
+  html.classList.toggle('dark', resolvedTheme === THEMES.DARK);
+  requestAnimationFrame(() => html.classList.remove('disable-transition'));
+};
+
+const toggleTheme = () => {
+  const currentTheme = resolveTheme(getStoredTheme());
+  console.log(currentTheme);
+  const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+  localStorage.setItem(THEME_KEY, newTheme);
+  applyTheme(newTheme);
 };
 
 document.addEventListener('DOMContentLoaded', () => {
-  const savedTheme = localStorage.getItem('theme') as Theme | null;
-  const initialTheme: Theme =
-    savedTheme ?? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-  toggleTheme(initialTheme);
-  const toggleThemeBtns = document.querySelectorAll('[data-theme-toggle-btn]');
-  toggleThemeBtns.forEach((button) => {
-    button?.addEventListener('click', () => {
-      const current = (localStorage.getItem('theme') as Theme | null) ?? initialTheme;
-      const newTheme: Theme = current === 'dark' ? 'light' : 'dark';
-      localStorage.setItem('theme', newTheme);
-      toggleTheme(newTheme);
-    });
+  applyTheme(getStoredTheme());
+
+  // sync theme when os preference changes (only in "system" mode)
+  const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+  mediaQuery.addEventListener('change', () => {
+    if (getStoredTheme() !== THEMES.SYSTEM) return;
+    applyTheme(THEMES.SYSTEM);
+  });
+
+  // theme toggle button
+  document.addEventListener('click', (event) => {
+    if (!(event.target instanceof Element)) return;
+    const toggleBtn = event.target.closest('[data-theme-toggle-btn]');
+    if (!toggleBtn) return;
+    toggleTheme();
   });
 
   // preventing browser default scroll to top behavior for a tag
