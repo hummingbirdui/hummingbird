@@ -1,9 +1,27 @@
+import django from '@assets/images/landing/frameworks/django.svg';
+import angular from '@assets/images/landing/frameworks/angular.svg';
+import laravel from '@assets/images/landing/frameworks/laravel.svg';
+import nextjsL from '@assets/images/landing/frameworks/nextjs.svg';
+import nextjsD from '@assets/images/landing/frameworks/nextjs-dark.svg';
+import astroL from '@assets/images/landing/frameworks/astro.svg';
+import astroD from '@assets/images/landing/frameworks/astro-dark.svg';
+import reactL from '@assets/images/landing/frameworks/react.svg';
+import reactD from '@assets/images/landing/frameworks/react-dark.svg';
+import svelte from '@assets/images/landing/frameworks/svelte.svg';
+import nuxt from '@assets/images/landing/frameworks/nuxt.svg';
+import vue from '@assets/images/landing/frameworks/vue.svg';
+import gatsby from '@assets/images/landing/frameworks/gatsby.svg';
+
+export interface SitemapItem {
+  name: string;
+  path: string;
+  icon?: string | { light: ImageMetadata; dark: ImageMetadata };
+  children?: SitemapItem[];
+}
+
 interface Sitemap {
   subHeader: string;
-  items: {
-    name: string;
-    path: string;
-  }[];
+  items: SitemapItem[];
 }
 
 const sitemap: Sitemap[] = [
@@ -21,6 +39,58 @@ const sitemap: Sitemap[] = [
       {
         name: 'Framework Guides',
         path: '/docs/getting-started/framework-guides',
+        children: [
+          {
+            name: 'React',
+            icon: { light: reactL, dark: reactD },
+            path: '/docs/getting-started/framework-guides/react',
+          },
+          {
+            name: 'Next',
+            icon: { light: nextjsL, dark: nextjsD },
+            path: '/docs/getting-started/framework-guides/next',
+          },
+          {
+            name: 'Laravel',
+            icon: { light: laravel, dark: laravel },
+            path: '/docs/getting-started/framework-guides/laravel',
+          },
+          {
+            name: 'Vue',
+            icon: { light: vue, dark: vue },
+            path: '/docs/getting-started/framework-guides/vue',
+          },
+          {
+            name: 'Nuxt',
+            icon: { light: nuxt, dark: nuxt },
+            path: '/docs/getting-started/framework-guides/nuxt',
+          },
+          {
+            name: 'Angular',
+            icon: { light: angular, dark: angular },
+            path: '/docs/getting-started/framework-guides/angular',
+          },
+          {
+            name: 'Svelte',
+            icon: { light: svelte, dark: svelte },
+            path: '/docs/getting-started/framework-guides/svelte',
+          },
+          {
+            name: 'Gatsby',
+            icon: { light: gatsby, dark: gatsby },
+            path: '/docs/getting-started/framework-guides/gatsby',
+          },
+          {
+            name: 'Astro',
+            icon: { light: astroL, dark: astroD },
+            path: '/docs/getting-started/framework-guides/astro',
+          },
+          {
+            name: 'Django',
+            icon: { light: django, dark: django },
+            path: '/docs/getting-started/framework-guides/django',
+          },
+        ],
       },
       {
         name: 'JavaScript',

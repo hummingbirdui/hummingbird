@@ -3,9 +3,16 @@ import BreadcrumbBar from '@components/docs/BreadcrumbBar.astro';
 import FrameworkSidebar from '@components/docs/FrameworkSidebar.astro';
 import Sidebar from '@components/docs/Sidebar.astro';
 import Toc from '@components/docs/Toc.astro';
+import ChevronLeftIcon from '@components/icons/ChevronLeftIcon.astro';
+import ChevronRightIcon from '@components/icons/ChevronRightIcon.astro';
 import InfoIcon from '@components/icons/InfoIcon.astro';
 import BaseLayout from '@layouts/BaseLayout.astro';
+import { getDocPagination } from '@libs/pagination';
+import sitemap from 'apps/sitemap';
+
 const { headings, title, description, toc, redirects, classNames, attributeComponent, attributeLink } = Astro.props;
+const sections = sitemap.flatMap((section) => section.items);
+const { prev, next } = getDocPagination(sections, Astro.url.pathname);
 
 interface ClassTableRow {
   class: string;
@@ -49,6 +56,9 @@ interface ClassTableRow {
               </div>
             )
           }
+          <div class="docs-content">
+            <slot />
+          </div>
           {
             classNames && (
               <div class="overflow-auto rounded-t-2xl max-h-84 mb-12">
@@ -150,8 +160,32 @@ interface ClassTableRow {
               </div>
             )
           }
-          <div class="docs-content">
-            <slot />
+
+          <div class="flex items-center justify-between mt-16">
+            {
+              prev ? (
+                <a href={prev.path} class="btn btn-subtle-neutral flex-col items-start px-5 py-3">
+                  <div class="flex items-center text-muted -ml-1">
+                    <ChevronLeftIcon />
+                    <span class="text-xs">Previous</span>
+                  </div>
+                  <p class="mb-0 font-semibold">{prev.name}</p>
+                </a>
+              ) : (
+                <span />
+              )
+            }
+            {
+              next && (
+                <a href={next.path} class="btn btn-subtle-neutral flex-col items-start px-5 py-3">
+                  <div class="flex items-center text-muted">
+                    <span class="text-xs">Next</span>
+                    <ChevronRightIcon />
+                  </div>
+                  <p class="mb-0 font-semibold">{next.name}</p>
+                </a>
+              )
+            }
           </div>
         </div>
         {
