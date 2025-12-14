@@ -8,7 +8,7 @@ toc: true
 
 #### 1. Custom dark mode selector
 
-To control the dark theme using a custom CSS selector instead of the `prefers-color-scheme` media query, redefine the dark variant to use the desired selector:
+Hummingbird supports class-based dark mode using predefined color variables. To enable dark mode with a custom selector (instead of `prefers-color-scheme`), add the following after importing Tailwind and Hummingbird styles:
 
 <Example lang='css' showPreview={false}
   code={`@custom-variant dark (&:where(.dark, .dark *), .dark);`}
@@ -40,28 +40,49 @@ This script manages switching between light and dark themes. It works by:
 - Storing the user’s preference in `localStorage` and restoring it automatically on page load
 
 <Example lang='js' showPreview={false} 
-  code={`const toggleTheme = (theme) => {
-    const s = document.createElement('style');
-    s.textContent = '*,*::before,*::after{transition:none!important;animation:none!important}';
-    document.head.appendChild(s);
-    const html = document.documentElement;
-    if (theme === 'dark') html.classList.add('dark');
-    else html.classList.remove('dark');
-    requestAnimationFrame(() => requestAnimationFrame(() => s.remove()));
+  code={`const THEME_KEY = 'theme';
+
+  const THEMES = {
+    LIGHT: 'light',
+    DARK: 'dark',
+    SYSTEM: 'system',
   };
-  
+
+  // helpers for managing theme state
+  const getSystemTheme = () => (window.matchMedia('(prefers-color-scheme: dark)').matches ? THEMES.DARK : THEMES.LIGHT);
+  const getStoredTheme = () => localStorage.getItem(THEME_KEY) ?? THEMES.SYSTEM;
+  const resolveTheme = (theme) => (theme === THEMES.SYSTEM ? getSystemTheme() : theme);
+
+  const applyTheme = (theme) => {
+    const html = document.documentElement;
+    const resolvedTheme = resolveTheme(theme);
+    html.classList.add('disable-transition');
+    html.classList.toggle('dark', resolvedTheme === THEMES.DARK);
+    requestAnimationFrame(() => html.classList.remove('disable-transition'));
+  };
+
+  const toggleTheme = () => {
+    const currentTheme = resolveTheme(getStoredTheme());
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    localStorage.setItem(THEME_KEY, newTheme);
+    applyTheme(newTheme);
+  };
+
   document.addEventListener('DOMContentLoaded', () => {
-    const savedTheme = localStorage.getItem('theme');
-    const initialTheme = savedTheme ?? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-    
-    toggleTheme(initialTheme);
-    
-    const toggleThemeBtn = document.querySelector('[data-theme-toggle-btn]');
-    toggleThemeBtn?.addEventListener('click', () => {
-      const current = localStorage.getItem('theme') ?? initialTheme;
-      const newTheme = current === 'dark' ? 'light' : 'dark';
-      localStorage.setItem('theme', newTheme);
-      toggleTheme(newTheme);
+    applyTheme(getStoredTheme());
+
+    // sync theme when os preference changes (only in "system" mode)
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    mediaQuery.addEventListener('change', () => {
+      if (getStoredTheme() !== THEMES.SYSTEM) return;
+      applyTheme(THEMES.SYSTEM);
+    });
+
+    // theme toggle button
+    document.addEventListener('click', (event) => {
+      const toggleBtn = event.target.closest('[data-theme-toggle-btn]');
+      if (!toggleBtn) return;
+      toggleTheme();
     });
   });`}
 />
@@ -103,13 +124,3 @@ In addition to using the `dark:` variant, Hummingbird’s theme variables can be
 />
 
 See all available variables in the [Theming](/docs/customize/theming#hummingbird-theme-variables) section.
-
-## Simplified dark mode in Hummingbird
-
-Hummingbird includes a predefined set of color variables that automatically adjust for dark mode, eliminating the need for additional dark mode classes. Components can switch to dark mode by adding the `.dark` class to a parent element.
-
-To enable this behavior, add the custom dark mode variant to the CSS file after importing Tailwind and Hummingbird styles.
-
-<Example lang='css' showPreview={false}
-  code={`@custom-variant dark (&:where(.dark, .dark *), .dark);`}
-/>
