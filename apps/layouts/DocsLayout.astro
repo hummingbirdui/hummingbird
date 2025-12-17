@@ -10,14 +10,9 @@ import BaseLayout from '@layouts/BaseLayout.astro';
 import { getDocPagination } from '@libs/pagination';
 import sitemap from 'apps/sitemap';
 
-const { headings, title, description, toc, redirects, classNames, attributeComponent, attributeLink } = Astro.props;
+const { headings, title, description, toc, redirects, attributeComponent, attributeLink } = Astro.props;
 const sections = sitemap.flatMap((section) => section.items);
 const { prev, next } = getDocPagination(sections, Astro.url.pathname);
-
-interface ClassTableRow {
-  class: string;
-  desc: string;
-}
 ---
 
 <BaseLayout {...Astro.props} fluid={true}>
@@ -59,107 +54,6 @@ interface ClassTableRow {
           <div class="docs-content">
             <slot />
           </div>
-          {
-            classNames && (
-              <div class="overflow-auto rounded-t-2xl max-h-84 mb-12">
-                <table class="table table-highlight table-sticky-header whitespace-nowrap">
-                  <thead>
-                    <tr>
-                      <th scope="col">Class Name</th>
-                      <th scope="col">Type</th>
-                      <th scope="col">Description</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {classNames.component &&
-                      classNames.component.map((item: ClassTableRow) => (
-                        <tr>
-                          <th class="py-3" scope="row">
-                            {item.class}
-                          </th>
-                          <td class="py-3">
-                            <span class="badge badge-subtle">Component</span>
-                          </td>
-                          <td class="py-3">{item.desc}</td>
-                        </tr>
-                      ))}
-                    {classNames.inner &&
-                      classNames.inner.map((item: ClassTableRow) => (
-                        <tr>
-                          <th class="py-3" scope="row">
-                            {item.class}
-                          </th>
-                          <td class="py-3">
-                            <span class="badge badge-subtle">Inner</span>
-                          </td>
-                          <td class="py-3">{item.desc}</td>
-                        </tr>
-                      ))}
-                    {classNames.color &&
-                      classNames.color.map((item: ClassTableRow) => (
-                        <tr>
-                          <th class="py-3" scope="row">
-                            {item.class}
-                          </th>
-                          <td class="py-3">
-                            <span class="badge badge-subtle-primary">Color</span>
-                          </td>
-                          <td class="py-3">{item.desc}</td>
-                        </tr>
-                      ))}
-                    {classNames.style &&
-                      classNames.style.map((item: ClassTableRow) => (
-                        <tr>
-                          <th class="py-3" scope="row">
-                            {item.class}
-                          </th>
-                          <td class="py-3">
-                            <span class="badge badge-subtle-success">Style</span>
-                          </td>
-                          <td class="py-3">{item.desc}</td>
-                        </tr>
-                      ))}
-                    {classNames.behavior &&
-                      classNames.behavior.map((item: ClassTableRow) => (
-                        <tr>
-                          <th class="py-3" scope="row">
-                            {item.class}
-                          </th>
-                          <td class="py-3">
-                            <span class="badge badge-subtle-info">Behavior</span>
-                          </td>
-                          <td class="py-3">{item.desc}</td>
-                        </tr>
-                      ))}
-                    {classNames.size &&
-                      classNames.size.map((item: ClassTableRow) => (
-                        <tr>
-                          <th class="py-3" scope="row">
-                            {item.class}
-                          </th>
-                          <td class="py-3">
-                            <span class="badge badge-subtle-warning">Size</span>
-                          </td>
-                          <td class="py-3">{item.desc}</td>
-                        </tr>
-                      ))}
-                    {classNames.modifier &&
-                      classNames.modifier.map((item: ClassTableRow) => (
-                        <tr>
-                          <th class="py-3" scope="row">
-                            {item.class}
-                          </th>
-                          <td class="py-3">
-                            <span class="badge badge-subtle-info">Modifier</span>
-                          </td>
-                          <td class="py-3">{item.desc}</td>
-                        </tr>
-                      ))}
-                  </tbody>
-                </table>
-              </div>
-            )
-          }
 
           <div class="flex items-center justify-between mt-16">
             {

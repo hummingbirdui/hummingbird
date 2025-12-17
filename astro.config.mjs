@@ -32,6 +32,7 @@ export default defineConfig({
         '@components/docs/Example.astro',
         '@components/docs/HbTable.astro',
         '@components/docs/HbAlert.astro',
+        '@components/docs/ClassTable.astro',
         {
           './apps/libs/config.ts': ['getVersionedPath'],
         },

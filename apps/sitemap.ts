@@ -104,6 +104,10 @@ const sitemap: Sitemap[] = [
         name: 'RTL',
         path: '/docs/getting-started/rtl',
       },
+      {
+        name: 'CLI',
+        path: '/docs/getting-started/cli',
+      },
     ],
   },
   {
