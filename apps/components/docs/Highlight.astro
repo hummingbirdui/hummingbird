@@ -1,0 +1,14 @@
+---
+const { input } = Astro.props;
+const parts = input.split(/(<[^>]+>)|(\/\*.*?\*\/)/g);
+---
+
+<code>{parts.map((part: string) => {
+    if (part?.startsWith('<') && part.endsWith('>')) {
+    return <var class="font-normal italic opacity-100">{part}</var>;
+    } else if (part?.startsWith('/*') && part.endsWith('*/')) {
+    return <span class="text-gray-400 italic">{part}</span>;
+    } else {
+    return part;
+    }
+})}</code>
