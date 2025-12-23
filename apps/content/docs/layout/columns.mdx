@@ -1,0 +1,224 @@
+---
+title: Columns
+description: Tailwind’s multi-column utilities for creating flexible, masonry-style layouts with fine-grained control over layout and spacing.
+toc: true
+---
+
+## Set columns by count
+
+Use `columns-{count}` utilities to set the number of columns created for the content within an element.
+
+<Example showMarkup={false} code={`<div class="@container relative">
+    <div class="absolute inset-0 -top-8 -bottom-8 grid grid-cols-3 gap-[5cqw]">
+      <div class="bg-stripes"></div>
+      <div class="bg-stripes"></div>
+      <div class="bg-stripes"></div>
+    </div>
+    <div class="relative -mb-[5cqw] columns-3 gap-[5cqw] *:mb-[5cqw]">
+      <img
+        class="aspect-3/2 rounded-lg bg-black/5 object-cover outline -outline-offset-1 outline-black/10 dark:outline-0"
+        src="https://images.unsplash.com/photo-1454496522488-7a8e488e8606?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2952&q=80"
+      />
+      <img
+        class="aspect-square rounded-lg bg-black/5 object-cover outline -outline-offset-1 outline-black/10 dark:outline-0"
+        src="https://images.unsplash.com/photo-1434394354979-a235cd36269d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2902&q=80"
+      />
+      <img
+        class="aspect-square rounded-lg bg-black/5 object-cover outline -outline-offset-1 outline-black/10 dark:outline-0"
+        src="https://images.unsplash.com/photo-1491904768633-2b7e3e7fede5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3131&q=80"
+      />
+      <img
+        class="aspect-square rounded-lg bg-black/5 object-cover outline -outline-offset-1 outline-black/10 dark:outline-0"
+        src="https://images.unsplash.com/photo-1463288889890-a56b2853c40f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3132&q=80"
+      />
+      <img
+        class="aspect-3/2 rounded-lg bg-black/5 object-cover outline -outline-offset-1 outline-black/10 dark:outline-0"
+        src="https://images.unsplash.com/photo-1611605645802-c21be743c321?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80"
+      />
+      <img
+        class="aspect-square rounded-lg bg-black/5 object-cover outline -outline-offset-1 outline-black/10 dark:outline-0"
+        src="https://images.unsplash.com/photo-1498603993951-8a027a8a8f84?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2936&q=80"
+      />
+      <img
+        class="aspect-square rounded-lg bg-black/5 object-cover outline -outline-offset-1 outline-black/10 dark:outline-0"
+        src="https://images.unsplash.com/photo-1526400473556-aac12354f3db?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80"
+      />
+      <img
+        class="aspect-square rounded-lg bg-black/5 object-cover outline -outline-offset-1 outline-black/10 dark:outline-0"
+        src="https://images.unsplash.com/photo-1617369120004-4fc70312c5e6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1587&q=80"
+      />
+      <img
+        class="aspect-3/2 rounded-lg bg-black/5 object-cover outline -outline-offset-1 outline-black/10 dark:outline-0"
+        src="https://images.unsplash.com/photo-1518892096458-a169843d7f7f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80"
+      />
+    </div>
+  </div>`}
+/>
+
+<Example showPreview={false} code={`<div class="columns-3 ...">
+    <img class="aspect-3/2 ..." src="/img/mountains-1.jpg" />
+    <img class="aspect-square ..." src="/img/mountains-2.jpg" />
+    <img class="aspect-square ..." src="/img/mountains-3.jpg" />
+    <!-- ... -->
+  </div>`}
+/>
+
+## Set columns by width
+
+Utilities like `columns-xs` and `columns-sm` set the ideal column width for an element’s content, with column count automatically adjusting to fit.
+
+<Example showMarkup={false} code={`<div class="@container relative">
+    <div class="absolute inset-0 -top-8 -bottom-8 grid grid-cols-1 gap-8 @[34rem]:grid-cols-2">
+      <div class="bg-stripes"></div>
+      <div class="bg-stripes"></div>
+      <div class="bg-stripes @[34rem]:hidden"></div>
+    </div>
+    <div class="relative -mb-4 columns-3xs gap-4 *:mb-4 @sm:-mb-8 @sm:gap-8 @sm:*:mb-8">
+      <img
+        class="aspect-3/2 w-full rounded-lg bg-black/5 object-cover outline -outline-offset-1 outline-black/10 dark:outline-0"
+        src="https://images.unsplash.com/photo-1454496522488-7a8e488e8606?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2952&q=80"
+      />
+      <img
+        class="aspect-square w-full rounded-lg bg-black/5 object-cover outline -outline-offset-1 outline-black/10 dark:outline-0"
+        src="https://images.unsplash.com/photo-1434394354979-a235cd36269d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2902&q=80"
+      />
+      <img
+        class="aspect-square w-full rounded-lg bg-black/5 object-cover outline -outline-offset-1 outline-black/10 dark:outline-0"
+        src="https://images.unsplash.com/photo-1491904768633-2b7e3e7fede5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3131&q=80"
+      />
+      <img
+        class="aspect-3/2 w-full rounded-lg bg-black/5 object-cover outline -outline-offset-1 outline-black/10 dark:outline-0"
+        src="https://images.unsplash.com/photo-1463288889890-a56b2853c40f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3132&q=80"
+      />
+    </div>
+  </div>`} 
+/>
+
+<Example showPreview={false} code={`<div class="columns-3xs ...">
+    <img class="aspect-3/2 ..." src="/img/mountains-1.jpg" />
+    <img class="aspect-square ..." src="/img/mountains-2.jpg" />
+    <img class="aspect-square ..." src="/img/mountains-3.jpg" />
+    <!-- ... -->
+  </div>`}
+/>
+
+## Adjust the column gap
+
+Use `gap-<width>` utilities to control the spacing between columns.
+
+<Example showMarkup={false} code={`<div class="@container relative">
+    <div class="absolute inset-0 -top-8 -bottom-8 grid grid-cols-[1fr_2rem_1fr_2rem_1fr]">
+      <div></div>
+      <div class="bg-stripes"></div>
+      <div></div>
+      <div class="bg-stripes"></div>
+      <div></div>
+    </div>
+    <div class="relative -mb-8 columns-3 gap-8 *:mb-8">
+      <img
+        class="aspect-3/2 rounded-lg bg-black/5 object-cover outline -outline-offset-1 outline-black/10 dark:outline-0"
+        src="https://images.unsplash.com/photo-1454496522488-7a8e488e8606?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2952&q=80"
+      />
+      <img
+        class="aspect-square rounded-lg bg-black/5 object-cover outline -outline-offset-1 outline-black/10 dark:outline-0"
+        src="https://images.unsplash.com/photo-1434394354979-a235cd36269d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2902&q=80"
+      />
+      <img
+        class="aspect-square rounded-lg bg-black/5 object-cover outline -outline-offset-1 outline-black/10 dark:outline-0"
+        src="https://images.unsplash.com/photo-1491904768633-2b7e3e7fede5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3131&q=80"
+      />
+      <img
+        class="aspect-square rounded-lg bg-black/5 object-cover outline -outline-offset-1 outline-black/10 dark:outline-0"
+        src="https://images.unsplash.com/photo-1463288889890-a56b2853c40f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3132&q=80"
+      />
+      <img
+        class="aspect-3/2 rounded-lg bg-black/5 object-cover outline -outline-offset-1 outline-black/10 dark:outline-0"
+        src="https://images.unsplash.com/photo-1611605645802-c21be743c321?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80"
+      />
+      <img
+        class="aspect-square rounded-lg bg-black/5 object-cover outline -outline-offset-1 outline-black/10 dark:outline-0"
+        src="https://images.unsplash.com/photo-1498603993951-8a027a8a8f84?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2936&q=80"
+      />
+      <img
+        class="aspect-square rounded-lg bg-black/5 object-cover outline -outline-offset-1 outline-black/10 dark:outline-0"
+        src="https://images.unsplash.com/photo-1526400473556-aac12354f3db?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80"
+      />
+      <img
+        class="aspect-square rounded-lg bg-black/5 object-cover outline -outline-offset-1 outline-black/10 dark:outline-0"
+        src="https://images.unsplash.com/photo-1617369120004-4fc70312c5e6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1587&q=80"
+      />
+      <img
+        class="aspect-3/2 rounded-lg bg-black/5 object-cover outline -outline-offset-1 outline-black/10 dark:outline-0"
+        src="https://images.unsplash.com/photo-1518892096458-a169843d7f7f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80"
+      />
+    </div>
+  </div>`}
+/>
+
+<Example showPreview={false} code={`<div class="columns-3 gap-8 ...">
+    <img class="aspect-3/2 ..." src="/img/mountains-1.jpg" />
+    <img class="aspect-square ..." src="/img/mountains-2.jpg" />
+    <img class="aspect-square ..." src="/img/mountains-3.jpg" />
+    <!-- ... -->
+  </div>`}
+/>
+
+
+## Responsive column layouts
+
+Prefix a `columns` utility with a breakpoint, such as `sm:`, to apply it only at that screen size and above.
+
+<Example showMarkup={false} code={`<div class="@container relative">
+    <div class="absolute inset-0 -top-8 -bottom-8 grid grid-cols-2 gap-4 @sm:grid-cols-3 @sm:gap-8">
+      <div class="bg-stripes"></div>
+      <div class="bg-stripes"></div>
+      <div class="bg-stripes @max-sm:hidden"></div>
+    </div>
+    <div class="relative columns-2 gap-4 *:mb-4 @sm:-mb-8 @sm:columns-3 @sm:gap-8 @sm:*:mb-8">
+      <img
+        class="aspect-3/2 rounded-lg bg-black/5 object-cover outline -outline-offset-1 outline-black/10 dark:outline-0"
+        src="https://images.unsplash.com/photo-1454496522488-7a8e488e8606?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2952&q=80"
+      />
+      <img
+        class="aspect-square rounded-lg bg-black/5 object-cover outline -outline-offset-1 outline-black/10 dark:outline-0"
+        src="https://images.unsplash.com/photo-1434394354979-a235cd36269d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2902&q=80"
+      />
+      <img
+        class="aspect-square rounded-lg bg-black/5 object-cover outline -outline-offset-1 outline-black/10 dark:outline-0"
+        src="https://images.unsplash.com/photo-1491904768633-2b7e3e7fede5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3131&q=80"
+      />
+      <img
+        class="aspect-square rounded-lg bg-black/5 object-cover outline -outline-offset-1 outline-black/10 dark:outline-0"
+        src="https://images.unsplash.com/photo-1463288889890-a56b2853c40f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3132&q=80"
+      />
+      <img
+        class="aspect-3/2 rounded-lg bg-black/5 object-cover outline -outline-offset-1 outline-black/10 dark:outline-0"
+        src="https://images.unsplash.com/photo-1611605645802-c21be743c321?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80"
+      />
+      <img
+        class="aspect-square rounded-lg bg-black/5 object-cover outline -outline-offset-1 outline-black/10 dark:outline-0"
+        src="https://images.unsplash.com/photo-1498603993951-8a027a8a8f84?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2936&q=80"
+      />
+      <img
+        class="aspect-square rounded-lg bg-black/5 object-cover outline -outline-offset-1 outline-black/10 dark:outline-0"
+        src="https://images.unsplash.com/photo-1526400473556-aac12354f3db?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80"
+      />
+      <img
+        class="aspect-square rounded-lg bg-black/5 object-cover outline -outline-offset-1 outline-black/10 dark:outline-0"
+        src="https://images.unsplash.com/photo-1617369120004-4fc70312c5e6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1587&q=80"
+      />
+      <img
+        class="aspect-3/2 rounded-lg bg-black/5 object-cover outline -outline-offset-1 outline-black/10 dark:outline-0"
+        src="https://images.unsplash.com/photo-1518892096458-a169843d7f7f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80"
+      />
+    </div>
+  </div>`}
+/>
+
+<Example showPreview={false} code={`<div class="columns-2 gap-4 sm:columns-3 sm:gap-8 ...">
+    <img class="aspect-3/2 ..." src="/img/mountains-1.jpg" />
+    <img class="aspect-square ..." src="/img/mountains-2.jpg" />
+    <img class="aspect-square ..." src="/img/mountains-3.jpg" />
+    <!-- ... -->
+  </div>`}
+/>

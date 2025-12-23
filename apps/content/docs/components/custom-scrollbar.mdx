@@ -2,16 +2,22 @@
 title: Custom Scrollbar
 description: A custom scrollbar modifies the default browser scrollbar's appearance to match the website's design and improve overall user experience.
 toc: true
+classNames:
+  style:
+  - class: scrollbar
+    desc: Custom scrollbar
+  - class: scrollbar-rounded
+    desc: Rounded scrollbar
 ---
 
-import { dummyData } from 'apps/data/dummy';
+import { customScrollbarData } from 'apps/data/custom-scrollbar';
 
 ## Basic usage
 
 Add the `.scrollbar` class to a scrollable container to apply the custom scrollbar style.
 
 <Example showMarkup={false} code={`<div class="scrollbar h-80 overflow-auto pe-5">
-    ${dummyData.map((item) => `<div class="mb-8">
+    ${customScrollbarData.map((item) => `<div class="mb-8">
       <h3 class="text-2xl font-semibold mb-3">${item.title}</h3>
       <p class="text-muted tracking-tight">${item.desc}</p>
     </div>`).join('')}
@@ -28,7 +34,7 @@ Add the `.scrollbar` class to a scrollable container to apply the custom scrollb
 Use the `.scrollbar-rounded` class with `.scrollbar` to make the scrollbar rounded.
 
 <Example showMarkup={false} code={`<div class="scrollbar scrollbar-rounded h-80 overflow-auto pe-5">
-    ${dummyData.map((item) => `<div class="mb-8">
+    ${customScrollbarData.map((item) => `<div class="mb-8">
       <h3 class="text-2xl font-semibold mb-3">${item.title}</h3>
       <p class="text-muted tracking-tight">${item.desc}</p>
     </div>`).join('')}
@@ -46,7 +52,7 @@ Customize the scrollbar colors by using `[&::-webkit-scrollbar-thumb]:bg-{color}
 Adjust the scrollbar size using `[&::-webkit-scrollbar]:w-*` for vertical scrollbar width and `[&::-webkit-scrollbar]:h-*` for horizontal scrollbar height.
 
 <Example showMarkup={false} code={`<div class="scrollbar [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-thumb]:bg-warning [&::-webkit-scrollbar-track]:bg-gray-700 h-80 overflow-auto pe-5">
-    ${dummyData.map((item) => `<div class="mb-8">
+    ${customScrollbarData.map((item) => `<div class="mb-8">
       <h3 class="text-2xl font-semibold mb-3">${item.title}</h3>
       <p class="text-muted tracking-tight">${item.desc}</p>
     </div>`).join('')}
@@ -64,7 +70,7 @@ By default, scrollbar corners are `transparent`. Customize them by adding the `[
 
 <Example showMarkup={false} code={`<div class="scrollbar [&::-webkit-scrollbar-corner]:bg-info h-80 overflow-auto pe-5">
     <div class="w-300">
-      ${dummyData.map((item) => `<div class="mb-8">
+      ${customScrollbarData.map((item) => `<div class="mb-8">
         <h3 class="text-2xl font-semibold mb-3">${item.title}</h3>
         <p class="text-muted tracking-tight">${item.desc}</p>
       </div>`).join('')}
@@ -76,6 +82,15 @@ By default, scrollbar corners are `transparent`. Customize them by adding the `[
     ...
   </div>`}
 />
+
+## Class Overview
+
+A list of all available utility classes for the custom scrollbar component.
+
+export const { classNames } = frontmatter;
+
+<ClassTable classNames={classNames}/>
+
 
 ## CSS variables
 

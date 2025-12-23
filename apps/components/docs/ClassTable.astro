@@ -1,0 +1,61 @@
+---
+interface ClassTableRow {
+  class: string;
+  desc: string;
+}
+
+interface ClassNames {
+  component?: ClassTableRow[];
+  inner?: ClassTableRow[];
+  color?: ClassTableRow[];
+  style?: ClassTableRow[];
+  behavior?: ClassTableRow[];
+  size?: ClassTableRow[];
+  modifier?: ClassTableRow[];
+}
+
+const { classNames } = Astro.props as {
+  classNames?: ClassNames;
+};
+
+const rows = [
+  { key: 'component', label: 'Component', badge: 'badge-subtle' },
+  { key: 'inner', label: 'Inner', badge: 'badge-subtle' },
+  { key: 'color', label: 'Color', badge: 'badge-subtle-primary' },
+  { key: 'style', label: 'Style', badge: 'badge-subtle-success' },
+  { key: 'behavior', label: 'Behavior', badge: 'badge-subtle-info' },
+  { key: 'size', label: 'Size', badge: 'badge-subtle-warning' },
+  { key: 'modifier', label: 'Modifier', badge: 'badge-subtle-info' },
+] as const;
+---
+
+{
+  classNames && (
+    <div class="overflow-auto rounded-t-2xl max-h-84 mb-12">
+      <table class="table table-highlight table-sticky-header whitespace-nowrap">
+        <thead>
+          <tr>
+            <th scope="col">Class Name</th>
+            <th scope="col">Type</th>
+            <th scope="col">Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          {rows.map(({ key, label, badge }) =>
+            classNames[key]?.map((item) => (
+              <tr>
+                <th class="py-3" scope="row">
+                  {item.class}
+                </th>
+                <td class="py-3">
+                  <span class={`badge ${badge}`}>{label}</span>
+                </td>
+                <td class="py-3">{item.desc}</td>
+              </tr>
+            )),
+          )}
+        </tbody>
+      </table>
+    </div>
+  )
+}

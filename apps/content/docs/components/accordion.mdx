@@ -6,17 +6,17 @@ attributeComponent: Accordion
 attributeLink: https://getbootstrap.com/docs/5.3/components/accordion/
 classNames:
   component:
-  - class: accordion
-    desc: Accordion
+    - class: accordion
+      desc: Accordion
   inner:
-  - class: accordion-item
-    desc: Accordion item component
-  - class: accordion-header
-    desc: Accordion header component
-  - class: accordion-button
-    desc: Accordion collapse button
-  - class: accordion-body
-    desc: Accordion body component
+    - class: accordion-item
+      desc: Accordion item component
+    - class: accordion-header
+      desc: Accordion header component
+    - class: accordion-button
+      desc: Accordion collapse button
+    - class: accordion-body
+      desc: Accordion body component
 ---
 
 ## How it works
@@ -116,6 +116,14 @@ To keep multiple accordion items open at the same time, omit the `data-bs-parent
       </div>
     </div>
   </div>`}/>
+
+## Class Overview
+
+A list of all available utility classes for the accordion component.
+
+export const { classNames } = frontmatter;
+
+<ClassTable classNames={classNames}/>
 
 ## CSS variables
 

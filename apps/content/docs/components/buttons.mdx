@@ -239,6 +239,27 @@ For larger or smaller icon buttons, use the <code>.btn-lg</code> and <code>.btn-
   </button>`}
 />
 
+## Button with shadows
+
+<Example class="flex flex-wrap gap-2 justify-center"
+  code={`<button class='btn btn-primary shadow-sm shadow-primary/30'>Primary</button>
+  <button class='btn btn-secondary shadow-sm shadow-secondary/30'>Secondary</button>
+  <button class='btn btn-info shadow-sm shadow-info/30'>Info</button>
+  <button class='btn btn-success shadow-sm shadow-success/30'>Success</button>
+  <button class='btn btn-warning shadow-sm shadow-warning/30'>Warning</button>
+  <button class='btn btn-danger shadow-sm shadow-danger/30'>Danger</button>
+  <button class='btn btn-neutral shadow-sm shadow-dark/30'>Neutral</button>`}
+/>
+
+## Opacities
+
+<Example class="flex flex-wrap gap-2 justify-center"
+  code={`<button class='btn btn-primary opacity-100'>Opacity-100</button>
+  <button class='btn btn-primary opacity-75'>Opacity-75</button>
+  <button class='btn btn-primary opacity-50'>Opacity-50</button>
+  <button class='btn btn-primary opacity-25'>Opacity-25</button>`}
+/>
+
 ## Button plugin
 
 Use JavaScript in the familiar pattern of **Bootstrap’s plugins** with full additional TypeScript Support.
@@ -301,6 +322,15 @@ For example, to toggle all buttons:
     button.toggle()
 })`} 
 />
+
+## Class Overview
+
+A list of all available utility classes for the button component.
+
+export const { classNames } = frontmatter;
+
+<ClassTable classNames={classNames}/>
+
 
 ## CSS variables
 

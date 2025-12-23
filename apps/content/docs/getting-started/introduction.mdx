@@ -1,112 +1,34 @@
 ---
 title: Introduction
-description: A comprehensive & open-source component system for building Tailwind-powered, sophisticated, scalable web applications. 
+description: Welcome to the Hummingbird documentation. It is an open-source framework for building scalable web applications with Tailwind CSS.
 toc: true
 ---
 
-Hummingbird is an extensive, open-source library of UI components built as the most sensible component system for Tailwind CSS. It is designed to provide a definitive toolset for rapid development, featuring a massive collection of variants, plug-and-play integration, and a performance-first architecture.
-The library includes all essential components required for modern web development, such as buttons, forms, and modals, alongside complex layouts and a clean codebase designed for data-rich dashboards, SaaS applications, and e-commerce platforms.
+## What is Hummingbird?
 
-All elements are meticulously crafted with Tailwind CSS utility classes and are designed to be fully extensible. The library is framework-agnostic, with guides and wrappers to ensure seamless integration into any modern development stack.
+Hummingbird is a Tailwind framework with a large set of UI components created to provide a structured and reusable component system for Tailwind CSS. It offers a broad set of components and variants intended to support efficient development. The library includes common interface elements such as buttons, forms, and modals, as well as layout patterns suitable for dashboards, SaaS applications, and e-commerce systems.
 
-## Getting started
-
-Hummingbird is a fast, lightweight UI library built on top of Tailwind CSS utility classes. Write cleaner HTML, customize with utilities, and bring any project to life with interactive, accessible components. Start building today by following the quickstart guide.
-
-## Installation
-
-#### 1. Install Tailwind CSS
-
-Ensure the project is set up with Tailwind CSS. If Tailwind CSS isn’t set up yet, follow the <a href="https://tailwindcss.com/docs/installation" target="_blank" rel="noopener noreferrer">official installation guide</a>.
-
-#### 2. Install Hummingbird
-
-Install Hummingbird via a preferred package manager:
-
-<Example lang='bash' showPreview={false} code={`npm install @hummingbirdui/hummingbird`} />
-
-#### 3. Import CSS
-
-Import Hummingbird styles in the main CSS file (e.g., `styles.css`).
-
-<Example lang='css' showPreview={false} 
-  code={`@import "tailwindcss";
-  @import "@hummingbirdui/hummingbird";`} />
-
-#### 4. Initialize JS plugins
-
-Include Hummingbird javascript at the end of the HTML body.
-
-<Example lang='html' showPreview={false} 
-  code={`<script src="../path/to/@hummingbirdui/hummingbird/dist/hummingbird.bundle.min.js"></script>`} />
-
-Alternatively, if using a build system (like Vite or Webpack), import Hummingbird directly in the JavaScript entry file.
-
-<Example lang='js' showPreview={false} 
-  code={`import '@hummingbirdui/hummingbird';`} />
-
-Another quickest way to include Hummingbird script in a project is via CDN link.
-
-<Example lang='html' showPreview={false} 
-  code={`<script src="https://cdn.jsdelivr.net/npm/@hummingbirdui/hummingbird@0.0.0-insiders.3.0/dist/hummingbird.bundle.min.js"></script>`} />
-
-**Optimization:**  To reduce the final bundle size, only the specific JavaScript plugins needed can be imported. Follow the [optimization](/docs/getting-started/javascript#optimization) approach in the JavaScript section.
-
-**Dependencies:** Some components require [Popper](https://popper.js.org/docs/v2/) for positioning. See the [dependencies](/docs/getting-started/javascript#dependencies) section for more details.
-
-Learn more about Hummingbird’s JavaScript components in the [JavaScript section](/docs/getting-started/javascript).
-
-### JavaScript API
-
-Hummingbird also provides a JavaScript API for programmatic control of components. For example, the modal can be toggled manually using the API.
-
-Here’s how to initialize and use the [Modal](/docs/components/modal) component:
-
-```html
-<button class="btn btn-primary" data-open-demo-modal>Open</button>
-<div class="modal">...</div>
-```
-<br/>
-
-```js
-const openBtn = document.querySelector("[data-open-demo-modal]");
-const myModal = new window.hummingbird.Modal(".modal");
-
-openBtn.addEventListener("click", () => {
-  myModal.show();
-});
-```
-<br/>
-When using a build system such as Vite or Webpack, import [Modal](/docs/components/modal) as shown below:
-
-```js
-import { Modal } from "@hummingbirdui/hummingbird";
-const openBtn = document.querySelector("[data-open-demo-modal]");
-const myModal = new Modal(".modal");
-
-openBtn.addEventListener("click", () => {
-  myModal.show();
-});
-```
-
-### TypeScript support
-
-Hummingbird includes TypeScript definitions for all components. If using TypeScript, Hummingbird plugins can be imported with their types.
-
-```ts
-import { Modal } from "@hummingbirdui/hummingbird";
-import { type ModalClass, type ModalInstance, type ModalOptions } from "@hummingbirdui/hummingbird";
-```
-
-### ESM vs CJS
-
-Hummingbird supports both **ESM** and **CJS** builds, so it works with different environments:
-
-* **ESM:**
-  Used by modern bundlers like **Vite**, **Rollup**, and **Webpack 5+**. If a project is using ES modules (import syntax), this is what gets loaded automatically.
+All components are built with Tailwind CSS utility classes and are designed to be extensible. Hummingbird is framework-agnostic and includes guidance and wrappers to enable integration with various modern development environments.
 
 
-* **CJS:**
-  Used in **Node.js** or older tooling that relies on `require()`. If the environment doesn’t support ESM, bundlers and Node will fall back to this file.
+## Why Hummingbird?
 
-No manual choice is required; the bundler or runtime will select the correct version based on the setup.
+- Reduces reliance on large sets of Tailwind utility classes.
+- Provides component-level classes for cleaner and more readable HTML.
+- Offers component variants for flexible and consistent UI development.
+- Supports full customization using Tailwind utility classes.
+- Provides global and component-specific CSS variables for deeper configuration.
+- Provides quick styling and color modifications through small CSS variable changes.
+- Supports interactive components.
+
+## Pre-requisite knowledge
+
+- HTML
+- CSS
+- JavaScript
+- Tailwind CSS
+
+## Join our community
+
+If you have any questions about Hummingbird, you can reach out to our community on [GitHub Discussions](https://github.com/hummingbirdui/hummingbird/discussions), [Discord](https://discord.gg/eTTSWTNk) or [X (Twitter)](https://x.com/Hummingbird_UI).
+
