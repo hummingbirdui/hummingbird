@@ -1,5 +1,7 @@
 import type { SitemapItem } from 'apps/sitemap';
 
+const normalizePath = (path: string) => path.replace(/\/$/, '');
+
 export const getDocPagination = (
   items: SitemapItem[],
   currentPath: string,
@@ -7,7 +9,9 @@ export const getDocPagination = (
   let prev: SitemapItem | null = null;
   let next: SitemapItem | null = null;
 
-  const parentIndex = items.findIndex((item) => item.path === currentPath);
+  const currPath = normalizePath(currentPath);
+
+  const parentIndex = items.findIndex((item) => normalizePath(item.path) === currPath);
 
   if (parentIndex !== -1) {
     prev = parentIndex > 0 ? items[parentIndex - 1] : null;
@@ -20,7 +24,7 @@ export const getDocPagination = (
     const parent = items[i];
     if (!parent.children) continue;
 
-    const childIndex = parent.children.findIndex((child) => child.path === currentPath);
+    const childIndex = parent.children.findIndex((child) => normalizePath(child.path) === currPath);
 
     if (childIndex === -1) continue;
 
