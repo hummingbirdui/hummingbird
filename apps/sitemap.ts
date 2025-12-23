@@ -139,8 +139,12 @@ const sitemap: Sitemap[] = [
         path: '/docs/layout/container',
       },
       {
-        name: 'Bootstrap Grid',
-        path: '/docs/layout/bootstrap-grid',
+        name: 'Columns',
+        path: '/docs/layout/columns',
+      },
+      {
+        name: 'Grid',
+        path: '/docs/layout/grid',
       },
       {
         name: 'Reboot',
@@ -149,6 +153,10 @@ const sitemap: Sitemap[] = [
       {
         name: 'Typography',
         path: '/docs/content/typography',
+      },
+      {
+        name: 'Images',
+        path: '/docs/content/images',
       },
     ],
   },

@@ -1,12 +1,12 @@
 ---
-title: Bootstrap Grid
-description: The Bootstrap Grid is a twelve-column, flexbox-based layout system recreated with Tailwind utilities. It provides a familiar row and column structure for building responsive designs.
+title: Grid
+description: The Grid is a twelve-column, flexbox-based layout system recreated with Tailwind utilities. It provides a familiar row and column structure for building responsive designs.
 toc: true
 ---
 
 ## Basic example
 
-The Bootstrap Grid uses containers, rows, and columns to create responsive layouts. It is built with flexbox and adapts to different screen sizes.
+The Grid uses containers, rows, and columns to create responsive layouts. It is built with flexbox and adapts to different screen sizes.
 
 <Example class='example-row' 
   code={`<div class='container text-center'>
@@ -141,7 +141,7 @@ Instead of specifying the number of columns per row, use the `.row-cols-{number}
 
 ## Nesting
 
-Nesting is easy with the Bootstrap Grid. Just add a new `.row` and set of `.col` within an existing `.col`. This gives more control over the layout of the content.
+Nesting is easy with the Grid. Just add a new `.row` and set of `.col` within an existing `.col`. This gives more control over the layout of the content.
 
 <Example class='example-row' 
   code={`<div class="container text-center">
@@ -248,7 +248,7 @@ Use `.offset-{number}` classes to move columns to the right. For example, `.md:o
 
 ## Gutters
 
-Gutters are the spaces between columns in the Bootstrap Grid system, used to create consistent spacing and alignment.
+Gutters are the spaces between columns in the Grid system, used to create consistent spacing and alignment.
 
 ### Horizontal gutters
 
@@ -350,7 +350,7 @@ Apply the `.g-0` class to remove all gutters between rows and columns. This remo
 
 ## CSS variables
 
-The Bootstrap Grid uses CSS variables for easy customization. Override these variables in the CSS to change the grid's behavior.
+The Grid uses CSS variables for easy customization. Override these variables in the CSS to change the grid's behavior.
 
 <Example lang='sass' showPreview={false}
   code={`--grid-gutter-x: 1.5rem;
