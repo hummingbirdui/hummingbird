@@ -12,7 +12,7 @@ import sitemap from 'apps/sitemap';
 
 const { headings, title, description, toc, redirects, attributeComponent, attributeLink } = Astro.props;
 const sections = sitemap.flatMap((section) => section.items);
-const { prev, next } = getDocPagination(sections, Astro.url.pathname);
+const { prev, next } = await getDocPagination(sections, Astro.url.pathname);
 ---
 
 <BaseLayout {...Astro.props} fluid={true}>
