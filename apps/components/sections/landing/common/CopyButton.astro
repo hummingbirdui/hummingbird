@@ -1,0 +1,16 @@
+---
+import CopyIcon from '@components/icons/CopyIcon.astro';
+import CheckIcon from '@components/icons/CheckIcon.astro';
+
+interface Props extends astroHTML.JSX.HTMLAttributes {
+  code: string;
+  class?: string;
+}
+
+const { code, class: className = '', ...rest } = Astro.props;
+---
+
+<button data-copy-btn data-code={code} class={`p-0.5 cursor-pointer ${className}`} {...rest}>
+  <CopyIcon data-copy-icon />
+  <CheckIcon data-check-icon class="hidden text-success" />
+</button>

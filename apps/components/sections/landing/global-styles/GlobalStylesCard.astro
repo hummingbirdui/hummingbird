@@ -1,0 +1,23 @@
+---
+import type { StyleSystem } from 'apps/data/landing/global-styles';
+import CopyButton from '@components/sections/landing/common/CopyButton.astro';
+import AppCode from '@components/common/AppCode.astro';
+
+interface Props {
+  style: StyleSystem;
+  class?: string;
+}
+
+const { style, class: className = '' } = Astro.props;
+---
+
+<div class={`p-6 flex flex-col min-h-65 md:min-h-92 border border-base bg-subtle ${className}`}>
+  <h3 class="mb-2 text-[21px] font-semibold">{style.title}</h3>
+  <p class="mb-6 text-muted text-sm">
+    {style.description}
+  </p>
+  <div class="relative flex-1">
+    <CopyButton code={style.code} class="absolute top-2 right-2 md:top-3 md:right-3" />
+    <AppCode class="h-full scrollbar-hide !pt-6" code={style.code} lang="sass" />
+  </div>
+</div>

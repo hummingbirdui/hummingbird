@@ -23,7 +23,7 @@ import popoverDark from '@assets/images/landing/interactive/popover-dark.svg';
 import toast from '@assets/images/landing/interactive/toast.svg';
 import toastDark from '@assets/images/landing/interactive/toast-dark.svg';
 
-export interface JSComponent {
+export interface JSPlugin {
   image: {
     light: ImageMetadata;
     dark: ImageMetadata;
@@ -34,7 +34,7 @@ export interface JSComponent {
   link: string;
 }
 
-export const jsComponents: JSComponent[] = [
+export const jsPlugins: JSPlugin[] = [
   {
     title: 'Alert',
     description: 'Provide relevant notices and feedback users can quickly dismiss.',

@@ -1,14 +1,14 @@
 ---
 import Layout from '@layouts/Layout.astro';
 import Hero from '@components/sections/landing/hero/Hero.astro';
+import Frameworks from '@components/sections/landing/Frameworks.astro';
+import Components from '@components/sections/landing/Components.astro';
 import Features from '@components/sections/landing/features/Features.astro';
 import Comparison from '@components/sections/landing/comparison/Comparison.astro';
-import CleanMarkup from '@components/sections/landing/CleanMarkup.astro';
-import Frameworks from '@components/sections/landing/Frameworks.astro';
-import ModeComparison from '@components/sections/landing/ModeComparison.astro';
-import Components from '@components/sections/landing/components/Components.astro';
-import JSComponents from '@components/sections/landing/js-components/JSComponents.astro';
+import CleanMarkup from '@components/sections/landing/clean-markup/CleanMarkup.astro';
 import GlobalStyles from '@components/sections/landing/global-styles/GlobalStyles.astro';
+import ModeComparison from '@components/sections/landing/ModeComparison.astro';
+import JSPlugins from '@components/sections/landing/js-plugins/JSPlugins.astro';
 import CTA from '@components/sections/landing/CTA.astro';
 import Footer from '@components/common/Footer.astro';
 ---
@@ -23,7 +23,7 @@ import Footer from '@components/common/Footer.astro';
     <Frameworks />
     <Components />
     <GlobalStyles />
-    <JSComponents />
+    <JSPlugins />
     <div
       class="pt-40 -mt-40 bg-cover bg-center bg-no-repeat bg-[url('/images/backgrounds/footer-bg-l.png')] dark:bg-[url('/images/backgrounds/footer-bg-d.png')]"
     >
@@ -32,3 +32,30 @@ import Footer from '@components/common/Footer.astro';
     </div>
   </div>
 </Layout>
+
+<script>
+  document.addEventListener('click', async (event) => {
+    const btn = (event.target as HTMLElement)?.closest<HTMLButtonElement>('[data-copy-btn]');
+    if (!btn) return;
+
+    const code = btn.dataset.code;
+    if (!code) return;
+
+    const copyIcon = btn.querySelector('[data-copy-icon]') as HTMLElement;
+    const checkIcon = btn.querySelector('[data-check-icon]') as HTMLElement;
+
+    try {
+      await navigator.clipboard.writeText(code);
+
+      copyIcon.classList.add('hidden');
+      checkIcon.classList.remove('hidden');
+
+      setTimeout(() => {
+        checkIcon.classList.add('hidden');
+        copyIcon.classList.remove('hidden');
+      }, 1200);
+    } catch (err) {
+      console.error('[copy-code] Failed:', err);
+    }
+  });
+</script>
