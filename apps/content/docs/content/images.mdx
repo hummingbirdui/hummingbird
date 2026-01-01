@@ -33,13 +33,9 @@ Use Tailwind’s `aspect-*` utilities to preserve image proportions.
 
 <Example code={`<img class="aspect-3/2 object-cover rounded-lg" src="${getVersionedPath('/images/2.png')}" alt="3:2 image" />`}/>
 
-### Square aspect ratio
+## Square aspect ratio
 
 <Example code={`<img class="max-h-64 aspect-square object-cover rounded-lg" src="${getVersionedPath('/images/2.png')}" alt="Square image"/>`}/>
-
-### Video aspect ratio
-
-<Example code={`<img class="aspect-video object-cover rounded-lg" src="${getVersionedPath('/images/2.png')}" alt="16:9 image" />`}/>
 
 ## Object fit
 
@@ -99,7 +95,9 @@ Images can also be used as backgrounds using Tailwind CSS utilities.
 
 ## Background attachment
 
-<Example code={`<div class="mx-auto h-80 overflow-y-scroll bg-[url('https://images.unsplash.com/photo-1589405858862-2ac9cbb41321?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover bg-center">
+Use Tailwind's `bg-fixed` utility to fix the background image relative to the viewport.
+
+<Example showMarkup={false} code={`<div class="mx-auto h-80 overflow-y-scroll bg-[url('https://images.unsplash.com/photo-1589405858862-2ac9cbb41321?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover bg-center">
     <div class="mt-48">
       <div class="p-4 sm:p-8 border-x border-base bg-default">
         <div class="mb-1 text-2xl font-extrabold tracking-tight">
@@ -122,9 +120,16 @@ Images can also be used as backgrounds using Tailwind CSS utilities.
   </div>`}
 />
 
+<Example showPreview={false} code={`<div class="bg-[url(/img/mountains.png)] bg-fixed ...">
+    <!-- ... -->
+  </div>`}
+/>
+
 ## Scrolling with the container
 
-<Example code={`<div class="h-64 overflow-y-scroll bg-[url('https://images.unsplash.com/photo-1589405858862-2ac9cbb41321?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover bg-local">
+Use Tailwind's `bg-local` utility to scroll the background image with the container and the viewport.
+
+<Example showMarkup={false} code={`<div class="h-64 overflow-y-scroll bg-[url('https://images.unsplash.com/photo-1589405858862-2ac9cbb41321?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover bg-local">
     <div class="min-h-full bg-black/40 p-8 sm:px-16 sm:py-12">
       <p class="text-center font-serif text-xl leading-6 text-white italic sm:text-2xl sm:leading-8">
         Because the mail never stops. It just keeps coming and coming and coming, there's never a let-up. It's
@@ -136,9 +141,16 @@ Images can also be used as backgrounds using Tailwind CSS utilities.
   </div>`}
 />
 
+<Example showPreview={false} code={`<div class="bg-[url(/img/mountains.pmg)] bg-local ...">
+    <!-- ... -->
+  </div>`}
+/>
+
 ## Scrolling with the viewport
 
-<Example code={`<div class="h-64 overflow-y-scroll bg-[url('https://images.unsplash.com/photo-1589405858862-2ac9cbb41321?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover bg-scroll">
+Use Tailwind's `bg-scroll` utility to scroll the background image with the viewport, but not with the container.
+
+<Example showMarkup={false} code={`<div class="h-64 overflow-y-scroll bg-[url('https://images.unsplash.com/photo-1589405858862-2ac9cbb41321?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover bg-scroll">
     <div class="min-h-full bg-black/40 p-8 sm:px-16 sm:py-12">
       <p class="text-center font-serif text-xl leading-6 text-white italic sm:text-2xl sm:leading-8">
         Because the mail never stops. It just keeps coming and coming and coming, there's never a let-up. It's
@@ -147,6 +159,11 @@ Images can also be used as backgrounds using Tailwind CSS utilities.
       </p>
       <div class="font-inter mt-6 text-center text-sm font-bold text-white sm:text-base">&mdash; Newman</div>
     </div>
+  </div>`}
+/>
+
+<Example showPreview={false} code={`<div class="bg-[url(/img/mountains.png)] bg-scroll ...">
+    <!-- ... -->
   </div>`}
 />
 

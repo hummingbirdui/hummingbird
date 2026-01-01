@@ -256,6 +256,95 @@ The `.list-group-item-pinned` class keeps section headers fixed at the top of th
     </ul>
   </ul>`} />
 
+## Horizontal list group
+
+<div class="avatar avatar-xs">
+  <img src="/images/avatar_1.webp" alt="Avatar" class="rounded-full" />
+</div>
+<div class="avatar avatar-sm">
+  <img src="/images/avatar_2.webp" alt="Avatar" class="rounded-full" />
+</div>
+<div class="avatar">
+  <img src="/images/avatar_3.webp" alt="Avatar" class="rounded-full" />
+</div>
+
+
+<Example class="max-w-145 mx-auto" code={`<ul class="list-group flex-row overflow-x-auto">
+    <li class="list-group-item" aria-current="true">
+      <div class="avatar avatar-lg">
+        <img src="/images/avatar_1.webp" alt="Avatar" class="rounded-full" />
+      </div>
+      <p class="mb-0 text-sm text-center">Carter</p>
+    </li>
+    <li class="list-group-item">
+      <div class="avatar avatar-lg">
+        <img src="/images/avatar_2.webp" alt="Avatar" class="rounded-full" />
+      </div>
+      <p class="mb-0 text-sm text-center">Fiona</p>
+    </li>
+    <li class="list-group-item">
+      <div class="avatar avatar-lg">
+        <img src="/images/avatar_3.webp" alt="Avatar" class="rounded-full" />
+      </div>
+      <p class="mb-0 text-sm text-center">Marcus</p>
+    </li>
+    <li class="list-group-item">
+      <div class="avatar avatar-lg">
+        <img src="/images/avatar_4.webp" alt="Avatar" class="rounded-full" />
+      </div>
+      <p class="mb-0 text-sm text-center">Emma</p>
+    </li>
+    <li class="list-group-item">
+      <div class="avatar avatar-lg">
+        <img src="/images/avatar_5.webp" alt="Avatar" class="rounded-full" />
+      </div>
+      <p class="mb-0 text-sm text-center">Taylor</p>
+    </li>
+    <li class="list-group-item">
+      <div class="avatar avatar-lg">
+        <img src="/images/avatar_6.webp" alt="Avatar" class="rounded-full" />
+      </div>
+      <p class="mb-0 text-sm text-center">Xavier</p>
+    </li>
+    <li class="list-group-item">
+      <div class="avatar avatar-lg">
+        <img src="/images/avatar_7.webp" alt="Avatar" class="rounded-full" />
+      </div>
+      <p class="mb-0 text-sm text-center">Isabella</p>
+    </li>
+    <li class="list-group-item">
+      <div class="avatar avatar-lg">
+        <img src="/images/avatar_8.webp" alt="Avatar" class="rounded-full" />
+      </div>
+      <p class="mb-0 text-sm text-center">Maya</p>
+    </li>
+    <li class="list-group-item">
+      <div class="avatar avatar-lg">
+        <img src="/images/avatar_9.webp" alt="Avatar" class="rounded-full" />
+      </div>
+      <p class="mb-0 text-sm text-center">Isaac</p>
+    </li>
+    <li class="list-group-item">
+      <div class="avatar avatar-lg">
+        <img src="/images/avatar_10.webp" alt="Avatar" class="rounded-full" />
+      </div>
+      <p class="mb-0 text-sm text-center">Olivia</p>
+    </li>
+    <li class="list-group-item">
+      <div class="avatar avatar-lg">
+        <img src="/images/avatar_11.webp" alt="Avatar" class="rounded-full" />
+      </div>
+      <p class="mb-0 text-sm text-center">Lily</p>
+    </li>
+    <li class="list-group-item">
+      <div class="avatar avatar-lg">
+        <img src="/images/avatar_12.webp" alt="Avatar" class="rounded-full" />
+      </div>
+      <p class="mb-0 text-sm text-center">Quinn</p>
+    </li>
+  </ul>`} 
+/>
+
 ## Custom 
 
 List items are fully extensible with utility classes. Combine avatars, icons, and action buttons to create rich, custom layouts.
@@ -357,7 +446,7 @@ The list group component is built using a set of CSS variables. These variables 
     --list-group-bg: var(--background-color-subtle);
     --list-group-color: var(--text-color-default);
     --list-group-padding-y: --spacing(2);
-    --list-group-corder-color: var(--border-color-base);
+    --list-group-border-color: var(--border-color-base);
     --list-group-border-radius: var(--radius-lg);
     --list-group-item-padding-x: --spacing(4);
     --list-group-item-padding-y: --spacing(2.5);

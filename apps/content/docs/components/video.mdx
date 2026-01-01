@@ -44,16 +44,37 @@ To make a video loop continuously, use the `loop` attribute.
 
 Adjust the size of the video using Tailwind CSS width and height utility classes.
 
-<Example code={`<video controls class="w-80 h-60">
+<Example code={`<video controls class="w-80 h-60 object-cover">
     <source src="/videos/hummingbird.mp4" type="video/mp4" />
     Your browser does not support the video tag.
   </video>`} />
+
+## Aspect ratio
+
+Use Tailwind’s `aspect-*` utilities to maintain a consistent video aspect ratio regardless of screen size.
+
+<Example code={`<video controls class="aspect-video object-cover">
+    <source src="/videos/hummingbird.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>`}
+/>
+
+## Custom aspect ratio
+
+Use arbitrary values to define custom aspect ratios, such as `4:3` or `3:2`.
+
+<Example code={`<video controls class="aspect-4/3 object-cover">
+    <source src="/videos/hummingbird.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>`}
+/>
 
 ## Custom styles
 
 Apply custom styles to the video element using Tailwind CSS classes.
 
-<Example code={`<video controls class="max-w-150 h-auto rounded-lg border border-base">
+<Example code={`<video controls class="w-full max-w-150 rounded-lg border border-base">
     <source src="/videos/hummingbird.mp4" type="video/mp4" />
     Your browser does not support the video tag.
-  </video>`} />
+  </video>`} 
+/>

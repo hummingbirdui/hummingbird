@@ -14,7 +14,17 @@ const flatpickrInit = () => {
       },
     ],
   });
+  flatpickr('#highlight-weekend', {
+    dateFormat: 'd-m-Y',
+    onDayCreate: function (dObj, dStr, fp, dayElem) {
+      const day = dayElem.dateObj.getDay();
 
+      if (day === 5 || day === 6) {
+        dayElem.classList.add('weekend-day');
+      }
+    },
+  });
+  flatpickr('#display-weeknumbers', { weekNumbers: true, dateFormat: 'd-m-Y' });
   flatpickr('#external-el', { wrap: true, dateFormat: 'd-m-Y' });
   flatpickr('#inline-calendar-el', {
     wrap: true,

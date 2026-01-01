@@ -84,6 +84,29 @@ Import styles after importing Tailwind and Hummingbird CSS:
   });`}
 />
 
+## Highlight weekends
+
+<Example class="mx-auto max-w-98" code={`<input id="highlight-weekend" type="text" class="form-control" placeholder="dd-mm-yyyy" />`} />
+<Example lang='js' showPreview={false}
+  code={`flatpickr('#highlight-weekend', {
+    dateFormat: 'd-m-Y',
+    onDayCreate: function (dObj, dStr, fp, dayElem) {
+      const day = dayElem.dateObj.getDay();
+
+      if (day === 5 || day === 6) {
+        dayElem.classList.add('weekend-day');
+      }
+    },
+  });`}
+/>
+
+## Display week numbers
+
+<Example class="mx-auto max-w-98" code={`<input id="display-weeknumbers" type="text" class="form-control" placeholder="dd-mm-yyyy" />`} />
+<Example lang='js' showPreview={false}
+  code={`flatpickr('#display-weeknumbers', { weekNumbers: true, dateFormat: 'd-m-Y' });`}
+/>
+
 ## External elements
 
 <Example class="mx-auto max-w-98" code={`<div id="external-el" class="input-group-icon">
@@ -116,7 +139,7 @@ Import styles after importing Tailwind and Hummingbird CSS:
 Date & Time picker styles can be customized using the following CSS variables:
 
 <Example showPreview={false} lang='sass' code={`.flatpickr-calendar {
-    --dtp-width: --spacing(77);
+    --dtp-width: 'auto';
     --dtp-font-size: var(--text-sm);
     --dtp-color: var(--text-color-default);
     --dtp-shadow: var(--shadow-lg);
@@ -167,6 +190,8 @@ Date & Time picker styles can be customized using the following CSS variables:
     --dtp-today-color: var(--color-white);
     --dtp-today-bg: var(--color-primary);
     --dtp-today-hover-bg: --alpha(var(--color-primary) / 90%);
+
+    --dtp-weeknday-color: var(--color-warning);
 
     --dtp-timepickr-height: --spacing(10);
     --dtp-timepickr-border-width: 1px;
