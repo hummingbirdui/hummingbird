@@ -1,5 +1,5 @@
 .flatpickr-calendar {
-  --dtp-width: --spacing(77);
+  --dtp-width: 'auto';
   --dtp-font-size: var(--text-sm);
   --dtp-color: var(--text-color-default);
   --dtp-shadow: var(--shadow-lg);
@@ -51,6 +51,8 @@
   --dtp-today-bg: var(--color-primary);
   --dtp-today-hover-bg: --alpha(var(--color-primary) / 90%);
 
+  --dtp-weeknday-color: var(--color-warning);
+
   --dtp-timepickr-height: --spacing(10);
   --dtp-timepickr-border-width: 1px;
   --dtp-timepickr-border-color: var(--border-color-light);
@@ -66,7 +68,8 @@
   --dtp-spinner-bg: transparent;
 
   @apply absolute
-  w-[var(--dtp-width)]
+  w-[var(--dtp-width)]!
+  min-w-77
   text-[length:var(--dtp-font-size)]
   text-[var(--dtp-color)]
   text-center
@@ -195,6 +198,16 @@
     box-border 
     overflow-hidden;
 
+    .flatpickr-weekwrapper {
+      @apply pe-1.5 border-e border-base;
+      .flatpickr-weekday {
+        @apply py-2 text-center;
+      }
+      .flatpickr-weeks {
+        @apply m-0 flex flex-col gap-0.5;
+      }
+    }
+
     .flatpickr-rContainer {
       @apply px-1.25 flex-1 inline-block box-border;
 
@@ -307,6 +320,9 @@
       &.notAllowed.prevMonthDay,
       &.notAllowed.nextMonthDay {
         @apply opacity-[var(--dtp-muted-day-opacity)];
+      }
+      &.weekend-day {
+        @apply text-[var(--dtp-weeknday-color)];
       }
       &.flatpickr-disabled,
       &.flatpickr-disabled:hover {
