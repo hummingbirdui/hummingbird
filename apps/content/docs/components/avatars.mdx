@@ -175,7 +175,9 @@ Avatars can include status indicators, such as online, offline, away, or busy, t
     <img src="${getVersionedPath("/images/avatar_2.webp")}" alt="Avatar" class="rounded-full" />
   </div>`} />
 
-## Avatar with meta
+## Avatar text
+
+Avatars can be combined with text to provide additional context, such as user names or roles.
 
 <Example class='flex justify-center' code={`<div class="flex items-center gap-3">
     <div class="avatar avatar-lg">
@@ -188,23 +190,42 @@ Avatars can include status indicators, such as online, offline, away, or busy, t
   </div>`}
 />
 
+## Gradient border
+
+Use Tailwind gradient utilities to create a subtle gradient ring around avatars.
+
+<Example class='flex justify-center gap-3' code={`<div class="avatar avatar-lg bg-gradient-to-r from-cyan-400 to-blue-500 p-0.5 rounded-full">
+    <img src="${getVersionedPath("/images/avatar/avatar_2.webp")}" alt="Avatar" class="bg-default p-0.5 rounded-full" />
+  </div>
+  <div class="avatar avatar-lg bg-gradient-to-r from-purple-400 to-amber-500 p-0.5 rounded-full">
+    <img src="${getVersionedPath("/images/avatar/avatar_1.webp")}" alt="Avatar" class="bg-default p-0.5 rounded-full" />
+  </div>
+  <div class="avatar avatar-lg bg-gradient-to-r from-cyan-400 to-sky-500 p-0.5 rounded-full">
+    <img src="${getVersionedPath("/images/avatar/avatar_11.webp")}" alt="Avatar" class="bg-default p-0.5 rounded-full" />
+  </div>
+  <div class="avatar avatar-lg bg-gradient-to-r from-green-400 to-blue-500 p-0.5 rounded-full">
+    <img src="${getVersionedPath("/images/avatar/avatar_3.webp")}" alt="Avatar" class="bg-default p-0.5 rounded-full" />
+  </div>
+  <div class="avatar avatar-lg bg-gradient-to-r from-orange-400 to-rose-500 p-0.5 rounded-full">
+    <img src="${getVersionedPath("/images/avatar/avatar_16.webp")}" alt="Avatar" class="bg-default p-0.5 rounded-full" />
+  </div>`}
+/>
+
 ## Inline avatar
 
+Use small avatars inline with text to highlight users or authors without breaking the content flow.
+
 <Example class='flex justify-center' code={`<p>
-    Today I spent most of the day researching ways to take advantage of the fact that bottles can be returned for 10 cents in Michigan, but only 5 cents here. 
+    I spent most of the day exploring bottle returns in Michigan. 
     <span class="inline-flex items-baseline gap-1">
       <span class="avatar avatar-xs self-center">
         <img src="${getVersionedPath("/images/avatar_1.webp")}" alt="Avatar" class="rounded-full" />
       </span>
       <span class="font-medium">Alfred</span>
     </span>
-    keeps telling me there is no way to make it work, that he has run the numbers on every possible approach, but I just have to believe there's a way to make it work, there's simply too much opportunity here.
+    insists it won’t work, but I still think there’s a way to make it profitable.
   </p>`}
 />
-
-
-
-
 
 ## Class Overview
 

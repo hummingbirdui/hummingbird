@@ -239,7 +239,38 @@ For larger or smaller icon buttons, use the <code>.btn-lg</code> and <code>.btn-
   </button>`}
 />
 
-## Button with shadows
+## Gradient button
+
+Use Tailwind gradient utilities to create a clean, eye-catching gradient effect with minimal styling.
+
+<Example
+  class="flex flex-wrap gap-2 justify-center"
+  code={`<button class="btn bg-gradient-to-r from-cyan-400 to-blue-500 text-white border-0">
+    Primary
+  </button>
+  <button class="btn bg-gradient-to-br from-purple-400 to-blue-500 text-white border-0">
+    Secondary
+  </button>
+  <button class="btn bg-gradient-to-r from-cyan-400 to-sky-500 text-white border-0">
+    Info
+  </button>
+  <button class="btn bg-gradient-to-br from-green-400 to-blue-500 text-white border-0">
+    Success
+  </button>
+  <button class="btn bg-gradient-to-br from-orange-400 to-rose-500 text-white border-0">
+    Warning
+  </button>
+  <button class="btn bg-gradient-to-br from-pink-400 to-red-500 text-white border-0">
+    Danger
+  </button>
+  <button class="btn bg-gradient-to-r from-slate-200 to-gray-300 text-slate-800 border-0">
+    Neutral
+  </button>`}
+/>
+
+## Colored shadows
+
+Apply Tailwind’s colored shadow utilities to add subtle depth that matches each button variant.
 
 <Example class="flex flex-wrap gap-2 justify-center"
   code={`<button class='btn btn-primary shadow-sm shadow-primary/30'>Primary</button>
@@ -253,11 +284,34 @@ For larger or smaller icon buttons, use the <code>.btn-lg</code> and <code>.btn-
 
 ## Opacities
 
+Use Tailwind opacity utilities to adjust button emphasis and visual hierarchy.
+
 <Example class="flex flex-wrap gap-2 justify-center"
   code={`<button class='btn btn-primary opacity-100'>Opacity-100</button>
   <button class='btn btn-primary opacity-75'>Opacity-75</button>
   <button class='btn btn-primary opacity-50'>Opacity-50</button>
   <button class='btn btn-primary opacity-25'>Opacity-25</button>`}
+/>
+
+## Disabled button
+
+Apply the `disabled` attribute on `<button>` elements to prevent interaction, or add the `.disabled` class to links to visually and functionally disable them. Disabled buttons use `pointer-events: none` for preventing hover, focus, and active states from triggering.
+
+<Example class="flex flex-wrap gap-2 justify-center" 
+  code={`<button class='btn' disabled>Button</button>
+  <button class='btn btn-primary' disabled>Filled</button>
+  <button class='btn btn-subtle-secondary' disabled>Subtle</button>
+  <button class='btn btn-outline-danger' disabled>Outlined</button>
+  <button class='btn btn-text-success' disabled>Text</button>
+  <button class='btn btn-link' disabled>Link</button>`} 
+/>
+
+Disabled buttons using `<a>` element don’t support the `disabled` attribute, so use the `.disabled` class instead. `aria-disabled="true"` should be added for accessibility.
+
+<Example class="flex flex-wrap gap-2 justify-center" 
+  code={`<a class='btn disabled' role="button" aria-disabled="true">Link</a>
+  <a class='btn btn-primary disabled' role="button" aria-disabled="true">Primary link</a>
+  <a class='btn btn-link disabled' role="button" aria-disabled="true">Link</a>`} 
 />
 
 ## Button plugin
@@ -367,9 +421,7 @@ Local variables apply only to buttons, allowing fine-grained control over their 
     --btn-hover-bg: var(--color-hover);
     --btn-hover-color: var(--btn-color);
     --btn-border-color: transparent;
-    --btn-disabled-border-color: transparent;
-    --btn-disabled-bg: var(--color-disabled);
-    --btn-disabled-color: var(--color-disabled-color);
+    --btn-disabled-opacity: 0.65;
     --btn-active-bg: var(--btn-hover-bg);
     --btn-active-color: var(--btn-color);
     --btn-width: unset;
