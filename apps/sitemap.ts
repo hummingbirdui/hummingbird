@@ -158,6 +158,10 @@ const sitemap: Sitemap[] = [
         name: 'Images',
         path: '/docs/content/images',
       },
+      {
+        name: 'Video',
+        path: '/docs/components/video',
+      },
     ],
   },
   {
@@ -348,10 +352,6 @@ const sitemap: Sitemap[] = [
       {
         name: 'Tooltips',
         path: '/docs/components/tooltips',
-      },
-      {
-        name: 'Video',
-        path: '/docs/components/video',
       },
     ],
   },
