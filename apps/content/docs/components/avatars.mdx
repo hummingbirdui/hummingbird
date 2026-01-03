@@ -35,7 +35,7 @@ classNames:
 Image avatars display a user or entity using a photo or graphic.
 
 <Example class='text-center' code={`<div class="avatar">
-    <img src="${getVersionedPath('/images/avatar_1.webp')}" alt="Avatar" class="rounded-full" />
+    <img src="${getVersionedPath('/images/avatar/avatar_1.webp')}" alt="Avatar" class="rounded-full" />
   </div>`}
 />
 
@@ -93,18 +93,17 @@ Avatar can be created using icon by passing icon inside `.avatar-name`
 
 Avatars support four preset sizes: `.avatar-xs`, `.avatar-sm`, default, and `.avatar-lg`. Custom sizes can also be created by defining height and width.
 
-
 <Example class='flex items-center justify-center gap-2' code={`<div class="avatar avatar-xs">
-    <img src="${getVersionedPath("/images/avatar_1.webp")}" alt="Avatar" class="rounded-full" />
+    <img src="${getVersionedPath("/images/avatar/avatar_1.webp")}" alt="Avatar" class="rounded-full" />
   </div>
   <div class="avatar avatar-sm">
-    <img src="${getVersionedPath("/images/avatar_2.webp")}" alt="Avatar" class="rounded-full" />
+    <img src="${getVersionedPath("/images/avatar/avatar_2.webp")}" alt="Avatar" class="rounded-full" />
   </div>
   <div class="avatar">
-    <img src="${getVersionedPath("/images/avatar_3.webp")}" alt="Avatar" class="rounded-full" />
+    <img src="${getVersionedPath("/images/avatar/avatar_3.webp")}" alt="Avatar" class="rounded-full" />
   </div>
   <div class="avatar avatar-lg">
-    <img src="${getVersionedPath("/images/avatar_4.webp")}" alt="Avatar" class="rounded-full" />
+    <img src="${getVersionedPath("/images/avatar/avatar_4.webp")}" alt="Avatar" class="rounded-full" />
   </div>`} />
 
 ## Avatar shape
@@ -113,13 +112,13 @@ Use Tailwind CSS border radius classes to change the shape of an avatar.
 
 <Example class='flex flex-col items-center gap-2' code={`<div class="flex gap-2">
     <div class="avatar">
-      <img src="${getVersionedPath("/images/avatar_1.webp")}" alt="Avatar" class='rounded-full' />
+      <img src="${getVersionedPath("/images/avatar/avatar_1.webp")}" alt="Avatar" class='rounded-full' />
     </div>
     <div class="avatar">
-      <img src="${getVersionedPath("/images/avatar_1.webp")}" alt="Avatar" class="rounded" />
+      <img src="${getVersionedPath("/images/avatar/avatar_1.webp")}" alt="Avatar" class="rounded" />
     </div>
     <div class="avatar">
-      <img src="${getVersionedPath("/images/avatar_1.webp")}" alt="Avatar" />
+      <img src="${getVersionedPath("/images/avatar/avatar_1.webp")}" alt="Avatar" />
     </div>
   </div>
   <div class="flex gap-2">
@@ -140,16 +139,16 @@ Avatar groups display multiple avatars together to represent a collection of use
 
 <Example class='flex justify-center' code={`<div class="avatar-group">
     <div class="avatar">
-      <img src="${getVersionedPath("/images/avatar_1.webp")}" alt="Avatar" />
+      <img src="${getVersionedPath("/images/avatar/avatar_1.webp")}" alt="Avatar" />
     </div>
     <div class="avatar">
-      <img src="${getVersionedPath("/images/avatar_2.webp")}" alt="Avatar" />
+      <img src="${getVersionedPath("/images/avatar/avatar_2.webp")}" alt="Avatar" />
     </div>
     <div class="avatar">
-      <img src="${getVersionedPath("/images/avatar_3.webp")}" alt="Avatar" />
+      <img src="${getVersionedPath("/images/avatar/avatar_3.webp")}" alt="Avatar" />
     </div>
     <div class="avatar">
-      <img src="${getVersionedPath("/images/avatar_4.webp")}" alt="Avatar" />
+      <img src="${getVersionedPath("/images/avatar/avatar_4.webp")}" alt="Avatar" />
     </div>
     <div class="avatar">
       <div class="avatar-name bg-primary text-base">
@@ -163,16 +162,16 @@ Avatar groups display multiple avatars together to represent a collection of use
 Avatars can include status indicators, such as online, offline, away, or busy, to show user availability.
 
 <Example class='flex justify-center gap-2' code={`<div class="avatar avatar-status-online">
-    <img src="${getVersionedPath("/images/avatar_1.webp")}" alt="Avatar" class="rounded-full" />
+    <img src="${getVersionedPath("/images/avatar/avatar_1.webp")}" alt="Avatar" class="rounded-full" />
   </div>
   <div class="avatar avatar-status-offline">
-    <img src="${getVersionedPath("/images/avatar_3.webp")}" alt="Avatar" class="rounded-full" />
+    <img src="${getVersionedPath("/images/avatar/avatar_3.webp")}" alt="Avatar" class="rounded-full" />
   </div>
   <div class="avatar avatar-status-away">
-    <img src="${getVersionedPath("/images/avatar_4.webp")}" alt="Avatar" class="rounded-full" />
+    <img src="${getVersionedPath("/images/avatar/avatar_4.webp")}" alt="Avatar" class="rounded-full" />
   </div>
   <div class="avatar avatar-status-busy">
-    <img src="${getVersionedPath("/images/avatar_2.webp")}" alt="Avatar" class="rounded-full" />
+    <img src="${getVersionedPath("/images/avatar/avatar_2.webp")}" alt="Avatar" class="rounded-full" />
   </div>`} />
 
 ## Avatar text
@@ -181,7 +180,7 @@ Avatars can be combined with text to provide additional context, such as user na
 
 <Example class='flex justify-center' code={`<div class="flex items-center gap-3">
     <div class="avatar avatar-lg">
-      <img src="${getVersionedPath("/images/avatar_3.webp")}" alt="Avatar" class="rounded-full" />
+      <img src="${getVersionedPath("/images/avatar/avatar_3.webp")}" alt="Avatar" class="rounded-full" />
     </div>
     <div>
       <p class="mb-0 font-semibold">Andrew Alfred</p>
@@ -219,7 +218,7 @@ Use small avatars inline with text to highlight users or authors without breakin
     I spent most of the day exploring bottle returns in Michigan. 
     <span class="inline-flex items-baseline gap-1">
       <span class="avatar avatar-xs self-center">
-        <img src="${getVersionedPath("/images/avatar_1.webp")}" alt="Avatar" class="rounded-full" />
+        <img src="${getVersionedPath("/images/avatar/avatar_1.webp")}" alt="Avatar" class="rounded-full" />
       </span>
       <span class="font-medium">Alfred</span>
     </span>
