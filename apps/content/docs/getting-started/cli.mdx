@@ -6,33 +6,17 @@ toc: true
 
 ## Create Hummingbird App
 
-The Hummingbird CLI is a fast and flexible tool to quickly scaffold new projects using **Hummingbird UI** and **Tailwind CSS** starter templates. It provides interactive prompts or flags to customize your setup, letting you create a ready-to-use project in seconds.
+The Hummingbird CLI is a fast and flexible tool to quickly scaffold a new starter project using **Hummingbird** and **Tailwind CSS**. It provides interactive prompts or flags to customize the setup and create a ready-to-use project in seconds.
 
 ## Installation
 
-#### Using npm
-
-<Example lang='bash' showPreview={false} code={`npx create-hummingbird-app@latest my-app --yes`} />
-
-
-#### Using pnpm
-
-<Example lang='bash' showPreview={false} code={`pnpm create hummingbird-app@latest my-app --yes`} />
-
-> The `--yes` flag automatically accepts all default options and skips interactive prompts during project creation.  
-> Use it when you want a fast, non-interactive setup or when running the CLI in scripts and CI environments.
->
-> If you omit `--yes`, the CLI will guide you through a series of prompts to customize the project configuration.
+<Example lang='bash' showPreview={false} code={`npx create-hummingbird-app@latest [project-name] [options]`} />
 
 ## Basic usage
 
 If you run the CLI without flags, it will guide you step-by-step:
 
-```bash
-  npx create-hummingbird-app
-```
-
-<br/>
+<Example lang='bash' showPreview={false} code={`npx create-hummingbird-app`} />
 
 You will be prompted to:
 
@@ -42,9 +26,7 @@ You will be prompted to:
 
 You can also specify a folder name:
 
-```bash
-  npx create-hummingbird-app my-app
-```
+<Example lang='bash' showPreview={false} code={`npx create-hummingbird-app my-app`} />
 
 <br/>
 
@@ -52,21 +34,16 @@ You can also specify a folder name:
 
 Use defaults and setup the template instantly.
 
-```bash
-  ## installs default JavaScript template (vite-js)
+<Example lang='bash' showPreview={false} code={`## installs default JavaScript template (vite-js)
   npx create-hummingbird-app --yes
 
   ## installs default TypeScript template (vite-ts)
-  npx create-hummingbird-app --yes --ts
-```
-
-<br/>
+  npx create-hummingbird-app --yes --ts`} 
+/>
 
 Specify a project directory:
 
-```bash
-  npx create-hummingbird-app my-app --yes
-```
+<Example lang='bash' showPreview={false} code={`npx create-hummingbird-app my-app --yes`} />
 
 <br/>
 
@@ -74,24 +51,19 @@ Specify a project directory:
 
 This bypasses all template-related prompts.
 
-```bash
-  ## choose a full explicit template
+<Example lang='bash' showPreview={false} code={`## choose a full explicit template
   npx create-hummingbird-app --template vite-ts
 
-  ## or choose a shorthand (CLI auto-detects JS/TS)
-  npx create-hummingbird-app -t vite
+## or choose a shorthand (CLI auto-detects JS/TS)
+npx create-hummingbird-app -t vite
 
   ## shorthand + TypeScript
-  npx create-hummingbird-app -t vite --ts
-```
-
-<br/>
+  npx create-hummingbird-app -t vite --ts`} 
+/>
 
 Specify a directory as well:
 
-```bash
-  npx create-hummingbird-app -t vite-ts my-app
-```
+<Example lang='bash' showPreview={false} code={`npx create-hummingbird-app -t vite-ts my-app`} />
 
 <br/>
 
@@ -99,17 +71,11 @@ Specify a directory as well:
 
 If you want TypeScript but still want interactive mode:
 
-```bash
-  npx create-hummingbird-app --ts
-```
-
-<br/>
+<Example lang='bash' showPreview={false} code={`npx create-hummingbird-app --ts`} />
 
 Combine with a project directory:
 
-```bash
-  npx create-hummingbird-app my-app --ts
-```
+<Example lang='bash' showPreview={false} code={`npx create-hummingbird-app my-app --ts`} />
 
 <br/>
 
@@ -118,25 +84,21 @@ Combine with a project directory:
 
 Show help information, including all available flags and usage examples.
 
-```bash
-  npx create-hummingbird-app --help
-```
-
-<br/>
+<Example lang='bash' showPreview={false} code={`npx create-hummingbird-app --help`} />
 
 This will output like this:
 ```bash
-  Usage: create-hummingbird-app [options] [project-name]
+Usage: create-hummingbird-app [options] [project-name]
   
-  Arguments:
-    project-name               optional project name
+Arguments:
+  project-name               optional project name
   
-  Options:
-    -V, --version              output the version number
-    -y, --yes                  skip all prompts and use defaults
-    -t, --template <template>  select template (vite-ts, vite-js, postcss-ts, postcss-js)
-    --ts                       force typescript template
-    -h, --help                 display help for command
+Options:
+  -V, --version              output the version number
+  -y, --yes                  skip all prompts and use defaults
+  -t, --template <template>  select template (vite-ts, vite-js, postcss-ts, postcss-js)
+  --ts                       force typescript template
+  -h, --help                 display help for command
 ```
 
 ## Template Matrix

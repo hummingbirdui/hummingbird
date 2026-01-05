@@ -192,15 +192,10 @@
 .DocSearch-Button-Keys {
   @apply items-center! min-w-0! gap-0.5 hidden! lg:flex!;
 }
-.DocSearch-Button-Key:first-child {
-  &::after {
-    @apply content-['CTRL'] text-muted text-xs font-sans! relative mt-1;
-  }
-}
 .DocSearch-Button-Key {
-  @apply shadow-none! bg-none! m-0! text-transparent!;
-  &::after {
-    @apply content-['K'] text-muted text-xs font-sans! relative mt-1;
+  @apply bg-none! top-0! w-auto! h-auto! shadow-none! text-muted! mr-0.5! text-lg!;
+  &:last-child {
+    @apply text-sm!;
   }
 }
 .DocSearch-Modal {
