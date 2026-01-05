@@ -4,17 +4,21 @@ description: This guide provides step-by-step instructions for installing Hummin
 toc: true
 ---
 
-## Getting started
+## Quick Setup
 
-Hummingbird is a fast, lightweight UI framework built on top of Tailwind CSS utility classes. Write cleaner HTML, customize with utilities, and bring a project to life with interactive, accessible components. Start building today by following the quickstart guide.
+1. Create a new Hummingbird app named `my-app`
+2. `cd my-app` and start the dev server.
+3. Visit http://localhost:3000.
 
-## Quick Setup (CLI)
+<Example lang='bash' showPreview={false} code={`npx create-hummingbird-app@latest my-app --yes
+  cd my-app
+  npm run dev`}
+/>
 
-The fastest way to scaffold a full Hummingbird project is using `create-hummingbird-app` which sets up the project structure and configuration files for you. To create a new project run:
-
-<Example lang='bash' showPreview={false} code={`npx create-hummingbird-app@latest`} />
-
-Then simply follow the interactive prompts!
+> The `--yes` flag automatically accepts all default options and skips interactive prompts during project creation.  
+> The default setup uses Vite with Vanilla JS and comes preconfigured with Tailwind CSS and Hummingbird.
+>
+> If you omit `--yes`, the CLI will guide you through a series of prompts to customize the project configuration.
 
 <HbAlert type="warning">This CLI requires [Node.js](https://nodejs.org/) version 20.19+, 22.12+. If you are using an older version, please upgrade Node.js before using the CLI.</HbAlert>
 
@@ -22,7 +26,7 @@ Then simply follow the interactive prompts!
 
 [See full CLI documentation](/docs/getting-started/cli)
 
-## Manual Installation (Without CLI)
+## Manual Installation
 
 #### 1. Install Tailwind CSS
 
