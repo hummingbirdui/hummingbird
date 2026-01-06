@@ -6,54 +6,26 @@ interface Props {
 
 const { color, class: className = '' } = Astro.props;
 
-const getBgImage = (color: string) => {
-  switch (color) {
-    case 'primary':
-      return `linear-gradient(var(--background-color-default), var(--background-color-default)), linear-gradient(var(--gradient-angle), var(--color-primary-lighter) 0.36%, var(--color-primary-light) 99.64%)`;
-    case 'secondary':
-      return `linear-gradient(var(--background-color-default), var(--background-color-default)), linear-gradient(var(--gradient-angle), var(--color-secondary-lighter) 0.36%, var(--color-secondary-light) 99.64%)`;
-    case 'error':
-      return `linear-gradient(var(--background-color-default), var(--background-color-default)), linear-gradient(var(--gradient-angle), var(--color-danger-lighter) 0.36%, var(--color-danger-light) 99.64%)`;
-    case 'warning':
-      return `linear-gradient(var(--background-color-default), var(--background-color-default)), linear-gradient(var(--gradient-angle), var(--color-warning-lighter) 0.36%, var(--color-warning-light) 99.64%)`;
-    case 'info':
-      return `linear-gradient(var(--background-color-default), var(--background-color-default)), linear-gradient(var(--gradient-angle), var(--color-info-lighter) 0.36%, var(--color-info-light) 99.64%)`;
-    case 'success':
-      return `linear-gradient(var(--background-color-default), var(--background-color-default)), linear-gradient(var(--gradient-angle), var(--color-success-lighter) 0.36%, var(--color-success-light) 99.64%)`;
-    case 'secondary-dark':
-      return `linear-gradient(var(--background-color-default), var(--background-color-default)), linear-gradient(var(--gradient-angle), var(--color-secondary-lighter) 0.36%, var(--color-secondary-dark) 99.64%)`;
-    case 'success-dark':
-      return `linear-gradient(var(--background-color-default), var(--background-color-default)), linear-gradient(var(--gradient-angle), var(--color-success-lighter) 0.36%, var(--color-success-dark) 99.64%)`;
-    case 'primary-dark':
-      return `linear-gradient(var(--background-color-default), var(--background-color-default)), linear-gradient(var(--gradient-angle), var(--color-primary-lighter) 0.36%, var(--color-primary-dark) 99.64%)`;
-    case 'info-dark':
-      return `linear-gradient(var(--background-color-default), var(--background-color-default)), linear-gradient(var(--gradient-angle), var(--color-info-lighter) 0.36%, var(--color-info-dark) 99.64%)`;
-    case 'error-dark':
-      return `linear-gradient(var(--background-color-default), var(--background-color-default)), linear-gradient(var(--gradient-angle), var(--color-danger-lighter) 0.36%, var(--color-danger-dark) 99.64%)`;
-    default:
-      return `linear-gradient(var(--background-color-default), var(--background-color-default)), linear-gradient(var(--gradient-angle), var(--color-primary-lighter) 0.36%, var(--color-primary-light) 99.64%)`;
-  }
+const borderMap: Record<string, string> = {
+  primary: 'gradient-border-primary',
+  secondary: 'gradient-border-secondary',
+  error: 'gradient-border-error',
+  warning: 'gradient-border-warning',
+  info: 'gradient-border-info',
+  success: 'gradient-border-success',
+  'primary-dark': 'gradient-border-primary-dark',
+  'secondary-dark': 'gradient-border-secondary-dark',
+  'success-dark': 'gradient-border-success-dark',
+  'info-dark': 'gradient-border-info-dark',
+  'error-dark': 'gradient-border-error-dark',
 };
 
-const bgImage = getBgImage(color);
+const borderClass = borderMap[color] ?? borderMap.primary;
 ---
 
-<div
-  class={`rotate-on-hover rounded-2xl overflow-hidden transition border border-transparent ${className}`}
-  style={`background-image: ${bgImage}; background-origin: border-box; background-clip: padding-box, border-box; --gradient-angle: 118.65deg;`}
->
+<div class={`gradient-border rotate-on-hover ${borderClass} ${className}`}>
   <slot />
 </div>
-
-<style>
-  .rotate-on-hover {
-    --gradient-angle: 118.65deg;
-    border-color: transparent;
-    background-origin: border-box;
-    background-clip: padding-box, border-box;
-    will-change: background;
-  }
-</style>
 
 <script type="module">
   if (!window.__GradientCardHoverInit) {
@@ -63,8 +35,8 @@ const bgImage = getBgImage(color);
     const RESET_DURATION = 1000;
 
     function initElement(el) {
-      if (!el || el.dataset.gradientInit === 'true') return;
-      el.dataset.gradientInit = 'true';
+      if (!el || el.dataset.gradientInit === true) return;
+      el.dataset.gradientInit = true;
 
       let angle = 118.65;
       const speedAttr = el.dataset.gradientSpeed;
