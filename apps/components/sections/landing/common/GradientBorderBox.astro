@@ -5,25 +5,9 @@ interface Props {
 }
 
 const { color, class: className = '' } = Astro.props;
-
-const borderMap: Record<string, string> = {
-  primary: 'gradient-border-primary',
-  secondary: 'gradient-border-secondary',
-  error: 'gradient-border-error',
-  warning: 'gradient-border-warning',
-  info: 'gradient-border-info',
-  success: 'gradient-border-success',
-  'primary-dark': 'gradient-border-primary-dark',
-  'secondary-dark': 'gradient-border-secondary-dark',
-  'success-dark': 'gradient-border-success-dark',
-  'info-dark': 'gradient-border-info-dark',
-  'error-dark': 'gradient-border-error-dark',
-};
-
-const borderClass = borderMap[color] ?? borderMap.primary;
 ---
 
-<div class={`gradient-border rotate-on-hover ${borderClass} ${className}`}>
+<div class={`gradient-border gradient-border-${color} rotate-on-hover ${className}`}>
   <slot />
 </div>
 
