@@ -193,9 +193,19 @@
   @apply items-center! min-w-0! gap-0.5 hidden! lg:flex!;
 }
 .DocSearch-Button-Key {
-  @apply bg-none! top-0! w-auto! h-auto! shadow-none! text-muted! mr-0.5! text-lg!;
-  &:last-child {
-    @apply text-sm!;
+  @apply bg-none! shadow-none! top-0! size-auto! text-muted! mr-0.5! text-sm! font-sans!;
+}
+:root[data-os='windows'] {
+  .DocSearch-Button-Key {
+    @apply text-xs!;
+    &:first-child {
+      &::after {
+        @apply content-['CTRL'];
+      }
+      > svg {
+        @apply hidden;
+      }
+    }
   }
 }
 .DocSearch-Modal {
