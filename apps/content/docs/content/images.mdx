@@ -10,7 +10,6 @@ Embed images using the standard HTML `<img>` tag and apply Tailwind CSS utility 
 
 <Example code={`<img class="w-full rounded-lg" src="${getVersionedPath('/images/2.png')}" alt="Sample image" />`}/>
 
-
 ## Sizes
 
 Control image size using Tailwind CSS width and height utilities.
@@ -27,7 +26,7 @@ Use Tailwind’s `aspect-*` utilities to preserve image proportions.
 
 <Example code={`<img class="aspect-3/2 object-cover rounded-lg" src="${getVersionedPath('/images/2.png')}" alt="3:2 image" />`}/>
 
-## Square aspect ratio
+### Square aspect ratio
 
 <Example code={`<img class="max-h-64 aspect-square object-cover rounded-lg" src="${getVersionedPath('/images/2.png')}" alt="Square image"/>`}/>
 
@@ -69,11 +68,70 @@ Control how the image fits within its container using `object-*` utilities.
   </figure>`}
 />
 
+## Image mask
+
+<Example code={`<div class="relative size-76">
+    <div class="absolute inset-0 bg-default/40"></div>
+    <img class="size-full object-cover" src="${getVersionedPath('/images/2.png')}" alt="Image caption" />
+  </div>`}
+/>
+
+### Colored mask
+
+<Example class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4" code={`<div class="relative w-full h-68">
+    <div class="absolute inset-0 bg-primary-light/50"></div>
+    <img class="size-full object-cover" src="${getVersionedPath('/images/2.png')}" alt="Image caption" />
+  </div>
+  
+  <div class="relative w-full h-68">
+    <div class="absolute inset-0 bg-secondary-light/50"></div>
+    <img class="size-full object-cover" src="${getVersionedPath('/images/2.png')}" alt="Image caption" />
+  </div>
+  
+  <div class="relative w-full h-68">
+    <div class="absolute inset-0 bg-info-light/50"></div>
+    <img class="size-full object-cover" src="${getVersionedPath('/images/2.png')}" alt="Image caption" />
+  </div>
+  
+  <div class="relative w-full h-68">
+    <div class="absolute inset-0 bg-success-light/50"></div>
+    <img class="size-full object-cover" src="${getVersionedPath('/images/2.png')}" alt="Image caption" />
+  </div>
+  
+  <div class="relative w-full h-68">
+    <div class="absolute inset-0 bg-warning-light/50"></div>
+    <img class="size-full object-cover" src="${getVersionedPath('/images/2.png')}" alt="Image caption" />
+  </div>
+  
+  <div class="relative w-full h-68">
+    <div class="absolute inset-0 bg-danger-light/50"></div>
+    <img class="size-full object-cover" src="${getVersionedPath('/images/2.png')}" alt="Image caption" />
+  </div>`}
+/>
+
+### Gradient mask
+
+<Example code={`<div class="relative size-76">
+    <div class="absolute inset-0 bg-linear-45 from-pink-400 via-green-500 to-sky-500 opacity-50"></div>
+    <img class="size-full object-cover" src="${getVersionedPath('/images/2.png')}" alt="Image caption" />
+  </div>`}
+/>
+
+## Hover effect
+
+<Example code={`<div class="relative size-76 overflow-hidden group">
+    <div class="absolute inset-0 z-10 flex items-center justify-center bg-default opacity-0 transition duration-300 group-hover:opacity-70">
+      <h6 class="uppercase">Hello World!</h6>
+    </div>
+    <img class="size-full object-cover transition duration-300 ease-in-out group-hover:scale-110" src="${getVersionedPath('/images/2.png')}" alt="Image caption" />
+  </div>`}
+/>
+
 ## Custom styles
 
 Apply borders, shadows, and other visual styles using Tailwind CSS.
 
-<Example code={`<img class="h-64 object-cover border border-base rounded-xl shadow-xl shadow-gray-200 dark:shadow-gray-800" src="${getVersionedPath('/images/2.png')}" alt="Styled image" />`}/>
+<Example code={`<img class="p-1 h-64 object-cover bg-default border border-base rounded-md hover:shadow-xl shadow-gray-200 dark:shadow-gray-800 transition duration-300 ease-in-out" src="${getVersionedPath('/images/2.png')}" alt="Styled image" />`}/>
 
 ## Responsive images
 
