@@ -1,51 +1,71 @@
 ---
 import logo from '@assets/images/logos/hummingbird.svg';
 import BulbIcon from '@components/icons/BulbIcon.astro';
-import GitHubIcon from '@components/icons/GithubIcon.astro';
 import MenuIcon from '@components/icons/MenuIcon.astro';
 import TimesIcon from '@components/icons/TimesIcon.astro';
+import GitHubIcon from '@components/icons/GithubIcon.astro';
 import BulbOffIcon from '@components/icons/BulbOffIcon.astro';
+import { getConfig, getVersionedPath } from '@libs/config';
 import { Image } from 'astro:assets';
 import '@docsearch/css';
-import { getConfig, getVersionedPath } from '@libs/config';
-const { currentVersion } = getConfig();
 
+const { currentVersion } = getConfig();
 const menuItems = [
-  { name: 'Docs', path: '/docs/getting-started/installation' },
-  { name: 'Components', path: '/docs/components/overview' },
-  { name: 'Blog', path: 'https://hummingbirdui.medium.com/' },
+  { name: 'Docs', path: '/docs/getting-started/installation', match: '/docs' },
+  { name: 'Components', path: '/docs/components/overview', match: '/docs/components' },
+  { name: 'Blog', path: 'https://hummingbirdui.medium.com/', match: '/blog' },
 ];
 
 const currentPath = Astro.url.pathname;
 ---
 
-<nav class="px-6 md:px-10 sticky top-0 border-b border-light bg-default z-1035">
-  <div class="mx-auto py-5 flex items-center w-full max-w-8xl">
-    <a class="navbar-brand flex items-center gap-2" href={getVersionedPath('/')}>
+<nav class="navbar sticky top-0 px-6 md:px-10 py-3.75 border-b border-light bg-default z-1035">
+  <div class="container px-0 max-w-8xl">
+    <a class="navbar-brand flex items-center gap-2 me-1 sm:me-4" href={getVersionedPath('/')}>
       <Image src={logo} alt="Logo" class="w-10 h-10" />
       <h5 class="mb-0 text-muted font-semibold hidden sm:flex">hummingbird</h5>
     </a>
-    <span class="ml-1 sm:ml-4 badge badge-subtle shrink-0">{currentVersion}</span>
+    <span class="badge badge-subtle shrink-0">{currentVersion}</span>
     <div id="docsearch" class="hidden lg:block"></div>
 
-    <ul class="navbar-nav ms-auto flex-row items-center hidden xl:flex">
-      {
-        menuItems.map((item) => (
-          <li class="nav-item">
-            <a
-              href={item.name === 'Blog' ? item.path : getVersionedPath(item.path)}
-              class={`nav-link px-4 py-2.5 text-sm rounded-lg hover:bg-hover ${
-                currentPath === item.path ? 'text-primary' : ''
-              }`}
-              aria-disabled="true"
-              target={item.name === 'Blog' ? '_blank' : undefined}
-            >
-              {item.name}
-            </a>
-          </li>
-        ))
-      }
-    </ul>
+    <div
+      class="offcanvas-xl offcanvas-end ms-auto"
+      tabindex="-1"
+      id="mainOffcanvas"
+      aria-labelledby="mainOffcanvasLabel"
+    >
+      <div class="xl:hidden px-6 py-5 flex justify-between items-center">
+        <a class="navbar-brand flex items-center gap-2" href="/">
+          <Image src={logo} alt="Logo" class="w-10 h-10" />
+          <h5 class="mb-0 text-muted font-semibold">hummingbird</h5>
+        </a>
+        <button
+          class="btn btn-square bg-transparent"
+          data-bs-dismiss="offcanvas"
+          data-bs-target="#mainOffcanvas"
+          aria-label="Close"
+        >
+          <TimesIcon />
+        </button>
+      </div>
+      <ul class="navbar-nav px-6 xl:px-0 space-y-1 xl:flex-row">
+        {
+          menuItems.map((item) => (
+            <li class="nav-item">
+              <a
+                href={item.name === 'Blog' ? item.path : getVersionedPath(item.path)}
+                class={`nav-link px-4 py-2 text-default text-base xl:text-sm font-normal rounded-lg hover:bg-hover ${
+                  currentPath.startsWith(item.path) ? 'text-primary' : ''
+                }`}
+              >
+                {item.name}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+
     <div id="docsearch-mobile" class="lg:hidden ml-auto"></div>
 
     <div class="mx-2 xl:mx-4 my-auto border-l h-8 xl:h-10 border-base flex lg:hidden xl:flex"></div>
@@ -64,44 +84,15 @@ const currentPath = Astro.url.pathname;
     </a>
     <a
       data-bs-toggle="offcanvas"
-      href="#mainNavOffcanvas"
+      href="#mainOffcanvas"
       role="button"
-      aria-controls="mainNavOffcanvas"
+      aria-controls="mainOffcanvas"
       class="ml-2 sm:ml-6 btn btn-circle btn-subtle-neutral flex xl:hidden"
     >
       <MenuIcon />
     </a>
   </div>
 </nav>
-
-<!-- offcanvas -->
-<div id="mainNavOffcanvas" class="offcanvas offcanvas-end" tabindex="-1" aria-labelledby="mainNavOffcanvasLabel">
-  <div class="px-6 py-5 flex justify-between items-center">
-    <a class="navbar-brand flex items-center gap-2" href="/">
-      <Image src={logo} alt="Logo" class="w-10 h-10" />
-      <h5 class="mb-0 text-muted font-semibold">hummingbird</h5>
-    </a>
-    <button class="btn btn-square bg-transparent" data-bs-dismiss="offcanvas" aria-label="Close">
-      <TimesIcon />
-    </button>
-  </div>
-  <ul class="navbar-nav px-6 space-y-1">
-    {
-      menuItems.map((item) => (
-        <li class="nav-item">
-          <a
-            href={item.path}
-            class={`nav-link px-4 py-2 text-default font-normal rounded-lg hover:bg-hover   ${
-              currentPath.startsWith(item.path) ? 'text-primary' : ''
-            }`}
-          >
-            {item.name}
-          </a>
-        </li>
-      ))
-    }
-  </ul>
-</div>
 
 <script>
   async function fetchStarCount() {

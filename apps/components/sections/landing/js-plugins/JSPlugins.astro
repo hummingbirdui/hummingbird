@@ -1,10 +1,10 @@
 ---
-import ComponentCard from './ComponentCard.astro';
-import SectionWrapper from '../common/SectionWrapper.astro';
-import ChevronIcon from '@components/icons/ChevronIcon.astro';
+import JSPluginCard from './JSPluginCard.astro';
+import SectionWrapper from '@components/sections/landing/common/SectionWrapper.astro';
 import gridLeftL from '@assets/images/landing/grids/grid-left-l.png';
 import gridLeftD from '@assets/images/landing/grids/grid-left-d.png';
-import { jsComponents } from 'apps/data/landing/js-components';
+import ChevronIcon from '@components/icons/ChevronIcon.astro';
+import { jsPlugins } from 'apps/data/landing/js-plugins';
 import { getVersionedPath } from '@libs/config';
 ---
 
@@ -36,7 +36,7 @@ import { getVersionedPath } from '@libs/config';
     </div>
 
     <div class="shrink-0 grid grid-cols-2 sm:grid-cols-3 gap-4">
-      {jsComponents.map((item, i, arr) => <ComponentCard component={item} />)}
+      {jsPlugins.map((item) => <JSPluginCard component={item} />)}
     </div>
   </SectionWrapper>
 </div>

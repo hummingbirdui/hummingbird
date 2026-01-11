@@ -1,10 +1,9 @@
 ---
 import HeroCards from './HeroCards.astro';
-import CopyIcon from '@components/icons/CopyIcon.astro';
-import CheckIcon from '@components/icons/CheckIcon.astro';
-import { getVersionedPath } from '@libs/config';
 import gridLeftL from '@assets/images/landing/grids/grid-left-l.png';
 import gridLeftD from '@assets/images/landing/grids/grid-left-d.png';
+import CopyButton from '@components/sections/landing/common/CopyButton.astro';
+import { getVersionedPath } from '@libs/config';
 ---
 
 <section
@@ -17,25 +16,22 @@ import gridLeftD from '@assets/images/landing/grids/grid-left-d.png';
   </div>
 
   <div class="mx-auto flex justify-between gap-10 h-full max-w-8xl">
-    <div class="my-auto py-24 sm:py-29 md:py-37 w-full [@media(min-width:1368px)]:w-186 shrink-0">
+    <div class="my-auto py-24 sm:py-29 md:py-37 w-full xl:w-186 shrink-0">
       <h1
-        class="mb-6 text-[42px] sm:text-[56px] md:text-[74px] lg:text-[88px] text-center [@media(min-width:1368px)]:text-left font-bold -tracking-[3px] md:-tracking-[5.25px]"
+        class="mb-6 text-[42px] sm:text-[56px] md:text-[74px] lg:text-[88px] text-center xl:text-left font-bold -tracking-[3px] md:-tracking-[5.25px]"
       >
         <span class="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent pe-2"
           >The tailwind framework</span
         >
       </h1>
       <p
-        class="mb-10 lg:mb-20 mx-auto [@media(min-width:1368px)]:mx-0 text-muted text-base sm:text-[21px] text-center [@media(min-width:1368px)]:text-left -tracking-[1px] leading-[1.2] max-w-2xl"
+        class="mb-10 lg:mb-20 mx-auto xl:mx-0 text-muted text-base sm:text-[21px] text-center xl:text-left -tracking-[1px] leading-[1.2] max-w-2xl"
       >
         Hummingbird gives you pre-built components
         <br />
         with full Tailwind customization — no compromises.
       </p>
-      <section
-        id="links"
-        class="flex flex-col sm:flex-row items-center justify-center [@media(min-width:1368px)]:justify-start gap-2 lg:gap-4"
-      >
+      <section id="links" class="flex flex-col sm:flex-row items-center justify-center xl:justify-start gap-2 lg:gap-4">
         <a
           href=`${getVersionedPath('/docs/getting-started/installation')}`
           type="button"
@@ -46,53 +42,18 @@ import gridLeftD from '@assets/images/landing/grids/grid-left-d.png';
         >
           <span class="text-xs select-none mr-0.75 sm:mr-1.25">$</span>
           <span class="text-xs text-nowrap">npm i @hummingbirdui/hummingbird@latest</span>
-          <button
-            id="copy-btn"
-            class="mb-0.5 h-7.5 w-7.5"
-            data-cmd="npm i @hummingbirdui/hummingbird@latest"
-            aria-label="Copy command"
-          >
-            <CopyIcon id="cmd-copy-icon" class="text-default" />
-            <CheckIcon id="cmd-check-icon" class="hidden text-success" />
-          </button>
+          <CopyButton code="npm i @hummingbirdui/hummingbird@latest" />
         </div>
       </section>
     </div>
 
-    <div class="absolute -right-24 2xl:relative 2xl:right-0 shrink-0 hidden [@media(min-width:1368px)]:flex">
+    <div class="absolute -right-24 2xl:relative 2xl:right-0 shrink-0 hidden xl:flex">
       <HeroCards />
       <div
         class="pointer-events-none absolute bottom-0 left-0 w-full h-3
-         bg-gradient-to-t from-white via-white/60 to-transparent dark:from-[#07080a] dark:via-[#07080a]/60 z-10"
+        bg-gradient-to-t from-white via-white/60 to-transparent dark:from-gray-950 dark:via-gray-950/60 z-10"
       >
       </div>
     </div>
   </div>
 </section>
-
-<script>
-  const copyBtn = document.querySelector('#copy-btn') as HTMLButtonElement;
-  const copyIcon = copyBtn.querySelector<HTMLElement>('#cmd-copy-icon');
-  const checkIcon = copyBtn.querySelector<HTMLElement>('#cmd-check-icon');
-
-  copyBtn.addEventListener('click', async () => {
-    const cmd = copyBtn.dataset.cmd;
-    if (!cmd) return;
-
-    try {
-      await navigator.clipboard.writeText(cmd);
-
-      if (copyIcon && checkIcon) {
-        copyIcon.classList.add('hidden');
-        checkIcon.classList.remove('hidden');
-
-        setTimeout(() => {
-          checkIcon.classList.add('hidden');
-          copyIcon.classList.remove('hidden');
-        }, 1200);
-      }
-    } catch (err) {
-      console.error('Failed to copy: ', err);
-    }
-  });
-</script>

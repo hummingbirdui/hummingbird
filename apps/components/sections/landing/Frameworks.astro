@@ -1,6 +1,6 @@
 ---
 import { Image } from 'astro:assets';
-import SectionWrapper from './common/SectionWrapper.astro';
+import SectionWrapper from '@components/sections/landing/common/SectionWrapper.astro';
 import django from '@assets/images/landing/frameworks/django.svg';
 import angular from '@assets/images/landing/frameworks/angular.svg';
 import laravel from '@assets/images/landing/frameworks/laravel.svg';
@@ -46,7 +46,7 @@ const opacities = [
   <div
     class="relative mx-auto max-w-238 h-full flex flex-col xl:flex-row items-center overflow-hidden xl:overflow-visible"
   >
-    <div class="absolute -left-[60%] w-138 h-173 hidden xl:grid grid-cols-4 gap-2">
+    <div class="absolute -left-3/5 w-138 h-173 hidden xl:grid grid-cols-4 gap-2">
       {
         opacities.map((opacity) => (
           <div class={`h-[134px] aspect-square rounded-lg border border-base bg-default ${opacity}`} />

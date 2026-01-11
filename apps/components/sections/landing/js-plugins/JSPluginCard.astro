@@ -1,10 +1,10 @@
 ---
-import GradientBorderBox from '../common/GradientBorderBox.astro';
-import type { JSComponent } from 'apps/data/landing/js-components';
+import GradientBorderBox from '@components/sections/landing/common/GradientBorderBox.astro';
+import type { JSPlugin } from 'apps/data/landing/js-plugins';
 import { getVersionedPath } from '@libs/config';
 
 interface Props {
-  component: JSComponent;
+  component: JSPlugin;
 }
 
 const { component } = Astro.props;
