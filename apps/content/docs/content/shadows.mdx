@@ -1,0 +1,69 @@
+---
+title: Shadows
+description: Shadows simulate elevation and depth by adding soft or sharp outlines around elements.
+toc: true
+---
+
+## Box shadow
+
+Use `shadow-*` utilities to apply different elevation levels to elements.
+
+<Example class="flex flex-wrap items-center justify-center gap-5 mx-auto max-w-4xl bg-white! rounded-b-none [&_div]:size-32 [&_div]:flex [&_div]:items-center [&_div]:justify-center [&_div]:rounded-xl" code={`<div class="shadow-none"><code>.shadow-none</code></div>
+  <div class="shadow-2xs"><code>.shadow-2xl</code></div>
+  <div class="shadow-xs"><code>.shadow-xs</code></div>
+  <div class="shadow-sm"><code>.shadow-sm</code></div>
+  <div class="shadow-md"><code>.shadow-md</code></div>
+  <div class="shadow-lg"><code>.shadow-lg</code></div>
+  <div class="shadow-xl"><code>.shadow-xl</code></div>
+  <div class="shadow-2xl"><code>.shadow-2xl</code></div>
+  <div class="shadow-2xl/5"><code>.shadow-2xl/5</code></div>
+  <div class="shadow-2xl/10"><code>.shadow-2xl/10</code></div>`} 
+/>
+
+## Shadow color
+
+Combine `shadow-*` with `shadow-{color}` or `shadow-{color}/{opacity}` utilities to tint shadows.
+
+<Example class="flex flex-wrap items-center justify-center gap-5 mx-auto max-w-xl bg-white! rounded-b-none [&_div]:size-32 [&_div]:flex [&_div]:items-center [&_div]:justify-center [&_div]:rounded-xl" code={`<div class="shadow-sm shadow-primary-light/50 bg-primary-lighter"></div>
+  <div class="shadow-sm shadow-secondary-light/50 bg-secondary-lighter"></div>
+  <div class="shadow-sm shadow-info-light/50 bg-info-lighter"></div>
+  <div class="shadow-sm shadow-success-light/50 bg-success-lighter"></div>
+  <div class="shadow-sm shadow-warning-light/50 bg-warning-lighter"></div>
+  <div class="shadow-sm shadow-danger-light/50 bg-danger-lighter"></div>`}
+/>
+
+## Shadow on hover
+
+Use `hover:shadow-*` and `hover:shadow-{color}` utilities to add elevation on interaction.
+
+<Example class="flex flex-wrap items-center justify-center gap-5 mx-auto max-w-xl bg-white! rounded-b-none [&_div]:size-32 [&_div]:flex [&_div]:items-center [&_div]:justify-center [&_div]:rounded-xl [&_div]:transition" code={`<div class="hover:shadow-sm hover:shadow-primary-light/50 bg-primary-lighter"></div>
+  <div class="hover:shadow-sm hover:shadow-secondary-light/50 bg-secondary-lighter"></div>
+  <div class="hover:shadow-sm hover:shadow-info-light/50 bg-info-lighter"></div>
+  <div class="hover:shadow-sm hover:shadow-success-light/50 bg-success-lighter"></div>
+  <div class="hover:shadow-sm hover:shadow-warning-light/50 bg-warning-lighter"></div>
+  <div class="hover:shadow-sm hover:shadow-danger-light/50 bg-danger-lighter"></div>`}
+/>
+
+## Inset shadow
+
+Apply `inset-shadow-*` utilities to create inner shadows.
+
+<Example class="flex flex-wrap items-center justify-center gap-5 mx-auto max-w-xl bg-white! rounded-b-none [&_div]:size-32 [&_div]:flex [&_div]:items-center [&_div]:justify-center [&_div]:rounded-xl" code={`<div class="inset-shadow-sm inset-shadow-primary-light/50 bg-primary-lighter"></div>
+  <div class="inset-shadow-sm inset-shadow-secondary-light/50 bg-secondary-lighter"></div>
+  <div class="inset-shadow-sm inset-shadow-info-light/50 bg-info-lighter"></div>
+  <div class="inset-shadow-sm inset-shadow-success-light/50 bg-success-lighter"></div>
+  <div class="inset-shadow-sm inset-shadow-warning-light/50 bg-warning-lighter"></div>
+  <div class="inset-shadow-sm inset-shadow-danger-light/50 bg-danger-lighter"></div>`}
+/>
+
+## Ring
+
+Use `ring-*` utilities to draw an outline around elements without changing their size.
+
+<Example class="flex flex-wrap items-center justify-center gap-5 mx-auto max-w-xl bg-white! rounded-b-none [&_div]:size-32 [&_div]:flex [&_div]:items-center [&_div]:justify-center [&_div]:rounded-xl" code={`<div class="ring-2 ring-primary-light/50 bg-primary-lighter"></div>
+  <div class="ring-2 ring-secondary-light/50 bg-secondary-lighter"></div>
+  <div class="ring-2 ring-info-light/50 bg-info-lighter"></div>
+  <div class="ring-2 ring-success-light/50 bg-success-lighter"></div>
+  <div class="ring-2 ring-warning-light/50 bg-warning-lighter"></div>
+  <div class="ring-2 ring-danger-light/50 bg-danger-lighter"></div>`} 
+/>
