@@ -4,6 +4,10 @@ description: Hummingbird's typography system is built on a solid foundation of s
 toc: true
 ---
 
+## Usage
+
+Typography of Hummingbird follows a standard typographic scale with six levels of headings, paragraphs, and other text elements. The base font size is `16px`, and the line height is set to `1.5` for optimal readability.
+
 ## Figtree font
 
 Hummingbird uses the [Figtree](https://fonts.google.com/specimen/Figtree) font by default. Add the following `@import` statement to the CSS or include CDN link in the `<head>` of the HTML document to load the font.
@@ -12,30 +16,288 @@ Hummingbird uses the [Figtree](https://fonts.google.com/specimen/Figtree) font b
   code={`@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap');
 `} />
 
-## Uses
-
-Typography of Hummingbird follows a standard typographic scale with six levels of headings, paragraphs, and other text elements. The base font size is `16px`, and the line height is set to `1.5` for optimal readability.
-
-### Headings
+## Headings
 
 `h1` to `h6` headings are available, with decreasing font sizes and consistent margins.
 
-<Example showMarkup={false} code={`<h1>Heading 1</h1>
-<h2>Heading 2</h2>
-<h3>Heading 3</h3>
-<h4>Heading 4</h4>
-<h5>Heading 5</h5>
-<h6>Heading 6</h6>
-`} />
-<Example showPreview={false} code={`<h1>Heading 1</h1>
-<h2>Heading 2</h2>
-<h3>Heading 3</h3>
-<h4>Heading 4</h4>
-<h5>Heading 5</h5>
-<h6>Heading 6</h6>
-`} />
+<Example code={`<h1>Heading 1</h1>
+  <h2>Heading 2</h2>
+  <h3>Heading 3</h3>
+  <h4>Heading 4</h4>
+  <h5>Heading 5</h5>
+  <h6>Heading 6</h6>`}
+/>
 
-### Inline elements
+## Text colors
+
+Apply semantic `text-*` utility classes to any text element to indicate emphasis, status, or hierarchy.
+
+<Example code={`<p class="text-primary">This is primary text</p>
+  <p class="text-secondary">This is secondary text</p>
+  <p class="text-success">This is success text</p>
+  <p class="text-warning">This is warning text</p>
+  <p class="text-danger">This is danger text</p>
+  <p class="text-info">This is info text</p>
+  <p class="text-subtle">This is subtle text</p>
+  <p class="text-muted">This is muted text</p>
+  <p class="text-default">This is default text</p>
+  <p class="text-highlight">This is highlight text</p>
+  <p class="text-emphasis">This is emphasis text</p>`}
+/>
+
+## Font sizes
+
+Apply `text-*` size utility classes to control the font size of text elements.
+
+<Example code={`<p class="text-xs">This is a sample text</p>
+  <p class="text-sm">This is a sample text</p>
+  <p class="text-base">This is a sample text</p>
+  <p class="text-lg">This is a sample text</p>
+  <p class="text-xl">This is a sample text</p>
+  <p class="text-2xl">This is a sample text</p>
+  <p class="text-3xl">This is a sample text</p>`}
+/>
+
+## Font weight
+
+Use `font-*` utility classes to adjust the weight of text based on emphasis and hierarchy.
+
+<Example class="space-y-2" code={`<p class="font-thin">This text is very thin.</p>
+  <p class="font-extralight">This text is extra light.</p>
+  <p class="font-light">This text is light.</p>
+  <p class="font-normal">This text is normal weight.</p>
+  <p class="font-medium">This text is medium weight.</p>
+  <p class="font-semibold">This text is semi-bold.</p>
+  <p class="font-bold">This text is bold.</p>
+  <p class="font-extrabold">This text is extra bold.</p>
+  <p class="font-black">This text is very heavy (black).</p>`}
+/>
+
+## Text alignment
+
+Use `text-*` alignment utility classes on text elements to control horizontal alignment.
+
+<Example class="space-y-4 [&_span]:text-danger" code={`<p class="text-left"><span>text-left</span> aligns text to the left.</p>
+  <p class="text-center"><span>text-center</span> centers the text.</p>
+  <p class="text-right"><span>text-right</span> aligns text to the right.</p>
+  <p class="text-justify"><span>text-justify</span> stretches text to align both left and right edges.</p>
+  <p class="text-start"><span>text-start</span> aligns text to the start based on text direction.</p>
+  <p class="text-end"><span>text-end</span> aligns text to the end based on text direction.</p>`} 
+/>
+
+## Text wrap
+
+Apply text wrapping utilities such as `text-wrap` or `text-nowrap` to control how text flows within its container.
+
+<Example class="space-y-5 max-w-90 mx-auto" code={`<p class="text-wrap border border-danger/40"><strong>text-wrap</strong> - This text wraps onto the next line when it reaches the container width.</p>
+  <p class="text-nowrap border border-danger/40"><strong>text-nowrap</strong> - This text stays on one line and does not wrap.</p>`} 
+/>
+
+## Text transform
+
+Use text transform utilities like `uppercase`, `lowercase`, or `capitalize` to change the casing of text.
+
+<Example code={`<p class="lowercase">Lowercase text</p>
+  <p class="uppercase">Uppercase text</p>
+  <p class="capitalize">Capitalized text</p>`}
+/>
+
+## Text decoration
+
+Apply text decoration utilities to style the appearance of text.
+
+<Example code={`<p class="underline">This text is underlined.</p>
+  <p class="overline">This text has an overline.</p>
+  <p class="line-through">This text is crossed out.</p>
+  <p class="no-underline">This text has no decoration.</p>
+  <p>This <a href="#" class="no-underline hover:underline">link underlines</a> on hover.</p>
+  <p class="underline decoration-pink-500">Underline with pink decoration</p>
+  <p class="underline decoration-wavy">This text has a wavy underline.</p>
+  <p class="underline underline-offset-8">This text has a bigger underline offset.</p>
+  <p class="underline decoration-4">This text has a thicker underline.</p>`} 
+/>
+
+## Line height
+
+Apply `leading-*` or font-size shorthand utilities to control vertical spacing between lines of text.
+
+<Example class="space-y-5 max-w-120 mx-auto" code={`<p class="leading-none">This block uses no extra line spacing, causing the lines of text to appear very close together and making longer content harder to read.</p>
+  <p class="text-base/6">This text uses a base font size with a fixed line height of 1.5, providing a compact but readable spacing suitable for UI copy and short content.</p>
+  <p class="leading-8">This paragraph applies a line height of 2rem, creating more vertical space between lines and improving overall clarity and readability for longer multiline text blocks.</p>
+  <p class="leading-[40px]">This example uses a custom line height of 40px, resulting in more spacious line spacing that works well for large text, emphasis-heavy layouts, and prominent headings.</p>`} 
+/>
+
+## Letter spacing
+
+Use `tracking-*` utility classes to adjust the spacing between characters.
+
+<Example class="space-y-4" code={`<p class="tracking-tighter">Letters are very tight.</p>
+  <p class="tracking-tight">Letters are a bit tight.</p>
+  <p class="tracking-normal">Letters have normal spacing.</p>
+  <p class="tracking-wide">Letters are spaced wider.</p>
+  <p class="tracking-wider">Letters are spaced even wider.</p>
+  <p class="tracking-widest">Letters are very widely spaced.</p>
+  <p class="tracking-[5px]">Letters have custom 5px spacing.</p>`}
+/>
+
+## Truncating text
+
+Apply `truncate` to shorten overflowing text and display an ellipsis.
+
+<Example class="max-w-120 px-0! mx-auto border-x border-danger/40 rounded-none [&_p]:mb-0" code={`<p class="truncate">This is a short paragraph demonstrating text truncation in Tailwind when content overflows its container width.</p>`} />
+
+## Line clamp
+
+Apply `line-clamp-*` utility classes to limit text to a specific number of lines and truncate overflow content.
+
+<Example class="max-w-120 px-0! mx-auto border-x border-danger/40 rounded-none [&_p]:mb-0" code={`
+  <p class="line-clamp-3">
+    This example uses an even longer block of text to show how three lines of
+    content can be displayed before truncation occurs. This approach is useful
+    when you want to show more context while still maintaining consistent
+    spacing and preventing excessively tall content blocks.
+  </p>
+ `} />
+
+## List
+
+Apply `list-*` utilities to control list markers.
+
+<Example showMarkup={false} class="space-y-5" code={`<div>
+    <span class="mb-3 font-mono text-xs font-medium text-muted">list-disc</span>
+    <ul class="list-inside list-disc">
+      <li>Apples are delicious and healthy.</li>
+      <li>Mountains offer breathtaking views.</li>
+      <li>Coding improves problem-solving skills.</li>
+    </ul>
+  </div>
+
+  <div>
+    <span class="mb-3 font-mono text-xs font-medium text-muted">list-decimal</span>
+    <ul class="list-inside list-decimal">
+      <li>First step: gather all ingredients.</li>
+      <li>Second step: preheat the oven.</li>
+      <li>Third step: mix and bake carefully.</li>
+    </ul>
+  </div>
+
+  <div>
+    <span class="mb-3 font-mono text-xs font-medium text-muted">list-none</span>
+    <ul class="list-inside list-none">
+      <li>Sunsets paint the sky beautifully.</li>
+      <li>Books open doors to new worlds.</li>
+      <li>Flowers brighten up any room.</li>
+    </ul>
+  </div>`}
+/>
+
+<Example showPreview={false} code={`<ul class="list-disc">
+    <li>Apples are delicious and healthy.</li>
+    <!-- ... -->
+  </ul>
+  <ol class="list-decimal">
+    <li>First step: gather all ingredients.</li>
+    <!-- ... -->
+  </ol>
+  <ul class="list-none">
+    <li>Sunsets paint the sky beautifully.</li>
+    <!-- ... -->
+  </ul>`} 
+/>
+
+## Vertical align
+
+Use `align-*` utilities to adjust the vertical alignment of text within a line.
+
+<Example showMarkup={false} class="space-y-10 max-w-140 mx-auto" code={` <div class="relative mx-auto leading-none">
+    <span class="inline-block h-8 w-0 align-baseline">
+      <span class="absolute top-0 h-8 w-full border-t border-b border-dashed border-danger/40"></span>
+      <span class="absolute top-0 h-4 w-full border-b border-dashed border-danger/30"></span>
+    </span>
+    <span class="relative z-10 px-4 font-medium text-gray-700 dark:text-gray-200">
+      This text is aligned to the baseline</span
+    >
+  </div>
+
+  <div class="relative mx-auto leading-none">
+    <span class="inline-block h-8 w-0 align-top">
+      <span class="absolute top-0 h-8 w-full border-t border-b border-dashed border-danger/30"></span>
+      <span class="absolute top-0 h-4 w-full border-b border-dashed border-danger/40"></span>
+    </span>
+    <span class="relative z-10 px-4 font-medium text-gray-700 dark:text-gray-200">
+      This text is aligned to the top</span
+    >
+  </div>
+
+  <div class="relative mx-auto leading-none">
+    <span class="inline-block h-8 w-0 align-middle">
+      <span class="absolute top-0 h-8 w-full border-t border-b border-dashed border-danger/30"></span>
+      <span class="absolute top-0 h-4 w-full border-b border-dashed border-danger/40"></span>
+    </span>
+    <span class="relative z-10 px-4 font-medium text-gray-700 dark:text-gray-200">
+      This text is aligned to the middle</span
+    >
+  </div>
+
+  <div class="relative mx-auto leading-none">
+    <span class="inline-block h-8 w-0 align-bottom">
+      <span class="absolute top-0 h-8 w-full border-t border-b border-dashed border-danger/30"></span>
+      <span class="absolute top-0 h-4 w-full border-b border-dashed border-danger/40"></span>
+    </span>
+    <span class="relative z-10 px-4 font-medium text-gray-700 dark:text-gray-200">
+      This text is aligned to the bottom</span
+    >
+  </div>
+
+  <div class="relative mx-auto leading-none">
+    <span class="inline-block h-8 w-0 align-text-top">
+      <span class="absolute top-0 h-8 w-full border-t border-b border-dashed border-danger/30"></span>
+      <span class="absolute top-0 h-4 w-full border-b border-dashed border-danger/40"></span>
+    </span>
+    <span class="relative z-10 px-4 font-medium text-gray-700 dark:text-gray-200">
+      This text is aligned to the top of the parent element's font</span
+    >
+  </div>
+
+  <div class="relative mx-auto leading-none">
+    <span class="inline-block h-8 w-0 align-text-bottom">
+      <span class="absolute top-0 h-8 w-full border-t border-b border-dashed border-danger/30"></span>
+      <span class="absolute top-0 h-4 w-full border-b border-dashed border-danger/40"></span>
+    </span>
+    <span class="relative z-10 px-4 font-medium text-gray-700 dark:text-gray-200">
+      This text is aligned to the bottom of the parent element's font</span
+    >
+  </div>`}
+/>
+
+<Example showPreview={false} code={`<span class="align-baseline">This text is aligned to the baseline</span>
+  <span class="align-top">This text is aligned to the top</span>
+  <span class="align-middle">This text is aligned to the middle</span>
+  <span class="align-bottom">This text is aligned to the bottom</span>
+  <span class="align-text-top">This text is aligned to the top of the parent element's font</span>
+  <span class="align-text-bottom">This text is aligned to the bottom of the parent element's font</span>`}
+/>
+
+## Text shadow
+
+Use `text-shadow-*` utilities to add depth and contrast to text.
+
+<Example class="[&_p]:text-xl" code={`<p class="text-shadow-2xs">Extra extra small text shadow</p>
+  <p class="text-shadow-xs">Extra small text shadow</p>
+  <p class="text-shadow-sm">Small text shadow</p>
+  <p class="text-shadow-md">Medium text shadow</p>
+  <p class="text-shadow-lg">Large text shadow</p>
+  <p class="text-shadow-lg/20">Large shadow with 20% opacity</p>
+  <p class="text-shadow-lg/30">Large shadow with 30% opacity</p>`} 
+/>
+
+## Gradient text
+
+Use `bg-clip-text` and `text-transparent` with background gradient utilities to render text with a gradient fill.
+
+<Example code={`<h1 class="bg-linear-to-r from-pink-500 to-violet-500 bg-clip-text font-extrabold text-transparent inline-block">Hello World</h1>`} />
+
+## Inline elements
 
 Various inline text elements are available for emphasis and clarity.
 
@@ -63,19 +325,16 @@ Various inline text elements are available for emphasis and clarity.
   <p>This is a <sup>superscript</sup> text.</p>
   <p>This is a <sub>subscript</sub> text.</p>
   <p>This is a <a href="#">link</a>.</p>
-  <p>This is an <em>emphasized</em> text.</p>
-  `} />
+  <p>This is an <em>emphasized</em> text.</p>`} 
+/>
 
 ## Responsive typography
 Use Tailwind's [responsive](https://tailwindcss.com/docs/responsive-design) design utilities to adjust typography for different screen sizes.
 
-<Example showMarkup={false} code={`<h1 class="text-2xl md:text-4xl lg:text-5xl">Responsive Heading</h1>
-`} />
-<Example showPreview={false} code={`<h1 class="text-2xl md:text-4xl lg:text-5xl">Responsive Heading</h1>
-`} />
+<Example showMarkup={false} code={`<h1 class="text-2xl md:text-4xl lg:text-5xl">Responsive Heading</h1>`} />
+<Example showPreview={false} code={`<h1 class="text-2xl md:text-4xl lg:text-5xl">Responsive Heading</h1>`} />
 
 ## Customization
-
 
 Hummingbird's typography can be customized using Tailwind's [theme variables](https://tailwindcss.com/docs/theme#extending-the-default-theme) feature. Modify font families, sizes, weights, and line heights using CSS variable under the `@theme` directive.
 

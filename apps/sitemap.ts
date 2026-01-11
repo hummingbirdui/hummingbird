@@ -129,6 +129,10 @@ const sitemap: Sitemap[] = [
         name: 'Dark mode',
         path: '/docs/customize/dark-mode',
       },
+      {
+        name: 'Reboot',
+        path: '/docs/customize/reboot',
+      },
     ],
   },
   {
@@ -147,12 +151,12 @@ const sitemap: Sitemap[] = [
         path: '/docs/layout/grid',
       },
       {
-        name: 'Reboot',
-        path: '/docs/content/reboot',
-      },
-      {
         name: 'Typography',
         path: '/docs/content/typography',
+      },
+      {
+        name: 'Background',
+        path: '/docs/content/background',
       },
       {
         name: 'Images',
@@ -160,7 +164,11 @@ const sitemap: Sitemap[] = [
       },
       {
         name: 'Video',
-        path: '/docs/components/video',
+        path: '/docs/content/video',
+      },
+      {
+        name: 'Shadows',
+        path: '/docs/content/shadows',
       },
     ],
   },
