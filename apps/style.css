@@ -9,6 +9,18 @@
   --container-8xl: 95rem;
   --navbar-height: --spacing(20.5);
   --anchor-header-offset: 7.5rem;
+  --text-3xl: 1.75rem;    /* 28px */
+  --text-4xl: 2rem;       /* 32px */
+  --text-5xl: 2.625rem;   /* 42px */
+  --text-6xl: 3rem;       /* 48px */
+  --text-7xl: 3.5rem;     /* 56px */
+  --text-8xl: 4.625rem;   /* 74px */
+  --text-9xl: 5.5rem;     /* 88px */
+  --text-10xl: 6.125rem;  /* 98px */
+  --text-xl--line-height: 1.2;
+  --text-2xl--line-height: 1.15;
+  --text-3xl--line-height: 1.1;
+  --text-4xl--line-height: 1.1;
 }
 
 :root[data-os='windows'] ::-webkit-scrollbar {
@@ -193,9 +205,19 @@
   @apply items-center! min-w-0! gap-0.5 hidden! lg:flex!;
 }
 .DocSearch-Button-Key {
-  @apply bg-none! top-0! w-auto! h-auto! shadow-none! text-muted! mr-0.5! text-lg!;
-  &:last-child {
-    @apply text-sm!;
+  @apply bg-none! shadow-none! top-0! size-auto! text-muted! mr-0.5! text-sm! font-sans!;
+}
+:root[data-os='windows'] {
+  .DocSearch-Button-Key {
+    @apply text-xs!;
+    &:first-child {
+      &::after {
+        @apply content-['CTRL'];
+      }
+      > svg {
+        @apply hidden;
+      }
+    }
   }
 }
 .DocSearch-Modal {

@@ -16,6 +16,91 @@ Hummingbird UI is built on Tailwind CSS v4 and exposes a set of theme variables 
 
 - Reboot provides a base CSS reset with element-specific styles for consistent design across browsers.
 
+
+## Customizing theme
+
+Redefine theme variables by declaring them in `@theme` after importing Hummingbird:
+
+```css
+@import "tailwindcss";
+@import "@hummingbirdui/hummingbird";
+
+@theme {
+  --color-primary: #0074e6;
+  --font-sans: "Figtree", ui-sans-serif, system-ui, sans-serif;
+}
+```
+
+### Color
+
+Customize color by overriding the default spacing variable or defining new ones as needed.
+
+```css
+@theme {
+  --spacing: 4px;
+
+  /* Custom spacing */
+  --spacing-lg: 16px;
+}
+```
+
+### Spacing
+
+Customize spacing by overriding the default spacing variable or defining new ones as needed.
+
+```css
+@theme {
+  --spacing: 4px;
+
+  /* Custom spacing */
+  --spacing-lg: 16px;
+}
+```
+
+### Breakpoints
+
+Customize and add new responsive breakpoints by overriding `--breakpoint-*` variables:
+
+```css
+@theme {
+  --breakpoint-sm: 40rem;
+  --breakpoint-md: 48rem;
+  --breakpoint-lg: 64rem;
+  --breakpoint-xl: 80rem;
+  --breakpoint-2xl: 96rem;
+
+  /* Custom breakpoint */
+  --breakpoint-3xl: 120rem;
+}
+```
+
+## Multiple themes
+
+Hummingbird uses a small set of theme variables. By overriding these variables within a new theme scope, multiple themes can be created.
+
+```sass
+@theme {
+  --color-primary: var(--color-blue-500);
+  --color-secondary: var(--color-purple-500);
+}
+
+@variant dark {
+  --color-primary: var(--color-blue-400);
+  --color-secondary: var(--color-purple-400);
+}
+
+@variant forest {
+  --color-primary: var(--color-blue-600);
+  --color-secondary: var(--color-purple-600);
+}
+```
+
+## Reboot
+
+Reboot is a foundational stylesheet that resets browser defaults and applies basic element styles. It provides a clean, consistent starting point for building interfaces and ensures visual consistency across browsers.
+
+For more details, follow the [Reboot](/docs/content/reboot) documentation.
+
 ## Hummingbird theme variables
 
 Hummingbird UI provides a small, consistent set of semantic tokens as Tailwind theme variables. These variables create utilities and can be overridden later to change the look and feel without changing the HTML.
@@ -109,77 +194,6 @@ Hummingbird UI provides a small, consistent set of semantic tokens as Tailwind t
   --shadow-2xl: 16px 39px 67px 0px rgba(0, 0, 0, 0.11), 1px 20px 65px 0px rgba(0, 0, 0, 0.02), 2px 10px 10px 0px rgba(0, 0, 0, 0.01), 0px -2px 6px 0px rgba(0, 0, 0, 0.03);
 }
 ```
-
-## Customizing theme
-
-Redefine theme variables by declaring them in `@theme` after importing Hummingbird:
-
-```css
-@import "tailwindcss";
-@import "@hummingbirdui/hummingbird";
-
-@theme {
-  --color-primary: #0074e6;
-  --font-sans: "Figtree", ui-sans-serif, system-ui, sans-serif;
-}
-```
-
-### Spacing
-
-Customize spacing by overriding the default spacing variable or defining new ones as needed.
-
-```css
-@theme {
-  --spacing: 4px;
-
-  /* Custom spacing */
-  --spacing-lg: 16px;
-}
-```
-
-### Breakpoints
-
-Customize and add new responsive breakpoints by overriding `--breakpoint-*` variables:
-
-```css
-@theme {
-  --breakpoint-sm: 40rem;
-  --breakpoint-md: 48rem;
-  --breakpoint-lg: 64rem;
-  --breakpoint-xl: 80rem;
-  --breakpoint-2xl: 96rem;
-
-  /* Custom breakpoint */
-  --breakpoint-3xl: 120rem;
-}
-```
-
-## Multiple themes
-
-Hummingbird uses a small set of theme variables. By overriding these variables within a new theme scope, multiple themes can be created.
-
-```sass
-@theme {
-  --color-primary: var(--color-blue-500);
-  --color-secondary: var(--color-purple-500);
-}
-
-@variant dark {
-  --color-primary: var(--color-blue-400);
-  --color-secondary: var(--color-purple-400);
-}
-
-@variant forest {
-  --color-primary: var(--color-blue-600);
-  --color-secondary: var(--color-purple-600);
-}
-```
-
-## Reboot
-
-Reboot is a foundational stylesheet that resets browser defaults and applies basic element styles. It provides a clean, consistent starting point for building interfaces and ensures visual consistency across browsers.
-
-For more details, follow the [Reboot](/docs/content/reboot) documentation.
 
 ## Tailwind theme variable namespaces
 

@@ -174,6 +174,30 @@ The following CSS variables are defined in Hummingbird for reboot styles. Overri
 
 <Example lang='sass' showPreview={false}
   code={`:root {
+    --input-btn-font-size: var(--text-sm);
+    --input-btn-radius: var(--radius-lg);
+    --input-btn-padding-x: --spacing(4);
+    --input-btn-padding-y: --spacing(1.75);
+    --input-btn-line-height: 1.5;
+    --input-btn-border-width: 1px;
+
+    --input-bg: var(--background-color-muted);
+    --input-color: var(--text-color-default);
+    --input-border-color: var(--border-color-base);
+    --input-disabled-bg: var(--color-disabled);
+    --input-hover-bg: var(--background-color-highlight);
+    --input-focus-bg: var(--color-primary-lighter);
+    --input-hover-border-color: var(--text-color-subtle);
+    --input-focus-border-color: var(--color-primary);
+    --input-disabled-border-color: var(--border-color-base);
+
+    /* bootstrap grid */
+    --grid-gutter-x: 1.5rem;
+    --grid-gutter-y: 0px;
+    --grid-columns: 12;
+    --grid-row-columns: 6;
+
+    /* reboot variables */
     --body-bg: var(--background-color-default);
     --body-color: var(--text-color-default);
     --body-font-size: var(--text-base);
@@ -184,18 +208,18 @@ The following CSS variables are defined in Hummingbird for reboot styles. Overri
     --hr-border-color: var(--border-color-base);
     --headings-margin-bottom: --spacing(2);
     --headings-font-weight: var(--font-weight-bold);
-    --h1-font-size: 48px;
-    --h1-line-height: 1;
-    --h2-font-size: 42px;
-    --h2-line-height: 1;
-    --h3-font-size: 32px;
-    --h3-line-height: 1.1;
-    --h4-font-size: 28px;
-    --h4-line-height: 1.1;
-    --h5-font-size: 24px;
-    --h5-line-height: 1.15;
-    --h6-font-size: 20px;
-    --h6-line-height: 1.2;
+    --h1-font-size: var(--text-6xl);
+    --h1-line-height: var(--text-6xl--line-height);
+    --h2-font-size: var(--text-5xl);
+    --h2-line-height: var(--text-5xl--line-height);
+    --h3-font-size: var(--text-4xl);
+    --h3-line-height: var(--text-4xl--line-height);
+    --h4-font-size: var(--text-3xl);
+    --h4-line-height: var(--text-3xl--line-height);
+    --h5-font-size: var(--text-2xl);
+    --h5-line-height: var(--text-2xl--line-height);
+    --h6-font-size: var(--text-xl);
+    --h6-line-height: var(--text-xl--line-height);
     --paragraph-margin-bottom: --spacing(4);
     --dt-font-weight: var(--font-weight-bold);
     --anchor-color: var(--color-primary);
@@ -208,4 +232,4 @@ The following CSS variables are defined in Hummingbird for reboot styles. Overri
     --legend-margin-bottom: --spacing(2);
     --legend-font-weight: var(--font-weight-medium);
     --legend-font-size: var(--text-xl);
-  }`}/>
+}`}/>

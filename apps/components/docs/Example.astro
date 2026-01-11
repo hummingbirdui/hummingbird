@@ -116,6 +116,18 @@ const original: string = normalizeCode(rawCode);
       let expanded = false;
       let revertTimer: ReturnType<typeof setTimeout> | null = null;
 
+      const COLLAPSED_HEIGHT = 280;
+
+      if (codeContainer && expandBtn) {
+        const contentHeight = codeContainer.scrollHeight;
+
+        if (contentHeight <= COLLAPSED_HEIGHT) {
+          (expandBtn as HTMLButtonElement).style.display = 'none';
+        } else {
+          (codeContainer as HTMLElement).style.maxHeight = `${COLLAPSED_HEIGHT}px`;
+        }
+      }
+
       // Expand/collapse
       expandBtn?.addEventListener('click', () => {
         expanded = !expanded;
@@ -124,7 +136,9 @@ const original: string = normalizeCode(rawCode);
         }
         expandSpan.innerHTML = expanded ? collapseIcon : expandIcon;
         if (codeContainer) {
-          (codeContainer as HTMLElement).style.maxHeight = expanded ? '100%' : '17.5rem';
+          (codeContainer as HTMLElement).style.maxHeight = expanded
+            ? `${codeContainer.scrollHeight}px`
+            : `${COLLAPSED_HEIGHT}px`;
         }
       });
 
