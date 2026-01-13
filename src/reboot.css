@@ -7,7 +7,8 @@
     @apply bg-[var(--body-bg)]
     text-[var(--body-color)]
     text-[length:var(--body-font-size)]
-    font-[var(--body-font-weight)];
+    font-[var(--body-font-weight)]
+    leading-[var(--body-line-height)];
   }
 
   hr {

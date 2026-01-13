@@ -19,7 +19,8 @@
 
     @apply relative inline-block overflow-hidden
     w-[var(--avatar-width)]
-    h-[var(--avatar-height)];
+    h-[var(--avatar-height)]
+    align-middle;
 
     &[class*='avatar-status-']::before {
       @apply content-[''] 

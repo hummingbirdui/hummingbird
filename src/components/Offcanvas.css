@@ -88,6 +88,9 @@
   @layer base {
     @apply flex items-center
     px-[var(--offcanvas-padding-x)] py-[var(--offcanvas-padding-y)];
+    .btn-close {
+      @apply shrink-0 m-[calc(-0.5*var(--offcanvas-padding-y))_calc(-0.5*var(--offcanvas-padding-x))_calc(-0.5*var(--offcanvas-padding-y))_auto] p-[calc(var(--offcanvas-padding-y)*0.5)_calc(var(--offcanvas-padding-x)*0.5)];
+    }
   }
 }
 

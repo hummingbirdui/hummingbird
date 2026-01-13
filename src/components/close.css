@@ -3,8 +3,8 @@
     --btn-close-color: var(--text-color-default);
     --btn-close-hover-bg: var(--background-color-muted);
     --btn-close-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%231D2025' viewBox='0 0 16 16'%3e%3cpath d='M.293 1.707a1 1 0 0 1 1.414-1.414L8 6.586l6.293-6.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293A1 1 0 0 1 .293 14.293L6.586 8 .293 1.707z'/%3e%3c/svg%3e");
-    --btn-close-width: 0.75rem;
-    --btn-close-height: 0.75rem;
+    --btn-width: 0.75rem;
+    --btn-height: 0.75rem;
     --btn-close-opacity: 0.5;
     --btn-close-hover-opacity: 0.75;
     --btn-close-focus-opacity: 1;
@@ -13,8 +13,8 @@
     --btn-close-radius: var(--radius-sm);
 
     @apply box-content 
-    w-[var(--btn-close-width)]
-    h-[var(--btn-close-height)]
+    w-[var(--btn-width)]
+    h-[var(--btn-height)]
     p-[var(--btn-close-padding)]
     bg-[image:var(--btn-close-bg)] bg-center bg-no-repeat bg-[length:--spacing(3)_auto]
     text-[var(--btn-close-color)]

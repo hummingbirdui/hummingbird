@@ -54,7 +54,6 @@
 
 @utility form-select {
   @layer base {
-    --input-bg: var(--background-color-default);
     --form-select-font-size: var(--input-btn-font-size);
     --form-select-radius: var(--input-btn-radius);
     --form-select-padding-x: var(--input-btn-padding-x);
@@ -72,6 +71,7 @@
     leading-[var(--form-select-line-height)]
     text-[length:var(--form-select-font-size)]
     text-[var(--input-color)]
+    font-[var(--input-btn-font-weight)]
     rounded-[var(--form-select-radius)]
     border-[length:var(--form-select-border-width)]
     border-[var(--input-border-color)]
@@ -86,10 +86,7 @@
     bg-[length:var(--form-select-bg-size)];
 
     &:is(:disabled, [disabled]) {
-      @apply opacity-50;
-      @variant hover {
-        @apply border-[var(--input-disabled-border-color)];
-      }
+      @apply opacity-50 pointer-events-none;
     }
 
     @variant hover {
