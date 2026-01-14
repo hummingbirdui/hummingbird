@@ -181,16 +181,20 @@ export const { classNames } = frontmatter;
 
 ## CSS variables
 
-The badge component is built using a set of CSS variables. These variables provide flexibility for customizing styles:
+The badge component is built using a set of CSS variables. These variables provide flexibility for customizing styles.
+See the [Theming](https://hbui.dev/docs/customize/theming/) to customize styles globally and apply overrides as needed.
 
 <Example lang='sass' showPreview={false}
   code={`.badge {
     --badge-bg: var(--color-dark);
-    --badge-color: var(--color-white);
+    --badge-color: var(--color-contrast);
     --badge-font-size: var(--text-xs);
+    --badge-font-weight: var(--font-weight-semibold);
+    --badge-line-height: 1;
     --badge-padding-y: --spacing(0.75);
     --badge-padding-x: --spacing(1.5);
     --badge-border-color: transparent;
     --badge-link-hover-bg: var(--color-dark);
+    --badge-border-radius: calc(infinity * 1px);
   }`}
 />

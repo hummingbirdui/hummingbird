@@ -787,7 +787,8 @@ export const { classNames } = frontmatter;
 
 ## CSS variables
 
-The table component is built using a set of CSS variables. These variables provide flexibility for customizing styles:
+The table component is built using a set of CSS variables. These variables provide flexibility for customizing styles.
+See the [Theming](https://hbui.dev/docs/customize/theming/) to customize styles globally and apply overrides as needed.
 
 <Example lang='sass' showPreview={false}
   code={`.table {
@@ -797,6 +798,7 @@ The table component is built using a set of CSS variables. These variables provi
     --table-cell-padding-y: --spacing(4);
     --table-border-color: var(--border-color-light);
     --table-font-size: var(--text-sm);
+    --table-line-height: 1.3;
     --table-head-bg: var(--background-color-subtle);
     --table-head-color: var(--text-color-default);
     --table-striped-bg: var(--background-color-muted);

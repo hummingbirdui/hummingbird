@@ -64,9 +64,7 @@ The offcanvas component can be triggered using either an `<a>` element with href
   <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
     <div class="offcanvas-header">
       <h6 class="offcanvas-title font-semibold" id="offcanvasExampleLabel">Offcanvas</h6>
-      <button type="button" class="btn btn-icon ms-auto" data-bs-dismiss="offcanvas" aria-label="Close">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="m12 13.4l-4.9 4.9q-.275.275-.7.275t-.7-.275t-.275-.7t.275-.7l4.9-4.9l-4.9-4.9q-.275-.275-.275-.7t.275-.7t.7-.275t.7.275l4.9 4.9l4.9-4.9q.275-.275.7-.275t.7.275t.275.7t-.275.7L13.4 12l4.9 4.9q.275.275.275.7t-.275.7t-.7.275t-.7-.275z" stroke-width="0.5" stroke="currentColor"/></svg>
-      </button>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">
       <div class="list-group bg-transparent p-0">
@@ -76,7 +74,8 @@ The offcanvas component can be triggered using either an `<a>` element with href
         <a href="#" class="list-group-item list-group-item-action rounded-md">List Item Four</a>
       </div>
     </div>
-  </div>`} />
+  </div>`} 
+/>
 
 ## Body scrolling
 
@@ -87,9 +86,7 @@ When an offcanvas and its backdrop are visible, scrolling on the `<body>` elemen
   <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
     <div class="offcanvas-header">
       <h6 class="offcanvas-title font-semibold" id="offcanvasScrollingLabel">Offcanvas</h6>
-      <button type="button" class="btn btn-icon ms-auto" data-bs-dismiss="offcanvas" aria-label="Close">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="m12 13.4l-4.9 4.9q-.275.275-.7.275t-.7-.275t-.275-.7t.275-.7l4.9-4.9l-4.9-4.9q-.275-.275-.275-.7t.275-.7t.7-.275t.7.275l4.9 4.9l4.9-4.9q.275-.275.7-.275t.7.275t.275.7t-.275.7L13.4 12l4.9 4.9q.275.275.275.7t-.275.7t-.7.275t-.7-.275z" stroke-width="0.5" stroke="currentColor"/></svg>
-      </button>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">
       <div class="list-group bg-transparent p-0">
@@ -99,7 +96,8 @@ When an offcanvas and its backdrop are visible, scrolling on the `<body>` elemen
         <a href="#" class="list-group-item list-group-item-action rounded-md">List Item Four</a>
       </div>
     </div>
-  </div>`} />
+  </div>`} 
+/>
 
 ## Body scrolling and backdrop
 
@@ -110,9 +108,7 @@ Body scrolling can also be enabled along with a backdrop.
   <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
     <div class="offcanvas-header">
       <h6 class="offcanvas-title font-semibold" id="offcanvasWithBothOptionsLabel">Offcanvas</h6>
-      <button type="button" class="btn btn-icon ms-auto" data-bs-dismiss="offcanvas" aria-label="Close">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="m12 13.4l-4.9 4.9q-.275.275-.7.275t-.7-.275t-.275-.7t.275-.7l4.9-4.9l-4.9-4.9q-.275-.275-.275-.7t.275-.7t.7-.275t.7.275l4.9 4.9l4.9-4.9q.275-.275.7-.275t.7.275t.275.7t-.275.7L13.4 12l4.9 4.9q.275.275.275.7t-.275.7t-.7.275t-.7-.275z" stroke-width="0.5" stroke="currentColor"/></svg>
-      </button>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">
       <div class="list-group bg-transparent p-0">
@@ -122,7 +118,8 @@ Body scrolling can also be enabled along with a backdrop.
         <a href="#" class="list-group-item list-group-item-action rounded-md">List Item Four</a>
       </div>
     </div>
-  </div>`} />
+  </div>`} 
+/>
 
 ## Static backdrop
 
@@ -134,8 +131,7 @@ When backdrop is set to `static`, the offcanvas does not close when clicking out
     <div class="offcanvas-header">
       <h6 class="offcanvas-title font-semibold" id="staticBackdropLabel">Offcanvas</h6>
       <button type="button" class="btn btn-icon ms-auto" data-bs-dismiss="offcanvas" aria-label="Close">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="m12 13.4l-4.9 4.9q-.275.275-.7.275t-.7-.275t-.275-.7t.275-.7l4.9-4.9l-4.9-4.9q-.275-.275-.275-.7t.275-.7t.7-.275t.7.275l4.9 4.9l4.9-4.9q.275-.275.7-.275t.7.275t.275.7t-.275.7L13.4 12l4.9 4.9q.275.275.275.7t-.275.7t-.7.275t-.7-.275z" stroke-width="0.5" stroke="currentColor"/></svg>
-      </button>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">
       <div class="list-group bg-transparent p-0">
@@ -145,7 +141,8 @@ When backdrop is set to `static`, the offcanvas does not close when clicking out
         <a href="#" class="list-group-item list-group-item-action rounded-md">List Item Four</a>
       </div>
     </div>
-  </div>`} />
+  </div>`} 
+/>
 
 ## Responsive
 
@@ -167,14 +164,13 @@ To create a responsive offcanvas, replace the `.offcanvas` base class with a res
   <div class="offcanvas-lg offcanvas-start" tabindex="-1" id="offcanvasResponsive" aria-labelledby="offcanvasResponsiveLabel">
     <div class="offcanvas-header">
       <h6 class="offcanvas-title font-semibold" id="offcanvasResponsiveLabel">Responsive offcanvas</h6>
-      <button type="button" class="btn btn-icon ms-auto" data-bs-dismiss="offcanvas" aria-label="Close" data-bs-target="#offcanvasResponsive">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="m12 13.4l-4.9 4.9q-.275.275-.7.275t-.7-.275t-.275-.7t.275-.7l4.9-4.9l-4.9-4.9q-.275-.275-.275-.7t.275-.7t.7-.275t.7.275l4.9 4.9l4.9-4.9q.275-.275.7-.275t.7.275t.275.7t-.275.7L13.4 12l4.9 4.9q.275.275.275.7t-.275.7t-.7.275t-.7-.275z" stroke-width="0.5" stroke="currentColor"/></svg>
-      </button>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">
       <p class="mb-0">This is content within responsive offcanvas. The Responsive Offcanvas component adapts its behavior based on the screen size. It behaves like a sliding drawer on mobile and a static sidebar on larger breakpoints (lg and up)</p>
     </div>
-  </div>`} />
+  </div>`} 
+/>
 
 ## Placement
 
@@ -192,42 +188,39 @@ Try the top, right, and bottom examples below.
   <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
     <div class="offcanvas-header">
       <h6 class="offcanvas-title font-semibold" id="offcanvasTopLabel">Offcanvas Top</h6>
-      <button type="button" class="btn btn-icon ms-auto" data-bs-dismiss="offcanvas" aria-label="Close">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="m12 13.4l-4.9 4.9q-.275.275-.7.275t-.7-.275t-.275-.7t.275-.7l4.9-4.9l-4.9-4.9q-.275-.275-.275-.7t.275-.7t.7-.275t.7.275l4.9 4.9l4.9-4.9q.275-.275.7-.275t.7.275t.275.7t-.275.7L13.4 12l4.9 4.9q.275.275.275.7t-.275.7t-.7.275t-.7-.275z" stroke-width="0.5" stroke="currentColor"/></svg>
-      </button>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">
       ...
     </div>
-  </div>`} />
+  </div>`} 
+/>
 
 <Example class='text-center' code={`<button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Toggle right offcanvas</button>
 
   <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
     <div class="offcanvas-header">
       <h6 class="offcanvas-title font-semibold" id="offcanvasRightLabel">Offcanvas Right</h6>
-      <button type="button" class="btn btn-icon ms-auto" data-bs-dismiss="offcanvas" aria-label="Close">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="m12 13.4l-4.9 4.9q-.275.275-.7.275t-.7-.275t-.275-.7t.275-.7l4.9-4.9l-4.9-4.9q-.275-.275-.275-.7t.275-.7t.7-.275t.7.275l4.9 4.9l4.9-4.9q.275-.275.7-.275t.7.275t.275.7t-.275.7L13.4 12l4.9 4.9q.275.275.275.7t-.275.7t-.7.275t-.7-.275z" stroke-width="0.5" stroke="currentColor"/></svg>
-      </button>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">
       ...
     </div>
-  </div>`} />
+  </div>`} 
+/>
 
 <Example class='text-center' code={`<button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom">Toggle bottom offcanvas</button>
 
   <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasBottom" aria-labelledby="offcanvasBottomLabel">
     <div class="offcanvas-header">
       <h6 class="offcanvas-title font-semibold" id="offcanvasBottomLabel">Offcanvas Bottom</h6>
-      <button type="button" class="btn btn-icon ms-auto" data-bs-dismiss="offcanvas" aria-label="Close">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="m12 13.4l-4.9 4.9q-.275.275-.7.275t-.7-.275t-.275-.7t.275-.7l4.9-4.9l-4.9-4.9q-.275-.275-.275-.7t.275-.7t.7-.275t.7.275l4.9 4.9l4.9-4.9q.275-.275.7-.275t.7.275t.275.7t-.275.7L13.4 12l4.9 4.9q.275.275.275.7t-.275.7t-.7.275t-.7-.275z" stroke-width="0.5" stroke="currentColor"/></svg>
-      </button>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">
       ...
     </div>
-  </div>`} />
+  </div>`} 
+/>
 
 
 ## Class Overview
@@ -241,7 +234,8 @@ export const { classNames } = frontmatter;
 
 ## CSS variables
 
-The offcanvas component is built using a set of CSS variables. These variables provide flexibility for customizing styles:
+The offcanvas component is built using a set of CSS variables. These variables provide flexibility for customizing styles.
+See the [Theming](https://hbui.dev/docs/customize/theming/) to customize styles globally and apply overrides as needed.
 
 <Example showPreview={false} lang='sass' code={`.offcanvas {
     --offcanvas-zindex: 1045;

@@ -206,6 +206,7 @@ export const { classNames } = frontmatter;
 ## CSS variables
 
 The form select component is built using a set of CSS variables. These variables provide flexibility for customizing styles globally or locally.
+See the [Theming](https://hbui.dev/docs/customize/theming/) to customize styles globally and apply overrides as needed.
 
 ### Global variables
 
@@ -222,7 +223,7 @@ Global variables apply shared styles across buttons, inputs, and selects. Updati
 
   /* Used across input and form-select */
   --input-label-color: var(--text-color-muted);
-  --input-bg: var(--background-color-muted);
+  --input-bg: var(--background-color-default);
   --input-color: var(--text-color-default);
   --input-border-color: var(--border-color-base);
   --input-disabled-bg: var(--background-color-highlight);
@@ -230,7 +231,8 @@ Global variables apply shared styles across buttons, inputs, and selects. Updati
   --input-focus-bg: var(--color-primary-lighter);
   --input-hover-border-color: var(--text-color-subtle);
   --input-focus-border-color: var(--color-primary);
-  --input-disabled-border-color: var(--border-color-base);`}
+  --input-disabled-border-color: var(--border-color-base);
+  --input-font-weight: var(--font-weight-normal);`}
 />
 
 ### Local variables
