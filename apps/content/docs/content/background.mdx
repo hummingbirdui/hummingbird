@@ -9,7 +9,7 @@ toc: true
 Use `bg-*` utilities to apply a background image to an element.
 
 <Example
-  code={`<div class="h-48 w-full bg-[url('/images/mountain.png')] bg-cover bg-bottom rounded-lg"></div>`}
+  code={`<div class="h-48 w-full bg-[url('/images/mountain.avif')] bg-cover bg-bottom rounded-lg"></div>`}
 />
 
 ## Linear gradient
@@ -44,7 +44,7 @@ Apply `bg-conic` utilities to generate conic (angular) gradients.
 
 Combine a background image with an overlay by stacking elements and using opacity utilities.
 
-<Example code={`<div class="relative h-48 w-full bg-[url('/images/mountain.png')] bg-cover bg-bottom rounded-lg">
+<Example code={`<div class="relative h-48 w-full bg-[url('/images/mountain.avif')] bg-cover bg-bottom rounded-lg">
     <div class="absolute inset-0 bg-black/40 rounded-lg"></div>
     <div class="relative z-10 flex h-full items-center justify-center text-white text-2xl font-semibold">
       Background Image
@@ -59,19 +59,19 @@ Use `bg-contain` to fit the entire image inside the container, or `bg-cover` to 
 
 <Example showMarkup={false} class="space-y-6" code={`<div class="max-w-92 mx-auto">
     <p class="mb-1"><code>.bg-contain</code></p>
-    <div class="h-40 w-full bg-[url('/images/mountain.png')] bg-bottom bg-contain bg-no-repeat border border-base"></div>
+    <div class="h-40 w-full bg-[url('/images/mountain.avif')] bg-bottom bg-contain bg-no-repeat border border-base"></div>
   </div>
   <div class="max-w-92 mx-auto">
     <p class="mb-1"><code>.bg-cover</code></p>
-    <div class="h-40 w-full bg-[url('/images/mountain.png')] mx-auto bg-bottom bg-cover bg-no-repeat border border-base"></div>
+    <div class="h-40 w-full bg-[url('/images/mountain.avif')] mx-auto bg-bottom bg-cover bg-no-repeat border border-base"></div>
   </div>`}
 />
 
 <Example showPreview={false} code={`<!-- bg contain -->
-  <div class="bg-[url('/images/mountain.png')] bg-contain ..."></div>
+  <div class="bg-[url('/images/mountain.avif')] bg-contain ..."></div>
 
   <!-- bg cover -->
-  <div class="bg-[url('/images/mountain.png')] bg-cover ..."></div>`} 
+  <div class="bg-[url('/images/mountain.avif')] bg-cover ..."></div>`} 
 />
 
 ## Background position
@@ -190,15 +190,15 @@ Use `bg-center`, `bg-right`, `bg-top-left`, etc., to position a background image
   </div>`}
 />
 
-<Example showPreview={false} code={`<div class="bg-[url(/images/mountain.png)] bg-top-left"></div>
-  <div class="bg-[url(/images/mountain.png)] bg-top"></div>
-  <div class="bg-[url(/images/mountain.png)] bg-top-right"></div>
-  <div class="bg-[url(/images/mountain.png)] bg-left"></div>
-  <div class="bg-[url(/images/mountain.png)] bg-center"></div>
-  <div class="bg-[url(/images/mountain.png)] bg-right"></div>
-  <div class="bg-[url(/images/mountain.png)] bg-bottom-left"></div>
-  <div class="bg-[url(/images/mountain.png)] bg-bottom"></div>
-  <div class="bg-[url(/images/mountain.png)] bg-bottom-right"></div>`}
+<Example showPreview={false} code={`<div class="bg-[url(/images/mountain.avif)] bg-top-left"></div>
+  <div class="bg-[url(/images/mountain.avif)] bg-top"></div>
+  <div class="bg-[url(/images/mountain.avif)] bg-top-right"></div>
+  <div class="bg-[url(/images/mountain.avif)] bg-left"></div>
+  <div class="bg-[url(/images/mountain.avif)] bg-center"></div>
+  <div class="bg-[url(/images/mountain.avif)] bg-right"></div>
+  <div class="bg-[url(/images/mountain.avif)] bg-bottom-left"></div>
+  <div class="bg-[url(/images/mountain.avif)] bg-bottom"></div>
+  <div class="bg-[url(/images/mountain.avif)] bg-bottom-right"></div>`}
 />
 
 ## Background attachment

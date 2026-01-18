@@ -2,6 +2,7 @@
   @layer base {
     --card-bg: var(--background-color-subtle);
     --card-color: var(--text-color-muted);
+    --card-font-size: var(--text-sm);
     --card-border-width: 1px;
     --card-border-color: var(--border-color-base);
     --card-border-radius: var(--radius-lg);
@@ -13,12 +14,15 @@
     --card-cap-color: null;
     --card-title-color: var(--text-color-default);
     --card-title-space-y: --spacing(2);
+    --card-title-font-weight: var(--font-weight-bold);
+    --card-subtitle-font-weight: var(--font-weight-medium);
+    --card-overlay-brighness: 0.6;
 
     @apply relative flex flex-col min-w-0 wrap-break-word
-    text-sm
+    text-[var(--card-color)]
+    text-[length:var(--card-font-size)]
     rounded-[var(--card-border-radius)]
     bg-[var(--card-bg)]
-    text-[var(--card-color)]
     border-[length:var(--card-border-width)]
     border-[var(--card-border-color)];
   }
@@ -66,7 +70,7 @@
 @utility card-header {
   @layer base {
     @apply mb-0
-    px-[var(--card-padding-x)] 
+    px-[var(--card-padding-x)]
     py-[var(--card-padding-y)]
     text-[var(--card-cap-color)]
     bg-[var(--card-cap-bg)]
@@ -94,8 +98,8 @@
 
 @utility card-title {
   @layer base {
-    @apply text-xl font-bold
-    text-[var(--card-title-color)]
+    @apply text-xl text-[var(--card-title-color)]
+    font-[var(--card-title-font-weight)]
     mb-[var(--card-title-space-y)];
     &:has(+ .card-subtitle) {
       @apply mb-0;
@@ -105,14 +109,14 @@
 
 @utility card-subtitle {
   @layer base {
-    @apply text-base font-medium
+    @apply font-[var(--card-subtitle-font-weight)]
     mb-[var(--card-title-space-y)];
   }
 }
 
 @utility card-text {
   @layer base {
-    @apply text-sm;
+    @apply text-[length:var(--card-font-size)];
   }
 }
 
@@ -122,7 +126,7 @@
     --card-border-width: 0px;
     @apply overflow-hidden rounded-lg;
     img {
-      @apply brightness-[0.6];
+      @apply brightness-[var(--card-overlay-brighness)];
     }
     .card-body {
       @apply absolute top-0 right-0 bottom-0 left-0
@@ -131,3 +135,58 @@
     }
   }
 }
+
+@utility card-group {
+  @layer base {
+    --card-group-margin: --spacing(4);
+    > .card {
+      margin-bottom: var(--card-group-margin);
+    }
+
+    @variant sm {
+      display: flex;
+      flex-flow: row wrap;
+
+      > .card {
+        flex: 1 0 0;
+        margin-bottom: 0;
+
+        & + .card {
+          margin-left: 0;
+          border-left: 0;
+        }
+
+        &:not(:last-child) {
+          border-start-end-radius: 0;
+          border-end-end-radius: 0;
+
+          > .card-img-top,
+          > .card-header {
+            border-top-right-radius: 0;
+          }
+
+          > .card-img-bottom,
+          > .card-footer {
+            border-bottom-right-radius: 0;
+          }
+        }
+
+        &:not(:first-child) {
+          border-start-start-radius: 0;
+          border-end-start-radius: 0;
+
+          > .card-img-top,
+          > .card-header {
+            border-top-left-radius: 0;
+          }
+
+          > .card-img-bottom,
+          > .card-footer {
+            border-bottom-left-radius: 0;
+          }
+        }
+      }
+    }
+  }
+}
+ 

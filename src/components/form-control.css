@@ -1,5 +1,6 @@
 @utility form-control-fill {
   @layer base {
+    --input-bg: var(--background-color-muted);
     --input-font-size: var(--input-btn-font-size);
     --input-radius: var(--input-btn-radius);
     --input-padding-x: var(--input-btn-padding-x);
@@ -19,6 +20,7 @@
     bg-[var(--input-bg)]
     text-[length:var(--input-font-size)]
     text-[var(--input-color)]
+    font-[var(--input-font-weight)]
     rounded-[var(--input-radius)]
     border-[length:var(--input-border-width)]
     border-[var(--input-border-color)]
@@ -26,7 +28,7 @@
     py-[var(--input-padding-y)];
 
     &:is(:disabled, [disabled]) {
-      @apply bg-[var(--input-disabled-bg)];
+      @apply text-[var(--input-disabled-color)] bg-[var(--input-disabled-bg)];
     }
 
     @variant hover {
@@ -81,9 +83,11 @@
     leading-[var(--input-line-height)]
     text-[length:var(--input-font-size)]
     text-[var(--input-color)]
+    font-[var(--input-btn-font-weight)]
     rounded-[var(--input-radius)]
     border-[length:var(--input-border-width)]
     border-[var(--input-border-color)]
+    bg-[var(--input-bg)]
     px-[var(--input-padding-x)]
     py-[var(--input-padding-y)];
 

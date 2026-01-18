@@ -155,9 +155,8 @@ export const { classNames } = frontmatter;
 
 ## CSS variables
 
-The form control component is built using a set of CSS variables. These variables provide flexibility for customizing styles globally or locally. 
-
-See the [Theming](https://hbui.dev/docs/customize/theming/) for global customization and overrides.
+The form control component is built using a set of CSS variables. These variables provide flexibility for customizing styles globally or locally.
+See the [Theming](https://hbui.dev/docs/customize/theming/) to customize styles globally and apply overrides as needed.
 
 ### Global variables
 
@@ -200,6 +199,7 @@ Local variables apply only to form-control, allowing fine-grained control over t
   }
 
   .form-control-fill {
+    --input-bg: var(--background-color-muted);
     --input-font-size: var(--input-btn-font-size);
     --input-radius: var(--input-btn-radius);
     --input-padding-x: var(--input-btn-padding-x);

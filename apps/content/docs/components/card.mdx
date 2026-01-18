@@ -55,7 +55,7 @@ Cards support flexible image placement using utility classes.
 Use `.card-img-top`, `.card-img-bottom`, `.card-img-left`, or `.card-img-right` to place images on any side of the card.
 
 <Example class='flex justify-center' code={`<div class="card max-w-88">
-    <img src="${getVersionedPath('/images/1.png')}" alt="Hummingbird" class='card-img-top' />
+    <img src="${getVersionedPath('/images/1.avif')}" alt="Hummingbird" class="card-img-top" />
     <div class="card-body">
       <h4 class="card-title">Hummingbirds</h4>
       <p class='mb-0'>Hummingbirds belong to the avian family Trochilidae, and their closest relatives are the equally fascinating swifts.</p>
@@ -64,14 +64,15 @@ Use `.card-img-top`, `.card-img-bottom`, `.card-img-left`, or `.card-img-right` 
       <button class='btn btn-sm btn-text-primary'>SHARE</button>
       <button class='btn btn-sm btn-text-primary'>LEARN MORE</button>
     </div>
-  </div>`} />
+  </div>`}
+/>
 
 ## Clickable card
 
 A card action turns the entire card into a clickable element, allowing navigation or interaction when selected. Use `.card-action` along with `.card`.
 
 <Example class='flex justify-center' code={`<a href="#" class="card card-action max-w-88">
-    <img src="${getVersionedPath('/images/1.png')}" alt="Hummingbird" class='card-img-top' />
+    <img src="${getVersionedPath('/images/1.avif')}" alt="Hummingbird" class="card-img-top" />
     <div class="card-body">
       <h4 class="card-title">Hummingbirds</h4>
       <p class="mb-0">Hummingbirds belong to the avian family Trochilidae, and their closest relatives are the equally fascinating swifts.</p>
@@ -106,7 +107,7 @@ Combine components and utility classes to create richer layouts with customized 
         </div>
       </div>
     </div>
-    <img src="${getVersionedPath('/images/2.png')}" alt="Hummingbird" class='card-img' />
+    <img src="${getVersionedPath('/images/2.avif')}" alt="Hummingbird" class='card-img' />
     <div class="card-body">
       <p class="text-sm mb-0">The male Black-throated Mango hummingbird has a metallic bronze-green upper body and flanks, a black throat and chest, and white underparts.</p>
     </div>
@@ -150,7 +151,7 @@ Combine components and utility classes to create richer layouts with customized 
 Place content over an image using the `.card-img-overlay` class.
 
 <Example class='flex justify-center' code={`<div class="card card-img-overlay max-w-88">
-    <img src="${getVersionedPath('/images/2.png')}" alt="Hummingbird" class="card-img-top" />
+    <img src="${getVersionedPath('/images/5.avif')}" alt="Hummingbird" class="card-img-top" />
     <div class="card-body flex flex-col items-start">
       <h4 class="card-title">Hummingbirds</h4>
       <p class="mb-0">Hummingbirds are birds native to the Americas and comprise the biological family Trochilidae.</p>
@@ -164,7 +165,7 @@ Use the `.card-aside` layout to place images or media alongside card content, ei
 
 <Example class='flex flex-col items-center gap-3' code={`<div class="card card-aside max-w-120">
     <div class="flex items-center justify-center">
-      <img src="${getVersionedPath('/images/3.png')}" alt="Hummingbird" class='card-img-left' />
+      <img src="${getVersionedPath('/images/3.avif')}" alt="Hummingbird" class='card-img-left w-48' />
     </div>
     <div class="card-body">
       <h4 class="card-title">Violetear</h4>
@@ -180,9 +181,48 @@ Use the `.card-aside` layout to place images or media alongside card content, ei
       <button class="btn btn-sm btn-primary mt-4">Continue</button>
     </div>
     <div class="flex items-center justify-center">
-      <img src="${getVersionedPath('/images/3.png')}" alt="Hummingbird" class='card-img-right' />
+      <img src="${getVersionedPath('/images/3.avif')}" alt="Hummingbird" class='card-img-right w-48' />
     </div>
-  </div>`} />
+  </div>`} 
+/>
+
+## Card group
+
+Use `.card-group` to wrap multiple cards and display them together with a consistent alignment.
+
+<Example class="flex justify-center" code={`<div class="card-group">
+    <div class="card">
+      <img src="/images/4.avif" alt="Hummingbird" class="card-img-top h-52" />
+      <div class="card-body">
+        <h4 class="card-title">Card Title</h4>
+        <p class='mb-0'>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      </div>
+      <div class="card-footer">
+        <button class='btn btn-sm btn-text-primary'>Learn more</button>
+      </div>
+    </div>
+    <div class="card">
+      <img src="/images/5.avif" alt="Hummingbird" class="card-img-top h-52" />
+      <div class="card-body">
+        <h4 class="card-title">Card Title</h4>
+        <p class='mb-0'>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      </div>
+      <div class="card-footer">
+        <button class='btn btn-sm btn-text-primary'>Learn more</button>
+      </div>
+    </div>
+    <div class="card">
+      <img src="/images/6.avif" alt="Hummingbird" class="card-img-top h-52" />
+      <div class="card-body">
+        <h4 class="card-title">Card Title</h4>
+        <p class='mb-0'>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      </div>
+      <div class="card-footer">
+        <button class='btn btn-sm btn-text-primary'>Learn more</button>
+      </div>
+    </div>
+  </div>`} 
+/>
 
 ## Elevated Card
 
@@ -302,9 +342,9 @@ Use Tailwind `rounded-*` utilities to customize the card’s corner radius.
 
 Customize cards easily by applying Tailwind utility classes to achieve the exact style and layout desired.
 
-<Example class="flex justify-center" code={`<div class="card max-w-90 h-110 bg-[linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.9)),url('https://plus.unsplash.com/premium_photo-1673002094195-f18084be89ce?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover bg-center">
+<Example class="flex justify-center" code={`<div class="card max-w-90 h-110 bg-[linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.9)),url('/images/7.avif')] bg-cover bg-center">
     <div class="card-body mt-auto grow-0">
-      <p class="mb-2 text-gray-300">Mar 20, 2025</p>
+      <p class="mb-2 text-gray-300">Oct 20, 2025</p>
       <h5 class="text-white">Boost your conversion rate</h5>
       <p class="text-gray-300 line-clamp-3">
         Optimize your funnel with data-driven strategies that increase engagement, build trust, and drive more meaningful conversions across every touchpoint. Deliver measurable impact through optimized user journeys, actionable insights, and conversion-focused execution.
@@ -325,12 +365,14 @@ export const { classNames } = frontmatter;
 
 ## CSS variables
 
-The card component is built using a set of CSS variables. These variables provide flexibility for customizing styles:
+The card component is built using a set of CSS variables. These variables provide flexibility for customizing styles.
+See the [Theming](https://hbui.dev/docs/customize/theming/) to customize styles globally and apply overrides as needed.
 
 <Example lang='sass' showPreview={false}
   code={`.card {
     --card-bg: var(--background-color-subtle);
     --card-color: var(--text-color-muted);
+    --card-font-size: var(--text-sm);
     --card-border-width: 1px;
     --card-border-color: var(--border-color-base);
     --card-border-radius: var(--radius-lg);

@@ -3,10 +3,10 @@ import logo from '@assets/images/logos/hummingbird.svg';
 import BulbIcon from '@components/icons/BulbIcon.astro';
 import GitHubIcon from '@components/icons/GithubIcon.astro';
 import MenuIcon from '@components/icons/MenuIcon.astro';
-import TimesIcon from '@components/icons/TimesIcon.astro';
 import BulbOffIcon from '@components/icons/BulbOffIcon.astro';
 import { Image } from 'astro:assets';
 import '@docsearch/css';
+
 import { getConfig, getVersionedPath } from '@libs/config';
 const { currentVersion } = getConfig();
 
@@ -81,9 +81,7 @@ const currentPath = Astro.url.pathname;
       <Image src={logo} alt="Logo" class="w-10 h-10" />
       <h5 class="mb-0 text-muted font-semibold">hummingbird</h5>
     </a>
-    <button class="btn btn-square bg-transparent" data-bs-dismiss="offcanvas" aria-label="Close">
-      <TimesIcon />
-    </button>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
   <ul class="navbar-nav px-6 space-y-1">
     {
