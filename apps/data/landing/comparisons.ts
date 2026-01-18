@@ -1,6 +1,6 @@
 import hummingbird from '@assets/images/logos/hummingbird.svg';
-import tailwindcss from '@assets/images/logos/tailwindcss.png';
-import bootstrap from '@assets/images/logos/bootstrap.png';
+import tailwindcss from '@assets/images/logos/tailwindcss.svg';
+import bootstrap from '@assets/images/logos/bootstrap.svg';
 
 export interface Framework {
   name: string;

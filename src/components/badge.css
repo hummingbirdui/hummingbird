@@ -3,19 +3,22 @@
     --badge-bg: var(--color-dark);
     --badge-color: var(--color-contrast);
     --badge-font-size: var(--text-xs);
+    --badge-font-weight: var(--font-weight-semibold);
+    --badge-line-height: 1;
     --badge-padding-y: --spacing(0.75);
     --badge-padding-x: --spacing(1.5);
     --badge-border-color: transparent;
     --badge-link-hover-bg: var(--color-dark);
+    --badge-border-radius: calc(infinity * 1px);
 
     @apply inline-flex items-center justify-center gap-1 align-middle
     bg-[var(--badge-bg)]
     text-[var(--badge-color)]
     text-[length:var(--badge-font-size)]
     p-[var(--badge-padding-y)_var(--badge-padding-x)]
-    leading-[1]
-    font-semibold
-    rounded-full
+    leading-[var(--badge-line-height)]
+    font-[var(--badge-font-weight)]
+    rounded-[var(--badge-border-radius)]
     border
     border-[var(--badge-border-color)];
   }

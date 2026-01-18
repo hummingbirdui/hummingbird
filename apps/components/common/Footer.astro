@@ -7,7 +7,7 @@ const isLanding = Astro.url.pathname === getVersionedPath('/');
 ---
 
 <footer
-  class={`px-6 lg:px-10 ${!isLanding && "bg-cover bg-center bg-no-repeat bg-[url('/images/footer-light.png')] dark:bg-[url('/images/footer-dark.png')]"}`}
+  class={`px-6 lg:px-10 ${!isLanding && "bg-cover bg-center bg-no-repeat bg-[url('/images/backgrounds/footer-bg-l.avif')] dark:bg-[url('/images/backgrounds/footer-bg-d.avif')]"}`}
 >
   <div class="mx-auto max-w-8xl">
     <div class="grid grid-cols-10 xl:grid-cols-15 xl:gap-8 gap-y-12 py-12">

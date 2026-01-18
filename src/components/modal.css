@@ -115,6 +115,15 @@
     border-b-[length:var(--modal-header-border-width)]
     border-[var(--modal-header-border-color)]
     rounded-t-[var(--modal-inner-border-radius)];
+
+    .btn-close {
+      @apply py-[calc(var(--modal-header-padding-y)*.5)]
+      px-[calc(var(--modal-header-padding-x)*.5)]
+      -mt-[calc(.5*var(--modal-header-padding-y))]
+      -me-[calc(.5*var(--modal-header-padding-x))]
+      -mb-[calc(.5*var(--modal-header-padding-y))]
+      ms-auto;
+    }
   }
 }
 

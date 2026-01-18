@@ -104,23 +104,27 @@
 
 :root {
   --input-btn-font-size: var(--text-sm);
+  --input-btn-font-weight: var(--font-weight-normal);
   --input-btn-radius: var(--radius-lg);
   --input-btn-padding-x: --spacing(4);
   --input-btn-padding-y: --spacing(1.75);
   --input-btn-line-height: 1.5;
   --input-btn-border-width: 1px;
 
-  --input-bg: var(--background-color-muted);
+  --input-bg: var(--background-color-default);
   --input-color: var(--text-color-default);
   --input-border-color: var(--border-color-base);
-  --input-disabled-bg: var(--color-disabled);
+  --input-font-weight: var(--font-weight-normal);
   --input-hover-bg: var(--background-color-highlight);
-  --input-focus-bg: var(--color-primary-lighter);
   --input-hover-border-color: var(--text-color-subtle);
+  --input-focus-bg: var(--color-primary-lighter);
   --input-focus-border-color: var(--color-primary);
+  --input-disabled-color: var(--input-color);
+  --input-disabled-bg: var(--color-disabled);
   --input-disabled-border-color: var(--border-color-base);
+  --input-disabled-opacity: 0.5;
 
-  /* bootstrap grid */
+  /* grid */
   --grid-gutter-x: 1.5rem;
   --grid-gutter-y: 0px;
   --grid-columns: 12;
@@ -131,6 +135,8 @@
   --body-color: var(--text-color-default);
   --body-font-size: var(--text-base);
   --body-font-weight: var(--font-weight-normal);
+  --body-line-height: var(--text-base--line-height);
+
   --hr-margin-y: --spacing(4);
   --hr-margin-x: 0;
   --hr-color: var(--text-color-default);

@@ -206,6 +206,7 @@ export const { classNames } = frontmatter;
 ## CSS variables
 
 The form select component is built using a set of CSS variables. These variables provide flexibility for customizing styles globally or locally.
+See the [Theming](https://hbui.dev/docs/customize/theming/) to customize styles globally and apply overrides as needed.
 
 ### Global variables
 
@@ -214,6 +215,7 @@ Global variables apply shared styles across buttons, inputs, and selects. Updati
 <Example lang='sass' showPreview={false}
   code={`/* Used across button, form-control, select */
   --input-btn-font-size: var(--text-sm);
+  --input-btn-font-weight: var(--font-weight-normal);
   --input-btn-radius: var(--radius-lg);
   --input-btn-padding-x: --spacing(4);
   --input-btn-padding-y: --spacing(1.75);
@@ -221,16 +223,18 @@ Global variables apply shared styles across buttons, inputs, and selects. Updati
   --input-btn-border-width: 1px;
 
   /* Used across input and form-select */
-  --input-label-color: var(--text-color-muted);
   --input-bg: var(--background-color-muted);
   --input-color: var(--text-color-default);
   --input-border-color: var(--border-color-base);
-  --input-disabled-bg: var(--background-color-highlight);
+  --input-font-weight: var(--font-weight-normal);
   --input-hover-bg: var(--background-color-highlight);
   --input-focus-bg: var(--color-primary-lighter);
   --input-hover-border-color: var(--text-color-subtle);
   --input-focus-border-color: var(--color-primary);
-  --input-disabled-border-color: var(--border-color-base);`}
+  --input-disabled-color: var(--input-color);
+  --input-disabled-bg: var(--background-color-highlight);
+  --input-disabled-border-color: var(--border-color-base);
+  --input-disabled-opacity: 0.5;`}
 />
 
 ### Local variables
@@ -239,7 +243,11 @@ Local variables apply only to form-select, allowing fine-grained control over th
 
 <Example lang='sass' showPreview={false}
   code={`.form-select {
+    --form-select-bg: var(--input-bg);
+    --form-select-color: var(--input-color);
     --form-select-font-size: var(--input-btn-font-size);
+    --form-select-font-weight: var(--input-btn-font-weight);
+    --form-select-border-color: var(--input-border-color);
     --form-select-radius: var(--input-btn-radius);
     --form-select-padding-x: var(--input-btn-padding-x);
     --form-select-padding-y: var(--input-btn-padding-y);
@@ -248,10 +256,17 @@ Local variables apply only to form-select, allowing fine-grained control over th
     --form-select-padding-right: --spacing(9);
     --form-select-bg-size: --spacing(4) --spacing(3);
     --form-select-indicator: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='none' stroke='%231B2124' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/></svg>");
+    --form-select-disabled-opacity: var(--input-disabled-opacity);
+    --form-select-hover-border-color: var(--input-hover-border-color);
+    --form-select-focus-border-color: var(--input-focus-border-color);
   }
 
   .form-select-fill {
+    --form-select-bg: var(--background-color-muted);
+    --form-select-color: var(--input-color);
     --form-select-font-size: var(--input-btn-font-size);
+    --form-select-font-weight: var(--input-btn-font-weight);
+    --form-select-border-color: transparent;
     --form-select-radius: var(--input-btn-radius);
     --form-select-padding-x: var(--input-btn-padding-x);
     --form-select-padding-y: var(--input-btn-padding-y);
@@ -260,6 +275,11 @@ Local variables apply only to form-select, allowing fine-grained control over th
     --form-select-padding-right: --spacing(9);
     --form-select-bg-size: --spacing(4) --spacing(3);
     --form-select-indicator: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='none' stroke='%231B2124' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/></svg>");
-    --input-border-color: transparent;
+    --form-select-disabled-color: var(--input-disabled-color);
+    --form-select-disabled-bg: var(--input-disabled-bg);
+    --form-select-disabled-opacity: var(--input-disabled-opacity);
+    --form-select-hover-bg: var(--input-hover-bg);
+    --form-select-focus-bg: var(--input-focus-bg);
+    --form-select-focus-border-color: var(--input-focus-border-color);
   }`}
 />

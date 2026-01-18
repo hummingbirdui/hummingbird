@@ -1,5 +1,6 @@
 @utility form-control-fill {
   @layer base {
+    --input-bg: var(--background-color-muted);
     --input-font-size: var(--input-btn-font-size);
     --input-radius: var(--input-btn-radius);
     --input-padding-x: var(--input-btn-padding-x);
@@ -10,6 +11,7 @@
     --file-selector-btn-bg: var(--background-color-highlight);
     --file-selector-btn-color: var(--text-color-default);
     --file-selector-btn-hover-bg: var(--background-color-emphasis);
+    --file-selector-btn-disabled-bg: var(--background-color-emphasis);
 
     @apply w-full
     appearance-none
@@ -19,6 +21,7 @@
     bg-[var(--input-bg)]
     text-[length:var(--input-font-size)]
     text-[var(--input-color)]
+    font-[var(--input-font-weight)]
     rounded-[var(--input-radius)]
     border-[length:var(--input-border-width)]
     border-[var(--input-border-color)]
@@ -26,7 +29,10 @@
     py-[var(--input-padding-y)];
 
     &:is(:disabled, [disabled]) {
-      @apply bg-[var(--input-disabled-bg)];
+      @apply text-[var(--input-disabled-color)]
+      bg-[var(--input-disabled-bg)]
+      opacity-[var(--input-disabled-opacity)]
+      pointer-events-none;
     }
 
     @variant hover {
@@ -57,10 +63,12 @@
       me-[var(--input-padding-x)];
     }
     &:hover:not(:disabled):not([readonly])::file-selector-button {
-      --file-selector-btn-bg: var(--file-selector-btn-hover-bg);
+      @apply bg-(--file-selector-btn-hover-bg);
     }
     &:is(:disabled, [disabled])::file-selector-button {
-      --file-selector-btn-bg: var(--background-color-muted);
+      @apply bg-(--file-selector-btn-disabled-bg)
+      opacity-[var(--input-disabled-opacity)]
+      pointer-events-none;
     }
   }
 }
@@ -81,9 +89,11 @@
     leading-[var(--input-line-height)]
     text-[length:var(--input-font-size)]
     text-[var(--input-color)]
+    font-[var(--input-btn-font-weight)]
     rounded-[var(--input-radius)]
     border-[length:var(--input-border-width)]
     border-[var(--input-border-color)]
+    bg-[var(--input-bg)]
     px-[var(--input-padding-x)]
     py-[var(--input-padding-y)];
 
@@ -97,10 +107,8 @@
     }
 
     &:is(:disabled, [disabled]) {
-      @apply opacity-50;
-      @variant hover {
-        @apply border-[var(--input-disabled-border-color)];
-      }
+      @apply opacity-[var(--input-disabled-opacity)]
+      pointer-events-none;
     }
 
     &[type='file'] {
