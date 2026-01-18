@@ -165,6 +165,7 @@ Global variables apply shared styles across buttons, inputs, and selects. Updati
 <Example lang='sass' showPreview={false}
   code={`/* Used across button, form-control, select */
   --input-btn-font-size: var(--text-sm);
+  --input-btn-font-weight: var(--font-weight-normal);
   --input-btn-radius: var(--radius-lg);
   --input-btn-padding-x: --spacing(4);
   --input-btn-padding-y: --spacing(1.75);
@@ -172,16 +173,18 @@ Global variables apply shared styles across buttons, inputs, and selects. Updati
   --input-btn-border-width: 1px;
 
   /* Used across input and form-select */
-  --input-label-color: var(--text-color-muted);
   --input-bg: var(--background-color-muted);
   --input-color: var(--text-color-default);
   --input-border-color: var(--border-color-base);
-  --input-disabled-bg: var(--background-color-highlight);
+  --input-font-weight: var(--font-weight-normal);
   --input-hover-bg: var(--background-color-highlight);
   --input-focus-bg: var(--color-primary-lighter);
   --input-hover-border-color: var(--text-color-subtle);
   --input-focus-border-color: var(--color-primary);
-  --input-disabled-border-color: var(--border-color-base);`}
+  --input-disabled-color: var(--input-color);
+  --input-disabled-bg: var(--background-color-highlight);
+  --input-disabled-border-color: var(--border-color-base);
+  --input-disabled-opacity: 0.5;`}
 />
 
 ### Local variables
@@ -210,6 +213,7 @@ Local variables apply only to form-control, allowing fine-grained control over t
     --file-selector-btn-bg: var(--background-color-highlight);
     --file-selector-btn-color: var(--text-color-default);
     --file-selector-btn-hover-bg: var(--background-color-emphasis);
+    --file-selector-btn-disabled-bg: var(--background-color-emphasis);
   }`}
 />
 
