@@ -98,7 +98,7 @@
 
 @utility card-title {
   @layer base {
-    @apply text-xl text-[var(--card-title-color)]
+    @apply text-[var(--card-title-color)]
     font-[var(--card-title-font-weight)]
     mb-[var(--card-title-space-y)];
     &:has(+ .card-subtitle) {
@@ -189,4 +189,3 @@
     }
   }
 }
- 

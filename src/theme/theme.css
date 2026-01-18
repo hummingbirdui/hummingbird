@@ -114,16 +114,17 @@
   --input-bg: var(--background-color-default);
   --input-color: var(--text-color-default);
   --input-border-color: var(--border-color-base);
+  --input-font-weight: var(--font-weight-normal);
+  --input-hover-bg: var(--background-color-highlight);
+  --input-hover-border-color: var(--text-color-subtle);
+  --input-focus-bg: var(--color-primary-lighter);
+  --input-focus-border-color: var(--color-primary);
   --input-disabled-color: var(--input-color);
   --input-disabled-bg: var(--color-disabled);
-  --input-hover-bg: var(--background-color-highlight);
-  --input-focus-bg: var(--color-primary-lighter);
-  --input-hover-border-color: var(--text-color-subtle);
-  --input-focus-border-color: var(--color-primary);
   --input-disabled-border-color: var(--border-color-base);
-  --input-font-weight: var(--font-weight-normal);
+  --input-disabled-opacity: 0.5;
 
-  /* bootstrap grid */
+  /* grid */
   --grid-gutter-x: 1.5rem;
   --grid-gutter-y: 0px;
   --grid-columns: 12;

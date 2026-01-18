@@ -1,6 +1,10 @@
 @utility form-select-fill {
   @layer base {
+    --form-select-bg: var(--background-color-muted);
+    --form-select-color: var(--input-color);
     --form-select-font-size: var(--input-btn-font-size);
+    --form-select-font-weight: var(--input-btn-font-weight);
+    --form-select-border-color: transparent;
     --form-select-radius: var(--input-btn-radius);
     --form-select-padding-x: var(--input-btn-padding-x);
     --form-select-padding-y: var(--input-btn-padding-y);
@@ -9,19 +13,25 @@
     --form-select-padding-right: --spacing(9);
     --form-select-bg-size: --spacing(4) --spacing(3);
     --form-select-indicator: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='none' stroke='%231B2124' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/></svg>");
-    --input-border-color: transparent;
+    --form-select-disabled-color: var(--input-disabled-color);
+    --form-select-disabled-bg: var(--input-disabled-bg);
+    --form-select-disabled-opacity: var(--input-disabled-opacity);
+    --form-select-hover-bg: var(--input-hover-bg);
+    --form-select-focus-bg: var(--input-focus-bg);
+    --form-select-focus-border-color: var(--input-focus-border-color);
 
     @apply w-full
     appearance-none
     block
     transition duration-200
     leading-[var(--form-select-line-height)]
-    bg-[var(--input-bg)]
+    bg-[var(--form-select-bg)]
     text-[length:var(--form-select-font-size)]
-    text-[var(--input-color)]
+    text-[var(--form-select-color)]
+    font-[var(--form-select-font-weight)]
     rounded-[var(--form-select-radius)]
     border-[length:var(--form-select-border-width)]
-    border-[var(--input-border-color)]
+    border-[var(--form-select-border-color)]
     ps-[var(--form-select-padding-x)]
     pe-[var(--form-select-padding-right)]
     py-[var(--form-select-padding-y)]
@@ -32,18 +42,21 @@
     bg-[length:var(--form-select-bg-size)];
 
     &:is(:disabled, [disabled]) {
-      @apply bg-[var(--input-disabled-bg)];
+      @apply text-[var(--form-select-disabled-color)]
+      bg-[var(--form-select-disabled-bg)]
+      opacity-[var(--form-select-disabled-opacity)]
+      pointer-events-none;
     }
 
     @variant hover {
-      @apply bg-[var(--input-hover-bg)];
+      @apply bg-[var(--form-select-hover-bg)];
     }
 
     &:focus-within,
     &:focus {
       @apply outline-0
-      bg-[var(--input-focus-bg)]
-      border-[var(--input-focus-border-color)];
+      bg-[var(--form-select-focus-bg)]
+      border-[var(--form-select-focus-border-color)];
     }
 
     @variant dark {
@@ -54,7 +67,11 @@
 
 @utility form-select {
   @layer base {
+    --form-select-bg: var(--input-bg);
+    --form-select-color: var(--input-color);
     --form-select-font-size: var(--input-btn-font-size);
+    --form-select-font-weight: var(--input-btn-font-weight);
+    --form-select-border-color: var(--input-border-color);
     --form-select-radius: var(--input-btn-radius);
     --form-select-padding-x: var(--input-btn-padding-x);
     --form-select-padding-y: var(--input-btn-padding-y);
@@ -63,6 +80,9 @@
     --form-select-padding-right: --spacing(9);
     --form-select-bg-size: --spacing(4) --spacing(3);
     --form-select-indicator: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='none' stroke='%231B2124' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/></svg>");
+    --form-select-disabled-opacity: var(--input-disabled-opacity);
+    --form-select-hover-border-color: var(--input-hover-border-color);
+    --form-select-focus-border-color: var(--input-focus-border-color);
 
     @apply w-full
     appearance-none
@@ -70,32 +90,33 @@
     transition duration-200
     leading-[var(--form-select-line-height)]
     text-[length:var(--form-select-font-size)]
-    text-[var(--input-color)]
-    font-[var(--input-btn-font-weight)]
+    bg-[var(--form-select-bg)]
+    text-[var(--form-select-color)]
+    font-[var(--form-select-font-weight)]
     rounded-[var(--form-select-radius)]
     border-[length:var(--form-select-border-width)]
-    border-[var(--input-border-color)]
+    border-[var(--form-select-border-color)]
     ps-[var(--form-select-padding-x)]
     pe-[var(--form-select-padding-right)]
     py-[var(--form-select-padding-y)]
     bg-[image:var(--form-select-indicator)]
-    bg-[var(--input-bg)]
     bg-no-repeat
     ltr:bg-[position:right_var(--form-select-padding-x)_center]
     rtl:bg-[position:left_var(--form-select-padding-x)_center]
     bg-[length:var(--form-select-bg-size)];
 
     &:is(:disabled, [disabled]) {
-      @apply opacity-50 pointer-events-none;
+      @apply opacity-[var(--form-select-disabled-opacity)]
+      pointer-events-none;
     }
 
     @variant hover {
-      @apply border-[var(--input-hover-border-color)];
+      @apply border-[var(--form-select-hover-border-color)];
     }
 
     &:focus-within,
     &:focus {
-      @apply outline-0 border-[var(--input-focus-border-color)];
+      @apply outline-0 border-[var(--form-select-focus-border-color)];
     }
 
     @variant dark {
@@ -123,25 +144,25 @@
 
 @utility form-select-secondary {
   @layer base {
-    --input-focus-bg: var(--color-secondary-lighter);
-    --input-focus-border-color: var(--color-secondary);
+    --form-select-focus-bg: var(--color-secondary-lighter);
+    --form-select-focus-border-color: var(--color-secondary);
   }
 }
 @utility form-select-info {
   @layer base {
-    --input-focus-bg: var(--color-info-lighter);
-    --input-focus-border-color: var(--color-info);
+    --form-select-focus-bg: var(--color-info-lighter);
+    --form-select-focus-border-color: var(--color-info);
   }
 }
 @utility form-select-success {
   @layer base {
-    --input-focus-bg: var(--color-success-lighter);
-    --input-focus-border-color: var(--color-success);
+    --form-select-focus-bg: var(--color-success-lighter);
+    --form-select-focus-border-color: var(--color-success);
   }
 }
 @utility form-select-warning {
   @layer base {
-    --input-focus-bg: var(--color-warning-lighter);
-    --input-focus-border-color: var(--color-warning);
+    --form-select-focus-bg: var(--color-warning-lighter);
+    --form-select-focus-border-color: var(--color-warning);
   }
 }

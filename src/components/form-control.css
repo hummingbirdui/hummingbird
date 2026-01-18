@@ -11,6 +11,7 @@
     --file-selector-btn-bg: var(--background-color-highlight);
     --file-selector-btn-color: var(--text-color-default);
     --file-selector-btn-hover-bg: var(--background-color-emphasis);
+    --file-selector-btn-disabled-bg: var(--background-color-emphasis);
 
     @apply w-full
     appearance-none
@@ -28,7 +29,10 @@
     py-[var(--input-padding-y)];
 
     &:is(:disabled, [disabled]) {
-      @apply text-[var(--input-disabled-color)] bg-[var(--input-disabled-bg)];
+      @apply text-[var(--input-disabled-color)]
+      bg-[var(--input-disabled-bg)]
+      opacity-[var(--input-disabled-opacity)]
+      pointer-events-none;
     }
 
     @variant hover {
@@ -59,10 +63,12 @@
       me-[var(--input-padding-x)];
     }
     &:hover:not(:disabled):not([readonly])::file-selector-button {
-      --file-selector-btn-bg: var(--file-selector-btn-hover-bg);
+      @apply bg-(--file-selector-btn-hover-bg);
     }
     &:is(:disabled, [disabled])::file-selector-button {
-      --file-selector-btn-bg: var(--background-color-muted);
+      @apply bg-(--file-selector-btn-disabled-bg)
+      opacity-[var(--input-disabled-opacity)]
+      pointer-events-none;
     }
   }
 }
@@ -101,10 +107,8 @@
     }
 
     &:is(:disabled, [disabled]) {
-      @apply opacity-50;
-      @variant hover {
-        @apply border-[var(--input-disabled-border-color)];
-      }
+      @apply opacity-[var(--input-disabled-opacity)]
+      pointer-events-none;
     }
 
     &[type='file'] {

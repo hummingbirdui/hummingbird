@@ -3,7 +3,7 @@
     --list-group-bg: var(--background-color-subtle);
     --list-group-color: var(--text-color-default);
     --list-group-padding-y: --spacing(2);
-    --list-group-corder-color: var(--border-color-base);
+    --list-group-border-color: var(--border-color-base);
     --list-group-border-radius: var(--radius-lg);
     --list-group-item-padding-x: --spacing(4);
     --list-group-item-padding-y: --spacing(2.5);
@@ -23,7 +23,7 @@
     rounded-[var(--list-group-border-radius)];
 
     hr {
-      @apply border-[var(--list-group-corder-color)];
+      @apply border-[var(--list-group-border-color)];
     }
     ul {
       @apply list-none p-0 m-0;

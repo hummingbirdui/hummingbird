@@ -63,7 +63,8 @@
     }
 
     &:is(:disabled, [disabled], .disabled) {
-      @apply opacity-[var(--btn-disabled-opacity)] select-none pointer-events-none;
+      @apply opacity-[var(--btn-disabled-opacity)]
+      select-none pointer-events-none;
     }
     + input[type='file'] {
       @apply hidden;

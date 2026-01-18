@@ -30,8 +30,7 @@
 
     &:has(input[type='checkbox'][disabled]),
     &:has(input[type='radio'][disabled]) {
-      @apply cursor-default;
-      --form-check-input-wrapper-bg: transparent;
+      @apply cursor-default pointer-events-none;
       ~ .form-check-label {
         @apply cursor-default text-disabled;
       }
@@ -83,7 +82,9 @@
     rounded-[var(--form-check-input-radius)];
 
     @variant focus-visible {
-      @apply outline-0 ring-4 ring-[--alpha(var(--form-check-input-checked-bg)/50%)] border-[var(--form-check-input-checked-bg)];
+      @apply outline-0
+      ring-4 ring-[--alpha(var(--form-check-input-checked-bg)/50%)]
+      border-[var(--form-check-input-checked-bg)];
     }
 
     &[type='radio'] {
