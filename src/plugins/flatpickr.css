@@ -1,5 +1,5 @@
 .flatpickr-calendar {
-  --dtp-width: 'auto';
+  --dtp-width: --spacing(77);
   --dtp-font-size: var(--text-sm);
   --dtp-color: var(--text-color-default);
   --dtp-shadow: var(--shadow-lg);
@@ -68,8 +68,7 @@
   --dtp-spinner-bg: transparent;
 
   @apply absolute
-  w-[var(--dtp-width)]!
-  min-w-77
+  w-[var(--dtp-width)]
   text-[length:var(--dtp-font-size)]
   text-[var(--dtp-color)]
   text-center
@@ -85,6 +84,10 @@
   opacity-0
   invisible
   hidden;
+
+  &.hasWeeks {
+    @apply w-auto!;
+  }
 
   @variant dark {
     --dtp-border-color: var(--border-color-base);
