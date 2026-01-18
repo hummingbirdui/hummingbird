@@ -40,13 +40,11 @@ const currentPath = Astro.url.pathname;
           <h5 class="mb-0 text-muted font-semibold">hummingbird</h5>
         </a>
         <button
-          class="btn btn-square bg-transparent"
-          data-bs-dismiss="offcanvas"
+          type="button"
+          class="btn-close"
           data-bs-target="#mainOffcanvas"
-          aria-label="Close"
-        >
-          <TimesIcon />
-        </button>
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"></button>
       </div>
       <ul class="navbar-nav px-6 xl:px-0 space-y-1 xl:flex-row">
         {
