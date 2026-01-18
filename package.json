@@ -1,6 +1,6 @@
 {
   "name": "@hummingbirdui/hummingbird",
-  "version": "1.0.0-beta1",
+  "version": "1.0.0-beta2",
   "description": "An open-source system designed for rapid development, without sacrificing the granular control of utility-first CSS.",
   "keywords": [
     "hummingbird",
@@ -80,7 +80,7 @@
     "@types/node": "^22.13.1",
     "@typescript-eslint/eslint-plugin": "^8.32.1",
     "@typescript-eslint/parser": "^8.32.1",
-    "astro": "^5.15.5",
+    "astro": "^5.16.11",
     "astro-auto-import": "^0.4.5",
     "bootstrap": "^5.3.8",
     "choices.js": "^11.1.0",
