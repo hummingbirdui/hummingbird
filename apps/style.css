@@ -9,14 +9,14 @@
   --container-8xl: 95rem;
   --navbar-height: --spacing(20.5);
   --anchor-header-offset: 7.5rem;
-  --text-3xl: 1.75rem;    /* 28px */
-  --text-4xl: 2rem;       /* 32px */
-  --text-5xl: 2.625rem;   /* 42px */
-  --text-6xl: 3rem;       /* 48px */
-  --text-7xl: 3.5rem;     /* 56px */
-  --text-8xl: 4.625rem;   /* 74px */
-  --text-9xl: 5.5rem;     /* 88px */
-  --text-10xl: 6.125rem;  /* 98px */
+  --text-3xl: 1.75rem; /* 28px */
+  --text-4xl: 2rem; /* 32px */
+  --text-5xl: 2.625rem; /* 42px */
+  --text-6xl: 3rem; /* 48px */
+  --text-7xl: 3.5rem; /* 56px */
+  --text-8xl: 4.625rem; /* 74px */
+  --text-9xl: 5.5rem; /* 88px */
+  --text-10xl: 6.125rem; /* 98px */
   --text-xl--line-height: 1.2;
   --text-2xl--line-height: 1.15;
   --text-3xl--line-height: 1.1;
@@ -341,4 +341,81 @@
 }
 .powered-by {
   @apply hidden!;
+}
+
+.rotate-on-hover {
+  --gradient-angle: 118.65deg;
+  @apply border-transparent
+  bg-origin-border 
+  will-change-[background];
+  background-clip: padding-box, border-box;
+}
+
+.gradient-border {
+  --gradient-angle: 118.65deg;
+  --gradient-bg:
+    linear-gradient(var(--background-color-default), var(--background-color-default)),
+    linear-gradient(var(--gradient-angle), var(--color-primary-lighter) 0.36%, var(--color-primary-light) 99.64%);
+
+  @apply bg-origin-border
+    border border-transparent rounded-2xl
+    overflow-hidden transition;
+  background-clip: padding-box, border-box;
+  background-image: var(--gradient-bg);
+
+  &.gradient-border-primary {
+    --gradient-bg:
+      linear-gradient(var(--background-color-default), var(--background-color-default)),
+      linear-gradient(var(--gradient-angle), var(--color-primary-lighter) 0.36%, var(--color-primary-light) 99.64%);
+  }
+  &.gradient-border-secondary {
+    --gradient-bg:
+      linear-gradient(var(--background-color-default), var(--background-color-default)),
+      linear-gradient(var(--gradient-angle), var(--color-secondary-lighter) 0.36%, var(--color-secondary-light) 99.64%);
+  }
+  &.gradient-border-info {
+    --gradient-bg:
+      linear-gradient(var(--background-color-default), var(--background-color-default)),
+      linear-gradient(var(--gradient-angle), var(--color-info-lighter) 0.36%, var(--color-info-light) 99.64%);
+  }
+  &.gradient-border-warning {
+    --gradient-bg:
+      linear-gradient(var(--background-color-default), var(--background-color-default)),
+      linear-gradient(var(--gradient-angle), var(--color-warning-lighter) 0.36%, var(--color-warning-light) 99.64%);
+  }
+  &.gradient-border-success {
+    --gradient-bg:
+      linear-gradient(var(--background-color-default), var(--background-color-default)),
+      linear-gradient(var(--gradient-angle), var(--color-success-lighter) 0.36%, var(--color-success-light) 99.64%);
+  }
+  &.gradient-border-error {
+    --gradient-bg:
+      linear-gradient(var(--background-color-default), var(--background-color-default)),
+      linear-gradient(var(--gradient-angle), var(--color-danger-lighter) 0.36%, var(--color-danger-light) 99.64%);
+  }
+  &.gradient-border-primary-dark {
+    --gradient-bg:
+      linear-gradient(var(--background-color-default), var(--background-color-default)),
+      linear-gradient(var(--gradient-angle), var(--color-primary-lighter) 0.36%, var(--color-primary-dark) 99.64%);
+  }
+  &.gradient-border-secondary-dark {
+    --gradient-bg:
+      linear-gradient(var(--background-color-default), var(--background-color-default)),
+      linear-gradient(var(--gradient-angle), var(--color-secondary-lighter) 0.36%, var(--color-secondary-dark) 99.64%);
+  }
+  &.gradient-border-success-dark {
+    --gradient-bg:
+      linear-gradient(var(--background-color-default), var(--background-color-default)),
+      linear-gradient(var(--gradient-angle), var(--color-success-lighter) 0.36%, var(--color-success-dark) 99.64%);
+  }
+  &.gradient-border-info-dark {
+    --gradient-bg:
+      linear-gradient(var(--background-color-default), var(--background-color-default)),
+      linear-gradient(var(--gradient-angle), var(--color-info-lighter) 0.36%, var(--color-info-dark) 99.64%);
+  }
+  &.gradient-border-error-dark {
+    --gradient-bg:
+      linear-gradient(var(--background-color-default), var(--background-color-default)),
+      linear-gradient(var(--gradient-angle), var(--color-danger-lighter) 0.36%, var(--color-danger-dark) 99.64%);
+  }
 }
