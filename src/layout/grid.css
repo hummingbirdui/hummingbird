@@ -9,14 +9,16 @@
 /* Row */
 @utility row {
   @layer base {
+    --grid-gutter-x: 1.5rem;
+    --grid-gutter-y: 0px;
     @apply flex flex-wrap
-    mx-[calc(-0.5*var(--grid-gutter-x))];
-    margin-block-start: calc(-1 * var(--grid-gutter-y));
+    mx-[calc(-0.5*var(--grid-gutter-x))]
+    mt-[calc(-1*var(--grid-gutter-y))];
 
     & > * {
-      @apply shrink-0 w-full max-w-full min-w-0
-      px-[calc(var(--grid-gutter-x)*0.5)];
-      margin-block-start: var(--grid-gutter-y);
+      @apply shrink-0 w-full max-w-full
+      px-[calc(var(--grid-gutter-x)*0.5)]
+      mt-[var(--grid-gutter-y)];
     }
   }
 }

@@ -125,8 +125,6 @@
   --input-disabled-opacity: 0.5;
 
   /* grid */
-  --grid-gutter-x: 1.5rem;
-  --grid-gutter-y: 0px;
   --grid-columns: 12;
   --grid-row-columns: 6;
 
