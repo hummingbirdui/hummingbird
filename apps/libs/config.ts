@@ -13,7 +13,7 @@ interface Config {
 const config: Config = {
   title: 'Hummingbird',
   description: 'The most sensible component system for Tailwind.',
-  currentVersion: 'v1.0.0-beta2',
+  currentVersion: 'v1.0.0-beta3',
   docVersion: 'latest',
   algolia: {
     appId: '9WZCQJVTTL',
