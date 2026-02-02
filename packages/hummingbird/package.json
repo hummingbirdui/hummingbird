@@ -31,7 +31,11 @@
   "module": "lib/esm/index.js",
   "types": "lib/esm/index.d.ts",
   "style": "src/index.css",
-  "repository": "https://github.com/hummingbirdui/hummingbird",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hummingbirdui/hummingbird",
+    "directory": "packages/hummingbird"
+  },
   "bugs": "https://github.com/hummingbirdui/hummingbird/issues",
   "files": [
     "dist/*.{js,css,js.map,css.map}",
