@@ -1,6 +1,6 @@
 import docsearch from '@docsearch/js';
 import { getConfig } from '@libs/config';
-import { Toast } from '../src/index.ts';
+import { Toast } from '@hummingbirdui/hummingbird/src/index';
 import flatpickrInit from './plugins/flatpickr';
 import dropzoneInit from './plugins/dropzone';
 import noUiSliderInit from './plugins/noUISlider';

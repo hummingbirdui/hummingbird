@@ -19,7 +19,7 @@ const classNamesSchema = z
   .optional();
 
 const docs = defineCollection({
-  loader: glob({ base: './apps/content/docs', pattern: '**/*.{md,mdx}' }),
+  loader: glob({ base: './src/content/docs', pattern: '**/*.{md,mdx}' }),
   schema: z.object({
     title: z.string(),
     description: z.string().optional(),

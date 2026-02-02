@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap');
 @import 'tailwindcss';
-@import '../src/index.css';
-@import '../src/plugins/plugins.css';
+@import '@hummingbirdui/hummingbird/src/index.css';
+@import '@hummingbirdui/hummingbird/src/plugins/plugins.css';
 @custom-variant dark (&:where(.dark, .dark *), .dark);
 @custom-variant active (&:active, &.active);
 
