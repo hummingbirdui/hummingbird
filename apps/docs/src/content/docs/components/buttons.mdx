@@ -86,7 +86,6 @@ Subtle buttons use a light background with clear text color, giving gentle empha
 ## Outlined button
 
 Outlined buttons provide medium emphasis for actions that are important but not primary.
-
 They serve as a lower emphasis alternative to contained buttons, and a higher emphasis option compared to text buttons.
 
 <Example class="flex flex-wrap gap-2 justify-center" 
@@ -245,25 +244,25 @@ Use Tailwind gradient utilities to create a clean, eye-catching gradient effect 
 
 <Example
   class="flex flex-wrap gap-2 justify-center"
-  code={`<button class="btn bg-gradient-to-r from-cyan-400 to-blue-500 text-white border-0">
+  code={`<button class="btn bg-linear-to-r from-cyan-400 to-blue-500 text-white border-0">
     Primary
   </button>
-  <button class="btn bg-gradient-to-br from-purple-400 to-blue-500 text-white border-0">
+  <button class="btn bg-linear-to-br from-purple-400 to-blue-500 text-white border-0">
     Secondary
   </button>
-  <button class="btn bg-gradient-to-r from-cyan-400 to-sky-500 text-white border-0">
+  <button class="btn bg-linear-to-r from-cyan-400 to-sky-500 text-white border-0">
     Info
   </button>
-  <button class="btn bg-gradient-to-br from-green-400 to-blue-500 text-white border-0">
+  <button class="btn bg-linear-to-br from-green-400 to-blue-500 text-white border-0">
     Success
   </button>
-  <button class="btn bg-gradient-to-br from-orange-400 to-rose-500 text-white border-0">
+  <button class="btn bg-linear-to-br from-orange-400 to-rose-500 text-white border-0">
     Warning
   </button>
-  <button class="btn bg-gradient-to-br from-pink-400 to-red-500 text-white border-0">
+  <button class="btn bg-linear-to-br from-pink-400 to-red-500 text-white border-0">
     Danger
   </button>
-  <button class="btn bg-gradient-to-r from-slate-200 to-gray-300 text-slate-800 border-0">
+  <button class="btn bg-linear-to-r from-slate-200 to-gray-300 text-slate-800 border-0">
     Neutral
   </button>`}
 />
@@ -295,7 +294,7 @@ Use Tailwind opacity utilities to adjust button emphasis and visual hierarchy.
 
 ## Disabled button
 
-Apply the `disabled` attribute on `<button>` elements to prevent interaction, or add the `.disabled` class to links to visually and functionally disable them. Disabled buttons use `pointer-events: none` for preventing hover, focus, and active states from triggering.
+Apply the `disabled` attribute on `<button>` elements to disable the button.
 
 <Example class="flex flex-wrap gap-2 justify-center" 
   code={`<button class='btn' disabled>Button</button>

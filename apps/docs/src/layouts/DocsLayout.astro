@@ -84,7 +84,7 @@ const { prev, next } = await getDocPagination(sections, Astro.url.pathname);
         </div>
         {
           toc && (
-            <div class="min-w-67 ps-6 py-10 sticky top-[var(--navbar-height)] h-max hidden xl:block">
+            <div class="min-w-67 ps-6 py-10 sticky top-(--navbar-height) h-max hidden xl:block">
               <p class="font-bold ps-4">On this page</p>
               {headings && <Toc headings={headings} />}
             </div>
