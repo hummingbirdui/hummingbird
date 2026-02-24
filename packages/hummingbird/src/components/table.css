@@ -16,7 +16,7 @@
     --table-hover-bg: var(--background-color-highlight);
     --table-hover-color: var(--text-color-muted);
 
-    @apply w-full text-left
+    @apply w-full text-left rtl:text-right
     text-[length:var(--table-font-size)]
     leading-[var(--table-line-height)];
 
@@ -96,7 +96,7 @@
 
 @utility table-striped {
   @layer base {
-    > tbody > tr:nth-of-type(odd) > * {
+    > tbody > tr:nth-of-type(even) > * {
       --table-bg: var(--table-striped-bg);
       --table-color: var(--table-striped-color);
     }

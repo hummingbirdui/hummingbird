@@ -29,7 +29,7 @@
 /* stacked container */
 @utility progress-stacked {
   @layer base {
-    @apply progress gap-0.5;
+    @apply progress;
     & > .progress {
       @apply h-full rounded-none overflow-visible;
     }

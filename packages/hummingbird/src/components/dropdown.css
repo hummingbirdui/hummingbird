@@ -139,6 +139,9 @@
       @apply text-[var(--dropdown-link-hover-color)]
       bg-[var(--dropdown-link-hover-bg)];
     }
+    &:focus-visible {
+      @apply outline-0 ring-4 ring-primary-lighter;
+    }
     &.active,
     &:active {
       @apply text-[var(--dropdown-link-active-color)]

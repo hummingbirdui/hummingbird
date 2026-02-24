@@ -26,7 +26,12 @@
 /* Equal and auto columns */
 @utility col {
   @layer base {
-    @layer base {
+    [class*='row-cols-'] > & {
+      @apply flex-[1_0_0];
+    }
+  }
+  :where(:not([class*='row-cols-'])) > & {
+    @layer components {
       @apply flex-[1_0_0];
     }
   }
@@ -187,7 +192,7 @@
 
 /* row-cols (force N equal columns for direct children) */
 @utility row-cols-1 {
-  @layer base {
+  @layer components.base {
     --row-cols: 1;
     & > * {
       @apply flex-[0_0_auto] w-[calc(100%/var(--row-cols))];
@@ -195,7 +200,7 @@
   }
 }
 @utility row-cols-2 {
-  @layer base {
+  @layer components.base {
     --row-cols: 2;
     & > * {
       @apply flex-[0_0_auto] w-[calc(100%/var(--row-cols))];
@@ -203,7 +208,7 @@
   }
 }
 @utility row-cols-3 {
-  @layer base {
+  @layer components.base {
     --row-cols: 3;
     & > * {
       @apply flex-[0_0_auto] w-[calc(100%/var(--row-cols))];
@@ -211,7 +216,7 @@
   }
 }
 @utility row-cols-4 {
-  @layer base {
+  @layer components.base {
     --row-cols: 4;
     & > * {
       @apply flex-[0_0_auto] w-[calc(100%/var(--row-cols))];
@@ -219,7 +224,7 @@
   }
 }
 @utility row-cols-5 {
-  @layer base {
+  @layer components.base {
     --row-cols: 5;
     & > * {
       @apply flex-[0_0_auto] w-[calc(100%/var(--row-cols))];
@@ -227,7 +232,7 @@
   }
 }
 @utility row-cols-6 {
-  @layer base {
+  @layer components.base {
     --row-cols: 6;
     & > * {
       @apply flex-[0_0_auto] w-[calc(100%/var(--row-cols))];
@@ -235,7 +240,7 @@
   }
 }
 @utility row-cols-auto {
-  @layer base {
+  @layer components.base {
     & > * {
       @apply flex-[0_0_auto] w-auto;
     }

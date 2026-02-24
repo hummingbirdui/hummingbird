@@ -62,6 +62,9 @@
     list-none;
 
     .nav-link {
+      &:focus-visible {
+        @apply outline-0 ring-4 ring-primary-lighter;
+      }
       &.active,
       &.show {
         @apply text-[var(--navbar-active-color)];
