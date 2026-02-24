@@ -33,7 +33,7 @@ const formatText = (text: string) => {
       <ol class="breadcrumb breadcrumb-separator-arrow flex-nowrap">
         {
           breadcrumbs.map((item, index) => (
-            <li class={`breadcrumb-item inline-block truncate max-w-1/3 font-medium ${index !== breadcrumbs.length - 1 ? 'text-muted' : ''}`}>
+            <li class={`breadcrumb-item inline-block font-medium ${breadcrumbs.length > 2 ? 'truncate max-w-1/3' : ''} ${index !== breadcrumbs.length - 1 ? 'text-muted' : ''}`}>
               {formatText(item)}
             </li>
           ))
