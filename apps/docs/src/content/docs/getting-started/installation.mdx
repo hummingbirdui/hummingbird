@@ -1,30 +1,23 @@
 ---
 title: Installation
-description: This guide provides step-by-step instructions for installing Hummingbird in a project. It covers prerequisites, package installation, and initial setup to help get started quickly.
+description: Install Hummingbird using the quick setup or manual installation guide.
 toc: true
 ---
+
+Requires Node.js `20.19+`
 
 ## Quick Setup
 
 1. Create a new Hummingbird app named `my-app`
 2. `cd my-app` and start the dev server.
-3. Visit http://localhost:3000.
+3. Visit `http://localhost:3000`.
 
 <Example lang='bash' showPreview={false} code={`npx create-hummingbird-app@latest my-app --yes
   cd my-app
   npm run dev`}
 />
 
-> The `--yes` flag automatically accepts all default options and skips interactive prompts during project creation.  
-> The default setup uses Vite with Vanilla JS and comes preconfigured with Tailwind CSS and Hummingbird.
->
-> If you omit `--yes`, the CLI will guide you through a series of prompts to customize the project configuration.
-
-<HbAlert type="warning">This CLI requires [Node.js](https://nodejs.org/) version 20.19+, 22.12+. If you are using an older version, please upgrade Node.js before using the CLI.</HbAlert>
-
-<br/>
-
-[See full CLI documentation](/docs/getting-started/cli)
+The `--yes` flag skips all prompts and uses the default setup (Vite + Vanilla JS with Tailwind CSS and Hummingbird); without it, the CLI guides through customization options. See full [CLI documentation](/docs/getting-started/cli).
 
 ## Manual Installation
 
@@ -57,11 +50,6 @@ Alternatively, if using a build system (like Vite or Webpack), import Hummingbir
 
 <Example lang='js' showPreview={false} 
   code={`import '@hummingbirdui/hummingbird';`} />
-
-Another quickest way to include Hummingbird script in a project is via CDN link.
-
-<Example lang='html' showPreview={false} 
-  code={`<script src="https://cdn.jsdelivr.net/npm/@hummingbirdui/hummingbird@0.0.0-insiders.3.0/dist/hummingbird.bundle.min.js"></script>`} />
 
 **Optimization:** To reduce the final bundle size, import only the specifically needed JavaScript plugins. Follow the [optimization](/docs/getting-started/javascript#optimization) approach in the JavaScript section.
 
@@ -122,3 +110,20 @@ Hummingbird supports both **ESM** and **CJS** builds, so it works with different
   Used in **Node.js** or older tooling that relies on `require()`. If the environment  doesn’t support ESM, bundlers and Node will fall back to this file.
 
 No manual choice is required; the bundler or runtime will select the correct version based on the setup.
+
+
+## Include using CDN
+
+CDN is a fast and easy way to include Hummingbird in a project. 
+
+Use the Play CDN to try Hummingbird in the browser without any build step. The Play CDN is designed for development purposes only, and is not intended for production.
+
+Add the Play CDN script tag to the `<head>` of your HTML file, and start using Hummingbird’s and Tailwind’s classes to style the content.
+
+<Example lang='html' showPreview={false} 
+  code={`<script src="https://cdn.jsdelivr.net/npm/@hummingbirdui/browser@1.0.0/dist/index.global.js"></script>`} />
+
+And include the following JavaScript before the end of the `<body>` tag for interactive components.
+
+<Example lang='html' showPreview={false} 
+  code={`<script src="https://cdn.jsdelivr.net/npm/@hummingbirdui/hummingbird@1.0.0/dist/hummingbird.bundle.min.js"></script>`} />

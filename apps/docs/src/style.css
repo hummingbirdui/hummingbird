@@ -279,6 +279,15 @@
   --docsearch-highlight-color: var(--color-primary);
 }
 
+.DocSearch-NoResults-Prefill-List {
+  @apply hidden!;
+}
+.DocSearch-Screen-Icon {
+  svg {
+    @apply mx-auto;
+  }
+}
+
 .example-row [class*='col'],
 .example-cols [class^='col'] > * {
   @apply p-3 bg-info-lighter border border-info-light;
