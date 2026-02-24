@@ -9,7 +9,7 @@ toc: true
 Use `bg-*` utilities to apply a background image to an element.
 
 <Example
-  code={`<div class="h-48 w-full bg-[url('/images/mountain.avif')] bg-cover bg-bottom rounded-lg"></div>`}
+  code={`<div class="h-48 w-full bg-[url(/images/mountain.avif)] bg-cover bg-bottom rounded-lg"></div>`}
 />
 
 ## Linear gradient
@@ -44,7 +44,7 @@ Apply `bg-conic` utilities to generate conic (angular) gradients.
 
 Combine a background image with an overlay by stacking elements and using opacity utilities.
 
-<Example code={`<div class="relative h-48 w-full bg-[url('/images/mountain.avif')] bg-cover bg-bottom rounded-lg">
+<Example code={`<div class="relative h-48 w-full bg-[url(/images/mountain.avif)] bg-cover bg-bottom rounded-lg">
     <div class="absolute inset-0 bg-black/40 rounded-lg"></div>
     <div class="relative z-10 flex h-full items-center justify-center text-white text-2xl font-semibold">
       Background Image
@@ -59,19 +59,19 @@ Use `bg-contain` to fit the entire image inside the container, or `bg-cover` to 
 
 <Example showMarkup={false} class="space-y-6" code={`<div class="max-w-92 mx-auto">
     <p class="mb-1"><code>.bg-contain</code></p>
-    <div class="h-40 w-full bg-[url('/images/mountain.avif')] bg-bottom bg-contain bg-no-repeat border border-base"></div>
+    <div class="h-40 w-full bg-[url(/images/mountain.avif)] bg-bottom bg-contain bg-no-repeat border border-base"></div>
   </div>
   <div class="max-w-92 mx-auto">
     <p class="mb-1"><code>.bg-cover</code></p>
-    <div class="h-40 w-full bg-[url('/images/mountain.avif')] mx-auto bg-bottom bg-cover bg-no-repeat border border-base"></div>
+    <div class="h-40 w-full bg-[url(/images/mountain.avif)] mx-auto bg-bottom bg-cover bg-no-repeat border border-base"></div>
   </div>`}
 />
 
 <Example showPreview={false} code={`<!-- bg contain -->
-  <div class="bg-[url('/images/mountain.avif')] bg-contain ..."></div>
+  <div class="bg-[url(/images/mountain.avif)] bg-contain ..."></div>
 
   <!-- bg cover -->
-  <div class="bg-[url('/images/mountain.avif')] bg-cover ..."></div>`} 
+  <div class="bg-[url(/images/mountain.avif)] bg-cover ..."></div>`} 
 />
 
 ## Background position
@@ -84,7 +84,7 @@ Use `bg-center`, `bg-right`, `bg-top-left`, etc., to position a background image
         bg-top-left
       </p>
       <div class="group relative mx-auto h-20 w-20 rounded-lg">
-        <div class="relative z-10 h-full w-full rounded-md bg-[url(https://images.unsplash.com/photo-1589405858862-2ac9cbb41321?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)] bg-size-[8rem] bg-top-left outline -outline-offset-1 outline-black/10"></div>
+        <div class="relative z-10 h-full w-full rounded-md bg-[size:8rem] bg-top-left outline -outline-offset-1 outline-black/10" style="background-image: url(https://images.unsplash.com/photo-1589405858862-2ac9cbb41321?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)"></div>
         <img
           class="absolute top-0 left-0 h-32 w-32 max-w-none overflow-hidden rounded-md opacity-0 sm:group-hover:opacity-25"
           src="https://images.unsplash.com/photo-1589405858862-2ac9cbb41321?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -96,7 +96,7 @@ Use `bg-center`, `bg-right`, `bg-top-left`, etc., to position a background image
         bg-top
       </p>
       <div class="group relative mx-auto h-20 w-20 rounded-lg">
-        <div class="relative z-10 h-full w-full rounded-md bg-[url(https://images.unsplash.com/photo-1589405858862-2ac9cbb41321?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)] bg-size-[8rem] bg-top outline -outline-offset-1 outline-black/10"></div>
+        <div class="relative z-10 h-full w-full rounded-md bg-[size:8rem] bg-top outline -outline-offset-1 outline-black/10" style="background-image: url(https://images.unsplash.com/photo-1589405858862-2ac9cbb41321?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)"></div>
         <img
           class="absolute top-0 -left-6 h-32 w-32 max-w-none overflow-hidden rounded-md opacity-0 sm:group-hover:opacity-25"
           src="https://images.unsplash.com/photo-1589405858862-2ac9cbb41321?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -108,7 +108,7 @@ Use `bg-center`, `bg-right`, `bg-top-left`, etc., to position a background image
         bg-top-right
       </p>
       <div class="group relative mx-auto h-20 w-20 rounded-lg">
-        <div class="relative z-10 h-full w-full rounded-md bg-[url(https://images.unsplash.com/photo-1589405858862-2ac9cbb41321?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)] bg-size-[8rem] bg-top-right outline -outline-offset-1 outline-black/10"></div>
+        <div class="relative z-10 h-full w-full rounded-md bg-[size:8rem] bg-top-right outline -outline-offset-1 outline-black/10" style="background-image: url(https://images.unsplash.com/photo-1589405858862-2ac9cbb41321?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)"></div>
         <img
           class="absolute top-0 right-0 h-32 w-32 max-w-none overflow-hidden rounded-md opacity-0 sm:group-hover:opacity-25"
           src="https://images.unsplash.com/photo-1589405858862-2ac9cbb41321?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -120,7 +120,7 @@ Use `bg-center`, `bg-right`, `bg-top-left`, etc., to position a background image
         bg-left
       </p>
       <div class="group relative mx-auto h-20 w-20 rounded-lg">
-        <div class="relative z-10 h-full w-full rounded-md bg-[url(https://images.unsplash.com/photo-1589405858862-2ac9cbb41321?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)] bg-size-[8rem] bg-left outline -outline-offset-1 outline-black/10"></div>
+        <div class="relative z-10 h-full w-full rounded-md bg-[size:8rem] bg-left outline -outline-offset-1 outline-black/10" style="background-image: url(https://images.unsplash.com/photo-1589405858862-2ac9cbb41321?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)"></div>
         <img
           class="absolute -top-6 left-0 h-32 w-32 max-w-none overflow-hidden rounded-md opacity-0 sm:group-hover:opacity-25"
           src="https://images.unsplash.com/photo-1589405858862-2ac9cbb41321?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -132,7 +132,7 @@ Use `bg-center`, `bg-right`, `bg-top-left`, etc., to position a background image
         bg-center
       </p>
       <div class="group relative mx-auto h-20 w-20 rounded-lg">
-        <div class="relative z-10 h-full w-full rounded-md bg-[url(https://images.unsplash.com/photo-1589405858862-2ac9cbb41321?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)] bg-size-[8rem] bg-center outline -outline-offset-1 outline-black/10"></div>
+        <div class="relative z-10 h-full w-full rounded-md bg-[size:8rem] bg-center outline -outline-offset-1 outline-black/10" style="background-image: url(https://images.unsplash.com/photo-1589405858862-2ac9cbb41321?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)"></div>
         <img
           class="absolute -top-6 -left-6 h-32 w-32 max-w-none overflow-hidden rounded-md opacity-0 sm:group-hover:opacity-25"
           src="https://images.unsplash.com/photo-1589405858862-2ac9cbb41321?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -144,7 +144,7 @@ Use `bg-center`, `bg-right`, `bg-top-left`, etc., to position a background image
         bg-right
       </p>
       <div class="group relative mx-auto h-20 w-20 rounded-lg">
-        <div class="relative z-10 h-full w-full rounded-md bg-[url(https://images.unsplash.com/photo-1589405858862-2ac9cbb41321?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)] bg-size-[8rem] bg-right outline -outline-offset-1 outline-black/10"></div>
+        <div class="relative z-10 h-full w-full rounded-md bg-[size:8rem] bg-right outline -outline-offset-1 outline-black/10" style="background-image: url(https://images.unsplash.com/photo-1589405858862-2ac9cbb41321?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)"></div>
         <img
           class="absolute -top-6 right-0 h-32 w-32 max-w-none overflow-hidden rounded-md opacity-0 sm:group-hover:opacity-25"
           src="https://images.unsplash.com/photo-1589405858862-2ac9cbb41321?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -156,7 +156,7 @@ Use `bg-center`, `bg-right`, `bg-top-left`, etc., to position a background image
         bg-bottom-left
       </p>
       <div class="group relative mx-auto h-20 w-20 rounded-lg">
-        <div class="relative z-10 h-full w-full rounded-md bg-[url(https://images.unsplash.com/photo-1589405858862-2ac9cbb41321?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)] bg-size-[8rem] bg-bottom-left outline -outline-offset-1 outline-black/10"></div>
+        <div class="relative z-10 h-full w-full rounded-md bg-[size:8rem] bg-bottom-left outline -outline-offset-1 outline-black/10" style="background-image: url(https://images.unsplash.com/photo-1589405858862-2ac9cbb41321?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)"></div>
         <img
           class="absolute -top-12 left-0 h-32 w-32 max-w-none overflow-hidden rounded-md opacity-0 sm:group-hover:opacity-25"
           src="https://images.unsplash.com/photo-1589405858862-2ac9cbb41321?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -168,7 +168,7 @@ Use `bg-center`, `bg-right`, `bg-top-left`, etc., to position a background image
         bg-bottom
       </p>
       <div class="group relative mx-auto h-20 w-20 rounded-lg">
-        <div class="relative z-10 h-full w-full rounded-md bg-[url(https://images.unsplash.com/photo-1589405858862-2ac9cbb41321?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)] bg-size-[8rem] bg-bottom outline -outline-offset-1 outline-black/10"></div>
+        <div class="relative z-10 h-full w-full rounded-md bg-[size:8rem] bg-bottom outline -outline-offset-1 outline-black/10" style="background-image: url(https://images.unsplash.com/photo-1589405858862-2ac9cbb41321?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)"></div>
         <img
           class="absolute -top-12 -left-6 h-32 w-32 max-w-none overflow-hidden rounded-md opacity-0 sm:group-hover:opacity-25"
           src="https://images.unsplash.com/photo-1589405858862-2ac9cbb41321?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -180,7 +180,7 @@ Use `bg-center`, `bg-right`, `bg-top-left`, etc., to position a background image
         bg-bottom-right
       </p>
       <div class="group relative mx-auto h-20 w-20 rounded-lg">
-        <div class="relative z-10 h-full w-full rounded-md bg-[url(https://images.unsplash.com/photo-1589405858862-2ac9cbb41321?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)] bg-size-[8rem] bg-bottom-right outline -outline-offset-1 outline-black/10"></div>
+        <div class="relative z-10 h-full w-full rounded-md bg-[size:8rem] bg-bottom-right outline -outline-offset-1 outline-black/10" style="background-image: url(https://images.unsplash.com/photo-1589405858862-2ac9cbb41321?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)"></div>
         <img
           class="absolute -top-12 right-0 h-32 w-32 max-w-none overflow-hidden rounded-md opacity-0 sm:group-hover:opacity-25"
           src="https://images.unsplash.com/photo-1589405858862-2ac9cbb41321?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -205,7 +205,7 @@ Use `bg-center`, `bg-right`, `bg-top-left`, etc., to position a background image
 
 Use `bg-fixed` utility to fix the background image relative to the viewport.
 
-<Example showMarkup={false} code={`<div class="mx-auto h-80 overflow-y-scroll bg-[url('https://images.unsplash.com/photo-1589405858862-2ac9cbb41321?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover bg-center">
+<Example showMarkup={false} code={`<div class="mx-auto h-80 overflow-y-scroll bg-cover bg-center" style="background-image: url(https://images.unsplash.com/photo-1589405858862-2ac9cbb41321?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)">
     <div class="mt-48">
       <div class="p-4 sm:p-8 border-x border-base bg-default">
         <div class="mb-1 text-2xl font-extrabold tracking-tight">
@@ -237,7 +237,7 @@ Use `bg-fixed` utility to fix the background image relative to the viewport.
 
 Use `bg-local` utility to scroll the background image with the container and the viewport.
 
-<Example showMarkup={false} code={`<div class="h-64 overflow-y-scroll bg-[url('https://images.unsplash.com/photo-1589405858862-2ac9cbb41321?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover bg-local">
+<Example showMarkup={false} code={`<div class="h-64 overflow-y-scroll bg-cover bg-local" style="background-image: url(https://images.unsplash.com/photo-1589405858862-2ac9cbb41321?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)">
     <div class="min-h-full bg-black/40 p-8 sm:px-16 sm:py-12">
       <p class="text-center font-serif text-xl leading-6 text-white italic sm:text-2xl sm:leading-8">
         Because the mail never stops. It just keeps coming and coming and coming, there's never a let-up. It's
@@ -258,7 +258,7 @@ Use `bg-local` utility to scroll the background image with the container and the
 
 Use `bg-scroll` utility to scroll the background image with the viewport, but not with the container.
 
-<Example showMarkup={false} code={`<div class="h-64 overflow-y-scroll bg-[url('https://images.unsplash.com/photo-1589405858862-2ac9cbb41321?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover bg-scroll">
+<Example showMarkup={false} code={`<div class="h-64 overflow-y-scroll bg-cover bg-scroll" style="background-image: url(https://images.unsplash.com/photo-1589405858862-2ac9cbb41321?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)">
     <div class="min-h-full bg-black/40 p-8 sm:px-16 sm:py-12">
       <p class="text-center font-serif text-xl leading-6 text-white italic sm:text-2xl sm:leading-8">
         Because the mail never stops. It just keeps coming and coming and coming, there's never a let-up. It's

@@ -11,7 +11,7 @@ export const tabsData: TabData[] = [
     label: 'Hummingbird',
     active: true,
     code: `<div class="card overflow-hidden">
-  <div class="py-9 text-white text-center bg-[url('/images/mountain.avif')] bg-cover bg-center bg-no-repeat">
+  <div class="py-9 text-white text-center bg-[url(/images/mountain.avif)] bg-cover bg-center bg-no-repeat">
     <h5 class="mb-0 font-semibold">Welcome Back</h5>
     <p class="mb-0 text-xs">Enter your login details</p>
   </div>
@@ -45,7 +45,7 @@ export const tabsData: TabData[] = [
     label: 'Tailwind CSS',
     active: false,
     code: `<div class="bg-gray-50 dark:bg-gray-900 border border-gray-300 dark:border-gray-700 rounded-lg overflow-hidden">
-  <div class="py-9 text-white text-center bg-[url('/images/mountain.avif')] bg-cover bg-center bg-no-repeat">
+  <div class="py-9 text-white text-center bg-[url(/images/mountain.avif)] bg-cover bg-center bg-no-repeat">
     <h5 class="mb-0 font-semibold">Welcome Back</h5>
     <p class="mb-0 text-xs">Enter your login details</p>
   </div>
