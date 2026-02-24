@@ -193,19 +193,19 @@ Avatars can be combined with text to provide additional context, such as user na
 
 Use Tailwind gradient utilities to create a subtle gradient ring around avatars.
 
-<Example class='flex justify-center gap-3' code={`<div class="avatar avatar-lg bg-gradient-to-r from-cyan-400 to-blue-500 p-0.5 rounded-full">
+<Example class='flex justify-center gap-1 sm:gap-3 [&>div]:shrink-0' code={`<div class="avatar avatar-lg bg-linear-to-r from-cyan-400 to-blue-500 p-0.5 rounded-full">
     <img src="${getVersionedPath("/images/avatar/avatar_2.webp")}" alt="Avatar" class="bg-default p-0.5 rounded-full" />
   </div>
-  <div class="avatar avatar-lg bg-gradient-to-r from-purple-400 to-amber-500 p-0.5 rounded-full">
+  <div class="avatar avatar-lg bg-linear-to-r from-purple-400 to-amber-500 p-0.5 rounded-full">
     <img src="${getVersionedPath("/images/avatar/avatar_1.webp")}" alt="Avatar" class="bg-default p-0.5 rounded-full" />
   </div>
-  <div class="avatar avatar-lg bg-gradient-to-r from-cyan-400 to-sky-500 p-0.5 rounded-full">
+  <div class="avatar avatar-lg bg-linear-to-r from-cyan-400 to-sky-500 p-0.5 rounded-full">
     <img src="${getVersionedPath("/images/avatar/avatar_11.webp")}" alt="Avatar" class="bg-default p-0.5 rounded-full" />
   </div>
-  <div class="avatar avatar-lg bg-gradient-to-r from-green-400 to-blue-500 p-0.5 rounded-full">
+  <div class="avatar avatar-lg bg-linear-to-r from-green-400 to-blue-500 p-0.5 rounded-full">
     <img src="${getVersionedPath("/images/avatar/avatar_3.webp")}" alt="Avatar" class="bg-default p-0.5 rounded-full" />
   </div>
-  <div class="avatar avatar-lg bg-gradient-to-r from-orange-400 to-rose-500 p-0.5 rounded-full">
+  <div class="avatar avatar-lg bg-linear-to-r from-orange-400 to-rose-500 p-0.5 rounded-full">
     <img src="${getVersionedPath("/images/avatar/avatar_16.webp")}" alt="Avatar" class="bg-default p-0.5 rounded-full" />
   </div>`}
 />

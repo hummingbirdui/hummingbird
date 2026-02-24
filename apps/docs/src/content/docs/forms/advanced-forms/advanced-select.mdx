@@ -63,7 +63,7 @@ Select single value by adding `select-one` attribute.
 
 Set heights using classes like `.form-control-sm` and `.form-control-lg` for small and large input fields. Default is medium.
 
-<Example class='grid grid-cols-3 gap-2 items-center' code={`<select class="form-select form-select-sm" aria-label="Outlined example with label" data-choices="data-choices" select-one>
+<Example class='grid grid-cols-1 sm:grid-cols-3 gap-2 items-center' code={`<select class="form-select form-select-sm" aria-label="Outlined example with label" data-choices="data-choices" select-one>
     <option value="">Select option</option>
     <option value="1">One</option>
     <option value="2">Two</option>
@@ -89,7 +89,7 @@ Set heights using classes like `.form-control-sm` and `.form-control-lg` for sma
 
 Advanced select can also be used with floating labels.
 
-<Example class="grid grid-cols-2 gap-3" code={`<div class="form-floating form-field">
+<Example class="grid grid-cols-1 sm:grid-cols-2 gap-3" code={`<div class="form-floating form-field">
     <select class="form-select" aria-label="Filled floating label example" data-choices="data-choices" multiple>
       <option value="">Select option</option>
       <option value="1">One</option>
@@ -110,7 +110,7 @@ Advanced select can also be used with floating labels.
 
 ## Disabled
 
-<Example class="grid grid-cols-2 gap-3" code={`<select class="form-select" aria-label="Outlined example with label" data-choices="data-choices" multiple disabled>
+<Example class="grid grid-cols-1 sm:grid-cols-2 gap-3" code={`<select class="form-select" aria-label="Outlined example with label" data-choices="data-choices" multiple disabled>
     <option value="">Select</option>
     <option selected>preset-1</option>
     <option>preset-2</option>

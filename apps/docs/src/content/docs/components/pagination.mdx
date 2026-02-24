@@ -950,9 +950,9 @@ The Next/Prev Button Pagination variant provides only Previous and Next controls
 
 The Table Pagination variant is designed for data tables, enabling users to navigate between pages of table rows. It pairs seamlessly with table components for managing large datasets efficiently.
 
-<Example class="flex flex-col items-center justify-center gap-3"
+<Example class="flex flex-col gap-3 [&>div]:min-w-160 overflow-scroll"
   code={`<!-- table pagination -->
-  <div class="w-full flex items-center justify-between px-6 py-2 bg-[var(--background-color-subtle)] rounded-lg">
+  <div class="w-full flex items-center justify-between px-6 py-2 bg-(--background-color-subtle) rounded-lg">
     <div class="pagination-info">
       Showing <span class="pagination-count">5 out of 12</span> items
       <a href="#" class="pagination-link">Show all</a>
@@ -1004,7 +1004,7 @@ The Table Pagination variant is designed for data tables, enabling users to navi
   </div>
   
   <!-- table next/prev button pagination -->
-  <div class="w-full flex items-center justify-between px-6 py-2 bg-[var(--background-color-subtle)] rounded-lg">
+  <div class="w-full flex items-center justify-between px-6 py-2 bg-(--background-color-subtle) rounded-lg">
     <div class="pagination-info">
       Showing <span class="pagination-count">5 out of 12</span> items
       <a href="#" class="pagination-link">Show all</a>

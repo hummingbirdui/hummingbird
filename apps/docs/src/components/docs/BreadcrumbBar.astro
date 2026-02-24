@@ -15,9 +15,9 @@ const formatText = (text: string) => {
 <nav
   class="navbar sticky top-[calc(var(--navbar-height)-1px)] bg-default z-10 border-b border-light px-6 sm:px-10 lg:hidden"
 >
-  <div class="flex flex-wrap items-center mx-auto w-full max-w-8xl">
+  <div class="flex items-center mx-auto w-full max-w-8xl">
     <button
-      class="btn btn-circle btn-subtle-neutral"
+      class="btn btn-circle btn-subtle-neutral shrink-0"
       data-bs-toggle="offcanvas"
       data-bs-target="#sidebarOffcanvas"
       aria-controls="sidebarOffcanvas"
@@ -29,11 +29,11 @@ const formatText = (text: string) => {
         ></path></svg
       >
     </button>
-    <nav aria-label="breadcrumb" class="ms-6">
-      <ol class="breadcrumb breadcrumb-separator-arrow">
+    <nav aria-label="breadcrumb" class="ms-6 w-4/5">
+      <ol class="breadcrumb breadcrumb-separator-arrow flex-nowrap">
         {
           breadcrumbs.map((item, index) => (
-            <li class={`breadcrumb-item font-medium ${index !== breadcrumbs.length - 1 ? 'text-muted' : ''}`}>
+            <li class={`breadcrumb-item inline-block truncate max-w-1/3 font-medium ${index !== breadcrumbs.length - 1 ? 'text-muted' : ''}`}>
               {formatText(item)}
             </li>
           ))
