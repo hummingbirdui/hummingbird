@@ -88,7 +88,7 @@ const isLanding = Astro.url.pathname === getVersionedPath('/');
     </div>
 
     <div class="border-t border-light py-5">
-      <p class="mb-0 text-center text-sm text-muted">Hummingbird &copy; 2025, all rights reserved</p>
+      <p class="mb-0 text-center text-sm text-muted">Hummingbird &copy; {new Date().getFullYear()}, all rights reserved</p>
     </div>
   </div>
   <div class="alert alert-subtle-success mb-5 fixed z-9999 top-8 right-8 hidden" data-success-alert role="alert">
