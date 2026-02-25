@@ -31,9 +31,10 @@
   "module": "lib/esm/index.js",
   "types": "lib/esm/index.d.ts",
   "style": "src/index.css",
+  "homepage": "https://hbui.dev",
   "repository": {
     "type": "git",
-    "url": "https://github.com/hummingbirdui/hummingbird",
+    "url": "git+https://github.com/hummingbirdui/hummingbird.git",
     "directory": "packages/hummingbird"
   },
   "bugs": "https://github.com/hummingbirdui/hummingbird/issues",
@@ -51,8 +52,8 @@
   "author": "Hummingbird UI",
   "scripts": {
     "dev": "vite build --mode bundle --outDir=static --emptyOutDir=false --watch",
-    "build:css": "cross-env NODE_ENV=production npx @tailwindcss/cli -i src/index.css -o dist/hummingbird.css",
-    "build:css:min": "cross-env NODE_ENV=production npx @tailwindcss/cli -i src/index.css -o dist/hummingbird.min.css --minify",
+    "build:css": "cross-env NODE_ENV=production npx @tailwindcss/cli -i src/index.build.css -o dist/hummingbird.css",
+    "build:css:min": "cross-env NODE_ENV=production npx @tailwindcss/cli -i src/index.build.css -o dist/hummingbird.min.css --minify",
     "build:styles": "npm-run-all -s build:css build:css:min",
     "build:dist:default": "vite build",
     "build:dist:bundle": "vite build --mode bundle",

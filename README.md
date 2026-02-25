@@ -1,6 +1,6 @@
 <div align="center">
    <a href="https://hbui.dev/">
-      <img  width="350" src='./public/images/logos/hummingbird-lg.svg' alt="Logo" class="w-10 h-10" />
+      <img  width="350" src='https://raw.githubusercontent.com/hummingbirdui/hummingbird/87dc656e578d3e6fd0e4a45eabe1f5e02bdeafd1/apps/docs/public/images/logos/hummingbird-lg.svg' alt="Logo" class="w-10 h-10" />
    </a>
 
    The most sensible component system for Tailwind.
@@ -25,6 +25,9 @@
 - [Optimization](#optimization)
 - [TypeScript Support](#typescript-support)
 - [ESM vs CJS](#esm-vs-cjs)
+- [Include using CDN](#include-using-cdn)
+  - [Play CDN](#play-cdn)
+  - [CDN Script](#cdn-script)
 - [Supported Frameworks](#supported-frameworks)
 - [License](#license)
 - [Contribution guidelines](#contribution-guidelines)
@@ -84,12 +87,6 @@ Alternatively, if using a build system (like Vite or Webpack), import Hummingbir
 import '@hummingbirdui/hummingbird';
 ```
 
-Another quickest way to include Hummingbird script in a project is via CDN link.
-
-```html
-<script src="https://cdn.jsdelivr.net/npm/@hummingbirdui/hummingbird@0.0.0-insiders.3.0/dist/hummingbird.bundle.min.js"></script>
-```
-
 ## Optimization
 
 To reduce the final bundle size, you can import only the specific JavaScript plugins you need.
@@ -143,6 +140,26 @@ Hummingbird supports both **ESM** and **CJS** builds, so it works with different
   Used in **Node.js** or older tooling that relies on `require()`. If your environment doesn’t support ESM, bundlers and Node will fall back to this file.
 
 No manual choice is required; the bundler or runtime will select the correct version based on the setup.
+
+## Include using CDN
+
+CDN is a fast and easy way to include Hummingbird in a project. 
+
+### Play CDN
+
+Use the Play CDN to try Hummingbird in the browser without any build step. The Play CDN is designed for development purposes only, and is not intended for production.
+
+Add the Play CDN script tag to the `<head>` of your HTML file, and start using Hummingbird’s and Tailwind’s classes to style the content.
+
+<Example lang='html' showPreview={false} 
+  code={`<script src="https://cdn.jsdelivr.net/npm/@hummingbirdui/browser@1.0.0/dist/index.global.js"></script>`} />
+
+### CDN Script
+
+And include the following JavaScript before the end of the `<body>` tag for interactive components.
+
+<Example lang='html' showPreview={false} 
+  code={`<script src="https://cdn.jsdelivr.net/npm/@hummingbirdui/hummingbird@1.0.0/dist/hummingbird.bundle.min.js"></script>`} />
 
 ## Supported frameworks
 
