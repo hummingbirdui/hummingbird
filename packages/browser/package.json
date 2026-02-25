@@ -1,6 +1,6 @@
 {
   "name": "@hummingbirdui/browser",
-  "version": "1.0.0-beta",
+  "version": "1.0.0-beta1",
   "main": "./dist/index.global.js",
   "files": [
     "dist"
@@ -12,8 +12,8 @@
     "test:ui": "playwright test"
   },
   "dependencies": {
-    "@hummingbirdui/hummingbird": "^1.0.0-beta3",
-    "tailwindcss": "4.1.16"
+    "@hummingbirdui/hummingbird": "workspace:*",
+    "tailwindcss": "4.2.1"
   },
   "devDependencies": {
     "@types/node": "^20.0.0",
