@@ -1,6 +1,6 @@
 {
   "name": "create-hummingbird-app",
-  "version": "1.0.0-beta4",
+  "version": "1.0.0-beta5",
   "description": "A CLI tool to scaffold Hummingbird starter templates.",
   "type": "module",
   "main": "index.js",
