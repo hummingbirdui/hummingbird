@@ -114,7 +114,7 @@ export const general: Component[] = [
   {
     title: 'Buttons',
     url: '/docs/components/buttons',
-    count: 11,
+    count: 15,
     image: { light: button, dark: buttonDark },
   },
   {
@@ -141,7 +141,7 @@ export const dataDisplay: Component[] = [
   {
     title: 'Avatars',
     url: '/docs/components/avatars',
-    count: 7,
+    count: 10,
     image: { light: avatar, dark: avatarDark },
   },
   {
@@ -153,7 +153,7 @@ export const dataDisplay: Component[] = [
   {
     title: 'Card',
     url: '/docs/components/card',
-    count: 6,
+    count: 10,
     image: { light: card, dark: cardDark },
   },
   {
@@ -204,7 +204,7 @@ export const dataEntry: Component[] = [
   {
     title: 'Date & Time Pickers',
     url: '/docs/forms/advanced-forms/date-time-picker',
-    count: 8,
+    count: 10,
     image: { light: dtp, dark: dtpDark },
   },
   {
@@ -408,13 +408,13 @@ export const components = [
   {
     title: 'Avatars',
     url: '/docs/components/avatars',
-    count: 7,
+    count: 10,
     image: { light: avatar, dark: avatarDark },
   },
   {
     title: 'Buttons',
     url: '/docs/components/buttons',
-    count: 11,
+    count: 15,
     image: { light: button, dark: buttonDark },
   },
   {
