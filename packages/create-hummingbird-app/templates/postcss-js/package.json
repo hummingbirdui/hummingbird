@@ -1,6 +1,6 @@
 {
   "name": "postcss-js",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "",
   "main": "src/main.js",
   "scripts": {
@@ -15,10 +15,10 @@
   "license": "ISC",
   "type": "module",
   "dependencies": {
-    "@hummingbirdui/hummingbird": "^1.0.0-beta1",
-    "@tailwindcss/postcss": "^4.1.17",
+    "@hummingbirdui/hummingbird": "^1.0.0-beta5",
+    "@tailwindcss/postcss": "^4.2.1",
     "postcss": "^8.5.6",
     "postcss-cli": "^11.0.1",
-    "tailwindcss": "^4.1.17"
+    "tailwindcss": "^4.2.1"
   }
 }
