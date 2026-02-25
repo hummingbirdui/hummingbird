@@ -1,0 +1,48 @@
+{
+  "name": "@hummingbirdui/docs",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Documentation site for Hummingbird UI",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev --host",
+    "build": "astro build",
+    "preview": "astro preview",
+    "start:docs-js": "esbuild src/docs.ts --bundle --outfile=static/docs.js --watch",
+    "deploy": "node deployment.js production",
+    "deploy:staging": "node deployment.js staging"
+  },
+  "dependencies": {
+    "@hummingbirdui/hummingbird": "workspace:*",
+    "sharp": "^0.34.5",
+    "shiki": "^3.22.0"
+  },
+  "devDependencies": {
+    "@astrojs/mdx": "^4.3.10",
+    "@docsearch/css": "^3.9.0",
+    "@docsearch/js": "^3.9.0",
+    "@tailwindcss/vite": "^4.1.13",
+    "astro": "^5.16.11",
+    "astro-auto-import": "^0.4.5",
+    "bootstrap": "^5.3.8",
+    "choices.js": "^11.1.0",
+    "dropzone": "^6.0.0-beta.2",
+    "echarts": "^6.0.0",
+    "esbuild": "^0.25.4",
+    "flatpickr": "^4.6.13",
+    "fs-extra": "^11.3.1",
+    "gh-pages": "^6.3.0",
+    "gsap": "^3.13.0",
+    "is_js": "^0.9.0",
+    "nouislider": "^15.8.1",
+    "rehype-autolink-headings": "^7.1.0",
+    "rehype-slug": "^6.0.0",
+    "tailwindcss": "^4.1.13",
+    "typescript": "~5.7.2",
+    "unist-util-visit": "^5.0.0",
+    "vite": "^7.2.2"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

@@ -1,0 +1,195 @@
+---
+title: Button Group
+description: The Button group component is used to group related buttons together, making actions easier to organize and access.
+toc: true
+classNames:
+  component:
+  - class: btn-group
+    desc: Button Group
+  - class: btn-toolbar
+    desc: Button Toolbar
+  - class: btn-group-vertical
+    desc: Button Group Vertical
+  size:
+  - class: btn-group-sm
+    desc: Small size
+  - class: default
+    desc: Medium size (default)
+  - class: btn-group-lg
+    desc: Large size
+---
+
+## Basic example
+
+Group multiple buttons by wrapping them in a container with the `.btn-group` class. For accessibility, add the appropriate role attribute (`role="group"` for button groups or `role="toolbar"` for toolbars) and provide a label using `aria-label` or `aria-labelledby` so assistive technologies can identify and announce the group.
+
+<Example class='text-center' code={`<div class="btn-group" role="group" aria-label="Basic example">
+    <button type="button" class="btn btn-primary">Left</button>
+    <button type="button" class="btn btn-primary">Middle</button>
+    <button type="button" class="btn btn-primary">Right</button>
+  </div>`} />
+
+Links can be used inside a `.btn-group` to create grouped navigation or actions.
+
+<Example class='text-center' code={`<div class="btn-group">
+    <a href="#" class="btn btn-primary active" aria-current="page">Active link</a>
+    <a href="#" class="btn btn-primary">Link</a>
+    <a href="#" class="btn btn-primary">Link</a>
+  </div>`} />
+
+## Mixed styles
+
+<Example class='text-center' code={`<div class="btn-group" role="group" aria-label="Basic mixed styles example">
+    <button type="button" class="btn btn-secondary">Left</button>
+    <button type="button" class="btn btn-success">Middle</button>
+    <button type="button" class="btn btn-warning">Right</button>
+  </div>`} />
+
+## Outlined styles
+
+<Example class='text-center' code={`<div class="btn-group" role="group" aria-label="Basic outlined example">
+    <button type="button" class="btn btn-outline-primary">Left</button>
+    <button type="button" class="btn btn-outline-primary">Middle</button>
+    <button type="button" class="btn btn-outline-primary">Right</button>
+  </div>`} />
+
+## Checkbox and radio button groups
+
+Checkbox and radio toggle buttons can be grouped using the `.btn-group` class.
+
+<Example class='text-center' code={`<div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
+    <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off" checked/>
+    <label class="btn btn-outline-primary" for="btncheck1">Checkbox 1</label>
+    <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off"/>
+    <label class="btn btn-outline-primary" for="btncheck2">Checkbox 2</label>
+    <input type="checkbox" class="btn-check" id="btncheck3" autocomplete="off"/>
+    <label class="btn btn-outline-primary" for="btncheck3">Checkbox 3</label>
+  </div>`} />
+
+<Example class='text-center' code={`<div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+    <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked/>
+    <label class="btn btn-outline-primary" for="btnradio1">Radio 1</label>
+    <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off"/>
+    <label class="btn btn-outline-primary" for="btnradio2">Radio 2</label>
+    <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off"/>
+    <label class="btn btn-outline-primary" for="btnradio3">Radio 3</label>
+  </div>`} />
+
+## Button toolbar
+
+A button toolbar combines multiple button groups into a single container for more complex layouts. Use utility classes to adjust spacing between groups and buttons.
+
+<Example code={`<div class="btn-toolbar gap-2" role="toolbar" aria-label="Toolbar with button groups">
+    <div class="btn-group" role="group" aria-label="First group">
+      <button type="button" class="btn btn-primary">1</button>
+      <button type="button" class="btn btn-primary">2</button>
+      <button type="button" class="btn btn-primary">3</button>
+      <button type="button" class="btn btn-primary">4</button>
+    </div>
+    <div class="btn-group" role="group" aria-label="Second group">
+      <button type="button" class="btn btn-secondary">5</button>
+      <button type="button" class="btn btn-secondary">6</button>
+      <button type="button" class="btn btn-secondary">7</button>
+    </div>
+    <div class="btn-group" role="group" aria-label="Third group">
+      <button type="button" class="btn btn-info">8</button>
+    </div>
+  </div>`} />
+
+Input groups can be combined with button groups inside a toolbar. Utility classes help manage spacing and alignment.
+
+<Example class='flex flex-col gap-3' code={`<div class="btn-toolbar gap-2" role="toolbar" aria-label="Toolbar with button groups">
+    <div class="btn-group" role="group" aria-label="First group">
+      <button type="button" class="btn btn-outline-neutral">1</button>
+      <button type="button" class="btn btn-outline-neutral">2</button>
+      <button type="button" class="btn btn-outline-neutral">3</button>
+      <button type="button" class="btn btn-outline-neutral">4</button>
+    </div>
+    <div class="input-group">
+      <div class="input-group-text" id="btnGroupAddon">$</div>
+      <input type="text" class="form-control" placeholder="Input group example" aria-label="Input group example" aria-describedby="btnGroupAddon"/>
+    </div>
+  </div>
+
+  <div class="btn-toolbar justify-between gap-2" role="toolbar" aria-label="Toolbar with button groups">
+    <div class="btn-group" role="group" aria-label="First group">
+      <button type="button" class="btn btn-outline-neutral">1</button>
+      <button type="button" class="btn btn-outline-neutral">2</button>
+      <button type="button" class="btn btn-outline-neutral">3</button>
+      <button type="button" class="btn btn-outline-neutral">4</button>
+    </div>
+    <div class="input-group">
+      <div class="input-group-text" id="btnGroupAddon2">$</div>
+      <input type="text" class="form-control" placeholder="Input group example" aria-label="Input group example" aria-describedby="btnGroupAddon2"/>
+    </div>
+  </div>`} />
+
+## Sizing
+
+Apply size classes like .btn-group-\* to the .btn-group container instead of individual buttons. This ensures consistent sizing, even when nesting multiple groups.
+
+<Example class='flex flex-col items-start gap-2' code={`<div class="btn-group btn-group-lg" role="group" aria-label="Large button group">
+    <button type="button" class="btn btn-outline-primary">Left</button>
+    <button type="button" class="btn btn-outline-primary">Middle</button>
+    <button type="button" class="btn btn-outline-primary">Right</button>
+  </div>
+
+  <div class="btn-group" role="group" aria-label="Default button group">
+    <button type="button" class="btn btn-outline-primary">Left</button>
+    <button type="button" class="btn btn-outline-primary">Middle</button>
+    <button type="button" class="btn btn-outline-primary">Right</button>
+  </div>
+
+  <div class="btn-group btn-group-sm" role="group" aria-label="Small button group">
+    <button type="button" class="btn btn-outline-primary">Left</button>
+    <button type="button" class="btn btn-outline-primary">Middle</button>
+    <button type="button" class="btn btn-outline-primary">Right</button>
+  </div>`} />
+
+## Nesting
+
+A `.btn-group` can be placed within another `.btn-group` when dropdown menus are desired alongside a series of buttons.
+
+<Example code={`<div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+    <button type="button" class="btn btn-primary">1</button>
+    <button type="button" class="btn btn-primary">2</button>
+    <div class="btn-group" role="group">
+      <button type="button" class="btn btn-primary" data-bs-toggle="dropdown" aria-expanded="false">
+        Dropdown
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M7 9a1 1 0 0 0-.707 1.707l5 5a1 1 0 0 0 1.414 0l5-5A1 1 0 0 0 17 9z" clip-rule="evenodd"/></svg>
+      </button>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#">Dropdown link</a></li>
+        <li><a class="dropdown-item" href="#">Dropdown link</a></li>
+      </ul>
+    </div>
+  </div>`} />
+
+## Vertical variation
+
+Use the `.btn-group-vertical` class to stack buttons in a column instead of a row. **Split dropdowns are not supported in this layout.**
+
+<Example code={`<div class="btn-group-vertical" role="group" aria-label="Vertical button group">
+    <button type="button" class="btn btn-primary">Button</button>
+    <button type="button" class="btn btn-primary">Button</button>
+    <button type="button" class="btn btn-primary">Button</button>
+    <button type="button" class="btn btn-primary">Button</button>
+  </div>`} />
+
+<Example code={`<div class="btn-group-vertical" role="group" aria-label="Vertical radio toggle button group">
+    <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio1" autocomplete="off" checked/>
+    <label class="btn btn-outline-danger" for="vbtn-radio1">Radio 1</label>
+    <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio2" autocomplete="off"/>
+    <label class="btn btn-outline-danger" for="vbtn-radio2">Radio 2</label>
+    <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio3" autocomplete="off"/>
+    <label class="btn btn-outline-danger" for="vbtn-radio3">Radio 3</label>
+  </div>`} />
+
+## Class Overview
+
+A list of all available utility classes for the button group component.
+
+export const { classNames } = frontmatter;
+
+<ClassTable classNames={classNames}/>
+

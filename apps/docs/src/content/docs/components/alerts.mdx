@@ -1,0 +1,296 @@
+---
+title: Alerts
+description: Alerts provide contextual feedback messages for common user actions. They can display success, warning, error, or informational states using flexible styles.
+toc: true
+attributeComponent: Alert Dismissing
+attributeLink: https://getbootstrap.com/docs/5.3/components/alerts/#dismissing
+classNames:
+  component:
+  - class: 'alert'
+    desc: Alert
+  color:
+  - class: alert-primary
+    desc: Primary color
+  - class: alert-secondary
+    desc: Secondary color
+  - class: alert-info
+    desc: Info color
+  - class: alert-success
+    desc: Success color
+  - class: alert-warning
+    desc: Warning color
+  - class: alert-danger
+    desc: Danger color
+  - class: alert-neutral
+    desc: Neutral color
+  style:
+  - class: alert-subtle-{color}
+    desc: Subtle style
+  - class: alert-outline-{color}
+    desc: Outline style
+---
+
+## Subtle variant
+
+Simple alerts use a subtle background with clear text color.
+
+<Example class='flex flex-col gap-2' 
+  code={`<div class="alert alert-subtle" role="alert">A simple neutral subtle alert!</div>
+  <div class="alert alert-subtle-primary" role="alert">A simple primary subtle alert!</div>
+  <div class="alert alert-subtle-secondary" role="alert">A simple secondary subtle alert!</div>
+  <div class="alert alert-subtle-info" role="alert">A simple info subtle alert!</div>
+  <div class="alert alert-subtle-success" role="alert">A simple success subtle alert!</div>
+  <div class="alert alert-subtle-warning" role="alert">A simple warning subtle alert!</div>
+  <div class="alert alert-subtle-danger" role="alert">A simple error subtle alert!</div>`}
+/>
+
+## Filled variant
+
+Filled alerts use solid background colors for high emphasis. They are best suited for important feedback messages that need to stand out clearly.
+
+<Example class='flex flex-col gap-2' 
+  code={`<div class="alert" role="alert">A simple neutral alert!</div>
+  <div class="alert alert-primary" role="alert">A simple primary alert!</div>
+  <div class="alert alert-secondary" role="alert">A simple secondary alert!</div>
+  <div class="alert alert-info" role="alert">A simple info alert!</div>
+  <div class="alert alert-success" role="alert">A simple success alert!</div>
+  <div class="alert alert-warning" role="alert">A simple warning alert!</div>
+  <div class="alert alert-danger" role="alert">A simple error alert!</div>`}
+/>
+
+## Outlined variant
+
+Outlined alerts use a border and transparent background to provide medium emphasis. They are useful for feedback messages to be visible without dominating the interface.
+
+<Example class='flex flex-col gap-2' 
+  code={`<div class="alert alert-outline" role="alert">A simple neutral outline alert!</div>
+  <div class="alert alert-outline-primary" role="alert">A simple primary outline alert!</div>
+  <div class="alert alert-outline-secondary" role="alert">A simple secondary outline alert!</div>
+  <div class="alert alert-outline-info" role="alert">A simple info outline alert!</div>
+  <div class="alert alert-outline-success" role="alert">A simple success outline alert!</div>
+  <div class="alert alert-outline-warning" role="alert">A simple warning outline alert!</div>
+  <div class="alert alert-outline-danger" role="alert">A simple error outline alert!</div>`}
+/>
+
+## Alert with icon
+
+Alerts can include icons to improve clarity and recognition. Icons provide a quick visual cue about the alert type, such as success, information, or error.
+
+<Example class='flex flex-col gap-2' code={`<div class="alert alert-success" role="alert">
+    <svg class="alert-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="m10.6 16.6l7.05-7.05l-1.4-1.4l-5.65 5.65l-2.85-2.85l-1.4 1.4zM12 22q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22m0-2q3.35 0 5.675-2.325T20 12t-2.325-5.675T12 4T6.325 6.325T4 12t2.325 5.675T12 20m0-8" stroke-width="0.5" stroke="currentColor"/></svg>
+    <span>Operation successful — everything is up to date!</span>
+  </div>
+  <div class="alert alert-info" role="alert">
+    <svg class="alert-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M11 17h2v-6h-2zm1-8q.425 0 .713-.288T13 8t-.288-.712T12 7t-.712.288T11 8t.288.713T12 9m0 13q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22m0-2q3.35 0 5.675-2.325T20 12t-2.325-5.675T12 4T6.325 6.325T4 12t2.325 5.675T12 20m0-8" stroke-width="0.5" stroke="currentColor"/></svg>
+    <span>Note the following — changes have been saved.</span>
+  </div>
+  <div class="alert alert-danger" role="alert">
+    <svg class="alert-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M12 17q.425 0 .713-.288T13 16t-.288-.712T12 15t-.712.288T11 16t.288.713T12 17m-1-4h2V7h-2zm1 9q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22m0-2q3.35 0 5.675-2.325T20 12t-2.325-5.675T12 4T6.325 6.325T4 12t2.325 5.675T12 20m0-8" stroke-width="0.5" stroke="currentColor"/></svg>
+    <span>Something went wrong — please try again later.</span>
+  </div>
+  <div class="alert alert-subtle-success" role="alert">
+    <svg class="alert-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="m10.6 16.6l7.05-7.05l-1.4-1.4l-5.65 5.65l-2.85-2.85l-1.4 1.4zM12 22q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22m0-2q3.35 0 5.675-2.325T20 12t-2.325-5.675T12 4T6.325 6.325T4 12t2.325 5.675T12 20m0-8" stroke-width="0.5" stroke="currentColor"/></svg>
+    <span>Operation successful — everything is up to date!</span>
+  </div>
+  <div class="alert alert-subtle-info" role="alert">
+    <svg class="alert-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M11 17h2v-6h-2zm1-8q.425 0 .713-.288T13 8t-.288-.712T12 7t-.712.288T11 8t.288.713T12 9m0 13q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22m0-2q3.35 0 5.675-2.325T20 12t-2.325-5.675T12 4T6.325 6.325T4 12t2.325 5.675T12 20m0-8" stroke-width="0.5" stroke="currentColor"/></svg>
+    <span>Note the following — changes have been saved.</span>
+  </div>
+  <div class="alert alert-subtle-danger" role="alert">
+    <svg class="alert-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M12 17q.425 0 .713-.288T13 16t-.288-.712T12 15t-.712.288T11 16t.288.713T12 17m-1-4h2V7h-2zm1 9q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22m0-2q3.35 0 5.675-2.325T20 12t-2.325-5.675T12 4T6.325 6.325T4 12t2.325 5.675T12 20m0-8" stroke-width="0.5" stroke="currentColor"/></svg>
+    <span>Something went wrong — please try again later.</span>
+  </div>
+  <div class="alert alert-outline-success" role="alert">
+    <svg class="alert-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="m10.6 16.6l7.05-7.05l-1.4-1.4l-5.65 5.65l-2.85-2.85l-1.4 1.4zM12 22q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22m0-2q3.35 0 5.675-2.325T20 12t-2.325-5.675T12 4T6.325 6.325T4 12t2.325 5.675T12 20m0-8" stroke-width="0.5" stroke="currentColor"/></svg>
+    <span>Operation successful — everything is up to date!</span>
+  </div>
+  <div class="alert alert-outline-info" role="alert">
+    <svg class="alert-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M11 17h2v-6h-2zm1-8q.425 0 .713-.288T13 8t-.288-.712T12 7t-.712.288T11 8t.288.713T12 9m0 13q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22m0-2q3.35 0 5.675-2.325T20 12t-2.325-5.675T12 4T6.325 6.325T4 12t2.325 5.675T12 20m0-8" stroke-width="0.5" stroke="currentColor"/></svg>
+    <span>Note the following — changes have been saved.</span>
+  </div>
+  <div class="alert alert-outline-danger" role="alert">
+    <svg class="alert-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M12 17q.425 0 .713-.288T13 16t-.288-.712T12 15t-.712.288T11 16t.288.713T12 17m-1-4h2V7h-2zm1 9q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22m0-2q3.35 0 5.675-2.325T20 12t-2.325-5.675T12 4T6.325 6.325T4 12t2.325 5.675T12 20m0-8" stroke-width="0.5" stroke="currentColor"/></svg>
+    <span>Something went wrong — please try again later.</span>
+  </div>`} 
+/>
+
+## Alert with title
+
+Alerts can also include headings, paragraphs, and dividers to provide more context or structure within the message.
+
+<Example code={`<div class="alert alert-subtle-warning items-start" role="alert">
+    <svg class="alert-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M2.725 21q-.275 0-.5-.137t-.35-.363t-.137-.488t.137-.512l9.25-16q.15-.25.388-.375T12 3t.488.125t.387.375l9.25 16q.15.25.138.513t-.138.487t-.35.363t-.5.137zm1.725-2h15.1L12 6zM12 18q.425 0 .713-.288T13 17t-.288-.712T12 16t-.712.288T11 17t.288.713T12 18m0-3q.425 0 .713-.288T13 14v-3q0-.425-.288-.712T12 10t-.712.288T11 11v3q0 .425.288.713T12 15m0-2.5" stroke-width="0.5" stroke="currentColor"/></svg>
+    <div>
+      <h6 class='font-medium'>Warning</h6>
+      <span>Please be cautious — review your actions.</span>
+    </div>
+  </div>`} />
+
+## Alert actions
+
+This example demonstrates various alert components with actionable buttons.
+
+- Each alert displays a relevant icon and message.
+- Buttons provide users with options such as closing the alert, continuing, or retrying an action.
+
+<Example class='flex flex-col gap-2' 
+  code={`<div class="alert alert-subtle-warning" role="alert">
+    <svg class="alert-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M2.725 21q-.275 0-.5-.137t-.35-.363t-.137-.488t.137-.512l9.25-16q.15-.25.388-.375T12 3t.488.125t.387.375l9.25 16q.15.25.138.513t-.138.487t-.35.363t-.5.137zm1.725-2h15.1L12 6zM12 18q.425 0 .713-.288T13 17t-.288-.712T12 16t-.712.288T11 17t.288.713T12 18m0-3q.425 0 .713-.288T13 14v-3q0-.425-.288-.712T12 10t-.712.288T11 11v3q0 .425.288.713T12 15m0-2.5" stroke-width="0.5" stroke="currentColor"/></svg>
+    <span>This is a generic alert — please take note.</span>
+    <button class='btn btn-icon btn-icon-warning ms-auto shrink-0'>
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="m12 13.4l-4.9 4.9q-.275.275-.7.275t-.7-.275t-.275-.7t.275-.7l4.9-4.9l-4.9-4.9q-.275-.275-.275-.7t.275-.7t.7-.275t.7.275l4.9 4.9l4.9-4.9q.275-.275.7-.275t.7.275t.275.7t-.275.7L13.4 12l4.9 4.9q.275.275.275.7t-.275.7t-.7.275t-.7-.275z" stroke-width="0.5" stroke="currentColor"/></svg>
+    </button>
+  </div>
+  <div class="alert alert-outline-success" role="alert">
+    <svg class="alert-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="m10.6 16.6l7.05-7.05l-1.4-1.4l-5.65 5.65l-2.85-2.85l-1.4 1.4zM12 22q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22m0-2q3.35 0 5.675-2.325T20 12t-2.325-5.675T12 4T6.325 6.325T4 12t2.325 5.675T12 20m0-8" stroke-width="0.5" stroke="currentColor"/></svg>
+    <span>This is a success alert — you can continue.</span>
+    <button class='btn btn-sm btn-success ms-auto shrink-0'>Continue</button>
+  </div>
+  <div class="alert alert-danger" role="alert">
+    <svg class="alert-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M12 17q.425 0 .713-.288T13 16t-.288-.712T12 15t-.712.288T11 16t.288.713T12 17m-1-4h2V7h-2zm1 9q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22m0-2q3.35 0 5.675-2.325T20 12t-2.325-5.675T12 4T6.325 6.325T4 12t2.325 5.675T12 20m0-8" stroke-width="0.5" stroke="currentColor"/></svg>
+    <span>Error occurs - Try again.</span>
+    <button class='btn btn-sm btn-text-danger text-contrast hover:bg-danger-dark ms-auto'>Start</button>
+  </div>`}
+/>
+
+## Dismissing
+
+Using the alert JavaScript plugin that uses the **Bootstrap Button plugin**, it’s possible to dismiss any alert inline. Here’s how:
+
+- Ensure the alert plugin or the compiled Hummingbird JavaScript is loaded.
+- On the close button, include the data-bs-dismiss="alert" attribute to enable the JavaScript functionality. Use a `<button>` element for consistent behavior across devices.
+- To enable dismissal animations, add the .fade and .show classes.
+
+<Example code={`<div class="alert alert-subtle-warning fade show" role="alert">
+    <p class='mb-0'><strong>Holy guacamole!</strong> You should check in on some of those fields below.</p>
+    <button type="button" class="btn btn-icon btn-icon-warning shrink-0 ms-auto" data-bs-dismiss="alert" aria-label="Close">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="m12 13.4l-4.9 4.9q-.275.275-.7.275t-.7-.275t-.275-.7t.275-.7l4.9-4.9l-4.9-4.9q-.275-.275-.275-.7t.275-.7t.7-.275t.7.275l4.9 4.9l4.9-4.9q.275-.275.7-.275t.7.275t.275.7t-.275.7L13.4 12l4.9 4.9q.275.275.275.7t-.275.7t-.7.275t-.7-.275z" stroke-width="0.5" stroke="currentColor"/></svg>
+    </button>
+  </div>`} />
+
+## Class Overview
+
+A list of all available utility classes for the alert component.
+
+export const { classNames } = frontmatter;
+
+<ClassTable classNames={classNames}/>
+
+## CSS variables
+
+The alert component is built using a set of CSS variables. These variables provide flexibility for customizing styles.
+See the [Theming](https://hbui.dev/docs/customize/theming/) to customize styles globally and apply overrides as needed.
+
+<Example showPreview={false} lang='sass' code={`.alert {
+    --alert-bg: var(--color-dark);
+    --alert-padding-x: --spacing(4);
+    --alert-padding-y: --spacing(3.5);
+    --alert-color: var(--color-white);
+    --alert-border-color: transparent;
+    --alert-border-radius: var(--radius-lg);
+    --alert-icon-color: var(--color-contrast);
+  }`} />
+
+## JavaScript behavior
+
+Use JavaScript in the familiar pattern of **Bootstrap’s plugins** with full additional TypeScript Support.
+
+### Initialize
+
+Initialize elements as alerts
+
+<Example lang='js' showPreview={false}
+  code={`const alertList = document.querySelectorAll('.alert')
+  const alerts = [...alertList].map(element => new hummingbird.Alert(element))`}
+/>
+
+### Triggers
+
+Dismissal can be achieved with the `data-bs-dismiss` attribute on a button **within the alert** as demonstrated below:
+
+<Example showPreview={false} 
+  code={`<button type="button" class="btn btn-icon" data-bs-dismiss="alert" aria-label="Close">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="currentColor" d="m12 13.4l-2.9 2.9q-.275.275-.7.275t-.7-.275t-.275-.7t.275-.7l2.9-2.9l-2.9-2.875q-.275-.275-.275-.7t.275-.7t.7-.275t.7.275l2.9 2.9l2.875-2.9q.275-.275.7-.275t.7.275q.3.3.3.713t-.3.687L13.375 12l2.9 2.9q.275.275.275.7t-.275.7q-.3.3-.712.3t-.688-.3z"/></svg>
+  </button>`}
+/>
+
+or on a button outside the alert using the additional data-bs-target as demonstrated below:
+
+**Note that closing an alert will remove it from the DOM.**
+
+### Methods
+
+Create an alert instance with the alert constructor, for example:
+
+<Example showPreview={false} lang='js'
+  code={`const myAlert = new hummingbird.Alert('#myAlert')`}
+/>
+
+This makes an alert listen for click events on descendant elements which have the `data-bs-dismiss="alert"` attribute. (Not necessary when using the data-api’s auto-initialization.)
+
+<HbTable>
+  <thead>
+    <tr>
+      <th scope="col">Method</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">`close`</th>
+      <td>Closes an alert by removing it from the DOM. If the `.fade` and `.show` classes are present on the element, the alert will fade out before it is removed.</td>
+    </tr>
+    <tr>
+      <th scope="row">`dispose`</th>
+      <td>Destroys an element’s alert. (Removes stored data on the DOM element)</td>
+    </tr>
+    <tr>
+      <th scope="row">`getInstance`</th>
+      <td>A static method that allows getting the alert instance associated with a DOM element. For example: `hummingbird.Alert.getInstance(alert)`.</td>
+    </tr>
+    <tr>
+      <th scope="row">`getOrCreateInstance`</th>
+      <td>Static method which returns an alert instance associated to a DOM element or create a new one in case it wasn’t initialized. Use it like: `hummingbird.Alert.getOrCreateInstance(element)`.</td>
+    </tr>
+  </tbody>
+</HbTable>
+
+Basic usage:
+
+<Example lang='js' showPreview={false}
+  code={`const alert = hummingbird.Alert.getOrCreateInstance('#myAlert')
+  alert.close()`}
+/>
+
+### Events
+
+Hummingbird’s alert plugin exposes a few events for hooking into alert functionality.
+
+<HbTable>
+  <thead>
+    <tr>
+      <th scope="col">Event</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">`close.bs.alert`</th>
+      <td>Fires immediately when the `close` instance method is called.</td>
+    </tr>
+    <tr>
+      <th scope="row">`closed.bs.alert`</th>
+      <td>Fired when the alert has been closed and CSS transitions have completed.</td>
+    </tr>
+  </tbody>
+</HbTable>
+
+<Example lang='js' showPreview={false}
+  code={`const myAlert = document.getElementById('myAlert')
+  myAlert.addEventListener('closed.bs.alert', event => {
+    // do something, for instance, explicitly move focus to the most appropriate element,
+    // so it doesn’t get lost/reset to the start of the page
+    // document.getElementById('...').focus()
+  })
+`}
+/>

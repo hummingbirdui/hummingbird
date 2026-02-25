@@ -1,0 +1,59 @@
+---
+import HeroCards from './HeroCards.astro';
+import gridLeftL from '@assets/images/landing/grids/grid-left-l.png';
+import gridLeftD from '@assets/images/landing/grids/grid-left-d.png';
+import CopyButton from '@components/sections/landing/common/CopyButton.astro';
+import { getVersionedPath } from '@libs/config';
+---
+
+<section
+  id="hero"
+  class="relative px-4 sm:px-6 lg:px-10 xl:h-180 overflow-hidden bg-cover bg-top bg-no-repeat bg-[url('/images/backgrounds/hero-bg-l.png')] dark:bg-[url('/images/backgrounds/hero-bg-d.png')]"
+>
+  <div class="absolute w-240 -top-70 lg:-top-38 -left-30 -z-10">
+    <img src={gridLeftD.src} class="hidden dark:block object-contain" />
+    <img src={gridLeftL.src} class="dark:hidden object-contain" />
+  </div>
+
+  <div class="mx-auto flex justify-between gap-10 h-full max-w-8xl">
+    <div class="my-auto py-24 sm:py-29 md:py-37 w-full xl:w-186 shrink-0">
+      <h1
+        class="mb-6 text-[42px] sm:text-[56px] md:text-[74px] lg:text-[88px] text-center xl:text-left font-bold -tracking-[3px] md:-tracking-[5.25px]"
+      >
+        <span class="bg-linear-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent pe-2"
+          >The tailwind framework</span
+        >
+      </h1>
+      <p
+        class="mb-10 lg:mb-20 mx-auto xl:mx-0 text-muted text-base sm:text-[21px] text-center xl:text-left -tracking-[1px] leading-[1.2] max-w-2xl"
+      >
+        Hummingbird gives you pre-built components
+        <br />
+        with full Tailwind customization — no compromises.
+      </p>
+      <section id="links" class="flex flex-col sm:flex-row items-center justify-center xl:justify-start gap-2 lg:gap-4">
+        <a
+          href=`${getVersionedPath('/docs/getting-started/installation')}`
+          type="button"
+          class="btn btn-primary btn-lg w-full sm:w-auto">Get Started</a
+        >
+        <div
+          class="w-full sm:w-auto flex items-center justify-center sm:justify-start gap-1 bg-muted text-sm font-mono pl-2 pr-0 sm:pl-4 sm:pr-2 h-11 rounded-lg"
+        >
+          <span class="text-xs select-none mr-0.75 sm:mr-1.25">$</span>
+          <span class="text-xs text-nowrap">npm i @hummingbirdui/hummingbird@latest</span>
+          <CopyButton code="npm i @hummingbirdui/hummingbird@latest" />
+        </div>
+      </section>
+    </div>
+
+    <div class="absolute -right-24 2xl:relative 2xl:right-0 shrink-0 hidden xl:flex">
+      <HeroCards />
+      <div
+        class="pointer-events-none absolute bottom-0 left-0 w-full h-3
+        bg-linear-to-t from-white via-white/60 to-transparent dark:from-gray-950 dark:via-gray-950/60 z-10"
+      >
+      </div>
+    </div>
+  </div>
+</section>

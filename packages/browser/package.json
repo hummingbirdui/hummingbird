@@ -1,0 +1,27 @@
+{
+  "name": "@hummingbirdui/browser",
+  "version": "1.0.0-alpha1",
+  "main": "./dist/index.global.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "lint": "tsc --noEmit",
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test:ui": "playwright test"
+  },
+  "dependencies": {
+    "@hummingbirdui/hummingbird": "^1.0.0-beta3",
+    "tailwindcss": "4.1.16"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "h3": "^1.15.4",
+    "listhen": "^1.9.0",
+    "playwright": "^1.40.0",
+    "tsup": "^6.0.0",
+    "typescript": "^5.0.0",
+    "vitest": "^2.0.0"
+  }
+}

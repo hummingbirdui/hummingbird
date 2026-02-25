@@ -1,0 +1,286 @@
+---
+title: Theming
+description: Learn how to customize Hummingbird UI with Tailwind CSS v4 theme variables, override tokens, and support multiple themes and dark mode.
+toc: true
+---
+
+## Overview
+
+Hummingbird UI is built on Tailwind CSS v4 and exposes a set of theme variables (design tokens) for colors, typography, shadows, and more.
+
+- Use the theme variables (like `--color-primary` and `--shadow-md`) via standard Tailwind utilities (for example, `bg-primary`, `text-primary`, `shadow-md`).
+
+- Override any theme variables globally by redefining them in an `@theme { ... }` block after importing the CSS.
+
+- Create multiple themes (e.g., light/dark/forest) by overriding the theme variables within a theme scope like `@variant dark{}`, or `[data-theme="dark"]{}`.
+
+- Reboot provides a base CSS reset with element-specific styles for consistent design across browsers.
+
+
+## Customizing theme
+
+Redefine theme variables by declaring them in `@theme` after importing Hummingbird:
+
+```css
+@import "tailwindcss";
+@import "@hummingbirdui/hummingbird";
+
+@theme {
+  --color-primary: #0074e6;
+  --font-sans: "Figtree", ui-sans-serif, system-ui, sans-serif;
+}
+```
+
+### Spacing
+
+Customize spacing by overriding the default spacing variable or defining new ones as needed.
+
+```css
+@theme {
+  --spacing: 4px;
+
+  /* Custom spacing */
+  --spacing-lg: 16px;
+}
+```
+
+### Breakpoints
+
+Customize and add new responsive breakpoints by overriding `--breakpoint-*` variables:
+
+```css
+@theme {
+  --breakpoint-sm: 40rem;
+  --breakpoint-md: 48rem;
+  --breakpoint-lg: 64rem;
+  --breakpoint-xl: 80rem;
+  --breakpoint-2xl: 96rem;
+
+  /* Custom breakpoint */
+  --breakpoint-3xl: 120rem;
+}
+```
+
+## Multiple themes
+
+Hummingbird uses a small set of theme variables. By overriding these variables within a new theme scope, multiple themes can be created.
+
+```sass
+@theme {
+  --color-primary: var(--color-blue-500);
+  --color-secondary: var(--color-purple-500);
+}
+
+@variant dark {
+  --color-primary: var(--color-blue-400);
+  --color-secondary: var(--color-purple-400);
+}
+
+@variant forest {
+  --color-primary: var(--color-blue-600);
+  --color-secondary: var(--color-purple-600);
+}
+```
+
+## Reboot
+
+Reboot is a foundational stylesheet that resets browser defaults and applies basic element styles. It provides a clean, consistent starting point for building interfaces and ensures visual consistency across browsers.
+
+For more details, follow the [Reboot](/docs/content/reboot) documentation.
+
+## Hummingbird theme variables
+
+Hummingbird UI provides a small, consistent set of semantic tokens as Tailwind theme variables. These variables create utilities and can be overridden later to change the look and feel without changing the HTML.
+
+```sass
+@theme {
+  /* Background colors */
+  --background-color-subtle: var(--color-gray-50);
+  --background-color-muted: var(--color-gray-100);
+  --background-color-default: var(--color-white);
+  --background-color-highlight: var(--color-gray-200);
+  --background-color-emphasis: var(--color-gray-300);
+
+  /* Text colors */
+  --text-color-subtle: var(--color-gray-400);
+  --text-color-muted: var(--color-gray-600);
+  --text-color-default: var(--color-gray-800);
+  --text-color-highlight: var(--color-gray-900);
+  --text-color-emphasis: var(--color-gray-950);
+
+  /* Neutral */
+  --color-light: var(--color-gray-100);
+  --color-dark: var(--color-gray-950);
+  --color-contrast: var(--color-white);
+
+  /* Primary */
+  --color-primary-lighter: var(--color-blue-50);
+  --color-primary-light: var(--color-blue-400);
+  --color-primary: var(--color-blue-500);
+  --color-primary-dark: var(--color-blue-600);
+  --color-primary-darker: var(--color-blue-900);
+
+  /* Secondary */
+  --color-secondary-lighter: var(--color-purple-50);
+  --color-secondary-light: var(--color-purple-300);
+  --color-secondary: var(--color-purple-500);
+  --color-secondary-dark: var(--color-purple-700);
+  --color-secondary-darker: var(--color-purple-900);
+
+  /* Danger */
+  --color-danger-lighter: var(--color-red-50);
+  --color-danger-light: var(--color-red-300);
+  --color-danger: var(--color-red-500);
+  --color-danger-dark: var(--color-red-600);
+  --color-danger-darker: var(--color-red-900);
+
+  /* Warning */
+  --color-warning-lighter: var(--color-orange-50);
+  --color-warning-light: var(--color-orange-400);
+  --color-warning: var(--color-orange-500);
+  --color-warning-dark: var(--color-orange-700);
+  --color-warning-darker: var(--color-orange-900);
+
+  /* Success */
+  --color-success-lighter: var(--color-green-50);
+  --color-success-light: var(--color-green-400);
+  --color-success: var(--color-green-500);
+  --color-success-dark: var(--color-green-700);
+  --color-success-darker: var(--color-green-900);
+
+  /* Info */
+  --color-info-lighter: var(--color-sky-50);
+  --color-info-light: var(--color-sky-300);
+  --color-info: var(--color-sky-500);
+  --color-info-dark: var(--color-sky-700);
+  --color-info-darker: var(--color-sky-900);
+
+  /* Border */
+  --border-color-light: --alpha(var(--color-gray-300) / 60%);
+  --border-color-base: var(--color-gray-300);
+  --border-color-dark: var(--color-gray-600);
+
+  /* Actions */
+  --color-active: var(--color-gray-500);
+  --color-hover: var(--color-gray-100);
+  --color-selected: var(--color-gray-100);
+  --color-disabled-color: var(--color-gray-400);
+  --color-disabled: var(--color-gray-200);
+  --color-focus: var(--color-gray-300);
+
+  /* Font family */
+  --font-sans: 'Figtree', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+
+  /* Shadows */
+  --shadow-2xs: 2px 2px 10px 0px rgba(0, 0, 0, 0.09), 0px 1px 1px 0px rgba(0, 0, 0, 0.03);
+  --shadow-xs: 2px 9px 11px 0px rgba(0, 0, 0, 0.04), 1px 3.92px 5.79px 0px rgba(0, 0, 0, 0.04), 0px 1.36px 2.867px 0px rgba(0, 0, 0, 0.03), 0px 0.286px 1.134px 0px rgba(0, 0, 0, 0.02);
+  --shadow-sm: 4px 0px 18px 0px rgba(0, 0, 0, 0.04), 0px 6.147px 9.475px 0px rgba(0, 0, 0, 0.03), 0px 2.258px 4.692px 0px rgba(0, 0, 0, 0.02), 0px -2.46px 3.86px 0px rgba(0, 0, 0, 0.02);
+  --shadow-md: 3px 24px 42px 0px rgba(0, 0, 0, 0.07), 1px 10.271px 9.478px 0px rgba(0, 0, 0, 0.03), 0px 5.695px 3.531px 0px rgba(0, 0, 0, 0.01), 0px -1px 3.15px 0px rgba(0, 0, 0, 0.02);
+  --shadow-lg: 4px 38px 47px 0px rgba(0, 0, 0, 0.07), 0px 20px 17.48px 0px rgba(0, 0, 0, 0.03), 1px 10px 10px 0px rgba(0, 0, 0, 0.01), 0px -2px 6px 0px rgba(0, 0, 0, 0.03);
+  --shadow-xl: 6px 33px 46px 0px rgba(0, 0, 0, 0.07), 1px 20px 19px 0px rgba(0, 0, 0, 0.03), 2px 10px 10px x rgba(0, 0, 0, 0.01), 0px -2px 6px 0px rgba(0, 0, 0, 0.03);
+  --shadow-2xl: 16px 39px 67px 0px rgba(0, 0, 0, 0.11), 1px 20px 65px 0px rgba(0, 0, 0, 0.02), 2px 10px 10px 0px rgba(0, 0, 0, 0.01), 0px -2px 6px 0px rgba(0, 0, 0, 0.03);
+}
+```
+
+## Tailwind theme variable namespaces
+
+Tailwind Theme variables are defined in namespaces, and each namespace corresponds to one or more utility classes or variant APIs.
+
+Defining new theme variables in these namespaces will make new corresponding utilities and variants available in the project:
+
+<HbTable>
+  <thead>
+    <tr>
+      <th scope="col">Namespace</th>
+      <th scope="col">Utility classes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">`--color-*`</th>
+      <td>Color utilities like `bg-primary-light`, `text-primary-dark`, and many more</td>
+    </tr>
+    <tr>
+      <th scope="row">`--text-color-*`</th>
+      <td>Text color utilities like `text-default`, `text-subtle`, and many more</td>
+    </tr>
+    <tr>
+      <th scope="row">`--background-color-*`</th>
+      <td>Background color utilities like `bg-highlight`, `bg-emphasis`, and many more</td>
+    </tr>
+    <tr>
+      <th scope="row">`--border-color-*`</th>
+      <td>Border color utilities like `border-base`, `border-light`, and many more</td>
+    </tr>
+    <tr>
+      <th scope="row">`--font-*`</th>
+      <td>Font family utilities like 'font-serif'</td>
+    </tr>
+    <tr>
+      <th scope="row">`--text-*`</th>
+      <td>Font size utilities like `text-xl`</td>
+    </tr>
+    <tr>
+      <th scope="row">`--font-weight-*`</th>
+      <td>Font weight utilities like 'font-bold'</td>
+    </tr>
+    <tr>
+      <th scope="row">`--tracking-*`</th>
+      <td>Letter spacing utilities like 'tracking-wide'</td>
+    </tr>
+    <tr>
+      <th scope="row">`--leading-*`</th>
+      <td>Line height utilities like `leading-tight`</td>
+    </tr>
+    <tr>
+      <th scope="row">`--breakpoint-*`</th>
+      <td>Responsive breakpoint variants like `sm:*`</td>
+    </tr>
+    <tr>
+      <th scope="row">`--container-*`</th>
+      <td>Container query variants like `@sm:*` and size utilities like `max-w-md`</td>
+    </tr>
+    <tr>
+      <th scope="row">`--spacing-*`</th>
+      <td>Spacing and sizing utilities like `px-4`, `max-h-16`, and many more</td>
+    </tr>
+    <tr>
+      <th scope="row">`--radius-*`</th>
+      <td>Border radius utilities like `rounded-sm`</td>
+    </tr>
+    <tr>
+      <th scope="row">`--shadow-*`</th>
+      <td>Box shadow utilities like `shadow-md`</td>
+    </tr>
+    <tr>
+      <th scope="row">`--inset-shadow-*`</th>
+      <td>Inset box shadow utilities like `inset-shadow-xs`</td>
+    </tr>
+    <tr>
+      <th scope="row">`--drop-shadow-*`</th>
+      <td>Drop shadow filter utilities like `drop-shadow-md`</td>
+    </tr>
+    <tr>
+      <th scope="row">`--blur-*`</th>
+      <td>Blur filter utilities like `blur-md`</td>
+    </tr>
+    <tr>
+      <th scope="row">`--perspective-*`</th>
+      <td>Perspective utilities like `perspective-near`</td>
+    </tr>
+    <tr>
+      <th scope="row">`--aspect-*`</th>
+      <td>Aspect ratio utilities like `aspect-video`</td>
+    </tr>
+    <tr>
+      <th scope="row">`--ease-*`</th>
+      <td>Transition timing function utilities like `ease-out`</td>
+    </tr>
+    <tr>
+      <th scope="row">`--animate-*`</th>
+      <td>Animation utilities like `animate-spin`</td>
+    </tr>
+  </tbody>
+</HbTable>
+
+Follow the <a href="https://tailwindcss.com/docs/theme" target="_blank" rel="noopener noreferrer"> Official Tailwind CSS docs</a> for more details

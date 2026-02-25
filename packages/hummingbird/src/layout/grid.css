@@ -1,0 +1,382 @@
+@utility container {
+  @layer base {
+    --grid-gutter-x: 1.5rem;
+    --grid-gutter-y: 0;
+    @apply w-full pl-[calc(var(--grid-gutter-x)*0.5)] pr-[calc(var(--grid-gutter-x)*0.5)] mx-auto;
+  }
+}
+
+/* Row */
+@utility row {
+  @layer base {
+    --grid-gutter-x: 1.5rem;
+    --grid-gutter-y: 0px;
+    @apply flex flex-wrap
+    mx-[calc(-0.5*var(--grid-gutter-x))]
+    mt-[calc(-1*var(--grid-gutter-y))];
+
+    & > * {
+      @apply shrink-0 w-full max-w-full
+      px-[calc(var(--grid-gutter-x)*0.5)]
+      mt-[var(--grid-gutter-y)];
+    }
+  }
+}
+
+/* Equal and auto columns */
+@utility col {
+  @layer base {
+    [class*='row-cols-'] > & {
+      @apply flex-[1_0_0];
+    }
+  }
+  :where(:not([class*='row-cols-'])) > & {
+    @layer components {
+      @apply flex-[1_0_0];
+    }
+  }
+}
+@utility col-auto {
+  @layer components {
+    @apply flex-[0_0_auto] w-auto;
+  }
+}
+
+/* Fixed fraction columns (1–12) */
+@utility col-1 {
+  @layer components {
+    --col: 1;
+    @apply flex-[0_0_auto] w-[calc(var(--col)/var(--grid-columns)*100%)];
+  }
+}
+@utility col-2 {
+  @layer components {
+    --col: 2;
+    @apply flex-[0_0_auto] w-[calc(var(--col)/var(--grid-columns)*100%)];
+  }
+}
+@utility col-3 {
+  @layer components {
+    --col: 3;
+    @apply flex-[0_0_auto] w-[calc(var(--col)/var(--grid-columns)*100%)];
+  }
+}
+@utility col-4 {
+  @layer components {
+    --col: 4;
+    @apply flex-[0_0_auto] w-[calc(var(--col)/var(--grid-columns)*100%)];
+  }
+}
+@utility col-5 {
+  @layer components {
+    --col: 5;
+    @apply flex-[0_0_auto] w-[calc(var(--col)/var(--grid-columns)*100%)];
+  }
+}
+@utility col-6 {
+  @layer components {
+    --col: 6;
+    @apply flex-[0_0_auto] w-[calc(var(--col)/var(--grid-columns)*100%)];
+  }
+}
+@utility col-7 {
+  @layer components {
+    --col: 7;
+    @apply flex-[0_0_auto] w-[calc(var(--col)/var(--grid-columns)*100%)];
+  }
+}
+@utility col-8 {
+  @layer components {
+    --col: 8;
+    @apply flex-[0_0_auto] w-[calc(var(--col)/var(--grid-columns)*100%)];
+  }
+}
+@utility col-9 {
+  @layer components {
+    --col: 9;
+    @apply flex-[0_0_auto] w-[calc(var(--col)/var(--grid-columns)*100%)];
+  }
+}
+@utility col-10 {
+  @layer components {
+    --col: 10;
+    @apply flex-[0_0_auto] w-[calc(var(--col)/var(--grid-columns)*100%)];
+  }
+}
+@utility col-11 {
+  @layer components {
+    --col: 11;
+    @apply flex-[0_0_auto] w-[calc(var(--col)/var(--grid-columns)*100%)];
+  }
+}
+@utility col-12 {
+  @layer components {
+    --col: 12;
+    @apply flex-[0_0_auto] w-[calc(var(--col)/var(--grid-columns)*100%)];
+  }
+}
+
+/* offset (0–11) */
+@utility offset-0 {
+  @layer base {
+    --offset: 0;
+    @apply ms-[calc(var(--offset)/var(--grid-columns)*100%)];
+  }
+}
+@utility offset-1 {
+  @layer base {
+    --offset: 1;
+    @apply ms-[calc(var(--offset)/var(--grid-columns)*100%)];
+  }
+}
+@utility offset-2 {
+  @layer base {
+    --offset: 2;
+    @apply ms-[calc(var(--offset)/var(--grid-columns)*100%)];
+  }
+}
+@utility offset-3 {
+  @layer base {
+    --offset: 3;
+    @apply ms-[calc(var(--offset)/var(--grid-columns)*100%)];
+  }
+}
+@utility offset-4 {
+  @layer base {
+    --offset: 4;
+    @apply ms-[calc(var(--offset)/var(--grid-columns)*100%)];
+  }
+}
+@utility offset-5 {
+  @layer base {
+    --offset: 5;
+    @apply ms-[calc(var(--offset)/var(--grid-columns)*100%)];
+  }
+}
+@utility offset-6 {
+  @layer base {
+    --offset: 6;
+    @apply ms-[calc(var(--offset)/var(--grid-columns)*100%)];
+  }
+}
+@utility offset-7 {
+  @layer base {
+    --offset: 7;
+    @apply ms-[calc(var(--offset)/var(--grid-columns)*100%)];
+  }
+}
+@utility offset-8 {
+  @layer base {
+    --offset: 8;
+    @apply ms-[calc(var(--offset)/var(--grid-columns)*100%)];
+  }
+}
+@utility offset-9 {
+  @layer base {
+    --offset: 9;
+    @apply ms-[calc(var(--offset)/var(--grid-columns)*100%)];
+  }
+}
+@utility offset-10 {
+  @layer base {
+    --offset: 10;
+    @apply ms-[calc(var(--offset)/var(--grid-columns)*100%)];
+  }
+}
+@utility offset-11 {
+  @layer base {
+    --offset: 11;
+    @apply ms-[calc(var(--offset)/var(--grid-columns)*100%)];
+  }
+}
+
+/* row-cols (force N equal columns for direct children) */
+@utility row-cols-1 {
+  @layer components.base {
+    --row-cols: 1;
+    & > * {
+      @apply flex-[0_0_auto] w-[calc(100%/var(--row-cols))];
+    }
+  }
+}
+@utility row-cols-2 {
+  @layer components.base {
+    --row-cols: 2;
+    & > * {
+      @apply flex-[0_0_auto] w-[calc(100%/var(--row-cols))];
+    }
+  }
+}
+@utility row-cols-3 {
+  @layer components.base {
+    --row-cols: 3;
+    & > * {
+      @apply flex-[0_0_auto] w-[calc(100%/var(--row-cols))];
+    }
+  }
+}
+@utility row-cols-4 {
+  @layer components.base {
+    --row-cols: 4;
+    & > * {
+      @apply flex-[0_0_auto] w-[calc(100%/var(--row-cols))];
+    }
+  }
+}
+@utility row-cols-5 {
+  @layer components.base {
+    --row-cols: 5;
+    & > * {
+      @apply flex-[0_0_auto] w-[calc(100%/var(--row-cols))];
+    }
+  }
+}
+@utility row-cols-6 {
+  @layer components.base {
+    --row-cols: 6;
+    & > * {
+      @apply flex-[0_0_auto] w-[calc(100%/var(--row-cols))];
+    }
+  }
+}
+@utility row-cols-auto {
+  @layer components.base {
+    & > * {
+      @apply flex-[0_0_auto] w-auto;
+    }
+  }
+}
+
+/* Gutter (0–12) */
+@utility g-0 {
+  --grid-gutter-x: 0;
+  --grid-gutter-y: 0;
+}
+@utility g-1 {
+  --grid-gutter-x: 0.25rem;
+  --grid-gutter-y: 0.25rem;
+}
+@utility g-2 {
+  --grid-gutter-x: 0.5rem;
+  --grid-gutter-y: 0.5rem;
+}
+@utility g-3 {
+  --grid-gutter-x: 0.75rem;
+  --grid-gutter-y: 0.75rem;
+}
+@utility g-4 {
+  --grid-gutter-x: 1rem;
+  --grid-gutter-y: 1rem;
+}
+@utility g-5 {
+  --grid-gutter-x: 1.25rem;
+  --grid-gutter-y: 1.25rem;
+}
+@utility g-6 {
+  --grid-gutter-x: 1.5rem;
+  --grid-gutter-y: 1.5rem;
+}
+@utility g-7 {
+  --grid-gutter-x: 1.75rem;
+  --grid-gutter-y: 1.75rem;
+}
+@utility g-8 {
+  --grid-gutter-x: 2rem;
+  --grid-gutter-y: 2rem;
+}
+@utility g-9 {
+  --grid-gutter-x: 2.25rem;
+  --grid-gutter-y: 2.25rem;
+}
+@utility g-10 {
+  --grid-gutter-x: 2.5rem;
+  --grid-gutter-y: 2.5rem;
+}
+@utility g-11 {
+  --grid-gutter-x: 2.75rem;
+  --grid-gutter-y: 2.75rem;
+}
+@utility g-12 {
+  --grid-gutter-x: 3rem;
+  --grid-gutter-y: 3rem;
+}
+
+@utility gx-0 {
+  --grid-gutter-x: 0;
+}
+@utility gx-1 {
+  --grid-gutter-x: 0.25rem;
+}
+@utility gx-2 {
+  --grid-gutter-x: 0.5rem;
+}
+@utility gx-3 {
+  --grid-gutter-x: 0.75rem;
+}
+@utility gx-4 {
+  --grid-gutter-x: 1rem;
+}
+@utility gx-5 {
+  --grid-gutter-x: 1.25rem;
+}
+@utility gx-6 {
+  --grid-gutter-x: 1.5rem;
+}
+@utility gx-7 {
+  --grid-gutter-x: 1.75rem;
+}
+@utility gx-8 {
+  --grid-gutter-x: 2rem;
+}
+@utility gx-9 {
+  --grid-gutter-x: 2.25rem;
+}
+@utility gx-10 {
+  --grid-gutter-x: 2.5rem;
+}
+@utility gx-11 {
+  --grid-gutter-x: 2.75rem;
+}
+@utility gx-12 {
+  --grid-gutter-x: 3rem;
+}
+
+@utility gy-0 {
+  --grid-gutter-y: 0;
+}
+@utility gy-1 {
+  --grid-gutter-y: 0.25rem;
+}
+@utility gy-2 {
+  --grid-gutter-y: 0.5rem;
+}
+@utility gy-3 {
+  --grid-gutter-y: 0.75rem;
+}
+@utility gy-4 {
+  --grid-gutter-y: 1rem;
+}
+@utility gy-5 {
+  --grid-gutter-y: 1.25rem;
+}
+@utility gy-6 {
+  --grid-gutter-y: 1.5rem;
+}
+@utility gy-7 {
+  --grid-gutter-y: 1.75rem;
+}
+@utility gy-8 {
+  --grid-gutter-y: 2rem;
+}
+@utility gy-9 {
+  --grid-gutter-y: 2.25rem;
+}
+@utility gy-10 {
+  --grid-gutter-y: 2.5rem;
+}
+@utility gy-11 {
+  --grid-gutter-y: 2.75rem;
+}
+@utility gy-12 {
+  --grid-gutter-y: 3rem;
+}

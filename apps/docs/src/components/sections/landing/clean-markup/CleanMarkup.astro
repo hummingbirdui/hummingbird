@@ -1,0 +1,106 @@
+---
+import CleanMarkupCard from './CleanMarkupCard.astro';
+import AppCode from '@components/common/AppCode.astro';
+import SectionHeader from '@components/sections/landing/common/SectionHeader.astro';
+import SectionWrapper from '@components/sections/landing/common/SectionWrapper.astro';
+import CopyButton from '@components/sections/landing/common/CopyButton.astro';
+import gridLeftL from '@assets/images/landing/grids/grid-left-l.png';
+import gridLeftD from '@assets/images/landing/grids/grid-left-d.png';
+import { tabsData } from 'apps/data/landing/clean-markup';
+---
+
+<div class="relative">
+  <div class="absolute w-240 top-20 -left-90">
+    <img src={gridLeftD.src} class="hidden dark:block object-contain" />
+    <img src={gridLeftL.src} class="dark:hidden object-contain" />
+  </div>
+
+  <SectionWrapper id="clean-markup" class="max-w-340">
+    <SectionHeader
+      title="Clean markup, full control."
+      subtitle="Ditch long utility class strings. Hummingbird gives you complete freedom of pixel-perfect tweaks - plus full Tailwind flexibility."
+    />
+
+    <div class="flex flex-col lg:flex-row lg:h-114 gap-6">
+      <!-- code tabs -->
+      <div class="p-6 relative flex flex-col flex-1 max-h-100 lg:max-h-full overflow-hidden bg-muted rounded-2xl">
+        <nav class="border-b border-base">
+          <div class="nav nav-underline gap-1" role="tablist">
+            {
+              tabsData.map(({ id, label, active, code }, i) => (
+                <>
+                  <button
+                    class={`nav-link font-bold px-2 h-9 text-sm ${active && 'active'}`}
+                    id={`${id}-tab`}
+                    data-bs-toggle="tab"
+                    data-bs-target={`#${id}`}
+                    type="button"
+                    role="tab"
+                    aria-controls={id}
+                    aria-selected={active}
+                  >
+                    {label}
+                  </button>
+
+                  <CopyButton id={`copy-btn-${i + 1}`} code={code} class={`ml-auto order-last ${!active && 'hidden'}`} />
+                </>
+              ))
+            }
+          </div>
+        </nav>
+
+        <div class="tab-content flex overflow-hidden">
+          {
+            tabsData.map((tab) => (
+              <div
+                class={`tab-pane fade overflow-auto scrollbar-hide ${tab.active ? 'show active' : ''}`}
+                id={tab.id}
+                role="tabpanel"
+                tabindex="0"
+              >
+                <AppCode
+                  class="h-full w-full overflow-auto! bg-muted! px-0! scrollbar-hide"
+                  code={tab.code}
+                  lang="html"
+                />
+              </div>
+            ))
+          }
+        </div>
+      </div>
+
+      <CleanMarkupCard />
+    </div>
+  </SectionWrapper>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const copyBtn1 = document.querySelector('#copy-btn-1') as HTMLElement;
+    const copyBtn2 = document.querySelector('#copy-btn-2') as HTMLElement;
+
+    if (!copyBtn1 || !copyBtn2) return;
+
+    const toggleButtons = (active: HTMLElement, inactive: HTMLElement) => {
+      active.classList.remove('hidden');
+      inactive.classList.add('hidden');
+    };
+
+    document.querySelectorAll<HTMLElement>('[data-bs-toggle="tab"]').forEach((tab) => {
+      tab.addEventListener('shown.bs.tab', (event: Event) => {
+        const target = event.target as HTMLElement | null;
+        const targetId = target?.getAttribute('data-bs-target');
+
+        if (!targetId) return;
+
+        if (targetId === '#hummingbird') {
+          toggleButtons(copyBtn1, copyBtn2);
+        }
+
+        if (targetId === '#tailwindcss') {
+          toggleButtons(copyBtn2, copyBtn1);
+        }
+      });
+    });
+  });
+</script>

@@ -1,0 +1,256 @@
+@utility form-floating {
+  @layer base {
+    @apply relative;
+    > .form-label {
+      --input-label-font-weight: 400;
+      --input-label-font-size: var(--text-sm);
+      --floating-label-translate-x: 16px;
+      --floating-label-translate-y: 13px;
+      --floating-label-scale: 1;
+
+      @apply absolute top-0
+      inline-block 
+      transition-transform duration-200
+      cursor-text
+      leading-[1.5]
+      ltr:translate-x-[var(--floating-label-translate-x)]
+      rtl:-translate-x-[var(--floating-label-translate-x)]
+      translate-y-[var(--floating-label-translate-y)]
+      [zoom:var(--floating-label-scale)];
+    }
+
+    /* Form control */
+    .form-control-fill {
+      --floating-label-padding-top: --spacing(5.25);
+      --floating-label-padding-bottom: --spacing(1);
+
+      @apply pt-[var(--floating-label-padding-top)]
+      pb-[var(--floating-label-padding-bottom)];
+
+      &::placeholder {
+        @apply text-transparent;
+      }
+
+      &.form-control-sm {
+        --floating-label-padding-top: --spacing(4.25);
+        --floating-label-padding-bottom: --spacing(0.5);
+        --input-line-height: 1.5;
+      }
+      &.form-control-lg {
+        --floating-label-padding-top: --spacing(5.5);
+        --floating-label-padding-bottom: --spacing(1.5);
+      }
+      &:focus-within,
+      &:focus,
+      &:not(:placeholder-shown) {
+        & ~ .form-label {
+          --floating-label-translate-x: 18px;
+          --floating-label-translate-y: 7px;
+          --floating-label-scale: 0.85;
+        }
+        &.form-control-sm ~ .form-label {
+          --floating-label-translate-x: 15px;
+          --floating-label-translate-y: 4px;
+          --floating-label-scale: 0.85;
+        }
+        &.form-control-lg ~ .form-label {
+          --floating-label-translate-x: 26px;
+          --floating-label-translate-y: 9px;
+          --floating-label-scale: 0.75;
+        }
+      }
+    }
+
+    .form-control {
+      --input-padding-y: --spacing(2.25);
+      --input-line-height: 2;
+
+      & ~ .form-label {
+        --input-label-bg: var(--background-color-default);
+        @apply -ms-2 px-2;
+      }
+
+      &::placeholder {
+        @apply text-transparent;
+      }
+      &:focus-within,
+      &:focus,
+      &:not(:placeholder-shown) {
+        & ~ .form-label {
+          --floating-label-translate-x: 18px;
+          --floating-label-translate-y: -10px;
+          --floating-label-scale: 0.85;
+        }
+        &.form-control-sm ~ .form-label {
+          --floating-label-translate-x: 15px;
+          --floating-label-translate-y: -10px;
+          --floating-label-scale: 0.85;
+        }
+        &.form-control-lg ~ .form-label {
+          --floating-label-translate-x: 26px;
+          --floating-label-translate-y: -12px;
+          --floating-label-scale: 0.75;
+        }
+      }
+    }
+
+    .form-control-sm {
+      --input-padding-y: --spacing(1.5);
+      & ~ .form-label {
+        --floating-label-translate-x: 12px;
+        --floating-label-translate-y: 10px;
+        --floating-label-scale: 1;
+      }
+    }
+    .form-control-lg {
+      --input-padding-y: --spacing(2.5);
+      --input-padding-x: --spacing(5);
+      & ~ .form-label {
+        --input-label-font-size: var(--text-base);
+        --floating-label-translate-x: 20px;
+        --floating-label-translate-y: 14px;
+        --floating-label-scale: 1;
+      }
+    }
+
+    /* Form select */
+    .form-select-fill {
+      --floating-label-padding-top: --spacing(5.25);
+      --floating-label-padding-bottom: --spacing(1);
+
+      @apply pt-[var(--floating-label-padding-top)]
+      pb-[var(--floating-label-padding-bottom)];
+
+      &::placeholder {
+        @apply text-transparent;
+      }
+
+      &.form-select-sm {
+        --floating-label-padding-top: --spacing(4.25);
+        --floating-label-padding-bottom: --spacing(0.5);
+        --form-select-line-height: 1.5;
+      }
+      &.form-select-lg {
+        --floating-label-padding-top: --spacing(5.5);
+        --floating-label-padding-bottom: --spacing(1.5);
+      }
+      &:focus-within,
+      &:focus,
+      &:not(:placeholder-shown) {
+        & + .form-label {
+          --floating-label-translate-x: 18px;
+          --floating-label-translate-y: 7px;
+          --floating-label-scale: 0.85;
+        }
+        &.form-select-sm + .form-label {
+          --floating-label-translate-x: 15px;
+          --floating-label-translate-y: 4px;
+          --floating-label-scale: 0.85;
+        }
+        &.form-select-lg + .form-label {
+          --floating-label-translate-x: 26px;
+          --floating-label-translate-y: 9px;
+          --floating-label-scale: 0.75;
+        }
+      }
+    }
+
+    .form-select {
+      --form-select-padding-y: --spacing(2.25);
+      --form-select-line-height: 2;
+
+      & ~ .form-label {
+        --input-label-bg: var(--background-color-default);
+        @apply -ms-2 px-2;
+      }
+
+      &::placeholder {
+        @apply text-transparent;
+      }
+
+      &:focus-within,
+      &:focus,
+      &:not(:placeholder-shown) {
+        & + .form-label {
+          --floating-label-translate-x: 18px;
+          --floating-label-translate-y: -10px;
+          --floating-label-scale: 0.85;
+        }
+        &.form-select-sm + .form-label {
+          --floating-label-translate-x: 15px;
+          --floating-label-translate-y: -10px;
+          --floating-label-scale: 0.85;
+        }
+        &.form-select-lg + .form-label {
+          --floating-label-translate-x: 26px;
+          --floating-label-translate-y: -12px;
+          --floating-label-scale: 0.75;
+        }
+      }
+    }
+
+    .form-select-sm {
+      --form-select-padding-y: --spacing(1.5);
+      & + .form-label {
+        --floating-label-translate-x: 12px;
+        --floating-label-translate-y: 10px;
+        --floating-label-scale: 1;
+      }
+    }
+    .form-select-lg {
+      --form-select-padding-y: --spacing(2.5);
+      --form-select-padding-x: --spacing(5);
+      & + .form-label {
+        --input-label-font-size: var(--text-base);
+        --floating-label-translate-x: 20px;
+        --floating-label-translate-y: -14px;
+        --floating-label-scale: 1;
+      }
+    }
+  }
+}
+
+@utility input-group-icon {
+  @layer base {
+    .form-control-icon-start {
+      ~ .form-floating {
+        .form-control-fill {
+          ~ .form-label {
+            --floating-label-translate-x: 43px;
+            --floating-label-translate-y: 13px;
+            --floating-label-scale: 1;
+          }
+          &.form-control-sm ~ .form-label {
+            --floating-label-translate-x: 34px;
+            --floating-label-translate-y: 10px;
+            --floating-label-scale: 1;
+          }
+          &.form-control-lg ~ .form-label {
+            --floating-label-translate-x: 48px;
+            --floating-label-translate-y: 15px;
+            --floating-label-scale: 1;
+          }
+          &:focus-within,
+          &:focus,
+          &:not(:placeholder-shown) {
+            ~ .form-label {
+              --floating-label-translate-x: 50px;
+              --floating-label-translate-y: 7px;
+              --floating-label-scale: 0.85;
+            }
+            &.form-control-sm ~ .form-label {
+              --floating-label-translate-x: 40px;
+              --floating-label-translate-y: 4px;
+              --floating-label-scale: 0.85;
+            }
+            &.form-control-lg ~ .form-label {
+              --floating-label-translate-x: 64px;
+              --floating-label-translate-y: 9px;
+              --floating-label-scale: 0.75;
+            }
+          }
+        }
+      }
+    }
+  }
+}

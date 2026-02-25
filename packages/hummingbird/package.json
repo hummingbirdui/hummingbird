@@ -1,0 +1,87 @@
+{
+  "name": "@hummingbirdui/hummingbird",
+  "version": "1.0.0-beta4",
+  "description": "An open-source system designed for rapid development, without sacrificing the granular control of utility-first CSS.",
+  "keywords": [
+    "hummingbird",
+    "tailwind",
+    "tailwindcss",
+    "tailwind css",
+    "tailwind component",
+    "component library",
+    "css library",
+    "tailwind ui",
+    "tailwind react",
+    "tailwind next",
+    "tailwind vue",
+    "tailwind nuxt",
+    "tailwind angular",
+    "tailwind svelte",
+    "tailwind django",
+    "tailwind laravel",
+    "tailwind astro",
+    "typescript",
+    "javascript",
+    "cjs",
+    "esm",
+    "umd"
+  ],
+  "license": "MIT",
+  "main": "lib/cjs/index.js",
+  "module": "lib/esm/index.js",
+  "types": "lib/esm/index.d.ts",
+  "style": "src/index.css",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hummingbirdui/hummingbird",
+    "directory": "packages/hummingbird"
+  },
+  "bugs": "https://github.com/hummingbirdui/hummingbird/issues",
+  "files": [
+    "dist/*.{js,css,js.map,css.map}",
+    "lib/esm/**/*.{js,js.map,d.ts}",
+    "lib/cjs/**/*.{js,js.map,d.ts}",
+    "src/index.css",
+    "src/reboot.css",
+    "src/components/**/*.css",
+    "src/layout/**/*.css",
+    "src/theme/**/*.css",
+    "src/plugins/**/*.css"
+  ],
+  "author": "Hummingbird UI",
+  "scripts": {
+    "dev": "vite build --mode bundle --outDir=static --emptyOutDir=false --watch",
+    "build:css": "cross-env NODE_ENV=production npx @tailwindcss/cli -i src/index.css -o dist/hummingbird.css",
+    "build:css:min": "cross-env NODE_ENV=production npx @tailwindcss/cli -i src/index.css -o dist/hummingbird.min.css --minify",
+    "build:styles": "npm-run-all -s build:css build:css:min",
+    "build:dist:default": "vite build",
+    "build:dist:bundle": "vite build --mode bundle",
+    "build:dist": "npm-run-all -s build:dist:default build:dist:bundle build:styles",
+    "build:lib": "vite build --config vite.lib.config.js",
+    "clean:lib": "shx rm -rf lib",
+    "clean:dist": "shx rm -rf dist",
+    "build": "npm-run-all -s clean:lib build:lib clean:dist build:dist"
+  },
+  "devDependencies": {
+    "@popperjs/core": "^2.11.8",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@tailwindcss/cli": "^4.1.13",
+    "@tailwindcss/vite": "^4.1.13",
+    "@types/bootstrap": "^5.2.10",
+    "bootstrap": "^5.3.8",
+    "cross-env": "^7.0.3",
+    "npm-run-all": "^4.1.5",
+    "shx": "^0.4.0",
+    "tailwindcss": "^4.1.13",
+    "typescript": "~5.7.2",
+    "vite": "^7.2.2",
+    "vite-plugin-dts": "^4.5.0"
+  },
+  "peerDependencies": {
+    "@popperjs/core": "^2.11.8"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "type": "module"
+}

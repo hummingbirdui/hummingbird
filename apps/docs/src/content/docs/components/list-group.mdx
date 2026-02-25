@@ -1,0 +1,451 @@
+---
+title: List
+description: Lists display content in a clear vertical format, suitable for organizing text, media, or actions.
+toc: true
+classNames:
+  component:
+    - class: list-group
+      desc: List group component
+  inner:
+    - class: list-group-item
+      desc: List group item component
+  modifier:
+    - class: list-group-numbered
+      desc: Numbered list group
+    - class: list-group-item-action
+      desc: Clickable list group item
+    - class: list-group-item-pinned
+      desc: Pinned list group item
+---
+
+## Basic list
+
+Use `.list-group` to display a set of items with consistent spacing and borders. Add `.list-group-item` for each entry. Items can include icons or other inline content.
+
+<Example class='grid sm:grid-cols-2 gap-3' code={`<ul class="list-group">
+    <li class="list-group-item">List Item One</li>
+    <li class="list-group-item">List Item Two</li>
+    <li class="list-group-item">List Item Three</li>
+    <li class="list-group-item">List Item Four</li>
+  </ul>
+
+  <ul class="list-group">
+    <li class="list-group-item flex items-center gap-3">
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M5 21q-.825 0-1.412-.587T3 19V5q0-.825.588-1.412T5 3h12.475q.425 0 .713.288t.287.712t-.288.713t-.712.287H5v14h14v-6.5q0-.425.288-.712T20 11.5t.713.288t.287.712V19q0 .825-.587 1.413T19 21zm6.525-6.8l8.5-8.5q.275-.275.675-.275t.7.275t.3.7t-.3.725L12.225 16.3q-.3.3-.7.3t-.7-.3l-4.25-4.25q-.275-.275-.275-.7t.275-.7t.7-.275t.7.275z"/></svg>
+      List Item One
+    </li>
+    <li class="list-group-item flex items-center gap-3">
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M5 21q-.825 0-1.412-.587T3 19V5q0-.825.588-1.412T5 3h12.475q.425 0 .713.288t.287.712t-.288.713t-.712.287H5v14h14v-6.5q0-.425.288-.712T20 11.5t.713.288t.287.712V19q0 .825-.587 1.413T19 21zm6.525-6.8l8.5-8.5q.275-.275.675-.275t.7.275t.3.7t-.3.725L12.225 16.3q-.3.3-.7.3t-.7-.3l-4.25-4.25q-.275-.275-.275-.7t.275-.7t.7-.275t.7.275z"/></svg>
+      List Item Two
+    </li>
+    <li class="list-group-item flex items-center gap-3">
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M5 21q-.825 0-1.412-.587T3 19V5q0-.825.588-1.412T5 3h12.475q.425 0 .713.288t.287.712t-.288.713t-.712.287H5v14h14v-6.5q0-.425.288-.712T20 11.5t.713.288t.287.712V19q0 .825-.587 1.413T19 21zm6.525-6.8l8.5-8.5q.275-.275.675-.275t.7.275t.3.7t-.3.725L12.225 16.3q-.3.3-.7.3t-.7-.3l-4.25-4.25q-.275-.275-.275-.7t.275-.7t.7-.275t.7.275z"/></svg>
+      List Item Three
+    </li>
+    <li class="list-group-item flex items-center gap-3">
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M5 21q-.825 0-1.412-.587T3 19V5q0-.825.588-1.412T5 3h12.475q.425 0 .713.288t.287.712t-.288.713t-.712.287H5v14h14v-6.5q0-.425.288-.712T20 11.5t.713.288t.287.712V19q0 .825-.587 1.413T19 21zm6.525-6.8l8.5-8.5q.275-.275.675-.275t.7.275t.3.7t-.3.725L12.225 16.3q-.3.3-.7.3t-.7-.3l-4.25-4.25q-.275-.275-.275-.7t.275-.7t.7-.275t.7.275z"/></svg>
+      List Item Four
+    </li>
+  </ul>`} />
+
+## List with avatar & action button
+
+Avatars and action buttons can be added to the list item.
+
+<Example class='grid sm:grid-cols-2' code={`<ul class="list-group">
+    <li class="list-group-item flex items-center gap-3">
+      <div class="avatar">
+        <img src="/images/avatar/avatar_1.webp" alt="Avatar" class='rounded-full' />
+      </div>
+      List Item One
+      <button class='btn btn-icon ms-auto -me-2'>
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M7 21q-.825 0-1.412-.587T5 19V6H4V4h5V3h6v1h5v2h-1v13q0 .825-.587 1.413T17 21zM17 6H7v13h10zM9 17h2V8H9zm4 0h2V8h-2zM7 6v13z"/></svg>
+      </button>
+    </li>
+    <li class="list-group-item flex items-center gap-3">
+      <div class="avatar">
+        <img src="/images/avatar/avatar_2.webp" alt="Avatar" class='rounded-full' />
+      </div>
+      List Item Two
+      <button class='btn btn-icon ms-auto -me-2'>
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M7 21q-.825 0-1.412-.587T5 19V6H4V4h5V3h6v1h5v2h-1v13q0 .825-.587 1.413T17 21zM17 6H7v13h10zM9 17h2V8H9zm4 0h2V8h-2zM7 6v13z"/></svg>
+      </button>
+    </li>
+    <li class="list-group-item flex items-center gap-3">
+      <div class="avatar">
+        <img src="/images/avatar/avatar_3.webp" alt="Avatar" class='rounded-full' />
+      </div>
+      List Item Three
+      <button class='btn btn-icon ms-auto -me-2'>
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M7 21q-.825 0-1.412-.587T5 19V6H4V4h5V3h6v1h5v2h-1v13q0 .825-.587 1.413T17 21zM17 6H7v13h10zM9 17h2V8H9zm4 0h2V8h-2zM7 6v13z"/></svg>
+      </button>
+    </li>
+    <li class="list-group-item flex items-center gap-3">
+      <div class="avatar">
+        <img src="/images/avatar/avatar_4.webp" alt="Avatar" class='rounded-full' />
+      </div>
+      List Item Four
+      <button class='btn btn-icon ms-auto -me-2'>
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M7 21q-.825 0-1.412-.587T5 19V6H4V4h5V3h6v1h5v2h-1v13q0 .825-.587 1.413T17 21zM17 6H7v13h10zM9 17h2V8H9zm4 0h2V8h-2zM7 6v13z"/></svg>
+      </button>
+    </li>
+  </ul>`} />
+
+## Active list
+
+Use the `.active` class to highlight the currently selected item.
+
+<Example class='grid sm:grid-cols-2' code={`<ul class="list-group">
+    <li class="list-group-item active" aria-current="true">List Item One</li>
+    <li class="list-group-item">List Item Two</li>
+    <li class="list-group-item">List Item Three</li>
+    <li class="list-group-item">List Item Four</li>
+  </ul>`} />
+
+## Link & button
+
+Use `.list-group-item-action` to make list items clickable. `<a>` or `<button>` elements can be applied.
+
+<Example class='grid sm:grid-cols-2' code={`<div class="list-group">
+    <a href="#" class="list-group-item list-group-item-action active" aria-current="true">List Item One</a>
+    <a href="#" class="list-group-item list-group-item-action">List Item Two</a>
+    <a href="#" class="list-group-item list-group-item-action">List Item Three</a>
+    <a href="#" class="list-group-item list-group-item-action">List Item Four</a>
+    <a href="#" class="list-group-item list-group-item-action disabled" aria-disabled="true">List Item Five</a>
+  </div>`} />
+
+<Example class='grid sm:grid-cols-2' code={`<div class="list-group">
+    <button type="button" class="list-group-item list-group-item-action active" aria-current="true">List Item One</button>
+    <button type="button" class="list-group-item list-group-item-action">List Item Two</button>
+    <button type="button" class="list-group-item list-group-item-action">List Item Three</button>
+    <button type="button" class="list-group-item list-group-item-action">List Item Four</button>
+    <button type="button" class="list-group-item list-group-item-action disabled" aria-disabled="true">List Item Five</button>
+  </div>`} />
+
+## Numbered
+
+Use the `.list-group-numbered` class to create a numbered list.
+
+<Example class='grid sm:grid-cols-2' code={`<ul class="list-group list-group-numbered">
+    <li class="list-group-item" aria-current="true">List Item One</li>
+    <li class="list-group-item">List Item Two</li>
+    <li class="list-group-item">List Item Three</li>
+    <li class="list-group-item">List Item Four</li>
+  </ul>`} />
+
+## Checkboxes and radios
+
+<Example class='grid sm:grid-cols-2 gap-3' code={`<ul class="list-group">
+    <li class="list-group-item list-group-item-action">
+      <div class="form-check -ml-2.5">
+        <label for="firstCheckbox" class="form-check-input-wrapper">
+          <input class="form-check-input" type="checkbox" value="" id="firstCheckbox" checked />
+        </label>
+        <label for="firstCheckbox" class="form-check-label flex-1">First Checkbox</label>
+      </div>
+    </li>
+    <li class="list-group-item list-group-item-action">
+      <div class="form-check -ml-2.5">
+        <label for="secondCheckbox" class="form-check-input-wrapper">
+          <input class="form-check-input" type="checkbox" value="" id="secondCheckbox" />
+        </label>
+        <label for="secondCheckbox" class="form-check-label flex-1">Second Checkbox</label>
+      </div>
+    </li>
+    <li class="list-group-item list-group-item-action">
+      <div class="form-check -ml-2.5">
+        <label for="thirdCheckbox" class="form-check-input-wrapper">
+          <input class="form-check-input" type="checkbox" value="" id="thirdCheckbox" />
+        </label>
+        <label for="thirdCheckbox" class="form-check-label flex-1">Third Checkbox</label>
+      </div>
+    </li>
+    <li class="list-group-item list-group-item-action">
+      <div class="form-check -ml-2.5">
+        <label for="fourthCheckbox" class="form-check-input-wrapper">
+          <input class="form-check-input" type="checkbox" value="" id="fourthCheckbox" />
+        </label>
+        <label for="fourthCheckbox" class="form-check-label flex-1">Fourth Checkbox</label>
+      </div>
+    </li>
+  </ul>
+
+  <ul class="list-group">
+    <li class="list-group-item list-group-item-action">
+      <div class="form-check -ml-2.5">
+        <label for="firstRadio" class="form-check-input-wrapper">
+          <input class="form-check-input" type="radio" name="listRadio" value="" id="firstRadio" checked />
+        </label>
+        <label for="firstRadio" class="form-check-label flex-1">First Checkbox</label>
+      </div>
+    </li>
+    <li class="list-group-item list-group-item-action">
+      <div class="form-check -ml-2.5">
+        <label for="secondRadio" class="form-check-input-wrapper">
+          <input class="form-check-input" type="radio" name="listRadio" value="" id="secondRadio" />
+        </label>
+        <label for="secondRadio" class="form-check-label flex-1">Second Checkbox</label>
+      </div>
+    </li>
+    <li class="list-group-item list-group-item-action">
+      <div class="form-check -ml-2.5">
+        <label for="thirdRadio" class="form-check-input-wrapper">
+          <input class="form-check-input" type="radio" name="listRadio" value="" id="thirdRadio" />
+        </label>
+        <label for="thirdRadio" class="form-check-label flex-1">Third Checkbox</label>
+      </div>
+    </li>
+    <li class="list-group-item list-group-item-action">
+      <div class="form-check -ml-2.5">
+        <label for="fourthRadio" class="form-check-input-wrapper">
+          <input class="form-check-input" type="radio" name="listRadio" value="" id="fourthRadio" />
+        </label>
+        <label for="fourthRadio" class="form-check-label flex-1">Fourth Checkbox</label>
+      </div>
+    </li>
+  </ul>`} />
+
+## With badge
+
+<Example class='grid sm:grid-cols-2' code={`<div class="list-group">
+    <a href="#" class="list-group-item list-group-item-action active flex items-center justify-between" aria-current="true">List Item One<span class="badge badge-primary">6</span></a>
+    <a href="#" class="list-group-item list-group-item-action flex items-center justify-between">List Item Two<span class="badge badge-warning">3</span></a>
+    <a href="#" class="list-group-item list-group-item-action flex items-center justify-between">List Item Three<span class="badge badge-primary">Pending</span></a>
+    <a href="#" class="list-group-item list-group-item-action disabled flex items-center justify-between">List Item Four<span class="badge">Closed</span></a>
+  </div>`} />
+
+## Pinned subheader
+
+The `.list-group-item-pinned` class keeps section headers fixed at the top of the list. While scrolling, each header remains pinned until the next one pushes it off the screen.
+
+<Example code={`<ul class="list-group h-80 overflow-auto py-0">
+    <ul>
+      <li class="list-group-item list-group-item-pinned">Subheader One</li>
+      <li class="list-group-item">List Item One</li>
+      <li class="list-group-item">List Item Two</li>
+      <li class="list-group-item">List Item Three</li>
+      <li class="list-group-item">List Item Four</li>
+    </ul>
+    <ul>
+      <li class="list-group-item list-group-item-pinned">Subheader Two</li>
+      <li class="list-group-item">List Item One</li>
+      <li class="list-group-item">List Item Two</li>
+      <li class="list-group-item">List Item Three</li>
+      <li class="list-group-item">List Item Four</li>
+    </ul>
+    <ul>
+      <li class="list-group-item list-group-item-pinned">Subheader Three</li>
+      <li class="list-group-item">List Item One</li>
+      <li class="list-group-item">List Item Two</li>
+      <li class="list-group-item">List Item Three</li>
+      <li class="list-group-item">List Item Four</li>
+    </ul>
+    <ul>
+      <li class="list-group-item list-group-item-pinned">Subheader Four</li>
+      <li class="list-group-item">List Item One</li>
+      <li class="list-group-item">List Item Two</li>
+      <li class="list-group-item">List Item Three</li>
+      <li class="list-group-item">List Item Four</li>
+    </ul>
+    <ul>
+      <li class="list-group-item list-group-item-pinned">Subheader Five</li>
+      <li class="list-group-item">List Item One</li>
+      <li class="list-group-item">List Item Two</li>
+      <li class="list-group-item">List Item Three</li>
+      <li class="list-group-item">List Item Four</li>
+    </ul>
+  </ul>`} />
+
+## Horizontal list group
+
+<Example class="max-w-145 mx-auto" code={`<ul class="list-group flex-row overflow-x-auto">
+    <li class="list-group-item" aria-current="true">
+      <div class="avatar avatar-lg">
+        <img src="/images/avatar/avatar_4.webp" alt="Avatar" class="rounded-full" />
+      </div>
+      <p class="mb-0 text-sm text-center line-clamp-1">Carter</p>
+    </li>
+    <li class="list-group-item">
+      <div class="avatar avatar-lg">
+        <img src="/images/avatar/avatar_5.webp" alt="Avatar" class="rounded-full" />
+      </div>
+      <p class="mb-0 text-sm text-center line-clamp-1">Fiona</p>
+    </li>
+    <li class="list-group-item">
+      <div class="avatar avatar-lg">
+        <img src="/images/avatar/avatar_6.webp" alt="Avatar" class="rounded-full" />
+      </div>
+      <p class="mb-0 text-sm text-center line-clamp-1">Marcus</p>
+    </li>
+    <li class="list-group-item">
+      <div class="avatar avatar-lg">
+        <img src="/images/avatar/avatar_4.webp" alt="Avatar" class="rounded-full" />
+      </div>
+      <p class="mb-0 text-sm text-center line-clamp-1">Emma</p>
+    </li>
+    <li class="list-group-item">
+      <div class="avatar avatar-lg">
+        <img src="/images/avatar/avatar_10.webp" alt="Avatar" class="rounded-full" />
+      </div>
+      <p class="mb-0 text-sm text-center line-clamp-1">Taylor</p>
+    </li>
+    <li class="list-group-item">
+      <div class="avatar avatar-lg">
+        <img src="/images/avatar/avatar_1.webp" alt="Avatar" class="rounded-full" />
+      </div>
+      <p class="mb-0 text-sm text-center line-clamp-1">Xavier</p>
+    </li>
+    <li class="list-group-item">
+      <div class="avatar avatar-lg">
+        <img src="/images/avatar/avatar_15.webp" alt="Avatar" class="rounded-full" />
+      </div>
+      <p class="mb-0 text-sm text-center line-clamp-1">Isabella</p>
+    </li>
+    <li class="list-group-item">
+      <div class="avatar avatar-lg">
+        <img src="/images/avatar/avatar_9.webp" alt="Avatar" class="rounded-full" />
+      </div>
+      <p class="mb-0 text-sm text-center line-clamp-1">Maya</p>
+    </li>
+    <li class="list-group-item">
+      <div class="avatar avatar-lg">
+        <img src="/images/avatar/avatar_2.webp" alt="Avatar" class="rounded-full" />
+      </div>
+      <p class="mb-0 text-sm text-center line-clamp-1">Isaac</p>
+    </li>
+    <li class="list-group-item">
+      <div class="avatar avatar-lg">
+        <img src="/images/avatar/avatar_11.webp" alt="Avatar" class="rounded-full" />
+      </div>
+      <p class="mb-0 text-sm text-center line-clamp-1">Olivia</p>
+    </li>
+    <li class="list-group-item">
+      <div class="avatar avatar-lg">
+        <img src="/images/avatar/avatar_12.webp" alt="Avatar" class="rounded-full" />
+      </div>
+      <p class="mb-0 text-sm text-center line-clamp-1">Lily</p>
+    </li>
+    <li class="list-group-item">
+      <div class="avatar avatar-lg">
+        <img src="/images/avatar/avatar_13.webp" alt="Avatar" class="rounded-full" />
+      </div>
+      <p class="mb-0 text-sm text-center line-clamp-1">Quinn</p>
+    </li>
+  </ul>`} 
+/>
+
+## Custom 
+
+List items are fully extensible with utility classes. Combine avatars, icons, and action buttons to create rich, custom layouts.
+
+<Example code={`<ul class="list-group">
+    <li class="list-group-item flex items-start gap-3">
+      <div class="avatar avatar-lg shrink-0">
+        <img src="/images/avatar/avatar_1.webp" alt="Avatar" class='rounded-full' />
+      </div>
+      <div>
+        <div class="flex items-center gap-3">
+          <h4 class="list-text-primary">Alice Johnson</h4>
+          <p class="list-text-secondary">2 Months ago</p>
+        </div>
+        <p class="mb-3">Great breakdown of the new JavaScript features! I especially appreciated the examples on optional chaining. One suggestion—maybe include performance benchmarks for real-world cases?</p>
+        <div class="space-x-2">
+          <button class='btn btn-sm btn-subtle-primary'>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"><path fill="currentColor" d="M21 8q.8 0 1.4.6T23 10v2q0 .175-.038.375t-.112.375l-3 7.05q-.225.5-.75.85T18 21h-8q-.825 0-1.412-.587T8 19V8.825q0-.4.163-.762t.437-.638l5.425-5.4q.375-.35.888-.425t.987.175t.688.7t.087.925L15.55 8zM4 21q-.825 0-1.412-.587T2 19v-9q0-.825.588-1.412T4 8t1.413.588T6 10v9q0 .825-.587 1.413T4 21"/></svg>
+            245
+          </button>
+          <button class='btn btn-sm btn-subtle-neutral'>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"><path fill="currentColor" d="M3 16q-.8 0-1.4-.6T1 14v-2q0-.175.037-.375t.113-.375l3-7.05q.225-.5.75-.85T6 3h8q.825 0 1.413.587T16 5v10.175q0 .4-.162.763t-.438.637l-5.425 5.4q-.375.35-.887.425t-.988-.175t-.687-.7t-.088-.925L8.45 16zM20 3q.825 0 1.413.588T22 5v9q0 .825-.587 1.413T20 16t-1.412-.587T18 14V5q0-.825.588-1.412T20 3"/></svg>
+            13
+          </button>
+          <button class='btn btn-sm btn-subtle-neutral'>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"><path fill="currentColor" d="m4.825 11l3.9 3.9q.3.3.288.7t-.313.7q-.3.275-.7.288t-.7-.288l-4.6-4.6q-.15-.15-.213-.325T2.426 11t.063-.375t.212-.325l4.6-4.6q.275-.275.688-.275T8.7 5.7q.3.3.3.713t-.3.712zm6 1l2.9 2.9q.3.3.288.7t-.313.7q-.3.275-.7.288t-.7-.288l-4.6-4.6q-.15-.15-.213-.325T7.426 11t.063-.375t.212-.325l4.6-4.6q.275-.275.688-.275t.712.275q.3.3.3.713t-.3.712L10.825 10H17q2.075 0 3.538 1.463T22 15v3q0 .425-.288.713T21 19t-.712-.288T20 18v-3q0-1.25-.875-2.125T17 12z"/></svg>
+            Reply
+          </button>
+        </div>
+      </div>
+    </li>
+    <li class="list-group-item flex items-start gap-3">
+      <div class="avatar avatar-lg shrink-0">
+        <img src="/images/avatar/avatar_2.webp" alt="Avatar" class='rounded-full' />
+      </div>
+      <div>
+        <div class="flex items-center gap-3">
+          <h4 class="list-text-primary">Diana Lee</h4>
+          <p class="list-text-secondary">3 Months ago</p>
+        </div>
+        <p class="mb-3">This place looks amazing! The colors in your photo are stunning. Where exactly is this? I’d love to visit someday!</p>
+        <div class="space-x-2">
+          <button class='btn btn-sm btn-subtle-neutral'>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"><path fill="currentColor" d="M21 8q.8 0 1.4.6T23 10v2q0 .175-.038.375t-.112.375l-3 7.05q-.225.5-.75.85T18 21h-8q-.825 0-1.412-.587T8 19V8.825q0-.4.163-.762t.437-.638l5.425-5.4q.375-.35.888-.425t.987.175t.688.7t.087.925L15.55 8zM4 21q-.825 0-1.412-.587T2 19v-9q0-.825.588-1.412T4 8t1.413.588T6 10v9q0 .825-.587 1.413T4 21"/></svg>
+            555
+          </button>
+          <button class='btn btn-sm btn-subtle-neutral'>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"><path fill="currentColor" d="M3 16q-.8 0-1.4-.6T1 14v-2q0-.175.037-.375t.113-.375l3-7.05q.225-.5.75-.85T6 3h8q.825 0 1.413.587T16 5v10.175q0 .4-.162.763t-.438.637l-5.425 5.4q-.375.35-.887.425t-.988-.175t-.687-.7t-.088-.925L8.45 16zM20 3q.825 0 1.413.588T22 5v9q0 .825-.587 1.413T20 16t-1.412-.587T18 14V5q0-.825.588-1.412T20 3"/></svg>
+            21
+          </button>
+          <button class='btn btn-sm btn-subtle-neutral'>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"><path fill="currentColor" d="m4.825 11l3.9 3.9q.3.3.288.7t-.313.7q-.3.275-.7.288t-.7-.288l-4.6-4.6q-.15-.15-.213-.325T2.426 11t.063-.375t.212-.325l4.6-4.6q.275-.275.688-.275T8.7 5.7q.3.3.3.713t-.3.712zm6 1l2.9 2.9q.3.3.288.7t-.313.7q-.3.275-.7.288t-.7-.288l-4.6-4.6q-.15-.15-.213-.325T7.426 11t.063-.375t.212-.325l4.6-4.6q.275-.275.688-.275t.712.275q.3.3.3.713t-.3.712L10.825 10H17q2.075 0 3.538 1.463T22 15v3q0 .425-.288.713T21 19t-.712-.288T20 18v-3q0-1.25-.875-2.125T17 12z"/></svg>
+            Reply
+          </button>
+        </div>
+      </div>
+    </li>
+    <li class="list-group-item flex items-start gap-3">
+      <div class="avatar avatar-lg shrink-0">
+        <img src="/images/avatar/avatar_3.webp" alt="Avatar" class='rounded-full' />
+      </div>
+      <div>
+        <div class="flex items-center gap-3">
+          <h4 class="list-text-primary">Ethan Brown</h4>
+          <p class="list-text-secondary">4 Months ago</p>
+        </div>
+        <p class="mb-3">Super helpful tutorial—thank you! You explained the steps clearly and kept it beginner-friendly. Could you do a follow-up on more advanced techniques?</p>
+        <div class="space-x-2">
+          <button class='btn btn-sm btn-subtle-neutral'>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"><path fill="currentColor" d="M21 8q.8 0 1.4.6T23 10v2q0 .175-.038.375t-.112.375l-3 7.05q-.225.5-.75.85T18 21h-8q-.825 0-1.412-.587T8 19V8.825q0-.4.163-.762t.437-.638l5.425-5.4q.375-.35.888-.425t.987.175t.688.7t.087.925L15.55 8zM4 21q-.825 0-1.412-.587T2 19v-9q0-.825.588-1.412T4 8t1.413.588T6 10v9q0 .825-.587 1.413T4 21"/></svg>
+            765
+          </button>
+          <button class='btn btn-sm btn-subtle-neutral'>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"><path fill="currentColor" d="M3 16q-.8 0-1.4-.6T1 14v-2q0-.175.037-.375t.113-.375l3-7.05q.225-.5.75-.85T6 3h8q.825 0 1.413.587T16 5v10.175q0 .4-.162.763t-.438.637l-5.425 5.4q-.375.35-.887.425t-.988-.175t-.687-.7t-.088-.925L8.45 16zM20 3q.825 0 1.413.588T22 5v9q0 .825-.587 1.413T20 16t-1.412-.587T18 14V5q0-.825.588-1.412T20 3"/></svg>
+            33
+          </button>
+          <button class='btn btn-sm btn-subtle-neutral'>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"><path fill="currentColor" d="m4.825 11l3.9 3.9q.3.3.288.7t-.313.7q-.3.275-.7.288t-.7-.288l-4.6-4.6q-.15-.15-.213-.325T2.426 11t.063-.375t.212-.325l4.6-4.6q.275-.275.688-.275T8.7 5.7q.3.3.3.713t-.3.712zm6 1l2.9 2.9q.3.3.288.7t-.313.7q-.3.275-.7.288t-.7-.288l-4.6-4.6q-.15-.15-.213-.325T7.426 11t.063-.375t.212-.325l4.6-4.6q.275-.275.688-.275t.712.275q.3.3.3.713t-.3.712L10.825 10H17q2.075 0 3.538 1.463T22 15v3q0 .425-.288.713T21 19t-.712-.288T20 18v-3q0-1.25-.875-2.125T17 12z"/></svg>
+            Reply
+          </button>
+        </div>
+      </div>
+    </li>
+  </ul>`} />
+
+## Class Overview
+
+A list of all available utility classes for the list group component.
+
+export const { classNames } = frontmatter;
+
+<ClassTable classNames={classNames}/>
+
+## CSS variables
+
+The list group component is built using a set of CSS variables. These variables provide flexibility for customizing styles.
+See the [Theming](https://hbui.dev/docs/customize/theming/) to customize styles globally and apply overrides as needed.
+
+<Example showPreview={false} lang='sass' code={`.list-group {
+    --list-group-bg: var(--background-color-subtle);
+    --list-group-color: var(--text-color-default);
+    --list-group-padding-y: --spacing(2);
+    --list-group-border-color: var(--border-color-base);
+    --list-group-border-radius: var(--radius-lg);
+    --list-group-item-padding-x: --spacing(4);
+    --list-group-item-padding-y: --spacing(2.5);
+    --list-group-item-font-size: var(--text-base);
+    --list-group-action-color: var(--text-color-muted);
+    --list-group-hover-bg: var(--color-hover);
+    --list-group-hover-color: var(--text-color-muted);
+    --list-group-active-bg: var(--color-primary-lighter);
+    --list-group-active-color: var(--color-primary);
+    --list-group-disabled-bg: inherit;
+    --list-group-disabled-color: var(--color-disabled-color);
+  }`} />

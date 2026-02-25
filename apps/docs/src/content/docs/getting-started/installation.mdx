@@ -1,0 +1,133 @@
+---
+title: Installation
+description: Install Hummingbird using the quick setup or manual installation guide.
+toc: true
+---
+
+Requires Node.js `20.19+`
+
+## Quick Setup
+
+1. Create a new Hummingbird app named `my-app`
+2. `cd my-app` and start the dev server.
+3. Visit `http://localhost:3000`.
+
+<Example lang='bash' showPreview={false} code={`npx create-hummingbird-app@latest my-app --yes
+  cd my-app
+  npm run dev`}
+/>
+
+The `--yes` flag skips all prompts and uses the default setup (Vite + Vanilla JS with Tailwind CSS and Hummingbird); without it, the CLI guides through customization options. See full [CLI documentation](/docs/getting-started/cli).
+
+## Manual Installation
+
+#### 1. Install Tailwind CSS
+
+Ensure the project is set up with Tailwind CSS. If Tailwind CSS hasn’t been set up yet, follow the <a href="https://tailwindcss.com/docs/installation" target="_blank" rel="noopener noreferrer">official installation guide</a>.
+
+#### 2. Install Hummingbird
+
+Install Hummingbird via a preferred package manager:
+
+<Example lang='bash' showPreview={false} code={`npm install @hummingbirdui/hummingbird`} />
+
+#### 3. Import CSS
+
+Import Hummingbird styles in the main CSS file (e.g., `styles.css`).
+
+<Example lang='css' showPreview={false} 
+  code={`@import "tailwindcss";
+  @import "@hummingbirdui/hummingbird";`} />
+
+#### 4. Initialize JS plugins
+
+Include Hummingbird JavaScript at the end of the HTML body.
+
+<Example lang='html' showPreview={false} 
+  code={`<script src="../path/to/@hummingbirdui/hummingbird/dist/hummingbird.bundle.min.js"></script>`} />
+
+Alternatively, if using a build system (like Vite or Webpack), import Hummingbird directly in the JavaScript entry file.
+
+<Example lang='js' showPreview={false} 
+  code={`import '@hummingbirdui/hummingbird';`} />
+
+**Optimization:** To reduce the final bundle size, import only the specifically needed JavaScript plugins. Follow the [optimization](/docs/getting-started/javascript#optimization) approach in the JavaScript section.
+
+**Dependencies:** Some components require [Popper](https://popper.js.org/docs/v2/) for positioning. See the [dependencies](/docs/getting-started/javascript#dependencies) section for more details.
+
+Learn more about Hummingbird's JavaScript components in the [JavaScript section](/docs/getting-started/javascript).
+
+### JavaScript API
+
+Hummingbird also provides a JavaScript API for programmatic control of components. For example, any `modal` can be toggled manually using the API.
+
+Here’s how to initialize and use the [Modal](/docs/components/modal) component:
+
+```html
+<button class="btn btn-primary" data-open-demo-modal>Open</button>
+<div class="modal">...</div>
+```
+<br/>
+
+```js
+const openBtn = document.querySelector("[data-open-demo-modal]");
+const myModal = new window.hummingbird.Modal(".modal");
+
+openBtn.addEventListener("click", () => {
+  myModal.show();
+});
+```
+<br/>
+When using a build system such as Vite or Webpack, import [Modal](/docs/components/modal) as shown below.
+
+```js
+import { Modal } from "@hummingbirdui/hummingbird";
+const openBtn = document.querySelector("[data-open-demo-modal]");
+const myModal = new Modal(".modal");
+
+openBtn.addEventListener("click", () => {
+  myModal.show();
+});
+```
+
+### TypeScript support
+
+Hummingbird includes TypeScript definitions for all components. Import Hummingbird plugins with their types while using TypeScript.
+
+```ts
+import { Modal } from "@hummingbirdui/hummingbird";
+import { type ModalClass, type ModalInstance, type ModalOptions } from "@hummingbirdui/hummingbird";
+```
+
+### ESM vs CJS
+
+Hummingbird supports both **ESM** and **CJS** builds, so it works with different environments:
+
+* **ESM:**
+  Used by modern bundlers like **Vite**, **Rollup**, and **Webpack 5+**.  If the project is using ES modules (`import` syntax), this is what gets loaded automatically.
+
+* **CJS:**
+  Used in **Node.js** or older tooling that relies on `require()`. If the environment  doesn’t support ESM, bundlers and Node will fall back to this file.
+
+No manual choice is required; the bundler or runtime will select the correct version based on the setup.
+
+
+## Include using CDN
+
+CDN is a fast and easy way to include Hummingbird in a project. 
+
+### Play CDN
+
+Use the Play CDN to try Hummingbird in the browser without any build step. The Play CDN is designed for development purposes only, and is not intended for production.
+
+Add the Play CDN script tag to the `<head>` of your HTML file, and start using Hummingbird’s and Tailwind’s classes to style the content.
+
+<Example lang='html' showPreview={false} 
+  code={`<script src="https://cdn.jsdelivr.net/npm/@hummingbirdui/browser@1.0.0/dist/index.global.js"></script>`} />
+
+### CDN Script
+
+And include the following JavaScript before the end of the `<body>` tag for interactive components.
+
+<Example lang='html' showPreview={false} 
+  code={`<script src="https://cdn.jsdelivr.net/npm/@hummingbirdui/hummingbird@1.0.0/dist/hummingbird.bundle.min.js"></script>`} />
