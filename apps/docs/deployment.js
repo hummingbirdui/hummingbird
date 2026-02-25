@@ -104,21 +104,21 @@ function deployVersion(targetBranch, environment) {
     }
 
     console.log('\n📦 Installing dependencies...');
-    exec('npm ci');
+    exec('pnpm install');
 
     console.log('\n🔨 Building...');
     const nodeEnv = environment === 'staging' ? 'staging' : 'production';
-    exec(`cross-env NODE_ENV=${nodeEnv} npm run build:docs`);
+    exec(`NODE_ENV=${nodeEnv} pnpm run build`);
 
     console.log(`\n📝 Creating CNAME file...`);
-    createCNAME(target.domain, 'build');
+    createCNAME(target.domain, 'dist');
 
     console.log(`\n🚀 Deploying...`);
     const destFlag = versionInfo.dest === '.' ? '' : `--dest ${versionInfo.dest}`;
     const repoFlag = `-r ${target.repo}`;
     const branchFlag = `-b ${target.branch}`;
 
-    exec(`gh-pages -d build ${repoFlag} ${branchFlag} ${destFlag} --add --nojekyll`);
+    exec(`gh-pages -d dist ${repoFlag} ${branchFlag} ${destFlag} --add --nojekyll`);
 
     const deployUrl =
       versionInfo.base === '/' ? `https://${target.domain}` : `https://${target.domain}${versionInfo.base}`;
@@ -178,8 +178,8 @@ function showHelp() {
 📚 Documentation Deployer
 
 Usage:
-  npm run deploy <options>
-  npm run deploy:staging <options>
+  pnpm run deploy <options>
+  pnpm run deploy:staging <options>
 
 Options:
   --version <branch>    Deploy specific version (default: main)
@@ -187,13 +187,13 @@ Options:
   --help                Show this help
 
 Examples:
-  npm run deploy                          # Deploy main to production
-  npm run deploy --version docs-v2.0      # Deploy v2.0 to production
-  npm run deploy --all                    # Deploy all to production
+  pnpm run deploy                          # Deploy main to production
+  pnpm run deploy --version docs-v2.0      # Deploy v2.0 to production
+  pnpm run deploy --all                    # Deploy all to production
 
-  npm run deploy:staging                  # Deploy main to staging
-  npm run deploy:staging --version docs-v2.0
-  npm run deploy:staging --all
+  pnpm run deploy:staging                  # Deploy main to staging
+  pnpm run deploy:staging --version docs-v2.0
+  pnpm run deploy:staging --all
 
 Available versions:
 ${Object.entries(docVersions)
@@ -204,7 +204,7 @@ ${Object.entries(docVersions)
 
 // Parse CLI arguments
 const args = process.argv.slice(2);
-const environment = args[0]; // 'production' or 'staging' passed from npm script
+const environment = args[0]; // 'production' or 'staging' passed from pnpm script
 
 if (!environment || args.includes('--help') || args.includes('-h')) {
   showHelp();
