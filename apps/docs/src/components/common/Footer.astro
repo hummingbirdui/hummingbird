@@ -1,7 +1,7 @@
 ---
 import hummingbird from '@assets/images/logos/hummingbird.svg';
 import { getVersionedPath } from '@libs/config';
-import { footerLinks, socialLinks } from 'apps/data/footer-links.astro';
+import { footerLinks, socialLinks, productLinks } from 'apps/data/footer-links.astro';
 import { Image } from 'astro:assets';
 const isLanding = Astro.url.pathname === getVersionedPath('/');
 ---
@@ -85,6 +85,29 @@ const isLanding = Astro.url.pathname === getVersionedPath('/');
           }
         </div>
       </div>
+    </div>
+
+    <div class="py-3 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 border-t border-light">
+      {productLinks.map((product) => (
+        <a
+          href={product.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-center px-2 no-underline product-link rounded-xl hover:bg-light/40 transition duration-200"
+        >
+          <img
+            src={product.imageDark}
+            alt={product.alt}
+            class={`mx-auto h-11 hidden ${product.imageDark ? 'dark:block' : ''}`}
+          />
+          <img
+            src={product.image}
+            alt={product.alt}
+            class={`mx-auto h-11 ${product.imageDark ? 'dark:hidden' : ''}`}
+          />
+          <p class="mx-auto text-sm text-gray-500 max-w-50">{product.description}</p>
+        </a>
+      ))}
     </div>
 
     <div class="border-t border-light py-5">
