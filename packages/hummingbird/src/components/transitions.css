@@ -19,3 +19,11 @@
     transition-[width] duration-300;
   }
 }
+
+@layer utilities {
+  .disable-transition *,
+  .disable-transition *::before,
+  .disable-transition *::after {
+    @apply transition-none! animate-none!;
+  }
+}
