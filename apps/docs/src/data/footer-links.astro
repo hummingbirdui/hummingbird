@@ -18,6 +18,15 @@ interface SocialLink {
   icon: AstroComponentFactory;
 }
 
+interface ProductLink {
+  name: string;
+  url: string;
+  image: string;
+  imageDark?: string;
+  alt: string;
+  description: string;
+}
+
 export const footerLinks: FooterLink[] = [
   {
     title: 'Resources',
@@ -77,5 +86,44 @@ export const socialLinks: SocialLink[] = [
     url: 'https://dev.to/hummingbirdui',
     icon: DevIcon,
   },
+];
+
+export const productLinks: ProductLink[] = [
+  {
+    name: "themewagon",
+    url: "https://themewagon.com/?utm_source=gradnet&utm_medium=referral&utm_campaign=gn_footer&utm_content=themewagon",
+    image: "/images/logos/themewagon.svg",
+    alt: "themewagon",
+    description: "The #1 collection of web templates for you"
+  },
+  {
+    name: "OneSuite",
+    url: "https://onesuite.io/?utm_source=themewagon&utm_medium=referral&utm_campaign=tw_footer_products&utm_content=onesuite",
+    image: "https://themewagon.com/wp-content/themes/themewagon/dist/images/os.png",
+    alt: "OneSuite",
+    description: "Simple Client Portal with Integrated Workflows"
+  },
+  {
+    name: "MailBluster",
+    url: "https://mailbluster.com/?utm_source=themewagon&utm_medium=referral&utm_campaign=tw_footer_products&utm_content=mailbluster",
+    image: "https://themewagon.com/wp-content/themes/themewagon/dist/images/mb.png",
+    alt: "MailBluster",
+    description: "Affordable, Powerful Email Marketing SaaS"
+  },
+  {
+    name: "OneDesk",
+    url: "https://onedesk.so/?utm_source=themewagon&utm_medium=referral&utm_campaign=tw_footer_products&utm_content=onedesk",
+    image: "/images/logos/onedesk.svg",
+    imageDark: "/images/logos/onedesk-dark.svg",
+    alt: "OneDesk",
+    description: "Secure Client Support Platform for Speed & Reliability"
+  },
+  {
+    name: "Gradnet",
+    url: "https://gradnet.io/?utm_source=themewagon&utm_medium=referral&utm_campaign=tw_footer_products&utm_content=gradnet",
+    image: "https://themewagon.com/wp-content/themes/themewagon/dist/images/gn.png",
+    alt: "Gradnet",
+    description: "Alumni Management & Fundraising Platform"
+  }
 ];
 ---
