@@ -121,7 +121,7 @@ function deployVersion(targetBranch, environment) {
     exec(`gh-pages -d dist ${repoFlag} ${branchFlag} ${destFlag} --add --nojekyll`);
 
     const deployUrl =
-      versionInfo.base === '/' ? `https://${target.domain}` : `https://${target.domain}${versionInfo.base}`;
+      versionInfo.base === '/' ? `${target.domain}` : `${target.domain}${versionInfo.base}`;
 
     console.log(`\n✅ Successfully deployed!`);
     console.log(`📍 Live at: ${deployUrl}`);
