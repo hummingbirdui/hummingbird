@@ -20,10 +20,10 @@
   }
 }
 
-@layer utilities {
-  .disable-transition *,
-  .disable-transition *::before,
-  .disable-transition *::after {
+@utility disable-transition {
+  *,
+  *::before,
+  *::after {
     @apply transition-none! animate-none!;
   }
 }
