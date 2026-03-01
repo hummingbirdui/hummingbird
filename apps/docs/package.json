@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "@hummingbirdui/hummingbird": "workspace:*",
+    "@hummingbirdui/browser": "workspace:*",
     "sharp": "^0.34.5",
     "shiki": "^3.22.0"
   },

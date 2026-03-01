@@ -35,6 +35,9 @@ importers:
 
   apps/docs:
     dependencies:
+      '@hummingbirdui/browser':
+        specifier: workspace:*
+        version: link:../../packages/browser
       '@hummingbirdui/hummingbird':
         specifier: workspace:*
         version: link:../../packages/hummingbird
