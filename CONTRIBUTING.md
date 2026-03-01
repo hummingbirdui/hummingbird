@@ -23,7 +23,7 @@ There are multiple ways you can contribute to Hummingbird UI:
 
 ## Reporting Issues
 
-If you find a bug or any issue, please report it using [GitHub Issues](https://github.com/khayrul-dev/hummingbird/issues) with the following details:
+If you find a bug or any issue, please report it using [GitHub Issues](https://github.com/hummingbirdui/hummingbird/issues) with the following details:
 - A clear and descriptive title
 - Steps to reproduce the issue
 - Expected vs actual behavior
@@ -32,7 +32,7 @@ If you find a bug or any issue, please report it using [GitHub Issues](https://g
 
 ## Feature Requests
 
-We welcome feature requests! Before submitting a request, check the existing [Issues](https://github.com/khayrul-dev/hummingbird/issues) to see if a similar idea has already been proposed. If not, create a new issue with the following details:
+We welcome feature requests! Before submitting a request, check the existing [Issues](https://github.com/hummingbirdui/hummingbird/issues) to see if a similar idea has already been proposed. If not, create a new issue with the following details:
 - What problem does this feature solve?
 - How would you expect it to work?
 - Any alternatives you've considered
