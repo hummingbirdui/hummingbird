@@ -1,36 +1,59 @@
-<p align="center">
-  <a href="https://tailwindcss.com" target="_blank">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/tailwindlabs/tailwindcss/HEAD/.github/logo-dark.svg">
-      <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/tailwindlabs/tailwindcss/HEAD/.github/logo-light.svg">
-      <img alt="Tailwind CSS" src="https://raw.githubusercontent.com/tailwindlabs/tailwindcss/HEAD/.github/logo-light.svg" width="350" height="70" style="max-width: 100%;">
-    </picture>
-  </a>
-</p>
+# Hummingbird Play CDN
 
-<p align="center">
-  A utility-first CSS framework for rapidly building custom user interfaces.
-</p>
+Try **Hummingbird** instantly in the browser - no installation, no build tools, no configuration required.
 
-<p align="center">
-    <a href="https://github.com/tailwindlabs/tailwindcss/actions"><img src="https://img.shields.io/github/actions/workflow/status/tailwindlabs/tailwindcss/ci.yml?branch=next" alt="Build Status"></a>
-    <a href="https://www.npmjs.com/package/tailwindcss"><img src="https://img.shields.io/npm/dt/tailwindcss.svg" alt="Total Downloads"></a>
-    <a href="https://github.com/tailwindcss/tailwindcss/releases"><img src="https://img.shields.io/npm/v/tailwindcss.svg" alt="Latest Release"></a>
-    <a href="https://github.com/tailwindcss/tailwindcss/blob/master/LICENSE"><img src="https://img.shields.io/npm/l/tailwindcss.svg" alt="License"></a>
-</p>
+The Play CDN is designed for rapid experimentation and development. It allows you to explore Hummingbird components and Tailwind utilities instantly inside a simple HTML file.
 
----
+The Play CDN is intended for development and testing only. It is <strong>not recommended for production use</strong>.
 
-## Documentation
 
-For full documentation, visit [tailwindcss.com](https://tailwindcss.com).
+## 🚀 How to Use
 
-## Community
+### Play CDN
 
-For help, discussion about best practices, or feature ideas:
+Use the Play CDN to try Hummingbird in the browser without any build step. The Play CDN is designed for development purposes only, and is not intended for production.
 
-[Discuss Tailwind CSS on GitHub](https://github.com/tailwindcss/tailwindcss/discussions)
+Add the Play CDN script tag to the `<head>` of your HTML file, and start using Hummingbird’s and Tailwind’s classes to style the content.
 
-## Contributing
+```html
+<script src="https://cdn.jsdelivr.net/npm/@hummingbirdui/browser@1.0.0/dist/index.global.js"></script>
+```
 
-If you're interested in contributing to Tailwind CSS, please read our [contributing docs](https://github.com/tailwindcss/tailwindcss/blob/next/.github/CONTRIBUTING.md) **before submitting a pull request**.
+### CDN Script
+
+And include the following JavaScript before the end of the `<body>` tag for interactive components.
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/@hummingbirdui/hummingbird@1.0.0/dist/hummingbird.bundle.min.js"></script>
+```
+
+## 📄 Complete Minimal Example
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hummingbird Play CDN</title>
+
+  <!-- Hummingbird Play CDN (Styles + Tailwind) -->
+  <script src="https://cdn.jsdelivr.net/npm/@hummingbirdui/browser@1.0.0/dist/index.global.js"></script>
+</head>
+
+<body>
+  <button class="btn btn-primary">
+    Button
+  </button>
+
+  <!-- Hummingbird Interactive Components -->
+  <script src="https://cdn.jsdelivr.net/npm/@hummingbirdui/hummingbird@1.0.0/dist/hummingbird.bundle.min.js"></script>
+</body>
+</html>
+```
+
+## 🔗 Official Website
+
+Visit the official Hummingbird website:
+
+👉 https://hbui.dev/
