@@ -116,7 +116,7 @@ importers:
     dependencies:
       '@hummingbirdui/hummingbird':
         specifier: workspace:*
-        version: 1.0.0-beta3(@popperjs/core@2.11.8)
+        version: link:../hummingbird
       tailwindcss:
         specifier: 4.2.1
         version: 4.2.1
@@ -989,11 +989,6 @@ packages:
   '@humanwhocodes/retry@0.4.3':
     resolution: {integrity: sha512-bV0Tgo9K4hfPCek+aMAn81RppFKv2ySDQeMoSZuvTASywNTnVJCArCZE2FWqpvIatKu7VMRLWlR1EazvVhDyhQ==}
     engines: {node: '>=18.18'}
-
-  '@hummingbirdui/hummingbird@1.0.0-beta3':
-    resolution: {integrity: sha512-XK66UseFodfdfbSzgB+Ph7twrNA2EX9GqwKn3HiS0UWPkwNS0If6LbWVpsY/mG/dkOonf/XAXgFE7I04GiY0tA==}
-    peerDependencies:
-      '@popperjs/core': ^2.11.8
 
   '@img/colour@1.0.0':
     resolution: {integrity: sha512-A5P/LfWGFSl6nsckYtjw9da+19jB8hkJ6ACTGcDfEJ0aE+l2n2El7dsVM7UVHZQ9s2lmYMWlrS21YLy2IR1LUw==}
@@ -5326,10 +5321,6 @@ snapshots:
   '@humanwhocodes/module-importer@1.0.1': {}
 
   '@humanwhocodes/retry@0.4.3': {}
-
-  '@hummingbirdui/hummingbird@1.0.0-beta3(@popperjs/core@2.11.8)':
-    dependencies:
-      '@popperjs/core': 2.11.8
 
   '@img/colour@1.0.0': {}
 
