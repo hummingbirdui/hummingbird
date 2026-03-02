@@ -1,15 +1,19 @@
-# Hummingbird Play CDN
+<div align="center">
+   <a href="https://hbui.dev/">
+      <img  width="350" src='https://raw.githubusercontent.com/hummingbirdui/hummingbird/87dc656e578d3e6fd0e4a45eabe1f5e02bdeafd1/apps/docs/public/images/logos/hummingbird-lg.svg' alt="Logo" class="w-10 h-10" />
+   </a>
 
-Try **Hummingbird** instantly in the browser - no installation, no build tools, no configuration required.
+   Hummingbird Play CDN for rapid experimentation and development.
 
-The Play CDN is designed for rapid experimentation and development. It allows you to explore Hummingbird components and Tailwind utilities instantly inside a simple HTML file.
+   ![downloads](https://img.shields.io/npm/dt/@hummingbirdui/hummingbird?style=flat-square)
+   ![npm](https://img.shields.io/npm/v/@hummingbirdui/hummingbird?style=flat-square)
+   ![license](https://img.shields.io/npm/l/@hummingbirdui/hummingbird?style=flat-square)
+</div>
 
-The Play CDN is intended for development and testing only. It is <strong>not recommended for production use</strong>.
+---
 
 
-## 🚀 How to Use
-
-### Play CDN
+## How to Use
 
 Use the Play CDN to try Hummingbird in the browser without any build step. The Play CDN is designed for development purposes only, and is not intended for production.
 
@@ -19,41 +23,8 @@ Add the Play CDN script tag to the `<head>` of your HTML file, and start using H
 <script src="https://cdn.jsdelivr.net/npm/@hummingbirdui/browser@1.0.0/dist/index.global.js"></script>
 ```
 
-### CDN Script
+## Documentation
 
-And include the following JavaScript before the end of the `<body>` tag for interactive components.
+Visit the Hummingbird website for complete documentation:
 
-```html
-<script src="https://cdn.jsdelivr.net/npm/@hummingbirdui/hummingbird@1.0.0/dist/hummingbird.bundle.min.js"></script>
-```
-
-## 📄 Complete Minimal Example
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hummingbird Play CDN</title>
-
-  <!-- Hummingbird Play CDN (Styles + Tailwind) -->
-  <script src="https://cdn.jsdelivr.net/npm/@hummingbirdui/browser@1.0.0/dist/index.global.js"></script>
-</head>
-
-<body>
-  <button class="btn btn-primary">
-    Button
-  </button>
-
-  <!-- Hummingbird Interactive Components -->
-  <script src="https://cdn.jsdelivr.net/npm/@hummingbirdui/hummingbird@1.0.0/dist/hummingbird.bundle.min.js"></script>
-</body>
-</html>
-```
-
-## 🔗 Official Website
-
-Visit the official Hummingbird website:
-
-👉 https://hbui.dev/
+https://hbui.dev/

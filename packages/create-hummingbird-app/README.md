@@ -1,6 +1,14 @@
-# Create Hummingbird App
+<div align="center">
+   <a href="https://hbui.dev/">
+      <img  width="350" src='https://raw.githubusercontent.com/hummingbirdui/hummingbird/87dc656e578d3e6fd0e4a45eabe1f5e02bdeafd1/apps/docs/public/images/logos/hummingbird-lg.svg' alt="Logo" class="w-10 h-10" />
+   </a>
 
-A fast and flexible CLI tool to quickly scaffold a new starter project using the **[Hummingbird](https://hbui.dev/)** + **[Tailwind CSS](https://tailwindcss.com/)**.
+   A CLI tool to scaffold Hummingbird starter templates.
+
+   ![downloads](https://img.shields.io/npm/dt/@hummingbirdui/hummingbird?style=flat-square)
+   ![npm](https://img.shields.io/npm/v/@hummingbirdui/hummingbird?style=flat-square)
+   ![license](https://img.shields.io/npm/l/@hummingbirdui/hummingbird?style=flat-square)
+</div>
 
 ## Installation
 

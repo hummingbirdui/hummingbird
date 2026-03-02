@@ -8,7 +8,6 @@
    ![downloads](https://img.shields.io/npm/dt/@hummingbirdui/hummingbird?style=flat-square)
    ![npm](https://img.shields.io/npm/v/@hummingbirdui/hummingbird?style=flat-square)
    ![license](https://img.shields.io/npm/l/@hummingbirdui/hummingbird?style=flat-square)
-   ![bundle size](https://img.shields.io/bundlephobia/min/@hummingbirdui/hummingbird?style=flat-square)
 </div>
 
 ---
