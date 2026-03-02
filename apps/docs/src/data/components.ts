@@ -392,7 +392,7 @@ export const layout: Component[] = [
   },
 ];
 
-export const components = [
+export const components: Component[] = [
   {
     title: 'Accordion',
     url: '/docs/components/accordion',
