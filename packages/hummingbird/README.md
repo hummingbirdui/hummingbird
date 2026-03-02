@@ -86,12 +86,6 @@ Alternatively, if using a build system (like Vite or Webpack), import Hummingbir
 import '@hummingbirdui/hummingbird';
 ```
 
-Another quickest way to include Hummingbird script in a project is via CDN link.
-
-```html
-<script src="https://cdn.jsdelivr.net/npm/@hummingbirdui/hummingbird@0.0.0-insiders.3.0/dist/hummingbird.bundle.min.js"></script>
-```
-
 ## Optimization
 
 To reduce the final bundle size, you can import only the specific JavaScript plugins you need.
@@ -157,7 +151,7 @@ Use the Play CDN to try Hummingbird in the browser without any build step. The P
 Add the Play CDN script tag to the `<head>` of your HTML file, and start using Hummingbird’s and Tailwind’s classes to style the content.
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/@hummingbirdui/browser@1.0.0/dist/index.global.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@hummingbirdui/browser@1.0.3/dist/index.global.js"></script>
 ```
 
 ### CDN Script
@@ -165,7 +159,7 @@ Add the Play CDN script tag to the `<head>` of your HTML file, and start using H
 And include the following JavaScript before the end of the `<body>` tag for interactive components.
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/@hummingbirdui/hummingbird@1.0.0/dist/hummingbird.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@hummingbirdui/hummingbird@1.0.3/dist/hummingbird.bundle.min.js"></script>
 ```
 
 

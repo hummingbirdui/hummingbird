@@ -20,7 +20,7 @@ Use the Play CDN to try Hummingbird in the browser without any build step. The P
 Add the Play CDN script tag to the `<head>` of your HTML file, and start using Hummingbird’s and Tailwind’s classes to style the content.
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/@hummingbirdui/browser@1.0.0/dist/index.global.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@hummingbirdui/browser@1.0.3/dist/index.global.js"></script>
 ```
 
 ## Documentation

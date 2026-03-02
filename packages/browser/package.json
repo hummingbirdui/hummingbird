@@ -1,8 +1,9 @@
 {
   "name": "@hummingbirdui/browser",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "Hummingbird Play CDN for rapid experimentation and development.",
   "main": "./dist/index.global.js",
+  "keywords": ["Hummingbird", "CDN", "Play CDN"],
   "files": [
     "dist"
   ],
