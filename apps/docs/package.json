@@ -13,16 +13,18 @@
     "deploy:staging": "node deployment.js staging"
   },
   "dependencies": {
-    "@hummingbirdui/hummingbird": "workspace:*",
     "@hummingbirdui/browser": "workspace:*",
+    "@hummingbirdui/hummingbird": "workspace:*",
     "sharp": "^0.34.5",
-    "shiki": "^3.22.0"
+    "shiki": "^3.22.0",
+    "tabulator-tables": "^6.3.1"
   },
   "devDependencies": {
     "@astrojs/mdx": "^4.3.10",
     "@docsearch/css": "^3.9.0",
     "@docsearch/js": "^3.9.0",
     "@tailwindcss/vite": "^4.2.1",
+    "@types/tabulator-tables": "^6.3.1",
     "astro": "^5.16.11",
     "astro-auto-import": "^0.4.5",
     "choices.js": "^11.1.0",

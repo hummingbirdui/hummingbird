@@ -1,8 +1,14 @@
 ---
 import AppCode from '@components/common/AppCode.astro';
 
+interface CodeEntry {
+  code: string;
+  lang: string;
+  label?: string;
+}
+
 interface Props {
-  code: string | string[];
+  code: string | string[] | CodeEntry[];
   class?: string;
   id?: string;
   lang?: any;
@@ -10,169 +16,218 @@ interface Props {
   showPreview?: boolean;
 }
 
-const {
-  code: rawCode,
-  class: className,
-  id,
-  lang = 'html',
-  showMarkup = true,
-  showPreview = true,
-  ...rest
-} = Astro.props;
+const { code: rawCode, class: className, id, lang = 'html', showMarkup = true, showPreview = true, ...rest } = Astro.props;
+
+type Tab = { code: string; lang: string; label: string };
 
 function normalizeCode(input: unknown): string {
   if (typeof input === 'string') return input;
-  if (Array.isArray(input)) return input.join('\n');
+  if (Array.isArray(input)) return (input as string[]).join('\n');
   return String((input as any)?.value ?? input ?? '');
 }
 
-const original: string = normalizeCode(rawCode);
+function resolveTabs(): Tab[] {
+  if (Array.isArray(rawCode) && rawCode.length > 0 && typeof rawCode[0] === 'object' && 'code' in (rawCode[0] as any)) {
+    return (rawCode as CodeEntry[]).map((e) => ({
+      code: normalizeCode(e.code),
+      lang: e.lang ?? 'html',
+      label: e.label ?? e.lang?.toUpperCase() ?? 'CODE',
+    }));
+  }
+  return [{ code: normalizeCode(rawCode), lang, label: lang.toUpperCase() }];
+}
+
+const tabs = resolveTabs();
+const isMultiTab = tabs.length > 1;
+const blockId = id ?? `cb-${Math.random().toString(36).slice(2, 8)}`;
 ---
 
-<div class={`mb-6 ${showPreview ? 'border border-light rounded-2xl' : ''}`} id={id}>
-  {
-    showPreview && (
-      <div class={`px-6 py-8 bg-default rounded-2xl ${className ?? ''}`} {...rest}>
-        <Fragment set:html={original} />
-      </div>
-    )
-  }
-  {
-    showMarkup && (
-      <div class={`code-block relative grid ${showPreview ? 'bg-subtle rounded-b-2xl p-6' : ''}`}>
-        {showPreview && (
-          <div class="flex justify-between items-center mb-4">
-            <p class="mb-0 font-semibold text-muted">HTML</p>
-            <div>
-              <button class="btn btn-text-neutral btn-sm gap-1" data-btn-expand>
-                <span class="hidden sm:block" data-btn-expand-text>
-                  Expand Code
-                </span>
-              </button>
-              <button class="btn btn-text-neutral btn-sm sm:min-w-[115.78px]" data-btn-copy>
-                <span class="hidden sm:block" data-btn-expand-text>
-                  Copy Code
-                </span>
-              </button>
+<div class={`mb-6 ${showPreview ? 'border border-light rounded-2xl' : ''}`} id={blockId}>
+  {showPreview && (
+    <div class={`px-6 py-8 bg-default rounded-2xl ${className ?? ''}`} {...rest}>
+      <Fragment set:html={tabs[0].code} />
+    </div>
+  )}
+
+  {showMarkup && (
+    <div
+      class={`code-block relative grid ${showPreview ? 'bg-subtle rounded-b-2xl p-6' : ''}`}
+      data-tabs={isMultiTab ? 'true' : 'false'}
+    >
+      {showPreview && (
+        <div class="flex justify-between items-center mb-4">
+          {isMultiTab ? (
+            <div class="flex gap-1" role="tablist" aria-label="Code tabs">
+              {tabs.map((tab, i) => (
+                <button
+                  class={`btn btn-sm px-3 rounded-md font-semibold transition-colors ${i === 0 ? 'btn-subtle-neutral' : 'btn-text-neutral text-muted'}`}
+                  role="tab"
+                  aria-selected={i === 0 ? 'true' : 'false'}
+                  aria-controls={`${blockId}-panel-${i}`}
+                  data-tab-btn
+                  data-tab-index={i}
+                >
+                  {tab.label}
+                </button>
+              ))}
             </div>
+          ) : (
+            <p class="mb-0 font-semibold text-muted">{tabs[0].label}</p>
+          )}
+
+          <div>
+            <button class="btn btn-text-neutral btn-sm gap-1" data-btn-expand>
+              <span class="hidden sm:block" data-btn-expand-text>Expand Code</span>
+            </button>
+            <button class="btn btn-text-neutral btn-sm sm:min-w-[115.78px]" data-btn-copy>
+              <span class="hidden sm:block" data-btn-copy-text>Copy Code</span>
+            </button>
           </div>
-        )}
+        </div>
+      )}
+
+      {tabs.map((tab, i) => (
         <AppCode
-          class={`${!showPreview ? 'py-7! px-4 max-h-full' : 'p-4 max-h-70'}`}
+          id={`${blockId}-panel-${i}`}
+          role="tabpanel"
+          data-tab-panel
+          data-tab-index={i}
+          hidden={i !== 0}
+          class={!showPreview ? 'py-7! px-4 max-h-full' : 'p-4 max-h-70'}
           data-astro-code
-          code={original}
-          lang={lang}
+          code={tab.code}
+          lang={tab.lang}
         />
-        {!showPreview && (
-          <button class="btn btn-icon p-0 absolute top-3 right-3" data-btn-copy-secondary>
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
-              <path
-                fill="currentColor"
-                d="M9 18q-.825 0-1.412-.587T7 16V4q0-.825.588-1.412T9 2h9q.825 0 1.413.588T20 4v12q0 .825-.587 1.413T18 18zm0-2h9V4H9zm-4 6q-.825 0-1.412-.587T3 20V7q0-.425.288-.712T4 6t.713.288T5 7v13h10q.425 0 .713.288T16 21t-.288.713T15 22zm4-6V4z"
-              />
-            </svg>
-          </button>
-        )}
-      </div>
-    )
-  }
+      ))}
+
+      {!showPreview && (
+        <button class="btn btn-icon p-0 absolute top-3 right-3" data-btn-copy-secondary>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
+            <path fill="currentColor" d="M9 18q-.825 0-1.412-.587T7 16V4q0-.825.588-1.412T9 2h9q.825 0 1.413.588T20 4v12q0 .825-.587 1.413T18 18zm0-2h9V4H9zm-4 6q-.825 0-1.412-.587T3 20V7q0-.425.288-.712T4 6t.713.288T5 7v13h10q.425 0 .713.288T16 21t-.288.713T15 22zm4-6V4z" />
+          </svg>
+        </button>
+      )}
+    </div>
+  )}
 </div>
 
 <script>
   (() => {
-    const codeBlocks = document.querySelectorAll('.code-block');
+    const COLLAPSED_HEIGHT = 280;
 
-    codeBlocks.forEach((codeBlock) => {
-      const expandBtn = codeBlock.querySelector('[data-btn-expand]');
-      const copyBtn = codeBlock.querySelector('[data-btn-copy]');
-      const copyBtnSecondary = codeBlock.querySelector('[data-btn-copy-secondary]');
+    const icons = {
+      expand:   `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="m12 19.15l3.875-3.875q.3-.3.7-.3t.7.3t.3.713t-.3.712l-3.85 3.875q-.575.575-1.425.575t-1.425-.575L6.7 16.7q-.3-.3-.288-.712t.313-.713t.713-.3t.712.3zm0-14.3L8.15 8.7q-.3.3-.7.288t-.7-.288q-.3-.3-.312-.712t.287-.713l3.85-3.85Q11.15 2.85 12 2.85t1.425.575l3.85 3.85q.3.3.288.713t-.313.712q-.3.275-.7.288t-.7-.288z"/></svg>`,
+      collapse: `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="m12 17.4l-3.9 3.9q-.275.275-.7.275t-.7-.275t-.275-.7t.275-.7l3.875-3.875q.575-.575 1.425-.575t1.425.575L17.3 19.9q.275.275.275.7t-.275.7t-.7.275t-.7-.275zm0-10.8l3.9-3.9q.275-.275.7-.275t.7.275t.275.7t-.275.7l-3.875 3.875Q12.85 8.55 12 8.55t-1.425-.575L6.7 4.1q-.275-.275-.275-.7t.275-.7t.7-.275t.7.275z"/></svg>`,
+      copy:     `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="M9 18q-.825 0-1.412-.587T7 16V4q0-.825.588-1.412T9 2h9q.825 0 1.413.588T20 4v12q0 .825-.587 1.413T18 18zm0-2h9V4H9zm-4 6q-.825 0-1.412-.587T3 20V7q0-.425.288-.712T4 6t.713.288T5 7v13h10q.425 0 .713.288T16 21t-.288.713T15 22zm4-6V4z"/></svg>`,
+      check:    `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="m9.55 15.15l8.475-8.475q.3-.3.7-.3t.7.3t.3.713t-.3.712l-9.175 9.2q-.3.3-.7.3t-.7-.3L4.55 13q-.3-.3-.288-.712t.313-.713t.713-.3t.712.3z"/></svg>`,
+    };
 
+    document.querySelectorAll<HTMLElement>('.code-block').forEach((block) => {
+      const isMultiTab = block.dataset.tabs === 'true';
+      const expandBtn = block.querySelector<HTMLButtonElement>('[data-btn-expand]');
+      const copyBtn = block.querySelector('[data-btn-copy]');
+      const copyBtnSecondary = block.querySelector('[data-btn-copy-secondary]');
       const expandBtnText = expandBtn?.querySelector('[data-btn-expand-text]');
-      const copyBtnText = copyBtn?.querySelector('[data-btn-expand-text]');
-      const codeContainer = codeBlock.querySelector('[data-astro-code]');
-      const expandSpan = document.createElement('span');
-      const copySpan = document.createElement('span');
+      const copyBtnText = copyBtn?.querySelector('[data-btn-copy-text]');
+
+      // Inject icon spans
+      const expandSpan = Object.assign(document.createElement('span'), { innerHTML: icons.expand });
+      const copySpan = Object.assign(document.createElement('span'), { innerHTML: icons.copy });
       expandBtn?.prepend(expandSpan);
       copyBtn?.prepend(copySpan);
 
-      const expandIcon = `
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
-      <path fill="currentColor" d="m12 19.15l3.875-3.875q.3-.3.7-.3t.7.3t.3.713t-.3.712l-3.85 3.875q-.575.575-1.425.575t-1.425-.575L6.7 16.7q-.3-.3-.288-.712t.313-.713t.713-.3t.712.3zm0-14.3L8.15 8.7q-.3.3-.7.288t-.7-.288q-.3-.3-.312-.712t.287-.713l3.85-3.85Q11.15 2.85 12 2.85t1.425.575l3.85 3.85q.3.3.288.713t-.313.712q-.3.275-.7.288t-.7-.288z"/>
-      </svg>`;
-      const collapseIcon = `
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
-      <path fill="currentColor" d="m12 17.4l-3.9 3.9q-.275.275-.7.275t-.7-.275t-.275-.7t.275-.7l3.875-3.875q.575-.575 1.425-.575t1.425.575L17.3 19.9q.275.275.275.7t-.275.7t-.7.275t-.7-.275zm0-10.8l3.9-3.9q.275-.275.7-.275t.7.275t.275.7t-.275.7l-3.875 3.875Q12.85 8.55 12 8.55t-1.425-.575L6.7 4.1q-.275-.275-.275-.7t.275-.7t.7-.275t.7.275z"/>
-      </svg>`;
-      const copyIcon = `
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
-      <path fill="currentColor" d="M9 18q-.825 0-1.412-.587T7 16V4q0-.825.588-1.412T9 2h9q.825 0 1.413.588T20 4v12q0 .825-.587 1.413T18 18zm0-2h9V4H9zm-4 6q-.825 0-1.412-.587T3 20V7q0-.425.288-.712T4 6t.713.288T5 7v13h10q.425 0 .713.288T16 21t-.288.713T15 22zm4-6V4z"/>
-      </svg>`;
-      const copyCheckIcon = `
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="m9.55 15.15l8.475-8.475q.3-.3.7-.3t.7.3t.3.713t-.3.712l-9.175 9.2q-.3.3-.7.3t-.7-.3L4.55 13q-.3-.3-.288-.712t.313-.713t.713-.3t.712.3z"/></svg>`;
-
-      expandSpan.innerHTML = expandIcon;
-      copySpan.innerHTML = copyIcon;
-
+      // State
+      let activeTabIndex = 0;
       let expanded = false;
       let revertTimer: ReturnType<typeof setTimeout> | null = null;
 
-      const COLLAPSED_HEIGHT = 280;
+      // Helpers
+      const getActivePanel = (): HTMLElement | null => {
+        const panels = block.querySelectorAll<HTMLElement>('[data-tab-panel]');
+        return panels[isMultiTab ? activeTabIndex : 0] ?? null;
+      };
 
-      if (codeContainer && expandBtn) {
-        const contentHeight = codeContainer.scrollHeight;
+      const measureHeight = (panel: HTMLElement): number => {
+        if (!panel.hidden) return panel.scrollHeight;
+        panel.hidden = false;
+        const h = panel.scrollHeight;
+        panel.hidden = true;
+        return h;
+      };
 
-        if (contentHeight <= COLLAPSED_HEIGHT) {
-          (expandBtn as HTMLButtonElement).style.display = 'none';
-        } else {
-          (codeContainer as HTMLElement).style.maxHeight = `${COLLAPSED_HEIGHT}px`;
+      const syncExpandBtn = () => {
+        const panel = getActivePanel();
+        if (!panel || !expandBtn) return;
+        const isTall = measureHeight(panel) > COLLAPSED_HEIGHT;
+        expandBtn.style.display = isTall ? '' : 'none';
+        if (expanded) {
+          expanded = false;
+          if (expandBtnText) expandBtnText.textContent = 'Expand Code';
+          expandSpan.innerHTML = icons.expand;
         }
+        panel.style.maxHeight = isTall ? `${COLLAPSED_HEIGHT}px` : 'none';
+      };
+
+      // Initial height setup
+      block.querySelectorAll<HTMLElement>('[data-tab-panel]').forEach((panel) => {
+        panel.style.maxHeight = measureHeight(panel) > COLLAPSED_HEIGHT ? `${COLLAPSED_HEIGHT}px` : 'none';
+      });
+      syncExpandBtn();
+
+      // Tab switching
+      if (isMultiTab) {
+        const tabBtns = block.querySelectorAll<HTMLButtonElement>('[data-tab-btn]');
+        const tabPanels = block.querySelectorAll<HTMLElement>('[data-tab-panel]');
+        tabBtns.forEach((btn) => {
+          btn.addEventListener('click', () => {
+            activeTabIndex = Number(btn.dataset.tabIndex);
+            tabBtns.forEach((b, i) => {
+              const active = i === activeTabIndex;
+              b.setAttribute('aria-selected', String(active));
+              b.classList.toggle('btn-subtle-neutral', active);
+              b.classList.toggle('btn-text-neutral', !active);
+              b.classList.toggle('text-muted', !active);
+            });
+            tabPanels.forEach((p, i) => (p.hidden = i !== activeTabIndex));
+            syncExpandBtn();
+          });
+        });
       }
 
-      // Expand/collapse
+      // Expand / collapse
       expandBtn?.addEventListener('click', () => {
+        const panel = getActivePanel();
+        if (!panel) return;
         expanded = !expanded;
-        if (expandBtnText) {
-          expandBtnText.textContent = expanded ? 'Collapse Code' : 'Expand Code';
-        }
-        expandSpan.innerHTML = expanded ? collapseIcon : expandIcon;
-        if (codeContainer) {
-          (codeContainer as HTMLElement).style.maxHeight = expanded
-            ? `${codeContainer.scrollHeight}px`
-            : `${COLLAPSED_HEIGHT}px`;
-        }
+        if (expandBtnText) expandBtnText.textContent = expanded ? 'Collapse Code' : 'Expand Code';
+        expandSpan.innerHTML = expanded ? icons.collapse : icons.expand;
+        panel.style.maxHeight = expanded ? `${panel.scrollHeight}px` : `${COLLAPSED_HEIGHT}px`;
       });
 
       // Copy to clipboard
-      const handleCopy = (copyBtn?: Element, copyIconElement?: Element, copyBtnText?: Element) => {
-        copyBtn?.addEventListener('click', async () => {
-          if (!codeContainer || !copyBtn) return;
-
-          const codeText = ((codeContainer as HTMLElement).innerText ?? codeContainer.textContent ?? '').trim();
-          if (!codeText) return;
-
+      const handleCopy = (btn: Element, iconEl: Element, textEl?: Element | null) => {
+        btn.addEventListener('click', async () => {
+          const panel = getActivePanel();
+          if (!panel) return;
+          const text = (panel.innerText ?? panel.textContent ?? '').trim();
+          if (!text) return;
           try {
-            await navigator.clipboard.writeText(codeText);
-
-            if (copyIconElement) copyIconElement.innerHTML = copyCheckIcon;
-            if (copyBtnText) copyBtnText.textContent = 'Copied';
-
+            await navigator.clipboard.writeText(text);
+            iconEl.innerHTML = icons.check;
+            if (textEl) textEl.textContent = 'Copied';
             if (revertTimer) clearTimeout(revertTimer);
             revertTimer = setTimeout(() => {
-              if (copyIconElement) copyIconElement.innerHTML = copyIcon;
-              if (copyBtnText) copyBtnText.textContent = 'Copy Code';
+              iconEl.innerHTML = icons.copy;
+              if (textEl) textEl.textContent = 'Copy Code';
             }, 1600);
-          } catch (err) {
-            if (copyBtnText) copyBtnText.textContent = 'Copy failed';
+          } catch {
+            if (textEl) textEl.textContent = 'Copy failed';
           }
         });
       };
 
-      if (copyBtn && copyBtnText) {
-        handleCopy(copyBtn, copySpan, copyBtnText);
-      }
-      if (copyBtnSecondary) {
-        handleCopy(copyBtnSecondary, copyBtnSecondary);
-      }
+      if (copyBtn) handleCopy(copyBtn, copySpan, copyBtnText);
+      if (copyBtnSecondary) handleCopy(copyBtnSecondary, copyBtnSecondary);
     });
   })();
 </script>

@@ -1,0 +1,1032 @@
+.tabulator {
+  /* ========================================================================== */
+  /* Variables                                                                  */
+  /* ========================================================================== */
+  --table-bg: initial;
+  --table-color: var(--text-color-muted);
+  --table-font-size: var(--text-sm);
+
+  --table-head-bg: var(--background-color-subtle);
+  --table-head-color: var(--text-color-default);
+
+  --table-head-col-padding-x: --spacing(4);
+  --table-head-col-padding-y: --spacing(3);
+
+  --table-range-highlight-bg: var(--color-primary-lighter);
+  --table-range-selected-bg: var(--color-primary);
+  --table-range-selected-color: var(--color-contrast);
+
+  --table-cell-padding-x: --spacing(4);
+  --table-cell-padding-y: --spacing(4);
+
+  --table-col-sorter-arrow: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiBhcmlhLWhpZGRlbj0idHJ1ZSIgcm9sZT0iaW1nIiBjbGFzcz0iaWNvbmlmeSBpY29uaWZ5LS1tYXRlcmlhbC1zeW1ib2xzIE11aURhdGFHcmlkLXNvcnRJY29uIE11aUJveC1yb290IGF1cm9yYS11YXVoZHoiIGlkPSJfcl9mNV8iIHdpZHRoPSIxZW0iIGhlaWdodD0iMWVtIiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9ImN1cnJlbnRDb2xvciIgZD0iTTQgMThxLS40MjUgMC0uNzEyLS4yODhUMyAxN3QuMjg4LS43MTJUNCAxNmg0cS40MjUgMCAuNzEzLjI4OFQ5IDE3dC0uMjg4LjcxM1Q4IDE4em0wLTVxLS40MjUgMC0uNzEyLS4yODhUMyAxMnQuMjg4LS43MTJUNCAxMWgxMHEuNDI1IDAgLjcxMy4yODhUMTUgMTJ0LS4yODguNzEzVDE0IDEzem0wLTVxLS40MjUgMC0uNzEyLS4yODhUMyA3dC4yODgtLjcxMlQ0IDZoMTZxLjQyNSAwIC43MTMuMjg4VDIxIDd0LS4yODguNzEzVDIwIDh6Ij48L3BhdGg+PC9zdmc+');
+  --table-border-color: var(--border-color-light);
+  --table-striped-bg: var(--background-color-muted);
+  --table-striped-color: var(--text-color-muted);
+  --table-active-bg: var(--background-color-highlight);
+  --table-active-color: var(--text-color-default);
+  --table-hover-bg: var(--background-color-highlight);
+  --table-hover-color: var(--text-color-muted);
+
+  /* ========================================================================== */
+  /* Base                                                                       */
+  /* ========================================================================== */
+  @apply relative bg-(--table-bg) text-[var(--table-color)] text-sm text-left rounded-t-2xl overflow-hidden translate-z-0;
+
+  &[tabulator-layout='fitDataFill'] {
+    .tabulator-tableholder {
+      .tabulator-table {
+        @apply min-w-full;
+      }
+    }
+  }
+
+  &[tabulator-layout='fitDataTable'] {
+    @apply inline-block;
+  }
+
+  &.tabulator-block-select {
+    @apply select-none;
+  }
+
+  &.tabulator-ranges {
+    .tabulator-cell:not(.tabulator-editing) {
+      @apply select-none;
+    }
+  }
+
+  /* ========================================================================== */
+  /* Table Header                                                               */
+  /* ========================================================================== */
+  .tabulator-header {
+    @apply relative box-border w-full bg-(--table-head-bg) font-medium text-(--table-head-color) whitespace-nowrap overflow-hidden outline-none;
+
+    &.tabulator-header-hidden {
+      @apply hidden;
+    }
+
+    .tabulator-header-contents {
+      @apply relative overflow-hidden;
+
+      .tabulator-headers {
+        @apply inline-block;
+      }
+    }
+
+    .tabulator-col {
+      @apply inline-flex relative box-border flex-col justify-start text-left align-bottom overflow-hidden;
+
+      &.tabulator-moving {
+        @apply absolute border-[1px_solid_var(--table-border-color)] bg-(--table-head-bg) pointer-events-none;
+      }
+
+      &.tabulator-range-highlight {
+        @apply bg-(--table-range-highlight-bg);
+      }
+
+      &.tabulator-range-selected {
+        @apply bg-(--table-range-selected-bg) text-(--table-range-selected-color);
+      }
+
+      .tabulator-col-content {
+        @apply box-border relative px-(--table-head-col-padding-x) py-(--table-head-col-padding-y);
+
+        &:first-of-type {
+          @apply pl-6;
+        }
+
+        &:last-of-type {
+          @apply pr-6;
+        }
+
+        .tabulator-header-popup-button {
+          @apply px-2;
+
+          &:hover {
+            @apply cursor-pointer opacity-60;
+          }
+        }
+
+        .tabulator-col-title-holder {
+          @apply relative flex items-center gap-2;
+        }
+
+        .tabulator-col-title {
+          @apply box-border whitespace-nowrap overflow-hidden text-ellipsis align-bottom;
+
+          &.tabulator-col-title-wrap {
+            @apply whitespace-normal text-ellipsis;
+          }
+
+          /* TODO: Fix this */
+          .tabulator-title-editor {
+            @apply box-border w-full border border-(--table-border-color) p-1 bg-inherit;
+          }
+
+          .tabulator-header-popup-button + .tabulator-title-editor {
+            @apply w-[calc(100%-var(--spacing(5.5)))];
+          }
+        }
+
+        .tabulator-col-sorter {
+          @apply flex items-center;
+
+          .tabulator-arrow {
+            @apply size-4 dark:invert-100;
+            background-image: var(--table-col-sorter-arrow);
+          }
+        }
+      }
+
+      /* TODO: Test */
+      &.tabulator-col-group {
+        .tabulator-col-group-cols {
+          @apply relative flex overflow-hidden -mr-px;
+        }
+      }
+
+      /* TODO: Test */
+      .tabulator-header-filter {
+        @apply relative box-border mt-0.5 w-full text-center;
+
+        textarea {
+          @apply h-auto!;
+        }
+
+        svg {
+          @apply mt-0.75;
+        }
+
+        input::-ms-clear {
+          @apply size-0;
+        }
+      }
+
+      &.tabulator-sortable {
+        .tabulator-col-title {
+          /* @apply pr-6.25; */
+        }
+
+        /* TODO: Test */
+        @media (hover: hover) and (pointer: fine) {
+          &.tabulator-col-sorter-element:hover {
+            @apply cursor-pointer;
+          }
+        }
+
+        &[aria-sort='none'] {
+          .tabulator-col-content {
+            .tabulator-col-sorter {
+              .tabulator-arrow {
+                @apply opacity-0 transition-opacity;
+              }
+            }
+          }
+        }
+
+        @media (hover: hover) and (pointer: fine) {
+          &[aria-sort='none']:hover {
+            .tabulator-col-content {
+              .tabulator-col-sorter {
+                .tabulator-arrow {
+                  @apply opacity-50 cursor-pointer transition-opacity;
+                }
+              }
+            }
+          }
+        }
+
+        &[aria-sort='ascending'] {
+          .tabulator-col-content {
+            .tabulator-col-sorter {
+              .tabulator-arrow {
+                @apply scale-y-[-1];
+              }
+            }
+          }
+        }
+      }
+
+      &.tabulator-col-vertical {
+        .tabulator-col-content {
+          .tabulator-col-title {
+            @apply flex items-center justify-center;
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+          }
+        }
+
+        &.tabulator-col-vertical-flip {
+          .tabulator-col-title {
+            @apply transform rotate-180;
+          }
+        }
+
+        &.tabulator-sortable {
+          .tabulator-col-title {
+            @apply pr-0 pt-5;
+          }
+
+          &.tabulator-col-vertical-flip {
+            .tabulator-col-title {
+              @apply pr-0 pb-5;
+            }
+          }
+
+          .tabulator-col-sorter {
+            @apply justify-center left-0 right-0 top-1 bottom-auto;
+          }
+        }
+      }
+    }
+
+    .tabulator-frozen {
+      @apply sticky left-0 z-11;
+
+      &.tabulator-frozen-left {
+        @apply border-e-2 border-(--table-border-color);
+      }
+
+      &.tabulator-frozen-right {
+        @apply border-s-2 border-(--table-border-color);
+      }
+    }
+
+    .tabulator-frozen-rows-holder {
+      @apply inline-block;
+
+      &:empty {
+        @apply hidden;
+      }
+    }
+
+    .tabulator-calcs-holder {
+      @apply box-border inline-block bg-(--table-head-bg)!;
+
+      .tabulator-row {
+        .tabulator-col-resize-handle {
+          @apply hidden;
+        }
+      }
+    }
+  }
+
+  /* ========================================================================== */
+  /* Table                                                                      */
+  /* ========================================================================== */
+  .tabulator-tableholder {
+    @apply relative w-full whitespace-nowrap overflow-auto;
+
+    &:focus {
+      @apply outline-none;
+    }
+
+    .tabulator-placeholder {
+      @apply box-border flex items-center justify-center min-w-full w-full;
+
+      &[tabulator-render-mode='virtual'] {
+        @apply min-h-full;
+      }
+
+      .tabulator-placeholder-contents {
+        @apply inline-block text-center p-2.5 text-(--table-color) font-medium whitespace-normal text-lg;
+      }
+    }
+
+    .tabulator-table {
+      @apply relative inline-block bg-(--table-bg) whitespace-nowrap overflow-visible text-(--table-color);
+
+      .tabulator-row.tabulator-calcs {
+        @apply font-medium bg-(--table-head-bg)!;
+
+        &.tabulator-calcs-top {
+          @apply border-b-2 border-(--table-border-color);
+        }
+
+        &.tabulator-calcs-bottom {
+          @apply border-t-2 border-(--table-border-color);
+        }
+      }
+    }
+
+    .tabulator-range-overlay {
+      @apply absolute inset-0 z-10 pointer-events-none;
+
+      .tabulator-range {
+        @apply absolute box-border border border-primary;
+
+        &.tabulator-range-active::after {
+          @apply content-[''] absolute -right-0.75 -bottom-0.75 size-6 bg-primary-lighter rounded-full;
+        }
+      }
+
+      .tabulator-range-cell-active {
+        @apply absolute box-border border-2 border-primary;
+      }
+    }
+  }
+
+  /* ========================================================================== */
+  /* Table Footer                                                               */
+  /* ========================================================================== */
+  .tabulator-footer {
+    @apply bg-(--table-head-bg) text-xs text-(--table-color) rounded-b-2xl overflow-hidden font-medium whitespace-nowrap select-none;
+
+    .tabulator-footer-contents {
+      @apply flex flex-row items-center justify-between px-6 py-3;
+
+      &:empty {
+        @apply hidden;
+      }
+    }
+
+    .tabulator-spreadsheet-tabs {
+      @apply -mt-1.25 overflow-x-auto;
+
+      .tabulator-spreadsheet-tab {
+        @apply inline-block p-1.25 border border-(--table-border-color) border-t-0 rounded-b-md text-sm;
+
+        &:hover {
+          @apply opacity-70 cursor-pointer;
+        }
+
+        &.tabulator-spreadsheet-tab-active {
+          @apply bg-(--table-head-bg);
+        }
+      }
+    }
+
+    .tabulator-calcs-holder {
+      @apply box-border w-full text-left bg-(--table-head-bg) overflow-hidden;
+
+      .tabulator-row {
+        @apply inline-block bg-(--table-head-bg)!;
+
+        .tabulator-col-resize-handle {
+          @apply hidden;
+        }
+      }
+    }
+
+    .tabulator-calcs-holder:only-child {
+      @apply mb-1.25 border-b-0;
+    }
+
+    & > * + .tabulator-page-counter {
+      @apply ms-2.5;
+    }
+
+    .tabulator-page-counter {
+      @apply font-normal;
+    }
+
+    .tabulator-paginator {
+      @apply flex-1 text-right text-(--table-color) space-x-1;
+
+      .tabulator-page {
+        @apply btn btn-text-neutral btn-sm;
+      }
+
+      .tabulator-pages {
+        @apply space-x-1;
+
+        .tabulator-page {
+          @apply btn-sm size-7;
+
+          &.active {
+            @apply btn-primary;
+          }
+
+          &:disabled {
+            @apply opacity-50;
+          }
+        }
+      }
+    }
+
+    .tabulator-page-size {
+      @apply inline-block my-0 mx-1.25 px-1.25 py-0.5 border border-(--table-border-color) rounded-sm;
+    }
+
+    .tabulator-page {
+      /* @apply btn-circle btn-text-neutral btn-sm; */
+      /* 
+      &.active {
+        @apply btn-primary;
+      }
+
+      &:disabled {
+        @apply opacity-50;
+      } */
+
+      /* TODO: Test */
+      /* @media (hover: hover) and (pointer: fine) {
+        &:not(disabled):hover {
+          @apply cursor-pointer bg-[var(--table-head-bg)]/70;
+        }
+      } */
+    }
+  }
+
+  /* ========================================================================== */
+  /* Table Col Resize Handle                                                    */
+  /* ========================================================================== */
+  .tabulator-col-resize-handle {
+    @apply relative inline-block w-1.5 -mx-0.75 z-11 align-middle;
+
+    &:last-of-type {
+      @apply w-0.75 mr-0;
+    }
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .tabulator-col-resize-handle:hover {
+      @apply cursor-ew-resize;
+    }
+  }
+
+  /* ========================================================================== */
+  /* Table Col Resize Guide                                                     */
+  /* ========================================================================== */
+  .tabulator-col-resize-guide {
+    @apply absolute left-0 w-full h-1 mt-[-0.5px] bg-(--table-border-color) opacity-50;
+  }
+
+  /* ========================================================================== */
+  /* Table Alert                                                                */
+  /* ========================================================================== */
+  .tabulator-alert {
+    @apply absolute flex items-center top-0 left-0 z-100 size-full text-center bg-black/40;
+
+    .tabulator-alert-msg {
+      @apply inline-block mx-auto py-2.5 px-5 rounded-lg bg-subtle font-medium text-sm shadow-xs;
+
+      &.tabulator-alert-state-msg {
+        @apply text-default;
+      }
+      &.tabulator-alert-state-error {
+        @apply border-2 border-danger bg-danger-lighter;
+      }
+    }
+  }
+}
+
+/* ========================================================================== */
+/* Table Row                                                                  */
+/* ========================================================================== */
+.tabulator-row {
+  @apply relative box-border border-b border-(--table-border-color);
+
+  &.tabulator-row-even {
+    @apply bg-(--table-striped-bg);
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &.tabulator-selectable:hover {
+      @apply bg-(--table-hover-bg) cursor-pointer;
+    }
+  }
+
+  &.tabulator-selected {
+    @apply bg-(--table-active-bg);
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &.tabulator-selected:hover {
+      @apply bg-(--table-active-bg) cursor-pointer;
+    }
+  }
+
+  &.tabulator-row-moving {
+    @apply bg-(--table-active-bg) border border-(--table-border-color);
+  }
+
+  &.tabulator-moving {
+    @apply absolute border-y-(--table-border-color) pointer-events-none z-15;
+  }
+
+  &.tabulator-range-highlight {
+    .tabulator-cell.tabulator-range-row-header {
+      @apply bg-(--table-active-bg) text-(--table-active-color);
+    }
+
+    &.tabulator-range-selected {
+      .tabulator-cell.tabulator-range-row-header {
+        @apply bg-primary text-contrast;
+      }
+    }
+  }
+
+  &.tabulator-range-selected {
+    .tabulator-cell.tabulator-range-row-header {
+      @apply bg-primary text-contrast;
+    }
+  }
+
+  .tabulator-row-resize-handle {
+    @apply absolute right-0 bottom-0 left-0 h-1.25;
+
+    &.prev {
+      @apply top-0 bottom-auto;
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        @apply cursor-ns-resize;
+      }
+    }
+  }
+
+  /* TODO: Test */
+  .tabulator-responsive-collapse {
+    @apply box-border p-1.25;
+
+    &:empty {
+      @apply hidden;
+    }
+
+    table {
+      @apply text-(--table-font-size);
+    }
+
+    table tr td {
+      @apply relative;
+
+      &:first-of-type {
+        @apply pe-2.5;
+      }
+    }
+  }
+
+  .tabulator-cell {
+    @apply inline-block relative box-border px-(--table-cell-padding-x) py-(--table-cell-padding-y) align-middle whitespace-nowrap overflow-hidden text-ellipsis outline-none;
+
+    &:first-of-type {
+      @apply pl-6;
+    }
+
+    &:last-of-type {
+      @apply pr-6;
+    }
+
+    &.tabulator-row-header {
+      @apply bg-(--table-active-bg) text-(--table-active-color);
+    }
+
+    &.tabulator-frozen {
+      @apply inline-block sticky left-0 bg-inherit z-11;
+
+      &.tabulator-frozen-left {
+        @apply border-e-2 border-(--table-border-color);
+      }
+
+      &.tabulator-frozen-right {
+        @apply border-s-2 border-(--table-border-color);
+      }
+    }
+
+    &.tabulator-editing {
+      @apply border border-primary outline-none;
+
+      input,
+      select {
+        @apply bg-transparent outline-none;
+      }
+    }
+
+    &.tabulator-validation-fail {
+      @apply border border-danger;
+
+      input,
+      select {
+        @apply border bg-transparent text-danger;
+      }
+    }
+
+    &.tabulator-row-handle {
+      @apply inline-flex items-center justify-center select-none;
+
+      .tabulator-row-handle-box {
+        @apply w-8/10;
+
+        .tabulator-row-handle-bar {
+          @apply w-full h-0.75 mt-0.5 bg-(--table-border-color);
+        }
+      }
+    }
+
+    &.tabulator-range-selected:not(.tabulator-range-only-cell-selected):not(.tabulator-range-row-header) {
+      @apply bg-primary-lighter;
+    }
+
+    .tabulator-data-tree-branch-empty {
+      @apply inline-block w-1.75;
+    }
+
+    .tabulator-data-tree-branch {
+      @apply inline-block align-middle h-2.25 w-1.75 -mt-2.25 mr-1.25 rounded-bl-xs border-l-2 border-b-2 border-(--table-border-color);
+    }
+
+    .tabulator-data-tree-control {
+      @apply inline-flex items-center justify-center align-middle size-2.75 mr-1.25 rounded-xs border border-(--table-border-color) bg-black/10 overflow-hidden;
+
+      .tabulator-data-tree-control-collapse {
+        @apply inline-block relative h-1.75 w-px bg-transparent;
+
+        &::after {
+          @apply absolute content-[""] -left-0.75 top-0.75 h-px w-1.75 bg-(--table-border-color);
+        }
+      }
+
+      .tabulator-data-tree-control-expand {
+        @apply inline-block relative h-1.75 w-px bg-(--table-border-color);
+
+        &::after {
+          @apply absolute content-[''] -left-0.75 top-0.75 h-px w-1.75 bg-(--table-border-color);
+        }
+      }
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      .tabulator-data-tree-control:hover {
+        @apply cursor-pointer bg-black/20;
+      }
+    }
+
+    .tabulator-responsive-collapse-toggle {
+      @apply inline-flex items-center justify-center select-none size-3.75 rounded-full bg-(--table-border-color) text-contrast font-medium text-base;
+
+      &.open {
+        .tabulator-responsive-collapse-toggle-close {
+          @apply inline-flex;
+        }
+        .tabulator-responsive-collapse-toggle-open {
+          @apply hidden;
+        }
+      }
+
+      svg {
+        @apply stroke-contrast;
+      }
+
+      .tabulator-responsive-collapse-toggle-close {
+        @apply hidden;
+      }
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      .tabulator-responsive-collapse-toggle:hover {
+        @apply opacity-70 cursor-pointer;
+      }
+    }
+
+    .tabulator-traffic-light {
+      @apply inline-block size-3.5 rounded-full;
+    }
+  }
+
+  &.tabulator-group {
+    @apply box-border p-4 bg-(--table-head-bg) font-semibold min-w-full;
+
+    &.tabulator-group-visible {
+      .tabulator-arrow {
+        @apply mr-2.5 border-l-6 border-r-6 border-transparent border-t-6 border-b-0 border-t-(--table-color);
+      }
+    }
+
+    &.tabulator-group-level-1 {
+      @apply pl-7.5;
+    }
+
+    &.tabulator-group-level-2 {
+      @apply pl-12.5;
+    }
+
+    &.tabulator-group-level-3 {
+      @apply pl-17.5;
+    }
+
+    &.tabulator-group-level-4 {
+      @apply pl-22.5;
+    }
+
+    &.tabulator-group-level-5 {
+      @apply pl-27.5;
+    }
+
+    .tabulator-group-toggle {
+      @apply inline-block;
+    }
+
+    .tabulator-arrow {
+      @apply inline-block size-0 mr-4 border-t-6 border-b-6 border-transparent border-r-0 border-l-6 border-l-(--table-color) align-middle;
+    }
+
+    span {
+      @apply ml-2.5 text-primary;
+    }
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &.tabulator-group:hover {
+      @apply cursor-pointer bg-(--table-hover-bg);
+    }
+  }
+}
+
+/* ========================================================================== */
+/* Table Toggle                                                               */
+/* ========================================================================== */
+.tabulator-toggle {
+  @apply box-border flex border border-(--table-border-color) bg-(--table-head-bg);
+
+  &.tabulator-toggle-on {
+    @apply bg-primary;
+  }
+
+  .tabulator-toggle-switch {
+    @apply box-border border border-(--table-border-color) bg-white;
+  }
+}
+
+/* ========================================================================== */
+/* Table Popup                                                                */
+/* ========================================================================== */
+.tabulator-popup-container {
+  @apply absolute inline-block box-border bg-subtle border border-(--table-border-color) shadow-sm text-sm overflow-y-auto z-10000;
+}
+
+.tabulator-popup {
+  @apply p-1.25 rounded-sm;
+}
+
+/* ========================================================================== */
+/* Table Tooltip                                                              */
+/* ========================================================================== */
+.tabulator-tooltip {
+  @apply max-w-[min(500px,100%)] py-2 px-2.5 bg-(--color-dark) text-(--color-white) border-none rounded-sm shadow-none text-sm pointer-events-none;
+}
+
+/* ========================================================================== */
+/* Table Menu                                                                 */
+/* ========================================================================== */
+.tabulator-menu {
+  .tabulator-menu-item {
+    @apply relative box-border py-1.25 px-2.5 select-none;
+
+    &.tabulator-menu-item-disabled {
+      @apply opacity-50;
+    }
+
+    &.tabulator-menu-item-submenu {
+      @apply pr-6.25;
+    }
+
+    &.tabulator-menu-item-submenu::after {
+      @apply inline-block absolute content-[''] top-[calc(5px+0.4em)] right-2.5 h-1.75 w-1.75 border-r border-t border-(--table-border-color) align-top transform rotate-45;
+    }
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .tabulator-menu-item:not(.tabulator-menu-item-disabled):hover {
+      @apply cursor-pointer bg-(--table-hover-bg);
+    }
+  }
+
+  .tabulator-menu-separator {
+    @apply border-t border-(--table-border-color);
+  }
+}
+
+/* ========================================================================== */
+/* Table Edit List                                                            */
+/* ========================================================================== */
+.tabulator-edit-list {
+  @apply dropdown-menu bg-default border-(--border-color-base)! mt-1;
+
+  .tabulator-edit-list-item {
+    @apply dropdown-item!;
+
+    &.active {
+      /* @apply text-contrast bg-primary; */
+    }
+
+    &.active.focused {
+      /* @apply outline-1 outline-[var(--table-border-color)]; */
+    }
+
+    &.focused {
+      /* @apply outline-1 outline-primary; */
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        @apply cursor-pointer text-default bg-subtle;
+      }
+    }
+  }
+
+  .tabulator-edit-list-placeholder {
+    @apply p-1 text-muted text-center;
+  }
+
+  .tabulator-edit-list-group {
+    @apply border-b border-(--table-border-color) p-1 pt-1.5 text-muted font-semibold;
+  }
+
+  .tabulator-edit-list-item.tabulator-edit-list-group-level-2,
+  .tabulator-edit-list-group.tabulator-edit-list-group-level-2 {
+    @apply pl-3;
+  }
+
+  .tabulator-edit-list-item.tabulator-edit-list-group-level-3,
+  .tabulator-edit-list-group.tabulator-edit-list-group-level-3 {
+    @apply pl-5;
+  }
+
+  .tabulator-edit-list-item.tabulator-edit-list-group-level-4,
+  .tabulator-edit-list-group.tabulator-edit-list-group-level-4 {
+    @apply pl-7;
+  }
+
+  .tabulator-edit-list-item.tabulator-edit-list-group-level-5,
+  .tabulator-edit-list-group.tabulator-edit-list-group-level-5 {
+    @apply pl-9;
+  }
+}
+
+/* ========================================================================== */
+/* Table RTL                                                                  */
+/* ========================================================================== */
+.tabulator.tabulator-ltr {
+  direction: ltr;
+}
+
+.tabulator.tabulator-rtl {
+  text-align: initial;
+  direction: rtl;
+}
+
+.tabulator.tabulator-rtl .tabulator-header .tabulator-col {
+  text-align: initial;
+  border-left: 1px solid #aaa;
+  border-right: initial;
+}
+
+.tabulator.tabulator-rtl .tabulator-header .tabulator-col.tabulator-col-group .tabulator-col-group-cols {
+  margin-right: initial;
+  margin-left: -1px;
+}
+
+.tabulator.tabulator-rtl .tabulator-header .tabulator-col.tabulator-sortable .tabulator-col-title {
+  padding-right: 0;
+  padding-left: 25px;
+}
+
+.tabulator.tabulator-rtl .tabulator-header .tabulator-col .tabulator-col-content .tabulator-col-sorter {
+  left: 8px;
+  right: initial;
+}
+
+.tabulator.tabulator-rtl
+  .tabulator-tableholder
+  .tabulator-range-overlay
+  .tabulator-range.tabulator-range-active::after {
+  content: '';
+  position: absolute;
+  left: -3px;
+  right: initial;
+  bottom: -3px;
+  width: 6px;
+  height: 6px;
+  background-color: #2975dd;
+  border-radius: 999px;
+}
+
+.tabulator.tabulator-rtl .tabulator-row .tabulator-cell {
+  border-right: initial;
+  border-left: 1px solid #aaa;
+}
+
+.tabulator.tabulator-rtl .tabulator-row .tabulator-cell .tabulator-data-tree-branch {
+  margin-right: initial;
+  margin-left: 5px;
+  border-bottom-left-radius: initial;
+  border-bottom-right-radius: 1px;
+  border-left: initial;
+  border-right: 2px solid #aaa;
+}
+
+.tabulator.tabulator-rtl .tabulator-row .tabulator-cell .tabulator-data-tree-control {
+  margin-right: initial;
+  margin-left: 5px;
+}
+
+.tabulator.tabulator-rtl .tabulator-row .tabulator-cell.tabulator-frozen.tabulator-frozen-left {
+  border-left: 2px solid #aaa;
+}
+
+.tabulator.tabulator-rtl .tabulator-row .tabulator-cell.tabulator-frozen.tabulator-frozen-right {
+  border-right: 2px solid #aaa;
+}
+
+.tabulator.tabulator-rtl .tabulator-row .tabulator-col-resize-handle:last-of-type {
+  width: 3px;
+  margin-left: 0;
+  margin-right: -3px;
+}
+
+.tabulator.tabulator-rtl .tabulator-footer .tabulator-calcs-holder {
+  text-align: initial;
+}
+
+/* ========================================================================== */
+/* Table Print                                                                */
+/* ========================================================================== */
+.tabulator-print-fullscreen {
+  @apply absolute top-0 bottom-0 left-0 right-0 z-10000;
+}
+
+body.tabulator-print-fullscreen-hide > *:not(.tabulator-print-fullscreen) {
+  @apply hidden!;
+}
+
+.tabulator-print-table {
+  @apply border-collapse;
+}
+
+.tabulator-print-table .tabulator-data-tree-branch {
+  @apply inline-block align-middle h-2.25 w-1.75 -mt-2.25 mr-1.25 rounded-bl-[1px] border-b-2 border-l-2 border-b-(--table-border-color) border-l-(--table-border-color);
+}
+
+.tabulator-print-table .tabulator-print-table-group {
+  @apply box-border border-b border-r border-t border-b-(--table-border-color) border-r-(--table-border-color) border-t-(--table-border-color) p-1.25 pl-2.5 bg-(--table-row-background) font-bold min-w-full;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .tabulator-print-table .tabulator-print-table-group:hover {
+    @apply bg-(--table-hover-bg) cursor-pointer;
+  }
+}
+
+.tabulator-print-table .tabulator-print-table-group.tabulator-group-visible .tabulator-arrow {
+  @apply mr-2.5 border-x-6 border-x-transparent border-t-6 border-t-(--table-border-color) border-b-0;
+}
+
+.tabulator-print-table .tabulator-print-table-group.tabulator-group-level-1 td {
+  @apply pl-7.5!;
+}
+
+.tabulator-print-table .tabulator-print-table-group.tabulator-group-level-2 td {
+  @apply pl-12.5!;
+}
+
+.tabulator-print-table .tabulator-print-table-group.tabulator-group-level-3 td {
+  @apply pl-17.5!;
+}
+
+.tabulator-print-table .tabulator-print-table-group.tabulator-group-level-4 td {
+  @apply pl-22.5!;
+}
+
+.tabulator-print-table .tabulator-print-table-group.tabulator-group-level-5 td {
+  @apply pl-27.5!;
+}
+
+.tabulator-print-table .tabulator-print-table-group .tabulator-group-toggle {
+  @apply inline-block;
+}
+
+.tabulator-print-table .tabulator-print-table-group .tabulator-arrow {
+  @apply inline-block size-0 mr-4 border-y-6 border-y-transparent border-r-0 border-l-6 border-l-(--table-border-color) align-middle;
+}
+
+.tabulator-print-table .tabulator-print-table-group span {
+  @apply ml-2.5 text-(--color-danger);
+}
+
+.tabulator-print-table .tabulator-data-tree-control {
+  @apply inline-flex justify-center items-center align-middle size-2.75 mr-1.25 border border-(--table-border-color) rounded-xs bg-black/10 overflow-hidden;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .tabulator-print-table .tabulator-data-tree-control:hover {
+    @apply cursor-pointer bg-black/20;
+  }
+}
+
+.tabulator-print-table .tabulator-data-tree-control .tabulator-data-tree-control-collapse {
+  @apply inline-block relative h-1.75 w-px bg-transparent;
+}
+
+.tabulator-print-table .tabulator-data-tree-control .tabulator-data-tree-control-collapse:after {
+  @apply absolute content-[''] -left-0.75 top-0.75 h-px w-1.75 bg-(--table-hover-bg);
+}
+
+.tabulator-print-table .tabulator-data-tree-control .tabulator-data-tree-control-expand {
+  @apply inline-block relative h-1.75 w-px bg-(--table-hover-bg);
+}
+
+.tabulator-print-table .tabulator-data-tree-control .tabulator-data-tree-control-expand:after {
+  @apply absolute content-[''] -left-0.75 top-0.75 h-px w-1.75 bg-(--table-hover-bg);
+}

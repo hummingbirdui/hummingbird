@@ -1,0 +1,115 @@
+---
+title: Advanced Tables
+description: Easy to use, simple to code, fully featured, interactive JavaScript tables and data grids.
+toc: true
+---
+
+<HbAlert type="info">The Advanced Tables component uses the headless (unstyled) <a href="https://tabulator.info/" target="_blank">Tabulator</a> plugin for its core functionality, while Hummingbird handles the visual styling. Please refer to the official <a href="https://tabulator.info/docs/6.3/quickstart" target="_blank">Tabulator documentation</a> for initialization instructions.</HbAlert>
+
+## How to use
+
+#### 1. Install tabulator
+
+<Example lang="bash" showPreview={false} code={`npm install tabulator-tables --save`} />
+
+#### 2. Import CSS
+
+Import styles after importing Tailwind and Hummingbird CSS:
+
+<Example showPreview={false} lang='css'
+  code={`@import '@hummingbirdui/hummingbird/src/plugins/tabulator.css';`} />
+
+For more options and configuration guidance, refer to the <a href="https://tabulator.info/examples/6.3" target="_blank">Tabulator examples</a>.
+
+## Basic table
+
+<Example
+  code={[
+    {
+      code: `<div data-tabulator-tables="data-tabulator-tables"></div>`,
+      lang: 'html',
+      label: 'HTML',
+    },
+    {
+      code: `const TABLE_DATA = [
+    { id: '001', name: 'Alice Johnson', email: 'alice.johnson@example.com', status: 'Active' },
+    { id: '002', name: 'Bob Smith', email: 'bob.smith@example.com', status: 'Inactive' },
+    { id: '003', name: 'Charlie Davis', email: 'charlie.davis@example.com', status: 'Pending' },
+    { id: '004', name: 'Diana Lee', email: 'diana.lee@example.com', status: 'Active' },
+    { id: '005', name: 'Ethan Brown', email: 'ethan.brown@example.com', status: 'Suspended' },
+    { id: '006', name: 'Fiona Clark', email: 'fiona.clark@example.com', status: 'Active' },
+    { id: '007', name: 'George Miller', email: 'george.miller@example.com', status: 'Inactive' },
+    { id: '008', name: 'Hannah Wilson', email: 'hannah.wilson@example.com', status: 'Active' },
+    { id: '009', name: 'Ian Moore', email: 'ian.moore@example.com', status: 'Pending' },
+    { id: '010', name: 'Julia Taylor', email: 'julia.taylor@example.com', status: 'Active' },
+    { id: '011', name: 'Kevin Anderson', email: 'kevin.anderson@example.com', status: 'Suspended' },
+    { id: '012', name: 'Laura Thomas', email: 'laura.thomas@example.com', status: 'Active' },
+    { id: '013', name: 'Michael White', email: 'michael.white@example.com', status: 'Inactive' },
+    { id: '014', name: 'Natalie Harris', email: 'natalie.harris@example.com', status: 'Pending' },
+    { id: '015', name: 'Oliver Martin', email: 'oliver.martin@example.com', status: 'Active' },
+    { id: '016', name: 'Paula Thompson', email: 'paula.thompson@example.com', status: 'Active' },
+    { id: '017', name: 'Quentin Lewis', email: 'quentin.lewis@example.com', status: 'Suspended' },
+    { id: '018', name: 'Rachel Walker', email: 'rachel.walker@example.com', status: 'Active' },
+    { id: '019', name: 'Samuel Hall', email: 'samuel.hall@example.com', status: 'Inactive' },
+    { id: '020', name: 'Tina Young', email: 'tina.young@example.com', status: 'Pending' },
+  ];
+
+  new Tabulator('[data-tabulator-tables="data-tabulator-tables"]', {
+    data: TABLE_DATA,
+    layout: 'fitColumns',
+    pagination: true,
+    paginationMode: 'local',
+    paginationSize: 6,
+    paginationSizeSelector: [3, 6, 8, 10],
+    movableColumns: true,
+    paginationCounter: 'rows',
+    paginationButtonCount: 3,
+    columns: [
+      { title: 'ID', field: 'id', editable: true },
+      { title: 'Name', field: 'name' },
+      {
+        title: 'Email',
+        field: 'email',
+        formatter: (cell) => {
+          return \`<a href="mailto:\${cell.getValue()}">\${cell.getValue()}</a>\`;
+        },
+      },
+      { title: 'Status', field: 'status' },
+    ],
+  });`,
+      lang: 'js',
+      label: 'JS',
+    },
+  ]}
+/>
+
+## Advanced table
+
+<Example code={`
+  <div class='flex items-center gap-2 mb-6'>
+    <select id="filter-field" class='form-select-fill'>
+      <option value="">Filter field</option>
+      <option value="id">ID</option>
+      <option value="name">Name</option>
+      <option value="email">Email</option>
+      <option value="status">Status</option>
+    </select>
+
+    <select id="filter-type" class='form-select-fill'>
+      <option value="=">Equals to</option>
+      <option value="!=">Not equal to</option>
+      <option value="<">Less than</option>
+      <option value="<=">Less than or equal to</option>
+      <option value=">">Greater than</option>
+      <option value=">=">Greater than or equal to</option>
+      <option value="like">Contains</option>
+    </select>
+
+    <input id="filter-value" class="form-control-fill" type="text" placeholder="value to filter">
+
+    <button id="filter-clear" class='btn btn-subtle-danger shrink-0'>Clear Filter</button>
+  </div>
+  
+  <div data-tabulator-tables="feature-rich"></div>
+  `} 
+/>

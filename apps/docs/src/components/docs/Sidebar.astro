@@ -18,30 +18,81 @@ const path = Astro.originPathname;
     aria-label="Close"
     data-bs-target="#sidebarOffcanvas"
   >
-    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
-      ><path
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
+      <path
         fill="currentColor"
         d="m12 13.4l-4.9 4.9q-.275.275-.7.275t-.7-.275t-.275-.7t.275-.7l4.9-4.9l-4.9-4.9q-.275-.275-.275-.7t.275-.7t.7-.275t.7.275l4.9 4.9l4.9-4.9q.275-.275.7-.275t.7.275t.275.7t-.275.7L13.4 12l4.9 4.9q.275.275.275.7t-.275.7t-.7.275t-.7-.275z"
         stroke-width="0.5"
-        stroke="currentColor"></path></svg
-    >
+        stroke="currentColor"
+      ></path>
+    </svg>
   </button>
   <div class="offcanvas-body p-6 lg:ps-0 lg:pe-10 lg:py-10">
     <div class="w-full">
       {
-        sitemap.map((category, index) => (
+        sitemap.map((category, catIndex) => (
           <div>
-            <h2 class={`text-xs mb-2 text-subtle uppercase ${index !== 0 ? 'mt-6' : ''}`}>{category.subHeader}</h2>
+            <h2 class={`text-xs mb-2 text-subtle uppercase ${catIndex !== 0 ? 'mt-6' : ''}`}>
+              {category.subHeader}
+            </h2>
             <div class="list-group w-full bg-transparent gap-0.5">
-              {category.items.map((item) => (
-                <a
-                  href={getVersionedPath(item.path)}
-                  class={`list-group-item list-group-item-action rounded-lg text-sm py-2 
-                          ${path.startsWith(item.path) ? 'active text-primary-dark bg-primary-lighter' : 'text-default'}`}
-                >
-                  <span>{item.name}</span>
-                </a>
-              ))}
+              {category.items.map((item, itemIndex) => {
+                const hasChildren = item.children && item.children.length > 0;
+                const collapseId = `collapse-${catIndex}-${itemIndex}`;
+                const isChildActive =
+                  hasChildren && item.children!.some((child) => child.path && path.startsWith(child.path));
+
+                if (!item.path && hasChildren) {
+                  return (
+                    <>
+                      <button
+                        type="button"
+                        class={`group list-group-item list-group-item-action rounded-lg text-sm py-2 w-full text-start flex justify-between items-center
+                                ${isChildActive ? 'text-primary-dark' : 'text-default'}`}
+                        data-bs-toggle="collapse"
+                        data-bs-target={`#${collapseId}`}
+                        aria-expanded={isChildActive}
+                        aria-controls={collapseId}
+                      >
+                        <span>{item.name}</span>
+                        <svg class="shrink-0 transition-transform ms-1 group-aria-expanded:rotate-180" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24">
+                          <path fill="currentColor" d="M12 15.4L6 9.4l1.4-1.4 4.6 4.6 4.6-4.6L18 9.4z" />
+                        </svg>
+                      </button>
+                      
+                      <div
+                        class={`collapse ${isChildActive ? 'show' : ''}`}
+                        id={collapseId}
+                      >
+                        <div class="list-group w-full bg-transparent gap-0.5 ps-3 py-0.5">
+                          {item.children!.map((child) => (
+                            <a
+                              href={getVersionedPath(child.path!)}
+                              class={`list-group-item list-group-item-action rounded-lg text-sm py-2
+                                      ${child.path && path.startsWith(child.path) ? 'active text-primary-dark bg-primary-lighter' : 'text-default'}`}
+                            >
+                              <span>{child.name}</span>
+                            </a>
+                          ))}
+                        </div>
+                      </div>
+                    </>
+                  );
+                }
+
+                if (item.path) {
+                  return (
+                    <a
+                      href={getVersionedPath(item.path)}
+                      class={`list-group-item list-group-item-action rounded-lg text-sm py-2
+                              ${path.startsWith(item.path) ? 'active text-primary-dark bg-primary-lighter' : 'text-default'}`}
+                    >
+                      <span>{item.name}</span>
+                    </a>
+                  );
+                }
+
+              })}
             </div>
           </div>
         ))

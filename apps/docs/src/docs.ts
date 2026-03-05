@@ -5,6 +5,7 @@ import flatpickrInit from './plugins/flatpickr';
 import dropzoneInit from './plugins/dropzone';
 import noUiSliderInit from './plugins/noUISlider';
 import choicesInit from './plugins/choices';
+import tabulatorTablesInit from './plugins/tabulatorTables';
 
 docsearch({
   container: '#docsearch',
@@ -127,4 +128,5 @@ document.addEventListener('DOMContentLoaded', () => {
   dropzoneInit();
   flatpickrInit();
   noUiSliderInit();
+  tabulatorTablesInit();
 });

@@ -1,47 +1,43 @@
 import type { SitemapItem } from 'apps/sitemap';
 
-const normalizePath = (path: string) => path.replace(/\/$/, '');
+const normalizePath = (path?: string) => (path ? path.replace(/\/$/, '') : '');
+
+/**
+ * Flattens the sitemap tree into an ordered list of leaf/navigable items.
+ * - Items without a path are skipped (they're just grouping labels).
+ * - Children are inlined in place of their parent when the parent has no path.
+ * - Recursively handles any depth of nesting.
+ */
+const flattenItems = (items: SitemapItem[]): SitemapItem[] => {
+  const result: SitemapItem[] = [];
+
+  for (const item of items) {
+    if (item.children?.length) {
+      // If the parent itself has a path, include it before its children
+      if (item.path) result.push(item);
+      result.push(...flattenItems(item.children));
+    } else if (item.path) {
+      result.push(item);
+    }
+    // Items with no path and no children are silently skipped
+  }
+
+  return result;
+};
 
 export const getDocPagination = (
   items: SitemapItem[],
   currentPath: string,
 ): { prev: SitemapItem | null; next: SitemapItem | null } => {
-  let prev: SitemapItem | null = null;
-  let next: SitemapItem | null = null;
-
   const currPath = normalizePath(currentPath);
+  const flat = flattenItems(items);
 
-  const parentIndex = items.findIndex((item) => normalizePath(item.path) === currPath);
+  const index = flat.findIndex((item) => normalizePath(item.path) === currPath);
 
-  if (parentIndex !== -1) {
-    prev = parentIndex > 0 ? items[parentIndex - 1] : null;
-    next = parentIndex < items.length - 1 ? items[parentIndex + 1] : null;
+  if (index === -1) return { prev: null, next: null };
 
-    return { prev, next };
-  }
-
-  for (let i = 0; i < items.length; i++) {
-    const parent = items[i];
-    if (!parent.children) continue;
-
-    const childIndex = parent.children.findIndex((child) => normalizePath(child.path) === currPath);
-
-    if (childIndex === -1) continue;
-
-    if (childIndex === 0) {
-      prev = parent;
-    } else {
-      prev = parent.children[childIndex - 1];
-    }
-
-    if (childIndex < parent.children.length - 1) {
-      next = parent.children[childIndex + 1];
-    } else {
-      next = i < items.length - 1 ? items[i + 1] : null;
-    }
-
-    return { prev, next };
-  }
-
-  return { prev, next };
+  return {
+    prev: index > 0 ? flat[index - 1] : null,
+    next: index < flat.length - 1 ? flat[index + 1] : null,
+  };
 };
