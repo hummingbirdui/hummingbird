@@ -37,7 +37,7 @@ export const teamMembers: Member[] = [
   {
     name: 'Pantha Sharma',
     role: 'UI/UX Designer',
-    url: '#',
+    url: 'https://github.com/Pantha-25',
   },
   {
     name: 'Qurratul Aein Rafia',

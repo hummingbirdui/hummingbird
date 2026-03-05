@@ -93,7 +93,6 @@ async function createCompiler() {
   lastCss = css
 
   I.start('Compile CSS')
-  console.log(css);
   try {
     compiler = await tailwindcss.compile(css, {
       base: '/',
