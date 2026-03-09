@@ -1,0 +1,222 @@
+---
+import AppCode from '@components/common/AppCode.astro';
+import BulbIcon from '@components/icons/BulbIcon.astro';
+import CodeIcon from '@components/icons/CodeIcon.astro';
+import CopyIcon from '@components/icons/CopyIcon.astro';
+import PreviewIcon from '@components/icons/PreviewIcon.astro';
+
+interface Props {
+  code: string;
+  lang?: string;
+  title?: string;
+}
+
+const { code, lang = 'html' } = Astro.props;
+const iframeHTML = `
+<html>
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/@hummingbirdui/browser@1.0.4/dist/index.global.js"></script>
+  <style type="text/tailwindcss">
+  @custom-variant dark (&:where(.dark, .dark *), .dark);
+  </style>
+  <script is:inline>
+    // On page load or when changing themes, best to add inline in head to avoid FOUC
+    document.documentElement.classList.toggle(
+      "dark",
+      localStorage.theme === "dark" ||
+        (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches),
+    );
+  </script>
+</head>
+<body>${code}</body>
+</html>
+`;
+---
+
+<h5 class="mt-14 mb-6 text-default">Centered hero</h5>
+<div class="block-preview mb-5">
+  <div class="card border-light mb-4">
+    <div class="card-body flex">
+      <button class="btn btn-text-neutral btn-sm gap-1 active me-1" data-btn="show-preview">
+        <PreviewIcon />
+        Preview
+      </button>
+      <button class="btn btn-text-neutral btn-sm gap-1" data-btn="show-code">
+        <CodeIcon width="18" height="18" />
+        Show code
+      </button>
+      <button class="btn btn-square btn-sm bg-transparent hover:bg-muted ms-auto" data-btn="theme">
+        <BulbIcon width="18" height="18" />
+      </button>
+      <button class="btn btn-square btn-sm bg-transparent hover:bg-muted" data-btn="copy-code">
+        <CopyIcon />
+      </button>
+    </div>
+  </div>
+  <div class="w-full" data-stage="stage">
+    <div class="flex">
+      <div data-element="iframe-wrap" class="border border-light rounded-2xl relative w-full">
+        <iframe
+          data-element="preview-frame"
+          srcdoc={iframeHTML}
+          title="Component preview"
+          sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
+          class="block w-full rounded-2xl"></iframe>
+        <div class="h-full w-1 absolute -right-4 top-0 px-2 flex items-center">
+          <div data-handle="resize" class="w-1.5 h-8 bg-emphasis cursor-ew-resize shrink-0 rounded-full"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bg-subtle overflow-x-auto hidden p-4 border border-light rounded-lg" data-stage="code-stage">
+    <AppCode code={code} lang={lang} data-astro-code />
+  </div>
+</div>
+
+<script>
+  (() => {
+    const DARK_CLASS = 'dark';
+    const HIDDEN_CLASS = 'hidden';
+    const ACTIVE_CLASS = 'active';
+    const MIN_IFRAME_WIDTH = 375;
+
+    const getDocumentIsDark = () => document.documentElement.classList.contains(DARK_CLASS);
+
+    document.querySelectorAll('.block-preview').forEach((container) => {
+      const iframeWrap = container.querySelector<HTMLElement>('[data-element="iframe-wrap"]');
+      const iframe = container.querySelector<HTMLIFrameElement>('[data-element="preview-frame"]');
+      const previewStage = container.querySelector<HTMLElement>('[data-stage="stage"]');
+      const codeStage = container.querySelector<HTMLElement>('[data-stage="code-stage"]');
+      const resizeHandle = container.querySelector<HTMLElement>('[data-handle="resize"]');
+      const showCodeBtn = container.querySelector<HTMLElement>('[data-btn="show-code"]');
+      const previewBtn = container.querySelector<HTMLElement>('[data-btn="show-preview"]');
+      const themeBtn = container.querySelector<HTMLElement>('[data-btn="theme"]');
+      const copyBtn = container.querySelector<HTMLElement>('[data-btn="copy-code"]');
+      const codeContainer = codeStage?.querySelector('[data-astro-code]');
+
+      if (!iframeWrap || !iframe) return;
+
+      // ─── Iframe auto-height ───────────────────────────────────────────────
+
+      const syncIframeHeight = () => {
+        try {
+          const scrollHeight = iframe.contentDocument?.body?.scrollHeight;
+          iframe.style.height = scrollHeight ? `${scrollHeight}px` : 'auto';
+        } catch {}
+      };
+
+      const initIframeObserver = (): boolean => {
+        try {
+          const body = iframe.contentDocument?.body;
+          if (!body) return false;
+
+          syncIframeHeight();
+          new ResizeObserver(syncIframeHeight).observe(body);
+          return true;
+        } catch {
+          return false;
+        }
+      };
+
+      const waitForIframe = () => {
+        if (!initIframeObserver()) requestAnimationFrame(waitForIframe);
+      };
+
+      waitForIframe();
+
+      // ─── Code / Preview toggle ────────────────────────────────────────────
+
+      showCodeBtn?.addEventListener('click', () => {
+        showCodeBtn.classList.add(ACTIVE_CLASS);
+        previewBtn?.classList.remove(ACTIVE_CLASS);
+        codeStage?.classList.remove(HIDDEN_CLASS);
+        previewStage?.classList.add(HIDDEN_CLASS);
+      });
+      previewBtn?.addEventListener('click', () => {
+        showCodeBtn?.classList.remove(ACTIVE_CLASS);
+        previewBtn.classList.add(ACTIVE_CLASS);
+        codeStage?.classList.add(HIDDEN_CLASS);
+        previewStage?.classList.remove(HIDDEN_CLASS);
+      });
+
+      // ─── Iframe resize handle ─────────────────────────────────────────────
+
+      let isResizing = false;
+      let dragStartX = 0;
+      let dragStartWidth = 0;
+
+      resizeHandle?.addEventListener('mousedown', (e) => {
+        isResizing = true;
+        dragStartX = e.clientX;
+        dragStartWidth = iframeWrap.offsetWidth;
+        document.body.style.cursor = 'ew-resize';
+        document.body.style.userSelect = 'none';
+        iframe.style.pointerEvents = 'none';
+      });
+
+      const onMouseMove = (e: MouseEvent) => {
+        if (!isResizing) return;
+        const newWidth = dragStartWidth + (e.clientX - dragStartX);
+        if (newWidth > MIN_IFRAME_WIDTH) iframeWrap.style.width = `${newWidth}px`;
+      };
+
+      const onResizeEnd = () => {
+        if (!isResizing) return;
+        isResizing = false;
+        document.body.style.cursor = '';
+        document.body.style.userSelect = '';
+        iframe.style.pointerEvents = 'auto';
+      };
+
+      document.addEventListener('mousemove', onMouseMove);
+      document.addEventListener('mouseup', onResizeEnd);
+      document.addEventListener('mouseleave', onResizeEnd);
+
+      // ─── Copy code button ────────────────────────────────────────────────
+      const copyIcon = `
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M9 18q-.825 0-1.412-.587T7 16V4q0-.825.588-1.412T9 2h9q.825 0 1.413.588T20 4v12q0 .825-.587 1.413T18 18zm0-2h9V4H9zm-4 6q-.825 0-1.412-.587T3 20V7q0-.425.288-.712T4 6t.713.288T5 7v13h10q.425 0 .713.288T16 21t-.288.713T15 22zm4-6V4z"/>
+      </svg>`;
+      const copyCheckIcon = `
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="m9.55 15.15l8.475-8.475q.3-.3.7-.3t.7.3t.3.713t-.3.712l-9.175 9.2q-.3.3-.7.3t-.7-.3L4.55 13q-.3-.3-.288-.712t.313-.713t.713-.3t.712.3z"/></svg>`;
+      let revertTimer: ReturnType<typeof setTimeout> | null = null;
+      copyBtn?.addEventListener('click', async () => {
+        if (!codeContainer || !copyBtn) return;
+
+        const codeText = ((codeContainer as HTMLElement).innerText ?? codeContainer.textContent ?? '').trim();
+        if (!codeText) return;
+
+        try {
+          await navigator.clipboard.writeText(codeText);
+
+          copyBtn.innerHTML = copyCheckIcon;
+
+          if (revertTimer) clearTimeout(revertTimer);
+          revertTimer = setTimeout(() => {
+            copyBtn.innerHTML = copyIcon;
+          }, 1600);
+        } catch {}
+      });
+
+      // ─── Theme sync ───────────────────────────────────────────────────────
+
+      let iframeIsDark = getDocumentIsDark();
+
+      const applyThemeToIframe = () => {
+        iframe.contentDocument?.body?.classList.toggle(DARK_CLASS, iframeIsDark);
+      };
+
+      applyThemeToIframe();
+
+      new MutationObserver(() => {
+        iframeIsDark = getDocumentIsDark();
+        applyThemeToIframe();
+      }).observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+
+      themeBtn?.addEventListener('click', () => {
+        iframeIsDark = !iframeIsDark;
+        applyThemeToIframe();
+      });
+    });
+  })();
+</script>
