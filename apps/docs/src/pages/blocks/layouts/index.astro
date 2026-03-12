@@ -1,7 +1,11 @@
 ---
 import Layout from '@layouts/Layout.astro';
 import BlockPreview from '@components/blocks/BlockPreview.astro';
-import { layout1 } from './blocks';
+import Layout1 from './blocks/_layout1.astro';
+import Layout2 from './blocks/_layout2.astro';
+import Layout3 from './blocks/_layout3.astro';
+import Layout4 from './blocks/_layout4.astro';
+import Layout5 from './blocks/_layout5.astro';
 ---
 
 <Layout>
@@ -20,7 +24,21 @@ import { layout1 } from './blocks';
         appealing web pages. These layouts are designed and built by the Tailwind CSS team, and include a range of
         different styles and structures to suit various types of websites and applications.
       </p>
-      <BlockPreview code={layout1} title="Default Layout" />
+      <BlockPreview title="A simple sidebar with navigation grouped by section" className="min-h-225">
+        <Layout1 />
+      </BlockPreview>
+      <BlockPreview title="A responsive sidebar with a search bar" className="min-h-225">
+        <Layout2 />
+      </BlockPreview>
+      <BlockPreview title="A sidebar with collapsible sections" className="min-h-225">
+        <Layout3 />
+      </BlockPreview>
+      <BlockPreview title="A sidebar with submenus as dropdowns" className="min-h-225">
+        <Layout4 />
+      </BlockPreview>
+      <BlockPreview title="Horizontal Navigation" className="min-h-225">
+        <Layout5 />
+      </BlockPreview>
     </div>
   </div>
 </Layout>

@@ -2,6 +2,7 @@
 import Layout from '@layouts/Layout.astro';
 import BlockPreview from '@components/blocks/BlockPreview.astro';
 import { hero1 } from './blocks';
+import Hero2 from './blocks/_hero2.astro';
 ---
 
 <Layout>
@@ -21,6 +22,9 @@ import { hero1 } from './blocks';
         variety of different styles and layouts.
       </p>
       <BlockPreview code={hero1} title="Default Hero Section" />
+      <BlockPreview title="Default Hero Section">
+        <Hero2 />
+      </BlockPreview>
     </div>
   </div>
 </Layout>
