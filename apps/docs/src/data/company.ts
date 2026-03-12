@@ -35,6 +35,11 @@ export const teamMembers: Member[] = [
     url: 'https://github.com/riazul01',
   },
   {
+    name: 'Md. Raihanul Haq',
+    role: 'UI/UX Designer',
+    url: 'https://github.com/Raihan-Niloy',
+  },
+  {
     name: 'Pantha Sharma',
     role: 'UI/UX Designer',
     url: 'https://github.com/Pantha-25',

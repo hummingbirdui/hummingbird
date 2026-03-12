@@ -279,7 +279,7 @@ export const feedback: Component[] = [
   {
     title: 'Modal',
     url: '/docs/components/modal',
-    count: 8,
+    count: 7,
     image: { light: modal, dark: modalDark },
   },
   {
