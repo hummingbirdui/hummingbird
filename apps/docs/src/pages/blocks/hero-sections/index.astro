@@ -1,8 +1,11 @@
 ---
 import Layout from '@layouts/Layout.astro';
 import BlockPreview from '@components/blocks/BlockPreview.astro';
-import { hero1 } from './blocks';
+import Hero1 from './blocks/_hero1.astro';
 import Hero2 from './blocks/_hero2.astro';
+import Hero3 from './blocks/_hero3.astro';
+import Hero4 from './blocks/_hero4.astro';
+import Hero5 from './blocks/_hero5.astro';
 ---
 
 <Layout>
@@ -21,9 +24,20 @@ import Hero2 from './blocks/_hero2.astro';
         the top of your website. These hero examples are designed and built by the Tailwind CSS team, and include a
         variety of different styles and layouts.
       </p>
-      <BlockPreview code={hero1} title="Default Hero Section" />
-      <BlockPreview title="Default Hero Section">
+      <BlockPreview title="Default Hero Section" className="min-h-206">
+        <Hero1 />
+      </BlockPreview>
+      <BlockPreview title="Split with image" className="min-h-206">
         <Hero2 />
+      </BlockPreview>
+      <BlockPreview title="Split with image" className="min-h-251">
+        <Hero3 />
+      </BlockPreview>
+      <BlockPreview title="Split with image" className="min-h-206">
+        <Hero4 />
+      </BlockPreview>
+      <BlockPreview title="Split with image" className="min-h-174">
+        <Hero5 />
       </BlockPreview>
     </div>
   </div>
