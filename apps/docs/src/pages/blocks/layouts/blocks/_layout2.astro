@@ -1,0 +1,122 @@
+<nav class="navbar bg-default fixed top-0 w-full border-b border-light px-6 justify-between flex h-15 z-1035">
+  <div class="flex">
+    <button
+      class="btn btn-text-neutral btn-square btn-sm lg:hidden me-4 text-muted"
+      data-bs-toggle="offcanvas"
+      data-bs-target="#offcanvasLayout2"
+      aria-controls="offcanvasLayout2"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+        ><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          ><rect width="18" height="18" x="3" y="3" rx="2"></rect><path d="M9 3v18"></path></g
+        ></svg
+      >
+    </button>
+    <a class="flex items-center gap-2 no-underline" href="#">
+      <img
+        src="https://raw.githubusercontent.com/hummingbirdui/hummingbird/c2a66a70db897fd0d89ea72e7cbab1d3c06a93e2/apps/docs/src/assets/images/logos/hb-logo1.svg"
+        alt="Logo"
+        class="w-8 h-8"
+      />
+      <h6 class="mb-0 text-muted font-semibold flex">hummingbird</h6>
+    </a>
+  </div>
+  <div class="input-group-icon w-80 hidden md:block">
+    <svg class="form-control-icon-start" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+      ><path
+        fill="currentColor"
+        d="M9.5 16q-2.725 0-4.612-1.888T3 9.5t1.888-4.612T9.5 3t4.613 1.888T16 9.5q0 1.1-.35 2.075T14.7 13.3l5.6 5.6q.275.275.275.7t-.275.7t-.7.275t-.7-.275l-5.6-5.6q-.75.6-1.725.95T9.5 16m0-2q1.875 0 3.188-1.312T14 9.5t-1.312-3.187T9.5 5T6.313 6.313T5 9.5t1.313 3.188T9.5 14"
+        stroke-width="0.5"
+        stroke="currentColor"></path></svg
+    >
+    <input type="text" class="form-control-fill rounded-full" />
+  </div>
+  <div class="flex gap-2">
+    <button class="btn btn-circle btn-subtle-neutral size-8 text-muted md:hidden">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+        ><path
+          fill="currentColor"
+          d="M9.5 16q-2.725 0-4.612-1.888T3 9.5t1.888-4.612T9.5 3t4.613 1.888T16 9.5q0 1.1-.35 2.075T14.7 13.3l5.6 5.6q.275.275.275.7t-.275.7t-.7.275t-.7-.275l-5.6-5.6q-.75.6-1.725.95T9.5 16m0-2q1.875 0 3.188-1.312T14 9.5t-1.312-3.187T9.5 5T6.313 6.313T5 9.5t1.313 3.188T9.5 14"
+          stroke-width="0.5"
+          stroke="currentColor"></path></svg
+      >
+    </button>
+    <div class="dropdown">
+      <button class="avatar avatar-sm" data-bs-toggle="dropdown" aria-expanded="false">
+        <img
+          src="https://raw.githubusercontent.com/hummingbirdui/hummingbird/refs/heads/main/apps/docs/public/images/avatar/avatar_1.webp"
+          alt="Avatar"
+          class="rounded-full"
+        />
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+        <li><a class="dropdown-item" href="#">Action</a></li>
+        <li><a class="dropdown-item" href="#">Another action</a></li>
+        <li><a class="dropdown-item" href="#">Something else here</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="lg:grid lg:grid-cols-[15rem_1fr] h-full mt-15">
+  <div
+    class="offcanvas-lg offcanvas-start border-e border-light w-60 lg:sticky lg:top-15 h-screen lg:h-[calc(100vh-60px)] overflow-y-scroll"
+    tabindex="-1"
+    id="offcanvasLayout2"
+    aria-labelledby="offcanvasLayout2Label"
+    data-bs-scroll="true"
+  >
+    <div class="offcanvas-header px-5 py-0 border-b border-light h-15">
+      <a class="flex items-center gap-2 no-underline" href="#">
+        <img
+          src="https://raw.githubusercontent.com/hummingbirdui/hummingbird/c2a66a70db897fd0d89ea72e7cbab1d3c06a93e2/apps/docs/src/assets/images/logos/hb-logo1.svg"
+          alt="Logo"
+          class="w-8 h-8"
+        />
+        <h6 class="mb-0 text-muted font-semibold flex">hummingbird</h6>
+      </a>
+    </div>
+    <div class="offcanvas-body block p-5">
+      <div class="w-full">
+        <h2 class="text-xs mb-2 text-subtle uppercase">Dashboards</h2>
+        <div class="list-group w-full bg-transparent gap-0.5">
+          <a href="#" class="list-group-item list-group-item-action rounded-lg text-sm py-2 active">
+            <span>E-commerce</span>
+          </a>
+          <a href="#" class="list-group-item list-group-item-action rounded-lg text-sm py-2">
+            <span>Project Management</span>
+          </a>
+          <a href="#" class="list-group-item list-group-item-action rounded-lg text-sm py-2">
+            <span>CRM</span>
+          </a>
+        </div>
+      </div>
+      <div class="w-full">
+        <h2 class="text-xs mb-2 text-subtle uppercase mt-6">Pages</h2>
+        <div class="list-group w-full bg-transparent gap-0.5">
+          <a href="#" class="list-group-item list-group-item-action rounded-lg text-sm py-2">
+            <span>Social Feed</span>
+          </a>
+          <a href="#" class="list-group-item list-group-item-action rounded-lg text-sm py-2">
+            <span>Profile</span>
+          </a>
+          <a href="#" class="list-group-item list-group-item-action rounded-lg text-sm py-2">
+            <span>Chat</span>
+          </a>
+          <a href="#" class="list-group-item list-group-item-action rounded-lg text-sm py-2">
+            <span>File Manager</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="h-full flex-1">
+    <div class="p-6 flex flex-col h-full">
+      <div class="grid grid-cols-3 gap-4 md:gap-6">
+        <div class="bg-muted/50 aspect-video rounded-lg"></div>
+        <div class="bg-muted/50 aspect-video rounded-lg"></div>
+        <div class="bg-muted/50 aspect-video rounded-lg"></div>
+      </div>
+      <div class="bg-muted/50 rounded-lg mt-4 md:mt-6 flex-1"></div>
+    </div>
+  </div>
+</div>

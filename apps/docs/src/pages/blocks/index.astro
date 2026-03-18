@@ -1,0 +1,49 @@
+---
+import BlocksNav from '@components/blocks/BlocksNav.astro';
+import Layout from '@layouts/Layout.astro';
+import { getVersionedPath } from '@libs/config';
+---
+
+<Layout>
+  <div class="container max-w-7xl mx-auto my-10">
+    <div class="text-center mb-10">
+      <h1 class="text-4xl md:text-6xl -tracking-[6.5%]">
+        Beautiful UI components, built for <br class="hidden sm:block" /> real-world projects.
+      </h1>
+      <p class="md:text-lg">
+        An open-source system sensibly designed for rapid development, <br class="hidden sm:block md:hidden" /> without <br
+          class="hidden md:block"
+        /> sacrificing the granular control of utility-first CSS.
+      </p>
+    </div>
+    <BlocksNav />
+    <div class="grid grid-cols-4 gap-4 my-10">
+      <a
+        href={getVersionedPath('/blocks/layouts')}
+        class="card card-action flex flex-col h-full w-full rounded-2xl bg-default overflow-hidden hover:border-primary"
+      >
+        <div class="grow flex items-center justify-center bg-subtle p-4 aspect-4/3">
+          <!-- <img src={image.light.src} class="dark:hidden" alt={title} />
+        <img src={image.dark.src} class="hidden dark:flex" alt={title} /> -->
+        </div>
+        <div class="px-4 py-3">
+          <h6 class="card-title mb-0.5 text-base font-semibold">Layouts</h6>
+          <p class="mb-0 text-xs text-muted">5 blocks</p>
+        </div>
+      </a>
+      <a
+        href={getVersionedPath('/blocks/hero-sections')}
+        class="card card-action flex flex-col h-full w-full rounded-2xl bg-default overflow-hidden hover:border-primary"
+      >
+        <div class="grow flex items-center justify-center bg-subtle p-4 aspect-4/3">
+          <!-- <img src={image.light.src} class="dark:hidden" alt={title} />
+          <img src={image.dark.src} class="hidden dark:flex" alt={title} /> -->
+        </div>
+        <div class="px-4 py-3">
+          <h6 class="card-title mb-0.5 text-base font-semibold">Hero Sections</h6>
+          <p class="mb-0 text-xs text-muted">5 blocks</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</Layout>
