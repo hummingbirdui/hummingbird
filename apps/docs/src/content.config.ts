@@ -22,6 +22,7 @@ const docs = defineCollection({
   loader: glob({ base: './src/content/docs', pattern: '**/*.{md,mdx}' }),
   schema: z.object({
     title: z.string(),
+    badge: z.string().optional(),
     description: z.string().optional(),
     toc: z.boolean().optional(),
     attributeComponent: z.string().optional(),

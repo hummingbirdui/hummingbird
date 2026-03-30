@@ -1,0 +1,93 @@
+---
+title: MCP
+badge: Alpha
+description: Use the Hummingbird UI MCP server to integrate UI components into your AI development workflow from Cursor, Windsurf, Claude and other MCP client providers.
+toc: true
+---
+
+## Overview
+
+Hummingbird UI MCP server seamlessly connects AI assistants like Claude, Cursor, Windsurf, and GitHub Copilot to the entire Hummingbird UI ecosystem. No API keys, no accounts, your AI tools can instantly access a rich library of components, forms, layouts, theming options, content utilities, and framework-specific guides.
+
+Built as an open-source solution, Hummingbird UI MCP enhances how LLM understand UI context, resulting in more accurate, consistent, and production-ready code generation.
+
+## Quick Start
+
+The fastest way to get started is with `npx`:
+
+```bash
+npx @hummingbirdui/mcp
+```
+
+## Configuring MCP client
+
+### Claude Desktop
+
+Add the following to your `claude_desktop_config.json`:
+
+```json
+{
+  "mcpServers": {
+    "hummingbird-mcp": {
+      "command": "npx",
+      "args": ["-y", "@hummingbirdui/mcp@latest"]
+    }
+  }
+}
+```
+
+Fully quit and reopen Claude Desktop to apply the changes.
+
+### Cursor
+
+Add the following to your `.cursor/mcp.json`:
+
+```json
+{
+  "mcpServers": {
+    "hummingbird-mcp": {
+      "command": "npx",
+      "args": ["-y", "@hummingbirdui/mcp@latest"]
+    }
+  }
+}
+```
+
+After saving, enable the server in Cursor Settings under the MCP section. You should see a green dot next to `hummingbird-mcp` when it's connected.
+
+### Windsurf
+
+Add the following to your `mcp_config.json`:
+
+```json
+{
+  "mcpServers": {
+    "hummingbird-mcp": {
+      "command": "npx",
+      "args": ["-y", "@hummingbirdui/mcp@latest"]
+    }
+  }
+}
+```
+
+### VS Code (GitHub Copilot)
+
+Add the following to your `.vscode/mcp.json`:
+
+```json
+{
+  "servers": {
+    "hummingbird-mcp": {
+      "command": "npx",
+      "args": ["-y", "@hummingbirdui/mcp@latest"]
+    }
+  }
+}
+```
+
+Open the file and click **Start** next to the `hummingbird-mcp` server.
+
+## Learn More
+
+- [GitHub Repository](https://github.com/hummingbirdui/hummingbird-mcp) — Source code and issue tracker
+- [MCP Specification](https://modelcontextprotocol.io) — Learn about the Model Context Protocol

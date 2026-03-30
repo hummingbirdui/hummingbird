@@ -40,6 +40,9 @@ const path = Astro.originPathname;
                           ${path.startsWith(item.path) ? 'active text-primary-dark bg-primary-lighter' : 'text-default'}`}
                 >
                   <span>{item.name}</span>
+                  {item.badge && (
+                    <span class={`badge badge-subtle-${item.badge.variant} ms-2`}>{item.badge.label}</span>
+                  )}
                 </a>
               ))}
             </div>
