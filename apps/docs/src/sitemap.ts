@@ -17,6 +17,10 @@ export interface SitemapItem {
   path: string;
   icon?: string | { light: ImageMetadata; dark: ImageMetadata };
   children?: SitemapItem[];
+  badge?: {
+    label: string;
+    variant: 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info';
+  };
 }
 
 interface Sitemap {
@@ -107,6 +111,14 @@ const sitemap: Sitemap[] = [
       {
         name: 'CLI',
         path: '/docs/getting-started/cli',
+      },
+      {
+        name: 'MCP',
+        path: '/docs/getting-started/mcp',
+        badge: {
+          label: 'Alpha',
+          variant: 'warning',
+        },
       },
     ],
   },
