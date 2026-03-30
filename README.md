@@ -3,11 +3,12 @@
       <img  width="350" src='https://raw.githubusercontent.com/hummingbirdui/hummingbird/87dc656e578d3e6fd0e4a45eabe1f5e02bdeafd1/apps/docs/public/images/logos/hummingbird-lg.svg' alt="Logo" class="w-10 h-10" />
    </a>
 
-   The most sensible component system for Tailwind.
+The most sensible component system for Tailwind.
 
-   ![downloads](https://img.shields.io/npm/dt/@hummingbirdui/hummingbird?style=flat-square)
-   ![npm](https://img.shields.io/npm/v/@hummingbirdui/hummingbird?style=flat-square)
-   ![license](https://img.shields.io/npm/l/@hummingbirdui/hummingbird?style=flat-square)
+![downloads](https://img.shields.io/npm/dt/@hummingbirdui/hummingbird?style=flat-square)
+![npm](https://img.shields.io/npm/v/@hummingbirdui/hummingbird?style=flat-square)
+![license](https://img.shields.io/npm/l/@hummingbirdui/hummingbird?style=flat-square)
+
 </div>
 
 ---
@@ -61,7 +62,7 @@ npm install @hummingbirdui/hummingbird
 
 # Using yarn
 yarn add @hummingbirdui/hummingbird
-````
+```
 
 ### 3. Import CSS
 
@@ -132,17 +133,17 @@ import { type ModalClass, type ModalInstance, type ModalOptions } from "@humming
 
 Hummingbird supports both **ESM** and **CJS** builds, so it works with different environments:
 
-* **ESM:**
+- **ESM:**
   Used by modern bundlers like **Vite**, **Rollup**, and **Webpack 5+**. If your project is using ES modules (`import` syntax), this is what gets loaded automatically.
 
-* **CJS:**
+- **CJS:**
   Used in **Node.js** or older tooling that relies on `require()`. If your environment doesn’t support ESM, bundlers and Node will fall back to this file.
 
 No manual choice is required; the bundler or runtime will select the correct version based on the setup.
 
 ## Include using CDN
 
-CDN is a fast and easy way to include Hummingbird in a project. 
+CDN is a fast and easy way to include Hummingbird in a project.
 
 ### Play CDN
 
@@ -166,16 +167,16 @@ And include the following JavaScript before the end of the `<body>` tag for inte
 
 | Framework | Supported |
 | --------- | --------- |
-| React     | ✅         |
-| Next.js   | ✅         |
-| Laravel   | ✅         |
-| Vue       | ✅         |
-| Nuxt.js   | ✅         |
-| Angular   | ✅         |
-| Svelte    | ✅         |
-| Astro     | ✅         |
-| Gatsby    | ✅         |
-| Django    | ✅         |
+| React     | ✅        |
+| Next.js   | ✅        |
+| Laravel   | ✅        |
+| Vue       | ✅        |
+| Nuxt.js   | ✅        |
+| Angular   | ✅        |
+| Svelte    | ✅        |
+| Astro     | ✅        |
+| Gatsby    | ✅        |
+| Django    | ✅        |
 
 ## License
 
@@ -188,24 +189,29 @@ To contribute code:
 1. **Fork the repository** to your own GitHub account.
 
 2. **Clone your fork** locally:
+
    ```sh
    git clone https://github.com/your-username/hummingbird.git
    cd hummingbird
    ```
 
 3. **Install dependencies**:
+
    ```sh
    npm install
    ```
 
 4. **Start the development server**:
    This will start the documentation site locally, allowing you to see changes in real-time.
+
    ```sh
    npm start
    ```
+
    The site will typically be available at `http://localhost:4321` (or another port if 4321 is busy).
 
 5. **Create a new branch** for your feature or bug fix:
+
    ```sh
    git checkout -b feature-or-bugfix-name
    ```
@@ -216,16 +222,19 @@ To contribute code:
 
 7. **Build the project** (optional but recommended before committing):
    To ensure everything builds correctly:
+
    ```sh
    npm run build:npm
    ```
 
 8. **Commit your changes**:
+
    ```sh
    git commit -m "Your descriptive commit message"
    ```
 
 9. **Push your changes** to your fork:
+
    ```sh
    git push origin feature-or-bugfix-name
    ```
@@ -254,7 +263,7 @@ Meet the core team behind Hummingbird:
       <img src="https://avatars.githubusercontent.com/u/86622751?v=4" width="80" height="80"/><br/>
       <sub><b>Khayrul Islam</b></sub><br/>
       <code>khayrul25</code><br/>
-      Front-end Developer
+      Senior Frontend Developer
     </td>
   </tr>
   <tr>
@@ -265,10 +274,10 @@ Meet the core team behind Hummingbird:
       Software Engineer
     </td>
     <td align="center" width="200">
-      <img src="https://avatars.githubusercontent.com/u/110757982?v=4" width="80" height="80"/><br/>
-      <sub><b>Qurratul Aein Rafia</b></sub><br/>
-      <code>RafiAein</code><br/>
-      Editorial Strategist
+      <img src="https://avatars.githubusercontent.com/u/61972765?v=4" width="80" height="80"/><br/>
+      <sub><b>Md. Raihanul Haq</b></sub><br/>
+      <code>Raihan-Niloy</code><br/>
+      UI/UX Designer
     </td>
     <td align="center" width="200">
       <img src="https://avatars.githubusercontent.com/u/236851058?v=4" width="80" height="80"/><br/>
@@ -277,8 +286,15 @@ Meet the core team behind Hummingbird:
       UI/UX Designer
     </td>
   </tr>
+  <tr>
+    <td align="center" width="200">
+      <img src="https://avatars.githubusercontent.com/u/110757982?v=4" width="80" height="80"/><br/>
+      <sub><b>Qurratul Aein Rafia</b></sub><br/>
+      <code>RafiAein</code><br/>
+      Editorial Strategist
+    </td>
+  </tr>
 </table>
-
 
 ## Contributors
 
