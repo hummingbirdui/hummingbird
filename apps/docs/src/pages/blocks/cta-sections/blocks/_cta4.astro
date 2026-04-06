@@ -1,31 +1,47 @@
-<section class="relative px-6 py-12 sm:py-16 bg-yellow-400">
-  <!-- pattern -->
-  <div class="absolute inset-0 opacity-10">
-    <div class="size-full bg-[linear-gradient(135deg,black_25%,transparent_25%,transparent_50%,black_50%,black_75%,transparent_75%,transparent)] bg-size-[40px_40px]"></div>
-  </div>
+<div class="relative py-20 px-6 bg-default">
+  <div class="card max-w-6xl mx-auto p-8 md:p-14 shadow-2xl bg-default border-light grid grid-cols-1 lg:grid-cols-12 gap-12 items-center rounded-4xl z-10 relative">
+    <div class="absolute -top-24 -left-24 size-64 bg-info/10 dark:bg-info/20 rounded-full blur-[80px] group-hover:bg-info/30 transition-colors duration-700"></div>
+    <div class="lg:col-span-7 space-y-6">
+      <span class="badge badge-subtle-info badge-md gap-2 mb-8 rounded-lg">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+        <span class="text-[10px] font-extrabold uppercase tracking-[0.2em]">v1.0 is live</span>
+      </span>
 
-  <div class="relative mx-auto max-w-6xl flex flex-col justify-between gap-6 md:flex-row md:items-center">
-    <div>
-      <h3 class="mb-2 text-black">Don’t miss out 🚀</h3>
-      <p class="mb-0 text-lg font-medium text-black/80">
-        Limited-time offer—upgrade now and save 40% on all plans.
+      <h2 class="text-4xl md:text-5xl font-black tracking-tight text-default leading-[1.1]">
+        Build faster. <span class="text-muted/80">Deploy sooner.</span><br/> 
+        Scale <span class="underline decoration-info-light decoration-4 underline-offset-4">everywhere.</span>
+      </h2>
+
+      <p class="text-lg text-muted max-w-lg leading-relaxed">
+        The modern standard for cloud orchestration. Manage your entire stack from a single, unified command center.
       </p>
     </div>
 
-    <div class="flex items-center gap-3 shrink-0">
-      <a
-        href="#"
-        class="btn btn-lg bg-black px-6 py-3 text-white transition hover:bg-gray-800"
-      >
-        Upgrade Now
-      </a>
-      <a
-        href="#"
-        class="btn btn-lg border-2 border-black px-6 py-3 text-black transition bg-transparent hover:bg-black hover:text-white"
-      >
-        See Pricing
-      </a>
-    </div>
+    <div class="lg:col-span-5 card p-4 sm:p-8 border-light rounded-3xl max-w-md">
+      <button class="btn btn-neutral dark:bg-white dark:text-black w-full py-4 font-bold rounded-2xl transition active:scale-[0.98] mb-4">
+        Get Started — It's Free
+      </button>
+      
+      <button class="btn bg-white w-full py-4 dark:bg-default dark:text-white border-light font-bold rounded-2xl mb-8">
+        Talk to Sales
+      </button>
 
+      <div class="pt-8 border-t border-light flex justify-between items-center text-center">
+        <div>
+          <p class="text-2xl font-bold text-default">99.9%</p>
+          <p class="text-[10px] uppercase tracking-wider text-muted font-semibold">Uptime</p>
+        </div>
+        <div class="vr h-8 self-center"></div>
+        <div>
+          <p class="text-2xl font-bold text-default">24/7</p>
+          <p class="text-[10px] uppercase tracking-wider text-muted font-semibold">Support</p>
+        </div>
+        <div class="vr h-8 self-center"></div>
+        <div>
+          <p class="text-2xl font-bold text-default">50M+</p>
+          <p class="text-[10px] uppercase tracking-wider text-muted font-semibold">Requests</p>
+        </div>
+      </div>
+    </div>
   </div>
-</section>
+</div>

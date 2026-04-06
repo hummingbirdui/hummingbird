@@ -1,35 +1,43 @@
-<section class="p-6 sm:p-10 grid items-center gap-8 md:grid-cols-2 bg-default">
-  <!-- left content -->
-  <div>
-    <span class="badge badge-subtle-primary px-3 py-1 mb-4">New Feature</span>
+<section class="relative px-6 py-24 bg-default overflow-hidden">
+  <div class="max-w-6xl mx-auto grid items-center gap-16 lg:grid-cols-2">
+    <div class="space-y-8">
+      <span class="badge badge-subtle-primary badge-lg gap-2 mb-10">
+        <span class="relative flex size-2">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+          <span class="relative inline-flex rounded-full size-2 bg-primary"></span>
+        </span>
+        <span class="text-[10px] font-extrabold uppercase tracking-[0.2em]">Engine v1.0</span>
+      </span>
+      
+      <h2 class="text-5xl lg:text-6xl font-black text-default tracking-tighter mb-6">
+        Build faster with <br/>
+        <span class="text-transparent bg-clip-text bg-linear-to-r from-primary via-secondary to-info italic font-serif">smart logic.</span>
+      </h2>
+      
+      <p class="text-lg text-muted max-w-md font-medium leading-relaxed">
+        Pre-built, customizable UI blocks meticulously engineered to bridge the gap between design and production.
+      </p>
 
-    <h3 class="text-default mb-4">
-      Build faster with smart components
-    </h3>
-
-    <p class="text-muted text-lg mb-6">
-      Pre-built, customizable UI blocks that help you launch projects in minutes instead of days.
-    </p>
-
-    <div class="flex gap-2">
-      <a href="#" class="btn btn-neutral">Explore Components</a>
-      <a href="#" class="btn btn-text-neutral">View Demo →</a>
-    </div>
-  </div>
-
-  <!-- right content -->
-  <div class="relative">
-    <div class="card p-3.5 border-light">
-      <div class="space-y-3">
-        <span class="placeholder col-6"></span>
-        <span class="placeholder w-3/4"></span>
-        <span class="placeholder w-50"></span>
-        <div class="placeholder h-32 w-full"></div>
+      <div class="flex items-center gap-4">
+        <a href="#" class="btn btn-primary btn-lg lg:px-8 lg:py-4 font-bold text-sm uppercase lg:rounded-xl transition hover:scale-[1.03] active:scale-95 shadow-xl">
+          Explore Library
+        </a>
+        <a href="#" class="btn btn-text-neutral btn-lg px-0 lg:py-4 bg-transparent group gap-2 text-sm font-bold">
+          View Live Demo
+          <svg class="size-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
       </div>
     </div>
 
-    <a class="absolute -bottom-4 -left-4 btn btn-primary shadow-lg">
-      +120 components
-    </a>
+    <div class="relative">
+      <div class="aspect-4/3 max-h-100">
+        <img src="https://images.unsplash.com/photo-1725347740938-73127ed5d91c?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="size-full object-cover rounded-xl" />
+      </div>
+
+      <a href="#" class="absolute bottom-3 left-3 btn btn-neutral lg:px-6 lg:py-4 lg:rounded-xl font-bold text-sm uppercase gap-1.5 bg-white/20 text-black backdrop-blur-lg border-white/20">
+        <svg class="size-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg>
+        120 Components
+      </a>
+    </div>
   </div>
 </section>
