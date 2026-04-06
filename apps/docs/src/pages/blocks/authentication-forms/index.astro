@@ -1,0 +1,44 @@
+---
+import Layout from '@layouts/Layout.astro';
+import BlockPreview from '@components/blocks/BlockPreview.astro';
+import Signin1 from './blocks/_signin1.astro';
+import Signin2 from './blocks/_signin2.astro';
+import Signin3 from './blocks/_signin3.astro';
+import Signup1 from './blocks/_signup1.astro';
+import Signup2 from './blocks/_signup2.astro';
+---
+
+<Layout>
+  <div class="px-5">
+    <div class="max-w-7xl mx-auto my-10">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="/" class="link link-hover">Home</a></li>
+          <li class="breadcrumb-item"><a href="/blocks" class="link link-hover">Blocks</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Hero Sections</li>
+        </ol>
+      </nav>
+      <h3 class="mb-4 mt-8">Hero Sections</h3>
+      <p class="text-lg">
+        Use these Tailwind CSS hero section examples to add important messaging, product photos, and call-to-actions to
+        the top of your website. These hero examples are designed and built by the Tailwind CSS team, and include a
+        variety of different styles and layouts.
+      </p>
+      <BlockPreview title="Default Hero Section" className="min-h-220">
+        <Signin1 />
+      </BlockPreview>
+      <BlockPreview title="Split with image" className="min-h-200">
+        <Signin2 />
+      </BlockPreview>
+      <BlockPreview title="Split with image" className="min-h-170">
+        <Signin3 />
+      </BlockPreview>
+      <BlockPreview title="Split with image" className="min-h-260">
+        <Signup1 />
+      </BlockPreview>
+      <BlockPreview title="Split with image" className="min-h-260">
+        <Signup2 />
+      </BlockPreview>
+    </div>
+  </div>
+</Layout>

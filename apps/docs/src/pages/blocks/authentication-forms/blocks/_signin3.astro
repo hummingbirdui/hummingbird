@@ -1,0 +1,57 @@
+<div class="min-h-screen bg-default flex items-center justify-center p-4">
+  <div class="grid grid-cols-1 md:grid-cols-12 gap-4 max-w-5xl w-full">
+    <div class="md:col-span-7 card rounded-3xl p-8 md:p-12 border-light shadow-2xl relative">
+      <div class="absolute -top-24 -left-24 w-64 h-64 bg-violet-600/20 blur-[100px] rounded-full"></div>
+      
+      <h1 class="text-3xl sm:text-4xl font-bold tracking-tight text-default mb-3">Welcome Back</h1>
+      <p class="text-muted mb-6">Enter your details to sync your workspace.</p>
+
+      <form class="space-y-5">
+        <div class="form-field">
+          <label class="form-label text-xs font-bold text-muted/70 uppercase tracking-widest mb-1 ms-1.5">Email</label>
+          <input type="email" class="form-control px-5 py-3.5 rounded-2xl transition-all duration-300 border-light focus:ring-2 focus:ring-indigo-500/15 placeholder:text-subtle/70" placeholder="ray@workflow.io" />
+        </div>
+        <div class="form-field mb-10">
+          <div class="flex justify-between items-center px-1.5 mb-1">
+            <label class="form-label text-xs font-bold text-muted/70 uppercase tracking-widest">Password</label>
+            <a href="#" class="p-0 btn btn-link text-[10px] text-violet-600 font-bold no-underline">Forgot password?</a>
+          </div>
+          <input type="password" class="form-control px-5 py-3.5 rounded-2xl transition-all duration-300 border-light focus:ring-2 focus:ring-indigo-500/15 placeholder:text-subtle/70" placeholder="••••••••" />
+        </div>
+
+        <button type="submit" class="btn btn-lg bg-linear-to-br from-violet-600 to-indigo-700 w-full text-white rounded-2xl py-3.5 hover:bg-dark border-0">
+          Sign In
+        </button>
+      </form>
+    </div>
+
+    <div class="md:col-span-5 flex flex-col gap-4">
+      <div class="flex-1 card border-light rounded-3xl p-8">
+        <h3 class="text-xs font-semibold uppercase tracking-widest text-muted/60 mb-6 text-center">Social Connect</h3>
+        <div class="space-y-3">
+          <button class="w-full btn btn-lg py-3 rounded-2xl bg-muted border-light">
+            <img src="https://www.svgrepo.com/show/355037/google.svg" class="size-5" alt="Google">
+            <span class="text-sm font-medium">Google</span>
+          </button>
+          <button class="w-full btn btn-lg py-3 rounded-2xl bg-muted border-light">
+            <img src="https://www.svgrepo.com/show/448234/linkedin.svg" class="size-6" alt="LinkedIn">
+            <span class="text-sm font-medium">LinkedIn</span>
+          </button>
+          <button class="w-full btn btn-lg py-3 rounded-2xl bg-muted border-light">
+            <img src="https://www.svgrepo.com/show/448239/microsoft.svg" class="size-5" alt="Microsoft">
+            <span class="text-sm font-medium">Microsoft</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="bg-linear-to-br from-violet-600 to-indigo-700 rounded-3xl p-8 text-white relative overflow-hidden group">
+        <h3 class="text-xl font-bold">New here?</h3>
+        <p class="text-violet-100 text-sm mt-2 mb-6">Join 10k+ developers and start building today.</p>
+        <button class="btn text-white bg-white/20 backdrop-blur-md border-white/30 px-6 py-2 rounded-full text-sm font-bold hover:bg-white/30 transition">
+          Create Account
+        </button>
+        <div class="absolute -bottom-10 -right-10 w-32 h-32 bg-white/10 rounded-full group-hover:scale-150 transition-transform duration-700"></div>
+      </div>
+    </div>
+  </div>
+</div>
