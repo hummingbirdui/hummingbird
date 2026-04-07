@@ -3,6 +3,9 @@ import Layout from '@layouts/Layout.astro';
 import BlockPreview from '@components/blocks/BlockPreview.astro';
 import Pricing1 from './blocks/_pricing1.astro';
 import Pricing2 from './blocks/_pricing2.astro';
+import Pricing3 from './blocks/_pricing3.astro';
+import Pricing4 from './blocks/_pricing4.astro';
+import Pricing5 from './blocks/_pricing5.astro';
 ---
 
 <Layout>
@@ -26,6 +29,15 @@ import Pricing2 from './blocks/_pricing2.astro';
       </BlockPreview>
       <BlockPreview title="Annual Pricing" className="min-h-193">
         <Pricing2 />
+      </BlockPreview>
+      <BlockPreview title="Annual Pricing" className="min-h-193">
+        <Pricing3 />
+      </BlockPreview>
+      <BlockPreview title="Pricing Plan 4" className="min-h-193">
+        <Pricing4 />
+      </BlockPreview>
+      <BlockPreview title="Feature Comparison Pricing" className="min-h-193">
+        <Pricing5 />
       </BlockPreview>
     </div>
   </div>
