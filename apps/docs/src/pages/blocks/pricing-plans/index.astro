@@ -1,0 +1,44 @@
+---
+import Layout from '@layouts/Layout.astro';
+import BlockPreview from '@components/blocks/BlockPreview.astro';
+import Pricing1 from './blocks/_pricing1.astro';
+import Pricing2 from './blocks/_pricing2.astro';
+import Pricing3 from './blocks/_pricing3.astro';
+import Pricing4 from './blocks/_pricing4.astro';
+import Pricing5 from './blocks/_pricing5.astro';
+---
+
+<Layout>
+  <div class="px-5">
+    <div class="max-w-7xl mx-auto my-10">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="/" class="link link-hover">Home</a></li>
+          <li class="breadcrumb-item"><a href="/blocks" class="link link-hover">Blocks</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Pricing plans</li>
+        </ol>
+      </nav>
+      <h3 class="mb-4 mt-8">Pricing plans</h3>
+      <p class="text-lg">
+        Explore a variety of Hummingbird pricing plan examples and templates to help you build responsive and visually
+        appealing web pages. These pricing plans include a range of different styles and structures to suit various
+        types of websites and applications.
+      </p>
+      <BlockPreview title="Basic Pricing" className="min-h-228.5">
+        <Pricing1 />
+      </BlockPreview>
+      <BlockPreview title="Annual Pricing" className="min-h-193">
+        <Pricing2 />
+      </BlockPreview>
+      <BlockPreview title="Annual Pricing" className="min-h-193">
+        <Pricing3 />
+      </BlockPreview>
+      <BlockPreview title="Pricing Plan 4" className="min-h-193">
+        <Pricing4 />
+      </BlockPreview>
+      <BlockPreview title="Feature Comparison Pricing" className="min-h-193">
+        <Pricing5 />
+      </BlockPreview>
+    </div>
+  </div>
+</Layout>
