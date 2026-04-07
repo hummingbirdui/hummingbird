@@ -1,0 +1,32 @@
+---
+import Layout from '@layouts/Layout.astro';
+import BlockPreview from '@components/blocks/BlockPreview.astro';
+import Feature1 from './blocks/_feature1.astro';
+import Feature2 from './blocks/_feature2.astro';
+import Feature3 from './blocks/_feature3.astro';
+import Feature4 from './blocks/_feature4.astro';
+import Feature5 from './blocks/_feature5.astro';
+import Feature6 from './blocks/_feature6.astro';
+---
+
+<Layout>
+  <div class="px-5">
+    <div class="max-w-7xl mx-auto my-10">
+      <BlockPreview>
+        <Feature1 />
+      </BlockPreview>
+      <BlockPreview>
+        <Feature2 />
+      </BlockPreview>
+      <BlockPreview>
+        <Feature3 />
+      </BlockPreview>
+      <BlockPreview>
+        <Feature4 />
+      </BlockPreview>
+      <BlockPreview>
+        <Feature5 />
+      </BlockPreview>
+    </div>
+  </div>
+</Layout>
