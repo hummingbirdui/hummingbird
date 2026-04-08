@@ -1,40 +1,45 @@
-<section class="min-h-screen bg-default flex items-center justify-center px-4 py-20 antialiased">
-  <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-64 bg-linear-to-b from-indigo-100/50 to-transparent blur-3xl opacity-60"></div>
-
-  <div class="card relative w-full max-w-md border-light rounded-4xl shadow-[0_32px_64px_-16px_rgba(0,0,0,0.05)] px-4 py-10 sm:px-10 sm:py-14">
+<section class="min-h-screen flex items-center justify-center px-4 py-16">
+  <div class="card w-full max-w-md border-light rounded-2xl p-10">
     <div class="mb-8 text-center text-default">
-      <h2 class="text-3xl tracking-tight mb-3">Welcome Back</h2>
+      <h2 class="text-3xl mb-3">Welcome Back</h2>
       <p class="text-muted font-medium">Enter your details to access your account</p>
     </div>
 
-    <button class="btn gap-3 bg-white dark:bg-default border-light py-3.5 rounded-2xl">
+    <button class="btn btn-lg btn-subtle-neutral gap-3 border-light">
       <img src="https://www.svgrepo.com/show/355037/google.svg" class="size-5" alt="Google">
-      <span class="font-bold text-sm tracking-tight">Continue with Google</span>
+      Continue with Google
     </button>
 
-    <div class="hr-label my-6 text-[10px] text-subtle/70 font-black uppercase tracking-[0.2em]">Secure Email Login</div>
+    <div class="hr-label my-6 text-[10px] text-subtle font-bold uppercase tracking-[0.2em]">Secure Email Login</div>
 
     <form class="space-y-5 mb-12">
       <div class="form-field">
-        <label class="form-label text-xs font-bold text-muted/70 uppercase tracking-widest mb-1 ms-1.5">Email Address</label>
-        <input type="email" class="form-control px-5 py-3.5 rounded-2xl transition-all duration-300 border-light focus:ring-2 focus:ring-primary/15 placeholder:text-subtle/70" placeholder="name@company.com" />
+        <label class="form-label">Email</label>
+        <input type="email" class="form-control form-control-lg" placeholder="name@company.com" />
       </div>
       <div class="form-field mb-10">
-        <div class="flex justify-between items-center px-1.5 mb-1">
-          <label class="form-label text-xs font-bold text-muted/70 uppercase tracking-widest">Password</label>
-          <a href="#" class="p-0 btn btn-link text-[10px] font-bold no-underline">Forgot password?</a>
-        </div>
-        <input type="password" class="form-control px-5 py-3.5 rounded-2xl transition-all duration-300 border-light focus:ring-2 focus:ring-primary/15 placeholder:text-subtle/70" placeholder="••••••••" />
+        <label class="form-label">Password</label>
+        <input type="password" class="form-control form-control-lg" placeholder="••••••••" />
       </div>
 
-      <button type="submit" class="btn btn-lg btn-primary w-full text-sm rounded-2xl py-3.5">
+      <div class="flex items-center justify-between -mt-9 -ms-1.5">
+        <div class="form-check">
+          <label for="checkboxDefaultLabel" class="form-check-input-wrapper">
+            <input class="form-check-input" type="checkbox" value="" id="checkboxDefaultLabel" />
+          </label>
+          <label for="checkboxDefaultLabel" class="form-check-label text-xs">Remember me</label>
+        </div>
+        <a href="#" class="text-xs font-semibold no-underline">Forgot password?</a>
+      </div>
+
+      <button type="submit" class="btn btn-lg btn-primary w-full">
         Sign In
       </button>
     </form>
 
-    <p class="m-0 text-center text-sm text-muted/50 font-medium">
+    <p class="m-0 text-center text-sm text-muted/70 font-medium">
       New to the platform? 
-      <a href="#" class="btn btn-link font-semibold hover:underline underline-offset-4 p-0 no-underline">Join for free</a>
+      <a href="#" class="no-underline">Join for free</a>
     </p>
   </div>
 </section>
