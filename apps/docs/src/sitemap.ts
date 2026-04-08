@@ -145,6 +145,10 @@ const sitemap: Sitemap[] = [
         name: 'Reboot',
         path: '/docs/customize/reboot',
       },
+      {
+        name: 'Utilities',
+        path: '/docs/customize/utilities',
+      },
     ],
   },
   {
