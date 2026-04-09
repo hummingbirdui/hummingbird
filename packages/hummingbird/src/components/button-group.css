@@ -1,6 +1,6 @@
 @utility btn-group {
   @layer base {
-    @apply relative inline-flex align-middle rounded-(--input-btn-radius);
+    @apply relative inline-flex align-middle rounded-(--input-btn-border-radius);
 
     > .btn {
       @apply relative shrink grow basis-auto;

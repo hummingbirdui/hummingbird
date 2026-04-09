@@ -1,7 +1,7 @@
 @utility btn {
   @layer base {
     --btn-font-size: var(--input-btn-font-size);
-    --btn-radius: var(--input-btn-radius);
+    --btn-border-radius: var(--input-btn-border-radius);
     --btn-padding-x: var(--input-btn-padding-x);
     --btn-padding-y: var(--input-btn-padding-y);
     --btn-line-height: var(--input-btn-line-height);
@@ -25,7 +25,7 @@
     bg-[var(--btn-bg)]
     text-[length:var(--btn-font-size)]
     font-[weight:var(--btn-font-weight)]
-    rounded-[var(--btn-radius)]
+    rounded-[var(--btn-border-radius)]
     px-[var(--btn-padding-x)]
     py-[var(--btn-padding-y)]
     text-[var(--btn-color)]
@@ -317,13 +317,13 @@
     --btn-height: 2.3125rem;
     --btn-padding-y: 0;
     --btn-padding-x: 0;
-    --btn-radius: calc(infinity * 1px);
+    --btn-border-radius: calc(infinity * 1px);
     &.btn-sm {
       --btn-width: 1.84375rem;
       --btn-height: 1.84375rem;
       --btn-padding-y: 0;
       --btn-padding-x: 0;
-      --btn-radius: calc(infinity * 1px);
+      --btn-border-radius: calc(infinity * 1px);
     }
     &.btn-lg {
       --btn-width: 2.75rem;
@@ -342,12 +342,12 @@
     --btn-hover-bg: --alpha(var(--color-active) / 4%);
     --btn-padding-y: --spacing(2);
     --btn-padding-x: --spacing(2);
-    --btn-radius: calc(infinity * 1px);
+    --btn-border-radius: calc(infinity * 1px);
 
     &.btn-sm {
       --btn-padding-y: --spacing(1.25);
       --btn-padding-x: --spacing(1.25);
-      --btn-radius: calc(infinity * 1px);
+      --btn-border-radius: calc(infinity * 1px);
     }
     &.btn-lg {
       --btn-padding-y: --spacing(3);
@@ -415,7 +415,7 @@
     --btn-font-size: var(--input-btn-font-size-sm);
     --btn-padding-x: var(--input-btn-padding-x-sm);
     --btn-padding-y: var(--input-btn-padding-y-sm);
-    --btn-radius: var(--input-btn-radius-sm);
+    --btn-border-radius: var(--input-btn-border-radius-sm);
     --btn-line-height: var(--input-btn-line-height-sm);
   }
 }
@@ -424,7 +424,7 @@
     --btn-font-size: var(--input-btn-font-size-lg);
     --btn-padding-x: var(--input-btn-padding-x-lg);
     --btn-padding-y: var(--input-btn-padding-y-lg);
-    --btn-radius: var(--input-btn-radius-lg);
+    --btn-border-radius: var(--input-btn-border-radius-lg);
     --btn-line-height: var(--input-btn-line-height-lg);
   }
 }

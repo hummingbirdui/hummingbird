@@ -8,7 +8,7 @@
     --pagination-height: 2rem;
     --pagination-border-width: var(--border-width);
     --pagination-border-color: transparent;
-    --pagination-radius: var(--radius-md);
+    --pagination-border-radius: var(--radius-md);
 
     --pagination-hover-bg: var(--color-hover);
     --pagination-active-bg: var(--color-primary);
@@ -50,7 +50,7 @@
     min-w-[var(--pagination-width)]
     border-[length:var(--pagination-border-width)]
     border-[var(--pagination-border-color)]
-    rounded-[var(--pagination-radius)]
+    rounded-[var(--pagination-border-radius)]
     no-underline transition-[background,_color] duration-200
     hover:bg-[var(--pagination-hover-bg)] focus:outline-0;
 
@@ -81,7 +81,7 @@
 /* circle variant */
 @utility pagination-circle {
   @layer base {
-    --pagination-radius: calc(infinity * 1px);
+    --pagination-border-radius: calc(infinity * 1px);
   }
 }
 

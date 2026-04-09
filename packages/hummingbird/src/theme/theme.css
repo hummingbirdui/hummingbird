@@ -106,7 +106,7 @@
   /* Input and button variables */
   --input-btn-font-size: var(--text-sm);
   --input-btn-font-weight: var(--font-weight-normal);
-  --input-btn-radius: var(--radius-lg);
+  --input-btn-border-radius: var(--radius-lg);
   --input-btn-padding-x: --spacing(4);
   --input-btn-padding-y: --spacing(1.75);
   --input-btn-line-height: 1.5;
@@ -115,13 +115,13 @@
   --input-btn-font-size-sm: var(--text-sm);
   --input-btn-padding-x-sm: --spacing(3);
   --input-btn-padding-y-sm: --spacing(1.25);
-  --input-btn-radius-sm: var(--radius-sm);
+  --input-btn-border-radius-sm: var(--radius-sm);
   --input-btn-line-height-sm: 1.25;
 
   --input-btn-font-size-lg: var(--text-base);
   --input-btn-padding-x-lg: --spacing(5);
   --input-btn-padding-y-lg: --spacing(2.25);
-  --input-btn-radius-lg: var(--radius-lg);
+  --input-btn-border-radius-lg: var(--radius-lg);
   --input-btn-line-height-lg: 1.5;
 
   --input-bg: var(--background-color-default);
