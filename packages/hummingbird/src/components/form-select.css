@@ -127,17 +127,21 @@
 
 @utility form-select-sm {
   @layer base {
-    --form-select-padding-x: --spacing(3);
-    --form-select-padding-y: --spacing(1.25);
-    --form-select-radius: var(--radius-sm);
-    --form-select-line-height: 1.25;
+    --form-select-font-size: var(--input-btn-font-size-sm);
+    --form-select-padding-x: var(--input-btn-padding-x-sm);
+    --form-select-padding-y: var(--input-btn-padding-y-sm);
+    --form-select-radius: var(--input-btn-radius-sm);
+    --form-select-line-height: var(--input-btn-line-height-sm);
     --form-select-bg-size: --spacing(3.5) --spacing(2.5);
   }
 }
 @utility form-select-lg {
   @layer base {
-    --form-select-padding-y: --spacing(2.25);
-    --form-select-font-size: var(--text-base);
+    --form-select-font-size: var(--input-btn-font-size-lg);
+    --form-select-padding-x: var(--input-btn-padding-x-lg);
+    --form-select-padding-y: var(--input-btn-padding-y-lg);
+    --form-select-radius: var(--input-btn-radius-lg);
+    --form-select-line-height: var(--input-btn-line-height-lg);
     --form-select-bg-size: --spacing(4.5) --spacing(3.5);
   }
 }

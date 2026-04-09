@@ -344,7 +344,7 @@
   --uploader-list-bg: var(--background-color-subtle);
   --uploader-list-border-radius: var(--radius-lg);
   --uploader-list-image-size: --spacing(13);
-  --uploader-list-image-border-width: 1px;
+  --uploader-list-image-border-width: var(--border-width);
   --uploader-list-image-border-color: var(--border-color-light);
   --uploader-list-image-border-radius: var(--radius-lg);
 
@@ -383,7 +383,7 @@
 .dz-thumbnail-preview {
   --uploader-dropbox-size: --spacing(15);
   --uploader-thumbnail-size: --spacing(14);
-  --uploader-thumbnail-border-width: 1px;
+  --uploader-thumbnail-border-width: var(--border-width);
   --uploader-thumbnail-border-color: var(--border-color-light);
   --uploader-thumbnail-border-radius: var(--radius-lg);
   --uploader-thumbnail-remove-btn-size: --spacing(3);

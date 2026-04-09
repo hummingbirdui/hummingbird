@@ -7,6 +7,7 @@
     --badge-line-height: 1;
     --badge-padding-y: --spacing(0.75);
     --badge-padding-x: --spacing(1.5);
+    --badge-border-width: var(--border-width);
     --badge-border-color: transparent;
     --badge-link-hover-bg: var(--color-dark);
     --badge-border-radius: calc(infinity * 1px);
@@ -19,7 +20,7 @@
     leading-[var(--badge-line-height)]
     font-[var(--badge-font-weight)]
     rounded-[var(--badge-border-radius)]
-    border
+    border-(length:--badge-border-width)
     border-[var(--badge-border-color)];
   }
 }

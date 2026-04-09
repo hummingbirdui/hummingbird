@@ -185,7 +185,6 @@
     --btn-bg: transparent;
     --btn-color: var(--color-primary);
     --btn-hover-bg: --alpha(var(--color-primary) / 12%);
-    --btn-border-width: 1px;
     --btn-border-color: --alpha(var(--color-primary) / 50%);
   }
 }
@@ -194,7 +193,6 @@
     --btn-bg: transparent;
     --btn-color: var(--color-secondary);
     --btn-hover-bg: --alpha(var(--color-secondary) / 12%);
-    --btn-border-width: 1px;
     --btn-border-color: --alpha(var(--color-secondary) / 50%);
   }
 }
@@ -203,7 +201,6 @@
     --btn-bg: transparent;
     --btn-color: var(--color-info);
     --btn-hover-bg: --alpha(var(--color-info) / 12%);
-    --btn-border-width: 1px;
     --btn-border-color: --alpha(var(--color-info) / 50%);
   }
 }
@@ -212,7 +209,6 @@
     --btn-bg: transparent;
     --btn-color: var(--color-success);
     --btn-hover-bg: --alpha(var(--color-success) / 12%);
-    --btn-border-width: 1px;
     --btn-border-color: --alpha(var(--color-success) / 50%);
   }
 }
@@ -221,7 +217,6 @@
     --btn-bg: transparent;
     --btn-color: var(--color-warning);
     --btn-hover-bg: --alpha(var(--color-warning) / 12%);
-    --btn-border-width: 1px;
     --btn-border-color: --alpha(var(--color-warning) / 50%);
   }
 }
@@ -230,7 +225,6 @@
     --btn-bg: transparent;
     --btn-color: var(--color-danger);
     --btn-hover-bg: --alpha(var(--color-danger) / 12%);
-    --btn-border-width: 1px;
     --btn-border-color: --alpha(var(--color-danger) / 50%);
   }
 }
@@ -239,7 +233,6 @@
     --btn-bg: transparent;
     --btn-color: var(--text-color-default);
     --btn-hover-bg: var(--color-hover);
-    --btn-border-width: 1px;
     --btn-border-color: var(--background-color-emphasis);
   }
 }
@@ -419,16 +412,19 @@
 
 @utility btn-sm {
   @layer base {
-    --btn-padding-y: --spacing(1.25);
-    --btn-padding-x: --spacing(2.5);
-    --btn-radius: var(--radius-sm);
-    --btn-line-height: 1.25;
+    --btn-font-size: var(--input-btn-font-size-sm);
+    --btn-padding-x: var(--input-btn-padding-x-sm);
+    --btn-padding-y: var(--input-btn-padding-y-sm);
+    --btn-radius: var(--input-btn-radius-sm);
+    --btn-line-height: var(--input-btn-line-height-sm);
   }
 }
 @utility btn-lg {
   @layer base {
-    --btn-font-size: var(--text-base);
-    --btn-padding-y: --spacing(2.25);
-    --btn-padding-x: --spacing(5.5);
+    --btn-font-size: var(--input-btn-font-size-lg);
+    --btn-padding-x: var(--input-btn-padding-x-lg);
+    --btn-padding-y: var(--input-btn-padding-y-lg);
+    --btn-radius: var(--input-btn-radius-lg);
+    --btn-line-height: var(--input-btn-line-height-lg);
   }
 }

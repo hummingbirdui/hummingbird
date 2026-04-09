@@ -100,16 +100,29 @@
   --shadow-2xl:
     16px 39px 67px 0px rgba(0, 0, 0, 0.11), 1px 20px 65px 0px rgba(0, 0, 0, 0.02),
     2px 10px 10px 0px rgba(0, 0, 0, 0.01), 0px -2px 6px 0px rgba(0, 0, 0, 0.03);
-}
 
-:root {
+  --border-width: 1px;
+
+  /* Input and button variables */
   --input-btn-font-size: var(--text-sm);
   --input-btn-font-weight: var(--font-weight-normal);
   --input-btn-radius: var(--radius-lg);
   --input-btn-padding-x: --spacing(4);
   --input-btn-padding-y: --spacing(1.75);
   --input-btn-line-height: 1.5;
-  --input-btn-border-width: 1px;
+  --input-btn-border-width: var(--border-width);
+
+  --input-btn-font-size-sm: var(--text-sm);
+  --input-btn-padding-x-sm: --spacing(3);
+  --input-btn-padding-y-sm: --spacing(1.25);
+  --input-btn-radius-sm: var(--radius-sm);
+  --input-btn-line-height-sm: 1.25;
+
+  --input-btn-font-size-lg: var(--text-base);
+  --input-btn-padding-x-lg: --spacing(5);
+  --input-btn-padding-y-lg: --spacing(2.25);
+  --input-btn-radius-lg: var(--radius-lg);
+  --input-btn-line-height-lg: 1.5;
 
   --input-bg: var(--background-color-default);
   --input-color: var(--text-color-default);
@@ -134,7 +147,6 @@
   --body-font-size: var(--text-base);
   --body-font-weight: var(--font-weight-normal);
   --body-line-height: var(--text-base--line-height);
-
   --hr-margin-y: --spacing(4);
   --hr-margin-x: 0;
   --hr-color: var(--text-color-default);
