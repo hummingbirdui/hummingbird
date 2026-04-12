@@ -1,55 +1,34 @@
-<section class="relative py-30 px-6 bg-default overflow-hidden">
-  <div class="absolute -top-24 -right-24 size-96 bg-orange-100 dark:bg-orange-900 rounded-full blur-3xl opacity-60"></div>
-  
-  <div class="max-w-6xl mx-auto">
-    <div class="relative flex flex-col lg:flex-row gap-20 items-end">
-      
-      <div class="lg:w-7/12 relative">
-        <span class="badge badge-subtle-warning badge-lg text-orange-700 dark:text-orange-500 text-xs font-bold uppercase tracking-widest px-4 mb-8">Case Study: Vertex</span>
-        
-        <blockquote class="relative text-4xl md:text-5xl font-serif italic md:leading-[1.1] tracking-tight text-default mb-12">
-          “Before using this platform, our process was <span class="underline decoration-orange-300 dark:decoration-orange-600 decoration-4 underline-offset-8">slow and full of friction</span>. Now everything is automated and incredibly reliable.”
-        </blockquote>
-        <div class="flex items-center gap-6">
-          <img src="https://i.pravatar.cc/100?img=60" alt="Nafis" class="size-20 rounded-2xl rotate-3 object-cover shadow-xl border-4 border-white dark:border-gray-700" />
-          <div>
-            <p class="mb-1.5 text-xl font-bold tracking-tight">Nafis Rahman</p>
-            <span class="text-muted font-medium italic">Engineering Lead at Vertex</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="lg:w-5/12 w-full">
-        <div class="relative grid grid-cols-1 gap-4">
-          <div class="card p-8 rounded-4xl shadow-[0_20px_50px_rgba(0,0,0,0.05)] dark:bg-white/10 backdrop-blur-2xl border-light dark:border-transparent relative z-20">
-            <div class="flex justify-between items-start mb-4">
-              <p class="text-6xl font-black text-default leading-none">3x</p>
-              <div class="badge badge-subtle-success badge-md">↑ 200%</div>
-            </div>
-            <p class="text-muted font-medium uppercase">Faster daily deployments</p>
-          </div>
-
-          <div class="grid grid-cols-2 gap-4">
-             <div class="p-6 rounded-4xl text-white dark:text-gray-900 bg-slate-950 dark:bg-amber-50">
-                <p class="text-3xl font-bold mb-6">-60%</p>
-                <p class="text-[10px] font-bold uppercase tracking-widest">Error Rate</p>
-             </div>
-             <div class="bg-warning p-6 rounded-4xl text-white">
-                <p class="text-3xl font-bold mb-6">99.9%</p>
-                <p class="text-[10px] font-bold uppercase tracking-widest">Uptime</p>
-             </div>
-          </div>
-        </div>
+<section class="px-6 py-30 max-w-6xl mx-auto flex flex-col lg:flex-row gap-20 items-center">
+  <div class="lg:w-7/12">
+    <blockquote class="text-4xl md:text-5xl font-serif italic md:leading-[1.1] tracking-tight text-default mb-12">
+      “Before using this platform, our process was <span class="underline decoration-warning decoration-4 underline-offset-8">slow and full of friction</span>. Now everything is automated and incredibly reliable.”
+    </blockquote>
+    <div class="flex items-center gap-6">
+      <img src="https://i.pravatar.cc/100?img=60" alt="Nafis" class="size-20 rounded-2xl rotate-3 object-cover shadow-xl border-4 border-white" />
+      <div>
+        <p class="mb-1.5 text-xl font-bold tracking-tight">Nafis Rahman</p>
+        <span class="text-muted font-medium italic">Engineering Lead at Vertex</span>
       </div>
     </div>
+  </div>
 
-    <div class="mt-24 flex flex-col md:flex-row items-center py-10 border-y border-light gap-4">
-      <p class="text-[10px] font-black uppercase tracking-[0.3em] text-subtle whitespace-nowrap m-0 md:mr-12 lg:mr-30">Collaborating with</p>
-      <div class="flex flex-wrap justify-center md:justify-between w-full items-center gap-6 opacity-60 grayscale">
-        <span class="font-serif font-bold text-2xl tracking-tighter">Vertex</span>
-        <span class="font-sans font-black text-xl tracking-widest">NOVALABS</span>
-        <span class="font-mono font-bold text-lg decoration-2">CloudSync</span>
-        <span class="font-sans font-medium text-2xl tracking-tight">Dev<span class="font-black text-warning">Core</span></span>
+  <div class="w-full lg:w-5/12 space-y-4">
+    <div class="card p-8 border-light rounded-4xl">
+      <div class="flex justify-between items-start mb-4">
+        <p class="text-6xl font-black text-default leading-none">3x</p>
+        <div class="badge badge-subtle-success badge-md">↑ 200%</div>
+      </div>
+      <p class="text-muted font-medium uppercase">Faster daily deployments</p>
+    </div>
+
+    <div class="grid grid-cols-2 gap-4">
+      <div class="p-6 rounded-4xl text-white dark:text-dark bg-dark dark:bg-white">
+        <p class="text-3xl font-bold mb-6">-60%</p>
+        <p class="text-[10px] font-bold uppercase tracking-widest">Error Rate</p>
+      </div>
+      <div class="p-6 rounded-4xl text-white dark:text-dark bg-warning">
+        <p class="text-3xl font-bold mb-6">99.9%</p>
+        <p class="text-[10px] font-bold uppercase tracking-widest">Uptime</p>
       </div>
     </div>
   </div>
