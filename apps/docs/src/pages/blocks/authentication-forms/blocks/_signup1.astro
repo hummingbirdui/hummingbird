@@ -1,14 +1,14 @@
-<div class="min-h-screen bg-default text-default flex items-center justify-center px-6 sm:px-10 py-24 antialiased overflow-hidden relative">
-  <div class="card relative w-full max-w-3xl lg:max-w-5xl grid lg:grid-cols-2 border-light rounded-3xl overflow-hidden">
+<div class="min-h-screen flex items-center justify-center px-4 py-16">
+  <div class="card w-full max-w-2xl lg:max-w-5xl flex-row border-light rounded-2xl overflow-hidden">
     <!-- left column -->
     <div class="hidden lg:flex flex-col p-16 bg-default">
       <a href="/" class="mb-14">
-        <img src="https://themewagon.com/wp-content/themes/themewagon/dist/images/hb.png" alt="Logo" class="h-14">
+        <img src="https://themewagon.com/wp-content/themes/themewagon/dist/images/hb.png" alt="Logo" class="h-14 dark:brightness-0 dark:invert">
       </a>
 
       <h1 class="text-6xl text-default leading-[1.1] mb-6 tracking-tighter">
         Elevate your<br/>
-        <span class="bg-clip-text text-transparent bg-linear-to-r from-primary via-secondary to-pink-400">workflow.</span>
+        <span class="bg-clip-text text-transparent bg-linear-to-r from-secondary to-primary">workflow.</span>
       </h1>
       
       <p class="text-lg text-muted max-w-sm leading-relaxed mb-10">
@@ -30,45 +30,46 @@
     </div>
 
     <!-- right column -->
-    <div class="p-8 md:p-14">
+    <div class="p-8 md:p-14 flex-1">
       <div class="mb-10 text-default text-center lg:text-left">
         <h4 class="tracking-tight mb-2">Get Started</h4>
         <p class="text-muted font-medium text-sm">Create your account to start building.</p>
       </div>
 
       <form class="space-y-5">
-        <div class="grid grid-cols-2 gap-4">
-          <div class="form-field">
+        <div class="flex gap-4">
+          <div class="form-field flex-1">
             <label class="form-label text-[10px] font-bold text-default/70 uppercase tracking-widest mb-1 ms-1">First Name</label>
-            <input type="text" class="form-control px-4 py-3 bg-muted/50 border-base rounded-xl transition-all duration-300 focus:border-primary focus:ring-2 focus:ring-primary/15 placeholder:text-muted/50" placeholder="John" />
+            <input type="text" class="form-control-fill form-control-lg" placeholder="John" />
           </div>
-          <div class="form-field">
+          <div class="form-field flex-1">
             <label class="form-label text-[10px] font-bold text-default/70 uppercase tracking-widest mb-1 ms-1">Last Name</label>
-            <input type="text" class="form-control px-4 py-3 bg-muted/50 border-base rounded-xl transition-all duration-300 focus:border-primary focus:ring-2 focus:ring-primary/15 placeholder:text-muted/50" placeholder="Doe" />
+            <input type="text" class="form-control-fill form-control-lg" placeholder="Doe" />
           </div>
         </div>
 
         <div class="form-field">
           <label class="form-label text-[10px] font-bold text-default/70 uppercase tracking-widest mb-1 ms-1">Email Address</label>
-          <input type="email" class="form-control px-4 py-3 bg-muted/50 border-base rounded-xl transition-all duration-300 focus:border-primary focus:ring-2 focus:ring-primary/15 placeholder:text-muted/50" placeholder="john@example.com" />
+          <input type="email" class="form-control-fill form-control-lg" placeholder="john@example.com" />
         </div>
 
         <div class="form-field">
           <label class="form-label text-[10px] font-bold text-default/70 uppercase tracking-widest mb-1 ms-1">Password</label>
-          <input type="password" class="form-control px-4 py-3 bg-muted/50 border-base rounded-xl transition-all duration-300 focus:border-primary focus:ring-2 focus:ring-primary/15 placeholder:text-muted/50" placeholder="••••••••" />
+          <input type="password" class="form-control-fill form-control-lg" placeholder="••••••••" />
         </div>
 
-        <div class="flex items-center justify-between -mt-3 px-1.5">
-          <div class="form-check -ms-3">
-            <label for="checkboxDefaultLabel" class="form-check-input-wrapper">
-              <input class="form-check-input" type="checkbox" value="" id="checkboxDefaultLabel" />
-            </label>
-            <label for="checkboxDefaultLabel" class="form-check-label text-xs">Keep me signed in</label>
-          </div>
-          <a href="#" class="text-xs text-default/60 hover:text-default underline underline-offset-4 decoration-dark/20 dark:decoration-white/20">Forgot password?</a>
+        <div class="form-check -ms-2 -mt-4">
+          <label for="checkboxDefaultLabel" class="form-check-input-wrapper"><input class="form-check-input" type="checkbox" value="" id="checkboxDefaultLabel" /></label>
+          <label for="checkboxDefaultLabel" class="form-check-label text-xs">
+            I agree to the
+            <a href="#" class="text-primary font-medium hover:underline">Terms of Service</a>
+            and
+            <a href="#" class="text-primary font-medium hover:underline">Privacy Policy</a>
+            .
+          </label>
         </div>
 
-        <button type="submit" class="btn btn-primary w-full py-3 rounded-xl">
+        <button type="submit" class="btn btn-lg btn-primary w-full">
           Create Account
         </button>
       </form>
@@ -76,18 +77,18 @@
       <div class="hr-label my-10 text-[10px] text-default/40 font-bold uppercase tracking-[0.3em]">Or continue with</div>
 
       <div class="flex gap-4 mb-10">
-        <button class="btn gap-3 bg-muted/50 border-base py-3 rounded-xl flex-1">
+        <button class="btn btn-subtle-neutral btn-lg gap-3 text-sm flex-1">
           <img src="https://www.svgrepo.com/show/355037/google.svg" class="size-4" alt="Google">
-          <span class="text-xs font-bold tracking-wide">Google</span>
+          Google
         </button>
-        <button class="btn gap-3 bg-muted/50 border-base py-3 rounded-xl flex-1">
+        <button class="btn btn-subtle-neutral btn-lg gap-3 text-sm flex-1">
           <img src="https://www.svgrepo.com/show/341847/github.svg" class="size-4 dark:invert" alt="GitHub">
-          <span class="text-xs font-bold tracking-wide">GitHub</span>
+          GitHub
         </button>
       </div>
 
       <p class="text-center text-xs text-default/40 tracking-wide font-medium">
-        Already a member? <a href="#" class="text-muted font-semibold no-underline hover:underline">Sign in here</a>
+        Already a member? <a href="#" class="text-muted no-underline font-semibold hover:text-primary">Sign in here</a>
       </p>
     </div>
   </div>
