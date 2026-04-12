@@ -46,20 +46,25 @@ const markup = iframeMarkup(code);
     </div>
     <div class="w-full" data-stage="stage">
       <div class="flex">
-        <div data-element="iframe-wrap" class="border border-light rounded-lg relative w-full">
+        <div data-element="iframe-wrap" class="rounded-2xl relative w-full border border-light/50">
+          <div class="h-10 rounded-t-2xl bg-muted px-4 flex items-center gap-2">
+            <div class="w-3 h-3 rounded-full bg-red-500"></div>
+            <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+            <div class="w-3 h-3 rounded-full bg-green-500"></div>
+          </div>
           <iframe
             data-element="preview-frame"
             srcdoc={markup}
             title="Component preview"
             sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
-            class={`w-full rounded-lg ${className}`}></iframe>
-          <div class="h-full w-1 absolute -right-4 top-0 px-2 flex items-center">
-            <div data-handle="resize" class="w-1.5 h-8 bg-emphasis cursor-ew-resize shrink-0 rounded-full"></div>
+            class={`w-full rounded-b-2xl ${className}`}></iframe>
+          <div class="h-full w-1 absolute -right-4 top-0 px-2 flex items-center cursor-ew-resize" data-handle="resize">
+            <div class="w-1.5 h-8 bg-emphasis cursor-ew-resize shrink-0 rounded-full"></div>
           </div>
         </div>
       </div>
     </div>
-    <div class="bg-subtle overflow-x-auto hidden p-4 border border-light rounded-lg" data-stage="code-stage">
+    <div class="bg-subtle overflow-x-auto hidden p-4 border border-light/50 rounded-2xl" data-stage="code-stage">
       <AppCode code={code} lang={lang} data-astro-code />
     </div>
   </div>
@@ -91,8 +96,16 @@ const markup = iframeMarkup(code);
 
       const syncIframeHeight = () => {
         try {
-          const scrollHeight = iframe.contentDocument?.body?.scrollHeight;
-          iframe.style.height = scrollHeight ? `${scrollHeight}px` : 'auto';
+          const body = iframe.contentDocument?.body;
+          const docEl = iframe.contentDocument?.documentElement;
+          if (!body || !docEl) return;
+
+          iframe.style.height = '0px';
+          docEl.style.overflow = 'visible';
+          body.style.overflow = 'visible';
+
+          const height = Math.max(body.scrollHeight, docEl.scrollHeight);
+          iframe.style.height = `${height}px`;
         } catch {}
       };
 
@@ -106,9 +119,7 @@ const markup = iframeMarkup(code);
 
           body.addEventListener('click', (e) => {
             const target = e.target as HTMLElement;
-            if (target.closest('a')) {
-              e.preventDefault();
-            }
+            if (target.closest('a')) e.preventDefault();
           });
 
           return true;
@@ -131,6 +142,7 @@ const markup = iframeMarkup(code);
         codeStage?.classList.remove(HIDDEN_CLASS);
         previewStage?.classList.add(HIDDEN_CLASS);
       });
+
       previewBtn?.addEventListener('click', () => {
         showCodeBtn?.classList.remove(ACTIVE_CLASS);
         previewBtn.classList.add(ACTIVE_CLASS);
@@ -156,7 +168,10 @@ const markup = iframeMarkup(code);
       const onMouseMove = (e: MouseEvent) => {
         if (!isResizing) return;
         const newWidth = dragStartWidth + (e.clientX - dragStartX);
-        if (newWidth > MIN_IFRAME_WIDTH) iframeWrap.style.width = `${newWidth}px`;
+        if (newWidth > MIN_IFRAME_WIDTH) {
+          iframeWrap.style.width = `${newWidth}px`;
+          syncIframeHeight(); // ← sync on every drag tick
+        }
       };
 
       const onResizeEnd = () => {
@@ -165,6 +180,7 @@ const markup = iframeMarkup(code);
         document.body.style.cursor = '';
         document.body.style.userSelect = '';
         iframe.style.pointerEvents = 'auto';
+        syncIframeHeight(); // ← sync once more on release
       };
 
       document.addEventListener('mousemove', onMouseMove);

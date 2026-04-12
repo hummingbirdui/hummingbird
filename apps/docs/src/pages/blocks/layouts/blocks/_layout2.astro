@@ -1,15 +1,16 @@
 <nav class="navbar bg-default fixed top-0 w-full border-b border-light px-6 justify-between flex h-15 z-1035">
   <div class="flex">
     <button
-      class="btn btn-text-neutral btn-square btn-sm lg:hidden me-4 text-muted"
+      class="btn size-8 btn-circle btn-subtle-neutral me-4 lg:hidden"
       data-bs-toggle="offcanvas"
       data-bs-target="#offcanvasLayout2"
       aria-controls="offcanvasLayout2"
     >
       <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
-        ><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-          ><rect width="18" height="18" x="3" y="3" rx="2"></rect><path d="M9 3v18"></path></g
-        ></svg
+        ><path
+          fill="currentColor"
+          d="M4 18q-.425 0-.712-.288T3 17t.288-.712T4 16h11q.425 0 .713.288T16 17t-.288.713T15 18zm14.9-1.7l-3.6-3.6q-.3-.3-.3-.7t.3-.7l3.6-3.6q.275-.275.7-.275t.7.275t.275.7t-.275.7L17.4 12l2.9 2.9q.275.275.275.7t-.275.7t-.7.275t-.7-.275M4 13q-.425 0-.712-.288T3 12t.288-.712T4 11h8q.425 0 .713.288T13 12t-.288.713T12 13zm0-5q-.425 0-.712-.288T3 7t.288-.712T4 6h11q.425 0 .713.288T16 7t-.288.713T15 8z"
+        ></path></svg
       >
     </button>
     <a class="flex items-center gap-2 no-underline" href="#">
@@ -57,9 +58,9 @@
     </div>
   </div>
 </nav>
-<div class="lg:grid lg:grid-cols-[15rem_1fr] h-full mt-15">
+<div class="lg:grid lg:grid-cols-[16.5rem_1fr] h-full pt-15">
   <div
-    class="offcanvas-lg offcanvas-start border-e border-light w-60 lg:sticky lg:top-15 h-screen lg:h-[calc(100vh-60px)] overflow-y-scroll"
+    class="offcanvas-lg offcanvas-start border-e border-light w-66 lg:sticky lg:top-15 h-screen lg:h-[calc(100vh-60px)] overflow-y-scroll"
     tabindex="-1"
     id="offcanvasLayout2"
     aria-labelledby="offcanvasLayout2Label"
@@ -109,14 +110,12 @@
       </div>
     </div>
   </div>
-  <div class="h-full flex-1">
-    <div class="p-6 flex flex-col h-full">
-      <div class="grid grid-cols-3 gap-4 md:gap-6">
-        <div class="bg-muted/50 aspect-video rounded-lg"></div>
-        <div class="bg-muted/50 aspect-video rounded-lg"></div>
-        <div class="bg-muted/50 aspect-video rounded-lg"></div>
-      </div>
-      <div class="bg-muted/50 rounded-lg mt-4 md:mt-6 flex-1"></div>
+  <div class="p-6 flex flex-col h-full">
+    <div class="grid grid-cols-3 gap-4 md:gap-6">
+      <div class="bg-muted/50 aspect-video rounded-lg"></div>
+      <div class="bg-muted/50 aspect-video rounded-lg"></div>
+      <div class="bg-muted/50 aspect-video rounded-lg"></div>
     </div>
+    <div class="bg-muted/50 rounded-lg mt-4 md:mt-6 flex-1"></div>
   </div>
 </div>

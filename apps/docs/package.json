@@ -10,7 +10,8 @@
     "preview": "astro preview",
     "start:docs-js": "esbuild src/docs.ts --bundle --outfile=static/docs.js --watch",
     "deploy": "node deployment.js production",
-    "deploy:staging": "node deployment.js staging"
+    "deploy:staging": "node deployment.js staging",
+    "deploy:internal": "echo staging.hbui.dev > ./dist/CNAME && gh-pages -d dist -r https://github.com/hummingbirdui/staging.git"
   },
   "dependencies": {
     "@hummingbirdui/browser": "workspace:*",
