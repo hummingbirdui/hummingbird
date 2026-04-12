@@ -6,25 +6,24 @@ import Feature2 from './blocks/_feature2.astro';
 import Feature3 from './blocks/_feature3.astro';
 import Feature4 from './blocks/_feature4.astro';
 import Feature5 from './blocks/_feature5.astro';
-import Feature6 from './blocks/_feature6.astro';
 ---
 
 <Layout>
   <div class="px-5">
     <div class="max-w-7xl mx-auto my-10">
-      <BlockPreview>
+      <BlockPreview title="feature1" className="min-h-240">
         <Feature1 />
       </BlockPreview>
-      <BlockPreview>
+      <BlockPreview title="feature2" className="min-h-206">
         <Feature2 />
       </BlockPreview>
-      <BlockPreview>
+      <BlockPreview title="feature3" className="min-h-206">
         <Feature3 />
       </BlockPreview>
-      <BlockPreview>
+      <BlockPreview title="feature4" className="min-h-206">
         <Feature4 />
       </BlockPreview>
-      <BlockPreview>
+      <BlockPreview title="feature5" className="min-h-206">
         <Feature5 />
       </BlockPreview>
     </div>
