@@ -39,7 +39,7 @@
     .choices__input {
       @apply block w-full
       py-2.5 px-3 m-0
-      border-b
+      border-b-(length:--border-width)
       border-light
       bg-default;
     }
@@ -294,7 +294,7 @@
 .choices__list[aria-expanded] {
   @apply hidden z-1 absolute w-full
   bg-default
-  border border-light
+  border-(length:--border-width) border-light
   top-full mt-0.5
   rounded-lg
   overflow-hidden
@@ -346,7 +346,7 @@
 
 .choices__heading {
   @apply font-semibold text-xs px-3 py-2
-  border-b border-light text-muted;
+  border-b-(length:--border-width) border-light text-muted;
 }
 
 .choices__button {

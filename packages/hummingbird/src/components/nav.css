@@ -50,7 +50,7 @@
 @utility nav-underline {
   @layer base {
     --nav-underline-gap: 0;
-    --nav-underline-border-width: 2px;
+    --nav-underline-border-width: calc(var(--border-width) * 2);
     --nav-link-active-color: var(--color-primary);
 
     @apply gap-[var(--nav-underline-gap)];
@@ -69,7 +69,7 @@
 @utility nav-tabs {
   @layer components {
     --nav-link-active-color: var(--color-primary);
-    --nav-tabs-border-width: 1px;
+    --nav-tabs-border-width: var(--border-width);
     --nav-tabs-border-color: var(--border-color-base);
     --nav-tabs-border-radius: var(--radius-md);
     --nav-tabs-link-hover-border-color: var(--border-color-light);

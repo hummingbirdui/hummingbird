@@ -1,6 +1,6 @@
 @utility btn-group {
   @layer base {
-    @apply relative inline-flex align-middle rounded-[var(--input-btn-radius)];
+    @apply relative inline-flex align-middle rounded-(--input-btn-border-radius);
 
     > .btn {
       @apply relative shrink grow basis-auto;
@@ -17,7 +17,7 @@
 
     > :not(.btn-check:first-child) + .btn,
     > .btn-group:not(:first-child) {
-      @apply -ms-[var(--input-btn-border-width)];
+      @apply -ms-(--input-btn-border-width);
     }
 
     > .btn:not(:last-child):not([data-bs-toggle='dropdown']),
@@ -57,7 +57,7 @@
 
     > .btn:not(:first-child),
     > .btn-group:not(:first-child) {
-      @apply -mt-[var(--input-btn-border-width)];
+      @apply -mt-(--input-btn-border-width);
     }
 
     > .btn:not(:last-child):not([data-bs-toggle='dropdown']),

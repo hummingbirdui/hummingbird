@@ -22,7 +22,10 @@ const { prev, next } = await getDocPagination(sections, Astro.url.pathname);
       <Sidebar />
       <main class=`content-wrapper xl:grid ${toc || redirects ? 'lg:grid-cols-[1fr_16.75rem]' : ''}`>
         <div class={`py-10 lg:ps-10 min-w-0 xl:${toc || redirects ? 'pe-10' : 'pe-0'}`}>
-          <h1 class="mb-4 text-[32px] inline-flex gap-3 items-center">{title} {badge && <span class="badge badge-subtle-warning">{badge}</span>}</h1>
+          <h1 class="mb-4 text-4xl inline-flex gap-3 items-center">
+            {title}
+            {badge && <span class="badge badge-subtle-warning">{badge}</span>}
+          </h1>
           <p class="text-xl mb-10 font-light">{description}</p>
           {
             (attributeComponent === 'Dropdown' ||

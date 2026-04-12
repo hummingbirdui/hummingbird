@@ -5,19 +5,18 @@ export const iframeMarkup = (code: string) => {
     <head>
       <script src="https://cdn.jsdelivr.net/npm/@hummingbirdui/browser@1.0.4/dist/index.global.js"><\/script>
       <style type="text/tailwindcss">
-      @custom-variant dark (&:where(.dark, .dark *), .dark);
-      @custom-variant active (&:active, &.active);
+        @custom-variant dark (&:where(.dark, .dark *), .dark);
+        @custom-variant active (&:active, &.active);
       </style>
       <script is:inline>
-        // On page load or when changing themes, best to add inline in head to avoid FOUC
         document.documentElement.classList.toggle(
           "dark",
           localStorage.theme === "dark" ||
             (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches),
         );
-      <\/script>
+      </script>
     </head>
-    <body class="h-screen">
+    <body class='h-screen'>
       ${code}
       <script src="https://cdn.jsdelivr.net/npm/@hummingbirdui/hummingbird@1.0.4/dist/hummingbird.bundle.min.js"></script>
     </body>

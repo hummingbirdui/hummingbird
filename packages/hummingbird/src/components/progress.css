@@ -3,7 +3,7 @@
     --progress-height: --spacing(1);
     --progress-font-size: var(--text-xs);
     --progress-bg: var(--color-light);
-    --progress-radius: var(--radius-md);
+    --progress-border-radius: var(--radius-md);
     --progress-bar-color: var(--color-contrast);
     --progress-bar-bg: var(--color-primary);
     --progress-stripe-size: 0.75rem;
@@ -12,7 +12,7 @@
     h-[var(--progress-height)]
     bg-[var(--progress-bg)]
     text-[length:var(--progress-font-size)]
-    rounded-[var(--progress-radius)];
+    rounded-[var(--progress-border-radius)];
   }
 }
 

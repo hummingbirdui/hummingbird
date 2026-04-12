@@ -4,6 +4,46 @@ description: This guide explains how to enable and manage dark mode in a way con
 toc: true
 ---
 
+## How it works
+
+Hummingbird uses shared CSS theme variables to power both light and dark modes.
+
+- The default (light) colors are defined in `@theme`.
+- The dark palette overrides those same variables inside `@variant dark`.
+- Toggling a `.dark` class switches all values globally.
+
+#### Key Idea
+
+All components rely on the same semantic tokens: 
+- `--background-color-default`
+- `--text-color-default`
+- `--color-primary`
+- `--border-color-base`
+
+#### Result:
+
+Switching themes requires no markup changes—only variable values update.
+
+## Customizing dark mode
+
+Override variables after importing Hummingbird:
+
+<Example lang='sass' showPreview={false} code={`@import "@hummingbirdui/hummingbird";
+
+@theme {
+  --background-color-default: var(--color-white);
+  --text-color-default: var(--color-gray-800);
+  --color-primary: var(--color-blue-500);
+}
+
+:root, :host { 
+    @variant dark {
+      --background-color-default: var(--color-gray-950);
+      --text-color-default: var(--color-gray-100);
+      --color-primary: var(--color-blue-400);
+    }
+}`} />
+
 ## Toggling dark mode manually
 
 #### 1. Custom dark mode selector
@@ -100,27 +140,93 @@ Any preferred markup can be used for toggling icon visibility based on the curre
 `}
 />
 
-## How to use
+## Dark mode variable overrides
 
-Hummingbird supports dark mode out of the box, and all components are fully compatible with it. No additional configuration is required to enable dark mode styles.
-
-To apply additional styling specifically for dark mode, use the `dark:` variant alongside utility classes. This ensures that elements automatically adjust their appearance whenever the `.dark` class is active.
-
-<Example lang='html' showPreview={false}
-  code={`<div class="bg-subtle text-primary dark:text-secondary">
-    This content adapts to dark mode
-  </div>`}
-/>
-
-In addition to using the `dark:` variant, Hummingbird’s theme variables can be directly overridden within a dark scope:
+A list of theme variables that are overridden when dark mode is active.
 
 <Example lang='sass' showPreview={false}
-  code={`:root, :host { 
-    @variant dark {
-      --color-primary: var(--color-blue-400);
-      --color-secondary: var(--color-purple-400);
-    }
-  }`}
-/>
+  code={`@layer theme {
+    :root,
+    :host {
+      @variant dark {
+        /* Background colors */
+        --background-color-subtle: var(--color-gray-900);
+        --background-color-muted: var(--color-gray-800);
+        --background-color-default: var(--color-gray-950);
+        --background-color-highlight: var(--color-gray-700);
+        --background-color-emphasis: var(--color-gray-600);
 
-See all available variables in the [Theming](/docs/customize/theming#hummingbird-theme-variables) section.
+        /* Text colors */
+        --text-color-subtle: var(--color-gray-500);
+        --text-color-muted: var(--color-gray-400);
+        --text-color-default: var(--color-gray-100);
+        --text-color-highlight: var(--color-gray-50);
+        --text-color-emphasis: var(--color-white);
+
+        /* neutral */
+        --color-light: var(--color-gray-800);
+        --color-dark: var(--color-gray-700);
+        --color-contrast: var(--color-gray-950);
+
+        /* primary */
+        --color-primary-lighter: var(--color-blue-950);
+        --color-primary-light: var(--color-blue-700);
+        --color-primary: var(--color-blue-400);
+        --color-primary-dark: var(--color-blue-300);
+        --color-primary-darker: var(--color-blue-100);
+
+        /* secondary */
+        --color-secondary-lighter: var(--color-purple-950);
+        --color-secondary-light: var(--color-purple-700);
+        --color-secondary: var(--color-purple-400);
+        --color-secondary-dark: var(--color-purple-300);
+        --color-secondary-darker: var(--color-purple-100);
+
+        /* danger */
+        --color-danger-lighter: var(--color-red-950);
+        --color-danger-light: var(--color-red-600);
+        --color-danger: var(--color-red-400);
+        --color-danger-dark: var(--color-red-300);
+        --color-danger-darker: var(--color-red-200);
+
+        /* warning */
+        --color-warning-lighter: var(--color-orange-950);
+        --color-warning-light: var(--color-orange-800);
+        --color-warning: var(--color-orange-400);
+        --color-warning-dark: var(--color-orange-300);
+        --color-warning-darker: var(--color-orange-200);
+
+        /* success */
+        --color-success-lighter: var(--color-green-950);
+        --color-success-light: var(--color-green-700);
+        --color-success: var(--color-green-400);
+        --color-success-dark: var(--color-green-300);
+        --color-success-darker: var(--color-green-200);
+
+        /* info */
+        --color-info-lighter: var(--color-sky-950);
+        --color-info-light: var(--color-sky-700);
+        --color-info: var(--color-sky-400);
+        --color-info-dark: var(--color-sky-300);
+        --color-info-darker: var(--color-sky-200);
+
+        /* borders */
+        --border-color-light: var(--color-gray-800);
+        --border-color-base: var(--color-gray-700);
+        --border-color-dark: var(--color-gray-600);
+
+        /* actions */
+        --color-active: var(--color-gray-500);
+        --color-hover: var(--color-gray-700);
+        --color-selected: var(--color-gray-900);
+        --color-disabled-color: var(--color-gray-500);
+        --color-disabled: var(--color-gray-700);
+        --color-focus: var(--color-gray-700);
+
+        /* Shadows */
+        --shadow-xl:
+          0px 12px 51px 0px rgba(0, 0, 0, 0.6), 0px 3px 24px 0px rgba(0, 0, 0, 0.56), 0px 1px 16px 0px rgba(0, 0, 0, 0.1);
+      }
+    }
+  }
+`} />

@@ -10,7 +10,7 @@
     --btn-close-focus-opacity: 1;
     --btn-close-disabled-opacity: 0.25;
     --btn-close-padding: --spacing(1.5);
-    --btn-close-radius: var(--radius-sm);
+    --btn-close-border-radius: var(--radius-sm);
 
     @apply box-content 
     w-[var(--btn-width)]
@@ -24,7 +24,7 @@
     border-0 
     select-none
     cursor-pointer
-    rounded-[var(--btn-close-radius)];
+    rounded-[var(--btn-close-border-radius)];
 
     @variant dark {
       --btn-close-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23FFF' viewBox='0 0 16 16'%3e%3cpath d='M.293 1.707a1 1 0 0 1 1.414-1.414L8 6.586l6.293-6.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293A1 1 0 0 1 .293 14.293L6.586 8 .293 1.707z'/%3e%3c/svg%3e");
@@ -57,6 +57,6 @@
 
 @utility btn-close-circle {
   @layer base {
-    --btn-close-radius: calc(infinity * 1px);
+    --btn-close-border-radius: calc(infinity * 1px);
   }
 }

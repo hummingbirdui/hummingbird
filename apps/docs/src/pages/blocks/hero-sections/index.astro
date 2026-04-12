@@ -6,38 +6,26 @@ import Hero2 from './blocks/_hero2.astro';
 import Hero3 from './blocks/_hero3.astro';
 import Hero4 from './blocks/_hero4.astro';
 import Hero5 from './blocks/_hero5.astro';
+import BlocksLayout from '@layouts/BlocksLayout.astro';
 ---
 
-<Layout>
-  <div class="px-5">
-    <div class="max-w-7xl mx-auto my-10">
-      <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="/" class="link link-hover">Home</a></li>
-          <li class="breadcrumb-item"><a href="/blocks" class="link link-hover">Blocks</a></li>
-          <li class="breadcrumb-item active" aria-current="page">Hero Sections</li>
-        </ol>
-      </nav>
-      <h3 class="mb-4 mt-8">Hero Sections</h3>
-      <p class="text-lg">
-        Use these Tailwind CSS hero section examples to add important messaging, product photos, and call-to-actions to
-        the top of your website. These hero examples include a variety of different styles and layouts.
-      </p>
-      <BlockPreview title="Default Hero Section" className="min-h-206">
-        <Hero1 />
-      </BlockPreview>
-      <BlockPreview title="Split with image" className="min-h-206">
-        <Hero2 />
-      </BlockPreview>
-      <BlockPreview title="Split with image" className="min-h-251">
-        <Hero3 />
-      </BlockPreview>
-      <BlockPreview title="Split with image" className="min-h-206">
-        <Hero4 />
-      </BlockPreview>
-      <BlockPreview title="Split with image" className="min-h-174">
-        <Hero5 />
-      </BlockPreview>
-    </div>
-  </div>
-</Layout>
+<BlocksLayout
+  title="Hero sections"
+  description="Use these Tailwind CSS hero section examples to add important messaging, product photos, and call-to-actions to the top of your website. These hero examples include a variety of different styles and layouts."
+>
+  <BlockPreview title="Full-screen overlay with centered content" className="min-h-206">
+    <Hero1 />
+  </BlockPreview>
+  <BlockPreview title="Split with image" className="min-h-206">
+    <Hero2 />
+  </BlockPreview>
+  <BlockPreview title="Centered content with brands logo" className="min-h-252.5">
+    <Hero3 />
+  </BlockPreview>
+  <BlockPreview title="Grid view cards for e-commerce landing" className="min-h-263">
+    <Hero4 />
+  </BlockPreview>
+  <BlockPreview title="Video background" className="min-h-165">
+    <Hero5 />
+  </BlockPreview>
+</BlocksLayout>

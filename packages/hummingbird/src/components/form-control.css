@@ -2,7 +2,7 @@
   @layer base {
     --input-bg: var(--background-color-muted);
     --input-font-size: var(--input-btn-font-size);
-    --input-radius: var(--input-btn-radius);
+    --input-border-radius: var(--input-btn-border-radius);
     --input-padding-x: var(--input-btn-padding-x);
     --input-padding-y: var(--input-btn-padding-y);
     --input-line-height: var(--input-btn-line-height);
@@ -22,7 +22,7 @@
     text-[length:var(--input-font-size)]
     text-[var(--input-color)]
     font-[var(--input-font-weight)]
-    rounded-[var(--input-radius)]
+    rounded-[var(--input-border-radius)]
     border-[length:var(--input-border-width)]
     border-[var(--input-border-color)]
     px-[var(--input-padding-x)]
@@ -76,7 +76,7 @@
 @utility form-control {
   @layer base {
     --input-font-size: var(--input-btn-font-size);
-    --input-radius: var(--input-btn-radius);
+    --input-border-radius: var(--input-btn-border-radius);
     --input-padding-x: var(--input-btn-padding-x);
     --input-padding-y: var(--input-btn-padding-y);
     --input-line-height: var(--input-btn-line-height);
@@ -90,7 +90,7 @@
     text-[length:var(--input-font-size)]
     text-[var(--input-color)]
     font-[var(--input-btn-font-weight)]
-    rounded-[var(--input-radius)]
+    rounded-[var(--input-border-radius)]
     border-[length:var(--input-border-width)]
     border-[var(--input-border-color)]
     bg-[var(--input-bg)]
@@ -187,21 +187,26 @@
 
 @utility form-control-sm {
   @layer base {
-    --input-padding-x: --spacing(3);
-    --input-padding-y: --spacing(1.25);
-    --input-radius: var(--radius-sm);
-    --input-line-height: 1.25;
+    --input-font-size: var(--input-btn-font-size-sm);
+    --input-padding-x: var(--input-btn-padding-x-sm);
+    --input-padding-y: var(--input-btn-padding-y-sm);
+    --input-border-radius: var(--input-btn-border-radius-sm);
+    --input-line-height: var(--input-btn-line-height-sm);
     --input-icon-padding: --spacing(8.5);
   }
 }
 
 @utility form-control-lg {
   @layer base {
-    --input-padding-y: --spacing(2.25);
-    --input-font-size: var(--text-base);
+    --input-font-size: var(--input-btn-font-size-lg);
+    --input-padding-x: var(--input-btn-padding-x-lg);
+    --input-padding-y: var(--input-btn-padding-y-lg);
+    --input-border-radius: var(--input-btn-border-radius-lg);
+    --input-line-height: var(--input-btn-line-height-lg);
     --input-icon-padding: --spacing(12);
   }
 }
+
 @utility form-control-primary {
   @layer base {
     --file-selector-btn-bg: var(--color-primary);

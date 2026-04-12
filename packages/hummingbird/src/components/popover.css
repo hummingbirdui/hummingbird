@@ -3,7 +3,7 @@
   --popover-max-width: 16rem;
   --popover-font-size: var(--text-sm);
   --popover-bg: var(--background-color-default);
-  --popover-border-width: 1px;
+  --popover-border-width: var(--border-width);
   --popover-border-color: var(--border-color-light);
   --popover-border-radius: var(--radius-lg);
   --popover-box-shadow: var(--shadow-xl);

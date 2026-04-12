@@ -1,0 +1,29 @@
+---
+const { rows } = Astro.props;
+import Highlight from '@components/docs/Highlight.astro';
+---
+
+<div class="overflow-auto max-h-100">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Class</th>
+        <th>Styles</th>
+      </tr>
+    </thead>
+    <tbody>
+      {
+        rows.map(([className, styles]: [string, string]) => (
+          <tr>
+            <td scope="row" class="text-info text-nowrap">
+              {className}
+            </td>
+            <td scope="row">
+              <Highlight input={styles} />
+            </td>
+          </tr>
+        ))
+      }
+    </tbody>
+  </table>
+</div>

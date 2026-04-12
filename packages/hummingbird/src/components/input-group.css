@@ -83,7 +83,7 @@
     --input-group-addon-bg: var(--background-color-subtle);
     --input-group-addon-color: var(--input-color);
     --input-group-addon-border-color: var(--border-color-base);
-    --input-group-addon-radius: var(--input-btn-radius);
+    --input-group-addon-border-radius: var(--input-btn-border-radius);
     --input-group-addon-font-size: var(--input-btn-font-size);
     --input-group-addon-line-height: var(--input-btn-line-height);
 
@@ -98,7 +98,7 @@
     bg-[var(--input-group-addon-bg)]
     border-[length:var(--input-btn-border-width)]
     border-[var(--input-group-addon-border-color)]
-    rounded-[var(--input-group-addon-radius)];
+    rounded-[var(--input-group-addon-border-radius)];
   }
 }
 
@@ -138,7 +138,7 @@
     > .input-group-text {
       --input-group-addon-padding-x: --spacing(3);
       --input-group-addon-padding-y: --spacing(1.25);
-      --input-group-addon-radius: var(--radius-sm);
+      --input-group-addon-border-radius: var(--radius-sm);
       --input-group-addon-line-height: 1.25;
     }
   }
