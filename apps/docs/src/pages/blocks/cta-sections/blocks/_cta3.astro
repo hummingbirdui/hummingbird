@@ -1,7 +1,7 @@
-<section class="px-6 py-24 bg-default overflow-hidden">
-  <div class="mx-auto max-w-6xl">
-    <div class="text-center mb-16 space-y-4">
-      <h2 class="text-4xl md:text-5xl font-black tracking-tighter text-default">
+<section class="px-6 py-24">
+  <div class="mx-auto max-w-xl lg:max-w-6xl">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl md:text-5xl font-black tracking-tighter text-default mb-4">
         How do you want to <span class="text-primary">get started?</span>
       </h2>
       <p class="text-lg text-muted max-w-2xl mx-auto font-medium">
@@ -9,27 +9,31 @@
       </p>
     </div>
 
-    <div class="grid gap-8 md:grid-cols-3">
-      <div class="card group relative p-8 rounded-3xl bg-default border-light transition duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.05)]">
+    <div class="grid lg:grid-cols-3 gap-8">
+      <!-- card 01 -->
+      <div class="card group p-8 bg-default border-light rounded-3xl">
         <div class="size-12 mb-6 flex items-center justify-center rounded-2xl bg-muted text-muted group-hover:bg-primary group-hover:text-white transition-colors duration-300">
           <svg class="size-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg>
         </div>
-        <h3 class="text-xl font-bold text-default mb-3 tracking-tight">Start from scratch</h3>
+        <h3 class="text-xl font-bold text-default tracking-tight mb-3">Start from scratch</h3>
         <p class="text-sm font-medium leading-relaxed text-muted/80 mb-6">
           Build everything your way with full flexibility and our core API suite.
         </p>
-        <a href="#" class="btn btn-text-neutral hover:btn-text-primary px-0 self-start bg-transparent text-sm font-bold uppercase tracking-widest group/link">
+        <a href="#" class="btn btn-text-neutral px-0 self-start bg-transparent text-sm font-bold uppercase tracking-widest group/link">
           Get started
           <svg class="ms-2 size-4 transition-transform group-hover/link:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
         </a>
       </div>
 
-      <div class="card group relative p-8 rounded-3xl bg-dark dark:bg-primary shadow-2xl transition duration-300 hover:-translate-y-2">
-        <span class="absolute top-6 right-6 badge badge-subtle-primary badge-md text-[10px] uppercase tracking-widest text-white/80 border-white/60">Recommended</span>
-        <div class="size-12 mb-6 flex items-center justify-center rounded-2xl bg-white/10 text-white">
-          <svg class="size-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+      <!-- card 02 -->
+      <div class="card group p-8 bg-primary border-transparent rounded-3xl">
+        <div class="flex items-start justify-between mb-6">
+          <div class="size-12 flex items-center justify-center rounded-2xl bg-white/10 text-white">
+            <svg class="size-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          </div>
+          <span class="badge badge-subtle-primary badge-md text-[10px] uppercase tracking-widest text-white/80 border-white/60">Recommended</span>
         </div>
-        <h3 class="text-xl text-white font-bold mb-3 tracking-tight">Use templates</h3>
+        <h3 class="text-xl text-white font-bold tracking-tight mb-3">Use templates</h3>
         <p class="text-sm leading-relaxed text-white/80 mb-6">
           Jumpstart your project with over 200+ ready-made, high-performance designs.
         </p>
@@ -39,15 +43,16 @@
         </a>
       </div>
 
-      <div class="card group relative p-8 rounded-3xl bg-default border-light transition duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.05)]">
+      <!-- card 03 -->
+      <div class="card group p-8 bg-default border-light rounded-3xl">
         <div class="size-12 mb-6 flex items-center justify-center rounded-2xl bg-muted text-muted group-hover:bg-primary group-hover:text-white transition-colors duration-300">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+          <svg class="size-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
         </div>
-        <h3 class="text-xl font-bold text-default mb-3 tracking-tight">Hire experts</h3>
+        <h3 class="text-xl font-bold text-default tracking-tight mb-3">Hire experts</h3>
         <p class="text-sm font-medium leading-relaxed text-muted/80 mb-6">
           Collaborate with top-tier professionals to build your custom solution today.
         </p>
-        <a href="#" class="btn btn-text-neutral hover:btn-text-primary px-0 self-start bg-transparent text-sm font-bold uppercase tracking-widest group/link">
+        <a href="#" class="btn btn-text-neutral px-0 self-start bg-transparent text-sm font-bold uppercase tracking-widest group/link">
           Find experts 
           <svg class="ms-2 size-4 transition-transform group-hover/link:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
         </a>
