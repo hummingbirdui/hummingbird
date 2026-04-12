@@ -1,43 +1,68 @@
-<section class="relative px-6 py-24 bg-default overflow-hidden">
-  <div class="max-w-6xl mx-auto grid items-center gap-16 lg:grid-cols-2">
+<section class="px-6 py-28">
+  <div class="max-w-6xl mx-auto grid items-center lg:grid-cols-2 gap-12 lg:gap-20">
+    <!-- left content -->
     <div class="space-y-8">
-      <span class="badge badge-subtle-primary badge-lg gap-2 mb-10">
+      <span class="badge badge-subtle badge-lg gap-2">
         <span class="relative flex size-2">
-          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-          <span class="relative inline-flex rounded-full size-2 bg-primary"></span>
+          <span class="absolute inline-flex size-full rounded-full bg-primary opacity-75 animate-ping"></span>
+          <span class="inline-flex size-2 rounded-full bg-primary"></span>
         </span>
-        <span class="text-[10px] font-extrabold uppercase tracking-[0.2em]">Engine v1.0</span>
+        <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-muted">New: Engine v1.0 is live</span>
       </span>
-      
-      <h2 class="text-5xl lg:text-6xl font-black text-default tracking-tighter mb-6">
-        Build faster with <br/>
-        <span class="text-transparent bg-clip-text bg-linear-to-r from-primary via-secondary to-info italic font-serif">smart logic.</span>
+
+      <h2 class="text-4xl md:text-6xl font-extrabold tracking-tight text-default leading-[1.1]">
+        Build faster with
+        <br />
+        <span class="bg-clip-text text-transparent bg-linear-to-r from-secondary to-primary font-extrabold">
+          smart logic.
+        </span>
       </h2>
-      
-      <p class="text-lg text-muted max-w-md font-medium leading-relaxed">
-        Pre-built, customizable UI blocks meticulously engineered to bridge the gap between design and production.
+
+      <p class="md:text-lg text-muted max-w-md leading-relaxed">
+        Ship production-ready interfaces with composable UI blocks designed for speed, scalability, and real-world workflows.
       </p>
 
-      <div class="flex items-center gap-4">
-        <a href="#" class="btn btn-primary btn-lg lg:px-8 lg:py-4 font-bold text-sm uppercase lg:rounded-xl transition hover:scale-[1.03] active:scale-95 shadow-xl">
+      <div class="flex items-center gap-3">
+        <a href="#" class="btn btn-primary md:btn-lg font-semibold">
           Explore Library
         </a>
-        <a href="#" class="btn btn-text-neutral btn-lg px-0 lg:py-4 bg-transparent group gap-2 text-sm font-bold">
+
+        <a href="#" class="btn btn-subtle-neutral md:btn-lg">
           View Live Demo
-          <svg class="size-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
         </a>
+      </div>
+
+      <hr class="border-light"/>
+
+      <div class="flex items-center gap-8">
+        <div class="flex items-center gap-2 text-sm font-medium text-muted">
+          <svg class="size-5 text-primary" fill="currentColor" viewBox="0 0 20 20"><path d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z"></path></svg>
+          Instant setup
+        </div>
+        <div class="flex items-center gap-2 text-sm font-medium text-muted">
+          <svg class="size-5 text-secondary" fill="currentColor" viewBox="0 0 20 20"><path d="M7 3a1 1 0 000 2h6a1 1 0 100-2H7zM4 7a1 1 0 011-1h10a1 1 0 110 2H5a1 1 0 01-1-1zM2 11a2 2 0 012-2h12a2 2 0 012 2v4a2 2 0 01-2 2H4a2 2 0 01-2-2v-4z"></path></svg>
+          120+ Blocks
+        </div>
       </div>
     </div>
 
-    <div class="relative">
-      <div class="aspect-4/3 max-h-100">
-        <img src="https://images.unsplash.com/photo-1725347740938-73127ed5d91c?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="size-full object-cover rounded-xl" />
+    <!-- right content -->
+    <div class="relative aspect-4/3 max-w-140">
+      <div class="size-full rounded-xl overflow-hidden">
+        <img 
+          src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          class="size-full object-cover transition duration-700 hover:scale-105"
+        />
       </div>
-
-      <a href="#" class="absolute bottom-3 left-3 btn btn-neutral lg:px-6 lg:py-4 lg:rounded-xl font-bold text-sm uppercase gap-1.5 bg-white/20 text-black backdrop-blur-lg border-white/20">
-        <svg class="size-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg>
-        120 Components
-      </a>
+      <div class="card hidden sm:block absolute -top-6 -right-6 border-0 dark:border border-light px-4 py-3 text-sm shadow-xl rounded-xl">
+        <h6 class="text-default text-sm mb-0">2x Faster</h6>
+        <span class="text-muted text-xs">Development speed</span>
+      </div>
+      <div class="absolute bottom-5 left-5 badge badge-lg badge-subtle rounded-lg border-0 py-2.5 text-default">
+        <svg xmlns="http://www.w3.org/2000/svg" class="size-4" viewBox="0 0 32 32"><path fill="#f9c23c" d="M10.52 7.052a1.17 1.17 0 0 1-.639-.636L8.93 4.257c-.178-.343-.69-.343-.858 0l-.952 2.16a1.28 1.28 0 0 1-.638.635l-1.214.524a.462.462 0 0 0 0 .838l1.214.524c.293.121.523.353.638.636l.952 2.169c.178.343.69.343.858 0l.952-2.17c.126-.282.356-.504.638-.635l1.214-.524a.462.462 0 0 0 0-.838zm15.054 6.503a3.73 3.73 0 0 1-1.922-1.977L20.79 4.81a1.432 1.432 0 0 0-2.58 0l-2.863 6.768a3.8 3.8 0 0 1-1.921 1.977l-3.622 1.64c-1.072.53-1.072 2.08 0 2.61l3.622 1.64a3.74 3.74 0 0 1 1.922 1.977l2.862 6.768a1.432 1.432 0 0 0 2.58 0l2.863-6.768a3.8 3.8 0 0 1 1.921-1.977l3.622-1.64c1.072-.53 1.072-2.08 0-2.61zM8.281 20.33c.16.392.454.696.822.872l1.55.725a.646.646 0 0 1 0 1.146l-1.55.725c-.368.176-.661.49-.822.872l-1.228 2.977a.61.61 0 0 1-1.106 0L4.72 24.67a1.66 1.66 0 0 0-.822-.872l-1.55-.725a.646.646 0 0 1 0-1.146l1.55-.725c.368-.176.661-.49.822-.872l1.228-2.977a.61.61 0 0 1 1.106 0z"/></svg>
+        New Components Added
+      </div>
     </div>
   </div>
 </section>
+
