@@ -10,6 +10,8 @@ import stats from '@assets/images/blocks/stats.png';
 import statsDark from '@assets/images/blocks/stats-dark.png';
 import testimonial from '@assets/images/blocks/testimonial.png';
 import testimonialDark from '@assets/images/blocks/testimonial-dark.png';
+import team from '@assets/images/blocks/team.png';
+import teamDark from '@assets/images/blocks/team-dark.png';
 import cta from '@assets/images/blocks/cta.png';
 import ctaDark from '@assets/images/blocks/cta-dark.png';
 import footer from '@assets/images/blocks/footer.png';
@@ -63,6 +65,12 @@ export const blocks: Block[] = [
     count: 5,
     href: '/testimonials',
     image: { light: testimonial.src, dark: testimonialDark.src },
+  },
+  {
+    title: 'Team sections',
+    count: 5,
+    href: '/team-sections',
+    // image: { light: team.src, dark: teamDark.src },
   },
   {
     title: 'CTA sections',
