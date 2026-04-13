@@ -1,9 +1,11 @@
 import * as prettier from 'prettier';
+import pkg from '@hummingbirdui/hummingbird/package.json';
+import browserScript from '@hummingbirdui/browser/dist/index.global.js?raw';
 
 export const iframeMarkup = (code: string) => {
   return `<html>
     <head>
-      <script src="https://cdn.jsdelivr.net/npm/@hummingbirdui/browser@1.0.4/dist/index.global.js"><\/script>
+      <script>${browserScript}</script>
       <style type="text/tailwindcss">
         @custom-variant dark (&:where(.dark, .dark *), .dark);
         @custom-variant active (&:active, &.active);
@@ -18,7 +20,7 @@ export const iframeMarkup = (code: string) => {
     </head>
     <body class='h-screen'>
       ${code}
-      <script src="https://cdn.jsdelivr.net/npm/@hummingbirdui/hummingbird@1.0.4/dist/hummingbird.bundle.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@hummingbirdui/hummingbird@${pkg.version}/dist/hummingbird.bundle.min.js"></script>
     </body>
   </html>`;
 };
