@@ -67,7 +67,7 @@
       }
       &.active,
       &.show {
-        @apply text-[var(--navbar-active-color)];
+        @apply text-(--navbar-active-color);
       }
     }
 
@@ -140,24 +140,64 @@
   @variant sm {
     @apply navbar-expand;
   }
+  @variant max-sm {
+    .dropdown-menu {
+      @apply px-(--navbar-padding-x) shadow-none border-(length:--border-width) border-light;
+      .dropdown-menu {
+        @apply border-0;
+      }
+    }
+  }
 }
 @utility navbar-expand-md {
   @variant md {
     @apply navbar-expand;
+  }
+  @variant max-md {
+    .dropdown-menu {
+      @apply px-(--navbar-padding-x) shadow-none border-(length:--border-width) border-light;
+      .dropdown-menu {
+        @apply border-0;
+      }
+    }
   }
 }
 @utility navbar-expand-lg {
   @variant lg {
     @apply navbar-expand;
   }
+  @variant max-lg {
+    .dropdown-menu {
+      @apply px-(--navbar-padding-x) shadow-none border-(length:--border-width) border-light;
+      .dropdown-menu {
+        @apply border-0;
+      }
+    }
+  }
 }
 @utility navbar-expand-xl {
   @variant xl {
     @apply navbar-expand;
   }
+  @variant max-xl {
+    .dropdown-menu {
+      @apply px-(--navbar-padding-x) shadow-none border-(length:--border-width) border-light;
+      .dropdown-menu {
+        @apply border-0;
+      }
+    }
+  }
 }
 @utility navbar-expand-2xl {
   @variant 2xl {
     @apply navbar-expand;
+  }
+  @variant max-2xl {
+    .dropdown-menu {
+      @apply px-(--navbar-padding-x) shadow-none border-(length:--border-width) border-light;
+      .dropdown-menu {
+        @apply border-0;
+      }
+    }
   }
 }

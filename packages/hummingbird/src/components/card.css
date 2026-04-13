@@ -16,15 +16,15 @@
     --card-title-space-y: --spacing(2);
     --card-title-font-weight: var(--font-weight-bold);
     --card-subtitle-font-weight: var(--font-weight-medium);
-    --card-overlay-brighness: 0.6;
+    --card-overlay-brightness: 0.6;
 
     @apply relative flex flex-col min-w-0 wrap-break-word
-    text-[var(--card-color)]
-    text-[length:var(--card-font-size)]
-    rounded-[var(--card-border-radius)]
-    bg-[var(--card-bg)]
-    border-[length:var(--card-border-width)]
-    border-[var(--card-border-color)];
+    text-(--card-color)
+    text-(length:--card-font-size)
+    rounded-(--card-border-radius)
+    bg-(--card-bg)
+    border-(length:--card-border-width)
+    border-(--card-border-color);
   }
 }
 @utility card-action {
@@ -43,22 +43,22 @@
 
 @utility card-img-top {
   @layer base {
-    @apply rounded-t-[var(--card-border-radius)] w-full;
+    @apply rounded-t-(--card-border-radius) w-full;
   }
 }
 @utility card-img-bottom {
   @layer base {
-    @apply rounded-b-[var(--card-border-radius)] w-full;
+    @apply rounded-b-(--card-border-radius) w-full;
   }
 }
 @utility card-img-right {
   @layer base {
-    @apply rounded-r-[var(--card-border-radius)] h-full object-cover;
+    @apply rounded-r-(--card-border-radius) h-full object-cover;
   }
 }
 @utility card-img-left {
   @layer base {
-    @apply rounded-l-[var(--card-border-radius)] h-full object-cover;
+    @apply rounded-l-(--card-border-radius) h-full object-cover;
   }
 }
 @utility card-img {
@@ -70,37 +70,45 @@
 @utility card-header {
   @layer base {
     @apply mb-0
-    px-[var(--card-padding-x)]
-    py-[var(--card-padding-y)]
-    text-[var(--card-cap-color)]
-    bg-[var(--card-cap-bg)]
-    border-b-[length:var(--card-border-width)]
-    border-[var(--card-border-color)];
+    px-(--card-padding-x)
+    py-(--card-padding-y)
+    text-(--card-cap-color)
+    bg-(--card-cap-bg)
+    border-b-(length:--card-border-width)
+    border-(--card-border-color);
+
+    &:first-child {
+      @apply rounded-t-(--card-border-radius);
+    }
   }
 }
 
 @utility card-body {
   @layer base {
     @apply flex-[1_1_auto]
-    px-[var(--card-padding-x)] 
-    py-[var(--card-padding-y)];
+    px-(--card-padding-x) 
+    py-(--card-padding-y);
   }
 }
 
 @utility card-footer {
   @layer base {
-    @apply px-[var(--card-cap-padding-x)] 
-    py-[var(--card-cap-padding-y)]
-    text-[var(--card-cap-color)]
-    bg-[var(--card-cap-bg)];
+    @apply px-(--card-cap-padding-x) 
+    py-(--card-cap-padding-y)
+    text-(--card-cap-color)
+    bg-(--card-cap-bg);
+
+    &:last-child {
+      @apply rounded-b-(--card-border-radius);
+    }
   }
 }
 
 @utility card-title {
   @layer base {
-    @apply text-[var(--card-title-color)]
-    font-[var(--card-title-font-weight)]
-    mb-[var(--card-title-space-y)];
+    @apply text-(--card-title-color)
+    font-(--card-title-font-weight)
+    mb-(--card-title-space-y);
     &:has(+ .card-subtitle) {
       @apply mb-0;
     }
@@ -109,14 +117,14 @@
 
 @utility card-subtitle {
   @layer base {
-    @apply font-[var(--card-subtitle-font-weight)]
-    mb-[var(--card-title-space-y)];
+    @apply font-(--card-subtitle-font-weight)
+    mb-(--card-title-space-y);
   }
 }
 
 @utility card-text {
   @layer base {
-    @apply text-[length:var(--card-font-size)];
+    @apply text-(length:--card-font-size);
   }
 }
 
@@ -126,12 +134,12 @@
     --card-border-width: 0px;
     @apply overflow-hidden rounded-lg;
     img {
-      @apply brightness-[var(--card-overlay-brighness)];
+      @apply brightness-(--card-overlay-brightness);
     }
     .card-body {
       @apply absolute top-0 right-0 bottom-0 left-0
-      p-[var(--card-padding-x)]
-      rounded-[var(--card-border-radius)] text-white;
+      p-(--card-padding-x)
+      rounded-(--card-border-radius) text-white;
     }
   }
 }
