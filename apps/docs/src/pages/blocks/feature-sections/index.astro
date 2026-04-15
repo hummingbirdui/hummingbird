@@ -11,19 +11,31 @@ import Feature5 from './blocks/_feature5.astro';
 <Layout>
   <div class="px-5">
     <div class="max-w-7xl mx-auto my-10">
-      <BlockPreview title="feature1" className="min-h-240">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="/" class="link link-hover">Home</a></li>
+          <li class="breadcrumb-item"><a href="/blocks" class="link link-hover">Blocks</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Feature Sections</li>
+        </ol>
+      </nav>
+      <h3 class="mb-4 mt-8">Layouts</h3>
+      <p class="text-lg">
+        A set of Tailwind CSS feature blocks to help you present product features clearly and effectively. Easy to customize
+        and ready to use in your projects.
+      </p>
+      <BlockPreview title="A simple sidebar with navigation grouped by section" className="min-h-53">
         <Feature1 />
       </BlockPreview>
-      <BlockPreview title="feature2" className="min-h-206">
+      <BlockPreview title="A responsive sidebar with a search bar" className="min-h-67">
         <Feature2 />
       </BlockPreview>
-      <BlockPreview title="feature3" className="min-h-206">
+      <BlockPreview title="A sidebar with collapsible sections" className="min-h-65">
         <Feature3 />
       </BlockPreview>
-      <BlockPreview title="feature4" className="min-h-206">
+      <BlockPreview title="A sidebar with submenus as dropdowns" className="min-h-73">
         <Feature4 />
       </BlockPreview>
-      <BlockPreview title="feature5" className="min-h-206">
+      <BlockPreview title="Horizontal Navigation" className="min-h-70">
         <Feature5 />
       </BlockPreview>
     </div>
