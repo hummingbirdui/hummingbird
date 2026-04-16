@@ -49,6 +49,16 @@ const path = Astro.originPathname;
           </div>
         ))
       }
+      <hr />
+      <div class="list-group w-full bg-transparent gap-0.5">
+        <a
+          href={getVersionedPath('/docs/changelog')}
+          class={`list-group-item list-group-item-action rounded-lg text-sm py-2 
+        ${path.startsWith('/docs/changelog') ? 'active text-primary-dark bg-primary-lighter' : 'text-default'}`}
+        >
+          <span>Changelog</span>
+        </a>
+      </div>
     </div>
   </div>
 </div>
