@@ -3,15 +3,15 @@
       <img  width="350" src='https://raw.githubusercontent.com/hummingbirdui/hummingbird/87dc656e578d3e6fd0e4a45eabe1f5e02bdeafd1/apps/docs/public/images/logos/hummingbird-lg.svg' alt="Logo" class="w-10 h-10" />
    </a>
 
-   Hummingbird Play CDN for rapid experimentation and development.
+Hummingbird Play CDN for rapid experimentation and development.
 
-   ![downloads](https://img.shields.io/npm/dt/@hummingbirdui/hummingbird?style=flat-square)
-   ![npm](https://img.shields.io/npm/v/@hummingbirdui/hummingbird?style=flat-square)
-   ![license](https://img.shields.io/npm/l/@hummingbirdui/hummingbird?style=flat-square)
+![downloads](https://img.shields.io/npm/dt/@hummingbirdui/hummingbird?style=flat-square)
+![npm](https://img.shields.io/npm/v/@hummingbirdui/hummingbird?style=flat-square)
+![license](https://img.shields.io/npm/l/@hummingbirdui/hummingbird?style=flat-square)
+
 </div>
 
 ---
-
 
 ## How to Use
 
@@ -20,7 +20,7 @@ Use the Play CDN to try Hummingbird in the browser without any build step. The P
 Add the Play CDN script tag to the `<head>` of your HTML file, and start using Hummingbird’s and Tailwind’s classes to style the content.
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/@hummingbirdui/browser@1.0.4/dist/index.global.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@hummingbirdui/browser@1.1.0/dist/index.global.js"></script>
 ```
 
 ## Documentation
