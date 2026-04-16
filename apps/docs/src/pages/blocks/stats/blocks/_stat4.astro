@@ -1,52 +1,53 @@
 <div class="px-6 py-12 max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
   <!-- card 1 -->
   <div class="card p-6 border-light rounded-2xl">
-    <div class="flex justify-between items-start mb-4">
-      <p class="text-subtle text-xs font-semibold uppercase tracking-widest">Portfolio Value</p>
+    <div class="flex justify-between items-start mb-6">
+      <p class="text-subtle text-xs font-semibold uppercase mb-0">Portfolio Value</p>
       <div class="size-2 rounded-full bg-primary animate-pulse"></div>
     </div>
-    <h3 class="text-4xl font-light text-default mb-8">
-      $248,500<span class="text-subtle text-2xl">.00</span>
+    <h3 class="text-4xl font-semibold text-default mb-10">
+      $248,500
     </h3>
-    <span class="badge badge-subtle-success badge-md border-0 self-start">
-      <svg class="size-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
-      12.5%
-    </span>
+    <div class="flex items-center gap-2 text-xs text-subtle">
+      <span class="badge badge-subtle-success badge-md border-0 self-start">
+        <svg class="size-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
+        12.5%
+      </span>
+      Since last month
+    </div>
   </div>
   <!-- card 2 -->
   <div class="card p-6 border-light rounded-2xl">
-    <p class="text-subtle text-xs font-semibold uppercase tracking-widest">24h Trade Volume</p>
-    <h3 class="text-4xl font-light text-default mb-6">$12.4k</h3>
-    <div class="flex items-end gap-1 h-8">
-      <div class="flex-1 bg-dark/10 dark:bg-white/10 rounded-t-sm h-3"></div>
-      <div class="flex-1 bg-dark/10 dark:bg-white/10 rounded-t-sm h-5"></div>
-      <div class="flex-1 bg-dark/20 dark:bg-white/20 rounded-t-sm h-8"></div>
-      <div class="flex-1 bg-primary rounded-t-sm h-6"></div>
-      <div class="flex-1 bg-dark/10 dark:bg-white/10 rounded-t-sm h-4"></div>
-      <div class="flex-1 bg-dark/10 dark:bg-white/10 rounded-t-sm h-2"></div>
+    <p class="text-subtle text-xs font-semibold uppercase mb-6">24h Trade Volume</p>
+    <h3 class="text-4xl text-default font-semibold">$12.4k</h3>
+    <div class="flex items-end gap-1 h-8 mt-auto">
+      <div class="flex-1 bg-muted rounded-md h-4"></div>
+      <div class="flex-1 bg-muted rounded-md h-6"></div>
+      <div class="flex-1 bg-muted rounded-md h-8"></div>
+      <div class="flex-1 bg-primary rounded-md h-10"></div>
+      <div class="flex-1 bg-muted rounded-md h-7"></div>
+      <div class="flex-1 bg-muted rounded-md h-4"></div>
     </div>
   </div>
   <!-- card 3 -->
   <div class="card p-6 bg-primary rounded-2xl border-0">
-    <p class="text-white/80 text-xs font-semibold uppercase tracking-widest mb-4">Est. APY Yield</p>
-    <h3 class="text-4xl text-white mb-2">8.42%</h3>
-    <p class="text-sm text-white/80">Auto-compounding</p>
+    <p class="text-white text-xs font-semibold uppercase mb-6">Est. APY Yield</p>
+    <h3 class="text-4xl text-white font-semibold">8.42%</h3>
+    <p class="text-sm text-white font-medium mt-auto mb-0">Auto-compounding</p>
   </div>
   <!-- card 4 -->
   <div class="card p-6 border-light rounded-2xl">
-    <p class="text-subtle text-xs font-semibold uppercase tracking-widest mb-4">Network Status</p>
-    <div class="mt-4 flex flex-col gap-3">
-      <div class="flex items-center justify-between">
-        <span class="text-muted text-sm font-medium">Uptime</span>
-        <span class="text-success text-sm">99.9%</span>
-      </div>
-      <div class="progress h-1.5" role="progressbar" aria-label="Basic example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-        <div class="progress-bar bg-success w-full"></div>
-      </div>
-      <div class="flex items-center justify-between">
-        <span class="text-muted text-sm font-medium">Latency</span>
-        <span class="text-muted text-sm">42ms</span>
-      </div>
+    <p class="text-subtle text-xs font-semibold uppercase mb-6">Network Status</p>
+    <div class="flex items-center justify-between mb-1">
+      <span class="text-muted text-sm font-medium">Uptime</span>
+      <span class="text-success text-sm font-medium">32%</span>
+    </div>
+    <div class="progress h-2 rounded-xs" role="progressbar" aria-label="Basic example" aria-valuenow="32" aria-valuemin="0" aria-valuemax="100">
+      <div class="progress-bar bg-success w-8/25"></div>
+    </div>
+    <div class="flex items-center justify-between mt-auto">
+      <span class="text-muted text-sm font-medium">Latency</span>
+      <span class="text-subtle text-sm font-medium">42ms</span>
     </div>
   </div>
 </div>
