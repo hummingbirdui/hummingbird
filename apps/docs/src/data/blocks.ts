@@ -46,7 +46,7 @@ export const blocks: Block[] = [
     title: 'Feature sections',
     count: 5,
     href: '/feature-sections',
-    // image: { light: feature.src, dark: featureDark.src },
+    image: { light: feature.src, dark: featureDark.src },
   },
   {
     title: 'Pricing plans',
@@ -58,7 +58,7 @@ export const blocks: Block[] = [
     title: 'Stats',
     count: 5,
     href: '/stats',
-    // image: { light: stats.src, dark: statsDark.src },
+    image: { light: stats.src, dark: statsDark.src },
   },
   {
     title: 'Testimonials',
@@ -70,7 +70,7 @@ export const blocks: Block[] = [
     title: 'Team sections',
     count: 5,
     href: '/team-sections',
-    // image: { light: team.src, dark: teamDark.src },
+    image: { light: team.src, dark: teamDark.src },
   },
   {
     title: 'CTA sections',
