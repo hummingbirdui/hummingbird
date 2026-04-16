@@ -147,10 +147,7 @@
   --body-font-size: var(--text-base);
   --body-font-weight: var(--font-weight-normal);
   --body-line-height: var(--text-base--line-height);
-  --hr-margin-y: --spacing(4);
-  --hr-margin-x: 0;
-  --hr-color: var(--text-color-default);
-  --hr-border-color: var(--border-color-base);
+
   --headings-margin-bottom: --spacing(2);
   --headings-font-weight: var(--font-weight-bold);
   --h1-font-size: var(--text-6xl);
@@ -165,15 +162,25 @@
   --h5-line-height: var(--text-2xl--line-height);
   --h6-font-size: var(--text-xl);
   --h6-line-height: var(--text-xl--line-height);
+
+  --hr-margin-y: --spacing(4);
+  --hr-margin-x: 0;
+  --hr-border-color: var(--border-color-base);
+
   --paragraph-margin-bottom: --spacing(4);
+
   --dt-font-weight: var(--font-weight-bold);
+
   --anchor-color: var(--color-primary);
   --anchor-hover-color: var(--color-primary-dark);
+
   --code-color: var(--color-pink-600);
   --code-font-size: var(--text-sm);
+
   --caption-padding-y: --spacing(4);
   --caption-padding-x: --spacing(4);
   --caption-font-weight: var(--font-weight-medium);
+
   --legend-margin-bottom: --spacing(2);
   --legend-font-weight: var(--font-weight-medium);
   --legend-font-size: var(--text-xl);
