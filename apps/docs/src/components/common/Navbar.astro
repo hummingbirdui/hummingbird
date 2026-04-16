@@ -19,7 +19,7 @@ const menuItems = [
 const currentPath = Astro.url.pathname;
 ---
 
-<nav class="navbar sticky top-0 px-6 md:px-10 py-3.75 border-b border-light bg-default z-1035">
+<nav class="navbar sticky top-0 px-6 md:px-10 py-3.75 border-b border-subtle bg-default z-1035">
   <div class="container px-0 max-w-8xl">
     <a class="navbar-brand flex items-center gap-2 me-1 sm:me-4" href={getVersionedPath('/')}>
       <Image src={logo} alt="Logo" class="w-10 h-10" />
@@ -66,7 +66,7 @@ const currentPath = Astro.url.pathname;
 
     <div id="docsearch-mobile" class="lg:hidden ml-auto"></div>
 
-    <div class="mx-2 xl:mx-4 my-auto border-l h-8 xl:h-10 border-base flex lg:hidden xl:flex"></div>
+    <div class="mx-2 xl:mx-4 my-auto border-l h-8 xl:h-10 border-default flex lg:hidden xl:flex"></div>
 
     <button class="lg:ml-auto xl:ml-0 btn btn-circle btn-subtle-neutral" data-theme-toggle-btn>
       <BulbIcon data-theme-toggle="dark" class="dark:hidden" />

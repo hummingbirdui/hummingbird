@@ -29,7 +29,7 @@ function normalizeCode(input: unknown): string {
 const original: string = normalizeCode(rawCode);
 ---
 
-<div class={`mb-6 ${showPreview ? 'border border-light rounded-2xl' : ''}`} id={id}>
+<div class={`mb-6 ${showPreview ? 'border border-subtle rounded-2xl' : ''}`} id={id}>
   {
     showPreview && (
       <div class={`px-6 py-8 bg-default rounded-2xl ${className ?? ''}`} {...rest}>

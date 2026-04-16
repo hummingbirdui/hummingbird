@@ -142,7 +142,7 @@
   }
   @variant max-sm {
     .dropdown-menu {
-      @apply px-(--navbar-padding-x) shadow-none border-(length:--border-width) border-light;
+      @apply px-(--navbar-padding-x) shadow-none border-(length:--border-width) border-subtle;
       .dropdown-menu {
         @apply border-0;
       }
@@ -155,7 +155,7 @@
   }
   @variant max-md {
     .dropdown-menu {
-      @apply px-(--navbar-padding-x) shadow-none border-(length:--border-width) border-light;
+      @apply px-(--navbar-padding-x) shadow-none border-(length:--border-width) border-subtle;
       .dropdown-menu {
         @apply border-0;
       }
@@ -168,7 +168,7 @@
   }
   @variant max-lg {
     .dropdown-menu {
-      @apply px-(--navbar-padding-x) shadow-none border-(length:--border-width) border-light;
+      @apply px-(--navbar-padding-x) shadow-none border-(length:--border-width) border-subtle;
       .dropdown-menu {
         @apply border-0;
       }
@@ -181,7 +181,7 @@
   }
   @variant max-xl {
     .dropdown-menu {
-      @apply px-(--navbar-padding-x) shadow-none border-(length:--border-width) border-light;
+      @apply px-(--navbar-padding-x) shadow-none border-(length:--border-width) border-subtle;
       .dropdown-menu {
         @apply border-0;
       }
@@ -194,7 +194,7 @@
   }
   @variant max-2xl {
     .dropdown-menu {
-      @apply px-(--navbar-padding-x) shadow-none border-(length:--border-width) border-light;
+      @apply px-(--navbar-padding-x) shadow-none border-(length:--border-width) border-subtle;
       .dropdown-menu {
         @apply border-0;
       }

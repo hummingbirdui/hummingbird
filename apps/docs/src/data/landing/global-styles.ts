@@ -25,7 +25,7 @@ export const globalStyles: StyleSystem[] = [
       'Change a root variable and watch your entire UI update instantly. Total consistency, zero repetitive work.',
     code: `@theme {
   --text-color-default: var(--color-gray-800);
-  --border-color-light: var(--color-gray-300);
+  --border-color-subtle: var(--color-gray-300);
   --background-color-highlight: var(--color-gray-100);
 }`,
   },
@@ -35,7 +35,7 @@ export const globalStyles: StyleSystem[] = [
       'Override styles on any component with a single, clean declaration. No more fighting with specificity.',
     code: `.btn {
   --btn-color: var(--text-color-subtle);
-  --btn-border-color: var(--border-color-base);
+  --btn-border-color: var(--border-color-default);
   --btn-bg: var(--background-color-emphasis);
 }`,
   },

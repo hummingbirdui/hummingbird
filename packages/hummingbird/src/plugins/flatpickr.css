@@ -55,15 +55,15 @@
 
   --dtp-timepickr-height: --spacing(10);
   --dtp-timepickr-border-width: var(--border-width);
-  --dtp-timepickr-border-color: var(--border-color-light);
+  --dtp-timepickr-border-color: var(--border-color-subtle);
   --dtp-timepickr-hover-bg: var(--background-color-subtle);
   --dtp-time-separator-color: var(--text-muted);
 
-  --dtp-spinner-color: var(--border-color-dark);
+  --dtp-spinner-color: var(--border-color-emphasis);
   --dtp-spinner-width: --spacing(3.5);
   --dtp-spinner-arrow-size: --spacing(1);
   --dtp-spinner-border-width: var(--border-width);
-  --dtp-spinner-border-color: var(--border-color-light);
+  --dtp-spinner-border-color: var(--border-color-subtle);
   --dtp-spinner-active-bg: var(--background-color-muted);
   --dtp-spinner-bg: transparent;
 
@@ -90,7 +90,7 @@
   }
 
   @variant dark {
-    --dtp-border-color: var(--border-color-base);
+    --dtp-border-color: var(--border-color-default);
   }
 
   .flatpickr-months {
@@ -129,7 +129,7 @@
           bg-transparent;
 
           @variant dark {
-            --dtp-spinner-border-color: var(--border-color-base);
+            --dtp-spinner-border-color: var(--border-color-default);
           }
 
           input {
@@ -202,7 +202,7 @@
     overflow-hidden;
 
     .flatpickr-weekwrapper {
-      @apply pe-1.5 border-e border-base;
+      @apply pe-1.5 border-e border-default;
       .flatpickr-weekday {
         @apply py-2 text-center;
       }
@@ -442,7 +442,7 @@
       border-[var(--dtp-timepickr-border-color)];
 
       @variant dark {
-        --dtp-timepickr-border-color: var(--border-color-base);
+        --dtp-timepickr-border-color: var(--border-color-default);
       }
     }
   }

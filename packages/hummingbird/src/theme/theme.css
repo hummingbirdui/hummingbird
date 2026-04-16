@@ -63,9 +63,9 @@
   --color-info-darker: var(--color-sky-900);
 
   /* borders */
-  --border-color-light: --alpha(var(--color-gray-300) / 60%);
-  --border-color-base: var(--color-gray-300);
-  --border-color-dark: var(--color-gray-600);
+  --border-color-subtle: --alpha(var(--color-gray-300) / 60%);
+  --border-color-default: var(--color-gray-300);
+  --border-color-emphasis: var(--color-gray-600);
 
   /* actions */
   --color-active: var(--color-gray-500);
@@ -126,7 +126,7 @@
 
   --input-bg: var(--background-color-default);
   --input-color: var(--text-color-default);
-  --input-border-color: var(--border-color-base);
+  --input-border-color: var(--border-color-default);
   --input-font-weight: var(--font-weight-normal);
   --input-hover-bg: var(--background-color-highlight);
   --input-hover-border-color: var(--text-color-subtle);
@@ -134,7 +134,7 @@
   --input-focus-border-color: var(--color-primary);
   --input-disabled-color: var(--input-color);
   --input-disabled-bg: var(--color-disabled);
-  --input-disabled-border-color: var(--border-color-base);
+  --input-disabled-border-color: var(--border-color-default);
   --input-disabled-opacity: 0.5;
 
   /* grid */
@@ -165,7 +165,7 @@
 
   --hr-margin-y: --spacing(4);
   --hr-margin-x: 0;
-  --hr-border-color: var(--border-color-base);
+  --hr-border-color: var(--border-color-default);
 
   --paragraph-margin-bottom: --spacing(4);
 
@@ -252,9 +252,9 @@
       --color-info-darker: var(--color-sky-200);
 
       /* borders */
-      --border-color-light: var(--color-gray-800);
-      --border-color-base: var(--color-gray-700);
-      --border-color-dark: var(--color-gray-600);
+      --border-color-subtle: var(--color-gray-800);
+      --border-color-default: var(--color-gray-700);
+      --border-color-emphasis: var(--color-gray-600);
 
       /* actions */
       --color-active: var(--color-gray-500);

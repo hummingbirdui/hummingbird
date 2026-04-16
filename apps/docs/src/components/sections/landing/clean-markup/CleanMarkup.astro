@@ -24,7 +24,7 @@ import { tabsData } from 'apps/data/landing/clean-markup';
     <div class="flex flex-col lg:flex-row lg:h-114 gap-6">
       <!-- code tabs -->
       <div class="p-6 relative flex flex-col flex-1 max-h-100 lg:max-h-full overflow-hidden bg-muted rounded-2xl">
-        <nav class="border-b border-base">
+        <nav class="border-b border-default">
           <div class="nav nav-underline gap-1" role="tablist">
             {
               tabsData.map(({ id, label, active, code }, i) => (
@@ -42,7 +42,11 @@ import { tabsData } from 'apps/data/landing/clean-markup';
                     {label}
                   </button>
 
-                  <CopyButton id={`copy-btn-${i + 1}`} code={code} class={`ml-auto order-last ${!active && 'hidden'}`} />
+                  <CopyButton
+                    id={`copy-btn-${i + 1}`}
+                    code={code}
+                    class={`ml-auto order-last ${!active && 'hidden'}`}
+                  />
                 </>
               ))
             }

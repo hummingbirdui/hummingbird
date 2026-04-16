@@ -1,24 +1,37 @@
 <div class="min-h-screen flex items-center justify-center px-4 py-16">
-  <div class="card lg:flex-row w-full max-w-xl lg:max-w-5xl rounded-2xl overflow-hidden border border-light/60">
-
+  <div class="card lg:flex-row w-full max-w-xl lg:max-w-5xl rounded-2xl overflow-hidden border border-subtle/60">
     <!-- left column -->
-    <div class="hidden lg:flex lg:w-9/20 bg-linear-to-tl from-primary to-info-dark dark:to-info-light p-12 flex-col overflow-hidden">
+    <div
+      class="hidden lg:flex lg:w-9/20 bg-linear-to-tl from-primary to-info-dark dark:to-info-light p-12 flex-col overflow-hidden"
+    >
       <a href="/" class="mb-20">
-        <img src="https://themewagon.com/wp-content/themes/themewagon/dist/images/hb.png" alt="Logo" class="h-14 brightness-0 invert">
+        <img
+          src="https://themewagon.com/wp-content/themes/themewagon/dist/images/hb.png"
+          alt="Logo"
+          class="h-14 brightness-0 invert"
+        />
       </a>
 
       <h1 class="text-5xl font-bold text-white leading-tight mb-6">
-        Join the future <br/> of <span class="text-primary-lighter/80 dark:text-primary-darker/80">data intelligence.</span>
+        Join the future <br /> of <span class="text-primary-lighter/80 dark:text-primary-darker/80"
+          >data intelligence.</span
+        >
       </h1>
       <p class="text-primary-lighter dark:text-primary-darker text-lg max-w-sm">
         Empower your team with real-time insights and seamless collaboration.
       </p>
 
       <div class="mt-auto bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/20">
-        <p class="text-white text-lg italic mb-5">"Setting up our team took minutes. The insights we've gained since are invaluable."</p>
+        <p class="text-white text-lg italic mb-5">
+          "Setting up our team took minutes. The insights we've gained since are invaluable."
+        </p>
         <div class="flex items-center gap-3">
           <div class="avatar">
-            <div class="avatar-name rounded-full font-bold text-primary dark:text-primary-light bg-primary-lighter dark:bg-primary-darker">SJ</div>
+            <div
+              class="avatar-name rounded-full font-bold text-primary dark:text-primary-light bg-primary-lighter dark:bg-primary-darker"
+            >
+              SJ
+            </div>
           </div>
           <div>
             <p class="text-sm font-bold text-white leading-none mb-1.5">Sarah Jenkins</p>
@@ -32,32 +45,62 @@
     <div class="flex flex-col items-center lg:items-start w-full lg:w-11/20 p-6 sm:p-10 mx-auto min-h-204">
       <ul class="nav nav-underline mb-8" id="myTab" role="tablist">
         <li class="nav-item" role="presentation">
-          <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Signin</button>
+          <button
+            class="nav-link active"
+            id="home-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#home-tab-pane"
+            type="button"
+            role="tab"
+            aria-controls="home-tab-pane"
+            aria-selected="true">Signin</button
+          >
         </li>
         <li class="nav-item" role="presentation">
-          <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Signup</button>
+          <button
+            class="nav-link"
+            id="profile-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#profile-tab-pane"
+            type="button"
+            role="tab"
+            aria-controls="profile-tab-pane"
+            aria-selected="false">Signup</button
+          >
         </li>
       </ul>
 
       <div class="tab-content w-full" id="myTabContent">
         <!-- signin tab -->
-        <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+        <div
+          class="tab-pane fade show active"
+          id="home-tab-pane"
+          role="tabpanel"
+          aria-labelledby="home-tab"
+          tabindex="0"
+        >
           <div class="text-default text-center lg:text-left mb-8">
             <h2 class="text-3xl mb-2">Welcome back</h2>
-            <p class="text-muted">
-              Sign in to continue to your account.
-            </p>
+            <p class="text-muted">Sign in to continue to your account.</p>
           </div>
 
           <form class="space-y-5 w-full">
             <div class="form-field">
-              <label class="form-label text-sm mb-1">
-                Email Address
-              </label>
+              <label class="form-label text-sm mb-1"> Email Address </label>
               <div class="input-group-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" class="size-5 form-control-icon-start" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="size-5 form-control-icon-start"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                  ></path>
                 </svg>
                 <input type="email" class="form-control form-control-lg" placeholder="name@company.com" />
               </div>
@@ -66,45 +109,53 @@
             <div class="form-field">
               <label class="form-label text-sm mb-1">Password</label>
               <div class="input-group-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" class="size-5 form-control-icon-start" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="size-5 form-control-icon-start"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  ><path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
+                  ></path></svg
+                >
                 <input type="password" class="form-control form-control-lg" placeholder="••••••••" />
               </div>
             </div>
 
             <div class="flex items-center justify-between -mt-3 px-1.5">
               <div class="form-check -ms-3">
-                <label for="checkboxDefaultLabel" class="form-check-input-wrapper"><input class="form-check-input" type="checkbox" value="" id="checkboxDefaultLabel" /></label>
+                <label for="checkboxDefaultLabel" class="form-check-input-wrapper"
+                  ><input class="form-check-input" type="checkbox" value="" id="checkboxDefaultLabel" /></label
+                >
                 <label for="checkboxDefaultLabel" class="form-check-label text-xs">Keep me signed in</label>
               </div>
               <a href="#" class="text-xs text-muted hover:text-primary no-underline">Forgot password?</a>
             </div>
 
-            <button type="submit" class="btn btn-primary btn-lg w-full">
-              Sign In
-            </button>
+            <button type="submit" class="btn btn-primary btn-lg w-full"> Sign In </button>
           </form>
 
-          <div class="hr-label my-8 text-xs text-subtle font-semibold uppercase tracking-[0.2em]">
-            Or continue with
-          </div>
+          <div class="hr-label my-8 text-xs text-subtle font-semibold uppercase tracking-[0.2em]">Or continue with</div>
 
           <div class="flex justify-center gap-4 mb-10">
             <button type="button" class="btn btn-outline-neutral btn-lg">
-              <img src="https://www.svgrepo.com/show/355037/google.svg" class="size-5" alt="Google">
+              <img src="https://www.svgrepo.com/show/355037/google.svg" class="size-5" alt="Google" />
             </button>
             <button type="button" class="btn btn-outline-neutral btn-lg">
-              <img src="https://www.svgrepo.com/show/448234/linkedin.svg" class="size-5" alt="LinkedIn">
+              <img src="https://www.svgrepo.com/show/448234/linkedin.svg" class="size-5" alt="LinkedIn" />
             </button>
             <button type="button" class="btn btn-outline-neutral btn-lg">
-              <img src="https://www.svgrepo.com/show/341847/github.svg" class="size-5 dark:invert" alt="GitHub">
+              <img src="https://www.svgrepo.com/show/341847/github.svg" class="size-5 dark:invert" alt="GitHub" />
             </button>
           </div>
 
           <p class="text-center text-xs text-muted mb-0">
             Don’t have an account?
-            <a href="#" class="text-muted no-underline font-semibold hover:text-primary">
-              Create one
-            </a>
+            <a href="#" class="text-muted no-underline font-semibold hover:text-primary"> Create one </a>
           </p>
         </div>
 
@@ -120,8 +171,18 @@
               <div class="form-field">
                 <label class="form-label text-sm mb-1">Full Name</label>
                 <div class="input-group-icon">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="size-5 form-control-icon-start" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="size-5 form-control-icon-start"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
                   </svg>
                   <input type="text" class="form-control form-control-lg" placeholder="John Doe" />
                 </div>
@@ -130,8 +191,19 @@
               <div class="form-field">
                 <label class="form-label text-sm mb-1">Email Address</label>
                 <div class="input-group-icon">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="size-5 form-control-icon-start" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="size-5 form-control-icon-start"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                    ></path>
                   </svg>
                   <input type="email" class="form-control form-control-lg" placeholder="name@company.com" />
                 </div>
@@ -143,8 +215,19 @@
                   <span class="text-xs text-subtle">Min. 8 Chars</span>
                 </div>
                 <div class="input-group-icon">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="size-5 form-control-icon-start" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="size-5 form-control-icon-start"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
+                    ></path>
                   </svg>
                   <input type="password" class="form-control form-control-lg" placeholder="••••••••" />
                 </div>
@@ -152,7 +235,9 @@
             </div>
 
             <div class="form-check -ms-2 -mt-4">
-              <label for="checkboxDefaultLabel2" class="form-check-input-wrapper"><input class="form-check-input" type="checkbox" value="" id="checkboxDefaultLabel2" /></label>
+              <label for="checkboxDefaultLabel2" class="form-check-input-wrapper"
+                ><input class="form-check-input" type="checkbox" value="" id="checkboxDefaultLabel2" /></label
+              >
               <label for="checkboxDefaultLabel2" class="form-check-label text-xs">
                 I agree to the
                 <a href="#" class="text-primary font-medium hover:underline">Terms of Service</a>
@@ -162,22 +247,20 @@
               </label>
             </div>
 
-            <button type="submit" class="btn btn-primary btn-lg w-full">
-              Create Account
-            </button>
+            <button type="submit" class="btn btn-primary btn-lg w-full"> Create Account </button>
           </form>
 
           <div class="hr-label my-8 text-xs text-subtle font-semibold uppercase tracking-[0.2em]">Or join with</div>
-            
+
           <div class="flex justify-center gap-4 mb-10">
             <button type="button" class="btn btn-outline-neutral btn-lg">
-              <img src="https://www.svgrepo.com/show/355037/google.svg" class="size-5" alt="Google">
+              <img src="https://www.svgrepo.com/show/355037/google.svg" class="size-5" alt="Google" />
             </button>
             <button type="button" class="btn btn-outline-neutral btn-lg">
-              <img src="https://www.svgrepo.com/show/448234/linkedin.svg" class="size-5" alt="LinkedIn">
+              <img src="https://www.svgrepo.com/show/448234/linkedin.svg" class="size-5" alt="LinkedIn" />
             </button>
             <button type="button" class="btn btn-outline-neutral btn-lg">
-              <img src="https://www.svgrepo.com/show/341847/github.svg" class="size-5 dark:invert" alt="GitHub">
+              <img src="https://www.svgrepo.com/show/341847/github.svg" class="size-5 dark:invert" alt="GitHub" />
             </button>
           </div>
 

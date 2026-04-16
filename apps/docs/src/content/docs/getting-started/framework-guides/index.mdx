@@ -9,7 +9,7 @@ import { frameworks } from 'apps/data/frameworks';
 {frameworks.map((item) => (
     <a
         href={getVersionedPath(item.url)}
-        class="h-54 w-full rounded-lg border border-light hover:border-primary bg-default no-underline flex flex-col items-center justify-center"
+        class="h-54 w-full rounded-lg border border-subtle hover:border-primary bg-default no-underline flex flex-col items-center justify-center"
     >
         <img src={item.logo.light.src} alt="astro" class="mb-5 w-20 object-contain dark:hidden" />
         <img src={item.logo.dark.src} alt="astro" class="mb-5 w-20 object-contain hidden dark:block" />

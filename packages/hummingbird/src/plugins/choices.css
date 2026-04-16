@@ -40,7 +40,7 @@
       @apply block w-full
       py-2.5 px-3 m-0
       border-b-(length:--border-width)
-      border-light
+      border-subtle
       bg-default;
     }
 
@@ -281,7 +281,7 @@
       @apply py-0.5;
     }
     &.is-highlighted {
-      @apply bg-highlight border-dark;
+      @apply bg-highlight border-emphasis;
     }
   }
 }
@@ -294,7 +294,7 @@
 .choices__list[aria-expanded] {
   @apply hidden z-1 absolute w-full
   bg-default
-  border-(length:--border-width) border-light
+  border-(length:--border-width) border-subtle
   top-full mt-0.5
   rounded-lg
   overflow-hidden
@@ -306,7 +306,7 @@
 }
 .is-open .choices__list--dropdown,
 .is-open .choices__list[aria-expanded] {
-  @apply border-light;
+  @apply border-subtle;
 }
 
 .is-flipped .choices__list--dropdown,
@@ -346,7 +346,7 @@
 
 .choices__heading {
   @apply font-semibold text-xs px-3 py-2
-  border-b-(length:--border-width) border-light text-muted;
+  border-b-(length:--border-width) border-subtle text-muted;
 }
 
 .choices__button {

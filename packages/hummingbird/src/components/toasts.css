@@ -14,7 +14,7 @@
     --toast-box-shadow: var(--shadow-xs);
     --toast-header-color: var(--text-color-default);
     --toast-header-bg: var(--background-color-subtle);
-    --toast-header-border-color: var(--border-color-base);
+    --toast-header-border-color: var(--border-color-default);
 
     @apply w-[var(--toast-max-width)] max-w-full
     text-[length:var(--toast-font-size)]
@@ -28,7 +28,7 @@
     &:not(:has(.alert)) {
       @apply border-[length:var(--toast-border-width)] border-[var(--toast-border-color)];
       @variant dark {
-        --toast-border-color: var(--border-color-light);
+        --toast-border-color: var(--border-color-subtle);
       }
     }
 

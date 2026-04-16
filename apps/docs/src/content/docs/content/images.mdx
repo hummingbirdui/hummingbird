@@ -38,7 +38,7 @@ Control how the image fits within its container using `object-*` utilities.
     <img
       src="${getVersionedPath('/images/2.avif')}"
       alt="Contain example"
-      class="h-40 w-full object-contain border border-base"
+      class="h-40 w-full object-contain border border-default"
     />
     <figcaption class="mt-2 text-sm text-center">Object contain</figcaption>
   </figure>
@@ -47,17 +47,17 @@ Control how the image fits within its container using `object-*` utilities.
     <img
       src="${getVersionedPath('/images/2.avif')}"
       alt="Contain example"
-      class="h-40 w-full object-cover border border-base"
+      class="h-40 w-full object-cover border border-default"
     />
     <figcaption class="mt-2 text-sm text-center">Object cover</figcaption>
   </figure>`}
 />
 
 <Example showPreview={false} code={`<!-- object contain -->
-  <img class="h-40 w-72 object-contain border border-base" src="${getVersionedPath('/images/2.avif')}" alt="Contain example" />
+  <img class="h-40 w-72 object-contain border border-default" src="${getVersionedPath('/images/2.avif')}" alt="Contain example" />
   
   <!-- object cover -->
-  <img class="h-40 w-72 object-cover border border-base" src="${getVersionedPath('/images/2.avif')}" alt="Cover example" />`}
+  <img class="h-40 w-72 object-cover border border-default" src="${getVersionedPath('/images/2.avif')}" alt="Cover example" />`}
 />
 
 ## Image caption
@@ -131,7 +131,7 @@ Control how the image fits within its container using `object-*` utilities.
 
 Apply borders, shadows, and other visual styles using Tailwind CSS.
 
-<Example code={`<img class="p-1 h-64 object-cover bg-default border border-base rounded-md hover:shadow-xl shadow-gray-200 dark:shadow-gray-800 transition duration-300 ease-in-out" src="${getVersionedPath('/images/2.avif')}" alt="Styled image" />`}/>
+<Example code={`<img class="p-1 h-64 object-cover bg-default border border-default rounded-md hover:shadow-xl shadow-gray-200 dark:shadow-gray-800 transition duration-300 ease-in-out" src="${getVersionedPath('/images/2.avif')}" alt="Styled image" />`}/>
 
 ## Responsive images
 

@@ -18,7 +18,7 @@ For example,
 
 - `text-primary`
 - `bg-subtle`
-- `border-light` etc.
+- `border-subtle` etc.
 
 This approach prevents dependence on specific palette values (`blue-500`, `green-600`, etc.). Instead, components reference semantic roles (`primary`, `secondary`, `warning`), making the UI easier to maintain, brand, and theme.
 
@@ -41,27 +41,27 @@ Hummingbird provides a minimal but complete set of color roles:
   </thead>
   <tbody>
     <tr>
-      <th scope="row"><div class='h-9 w-20 border border-light/30 rounded bg-subtle'></div></th>
+      <th scope="row"><div class='h-9 w-20 border border-subtle/30 rounded bg-subtle'></div></th>
       <td>bg-subtle</td>
       <td>`--background-color-subtle`</td>
     </tr>
     <tr>
-      <th scope="row"><div class='h-9 w-20 border border-light/30 rounded bg-muted'></div></th>
+      <th scope="row"><div class='h-9 w-20 border border-subtle/30 rounded bg-muted'></div></th>
       <td>bg-muted</td>
       <td>`--background-color-muted`</td>
     </tr>
     <tr>
-      <th scope="row"><div class='h-9 w-20 border border-light/30 rounded bg-default'></div></th>
+      <th scope="row"><div class='h-9 w-20 border border-subtle/30 rounded bg-default'></div></th>
       <td>bg-default</td>
       <td>`--background-color-default`</td>
     </tr>
     <tr>
-      <th scope="row"><div class='h-9 w-20 border border-light/30 rounded bg-highlight'></div></th>
+      <th scope="row"><div class='h-9 w-20 border border-subtle/30 rounded bg-highlight'></div></th>
       <td>bg-highlight</td>
       <td>`--background-color-highlight`</td>
     </tr>
     <tr>
-      <th scope="row"><div class='h-9 w-20 border border-light/30 rounded bg-emphasis'></div></th>
+      <th scope="row"><div class='h-9 w-20 border border-subtle/30 rounded bg-emphasis'></div></th>
       <td>bg-emphasis</td>
       <td>`--background-color-emphasis`</td>
     </tr>
@@ -105,19 +105,19 @@ Hummingbird provides a minimal but complete set of color roles:
   </thead>
   <tbody>
     <tr>
-      <th scope="row"><div class='h-9 w-20 border border-light rounded bg-default'></div></th>
-      <td>border-light</td>
-      <td>`--border-color-light`</td>
+      <th scope="row"><div class='h-9 w-20 border border-subtle rounded bg-default'></div></th>
+      <td>border-subtle</td>
+      <td>`--border-color-subtle`</td>
     </tr>
     <tr>
-      <th scope="row"><div class='h-9 w-20 border border-base rounded bg-default'></div></th>
-      <td>border-base</td>
-      <td>`--border-color-base`</td>
+      <th scope="row"><div class='h-9 w-20 border border-default rounded bg-default'></div></th>
+      <td>border-default</td>
+      <td>`--border-color-default`</td>
     </tr>
     <tr>
-      <th scope="row"><div class='h-9 w-20 border border-dark rounded bg-default'></div></th>
-      <td>border-dark</td>
-      <td>`--border-color-dark`</td>
+      <th scope="row"><div class='h-9 w-20 border border-emphasis rounded bg-default'></div></th>
+      <td>border-emphasis</td>
+      <td>`--border-color-emphasis`</td>
     </tr>
   </tbody>
   <thead>
@@ -132,17 +132,17 @@ Hummingbird provides a minimal but complete set of color roles:
   </thead>
   <tbody>
     <tr>
-      <th scope="row"><div class='h-9 w-20 border border-light/30 rounded bg-active'></div></th>
+      <th scope="row"><div class='h-9 w-20 border border-subtle/30 rounded bg-active'></div></th>
       <td>Active color</td>
       <td>`--color-active`</td>
     </tr>
     <tr>
-      <th scope="row"><div class='h-9 w-20 border border-light/30 rounded bg-hover'></div></th>
+      <th scope="row"><div class='h-9 w-20 border border-subtle/30 rounded bg-hover'></div></th>
       <td>Hover color</td>
       <td>`--color-hover`</td>
     </tr>
     <tr>
-      <th scope="row"><div class='h-9 w-20 border border-light/30 rounded bg-selected'></div></th>
+      <th scope="row"><div class='h-9 w-20 border border-subtle/30 rounded bg-selected'></div></th>
       <td>Selected color</td>
       <td>`--color-selected`</td>
     </tr>
@@ -152,12 +152,12 @@ Hummingbird provides a minimal but complete set of color roles:
       <td>`--color-disabled-color`</td>
     </tr>
     <tr>
-      <th scope="row"><div class='h-9 w-20 border border-light/30 rounded bg-disabled'></div></th>
+      <th scope="row"><div class='h-9 w-20 border border-subtle/30 rounded bg-disabled'></div></th>
       <td>Disabled Background</td>
       <td>`--color-disabled`</td>
     </tr>
     <tr>
-      <th scope="row"><div class='h-9 w-20 border border-light/30 rounded bg-focus'></div></th>
+      <th scope="row"><div class='h-9 w-20 border border-subtle/30 rounded bg-focus'></div></th>
       <td>Focus color</td>
       <td>`--color-focus`</td>
     </tr>
@@ -169,167 +169,167 @@ Hummingbird provides a minimal but complete set of color roles:
   </thead>
   <tbody>
     <tr>
-      <th scope="row"><div class='h-9 w-20 border border-light/30 rounded bg-light'></div></th>
+      <th scope="row"><div class='h-9 w-20 border border-subtle/30 rounded bg-light'></div></th>
       <td>Light color</td>
       <td>`--color-light`</td>
     </tr>
     <tr>
-      <th scope="row"><div class='h-9 w-20 border border-light/30 rounded bg-dark'></div></th>
+      <th scope="row"><div class='h-9 w-20 border border-subtle/30 rounded bg-dark'></div></th>
       <td>Dark color</td>
       <td>`--color-dark`</td>
     </tr>
     <tr>
-      <th scope="row"><div class='h-9 w-20 border border-light/30 rounded bg-dark text-contrast flex items-center justify-center dark:bg-emphasis'>Contrast</div></th>
+      <th scope="row"><div class='h-9 w-20 border border-subtle/30 rounded bg-dark text-contrast flex items-center justify-center dark:bg-emphasis'>Contrast</div></th>
       <td>Contrast text color</td>
       <td>`--color-contrast`</td>
     </tr>
     <tr>
-      <th scope="row"><div class='h-9 w-20 border border-light/30 rounded bg-primary-lighter'></div></th>
+      <th scope="row"><div class='h-9 w-20 border border-subtle/30 rounded bg-primary-lighter'></div></th>
       <td>Primary lighter color</td>
       <td>`--color-primary-lighter`</td>
     </tr>
     <tr>
-      <th scope="row"><div class='h-9 w-20 border border-light/30 rounded bg-primary-light'></div></th>
+      <th scope="row"><div class='h-9 w-20 border border-subtle/30 rounded bg-primary-light'></div></th>
       <td>Primary light color</td>
       <td>`--color-primary-light`</td>
     </tr>
     <tr>
-      <th scope="row"><div class='h-9 w-20 border border-light/30 rounded bg-primary'></div></th>
+      <th scope="row"><div class='h-9 w-20 border border-subtle/30 rounded bg-primary'></div></th>
       <td>Primary color</td>
       <td>`--color-primary`</td>
     </tr>
     <tr>
-      <th scope="row"><div class='h-9 w-20 border border-light/30 rounded bg-primary-dark'></div></th>
+      <th scope="row"><div class='h-9 w-20 border border-subtle/30 rounded bg-primary-dark'></div></th>
       <td>Primary dark color</td>
       <td>`--color-primary-dark`</td>
     </tr>
     <tr>
-      <th scope="row"><div class='h-9 w-20 border border-light/30 rounded bg-primary-darker'></div></th>
+      <th scope="row"><div class='h-9 w-20 border border-subtle/30 rounded bg-primary-darker'></div></th>
       <td>Primary darker color</td>
       <td>`--color-primary-darker`</td>
     </tr>
     <tr>
-      <th scope="row"><div class='h-9 w-20 border border-light/30 rounded bg-secondary-lighter'></div></th>
+      <th scope="row"><div class='h-9 w-20 border border-subtle/30 rounded bg-secondary-lighter'></div></th>
       <td>Secondary lighter color</td>
       <td>`--color-secondary-lighter`</td>
     </tr>
     <tr>
-      <th scope="row"><div class='h-9 w-20 border border-light/30 rounded bg-secondary-light'></div></th>
+      <th scope="row"><div class='h-9 w-20 border border-subtle/30 rounded bg-secondary-light'></div></th>
       <td>Secondary light color</td>
       <td>`--color-secondary-light`</td>
     </tr>
     <tr>
-      <th scope="row"><div class='h-9 w-20 border border-light/30 rounded bg-secondary'></div></th>
+      <th scope="row"><div class='h-9 w-20 border border-subtle/30 rounded bg-secondary'></div></th>
       <td>Secondary color</td>
       <td>`--color-secondary`</td>
     </tr>
     <tr>
-      <th scope="row"><div class='h-9 w-20 border border-light/30 rounded bg-secondary-dark'></div></th>
+      <th scope="row"><div class='h-9 w-20 border border-subtle/30 rounded bg-secondary-dark'></div></th>
       <td>Secondary dark color</td>
       <td>`--color-secondary-dark`</td>
     </tr>
     <tr>
-      <th scope="row"><div class='h-9 w-20 border border-light/30 rounded bg-secondary-darker'></div></th>
+      <th scope="row"><div class='h-9 w-20 border border-subtle/30 rounded bg-secondary-darker'></div></th>
       <td>Secondary darker color</td>
       <td>`--color-secondary-darker`</td>
     </tr>
     <tr>
-      <th scope="row"><div class='h-9 w-20 border border-light/30 rounded bg-info-lighter'></div></th>
+      <th scope="row"><div class='h-9 w-20 border border-subtle/30 rounded bg-info-lighter'></div></th>
       <td>Info lighter color</td>
       <td>`--color-info-lighter`</td>
     </tr>
     <tr>
-      <th scope="row"><div class='h-9 w-20 border border-light/30 rounded bg-info-light'></div></th>
+      <th scope="row"><div class='h-9 w-20 border border-subtle/30 rounded bg-info-light'></div></th>
       <td>Info light color</td>
       <td>`--color-info-light`</td>
     </tr>
     <tr>
-      <th scope="row"><div class='h-9 w-20 border border-light/30 rounded bg-info'></div></th>
+      <th scope="row"><div class='h-9 w-20 border border-subtle/30 rounded bg-info'></div></th>
       <td>Info color</td>
       <td>`--color-info`</td>
     </tr>
     <tr>
-      <th scope="row"><div class='h-9 w-20 border border-light/30 rounded bg-info-dark'></div></th>
+      <th scope="row"><div class='h-9 w-20 border border-subtle/30 rounded bg-info-dark'></div></th>
       <td>Info dark color</td>
       <td>`--color-info-dark`</td>
     </tr>
     <tr>
-      <th scope="row"><div class='h-9 w-20 border border-light/30 rounded bg-info-darker'></div></th>
+      <th scope="row"><div class='h-9 w-20 border border-subtle/30 rounded bg-info-darker'></div></th>
       <td>Info darker color</td>
       <td>`--color-info-darker`</td>
     </tr>
     <tr>
-      <th scope="row"><div class='h-9 w-20 border border-light/30 rounded bg-success-lighter'></div></th>
+      <th scope="row"><div class='h-9 w-20 border border-subtle/30 rounded bg-success-lighter'></div></th>
       <td>Success lighter color</td>
       <td>`--color-success-lighter`</td>
     </tr>
     <tr>
-      <th scope="row"><div class='h-9 w-20 border border-light/30 rounded bg-success-light'></div></th>
+      <th scope="row"><div class='h-9 w-20 border border-subtle/30 rounded bg-success-light'></div></th>
       <td>Success light color</td>
       <td>`--color-success-light`</td>
     </tr>
     <tr>
-      <th scope="row"><div class='h-9 w-20 border border-light/30 rounded bg-success'></div></th>
+      <th scope="row"><div class='h-9 w-20 border border-subtle/30 rounded bg-success'></div></th>
       <td>Success color</td>
       <td>`--color-success`</td>
     </tr>
     <tr>
-      <th scope="row"><div class='h-9 w-20 border border-light/30 rounded bg-success-dark'></div></th>
+      <th scope="row"><div class='h-9 w-20 border border-subtle/30 rounded bg-success-dark'></div></th>
       <td>Success dark color</td>
       <td>`--color-success-dark`</td>
     </tr>
     <tr>
-      <th scope="row"><div class='h-9 w-20 border border-light/30 rounded bg-success-darker'></div></th>
+      <th scope="row"><div class='h-9 w-20 border border-subtle/30 rounded bg-success-darker'></div></th>
       <td>Success darker color</td>
       <td>`--color-success-darker`</td>
     </tr>
     <tr>
-      <th scope="row"><div class='h-9 w-20 border border-light/30 rounded bg-warning-lighter'></div></th>
+      <th scope="row"><div class='h-9 w-20 border border-subtle/30 rounded bg-warning-lighter'></div></th>
       <td>Warning lighter color</td>
       <td>`--color-warning-lighter`</td>
     </tr>
     <tr>
-      <th scope="row"><div class='h-9 w-20 border border-light/30 rounded bg-warning-light'></div></th>
+      <th scope="row"><div class='h-9 w-20 border border-subtle/30 rounded bg-warning-light'></div></th>
       <td>Warning light color</td>
       <td>`--color-warning-light`</td>
     </tr>
     <tr>
-      <th scope="row"><div class='h-9 w-20 border border-light/30 rounded bg-warning'></div></th>
+      <th scope="row"><div class='h-9 w-20 border border-subtle/30 rounded bg-warning'></div></th>
       <td>Warning color</td>
       <td>`--color-warning`</td>
     </tr>
     <tr>
-      <th scope="row"><div class='h-9 w-20 border border-light/30 rounded bg-warning-dark'></div></th>
+      <th scope="row"><div class='h-9 w-20 border border-subtle/30 rounded bg-warning-dark'></div></th>
       <td>Warning dark color</td>
       <td>`--color-warning-dark`</td>
     </tr>
     <tr>
-      <th scope="row"><div class='h-9 w-20 border border-light/30 rounded bg-warning-darker'></div></th>
+      <th scope="row"><div class='h-9 w-20 border border-subtle/30 rounded bg-warning-darker'></div></th>
       <td>Warning darker color</td>
       <td>`--color-warning-darker`</td>
     </tr>
     <tr>
-      <th scope="row"><div class='h-9 w-20 border border-light/30 rounded bg-danger-lighter'></div></th>
+      <th scope="row"><div class='h-9 w-20 border border-subtle/30 rounded bg-danger-lighter'></div></th>
       <td>Danger lighter color</td>
       <td>`--color-danger-lighter`</td>
     </tr>
     <tr>
-      <th scope="row"><div class='h-9 w-20 border border-light/30 rounded bg-danger-light'></div></th>
+      <th scope="row"><div class='h-9 w-20 border border-subtle/30 rounded bg-danger-light'></div></th>
       <td>Danger light color</td>
       <td>`--color-danger-light`</td>
     </tr>
     <tr>
-      <th scope="row"><div class='h-9 w-20 border border-light/30 rounded bg-danger'></div></th>
+      <th scope="row"><div class='h-9 w-20 border border-subtle/30 rounded bg-danger'></div></th>
       <td>Danger color</td>
       <td>`--color-danger`</td>
     </tr>
     <tr>
-      <th scope="row"><div class='h-9 w-20 border border-light/30 rounded bg-danger-dark'></div></th>
+      <th scope="row"><div class='h-9 w-20 border border-subtle/30 rounded bg-danger-dark'></div></th>
       <td>Danger dark color</td>
       <td>`--color-danger-dark`</td>
     </tr>
     <tr>
-      <th scope="row"><div class='h-9 w-20 border border-light/30 rounded bg-danger-darker'></div></th>
+      <th scope="row"><div class='h-9 w-20 border border-subtle/30 rounded bg-danger-darker'></div></th>
       <td>Danger darker color</td>
       <td>`--color-danger-darker`</td>
     </tr>
@@ -342,7 +342,7 @@ Use semantic color classes like:
 
 - `bg-primary`
 - `text-muted`
-- `border-base`
+- `border-default`
 
 These classes use theme’s color variables, so the UI stays consistent when customizing or switching themes.
 
@@ -353,7 +353,7 @@ These classes use theme’s color variables, so the UI stays consistent when cus
 
 <p class="text-muted">Muted paragraph text</p>
 
-<div class="border border-base bg-default p-4">
+<div class="border border-default bg-default p-4">
   Card with subtle border
 </div>
 
