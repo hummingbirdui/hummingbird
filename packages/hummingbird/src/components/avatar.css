@@ -4,7 +4,7 @@
     :where(.avatar) {
       @apply rounded-full border-2 border-contrast -ms-3
       w-[calc(var(--avatar-width)+4px)]
-      h-[calc(var(--avatar-height)+4px)];
+      h-[calc(var(--avatar-height)+4px)] overflow-hidden;
     }
   }
 }
@@ -17,7 +17,7 @@
     --avatar-font-weight: var(--font-weight-medium);
     --avatar-font-size: var(--text-lg);
 
-    @apply relative inline-block overflow-hidden
+    @apply relative inline-block
     w-[var(--avatar-width)]
     h-[var(--avatar-height)]
     align-middle;
