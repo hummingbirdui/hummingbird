@@ -1,11 +1,10 @@
 import * as prettier from 'prettier';
 import pkg from '@hummingbirdui/hummingbird/package.json';
-import browserScript from '@hummingbirdui/browser/dist/index.global.js?raw';
 
 export const iframeMarkup = (code: string) => {
   return `<html>
     <head>
-      <script>${browserScript}</script>
+      <script src="https://cdn.jsdelivr.net/npm/@hummingbirdui/browser@${pkg.version}/dist/index.global.js"></script>
       <style type="text/tailwindcss">
         @custom-variant dark (&:where(.dark, .dark *), .dark);
         @custom-variant active (&:active, &.active);
