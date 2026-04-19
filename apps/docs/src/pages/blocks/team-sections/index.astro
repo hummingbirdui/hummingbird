@@ -1,5 +1,5 @@
 ---
-import Layout from '@layouts/Layout.astro';
+import BlocksLayout from '@layouts/BlocksLayout.astro';
 import BlockPreview from '@components/blocks/BlockPreview.astro';
 import Team1 from './blocks/_team1.astro';
 import Team2 from './blocks/_team2.astro';
@@ -8,36 +8,23 @@ import Team4 from './blocks/_team4.astro';
 import Team5 from './blocks/_team5.astro';
 ---
 
-<Layout>
-  <div class="px-5">
-    <div class="max-w-7xl mx-auto my-10">
-      <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="/" class="link link-hover">Home</a></li>
-          <li class="breadcrumb-item"><a href="/blocks" class="link link-hover">Blocks</a></li>
-          <li class="breadcrumb-item active" aria-current="page">Team sections</li>
-        </ol>
-      </nav>
-      <h3 class="mb-4 mt-8">Team Sections</h3>
-      <p class="text-lg">
-        Explore Tailwind CSS team section examples to showcase your team members and roles. These blocks include a variety of
-        layouts and styles to help you present your team in a clear and organized way.
-      </p>
-      <BlockPreview title="Simple team grid with profile cards" className="min-h-265">
-        <Team1 />
-      </BlockPreview>
-      <BlockPreview title="Team section with large image cards" className="min-h-185">
-        <Team2 />
-      </BlockPreview>
-      <BlockPreview title="Square image profile cards" className="min-h-172">
-        <Team3 />
-      </BlockPreview>
-      <BlockPreview title="Bordered grid team cards" className="min-h-150">
-        <Team4 />
-      </BlockPreview>
-      <BlockPreview title="Hover reveal overlay team cards" className="min-h-210">
-        <Team5 />
-      </BlockPreview>
-    </div>
-  </div>
-</Layout>
+<BlocksLayout
+  title="Team Sections"
+  description="Explore Tailwind CSS team section examples to showcase your team members and roles. These blocks include a variety of layouts and styles to help you present your team in a clear and organized way."
+>
+  <BlockPreview title="Simple team grid with profile cards" className="min-h-265">
+    <Team1 />
+  </BlockPreview>
+  <BlockPreview title="Team section with large image cards" className="min-h-185">
+    <Team2 />
+  </BlockPreview>
+  <BlockPreview title="Square image profile cards" className="min-h-172">
+    <Team3 />
+  </BlockPreview>
+  <BlockPreview title="Bordered grid team cards" className="min-h-150">
+    <Team4 />
+  </BlockPreview>
+  <BlockPreview title="Hover reveal overlay team cards" className="min-h-210">
+    <Team5 />
+  </BlockPreview>
+</BlocksLayout>

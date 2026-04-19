@@ -1,5 +1,5 @@
 ---
-import Layout from '@layouts/Layout.astro';
+import BlocksLayout from '@layouts/BlocksLayout.astro';
 import BlockPreview from '@components/blocks/BlockPreview.astro';
 import CTA1 from './blocks/_cta1.astro';
 import CTA2 from './blocks/_cta2.astro';
@@ -8,36 +8,23 @@ import CTA4 from './blocks/_cta4.astro';
 import CTA5 from './blocks/_cta5.astro';
 ---
 
-<Layout>
-  <div class="px-5">
-    <div class="max-w-7xl mx-auto my-10">
-      <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="/" class="link link-hover">Home</a></li>
-          <li class="breadcrumb-item"><a href="/blocks" class="link link-hover">Blocks</a></li>
-          <li class="breadcrumb-item active" aria-current="page">CTA</li>
-        </ol>
-      </nav>
-      <h3 class="mb-4 mt-8">CTA Sections</h3>
-      <p class="text-lg">
-        Explore Tailwind CSS call-to-action section examples to encourage users to take the next step. These blocks include
-        a variety of layouts and styles to help you create clear and effective actions across your pages.
-      </p>
-      <BlockPreview title="Simple cta card" className="min-h-185">
-        <CTA1 />
-      </BlockPreview>
-      <BlockPreview title="Split cta section with feature list and image" className="min-h-170">
-        <CTA2 />
-      </BlockPreview>
-      <BlockPreview title="Cta cards with multiple startup options" className="min-h-170">
-        <CTA3 />
-      </BlockPreview>
-      <BlockPreview title="Feature cta panel with stats card" className="min-h-155">
-        <CTA4 />
-      </BlockPreview>
-      <BlockPreview title="Marketing promo cta banner" className='min-h-72'>
-        <CTA5 />
-      </BlockPreview>
-    </div>
-  </div>
-</Layout>
+<BlocksLayout
+  title="CTA Sections"
+  description="Explore Tailwind CSS call-to-action section examples to encourage users to take the next step. These blocks include a variety of layouts and styles to help you create clear and effective actions across your pages."
+>
+  <BlockPreview title="Simple cta card" className="min-h-185">
+    <CTA1 />
+  </BlockPreview>
+  <BlockPreview title="Split cta section with feature list and image" className="min-h-170">
+    <CTA2 />
+  </BlockPreview>
+  <BlockPreview title="Cta cards with multiple startup options" className="min-h-170">
+    <CTA3 />
+  </BlockPreview>
+  <BlockPreview title="Feature cta panel with stats card" className="min-h-155">
+    <CTA4 />
+  </BlockPreview>
+  <BlockPreview title="Marketing promo cta banner" className='min-h-72'>
+    <CTA5 />
+  </BlockPreview>
+</BlocksLayout>
