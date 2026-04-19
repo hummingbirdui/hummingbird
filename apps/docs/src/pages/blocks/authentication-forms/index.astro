@@ -1,5 +1,5 @@
 ---
-import Layout from '@layouts/Layout.astro';
+import BlocksLayout from '@layouts/BlocksLayout.astro';
 import BlockPreview from '@components/blocks/BlockPreview.astro';
 import Signin1 from './blocks/_signin1.astro';
 import Signin2 from './blocks/_signin2.astro';
@@ -8,34 +8,23 @@ import Signup1 from './blocks/_signup1.astro';
 import Signup2 from './blocks/_signup2.astro';
 ---
 
-<Layout>
-  <div class="px-5">
-    <div class="max-w-7xl mx-auto my-10">
-      <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="/" class="link link-hover">Home</a></li>
-          <li class="breadcrumb-item"><a href="/blocks" class="link link-hover">Blocks</a></li>
-          <li class="breadcrumb-item active" aria-current="page">Authentication Forms</li>
-        </ol>
-      </nav>
-      <h3 class="mb-4 mt-8">Authentication Forms</h3>
-      <p class="text-lg">
-        Use these Tailwind CSS authentication form examples to build clean and user-friendly sign-in and sign-up experiences for your applications. These layouts are designed with modern UI patterns, responsive behavior, and flexible structures to help you create seamless account access flows.
-      <BlockPreview title="Basic sign-in form" className="min-h-220">
-        <Signin1 />
-      </BlockPreview>
-      <BlockPreview title="Sign-in form with floating labels" className="min-h-200">
-        <Signin2 />
-      </BlockPreview>
-      <BlockPreview title="Multi card sign-in layout" className="min-h-170">
-        <Signin3 />
-      </BlockPreview>
-      <BlockPreview title="Split signup layout with marketing panel" className="min-h-260">
-        <Signup1 />
-      </BlockPreview>
-      <BlockPreview title="Split auth layout with signin/signup tabs" className="min-h-260">
-        <Signup2 />
-      </BlockPreview>
-    </div>
-  </div>
-</Layout>
+<BlocksLayout
+  title="Authentication Forms"
+  description="Use these Tailwind CSS authentication form examples to build clean and user-friendly sign-in and sign-up experiences for your applications. These layouts are designed with modern UI patterns, responsive behavior, and flexible structures to help you create seamless account access flows."
+>
+  <BlockPreview title="Basic sign-in form" className="min-h-220">
+    <Signin1 />
+  </BlockPreview>
+  <BlockPreview title="Sign-in form with floating labels" className="min-h-200">
+    <Signin2 />
+  </BlockPreview>
+  <BlockPreview title="Multi card sign-in layout" className="min-h-170">
+    <Signin3 />
+  </BlockPreview>
+  <BlockPreview title="Split signup layout with marketing panel" className="min-h-260">
+    <Signup1 />
+  </BlockPreview>
+  <BlockPreview title="Split auth layout with signin/signup tabs" className="min-h-260">
+    <Signup2 />
+  </BlockPreview>
+</BlocksLayout>

@@ -1,5 +1,5 @@
 ---
-import Layout from '@layouts/Layout.astro';
+import BlocksLayout from '@layouts/BlocksLayout.astro';
 import BlockPreview from '@components/blocks/BlockPreview.astro';
 import Stat1 from './blocks/_stat1.astro';
 import Stat2 from './blocks/_stat2.astro';
@@ -8,36 +8,27 @@ import Stat4 from './blocks/_stat4.astro';
 import Stat5 from './blocks/_stat5.astro';
 ---
 
-<Layout>
-  <div class="px-5">
-    <div class="max-w-7xl mx-auto my-10">
-      <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="/" class="link link-hover">Home</a></li>
-          <li class="breadcrumb-item"><a href="/blocks" class="link link-hover">Blocks</a></li>
-          <li class="breadcrumb-item active" aria-current="page">Stats</li>
-        </ol>
-      </nav>
-      <h3 class="mb-4 mt-8">Stats</h3>
-      <p class="text-lg">
-        Explore Tailwind CSS stat section examples to display key metrics and important numbers for your product or service.
-        These blocks include a variety of layouts and styles to help you present data clearly and effectively.
-      </p>
-      <BlockPreview title="Stat cards with trend indicators" className="min-h-50">
-        <Stat1 />
-      </BlockPreview>
-      <BlockPreview title="Stat cards with performance trends" className="min-h-65">
-        <Stat2 />
-      </BlockPreview>
-      <BlockPreview title="Stat cards with actions" className="min-h-65">
-        <Stat3 />
-      </BlockPreview>
-      <BlockPreview title="Stat cards with charts status indicators" className="min-h-69">
-        <Stat4 />
-      </BlockPreview>
-      <BlockPreview title="Stat cards with mixed data indicators" className="min-h-65">
-        <Stat5 />
-      </BlockPreview>
-    </div>
-  </div>
-</Layout>
+<BlocksLayout
+  title="Stats"
+  description="Explore Tailwind CSS stat section examples to display key metrics and important numbers for your product or service. These blocks include a variety of layouts and styles to help you present data clearly and effectively."
+>
+  <BlockPreview title="Stat cards with trend indicators" className="min-h-50">
+    <Stat1 />
+  </BlockPreview>
+  <BlockPreview title="Stat cards with performance trends" className="min-h-65">
+    <Stat2 />
+  </BlockPreview>
+  <BlockPreview title="Stat cards with actions" className="min-h-65">
+    <Stat3 />
+  </BlockPreview>
+  <BlockPreview title="Stat cards with charts status indicators" className="min-h-69">
+    <Stat4 />
+  </BlockPreview>
+  <BlockPreview title="Stat cards with mixed data indicators" className="min-h-65">
+    <Stat5 />
+  </BlockPreview>
+</BlocksLayout>
+
+
+      
+

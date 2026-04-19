@@ -1,5 +1,5 @@
 ---
-import Layout from '@layouts/Layout.astro';
+import BlocksLayout from '@layouts/BlocksLayout.astro';
 import BlockPreview from '@components/blocks/BlockPreview.astro';
 import Feature1 from './blocks/_feature1.astro';
 import Feature2 from './blocks/_feature2.astro';
@@ -8,36 +8,23 @@ import Feature4 from './blocks/_feature4.astro';
 import Feature5 from './blocks/_feature5.astro';
 ---
 
-<Layout>
-  <div class="px-5">
-    <div class="max-w-7xl mx-auto my-10">
-      <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="/" class="link link-hover">Home</a></li>
-          <li class="breadcrumb-item"><a href="/blocks" class="link link-hover">Blocks</a></li>
-          <li class="breadcrumb-item active" aria-current="page">Feature sections</li>
-        </ol>
-      </nav>
-      <h3 class="mb-4 mt-8">Feature Sections</h3>
-      <p class="text-lg">
-        Explore Tailwind CSS feature section examples to showcase the key features of your product or service. These blocks
-        offer a range of layouts and styles, making it easy to present information clearly and effectively.
-      </p>
-      <BlockPreview title="Simple feature cards" className="min-h-230">
-        <Feature1 />
-      </BlockPreview>
-      <BlockPreview title="Split feature layout with image" className="min-h-170">
-        <Feature2 />
-      </BlockPreview>
-      <BlockPreview title="Bento grid layout feature section" className="min-h-340">
-        <Feature3 />
-      </BlockPreview>
-      <BlockPreview title="Asymmetric feature layout" className="min-h-235">
-        <Feature4 />
-      </BlockPreview>
-      <BlockPreview title="Feature layout with side columns and central image" className="min-h-215">
-        <Feature5 />
-      </BlockPreview>
-    </div>
-  </div>
-</Layout>
+<BlocksLayout
+  title="Feature Sections"
+  description="Explore Tailwind CSS feature section examples to showcase the key features of your product or service. These blocks offer a range of layouts and styles, making it easy to present information clearly and effectively."
+>
+  <BlockPreview title="Simple feature cards" className="min-h-230">
+    <Feature1 />
+  </BlockPreview>
+  <BlockPreview title="Split feature layout with image" className="min-h-170">
+    <Feature2 />
+  </BlockPreview>
+  <BlockPreview title="Bento grid layout feature section" className="min-h-340">
+    <Feature3 />
+  </BlockPreview>
+  <BlockPreview title="Asymmetric feature layout" className="min-h-235">
+    <Feature4 />
+  </BlockPreview>
+  <BlockPreview title="Feature layout with side columns and central image" className="min-h-215">
+    <Feature5 />
+  </BlockPreview>
+</BlocksLayout>
