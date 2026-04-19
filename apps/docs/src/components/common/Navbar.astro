@@ -9,13 +9,6 @@ import { Image } from 'astro:assets';
 import '@docsearch/css';
 
 const { currentVersion } = getConfig();
-const menuItems = [
-  { name: 'Docs', path: '/docs/getting-started/installation', match: '/docs' },
-  { name: 'Components', path: '/docs/components/overview', match: '/docs/components' },
-  { name: 'Blocks', path: '/blocks', match: '/blocks' },
-  { name: 'Blog', path: 'https://hummingbirdui.medium.com/', match: '/blog' },
-];
-
 const currentPath = Astro.url.pathname;
 ---
 
@@ -47,20 +40,46 @@ const currentPath = Astro.url.pathname;
           aria-label="Close"></button>
       </div>
       <ul class="navbar-nav px-6 xl:px-0 space-y-1 xl:flex-row">
-        {
-          menuItems.map((item) => (
-            <li class="nav-item">
-              <a
-                href={item.name === 'Blog' ? item.path : getVersionedPath(item.path)}
-                class={`nav-link px-4 py-2 text-default text-base xl:text-sm font-normal rounded-lg hover:bg-hover ${
-                  currentPath.startsWith(item.path) ? 'text-primary' : ''
-                }`}
-              >
-                {item.name}
-              </a>
-            </li>
-          ))
-        }
+        <li class="nav-item">
+          <a
+            href={getVersionedPath('/docs/getting-started/installation')}
+            class={`nav-link px-4 py-2 text-default text-base xl:text-sm font-normal rounded-lg hover:bg-hover ${
+              currentPath.startsWith('/docs/getting-started/installation') ? 'text-primary' : ''
+            }`}
+          >
+            Docs
+          </a>
+        </li>
+        <li class="nav-item">
+          <a
+            href={getVersionedPath('/docs/components/overview')}
+            class={`nav-link px-4 py-2 text-default text-base xl:text-sm font-normal rounded-lg hover:bg-hover ${
+              currentPath.startsWith('/docs/components/overview') ? 'text-primary' : ''
+            }`}
+          >
+            Components
+          </a>
+        </li>
+        <li class="nav-item">
+          <a
+            href={getVersionedPath('/blocks')}
+            class={`nav-link px-4 py-2 text-default text-base xl:text-sm font-normal rounded-lg hover:bg-hover ${
+              currentPath.startsWith('/blocks') ? 'text-primary' : ''
+            }`}
+          >
+            Blocks
+            <span class="badge badge-warning size-2 p-0 -mt-2 animate-pulse"></span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a
+            href="https://hummingbirdui.medium.com/"
+            target="_blank"
+            class="nav-link px-4 py-2 text-default text-base xl:text-sm font-normal rounded-lg hover:bg-hover"
+          >
+            Blog
+          </a>
+        </li>
       </ul>
     </div>
 
