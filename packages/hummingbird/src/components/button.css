@@ -330,6 +330,7 @@
       --btn-height: 2.75rem;
       --btn-padding-y: 0;
       --btn-padding-x: 0;
+      --btn-border-radius: calc(infinity * 1px);
     }
   }
 }
@@ -342,12 +343,10 @@
     --btn-hover-bg: --alpha(var(--color-active) / 4%);
     --btn-padding-y: --spacing(2);
     --btn-padding-x: --spacing(2);
-    --btn-border-radius: calc(infinity * 1px);
 
     &.btn-sm {
       --btn-padding-y: --spacing(1.25);
       --btn-padding-x: --spacing(1.25);
-      --btn-border-radius: calc(infinity * 1px);
     }
     &.btn-lg {
       --btn-padding-y: --spacing(3);

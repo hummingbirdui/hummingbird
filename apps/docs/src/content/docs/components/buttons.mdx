@@ -186,15 +186,10 @@ Buttons can include icons alongside text to improve usability and recognition. I
 
 ## Icon button
 
-Icon buttons display only an icon and are often used in app bars and toolbars. They are also suitable for toggle actions, such as marking an item as favorite with a star.
+Icon buttons display only an icon and are often used in app bars and toolbars. By default icon buttons are square, Use border radius classes to create custom shapes or use the `btn-circle` class for circular button.
 
 <Example class="flex flex-wrap gap-2 justify-center items-center" 
   code={`<button class='btn btn-icon'>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-      <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 0 0 0 6.364L12 20.364l7.682-7.682a4.5 4.5 0 0 0-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 0 0-6.364 0"/>
-    </svg>
-  </button>
-  <button class='btn btn-icon' disabled>
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
       <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 0 0 0 6.364L12 20.364l7.682-7.682a4.5 4.5 0 0 0-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 0 0-6.364 0"/>
     </svg>
@@ -204,7 +199,12 @@ Icon buttons display only an icon and are often used in app bars and toolbars. T
     <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 11v8a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-7a1 1 0 0 1 1-1za4 4 0 0 0 4-4V6a2 2 0 0 1 4 0v5h3a2 2 0 0 1 2 2l-1 5a2 3 0 0 1-2 2h-7a3 3 0 0 1-3-3"/>
   </svg>
   </button>
-  <button class='btn btn-icon btn-icon-danger'>
+  <button class='btn btn-icon btn-icon-danger rounded-full'>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+      <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 0 0 0 6.364L12 20.364l7.682-7.682a4.5 4.5 0 0 0-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 0 0-6.364 0"/>
+    </svg>
+  </button>
+  <button class='btn btn-icon' disabled>
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
       <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 0 0 0 6.364L12 20.364l7.682-7.682a4.5 4.5 0 0 0-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 0 0-6.364 0"/>
     </svg>
@@ -236,6 +236,15 @@ For larger or smaller icon buttons, use the <code>.btn-lg</code> and <code>.btn-
       <path fill="currentColor" d="M7 21q-.825 0-1.412-.587T5 19V6q-.425 0-.712-.288T4 5t.288-.712T5 4h4q0-.425.288-.712T10 3h4q.425 0 .713.288T15 4h4q.425 0 .713.288T20 5t-.288.713T19 6v13q0 .825-.587 1.413T17 21zM17 6H7v13h10zm-7 11q.425 0 .713-.288T11 16V9q0-.425-.288-.712T10 8t-.712.288T9 9v7q0 .425.288.713T10 17m4 0q.425 0 .713-.288T15 16V9q0-.425-.288-.712T14 8t-.712.288T13 9v7q0 .425.288.713T14 17M7 6v13z"/>
     </svg>
   </button>`}
+/>
+
+## Block button
+
+Use the `w-full` utility to create a block button that spans the full width of its parent container.
+
+<Example class='space-y-2'
+  code={`<button class='btn btn-primary w-full'>Block button</button>
+  <button class='btn btn-secondary w-full'>Block button</button>`} 
 />
 
 ## Gradient button
