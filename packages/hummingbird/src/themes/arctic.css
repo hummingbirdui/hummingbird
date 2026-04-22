@@ -1,0 +1,75 @@
+@import '../palettes/arctic.css';
+
+@layer theme {
+  :root,
+  :host {
+    @variant arctic {
+      /* Background colors */
+      --background-color-subtle: var(--color-slate-50);
+      --background-color-muted: var(--color-slate-100);
+      --background-color-default: var(--color-white);
+      --background-color-highlight: var(--color-slate-200);
+      --background-color-emphasis: var(--color-slate-300);
+
+      /* Text colors */
+      --text-color-subtle: var(--color-slate-400);
+      --text-color-muted: var(--color-slate-600);
+      --text-color-default: var(--color-slate-800);
+      --text-color-highlight: var(--color-slate-900);
+      --text-color-emphasis: var(--color-slate-950);
+
+      /* neutral */
+      --color-light: var(--color-slate-100);
+      --color-dark: var(--color-slate-950);
+      --color-contrast: var(--color-white);
+
+      --color-primary-lighter: var(--color-teal-50);
+      --color-primary-light: var(--color-teal-400);
+      --color-primary: var(--color-teal-500);
+      --color-primary-dark: var(--color-teal-600);
+      --color-primary-darker: var(--color-teal-900);
+
+      --color-secondary-lighter: var(--color-indigo-50);
+      --color-secondary-light: var(--color-indigo-300);
+      --color-secondary: var(--color-indigo-500);
+      --color-secondary-dark: var(--color-indigo-700);
+      --color-secondary-darker: var(--color-indigo-900);
+
+      --color-danger-lighter: var(--color-red-50);
+      --color-danger-light: var(--color-red-300);
+      --color-danger: var(--color-red-500);
+      --color-danger-dark: var(--color-red-600);
+      --color-danger-darker: var(--color-red-900);
+
+      --color-warning-lighter: var(--color-brown-50);
+      --color-warning-light: var(--color-brown-400);
+      --color-warning: var(--color-brown-500);
+      --color-warning-dark: var(--color-brown-700);
+      --color-warning-darker: var(--color-brown-900);
+
+      --color-success-lighter: var(--color-green-50);
+      --color-success-light: var(--color-green-400);
+      --color-success: var(--color-green-500);
+      --color-success-dark: var(--color-green-700);
+      --color-success-darker: var(--color-green-900);
+
+      --color-info-lighter: var(--color-blue-50);
+      --color-info-light: var(--color-blue-300);
+      --color-info: var(--color-blue-500);
+      --color-info-dark: var(--color-blue-700);
+      --color-info-darker: var(--color-blue-900);
+
+      --color-active: var(--color-slate-500);
+      --color-hover: var(--color-slate-100);
+      --color-selected: var(--color-slate-100);
+      --color-disabled-color: var(--color-slate-400);
+      --color-disabled: var(--color-slate-200);
+      --color-focus: var(--color-slate-300);
+
+      /* borders */
+      --border-color-subtle: --alpha(var(--color-slate-300) / 60%);
+      --border-color-default: var(--color-slate-300);
+      --border-color-emphasis: var(--color-slate-600);
+    }
+  }
+}

@@ -15,11 +15,12 @@ const isLanding = Astro.url.pathname === getVersionedPath('/');
 <html lang="en">
   <head>
     <script is:inline>
-      document.documentElement.classList.toggle(
-        'dark',
-        localStorage.theme === 'dark' ||
-          (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches),
-      );
+      const theme = localStorage.getItem('theme');
+      const THEMES = ['light', 'dark', 'retro', 'luxury', 'arctic', 'nature', 'ember', 'dracula', 'midnight'];
+
+      if (theme && THEMES.includes(theme)) {
+        document.documentElement.classList.add(theme);
+      }
     </script>
     <Head title={title} description={description} />
   </head>
@@ -36,7 +37,9 @@ const isLanding = Astro.url.pathname === getVersionedPath('/');
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-N9W587RP90"></script>
     <script is:inline>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
+      function gtag() {
+        dataLayer.push(arguments);
+      }
       gtag('js', new Date());
 
       gtag('config', 'G-N9W587RP90');

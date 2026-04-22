@@ -1,0 +1,51 @@
+@import '../palettes/ember.css';
+
+@layer theme {
+  :root,
+  :host {
+    @variant ember {
+      --color-primary-lighter: var(--color-orange-950);
+      --color-primary-light: var(--color-orange-700);
+      --color-primary-main: var(--color-orange-400);
+      --color-primary-dark: var(--color-orange-300);
+      --color-primary-darker: var(--color-orange-100);
+
+      --color-secondary-lighter: var(--color-indigo-950);
+      --color-secondary-light: var(--color-indigo-700);
+      --color-secondary-main: var(--color-indigo-400);
+      --color-secondary-dark: var(--color-indigo-300);
+      --color-secondary-darker: var(--color-indigo-100);
+
+      --color-danger-lighter: var(--color-red-950);
+      --color-danger-light: var(--color-red-600);
+      --color-danger-main: var(--color-red-400);
+      --color-danger-dark: var(--color-red-300);
+      --color-danger-darker: var(--color-red-200);
+
+      --color-warning-lighter: var(--color-yellow-950);
+      --color-warning-light: var(--color-yellow-800);
+      --color-warning-main: var(--color-yellow-400);
+      --color-warning-dark: var(--color-yellow-300);
+      --color-warning-darker: var(--color-yellow-200);
+
+      --color-success-lighter: var(--color-green-950);
+      --color-success-light: var(--color-green-700);
+      --color-success-main: var(--color-green-400);
+      --color-success-dark: var(--color-green-300);
+      --color-success-darker: var(--color-green-200);
+
+      --color-info-lighter: var(--color-blue-950);
+      --color-info-light: var(--color-blue-700);
+      --color-info-main: var(--color-blue-400);
+      --color-info-dark: var(--color-blue-300);
+      --color-info-darker: var(--color-blue-200);
+
+      --color-active: var(--color-grey-500);
+      --color-hover: var(--color-grey-700);
+      --color-selected: var(--color-grey-900);
+      --color-disabled-color: var(--color-grey-500);
+      --color-disabled: var(--color-grey-700);
+      --color-focus: var(--color-grey-700);
+    }
+  }
+}

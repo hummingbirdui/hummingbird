@@ -1,0 +1,93 @@
+@layer theme {
+  :root,
+  :host {
+    @variant nature {
+      --color-white: #faf6ec;
+      --color-black: #050504;
+
+      --color-green-50: #dceade;
+      --color-green-100: #c0d9c2;
+      --color-green-200: #98c19b;
+      --color-green-300: #6ea772;
+      --color-green-400: #448e4a;
+      --color-green-500: #308236;
+      --color-green-600: #2b7531;
+      --color-green-700: #225b26;
+      --color-green-800: #18411b;
+      --color-green-900: #0e2710;
+      --color-green-950: #071209;
+
+      --color-brown-50: #eae5d7;
+      --color-brown-100: #eae5d7;
+      --color-brown-200: #c7b78d;
+      --color-brown-300: #b0995e;
+      --color-brown-400: #997c30;
+      --color-brown-500: #8e6e1a;
+      --color-brown-600: #806317;
+      --color-brown-700: #644d12;
+      --color-brown-800: #47370d;
+      --color-brown-900: #2b2108;
+      --color-brown-950: #151105;
+
+      --color-taupe-50: #f0eee6;
+      --color-taupe-100: #e1dfda;
+      --color-taupe-200: #d7d5d0;
+      --color-taupe-300: #c8c7c0;
+      --color-taupe-400: #afada5;
+      --color-taupe-500: #8a877e;
+      --color-taupe-600: #63615a;
+      --color-taupe-700: #3d3b37;
+      --color-taupe-800: #2e2d2a;
+      --color-taupe-900: #201e1c;
+      --color-taupe-950: #131311;
+
+      --color-red-50: #f0d6d6;
+      --color-red-100: #ebc7c8;
+      --color-red-200: #dea3a4;
+      --color-red-300: #d07e7f;
+      --color-red-400: #c3595b;
+      --color-red-500: #bc4749;
+      --color-red-600: #aa4042;
+      --color-red-700: #843233;
+      --color-red-800: #5e2324;
+      --color-red-900: #391516;
+      --color-red-950: #160808;
+
+      --color-avocado-50: #e4ead7;
+      --color-avocado-100: #cdd8b6;
+      --color-avocado-200: #adbe86;
+      --color-avocado-300: #8ca455;
+      --color-avocado-400: #6b8a25;
+      --color-avocado-500: #5b7d0d;
+      --color-avocado-600: #52710c;
+      --color-avocado-700: #405809;
+      --color-avocado-800: #2d3e06;
+      --color-avocado-900: #1b2604;
+      --color-avocado-950: #101802;
+
+      --color-orange-50: #eee0d3;
+      --color-orange-100: #e6cfba;
+      --color-orange-200: #d5af8d;
+      --color-orange-300: #c48f5f;
+      --color-orange-400: #b36f31;
+      --color-orange-500: #ab5f1b;
+      --color-orange-600: #9a5618;
+      --color-orange-700: #784313;
+      --color-orange-800: #552f0d;
+      --color-orange-900: #341d08;
+      --color-orange-950: #160d04;
+
+      --color-blue-50: #d8e3e9;
+      --color-blue-100: #c4d7dd;
+      --color-blue-200: #9ebdc8;
+      --color-blue-300: #76a2b1;
+      --color-blue-400: #4f879b;
+      --color-blue-500: #3c7a90;
+      --color-blue-600: #366e82;
+      --color-blue-700: #2a5665;
+      --color-blue-800: #1e3d48;
+      --color-blue-900: #12252b;
+      --color-blue-950: #070f12;
+    }
+  }
+}

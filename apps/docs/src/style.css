@@ -2,8 +2,12 @@
 @import 'tailwindcss';
 @import '@hummingbirdui/hummingbird/src/index.css';
 @import '@hummingbirdui/hummingbird/src/plugins/plugins.css';
-@custom-variant dark (&:where(.dark, .dark *), .dark);
 @custom-variant active (&:active, &.active);
+@custom-variant dark (&:where(.dark, .dark *), .dark);
+@custom-variant luxury (&:where(.luxury, .luxury *), .luxury);
+@custom-variant retro (&:where(.retro, .retro *), .retro);
+@custom-variant arctic (&:where(.arctic, .arctic *), .arctic);
+@custom-variant nature (&:where(.nature, .nature *), .nature);
 
 @theme {
   --container-8xl: 95rem;
