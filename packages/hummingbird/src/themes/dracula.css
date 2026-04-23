@@ -1,9 +1,9 @@
-@import '../palettes/ember.css';
+@import '../palettes/dracula.css';
 
 @layer theme {
   :root,
   :host {
-    @variant ember {
+    @variant dracula {
       /* Background colors */
       --background-color-subtle: var(--color-gray-900);
       --background-color-muted: var(--color-gray-800);
@@ -24,18 +24,18 @@
       --color-contrast: var(--color-gray-950);
 
       /* Primary */
-      --color-primary-lighter: var(--color-orange-950);
-      --color-primary-light: var(--color-orange-700);
-      --color-primary: var(--color-orange-400);
-      --color-primary-dark: var(--color-orange-300);
-      --color-primary-darker: var(--color-orange-100);
+      --color-primary-lighter: var(--color-purple-950);
+      --color-primary-light: var(--color-purple-700);
+      --color-primary: var(--color-purple-400);
+      --color-primary-dark: var(--color-purple-300);
+      --color-primary-darker: var(--color-purple-100);
 
       /* Secondary */
-      --color-secondary-lighter: var(--color-indigo-950);
-      --color-secondary-light: var(--color-indigo-700);
-      --color-secondary: var(--color-indigo-400);
-      --color-secondary-dark: var(--color-indigo-300);
-      --color-secondary-darker: var(--color-indigo-100);
+      --color-secondary-lighter: var(--color-pink-950);
+      --color-secondary-light: var(--color-pink-700);
+      --color-secondary: var(--color-pink-400);
+      --color-secondary-dark: var(--color-pink-300);
+      --color-secondary-darker: var(--color-pink-100);
 
       /* Danger */
       --color-danger-lighter: var(--color-red-950);
@@ -45,11 +45,11 @@
       --color-danger-darker: var(--color-red-200);
 
       /* Warning */
-      --color-warning-lighter: var(--color-yellow-950);
-      --color-warning-light: var(--color-yellow-800);
-      --color-warning: var(--color-yellow-400);
-      --color-warning-dark: var(--color-yellow-300);
-      --color-warning-darker: var(--color-yellow-200);
+      --color-warning-lighter: var(--color-orange-950);
+      --color-warning-light: var(--color-orange-800);
+      --color-warning: var(--color-orange-400);
+      --color-warning-dark: var(--color-orange-300);
+      --color-warning-darker: var(--color-orange-200);
 
       /* Success */
       --color-success-lighter: var(--color-green-950);

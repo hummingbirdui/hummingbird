@@ -18,47 +18,54 @@
       --text-color-highlight: var(--color-stone-900);
       --text-color-emphasis: var(--color-stone-950);
 
-      /* neutral */
+      /* Neutral */
       --color-light: var(--color-stone-100);
       --color-dark: var(--color-stone-950);
       --color-contrast: var(--color-white);
 
+      /* Primary */
       --color-primary-lighter: var(--color-maroon-50);
       --color-primary-light: var(--color-maroon-400);
       --color-primary: var(--color-maroon-500);
       --color-primary-dark: var(--color-maroon-600);
       --color-primary-darker: var(--color-maroon-900);
 
+      /* Secondary */
       --color-secondary-lighter: var(--color-gold-50);
       --color-secondary-light: var(--color-gold-300);
       --color-secondary: var(--color-gold-500);
       --color-secondary-dark: var(--color-gold-700);
       --color-secondary-darker: var(--color-gold-900);
 
+      /* Danger */
       --color-danger-lighter: var(--color-rose-50);
       --color-danger-light: var(--color-rose-300);
       --color-danger: var(--color-rose-500);
       --color-danger-dark: var(--color-rose-600);
       --color-danger-darker: var(--color-rose-900);
 
+      /* Warning */
       --color-warning-lighter: var(--color-olive-50);
       --color-warning-light: var(--color-olive-400);
       --color-warning: var(--color-olive-500);
       --color-warning-dark: var(--color-olive-700);
       --color-warning-darker: var(--color-olive-900);
 
+      /* Success */
       --color-success-lighter: var(--color-teal-50);
       --color-success-light: var(--color-teal-400);
       --color-success: var(--color-teal-500);
       --color-success-dark: var(--color-teal-700);
       --color-success-darker: var(--color-teal-900);
 
+      /* Info */
       --color-info-lighter: var(--color-blue-50);
       --color-info-light: var(--color-blue-300);
       --color-info: var(--color-blue-500);
       --color-info-dark: var(--color-blue-700);
       --color-info-darker: var(--color-blue-900);
 
+      /* Actions */
       --color-active: var(--color-stone-500);
       --color-hover: var(--color-stone-100);
       --color-selected: var(--color-stone-100);
@@ -66,7 +73,7 @@
       --color-disabled: var(--color-stone-200);
       --color-focus: var(--color-stone-300);
 
-      /* borders */
+      /* Borders */
       --border-color-subtle: --alpha(var(--color-stone-300) / 60%);
       --border-color-default: var(--color-stone-300);
       --border-color-emphasis: var(--color-stone-600);

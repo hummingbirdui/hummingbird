@@ -8,6 +8,9 @@
 @custom-variant retro (&:where(.retro, .retro *), .retro);
 @custom-variant arctic (&:where(.arctic, .arctic *), .arctic);
 @custom-variant nature (&:where(.nature, .nature *), .nature);
+@custom-variant ember (&:where(.ember, .ember *), .ember);
+@custom-variant dracula (&:where(.dracula, .dracula *), .dracula);
+@custom-variant midnight (&:where(.midnight, .midnight *), .midnight);
 
 @theme {
   --container-8xl: 95rem;
@@ -111,7 +114,10 @@
   @apply border-x text-black/10 dark:text-white/12.5 bg-size-[8px_8px] bg-top-left bg-[repeating-linear-gradient(315deg,currentColor_0,currentColor_1px,transparent_0,transparent_50%)];
 }
 
-.dark {
+.dark,
+.ember,
+.dracula,
+.midnight {
   .astro-code,
   .astro-code span {
     @apply text-(--shiki-dark)! font-(--shiki-dark-font-weight)!;

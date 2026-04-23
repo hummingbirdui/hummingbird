@@ -62,11 +62,6 @@
   --color-info-dark: var(--color-sky-700);
   --color-info-darker: var(--color-sky-900);
 
-  /* borders */
-  --border-color-subtle: --alpha(var(--color-gray-300) / 60%);
-  --border-color-default: var(--color-gray-300);
-  --border-color-emphasis: var(--color-gray-600);
-
   /* actions */
   --color-active: var(--color-gray-500);
   --color-hover: var(--color-gray-100);
@@ -74,6 +69,11 @@
   --color-disabled-color: var(--color-gray-400);
   --color-disabled: var(--color-gray-200);
   --color-focus: var(--color-gray-300);
+
+  /* borders */
+  --border-color-subtle: --alpha(var(--color-gray-300) / 60%);
+  --border-color-default: var(--color-gray-300);
+  --border-color-emphasis: var(--color-gray-600);
 
   /* font family */
   --font-sans:

@@ -5,6 +5,18 @@
       --color-white: #fdfbfb;
       --color-black: #030101;
 
+      --color-stone-50: #f3f1f1;
+      --color-stone-100: #e7e5e5;
+      --color-stone-200: #dcdada;
+      --color-stone-300: #c9c6c6;
+      --color-stone-400: #a8a5a5;
+      --color-stone-500: #817e7e;
+      --color-stone-600: #575454;
+      --color-stone-700: #322f2f;
+      --color-stone-800: #272424;
+      --color-stone-900: #171515;
+      --color-stone-950: #0d0b0b;
+
       --color-maroon-50: #f3e2e2;
       --color-maroon-100: #e6c1c1;
       --color-maroon-200: #da9c9c;
@@ -28,18 +40,6 @@
       --color-gold-800: #593e21;
       --color-gold-900: #402c18;
       --color-gold-950: #1f160b;
-
-      --color-stone-50: #f3f1f1;
-      --color-stone-100: #e7e5e5;
-      --color-stone-200: #dcdada;
-      --color-stone-300: #c9c6c6;
-      --color-stone-400: #a8a5a5;
-      --color-stone-500: #817e7e;
-      --color-stone-600: #575454;
-      --color-stone-700: #322f2f;
-      --color-stone-800: #272424;
-      --color-stone-900: #171515;
-      --color-stone-950: #0d0b0b;
 
       --color-rose-50: #f1dee7;
       --color-rose-100: #e5bfd0;

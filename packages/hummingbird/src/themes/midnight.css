@@ -1,9 +1,9 @@
-@import '../palettes/ember.css';
+@import '../palettes/midnight.css';
 
 @layer theme {
   :root,
   :host {
-    @variant ember {
+    @variant midnight {
       /* Background colors */
       --background-color-subtle: var(--color-gray-900);
       --background-color-muted: var(--color-gray-800);
@@ -24,11 +24,11 @@
       --color-contrast: var(--color-gray-950);
 
       /* Primary */
-      --color-primary-lighter: var(--color-orange-950);
-      --color-primary-light: var(--color-orange-700);
-      --color-primary: var(--color-orange-400);
-      --color-primary-dark: var(--color-orange-300);
-      --color-primary-darker: var(--color-orange-100);
+      --color-primary-lighter: var(--color-blue-950);
+      --color-primary-light: var(--color-blue-700);
+      --color-primary: var(--color-blue-400);
+      --color-primary-dark: var(--color-blue-300);
+      --color-primary-darker: var(--color-blue-100);
 
       /* Secondary */
       --color-secondary-lighter: var(--color-indigo-950);
@@ -38,11 +38,11 @@
       --color-secondary-darker: var(--color-indigo-100);
 
       /* Danger */
-      --color-danger-lighter: var(--color-red-950);
-      --color-danger-light: var(--color-red-600);
-      --color-danger: var(--color-red-400);
-      --color-danger-dark: var(--color-red-300);
-      --color-danger-darker: var(--color-red-200);
+      --color-danger-lighter: var(--color-pink-950);
+      --color-danger-light: var(--color-pink-600);
+      --color-danger: var(--color-pink-400);
+      --color-danger-dark: var(--color-pink-300);
+      --color-danger-darker: var(--color-pink-200);
 
       /* Warning */
       --color-warning-lighter: var(--color-yellow-950);
@@ -52,11 +52,11 @@
       --color-warning-darker: var(--color-yellow-200);
 
       /* Success */
-      --color-success-lighter: var(--color-green-950);
-      --color-success-light: var(--color-green-700);
-      --color-success: var(--color-green-400);
-      --color-success-dark: var(--color-green-300);
-      --color-success-darker: var(--color-green-200);
+      --color-success-lighter: var(--color-mint-950);
+      --color-success-light: var(--color-mint-700);
+      --color-success: var(--color-mint-400);
+      --color-success-dark: var(--color-mint-300);
+      --color-success-darker: var(--color-mint-200);
 
       /* Info */
       --color-info-lighter: var(--color-sky-950);

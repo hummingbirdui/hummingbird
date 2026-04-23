@@ -18,47 +18,54 @@
       --text-color-highlight: var(--color-taupe-900);
       --text-color-emphasis: var(--color-taupe-950);
 
-      /* neutral */
+      /* Neutral */
       --color-light: var(--color-taupe-100);
       --color-dark: var(--color-taupe-950);
       --color-contrast: var(--color-white);
 
+      /* Primary */
       --color-primary-lighter: var(--color-green-50);
       --color-primary-light: var(--color-green-400);
       --color-primary: var(--color-green-500);
       --color-primary-dark: var(--color-green-600);
       --color-primary-darker: var(--color-green-900);
 
+      /* Secondary */
       --color-secondary-lighter: var(--color-brown-50);
       --color-secondary-light: var(--color-brown-300);
       --color-secondary: var(--color-brown-500);
       --color-secondary-dark: var(--color-brown-700);
       --color-secondary-darker: var(--color-brown-900);
 
+      /* Danger */
       --color-danger-lighter: var(--color-red-50);
       --color-danger-light: var(--color-red-300);
       --color-danger: var(--color-red-500);
       --color-danger-dark: var(--color-red-600);
       --color-danger-darker: var(--color-red-900);
 
+      /* Warning */
       --color-warning-lighter: var(--color-orange-50);
       --color-warning-light: var(--color-orange-400);
       --color-warning: var(--color-orange-500);
       --color-warning-dark: var(--color-orange-700);
       --color-warning-darker: var(--color-orange-900);
 
+      /* Success */
       --color-success-lighter: var(--color-avocado-50);
       --color-success-light: var(--color-avocado-400);
       --color-success: var(--color-avocado-500);
       --color-success-dark: var(--color-avocado-700);
       --color-success-darker: var(--color-avocado-900);
 
+      /* Info */
       --color-info-lighter: var(--color-blue-50);
       --color-info-light: var(--color-blue-300);
       --color-info: var(--color-blue-500);
       --color-info-dark: var(--color-blue-700);
       --color-info-darker: var(--color-blue-900);
 
+      /* Actions */
       --color-active: var(--color-taupe-500);
       --color-hover: var(--color-taupe-100);
       --color-selected: var(--color-taupe-100);
@@ -66,7 +73,7 @@
       --color-disabled: var(--color-taupe-200);
       --color-focus: var(--color-taupe-300);
 
-      /* borders */
+      /* Borders */
       --border-color-subtle: --alpha(var(--color-taupe-300) / 60%);
       --border-color-default: var(--color-taupe-300);
       --border-color-emphasis: var(--color-taupe-600);
