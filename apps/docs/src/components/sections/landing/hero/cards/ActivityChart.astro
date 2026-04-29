@@ -18,7 +18,7 @@ import CardWrapper from '../CardWrapper.astro';
 
 <script>
   import * as echarts from 'echarts';
-  import { onThemeChange } from '@libs/utils';
+  import { getColor, onThemeChange } from '@libs/utils';
 
   const data = [65, 30, 95, 25, 65, 35, 55];
   const weeks = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
@@ -32,9 +32,7 @@ import CardWrapper from '../CardWrapper.astro';
 
       const lineChart = echarts.init(container);
 
-      const renderChart = (theme: 'light' | 'dark') => {
-        const isDark = theme === 'dark';
-
+      const renderChart = () => {
         const option = {
           tooltip: {
             trigger: 'axis',
@@ -43,10 +41,10 @@ import CardWrapper from '../CardWrapper.astro';
               const name = params[0]?.name ?? '';
               return `${name}: ${value}%`;
             },
-            backgroundColor: '#111',
+            backgroundColor: getColor('color-dark'),
             borderColor: 'transparent',
             textStyle: {
-              color: '#fff',
+              color: getColor('color-white'),
               fontSize: 12,
               fontWeight: 400,
               fontFamily: 'Figtree, sans-serif',
@@ -104,17 +102,17 @@ import CardWrapper from '../CardWrapper.astro';
                 width: 2,
                 type: 'solid',
                 cap: 'round',
-                color: isDark ? '#0074E6' : '#1E90FF',
+                color: getColor('color-primary'),
               },
               areaStyle: {
                 color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
                   {
                     offset: 0,
-                    color: 'rgba(30, 144, 255, 0.5)',
+                    color: getColor('color-primary', 0.5),
                   },
                   {
                     offset: 1,
-                    color: 'rgba(30, 144, 255, 0.1)',
+                    color: getColor('color-primary', 0.1),
                   },
                 ]),
               },
@@ -127,7 +125,7 @@ import CardWrapper from '../CardWrapper.astro';
         lineChart.setOption(option, true);
       };
 
-      onThemeChange((theme) => renderChart(theme));
+      onThemeChange(() => renderChart());
       window.addEventListener('resize', () => lineChart.resize());
     });
   }

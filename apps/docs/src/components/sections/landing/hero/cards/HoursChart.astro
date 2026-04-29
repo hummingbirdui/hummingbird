@@ -18,7 +18,7 @@ import CardWrapper from '../CardWrapper.astro';
 
 <script>
   import * as echarts from 'echarts';
-  import { onThemeChange } from '@libs/utils';
+  import { getColor, onThemeChange } from '@libs/utils';
   const data = [6, 8, 5, 4, 7, 6, 5];
 
   if (typeof window !== 'undefined') {
@@ -28,17 +28,16 @@ import CardWrapper from '../CardWrapper.astro';
       const chartId = container.dataset.barchartid;
       if (!chartId) return;
       const barChart = echarts.init(container);
-      const renderChart = (theme: 'light' | 'dark') => {
-        const isDark = theme === 'dark';
+      const renderChart = () => {
         const option = {
           grid: { top: 0, left: 0, right: 0, bottom: 0 },
           tooltip: {
             trigger: 'item',
             formatter: (params: any) => `${params.value} hours`,
-            backgroundColor: '#111',
+            backgroundColor: getColor('color-dark'),
             borderColor: 'transparent',
             textStyle: {
-              color: '#fff',
+              color: getColor('color-white'),
               fontSize: 12,
               fontWeight: 400,
               fontFamily: 'Figtree, sans-serif',
@@ -52,7 +51,7 @@ import CardWrapper from '../CardWrapper.astro';
             axisTick: { show: false },
             axisLine: { show: false },
             axisLabel: {
-              color: isDark ? '#A4ABB9' : '#505763',
+              color: getColor('text-color-muted'),
               fontWeight: 400,
               fontSize: 12,
               fontFamily: 'Figtree, sans-serif',
@@ -80,22 +79,22 @@ import CardWrapper from '../CardWrapper.astro';
               barWidth: 12,
               showBackground: true,
               backgroundStyle: {
-                color: isDark ? '#00101F' : '#EBF5FF',
+                color: getColor('color-primary-lighter'),
                 borderRadius: 16,
               },
               itemStyle: {
                 borderRadius: [10, 10, 10, 10],
                 color: (params: any) => {
                   if (params.dataIndex === 1) {
-                    return isDark ? '#0074E6' : '#4DA7FF';
+                    return getColor('color-primary-light');
                   } else {
-                    return isDark ? '#003970' : '#A3D2FF';
+                    return getColor('color-primary-light', 0.5);
                   }
                 },
               },
               emphasis: {
                 itemStyle: {
-                  color: isDark ? '#0074E6' : '#4DA7FF',
+                  color: getColor('color-primary'),
                 },
               },
             },
@@ -104,7 +103,7 @@ import CardWrapper from '../CardWrapper.astro';
 
         barChart.setOption(option, true);
       };
-      onThemeChange((theme) => renderChart(theme));
+      onThemeChange(() => renderChart());
 
       window.addEventListener('resize', () => barChart.resize());
     });

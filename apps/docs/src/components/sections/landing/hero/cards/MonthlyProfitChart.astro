@@ -14,7 +14,7 @@ import CardWrapper from '../CardWrapper.astro';
 </CardWrapper>
 
 <script>
-  import { onThemeChange } from '@libs/utils';
+  import { getColor, onThemeChange } from '@libs/utils';
   import * as echarts from 'echarts';
 
   const dummyData = {
@@ -40,8 +40,7 @@ import CardWrapper from '../CardWrapper.astro';
       const chartId = container.dataset.profitchartid;
       if (!chartId) return;
       const profitChart = echarts.init(container);
-      const renderChart = (theme: 'light' | 'dark') => {
-        const isDark = theme === 'dark';
+      const renderChart = () => {
         const option = {
           grid: { left: 5, right: 5, top: 10, bottom: 5 },
           tooltip: {
@@ -49,10 +48,10 @@ import CardWrapper from '../CardWrapper.astro';
             axisPointer: {
               type: 'none',
             },
-            backgroundColor: '#111',
+            backgroundColor: getColor('color-dark'),
             borderColor: 'transparent',
             textStyle: {
-              color: '#fff',
+              color: getColor('color-white'),
               fontSize: 12,
               fontWeight: 400,
               fontFamily: 'Figtree, sans-serif',
@@ -84,10 +83,10 @@ import CardWrapper from '../CardWrapper.astro';
               showSymbol: false,
               lineStyle: {
                 width: 1,
-                color: isDark ? '#282c32' : '#DFE4ED',
+                color: getColor('background-color-highlight'),
               },
               itemStyle: {
-                color: isDark ? '#282c32' : '#DFE4ED',
+                color: getColor('background-color-highlight'),
               },
               emphasis: {
                 disabled: true,
@@ -100,10 +99,10 @@ import CardWrapper from '../CardWrapper.astro';
               showSymbol: false,
               lineStyle: {
                 width: 3,
-                color: isDark ? '#058c5b' : '#25D092',
+                color: getColor('color-success'),
               },
               itemStyle: {
-                color: isDark ? '#058c5b' : '#25D092',
+                color: getColor('color-success'),
               },
               emphasis: {
                 disabled: true,
@@ -113,7 +112,7 @@ import CardWrapper from '../CardWrapper.astro';
         };
         profitChart.setOption(option, true);
       };
-      onThemeChange((theme) => renderChart(theme));
+      onThemeChange(() => renderChart());
       window.addEventListener('resize', () => profitChart.resize());
     });
   }

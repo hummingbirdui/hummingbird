@@ -4,12 +4,14 @@
     "composite": true,
     "outDir": "./dist",
     "baseUrl": ".",
+    "ignoreDeprecations": "6.0",
     "paths": {
       "@assets/*": ["src/assets/*"],
       "@components/*": ["src/components/*"],
       "@layouts/*": ["src/layouts/*"],
       "@libs/*": ["src/libs/*"],
       "@data/*": ["src/data/*"],
+      "@scripts/*": ["src/scripts/*"],
       "apps/*": ["src/*"]
     }
   },
