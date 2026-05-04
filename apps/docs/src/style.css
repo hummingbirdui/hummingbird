@@ -1,13 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap');
 @import 'tailwindcss';
 @import '@hummingbirdui/hummingbird';
-@import './themes/luxury.css';
-@import './themes/retro.css';
-@import './themes/arctic.css';
-@import './themes/nature.css';
-@import './themes/ember.css';
-@import './themes/dracula.css';
-@import './themes/midnight.css';
+@import './themes/themes.css';
 @import '@hummingbirdui/hummingbird/src/plugins/plugins.css';
 @custom-variant active (&:active, &.active);
 @custom-variant dark (&:where(.dark, .dark *), .dark);
