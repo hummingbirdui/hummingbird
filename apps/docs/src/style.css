@@ -1,16 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap');
 @import 'tailwindcss';
-@import '@hummingbirdui/hummingbird/src/index.css';
+@import '@hummingbirdui/hummingbird';
+@import './themes/luxury.css';
+@import './themes/retro.css';
+@import './themes/arctic.css';
+@import './themes/nature.css';
+@import './themes/ember.css';
+@import './themes/dracula.css';
+@import './themes/midnight.css';
 @import '@hummingbirdui/hummingbird/src/plugins/plugins.css';
 @custom-variant active (&:active, &.active);
 @custom-variant dark (&:where(.dark, .dark *), .dark);
-@custom-variant luxury (&:where(.luxury, .luxury *), .luxury);
-@custom-variant retro (&:where(.retro, .retro *), .retro);
-@custom-variant arctic (&:where(.arctic, .arctic *), .arctic);
-@custom-variant nature (&:where(.nature, .nature *), .nature);
-@custom-variant ember (&:where(.ember, .ember *), .ember);
-@custom-variant dracula (&:where(.dracula, .dracula *), .dracula);
-@custom-variant midnight (&:where(.midnight, .midnight *), .midnight);
 
 @theme {
   --container-8xl: 95rem;
@@ -114,10 +114,7 @@
   @apply border-x text-black/10 dark:text-white/12.5 bg-size-[8px_8px] bg-top-left bg-[repeating-linear-gradient(315deg,currentColor_0,currentColor_1px,transparent_0,transparent_50%)];
 }
 
-.dark,
-.ember,
-.dracula,
-.midnight {
+.dark {
   .astro-code,
   .astro-code span {
     @apply text-(--shiki-dark)! font-(--shiki-dark-font-weight)!;

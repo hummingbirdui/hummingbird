@@ -12,8 +12,7 @@ const { currentVersion } = getConfig();
 const currentPath = Astro.url.pathname;
 
 const themes = [
-  { value: 'light', label: 'Light' },
-  { value: 'dark', label: 'Dark' },
+  { value: 'default', label: 'Default' },
   { value: 'luxury', label: 'Luxury' },
   { value: 'retro', label: 'Retro' },
   { value: 'arctic', label: 'Arctic' },
@@ -79,13 +78,13 @@ const navLinks = [
     <div id="docsearch-mobile" class="lg:hidden ml-auto"></div>
 
     <div class="mx-2 xl:mx-4 my-auto border-l h-8 xl:h-10 border-default flex lg:hidden xl:flex"></div>
-    <button class="lg:ml-auto xl:ml-0 btn btn-circle btn-subtle-neutral">
+    <button class="lg:ml-auto xl:ml-0 btn btn-circle btn-subtle-neutral" data-theme-toggle-btn>
       <BulbIcon data-theme-toggle="dark" class="dark:hidden" />
       <BulbOffIcon data-theme-toggle="light" class="hidden dark:block" />
     </button>
     <div class="dropstart ml-2">
       <button class="btn btn-subtle-neutral" data-bs-toggle="dropdown" aria-expanded="false" data-theme-dropdown
-        >Light</button
+        >Default</button
       >
       <ul class="dropdown-menu" role="menu">
         {
@@ -120,30 +119,6 @@ const navLinks = [
 </nav>
 
 <script>
-  const themeToggleButton = document.querySelector<HTMLButtonElement>('[data-theme-dropdown]');
-  const themeDropdownItems = document.querySelectorAll<HTMLAnchorElement>('.dropdown-item[data-theme]');
-  window.addEventListener('load', () => {
-    const savedTheme = localStorage.getItem('theme') || 'light';
-
-    if (themeToggleButton) {
-      themeToggleButton.textContent =
-        (themeDropdownItems &&
-          Array.from(themeDropdownItems).find((item) => item.dataset.theme === savedTheme)?.textContent) ||
-        'Light';
-    }
-    themeToggleButton!.textContent =
-      (themeDropdownItems &&
-        Array.from(themeDropdownItems).find((item) => item.dataset.theme === savedTheme)?.textContent) ||
-      'Light';
-  });
-  if (themeDropdownItems && themeToggleButton) {
-    themeDropdownItems.forEach((item) => {
-      item.addEventListener('click', (e) => {
-        e.preventDefault();
-        themeToggleButton.textContent = item.textContent || 'Light';
-      });
-    });
-  }
   async function fetchStarCount() {
     const element = document.querySelector('.stars-count') as HTMLElement;
     if (!element) return;

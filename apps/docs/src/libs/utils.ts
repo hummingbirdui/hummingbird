@@ -1,27 +1,24 @@
-import { THEMES } from '@scripts/theme-control';
+export const themes = ['default', 'luxury', 'retro', 'arctic', 'nature', 'ember', 'dracula', 'midnight'];
 
-type Theme = (typeof THEMES)[number];
+type Theme = (typeof themes)[number];
 
+const getMainTheme = (): Theme => {
+  return document.documentElement.dataset.theme || 'default';
+};
 const getTheme = (): Theme => {
-  const classes = document.documentElement.classList;
-  for (const theme of THEMES) {
-    if (classes.contains(theme)) {
-      return theme;
-    }
-  }
-  return 'light';
+  return document.documentElement.classList.contains('dark') ? 'dark' : 'light';
 };
 
-export const onThemeChange = (callback: (theme: Theme) => void) => {
+export const onThemeChange = (callback: (mainTheme: Theme, isDark: boolean) => void) => {
   if (typeof window === 'undefined') return;
 
   const observer = new MutationObserver(() => {
-    callback(getTheme());
+    callback(getMainTheme(), getTheme() === 'dark');
   });
 
   observer.observe(document.documentElement, {
     attributes: true,
-    attributeFilter: ['class'],
+    attributeFilter: ['data-theme', 'class'],
   });
 };
 

@@ -15,12 +15,17 @@ const isLanding = Astro.url.pathname === getVersionedPath('/');
 <html lang="en">
   <head>
     <script is:inline>
-      const theme = localStorage.getItem('theme');
-      const THEMES = ['light', 'dark', 'retro', 'luxury', 'arctic', 'nature', 'ember', 'dracula', 'midnight'];
-
-      if (theme && THEMES.includes(theme)) {
-        document.documentElement.classList.add(theme);
+      const mainTheme = localStorage.getItem('main-theme');
+      const themes = ['default', 'luxury', 'retro', 'arctic', 'nature', 'ember', 'dracula', 'midnight'];
+      if (mainTheme && themes.includes(mainTheme)) {
+        document.documentElement.setAttribute('data-theme', mainTheme);
       }
+
+      document.documentElement.classList.toggle(
+        'dark',
+        localStorage.theme === 'dark' ||
+          (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches),
+      );
     </script>
     <Head title={title} description={description} />
   </head>
