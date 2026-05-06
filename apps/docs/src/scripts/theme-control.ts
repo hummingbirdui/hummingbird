@@ -78,15 +78,22 @@ const themeControlInit = () => {
   }
 
   applyTheme(getStoredTheme());
-  themeDropdownItems.forEach((item) => {
-    const theme = getStoredTheme();
-    item.classList.add(theme);
-  });
+
+  const syncThemeDropdownItems = () => {
+    const isDark = resolveTheme(getStoredTheme()) === 'dark';
+    themeDropdownItems.forEach((item) => {
+      item.classList.toggle('dark', isDark);
+    });
+  };
+
+  syncThemeDropdownItems();
+
   // sync theme when os preference changes (only in "system" mode)
   const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
   mediaQuery.addEventListener('change', () => {
     if (getStoredTheme() !== THEMES.SYSTEM) return;
     applyTheme(THEMES.SYSTEM);
+    syncThemeDropdownItems();
   });
   // theme toggle button
   document.addEventListener('click', (event) => {
@@ -94,11 +101,8 @@ const themeControlInit = () => {
     const toggleBtn = event.target.closest('[data-theme-toggle-btn]');
     if (!toggleBtn) return;
 
-    themeDropdownItems.forEach((item) => {
-      const theme = getStoredTheme();
-      item.classList.add(theme);
-    });
     toggleTheme();
+    syncThemeDropdownItems();
   });
 };
 
