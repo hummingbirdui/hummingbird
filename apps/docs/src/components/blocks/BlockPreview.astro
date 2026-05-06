@@ -1,6 +1,8 @@
 ---
 import AppCode from '@components/common/AppCode.astro';
 import BulbIcon from '@components/icons/BulbIcon.astro';
+import BulbOffIcon from '@components/icons/BulbOffIcon.astro';
+import ChevronDown from '@components/icons/ChevronDown.astro';
 import CodeIcon from '@components/icons/CodeIcon.astro';
 import CopyIcon from '@components/icons/CopyIcon.astro';
 import PreviewIcon from '@components/icons/PreviewIcon.astro';
@@ -19,6 +21,17 @@ const hasSlot = Astro.slots.has('default');
 const rawCode = hasSlot ? await Astro.slots.render('default') : (codeProp ?? '');
 const code = await codeBeautify(rawCode);
 const markup = iframeMarkup(code);
+
+const themes = [
+  { value: 'default', label: 'Default' },
+  { value: 'luxury', label: 'Luxury' },
+  { value: 'retro', label: 'Retro' },
+  { value: 'arctic', label: 'Arctic' },
+  { value: 'nature', label: 'Nature' },
+  { value: 'ember', label: 'Ember' },
+  { value: 'dracula', label: 'Dracula' },
+  { value: 'midnight', label: 'Midnight' },
+];
 ---
 
 <div id={title?.replace(/\s+/g, '-').toLowerCase()} class="scroll-mt-28">
@@ -35,10 +48,54 @@ const markup = iframeMarkup(code);
         <CodeIcon width="18" height="18" />
         Show code
       </button>
-      <button class="btn btn-square bg-transparent hover:bg-muted ms-auto" data-btn="theme">
-        <BulbIcon width="20" height="20" />
+      <div class="dropdown-center ms-auto me-2">
+        <button
+          class="btn btn-subtle-neutral"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+          data-bs-auto-close="outside"
+          data-block-theme-dropdown
+        >
+          Theme
+          <ChevronDown />
+        </button>
+        <ul class="dropdown-menu min-w-66" role="menu">
+          <li>
+            <h6 class="dropdown-header text-default text-sm">Color Theme</h6>
+          </li>
+          {
+            themes.map(({ value, label }, index) => (
+              <li role="none">
+                <a
+                  class="dropdown-item flex items-center justify-between"
+                  href="#"
+                  data-block-theme-dropdown-item
+                  data-theme={value}
+                  role="menuitem"
+                >
+                  {label}
+                  <div class="flex gap-1">
+                    <div
+                      class={`size-3.5 border border-default rounded ${index === 0 ? 'bg-[#1e90ff] dark:bg-[#4da7ff]' : 'bg-primary'}`}
+                    />
+                    <div
+                      class={`size-3.5 border border-default rounded ${index === 0 ? 'bg-[#ac49fc] dark:bg-[#bc70fb]' : 'bg-secondary'}`}
+                    />
+                    <div
+                      class={`size-3.5 border border-default rounded ${index === 0 ? 'bg-white dark:bg-[#07080a]' : 'bg-default'}`}
+                    />
+                  </div>
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+      <button class="btn btn-square btn-subtle-neutral me-2" data-btn="theme">
+        <BulbIcon width="20" height="20" class="dark:hidden" />
+        <BulbOffIcon width="20" height="20" class="hidden dark:block" />
       </button>
-      <button class="btn btn-square bg-transparent hover:bg-muted" data-btn="copy-code">
+      <button class="btn btn-square btn-subtle-neutral" data-btn="copy-code">
         <CopyIcon />
       </button>
     </div>
@@ -209,11 +266,16 @@ const markup = iframeMarkup(code);
       });
 
       // ─── Theme sync ───────────────────────────────────────────────────────
+      const blockThemeItems = container.querySelectorAll<HTMLElement>('[data-block-theme-dropdown-item]');
 
       let iframeIsDark = getDocumentIsDark();
+      let iframeMainTheme = localStorage.getItem('main-theme') || 'default';
 
       const applyThemeToIframe = () => {
-        iframe.contentDocument?.documentElement?.classList.toggle(DARK_CLASS, iframeIsDark);
+        const docEl = iframe.contentDocument?.documentElement;
+        if (!docEl) return;
+        docEl.classList.toggle(DARK_CLASS, iframeIsDark);
+        docEl.setAttribute('data-theme', iframeMainTheme);
       };
 
       applyThemeToIframe();
@@ -221,11 +283,37 @@ const markup = iframeMarkup(code);
       new MutationObserver(() => {
         iframeIsDark = getDocumentIsDark();
         applyThemeToIframe();
+        blockThemeItems.forEach((item) => {
+          if (iframeIsDark) {
+            item.classList.add('dark');
+          } else {
+            item.classList.remove('dark');
+          }
+        });
       }).observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
 
       themeBtn?.addEventListener('click', () => {
         iframeIsDark = !iframeIsDark;
         applyThemeToIframe();
+      });
+
+      let activeTheme = 'default'
+      let activeItem = Array.from(blockThemeItems).find((item) => item.dataset.theme === activeTheme) || null;
+      activeItem?.classList.add('active')
+
+      blockThemeItems.forEach((item) => {
+        item.addEventListener('click', (e) => {
+          e.preventDefault();
+          const theme = item.dataset.theme;
+          if (theme) {
+            iframeMainTheme = theme;
+            applyThemeToIframe();
+          }
+
+          activeItem?.classList.remove('active');
+          item.classList.add('active')
+          activeItem = item;
+        });
       });
     });
   })();

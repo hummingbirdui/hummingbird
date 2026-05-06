@@ -8,16 +8,24 @@ const { title: SITE_TITLE, description: SITE_DESCRIPTION } = getConfig();
 const { frontmatter } = Astro.props;
 const title = Astro.props.title ?? frontmatter?.title ?? SITE_TITLE;
 const description = frontmatter?.description ? frontmatter.description : SITE_DESCRIPTION;
-const isLanding = Astro.url.pathname === getVersionedPath('/');
+const currentPath = Astro.url.pathname;
+const isLanding = currentPath === getVersionedPath('/');
+const hideMultipleTheming =
+  isLanding ||
+  currentPath.startsWith(getVersionedPath('/blocks'));
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
-    <script is:inline>
+    <script is:inline define:vars={{ hideMultipleTheming }}>
       const mainTheme = localStorage.getItem('main-theme');
       const themes = ['default', 'luxury', 'retro', 'arctic', 'nature', 'ember', 'dracula', 'midnight'];
-      if (mainTheme && themes.includes(mainTheme)) {
+
+      if (hideMultipleTheming) {
+        localStorage.setItem('main-theme', 'default');
+        document.documentElement.removeAttribute('data-theme');
+      } else if (mainTheme && themes.includes(mainTheme)) {
         document.documentElement.setAttribute('data-theme', mainTheme);
       }
 

@@ -42,47 +42,46 @@ const applyMainTheme = (themeName: string) => {
 
 // Initialize theme on page load and set up event listeners for theme changes
 const themeControlInit = () => {
-  const themeToggleButton = document.querySelector<HTMLButtonElement>('[data-theme-dropdown]');
-  const themeDropdownItems = document.querySelectorAll<HTMLAnchorElement>('.dropdown-item[data-theme]');
+  const themeDropdownItems = document.querySelectorAll<HTMLAnchorElement>('[data-global-theme-dropdown-item]');
   const savedMainTheme = localStorage.getItem('main-theme');
 
-  if (!themeToggleButton || themeDropdownItems.length === 0) return;
+  if (themeDropdownItems.length > 0) {
+    let activeItem: HTMLAnchorElement | null = null;
 
-  let activeItem: HTMLAnchorElement | null = null;
+    // Initialize
+    if (savedMainTheme) {
+      applyMainTheme(savedMainTheme);
 
-  // Initialize
-  if (savedMainTheme) {
-    applyMainTheme(savedMainTheme);
+      activeItem = Array.from(themeDropdownItems).find((item) => item.dataset.theme === savedMainTheme) || null;
 
-    activeItem = Array.from(themeDropdownItems).find((item) => item.dataset.theme === savedMainTheme) || null;
-
-    if (activeItem) {
-      activeItem.classList.add('active');
-      themeToggleButton.textContent = activeItem.textContent || 'Default';
+      if (activeItem) {
+        activeItem.classList.add('active');
+      }
     }
+
+    // Events
+    themeDropdownItems.forEach((item) => {
+      item.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        if (activeItem) activeItem.classList.remove('active');
+
+        item.classList.add('active');
+        activeItem = item;
+
+        const theme = item.dataset.theme!;
+
+        applyMainTheme(theme);
+        localStorage.setItem('main-theme', theme);
+      });
+    });
   }
 
-  // Events
-  themeDropdownItems.forEach((item) => {
-    item.addEventListener('click', (e) => {
-      e.preventDefault();
-
-      if (activeItem) activeItem.classList.remove('active');
-
-      item.classList.add('active');
-      activeItem = item;
-
-      const theme = item.dataset.theme!;
-      const label = item.textContent || 'Default';
-
-      applyMainTheme(theme);
-      localStorage.setItem('main-theme', theme);
-
-      themeToggleButton.textContent = label;
-    });
-  });
-
   applyTheme(getStoredTheme());
+  themeDropdownItems.forEach((item) => {
+    const theme = getStoredTheme();
+    item.classList.add(theme);
+  });
   // sync theme when os preference changes (only in "system" mode)
   const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
   mediaQuery.addEventListener('change', () => {
@@ -94,6 +93,11 @@ const themeControlInit = () => {
     if (!(event.target instanceof Element)) return;
     const toggleBtn = event.target.closest('[data-theme-toggle-btn]');
     if (!toggleBtn) return;
+
+    themeDropdownItems.forEach((item) => {
+      const theme = getStoredTheme();
+      item.classList.add(theme);
+    });
     toggleTheme();
   });
 };

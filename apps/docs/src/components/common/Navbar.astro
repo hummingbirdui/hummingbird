@@ -7,9 +7,12 @@ import BulbOffIcon from '@components/icons/BulbOffIcon.astro';
 import { getConfig, getVersionedPath } from '@libs/config';
 import { Image } from 'astro:assets';
 import '@docsearch/css/dist/style.css';
+import Palette from '@components/icons/Palette.astro';
 
 const { currentVersion } = getConfig();
 const currentPath = Astro.url.pathname;
+const hideMultipleTheming =
+  currentPath === getVersionedPath('/') || currentPath.startsWith(getVersionedPath('/blocks'));
 
 const themes = [
   { value: 'default', label: 'Default' },
@@ -29,13 +32,13 @@ const navLinks = [
 ];
 ---
 
-<nav class="navbar sticky top-0 px-6 md:px-10 py-3.75 border-b border-subtle bg-default z-1035">
-  <div class="container px-0 max-w-8xl">
-    <a class="navbar-brand flex items-center gap-2 me-1 sm:me-4" href={getVersionedPath('/')}>
+<nav class="sticky top-0 px-6 md:px-10 py-3.75 border-b border-subtle bg-default z-1035">
+  <div class="container flex flex-wrap items-center justify-between px-0 max-w-8xl">
+    <a class="navbar-brand flex items-center gap-2 me-1 sm:me-4 py-1.25" href={getVersionedPath('/')}>
       <Image src={logo} alt="Logo" class="w-10 h-10" />
       <h5 class="mb-0 text-muted font-semibold hidden sm:flex">hummingbird</h5>
     </a>
-    <span class="badge badge-subtle shrink-0">{currentVersion}</span>
+    <span class="badge badge-subtle shrink-0 hidden sm:inline-block">{currentVersion}</span>
     <div id="docsearch" class="hidden lg:block"></div>
     <div
       class="offcanvas-xl offcanvas-end ms-auto"
@@ -77,31 +80,59 @@ const navLinks = [
 
     <div id="docsearch-mobile" class="lg:hidden ml-auto"></div>
 
-    <div class="mx-2 xl:mx-4 my-auto border-l h-8 xl:h-10 border-default flex lg:hidden xl:flex"></div>
+    <div class="mx-2 xl:mx-4 my-auto border-l h-8 xl:h-10 border-subtle flex lg:hidden xl:flex"></div>
     <button class="lg:ml-auto xl:ml-0 btn btn-circle btn-subtle-neutral" data-theme-toggle-btn>
       <BulbIcon data-theme-toggle="dark" class="dark:hidden" />
       <BulbOffIcon data-theme-toggle="light" class="hidden dark:block" />
     </button>
-    <div class="dropstart ml-2">
-      <button class="btn btn-subtle-neutral" data-bs-toggle="dropdown" aria-expanded="false" data-theme-dropdown
-        >Default</button
-      >
-      <ul class="dropdown-menu" role="menu">
-        {
-          themes.map(({ value, label }) => (
-            <li role="none">
-              <a class="dropdown-item" href="#" data-theme={value} role="menuitem">
-                {label}
-              </a>
+    {
+      !hideMultipleTheming && (
+        <div class="dropdown-center ml-1.5">
+          <button
+            class="btn btn-circle btn-subtle-neutral"
+            data-bs-toggle="dropdown"
+            data-bs-auto-close="outside"
+            aria-expanded="false"
+            data-theme-dropdown
+          >
+            <Palette />
+          </button>
+          <ul class="dropdown-menu min-w-66" role="menu">
+            <li>
+              <h6 class="dropdown-header text-default text-sm">Color Theme</h6>
             </li>
-          ))
-        }
-      </ul>
-    </div>
+            {themes.map(({ value, label }, index) => (
+              <li>
+                <a
+                  class="dropdown-item flex items-center justify-between"
+                  href="#"
+                  data-global-theme-dropdown-item
+                  data-theme={value}
+                  role="menuitem"
+                >
+                  {label}
+                  <div class="flex gap-1">
+                    <div
+                      class={`size-3.5 border border-default rounded ${index === 0 ? 'bg-[#1e90ff] dark:bg-[#4da7ff]' : 'bg-primary'}`}
+                    />
+                    <div
+                      class={`size-3.5 border border-default rounded ${index === 0 ? 'bg-[#ac49fc] dark:bg-[#bc70fb]' : 'bg-secondary'}`}
+                    />
+                    <div
+                      class={`size-3.5 border border-default rounded ${index === 0 ? 'bg-white dark:bg-[#07080a]' : 'bg-default'}`}
+                    />
+                  </div>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )
+    }
     <a
       href="https://github.com/hummingbirdui/hummingbird"
       target="_blank"
-      class="ml-2 btn max-lg:btn-circle btn-subtle-neutral lg:px-3"
+      class="ml-3 btn max-lg:btn-circle btn-subtle-neutral lg:px-3"
     >
       <GitHubIcon />
       <span class="stars-count hidden lg:flex">---</span>
@@ -111,7 +142,7 @@ const navLinks = [
       href="#mainOffcanvas"
       role="button"
       aria-controls="mainOffcanvas"
-      class="ml-2 sm:ml-6 btn btn-circle btn-subtle-neutral flex xl:hidden"
+      class="ml-2 sm:ml-4 btn btn-circle btn-subtle-neutral flex xl:hidden"
     >
       <MenuIcon />
     </a>

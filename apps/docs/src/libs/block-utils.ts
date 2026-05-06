@@ -5,11 +5,17 @@ export const iframeMarkup = (code: string) => {
   return `<html>
     <head>
       <script src="https://cdn.jsdelivr.net/npm/@hummingbirdui/browser@${pkg.version}/dist/index.global.js"></script>
+      <link rel="stylesheet" href="/themes.css">
       <style type="text/tailwindcss">
         @custom-variant dark (&:where(.dark, .dark *), .dark);
         @custom-variant active (&:active, &.active);
       </style>
       <script is:inline>
+        const mainTheme = localStorage.getItem("main-theme");
+        if (mainTheme) {
+          document.documentElement.setAttribute("data-theme", mainTheme);
+        }
+
         document.documentElement.classList.toggle(
           "dark",
           localStorage.theme === "dark" ||
