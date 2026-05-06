@@ -1,0 +1,397 @@
+---
+import Accordion from '@components/svg-images/Accordion.astro';
+import AdvancedRange from '@components/svg-images/AdvancedRange.astro';
+import AdvancedSelect from '@components/svg-images/AdvancedSelect.astro';
+import Alert from '@components/svg-images/Alert.astro';
+import Avatar from '@components/svg-images/Avatar.astro';
+import Badge from '@components/svg-images/Badge.astro';
+import Breadcrumb from '@components/svg-images/Breadcrumb.astro';
+import Button from '@components/svg-images/Button.astro';
+import ButtonGroup from '@components/svg-images/ButtonGroup.astro';
+import Card from '@components/svg-images/Card.astro';
+import Carousel from '@components/svg-images/Carousel.astro';
+import Checkbox from '@components/svg-images/Checkbox.astro';
+import CloseButton from '@components/svg-images/CloseButton.astro';
+import Collapse from '@components/svg-images/Collapse.astro';
+import CustomScrollbar from '@components/svg-images/CustomScrollbar.astro';
+import Divider from '@components/svg-images/Divider.astro';
+import Dropdown from '@components/svg-images/Dropdown.astro';
+import Dtp from '@components/svg-images/Dtp.astro';
+import FileInput from '@components/svg-images/FileInput.astro';
+import FloatingLabels from '@components/svg-images/FloatingLabels.astro';
+import FormControls from '@components/svg-images/FormControls.astro';
+import InputGroup from '@components/svg-images/InputGroup.astro';
+import Link from '@components/svg-images/Link.astro';
+import ListGroup from '@components/svg-images/ListGroup.astro';
+import Loader from '@components/svg-images/Loader.astro';
+import Modal from '@components/svg-images/Modal.astro';
+import Navbar from '@components/svg-images/Navbar.astro';
+import NavsTabs from '@components/svg-images/NavsTabs.astro';
+import Offcanvas from '@components/svg-images/Offcanvas.astro';
+import Pagination from '@components/svg-images/Pagination.astro';
+import Placeholder from '@components/svg-images/Placeholder.astro';
+import Popover from '@components/svg-images/Popover.astro';
+import Progress from '@components/svg-images/Progress.astro';
+import Radio from '@components/svg-images/Radio.astro';
+import Range from '@components/svg-images/Range.astro';
+import Scrollspy from '@components/svg-images/Scrollspy.astro';
+import Select from '@components/svg-images/Select.astro';
+import Switch from '@components/svg-images/Switch.astro';
+import Table from '@components/svg-images/Table.astro';
+import Toast from '@components/svg-images/Toast.astro';
+import Tooltip from '@components/svg-images/Tooltip.astro';
+import Uploader from '@components/svg-images/Uploader.astro';
+import Validation from '@components/svg-images/Validation.astro';
+import Video from '@components/svg-images/Video.astro';
+
+export interface Component {
+  title: string;
+  count: number;
+  url: string;
+  imgComponent: any;
+}
+
+export interface Section {
+  section: string;
+  items: Component[];
+}
+
+export const general: Component[] = [
+  {
+    title: 'Buttons',
+    url: '/docs/components/buttons',
+    count: 15,
+    imgComponent: Button,
+  },
+  {
+    title: 'Button Group',
+    url: '/docs/components/button-group',
+    count: 12,
+    imgComponent: ButtonGroup,
+  },
+  {
+    title: 'Close Button',
+    url: '/docs/components/close-button',
+    count: 3,
+    imgComponent: CloseButton,
+  },
+  {
+    title: 'Link',
+    url: '/docs/components/link',
+    count: 3,
+    imgComponent: Link,
+  },
+];
+
+export const dataDisplay: Component[] = [
+  {
+    title: 'Avatars',
+    url: '/docs/components/avatars',
+    count: 10,
+    imgComponent: Avatar,
+  },
+  {
+    title: 'Badges',
+    url: '/docs/components/badges',
+    count: 10,
+    imgComponent: Badge,
+  },
+  {
+    title: 'Card',
+    url: '/docs/components/card',
+    count: 10,
+    imgComponent: Card,
+  },
+  {
+    title: 'List Group',
+    url: '/docs/components/list-group',
+    count: 10,
+    imgComponent: ListGroup,
+  },
+  {
+    title: 'Tables',
+    url: '/docs/components/tables',
+    count: 13,
+    imgComponent: Table,
+  },
+  {
+    title: 'Tooltips',
+    url: '/docs/components/tooltips',
+    count: 4,
+    imgComponent: Tooltip,
+  },
+  {
+    title: 'Video',
+    url: '/docs/components/video',
+    count: 6,
+    imgComponent: Video,
+  },
+];
+
+export const dataEntry: Component[] = [
+  {
+    title: 'Advanced Range',
+    url: '/docs/forms/advanced-forms/advanced-range',
+    count: 9,
+    imgComponent: AdvancedRange,
+  },
+  {
+    title: 'Advanced Select',
+    url: '/docs/forms/advanced-forms/advanced-select',
+    count: 7,
+    imgComponent: AdvancedSelect,
+  },
+  {
+    title: 'Checkbox',
+    url: '/docs/forms/checkbox',
+    count: 6,
+    imgComponent: Checkbox,
+  },
+  {
+    title: 'Date & Time Pickers',
+    url: '/docs/forms/advanced-forms/date-time-picker',
+    count: 10,
+    imgComponent: Dtp,
+  },
+  {
+    title: 'File Input',
+    url: '/docs/forms/file-input',
+    count: 7,
+    imgComponent: FileInput,
+  },
+  {
+    title: 'Floating labels',
+    url: '/docs/forms/floating-labels',
+    count: 8,
+    imgComponent: FloatingLabels,
+  },
+  {
+    title: 'Form Controls',
+    url: '/docs/forms/form-control',
+    count: 8,
+    imgComponent: FormControls,
+  },
+  {
+    title: 'Form Validation',
+    url: '/docs/forms/validation',
+    count: 5,
+    imgComponent: Validation,
+  },
+  {
+    title: 'Input Group',
+    url: '/docs/forms/input-group',
+    count: 12,
+    imgComponent: InputGroup,
+  },
+  {
+    title: 'Radio',
+    url: '/docs/forms/radio',
+    count: 6,
+    imgComponent: Radio,
+  },
+  {
+    title: 'Range',
+    url: '/docs/forms/range',
+    count: 6,
+    imgComponent: Range,
+  },
+  {
+    title: 'Select',
+    url: '/docs/forms/select',
+    count: 6,
+    imgComponent: Select,
+  },
+  {
+    title: 'Switch',
+    url: '/docs/forms/switch',
+    count: 4,
+    imgComponent: Switch,
+  },
+  {
+    title: 'File Uploader',
+    url: '/docs/forms/advanced-forms/file-uploader',
+    count: 5,
+    imgComponent: Uploader,
+  },
+];
+
+export const feedback: Component[] = [
+  {
+    title: 'Alerts',
+    url: '/docs/components/alerts',
+    count: 6,
+    imgComponent: Alert,
+  },
+  {
+    title: 'Modal',
+    url: '/docs/components/modal',
+    count: 7,
+    imgComponent: Modal,
+  },
+  {
+    title: 'Placeholders',
+    url: '/docs/components/placeholders',
+    count: 6,
+    imgComponent: Placeholder,
+  },
+  {
+    title: 'Popovers',
+    url: '/docs/components/popovers',
+    count: 7,
+    imgComponent: Popover,
+  },
+  {
+    title: 'Progress',
+    url: '/docs/components/progress',
+    count: 9,
+    imgComponent: Progress,
+  },
+  {
+    title: 'Loaders',
+    url: '/docs/components/loaders',
+    count: 5,
+    imgComponent: Loader,
+  },
+  {
+    title: 'Toasts',
+    url: '/docs/components/toasts',
+    count: 8,
+    imgComponent: Toast,
+  },
+];
+
+export const navigation: Component[] = [
+  {
+    title: 'Accordion',
+    url: '/docs/components/accordion',
+    count: 2,
+    imgComponent: Accordion,
+  },
+  {
+    title: 'Breadcrumb',
+    url: '/docs/components/breadcrumb',
+    count: 5,
+    imgComponent: Breadcrumb,
+  },
+  {
+    title: 'Carousel',
+    url: '/docs/components/carousel',
+    count: 9,
+    imgComponent: Carousel,
+  },
+  {
+    title: 'Collapse',
+    url: '/docs/components/collapse',
+    count: 3,
+    imgComponent: Collapse,
+  },
+  {
+    title: 'Dropdowns',
+    url: '/docs/components/dropdowns',
+    count: 15,
+    imgComponent: Dropdown,
+  },
+  {
+    title: 'Navs & Tabs',
+    url: '/docs/components/navs-tabs',
+    count: 7,
+    imgComponent: NavsTabs,
+  },
+  {
+    title: 'Navbar',
+    url: '/docs/components/navbar',
+    count: 11,
+    imgComponent: Navbar,
+  },
+  {
+    title: 'Offcanvas',
+    url: '/docs/components/offcanvas',
+    count: 7,
+    imgComponent: Offcanvas,
+  },
+  {
+    title: 'Pagination',
+    url: '/docs/components/pagination',
+    count: 10,
+    imgComponent: Pagination,
+  },
+  {
+    title: 'Scrollspy',
+    url: '/docs/components/scrollspy',
+    count: 4,
+    imgComponent: Scrollspy,
+  },
+];
+
+export const layout: Component[] = [
+  {
+    title: 'Custom Scrollbar',
+    url: '/docs/components/custom-scrollbar',
+    count: 4,
+    imgComponent: CustomScrollbar,
+  },
+  {
+    title: 'Divider',
+    url: '/docs/components/divider',
+    count: 5,
+    imgComponent: Divider,
+  },
+];
+
+export const components: Component[] = [
+  {
+    title: 'Accordion',
+    url: '/docs/components/accordion',
+    count: 2,
+    imgComponent: Accordion,
+  },
+  {
+    title: 'Alerts',
+    url: '/docs/components/alerts',
+    count: 6,
+    imgComponent: Alert,
+  },
+  {
+    title: 'Avatars',
+    url: '/docs/components/avatars',
+    count: 10,
+    imgComponent: Avatar,
+  },
+  {
+    title: 'Buttons',
+    url: '/docs/components/buttons',
+    count: 15,
+    imgComponent: Button,
+  },
+  {
+    title: 'Carousel',
+    url: '/docs/components/carousel',
+    count: 9,
+    imgComponent: Carousel,
+  },
+  {
+    title: 'Checkbox',
+    url: '/docs/forms/checkbox',
+    count: 6,
+    imgComponent: Checkbox,
+  },
+  {
+    title: 'Dropdowns',
+    url: '/docs/components/dropdowns',
+    count: 15,
+    imgComponent: Dropdown,
+  },
+  {
+    title: 'Form Controls',
+    url: '/docs/forms/form-control',
+    count: 8,
+    imgComponent: FormControls,
+  },
+  {
+    title: 'Range',
+    url: '/docs/forms/range',
+    count: 6,
+    imgComponent: Range,
+  },
+];
+---
