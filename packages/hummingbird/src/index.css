@@ -1,11 +1,4 @@
 @import './theme/theme.css';
-@import './themes/retro.css';
-@import './themes/luxury.css';
-@import './themes/arctic.css';
-@import './themes/nature.css';
-@import './themes/ember.css';
-@import './themes/dracula.css';
-@import './themes/midnight.css';
 @import './reboot.css';
 @import './layout/grid.css';
 @import './components/components.css';
