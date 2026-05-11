@@ -6,7 +6,7 @@ interface Props extends astroHTML.JSX.SVGAttributes {
   fill?: string;
 }
 
-const { width = '21', height = '21', class: className = '', fill = 'currentColor', ...rest } = Astro.props;
+const { width = '20', height = '20', class: className = '', fill = 'currentColor', ...rest } = Astro.props;
 ---
 
 <svg xmlns="http://www.w3.org/2000/svg" width={width} height={height} class={className} {...rest} viewBox="0 0 24 24"

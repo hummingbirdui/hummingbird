@@ -2,9 +2,11 @@
 import AppCode from '@components/common/AppCode.astro';
 import BulbIcon from '@components/icons/BulbIcon.astro';
 import BulbOffIcon from '@components/icons/BulbOffIcon.astro';
+import CheckIcon from '@components/icons/CheckIcon.astro';
 import ChevronDown from '@components/icons/ChevronDown.astro';
 import CodeIcon from '@components/icons/CodeIcon.astro';
 import CopyIcon from '@components/icons/CopyIcon.astro';
+import Palette from '@components/icons/Palette.astro';
 import PreviewIcon from '@components/icons/PreviewIcon.astro';
 import { codeBeautify, iframeMarkup } from '@libs/block-utils';
 
@@ -40,29 +42,26 @@ const themes = [
   </h6>
   <div class="block-preview mb-5">
     <div class="flex mb-3">
-      <button class="btn btn-text-neutral gap-1 active me-1" data-btn="show-preview">
+      <button class="btn max-sm:btn-square btn-text-neutral gap-1 active me-1" data-btn="show-preview">
         <PreviewIcon />
-        Preview
+        <span class="hidden sm:block">Preview</span>
       </button>
-      <button class="btn btn-text-neutral gap-1" data-btn="show-code">
+      <button class="btn max-sm:btn-square btn-text-neutral gap-1" data-btn="show-code">
         <CodeIcon width="18" height="18" />
-        Show code
+        <span class="hidden sm:block">Show code</span>
       </button>
       <div class="dropdown-center ms-auto me-2">
         <button
-          class="btn btn-subtle-neutral"
+          class="btn btn-subtle-neutral min-w-36"
           data-bs-toggle="dropdown"
           aria-expanded="false"
           data-bs-auto-close="outside"
-          data-block-theme-dropdown
         >
-          Theme
+          <Palette />
+          <span data-block-theme-dropdown-label>Default</span>
           <ChevronDown />
         </button>
         <ul class="dropdown-menu min-w-66" role="menu">
-          <li>
-            <h6 class="dropdown-header text-default text-sm">Color Theme</h6>
-          </li>
           {
             themes.map(({ value, label }, index) => (
               <li role="none">
@@ -92,11 +91,12 @@ const themes = [
         </ul>
       </div>
       <button class="btn btn-square btn-subtle-neutral me-2" data-btn="theme">
-        <BulbIcon width="20" height="20" class="dark:hidden" />
-        <BulbOffIcon width="20" height="20" class="hidden dark:block" />
+        <BulbIcon width="20" height="20" data-theme-icon-light />
+        <BulbOffIcon width="20" height="20" class="hidden" data-theme-icon-dark />
       </button>
       <button class="btn btn-square btn-subtle-neutral" data-btn="copy-code">
-        <CopyIcon />
+        <CopyIcon data-copy-icon />
+        <CheckIcon width="28" height="28" class="text-success hidden" data-check-icon />
       </button>
     </div>
     <div class="w-full" data-stage="stage">
@@ -243,8 +243,8 @@ const themes = [
       document.addEventListener('mouseleave', onResizeEnd);
 
       // ─── Copy code button ────────────────────────────────────────────────
-      const copyIcon = `<svg width='30' height='30' viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.6328 21.1631C11.3203 21.1631 11.0547 21.0537 10.8359 20.835C10.6172 20.6162 10.5078 20.3506 10.5078 20.0381V9.53809C10.5078 9.22559 10.6172 8.95996 10.8359 8.74121C11.0547 8.52246 11.3203 8.41309 11.6328 8.41309H19.8828C20.1953 8.41309 20.4609 8.52246 20.6797 8.74121C20.8984 8.95996 21.0078 9.22559 21.0078 9.53809V20.0381C21.0078 20.3506 20.8984 20.6162 20.6797 20.835C20.4609 21.0537 20.1953 21.1631 19.8828 21.1631H11.6328ZM11.6328 20.0381H19.8828V9.53809H11.6328V20.0381ZM9.38281 23.4131C9.07031 23.4131 8.80469 23.3037 8.58594 23.085C8.36719 22.8662 8.25781 22.6006 8.25781 22.2881V11.5443C8.25781 11.3818 8.31094 11.2475 8.41719 11.1412C8.52344 11.035 8.65781 10.9818 8.82031 10.9818C8.98281 10.9818 9.11719 11.035 9.22344 11.1412C9.32969 11.2475 9.38281 11.3818 9.38281 11.5443V22.2881H17.7078C17.8703 22.2881 18.0047 22.3412 18.1109 22.4475C18.2172 22.5537 18.2703 22.6881 18.2703 22.8506C18.2703 23.0131 18.2172 23.1475 18.1109 23.2537C18.0047 23.36 17.8703 23.4131 17.7078 23.4131H9.38281ZM11.6328 9.53809V20.0381V9.53809Z" fill="currentColor"></path></svg>`;
-      const copyCheckIcon = `<svg class="text-success" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="m9.55 15.15l8.475-8.475q.3-.3.7-.3t.7.3t.3.713t-.3.712l-9.175 9.2q-.3.3-.7.3t-.7-.3L4.55 13q-.3-.3-.288-.712t.313-.713t.713-.3t.712.3z"/></svg>`;
+      const copyIcon = copyBtn?.querySelector('[data-copy-icon]');
+      const copyCheckIcon = copyBtn?.querySelector('[data-check-icon]');
 
       let revertTimer: ReturnType<typeof setTimeout> | null = null;
       copyBtn?.addEventListener('click', async () => {
@@ -256,26 +256,38 @@ const themes = [
         try {
           await navigator.clipboard.writeText(codeText);
 
-          copyBtn.innerHTML = copyCheckIcon;
+          copyCheckIcon?.classList.remove(HIDDEN_CLASS);
+          copyIcon?.classList.add(HIDDEN_CLASS);
 
           if (revertTimer) clearTimeout(revertTimer);
           revertTimer = setTimeout(() => {
-            copyBtn.innerHTML = copyIcon;
+            copyCheckIcon?.classList.add(HIDDEN_CLASS);
+            copyIcon?.classList.remove(HIDDEN_CLASS);
           }, 1600);
         } catch {}
       });
 
       // ─── Theme sync ───────────────────────────────────────────────────────
       const blockThemeItems = container.querySelectorAll<HTMLElement>('[data-block-theme-dropdown-item]');
+      const blockThemeDropDownLabel = container.querySelector<HTMLElement>('[data-block-theme-dropdown-label]');
 
       let iframeIsDark = getDocumentIsDark();
       let iframeMainTheme = localStorage.getItem('main-theme') || 'default';
+      const iconLight = container.querySelector<HTMLElement>('[data-theme-icon-light]');
+      const iconDark = container.querySelector<HTMLElement>('[data-theme-icon-dark]');
 
       const applyThemeToIframe = () => {
         const docEl = iframe.contentDocument?.documentElement;
         if (!docEl) return;
         docEl.classList.toggle(DARK_CLASS, iframeIsDark);
         docEl.setAttribute('data-theme', iframeMainTheme);
+        if (iframeIsDark) {
+          iconLight?.classList.add(HIDDEN_CLASS);
+          iconDark?.classList.remove(HIDDEN_CLASS);
+        } else {
+          iconLight?.classList.remove(HIDDEN_CLASS);
+          iconDark?.classList.add(HIDDEN_CLASS);
+        }
       };
 
       applyThemeToIframe();
@@ -285,9 +297,9 @@ const themes = [
         applyThemeToIframe();
         blockThemeItems.forEach((item) => {
           if (iframeIsDark) {
-            item.classList.add('dark');
+            item.classList.add(DARK_CLASS);
           } else {
-            item.classList.remove('dark');
+            item.classList.remove(DARK_CLASS);
           }
         });
       }).observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
@@ -297,9 +309,9 @@ const themes = [
         applyThemeToIframe();
       });
 
-      let activeTheme = 'default'
+      let activeTheme = 'default';
       let activeItem = Array.from(blockThemeItems).find((item) => item.dataset.theme === activeTheme) || null;
-      activeItem?.classList.add('active')
+      activeItem?.classList.add('active');
 
       blockThemeItems.forEach((item) => {
         item.addEventListener('click', (e) => {
@@ -311,8 +323,9 @@ const themes = [
           }
 
           activeItem?.classList.remove('active');
-          item.classList.add('active')
+          item.classList.add('active');
           activeItem = item;
+          blockThemeDropDownLabel && (blockThemeDropDownLabel.innerText = item.innerText);
         });
       });
     });
