@@ -1,4 +1,4 @@
-@import './default.css';
+@import '../palettes/default.css';
 
 @theme {
   /* Background colors */
