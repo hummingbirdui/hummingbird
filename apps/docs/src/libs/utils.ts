@@ -1,4 +1,4 @@
-export const themes = ['default', 'luxury', 'retro', 'arctic', 'nature', 'ember', 'dracula', 'midnight'];
+export const themes = ['luxury', 'retro', 'arctic', 'default', 'nature', 'ember', 'dracula', 'midnight'];
 
 type Theme = (typeof themes)[number];
 

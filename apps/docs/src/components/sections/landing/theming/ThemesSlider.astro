@@ -1,0 +1,87 @@
+---
+import ChevronLeftIcon from '@components/icons/ChevronLeftIcon.astro';
+import ChevronRightIcon from '@components/icons/ChevronRightIcon.astro';
+import { themes } from '@libs/utils';
+---
+
+<div class="relative">
+  <div class="swiper mb-6">
+    <div class="swiper-wrapper flex items-center relative">
+      {
+        themes.map((theme, index) => (
+          <div class={`swiper-slide max-w-max me-3 ${index === 0 ? 'ms-14' : ''}`} data-theme={theme.toLowerCase()}>
+            <button
+              class="border border-subtle bg-default px-2 py-1.75 rounded-lg flex items-center gap-3 min-w-26.5 transition-colors"
+              data-landing-theme-item
+            >
+              <div class="size-6 rounded bg-primary" />
+              <span class="text-default">{theme.charAt(0).toUpperCase() + theme.slice(1)}</span>
+            </button>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+  <div class="absolute top-1/2 -translate-y-1/2 left-0 z-10 bg-default w-14 h-full">
+    <button
+      class="swiper-button-prev btn btn-circle btn-subtle-neutral [.swiper-button-disabled]:opacity-50 [.swiper-button-disabled]:cursor-not-allowed"
+    >
+      <ChevronLeftIcon width="20" height="20" />
+    </button>
+  </div>
+  <div class="absolute top-1/2 -translate-y-1/2 right-0 z-10 bg-default w-14 h-full text-end">
+    <button
+      class="swiper-button-next btn btn-circle btn-subtle-neutral [.swiper-button-disabled]:opacity-50 [.swiper-button-disabled]:cursor-not-allowed"
+    >
+      <ChevronRightIcon width="20" height="20" />
+    </button>
+  </div>
+</div>
+
+<script>
+  import Swiper from 'swiper';
+  import { Navigation } from 'swiper/modules';
+  import 'swiper/css';
+
+  new Swiper('.swiper', {
+    modules: [Navigation],
+    slidesPerView: 'auto',
+    spaceBetween: 12,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  });
+
+  const themeItems = document.querySelectorAll('[data-landing-theme-item]');
+  const activeTheme = localStorage.getItem('main-theme') || 'default';
+  const getDocumentIsDark = () => document.documentElement.classList.contains('dark');
+
+  new MutationObserver(() => {
+    const isDark = getDocumentIsDark();
+    themeItems.forEach((item) => {
+      if (isDark) {
+        item.classList.add('dark');
+      } else {
+        item.classList.remove('dark');
+      }
+    });
+  }).observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+
+  const updateActiveState = (themeName: string) => {
+    themeItems.forEach((item) => {
+      const slide = item.closest('.swiper-slide');
+      const isActive = slide?.getAttribute('data-theme') === themeName;
+      if (isActive) {
+        item.classList.add('!border-[#1e90ff]');
+        item.classList.add('h-11.5');
+      } else {
+        item.classList.remove('!border-[#1e90ff]');
+        item.classList.remove('py-2.5');
+      }
+    });
+  };
+
+  // Initialize active state
+  updateActiveState(activeTheme);
+</script>

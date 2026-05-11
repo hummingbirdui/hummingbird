@@ -1,0 +1,62 @@
+---
+import SectionHeader from '@components/sections/landing/common/SectionHeader.astro';
+import SectionWrapper from '@components/sections/landing/common/SectionWrapper.astro';
+import gridRightL from '@assets/images/landing/grids/grid-right-l.png';
+import gridRightD from '@assets/images/landing/grids/grid-right-d.png';
+import ThemesSlider from './ThemesSlider.astro';
+import { themingMarkup } from './ComponentCode.astro';
+---
+
+<div class="relative">
+  <div class="absolute w-240 -top-28 -right-46 -z-10">
+    <img src={gridRightD.src} class="hidden dark:block object-contain" />
+    <img src={gridRightL.src} class="dark:hidden object-contain" />
+  </div>
+
+  <SectionWrapper id="theming" class="max-w-148 sm:max-w-172 lg:max-w-5xl">
+    <SectionHeader
+      title="Color themes, perfected."
+      subtitle="Hummingbird offers a range of thoughtfully crafted themes with balanced colors, smooth transitions, and a consistent UI"
+    />
+    <div data-iframe-theme-sync-container>
+      <div class="mb-4">
+        <ThemesSlider />
+      </div>
+      <iframe
+        data-element="preview-frame"
+        srcdoc={themingMarkup}
+        sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
+        class="w-full rounded-3xl min-h-116 sm:min-h-182 lg:min-h-135 overflow-hidden"></iframe>
+    </div>
+  </SectionWrapper>
+</div>
+
+<script>
+  const container = document.querySelector<HTMLElement>('[data-iframe-theme-sync-container]');
+  const iframe = container?.querySelector<HTMLIFrameElement>('[data-element="preview-frame"]');
+  const themeItems = container?.querySelectorAll<HTMLElement>('[data-landing-theme-item]');
+
+  const updateState = (theme: string) => {
+    // Update iframe
+    const docEl = iframe?.contentDocument?.documentElement;
+    if (docEl) docEl.setAttribute('data-theme', theme);
+
+    // Update slider active state
+    themeItems?.forEach((item) => {
+      const slide = item.closest('.swiper-slide');
+      item.classList.toggle('!border-[#1e90ff]', slide?.getAttribute('data-theme') === theme);
+      item.classList.toggle('py-2.5', slide?.getAttribute('data-theme') === theme);
+    });
+  };
+
+  themeItems?.forEach((item) => {
+    item.addEventListener('click', () => {
+      const theme = item.closest('.swiper-slide')?.getAttribute('data-theme');
+      if (theme) updateState(theme);
+    });
+  });
+
+  iframe?.addEventListener('load', () => {
+    updateState(localStorage.getItem('main-theme') || 'default');
+  });
+</script>

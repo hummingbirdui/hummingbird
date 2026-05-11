@@ -1,0 +1,98 @@
+---
+import { iframeMarkup } from '@libs/block-utils';
+import { SemanticColorsHTML } from './SemanticColors.astro';
+import { BannerHTML } from './Banner.astro';
+import { EarningChartHTML } from './EarningChart.astro';
+import { MembersHTML } from './Members.astro';
+import { MeetingExpensesHTML } from './MeetingExpenses.astro';
+
+export const themingMarkup = iframeMarkup(
+  `<div data-theming-container class="mx-auto relative rounded-3xl h-full overflow-hidden">
+    <div data-light-components class="card p-6 min-[592px]:p-8 inset-0 rounded-3xl h-full">
+      <div class='row mb-4 g-4'>
+        <div class='min-[944px]:col-5 min-[944px]:order-1'>${BannerHTML}</div>
+        <div class='min-[592px]:col-6 min-[944px]:col'>${SemanticColorsHTML}</div>
+        <div class='col-6 min-[944px]:col order-2 hidden min-[592px]:block'>${EarningChartHTML}</div>
+      </div>
+      <div class='row g-4 hidden min-[592px]:flex'>
+        <div class='col'>${MembersHTML}</div>
+        <div class='col'>${MeetingExpensesHTML}</div>
+      </div>
+    </div>
+    <div
+      data-dark-components
+      class="card p-6 min-[592px]:p-8 dark absolute inset-0 rounded-3xl"
+      style="clip-path: inset(0 0 0 50%);"
+    >
+      <div class='row mb-4 g-4'>
+        <div class='min-[944px]:col-5 min-[944px]:order-1'>${BannerHTML}</div>
+        <div class='min-[592px]:col-6 min-[944px]:col'>${SemanticColorsHTML}</div>
+        <div class='col-6 min-[944px]:col order-2 hidden min-[592px]:block'>${EarningChartHTML}</div>
+      </div>
+      <div class='row g-4 hidden min-[592px]:flex'>
+        <div class='col'>${MembersHTML}</div>
+        <div class='col'>${MeetingExpensesHTML}</div>
+      </div>
+    </div>
+    <div
+      data-resize-slider
+      class="absolute top-0 left-1/2 h-full w-0.75 bg-primary cursor-col-resize flex items-center justify-center">
+      <button
+        class="absolute btn btn-primary btn-icon rounded-full border border-white dark:border-primary-lighter cursor-ew-resize shadow-md">
+        <svg width='21' height='21' viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M6.94844 14.5293L3.07031 10.6591L6.94052 6.78906L7.81865 7.65906L5.46448 10.0261H16.5095L14.1553 7.65906L15.0334 6.78906L18.9036 10.6591L15.0334 14.5293L14.1472 13.6591L16.5095 11.2841H5.45656L7.81865 13.6591L6.94844 14.5293Z"
+            fill="currentColor"></path>
+        </svg>
+        </button>
+    </div>
+  </div>
+
+  <script>
+    const container = document.querySelector('[data-theming-container]');
+    const darkComponentContainer = document.querySelector('[data-dark-components]');
+    const slider = document.querySelector('[data-resize-slider]');
+
+    let isDragging = false;
+
+    const startDrag = (e) => {
+      e.preventDefault();
+      isDragging = true;
+    };
+
+    const stopDrag = () => (isDragging = false);
+
+    const onDrag = (e) => {
+      if (!isDragging) return;
+
+      if (container && darkComponentContainer && slider) {
+        const rect = container.getBoundingClientRect();
+        let x;
+
+        if (e.touches) {
+          x = e.touches[0].clientX - rect.left;
+        } else {
+          x = e.clientX - rect.left;
+        }
+
+        if (x < 18) x = 18;
+        if (x > rect.width - 25) x = rect.width - 25;
+
+        darkComponentContainer.style.clipPath = \`inset(0 0 0 \${x}px)\`;
+        slider.style.left = \`\${x}px\`;
+      }
+    };
+
+    slider?.addEventListener('mousedown', startDrag);
+    slider?.addEventListener('touchstart', startDrag);
+
+    window.addEventListener('mouseup', stopDrag);
+    window.addEventListener('touchend', stopDrag);
+
+    window.addEventListener('mousemove', onDrag);
+    window.addEventListener('touchmove', onDrag, { passive: false });
+  </script>
+`,
+  { syncDarkMode: false },
+);
+---
