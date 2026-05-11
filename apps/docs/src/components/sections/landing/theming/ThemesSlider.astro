@@ -9,7 +9,7 @@ import { themes } from '@libs/utils';
     <div class="swiper-wrapper flex items-center relative">
       {
         themes.map((theme, index) => (
-          <div class={`swiper-slide max-w-max me-3 ${index === 0 ? 'ms-14' : ''}`} data-theme={theme.toLowerCase()}>
+          <div class={`swiper-slide max-w-max me-3 ${index === 0 ? 'sm:ms-14' : ''}`} data-theme={theme.toLowerCase()}>
             <button
               class="border border-subtle bg-default px-2 py-1.75 rounded-lg flex items-center gap-3 min-w-26.5 transition-colors"
               data-landing-theme-item
@@ -22,14 +22,14 @@ import { themes } from '@libs/utils';
       }
     </div>
   </div>
-  <div class="absolute top-1/2 -translate-y-1/2 left-0 z-10 bg-default w-14 h-full">
+  <div class="absolute top-1/2 -translate-y-1/2 left-0 z-10 bg-default w-14 h-full hidden sm:block">
     <button
       class="swiper-button-prev btn btn-circle btn-subtle-neutral [.swiper-button-disabled]:opacity-50 [.swiper-button-disabled]:cursor-not-allowed"
     >
       <ChevronLeftIcon width="20" height="20" />
     </button>
   </div>
-  <div class="absolute top-1/2 -translate-y-1/2 right-0 z-10 bg-default w-14 h-full text-end">
+  <div class="absolute top-1/2 -translate-y-1/2 right-0 z-10 bg-default w-14 h-full text-end hidden sm:block">
     <button
       class="swiper-button-next btn btn-circle btn-subtle-neutral [.swiper-button-disabled]:opacity-50 [.swiper-button-disabled]:cursor-not-allowed"
     >
@@ -70,15 +70,9 @@ import { themes } from '@libs/utils';
 
   const updateActiveState = (themeName: string) => {
     themeItems.forEach((item) => {
-      const slide = item.closest('.swiper-slide');
-      const isActive = slide?.getAttribute('data-theme') === themeName;
-      if (isActive) {
-        item.classList.add('!border-[#1e90ff]');
-        item.classList.add('h-11.5');
-      } else {
-        item.classList.remove('!border-[#1e90ff]');
-        item.classList.remove('py-2.5');
-      }
+      const isActive = item.closest('.swiper-slide')?.getAttribute('data-theme') === themeName;
+      const classes = ['!border-[#1e90ff]', '!dark:border-[#4da7ff]', 'py-2.5'];
+      classes.forEach((cls) => item.classList.toggle(cls, isActive));
     });
   };
 

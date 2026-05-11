@@ -43,9 +43,9 @@ import { themingMarkup } from './ComponentCode.astro';
 
     // Update slider active state
     themeItems?.forEach((item) => {
-      const slide = item.closest('.swiper-slide');
-      item.classList.toggle('!border-[#1e90ff]', slide?.getAttribute('data-theme') === theme);
-      item.classList.toggle('py-2.5', slide?.getAttribute('data-theme') === theme);
+      const isMatch = item.closest('.swiper-slide')?.getAttribute('data-theme') === theme;
+      const classes = ['!border-[#1e90ff]', '!dark:border-[#4da7ff]', 'py-2.5'];
+      classes.forEach((cls) => item.classList.toggle(cls, isMatch));
     });
   };
 
