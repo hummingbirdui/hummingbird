@@ -182,6 +182,32 @@ Hummingbird UI provides a small, consistent set of semantic tokens as Tailwind t
 }
 ```
 
+## Tailwind's helper functions
+
+Tailwind provides the following build-time functions to make working with colors and the spacing scale easier.
+
+#### `--spacing()`
+
+Use this function to generate a spacing value based on your theme:
+
+```css
+.card {
+  padding: --spacing(4);
+}
+```
+
+#### `--alpha()`
+
+Use this function to adjust the opacity of a color:
+
+```css
+.card {
+  background-color: --alpha(var(--color-primary) / 50%);
+}
+```
+<br/>
+<HbAlert type='warning'>These functions only work at build time.</HbAlert>
+
 ## Tailwind theme variable namespaces
 
 Tailwind Theme variables are defined in namespaces, and each namespace corresponds to one or more utility classes or variant APIs.
