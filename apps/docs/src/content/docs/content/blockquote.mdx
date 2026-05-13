@@ -1,0 +1,126 @@
+---
+title: Blockquote
+description: Blockquote are used to highlight important quotations or excerpts within your content.
+toc: true
+---
+
+## Basic blockquote
+
+A simple blockquote with quotation icon
+
+<Example
+  code={`<blockquote class="relative p-4">
+    <span class="text-subtle/50 absolute -start-3 -top-5 size-16 rotate-180 rtl:rotate-0">
+      <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 16 16"><path fill="none" stroke="currentColor" stroke-linecap="round" d="M7 7.5H4c-.3 0-.5-.2-.5-.5V4c0-.3.2-.5.5-.5h3c.3 0 .5.2.5.5v3c0 .3-.2.5-.5.5zm6 0h-3c-.3 0-.5-.2-.5-.5V4c0-.3.2-.5.5-.5h3c.3 0 .5.2.5.5v3c0 .3-.2.5-.5.5zM12 12c1-1 1.5-2.5 1.5-4V6M6 12c1-1 1.5-2.5 1.5-4V6" stroke-width="1"/></svg>
+    </span>
+    <div class="relative z-1">
+      <p class="text-lg">
+        <em>
+          The journey of building great products starts with simple ideas, thoughtful design decisions, and a strong focus on user experience and long-term usability.
+        </em>
+      </p>
+    </div>
+  </blockquote>`}/>
+
+## Blockquote with attribution
+
+Add an attribution to a blockquote to credit the source of the quotation.
+
+<Example
+  code={`<blockquote class="border-s-4 border-primary bg-primary-lighter p-4 sm:p-6 rounded-e-lg">
+    <p class="text-lg font-medium">
+      <em>
+        "There is nothing either good or bad, but thinking makes it so."
+      </em>
+    </p>
+    <footer class="mt-4 flex items-center gap-3 text-sm text-muted">
+      <div class="h-px w-6 bg-primary"></div>
+      William Shakespeare
+    </footer>
+  </blockquote>`}
+/>
+
+## Testimonial blockquote
+
+This blockquote is styled as a testimonial.
+
+<Example
+  code={`<blockquote class="max-w-3xl mx-auto p-4">
+    <div class="flex items-center justify-center text-subtle/50">
+      <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 16 16"><path fill="none" stroke="currentColor" stroke-linecap="round" d="M7 7.5H4c-.3 0-.5-.2-.5-.5V4c0-.3.2-.5.5-.5h3c.3 0 .5.2.5.5v3c0 .3-.2.5-.5.5zm6 0h-3c-.3 0-.5-.2-.5-.5V4c0-.3.2-.5.5-.5h3c.3 0 .5.2.5.5v3c0 .3-.2.5-.5.5zM12 12c1-1 1.5-2.5 1.5-4V6M6 12c1-1 1.5-2.5 1.5-4V6" stroke-width="1"/></svg>
+    </div>
+    <p class="text-lg text-center">
+      <em>
+        The journey of building great products starts with simple ideas, thoughtful design decisions, and a strong focus on user experience and long-term usability.
+      </em>
+    </p>
+    <footer class="mt-4 flex items-center justify-center gap-3">
+      <div class="avatar avatar-lg">
+        <img src="/images/avatar/avatar_4.webp" alt="Avatar" class="rounded-full" />
+      </div>
+      <div>
+        <p class="text-sm font-medium mb-0">John Doe</p>
+        <p class="text-xs text-muted mb-0">CEO, Example Inc.</p>
+      </div>
+    </footer>
+  </blockquote>`}/>
+
+## Rating blockquote
+
+This blockquote is styled as a rating.
+
+<Example
+  code={`<blockquote class="max-w-3xl mx-auto p-4">
+    <div class="flex justify-center gap-1 text-warning mb-4">
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21z" stroke-width="0.4" stroke="currentColor"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21z" stroke-width="0.4" stroke="currentColor"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21z" stroke-width="0.4" stroke="currentColor"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21z" stroke-width="0.4" stroke="currentColor"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21z" stroke-width="0.4" stroke="currentColor"/></svg>
+    </div>
+    <p class="text-lg text-center">
+      <em>
+        "The journey of building great products starts with simple ideas, thoughtful design decisions, and a strong focus on user experience and long-term usability."
+      </em>
+    </p>
+    <footer class="mt-4 text-center gap-3">
+      <div class="avatar avatar-lg">
+        <img src="/images/avatar/avatar_4.webp" alt="Avatar" class="rounded-full" />
+      </div>
+        <p class="text-sm font-medium mt-2 mb-0">John Doe</p>
+        <p class="text-xs text-muted mb-0">CEO, Example Inc.</p>
+    </footer>
+  </blockquote>`}/>
+
+## Alignment
+### Center alignment
+
+<Example
+  code={`<blockquote class="relative text-center p-4">
+    <span class="text-subtle/50 absolute -start-3 -top-5 size-16 rotate-180 rtl:rotate-0">
+      <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 16 16"><path fill="none" stroke="currentColor" stroke-linecap="round" d="M7 7.5H4c-.3 0-.5-.2-.5-.5V4c0-.3.2-.5.5-.5h3c.3 0 .5.2.5.5v3c0 .3-.2.5-.5.5zm6 0h-3c-.3 0-.5-.2-.5-.5V4c0-.3.2-.5.5-.5h3c.3 0 .5.2.5.5v3c0 .3-.2.5-.5.5zM12 12c1-1 1.5-2.5 1.5-4V6M6 12c1-1 1.5-2.5 1.5-4V6" stroke-width="1"/></svg>
+    </span>
+    <div class="relative z-1">
+      <p class="text-lg">
+        <em>
+          The journey of building great products starts with simple ideas, thoughtful design decisions, and a strong focus on user experience and long-term usability.
+        </em>
+      </p>
+    </div>
+  </blockquote>`}/>
+
+### Right alignment
+
+<Example
+  code={`<blockquote class="relative text-end p-4">
+    <span class="text-subtle/50 absolute -start-3 -top-5 size-16 rotate-180 rtl:rotate-0">
+      <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 16 16"><path fill="none" stroke="currentColor" stroke-linecap="round" d="M7 7.5H4c-.3 0-.5-.2-.5-.5V4c0-.3.2-.5.5-.5h3c.3 0 .5.2.5.5v3c0 .3-.2.5-.5.5zm6 0h-3c-.3 0-.5-.2-.5-.5V4c0-.3.2-.5.5-.5h3c.3 0 .5.2.5.5v3c0 .3-.2.5-.5.5zM12 12c1-1 1.5-2.5 1.5-4V6M6 12c1-1 1.5-2.5 1.5-4V6" stroke-width="1"/></svg>
+    </span>
+    <div class="relative z-1">
+      <p class="text-lg">
+        <em>
+          The journey of building great products starts with simple ideas, thoughtful design decisions, and a strong focus on user experience and long-term usability.
+        </em>
+      </p>
+    </div>
+  </blockquote>`}/>
