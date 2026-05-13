@@ -1,7 +1,10 @@
 import * as prettier from 'prettier';
 import pkg from '@hummingbirdui/hummingbird/package.json';
 
-export const iframeMarkup = (code: string, options: { syncDarkMode?: boolean } = { syncDarkMode: true }) => {
+export const iframeMarkup = (
+  code: string,
+  options: { syncDarkMode?: boolean; bodyClass?: string } = { syncDarkMode: true },
+) => {
   return `<html>
     <head>
       <script src="https://cdn.jsdelivr.net/npm/@hummingbirdui/browser@${pkg.version}/dist/index.global.js"></script>
@@ -29,7 +32,7 @@ export const iframeMarkup = (code: string, options: { syncDarkMode?: boolean } =
         }
       </script>
     </head>
-    <body class='h-screen'>
+    <body class='h-screen ${options.bodyClass}'>
       ${code}
       <script src="https://cdn.jsdelivr.net/npm/@hummingbirdui/hummingbird@${pkg.version}/dist/hummingbird.bundle.min.js"></script>
     </body>

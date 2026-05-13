@@ -8,30 +8,34 @@ import { MeetingExpensesHTML } from './MeetingExpenses.astro';
 
 export const themingMarkup = iframeMarkup(
   `<div data-theming-container class="mx-auto relative rounded-3xl h-full overflow-hidden">
-    <div data-light-components class="card p-6 min-[592px]:p-8 inset-0 rounded-3xl h-full">
-      <div class='row mb-4 g-4'>
-        <div class='min-[944px]:col-5 min-[944px]:order-1'>${BannerHTML}</div>
-        <div class='min-[592px]:col-6 min-[944px]:col'>${SemanticColorsHTML}</div>
-        <div class='col-6 min-[944px]:col order-2 hidden min-[592px]:block'>${EarningChartHTML}</div>
-      </div>
-      <div class='row g-4 hidden min-[592px]:flex'>
-        <div class='col'>${MembersHTML}</div>
-        <div class='col'>${MeetingExpensesHTML}</div>
+    <div data-light-components class="card rounded-3xl h-full">
+      <div class='card-body p-6 min-[592px]:p-8'>
+        <div class='row mb-4 g-4'>
+          <div class='min-[944px]:col-5 min-[944px]:order-1'>${BannerHTML}</div>
+          <div class='min-[592px]:col-6 min-[944px]:col'>${SemanticColorsHTML}</div>
+          <div class='col-6 min-[944px]:col order-2 hidden min-[592px]:block'>${EarningChartHTML}</div>
+        </div>
+        <div class='row g-4 hidden min-[592px]:flex'>
+          <div class='col'>${MembersHTML}</div>
+          <div class='col'>${MeetingExpensesHTML}</div>
+        </div>
       </div>
     </div>
     <div
       data-dark-components
-      class="card p-6 min-[592px]:p-8 dark absolute inset-0 rounded-3xl"
+      class="card dark absolute inset-0 rounded-3xl"
       style="clip-path: inset(0 0 0 50%);"
     >
-      <div class='row mb-4 g-4'>
-        <div class='min-[944px]:col-5 min-[944px]:order-1'>${BannerHTML}</div>
-        <div class='min-[592px]:col-6 min-[944px]:col'>${SemanticColorsHTML}</div>
-        <div class='col-6 min-[944px]:col order-2 hidden min-[592px]:block'>${EarningChartHTML}</div>
-      </div>
-      <div class='row g-4 hidden min-[592px]:flex'>
-        <div class='col'>${MembersHTML}</div>
-        <div class='col'>${MeetingExpensesHTML}</div>
+      <div class='card-body p-6 min-[592px]:p-8'>
+        <div class='row mb-4 g-4'>
+          <div class='min-[944px]:col-5 min-[944px]:order-1'>${BannerHTML}</div>
+          <div class='min-[592px]:col-6 min-[944px]:col'>${SemanticColorsHTML}</div>
+          <div class='col-6 min-[944px]:col order-2 hidden min-[592px]:block'>${EarningChartHTML}</div>
+        </div>
+        <div class='row g-4 hidden min-[592px]:flex'>
+          <div class='col'>${MembersHTML}</div>
+          <div class='col'>${MeetingExpensesHTML}</div>
+        </div>
       </div>
     </div>
     <div
@@ -93,6 +97,6 @@ export const themingMarkup = iframeMarkup(
     window.addEventListener('touchmove', onDrag, { passive: false });
   </script>
 `,
-  { syncDarkMode: false },
+  { syncDarkMode: false, bodyClass: 'bg-transparent' },
 );
 ---
