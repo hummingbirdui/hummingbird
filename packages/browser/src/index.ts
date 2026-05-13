@@ -1,12 +1,11 @@
-import * as tailwindcss from 'tailwindcss'
-import * as assets from './assets'
-import { Instrumentation } from './instrumentation'
-
+import * as tailwindcss from 'tailwindcss';
+import * as assets from './assets';
+import { Instrumentation } from './instrumentation';
 
 /**
  * The type used by `<style>` tags that contain input CSS.
  */
-const STYLE_TYPE = 'text/tailwindcss'
+const STYLE_TYPE = 'text/tailwindcss';
 
 /**
  * The current Tailwind CSS compiler.
@@ -14,41 +13,41 @@ const STYLE_TYPE = 'text/tailwindcss'
  * This gets recreated:
  * - When stylesheets change
  */
-let compiler: Awaited<ReturnType<typeof tailwindcss.compile>>
+let compiler: Awaited<ReturnType<typeof tailwindcss.compile>>;
 
 /**
  * The list of all seen classes on the page so far. The compiler already has a
  * cache of classes but this lets us only pass new classes to `build(…)`.
  */
-let classes = new Set<string>()
+let classes = new Set<string>();
 
 /**
  * The last input CSS that was compiled. If stylesheets "change" without
  * actually changing, we can avoid a full rebuild.
  */
-let lastCss = ''
+let lastCss = '';
 
 /**
  * The stylesheet that we use to inject the compiled CSS into the page.
  */
-let sheet = document.createElement('style')
+let sheet = document.createElement('style');
 
 /**
  * The queue of build tasks that need to be run. This is used to ensure that we
  * don't run multiple builds concurrently.
  */
-let buildQueue = Promise.resolve()
+let buildQueue = Promise.resolve();
 
 /**
  * What build this is
  */
-let nextBuildId = 1
+let nextBuildId = 1;
 
 /**
  * Used for instrumenting the build process. This data shows up in the
  * performance tab of the browser's devtools.
  */
-let I = new Instrumentation()
+let I = new Instrumentation();
 
 /**
  * Create the Tailwind CSS compiler
@@ -59,19 +58,17 @@ let I = new Instrumentation()
  * `build` function and is a separate scheduled task.
  */
 async function createCompiler() {
-  I.start(`Create compiler`)
-  I.start('Reading Stylesheets')
+  I.start(`Create compiler`);
+  I.start('Reading Stylesheets');
 
   // The stylesheets may have changed causing a full rebuild so we'll need to
   // gather the latest list of stylesheets.
-  let stylesheets: Iterable<HTMLStyleElement> = document.querySelectorAll(
-    `style[type="${STYLE_TYPE}"]`,
-  )
+  let stylesheets: Iterable<HTMLStyleElement> = document.querySelectorAll(`style[type="${STYLE_TYPE}"]`);
 
-  let css = ''
+  let css = '';
   for (let sheet of stylesheets) {
-    observeSheet(sheet)
-    css += sheet.textContent + '\n'
+    observeSheet(sheet);
+    css += sheet.textContent + '\n';
   }
 
   // The user might have no stylesheets, or a some stylesheets without `@import`
@@ -79,32 +76,32 @@ async function createCompiler() {
   // for them. However, if they start using `@import` we'll let them control
   // the build completely.
   if (!css.includes('@import')) {
-    css = `@import "tailwindcss";@import "@hummingbirdui/hummingbird/src/index.css";${css}`
+    css = `@import "tailwindcss";@import "@hummingbirdui/hummingbird/src/index.css";${css}`;
   }
 
   I.end('Reading Stylesheets', {
     size: css.length,
     changed: lastCss !== css,
-  })
+  });
 
   // The input CSS did not change so the compiler does not need to be recreated
-  if (lastCss === css) return
+  if (lastCss === css) return;
 
-  lastCss = css
+  lastCss = css;
 
-  I.start('Compile CSS')
+  I.start('Compile CSS');
   try {
     compiler = await tailwindcss.compile(css, {
       base: '/',
       loadStylesheet,
       loadModule,
-    })
+    });
   } finally {
-    I.end('Compile CSS')
-    I.end(`Create compiler`)
+    I.end('Compile CSS');
+    I.end(`Create compiler`);
   }
 
-  classes.clear()
+  classes.clear();
 }
 
 async function loadStylesheet(id: string, base: string) {
@@ -139,14 +136,14 @@ async function loadStylesheet(id: string, base: string) {
     },
     // Hummingbird UI components
     {
-      ids: ['./theme/theme.css'],
-      path: 'virtual:hummingbirdui/theme.css',
-      content: () => assets.css.hbTheme,
+      ids: ['./themes/default.css'],
+      path: 'virtual:hummingbirdui/theme-default.css',
+      content: () => assets.css.hbDefaultTheme,
     },
     {
-      ids: ['./default.css'],
-      path: 'virtual:hummingbirdui/default.css',
-      content: () => assets.css.hbDefault,
+      ids: ['./palettes/default.css', '../palettes/default.css'],
+      path: 'virtual:hummingbirdui/palette-default.css',
+      content: () => assets.css.hbDefaultPalette,
     },
     {
       ids: ['./reboot.css'],
@@ -367,8 +364,8 @@ async function loadStylesheet(id: string, base: string) {
 
   function load() {
     // Find the configuration that matches the requested ID
-    const config = stylesheetConfigs.find(config => config.ids.includes(id));
-    
+    const config = stylesheetConfigs.find((config) => config.ids.includes(id));
+
     if (!config) {
       throw new Error(`The browser build does not support @import for "${id}"`);
     }
@@ -381,87 +378,87 @@ async function loadStylesheet(id: string, base: string) {
   }
 
   try {
-    let sheet = load()
+    let sheet = load();
 
     I.hit(`Loaded stylesheet`, {
       id,
       base,
       size: sheet.content.length,
-    })
+    });
 
-    return sheet
+    return sheet;
   } catch (err) {
     I.hit(`Failed to load stylesheet`, {
       id,
       base,
       error: (err as Error).message ?? err,
-    })
+    });
 
-    throw err
+    throw err;
   }
 }
 
 async function loadModule(): Promise<never> {
-  throw new Error(`The browser build does not support plugins or config files.`)
+  throw new Error(`The browser build does not support plugins or config files.`);
 }
 
 async function build(kind: 'full' | 'incremental') {
-  if (!compiler) return
+  if (!compiler) return;
 
   // 1. Refresh the known list of classes
-  let newClasses = new Set<string>()
+  let newClasses = new Set<string>();
 
-  I.start(`Collect classes`)
+  I.start(`Collect classes`);
 
   for (let element of document.querySelectorAll('[class]')) {
     for (let c of element.classList) {
-      if (classes.has(c)) continue
+      if (classes.has(c)) continue;
 
-      classes.add(c)
-      newClasses.add(c)
+      classes.add(c);
+      newClasses.add(c);
     }
   }
 
   I.end(`Collect classes`, {
     count: newClasses.size,
-  })
+  });
 
-  if (newClasses.size === 0 && kind === 'incremental') return
+  if (newClasses.size === 0 && kind === 'incremental') return;
 
   // 2. Compile the CSS
-  I.start(`Build utilities`)
+  I.start(`Build utilities`);
 
-  sheet.textContent = compiler.build(Array.from(newClasses))
+  sheet.textContent = compiler.build(Array.from(newClasses));
 
-  I.end(`Build utilities`)
+  I.end(`Build utilities`);
 }
 
 function rebuild(kind: 'full' | 'incremental') {
   async function run() {
     if (!compiler && kind !== 'full') {
-      return
+      return;
     }
 
-    let buildId = nextBuildId++
+    let buildId = nextBuildId++;
 
-    I.start(`Build #${buildId} (${kind})`)
+    I.start(`Build #${buildId} (${kind})`);
 
     if (kind === 'full') {
-      await createCompiler()
+      await createCompiler();
     }
 
-    I.start(`Build`)
-    await build(kind)
-    I.end(`Build`)
+    I.start(`Build`);
+    await build(kind);
+    I.end(`Build`);
 
-    I.end(`Build #${buildId} (${kind})`)
+    I.end(`Build #${buildId} (${kind})`);
   }
 
-  buildQueue = buildQueue.then(run).catch((err) => I.error(err))
+  buildQueue = buildQueue.then(run).catch((err) => I.error(err));
 }
 
 // Handle changes to known stylesheets
-let styleObserver = new MutationObserver(() => rebuild('full'))
+let styleObserver = new MutationObserver(() => rebuild('full'));
 
 function observeSheet(sheet: HTMLStyleElement) {
   styleObserver.observe(sheet, {
@@ -470,7 +467,7 @@ function observeSheet(sheet: HTMLStyleElement) {
     characterData: true,
     subtree: true,
     childList: true,
-  })
+  });
 }
 
 // Handle changes to the document that could affect the styles
@@ -478,48 +475,48 @@ function observeSheet(sheet: HTMLStyleElement) {
 // - New stylesheets being added to the page
 // - New elements (with classes) being added to the page
 new MutationObserver((records) => {
-  let full = 0
-  let incremental = 0
+  let full = 0;
+  let incremental = 0;
 
   for (let record of records) {
     // New stylesheets == tracking + full rebuild
     for (let node of record.addedNodes as Iterable<HTMLElement>) {
-      if (node.nodeType !== Node.ELEMENT_NODE) continue
-      if (node.tagName !== 'STYLE') continue
-      if (node.getAttribute('type') !== STYLE_TYPE) continue
+      if (node.nodeType !== Node.ELEMENT_NODE) continue;
+      if (node.tagName !== 'STYLE') continue;
+      if (node.getAttribute('type') !== STYLE_TYPE) continue;
 
-      observeSheet(node as HTMLStyleElement)
-      full++
+      observeSheet(node as HTMLStyleElement);
+      full++;
     }
 
     // New nodes require an incremental rebuild
     for (let node of record.addedNodes) {
-      if (node.nodeType !== 1) continue
+      if (node.nodeType !== 1) continue;
 
       // Skip the output stylesheet itself to prevent loops
-      if (node === sheet) continue
+      if (node === sheet) continue;
 
-      incremental++
+      incremental++;
     }
 
     // Changes to class attributes require an incremental rebuild
     if (record.type === 'attributes') {
-      incremental++
+      incremental++;
     }
   }
 
   if (full > 0) {
-    return rebuild('full')
+    return rebuild('full');
   } else if (incremental > 0) {
-    return rebuild('incremental')
+    return rebuild('incremental');
   }
 }).observe(document.documentElement, {
   attributes: true,
   attributeFilter: ['class'],
   childList: true,
   subtree: true,
-})
+});
 
-rebuild('full')
+rebuild('full');
 
-document.head.append(sheet)
+document.head.append(sheet);
