@@ -37,6 +37,20 @@ toc: true
   </tr>
 </HbTable>
 
+## Breakpoint CSS variables
+
+The container uses the following CSS variables for its breakpoints. Override or extend them according to the project's requirements.
+
+```css
+@theme {
+  --breakpoint-sm: 40rem;
+  --breakpoint-md: 48rem;
+  --breakpoint-lg: 64rem;
+  --breakpoint-xl: 80rem;
+  --breakpoint-2xl: 96rem;
+}
+```
+
 ## Basic usage
 
 The container class sets the maximum width of an element based on the current responsive breakpoint. Each breakpoint defines a maximum width that scales with the viewport.
