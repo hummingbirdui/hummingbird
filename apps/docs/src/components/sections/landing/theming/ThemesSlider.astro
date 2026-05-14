@@ -56,14 +56,6 @@ import { themes } from '@libs/utils';
 
   const themeItems = document.querySelectorAll('[data-landing-theme-item]');
   const activeTheme = localStorage.getItem('main-theme') || 'default';
-  const getDocumentIsDark = () => document.documentElement.classList.contains('dark');
-
-  new MutationObserver(() => {
-    const isDark = getDocumentIsDark();
-    themeItems.forEach((item) => {
-      item.classList.toggle('dark', isDark);
-    });
-  }).observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
 
   const updateActiveState = (themeName: string) => {
     themeItems.forEach((item) => {

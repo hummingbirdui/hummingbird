@@ -79,30 +79,27 @@ const themeControlInit = () => {
 
   applyTheme(getStoredTheme());
 
-  const syncThemeDropdownItems = () => {
+  // sync theme items with theme with current theme changes
+  const themeItems = document.querySelectorAll<HTMLElement>('[data-theme]');
+  new MutationObserver(() => {
     const isDark = resolveTheme(getStoredTheme()) === 'dark';
-    themeDropdownItems.forEach((item) => {
+    themeItems.forEach((item) => {
       item.classList.toggle('dark', isDark);
     });
-  };
-
-  syncThemeDropdownItems();
+  }).observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
 
   // sync theme when os preference changes (only in "system" mode)
   const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
   mediaQuery.addEventListener('change', () => {
     if (getStoredTheme() !== THEMES.SYSTEM) return;
     applyTheme(THEMES.SYSTEM);
-    syncThemeDropdownItems();
   });
   // theme toggle button
   document.addEventListener('click', (event) => {
     if (!(event.target instanceof Element)) return;
     const toggleBtn = event.target.closest('[data-theme-toggle-btn]');
     if (!toggleBtn) return;
-
     toggleTheme();
-    syncThemeDropdownItems();
   });
 };
 

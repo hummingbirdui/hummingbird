@@ -63,7 +63,7 @@ const themes = [
         </button>
         <ul class="dropdown-menu min-w-66" role="menu">
           {
-            themes.map(({ value, label }, index) => (
+            themes.map(({ value, label }) => (
               <li role="none">
                 <a
                   class="dropdown-item flex items-center justify-between"
@@ -74,15 +74,9 @@ const themes = [
                 >
                   {label}
                   <div class="flex gap-1">
-                    <div
-                      class={`size-3.5 border border-default rounded ${index === 0 ? 'bg-[#1e90ff] dark:bg-[#4da7ff]' : 'bg-primary'}`}
-                    />
-                    <div
-                      class={`size-3.5 border border-default rounded ${index === 0 ? 'bg-[#ac49fc] dark:bg-[#bc70fb]' : 'bg-secondary'}`}
-                    />
-                    <div
-                      class={`size-3.5 border border-default rounded ${index === 0 ? 'bg-white dark:bg-[#07080a]' : 'bg-default'}`}
-                    />
+                    <div class="size-3.5 border border-default rounded bg-primary" />
+                    <div class="size-3.5 border border-default rounded bg-secondary" />
+                    <div class="size-3.5 border border-default rounded bg-default" />
                   </div>
                 </a>
               </li>
@@ -281,27 +275,14 @@ const themes = [
         if (!docEl) return;
         docEl.classList.toggle(DARK_CLASS, iframeIsDark);
         docEl.setAttribute('data-theme', iframeMainTheme);
-        if (iframeIsDark) {
-          iconLight?.classList.add(HIDDEN_CLASS);
-          iconDark?.classList.remove(HIDDEN_CLASS);
-        } else {
-          iconLight?.classList.remove(HIDDEN_CLASS);
-          iconDark?.classList.add(HIDDEN_CLASS);
-        }
+        iconLight?.classList.toggle(HIDDEN_CLASS, iframeIsDark);
+        iconDark?.classList.toggle(HIDDEN_CLASS, !iframeIsDark);
       };
 
       applyThemeToIframe();
-
       new MutationObserver(() => {
         iframeIsDark = getDocumentIsDark();
         applyThemeToIframe();
-        blockThemeItems.forEach((item) => {
-          if (iframeIsDark) {
-            item.classList.add(DARK_CLASS);
-          } else {
-            item.classList.remove(DARK_CLASS);
-          }
-        });
       }).observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
 
       themeBtn?.addEventListener('click', () => {
