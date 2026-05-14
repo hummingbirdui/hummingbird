@@ -57,6 +57,21 @@ export const themingMarkup = iframeMarkup(
     const darkComponentContainer = document.querySelector('[data-dark-components]');
     const slider = document.querySelector('[data-resize-slider]');
 
+    const syncTheme = () => {
+      const theme = document.documentElement.getAttribute('data-theme');
+      if (theme && darkComponentContainer) {
+        darkComponentContainer.setAttribute('data-theme', theme);
+      }
+    };
+
+    const themeObserver = new MutationObserver(syncTheme);
+    themeObserver.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ['data-theme'],
+    });
+
+    syncTheme();
+
     let isDragging = false;
 
     const startDrag = (e) => {
@@ -82,8 +97,8 @@ export const themingMarkup = iframeMarkup(
         if (x < 18) x = 18;
         if (x > rect.width - 25) x = rect.width - 25;
 
-        darkComponentContainer.style.clipPath = \`inset(0 0 0 \${x}px)\`;
-        slider.style.left = \`\${x}px\`;
+        darkComponentContainer.style.clipPath = 'inset(0 0 0 ' + x + 'px)';
+        slider.style.left = x + 'px';
       }
     };
 
