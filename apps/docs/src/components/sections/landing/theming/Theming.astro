@@ -23,7 +23,7 @@ import { themingMarkup } from './ComponentCode.astro';
         <ThemesSlider />
       </div>
       <iframe
-        data-element="preview-frame"
+        data-element="theme-iframe"
         srcdoc={themingMarkup}
         sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
         class="w-full rounded-3xl min-h-116 sm:min-h-182 lg:min-h-135 overflow-hidden"></iframe>
@@ -33,7 +33,7 @@ import { themingMarkup } from './ComponentCode.astro';
 
 <script>
   const container = document.querySelector<HTMLElement>('[data-iframe-theme-sync-container]');
-  const iframe = container?.querySelector<HTMLIFrameElement>('[data-element="preview-frame"]');
+  const iframe = container?.querySelector<HTMLIFrameElement>('[data-element="theme-iframe"]');
   const themeItems = container?.querySelectorAll<HTMLElement>('[data-landing-theme-item]');
 
   const updateState = (theme: string) => {
@@ -43,7 +43,7 @@ import { themingMarkup } from './ComponentCode.astro';
 
     // Update slider active state
     themeItems?.forEach((item) => {
-      const isMatch = item.closest('.swiper-slide')?.getAttribute('data-theme') === theme;
+      const isMatch = item.getAttribute('data-theme') === theme;
       const classes = ['!border-[#1e90ff]', '!dark:border-[#4da7ff]', 'py-2.5'];
       classes.forEach((cls) => item.classList.toggle(cls, isMatch));
     });
@@ -51,7 +51,7 @@ import { themingMarkup } from './ComponentCode.astro';
 
   themeItems?.forEach((item) => {
     item.addEventListener('click', () => {
-      const theme = item.closest('.swiper-slide')?.getAttribute('data-theme');
+      const theme = item.getAttribute('data-theme');
       if (theme) updateState(theme);
     });
   });

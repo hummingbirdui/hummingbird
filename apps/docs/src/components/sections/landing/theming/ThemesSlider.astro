@@ -9,9 +9,10 @@ import { themes } from '@libs/utils';
     <div class="swiper-wrapper flex items-center relative">
       {
         themes.map((theme, index) => (
-          <div class={`swiper-slide max-w-max me-3 ${index === 0 ? 'sm:ms-14' : ''}`} data-theme={theme.toLowerCase()}>
+          <div class={`swiper-slide max-w-max me-3 ${index === 0 ? 'sm:ms-14' : ''}`}>
             <button
               class="border border-subtle bg-default px-2 py-1.75 rounded-lg flex items-center gap-3 min-w-26.5 transition-colors"
+              data-theme={theme.toLowerCase()}
               data-landing-theme-item
             >
               <div class="size-6 rounded bg-primary" />
@@ -60,17 +61,13 @@ import { themes } from '@libs/utils';
   new MutationObserver(() => {
     const isDark = getDocumentIsDark();
     themeItems.forEach((item) => {
-      if (isDark) {
-        item.classList.add('dark');
-      } else {
-        item.classList.remove('dark');
-      }
+      item.classList.toggle('dark', isDark);
     });
   }).observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
 
   const updateActiveState = (themeName: string) => {
     themeItems.forEach((item) => {
-      const isActive = item.closest('.swiper-slide')?.getAttribute('data-theme') === themeName;
+      const isActive = item.getAttribute('data-theme') === themeName;
       const classes = ['!border-[#1e90ff]', '!dark:border-[#4da7ff]', 'py-2.5'];
       classes.forEach((cls) => item.classList.toggle(cls, isActive));
     });

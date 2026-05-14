@@ -9,11 +9,11 @@
     --color-slate-300: #b7c7c5;
     --color-slate-400: #a0aaa8;
     --color-slate-500: #7f8681;
-    --color-slate-600: #616964;
-    --color-slate-700: #3e4644;
-    --color-slate-800: #2f3534;
-    --color-slate-900: #1c2021;
-    --color-slate-950: #111717;
+    --color-slate-600: #5e6a66;
+    --color-slate-700: #3b4948;
+    --color-slate-800: #2b393a;
+    --color-slate-900: #1a282a;
+    --color-slate-950: #102122;
 
     --color-teal-50: #cee7e8;
     --color-teal-100: #b2d7dc;
@@ -21,23 +21,23 @@
     --color-teal-300: #4da2ae;
     --color-teal-400: #1a8896;
     --color-teal-500: #017b8b;
-    --color-teal-600: #016f7d;
-    --color-teal-700: #015662;
-    --color-teal-800: #003d45;
-    --color-teal-900: #00252a;
-    --color-teal-950: #000e0f;
+    --color-teal-600: #02707e;
+    --color-teal-700: #025864;
+    --color-teal-800: #004149;
+    --color-teal-900: #012b31;
+    --color-teal-950: #001719;
 
-    --color-indigo-50: #e0dcef;
-    --color-indigo-100: #cecbe8;
-    --color-indigo-200: #afa9d9;
-    --color-indigo-300: #8e86ca;
-    --color-indigo-400: #6e64ba;
-    --color-indigo-500: #5e53b3;
-    --color-indigo-600: #554ba1;
-    --color-indigo-700: #423a7e;
-    --color-indigo-800: #2f2959;
-    --color-indigo-900: #1c1936;
-    --color-indigo-950: #0e0b19;
+    --color-violet-50: #e0dcef;
+    --color-violet-100: #cecbe8;
+    --color-violet-200: #afa9d9;
+    --color-violet-300: #8e86ca;
+    --color-violet-400: #6e64ba;
+    --color-violet-500: #5e53b3;
+    --color-violet-600: #554ba1;
+    --color-violet-700: #433b80;
+    --color-violet-800: #312b5e;
+    --color-violet-900: #211d3f;
+    --color-violet-950: #151126;
 
     --color-red-50: #f0d0d0;
     --color-red-100: #ebc1c1;
@@ -46,10 +46,10 @@
     --color-red-400: #ca5959;
     --color-red-500: #c44747;
     --color-red-600: #b14040;
-    --color-red-700: #8a3232;
-    --color-red-800: #622323;
-    --color-red-900: #3b1515;
-    --color-red-950: #170808;
+    --color-red-700: #8c3333;
+    --color-red-800: #672525;
+    --color-red-900: #451919;
+    --color-red-950: #260e0e;
 
     --color-green-50: #d7e9e0;
     --color-green-100: #b7d9c7;
@@ -57,11 +57,11 @@
     --color-green-300: #59a77c;
     --color-green-400: #43c87e;
     --color-green-500: #2da262;
-    --color-green-600: #128245;
-    --color-green-700: #0d5b30;
-    --color-green-800: #094122;
-    --color-green-900: #052715;
-    --color-green-950: #020d07;
+    --color-green-600: #10753e;
+    --color-green-700: #0d5c31;
+    --color-green-800: #094524;
+    --color-green-900: #072e19;
+    --color-green-950: #04170c;
 
     --color-brown-50: #ebe4d6;
     --color-brown-100: #dfd2bb;
@@ -70,10 +70,10 @@
     --color-brown-400: #9f7834;
     --color-brown-500: #95691e;
     --color-brown-600: #865f1b;
-    --color-brown-700: #694a15;
-    --color-brown-800: #4c350f;
-    --color-brown-900: #2d2009;
-    --color-brown-950: #0f0b03;
+    --color-brown-700: #6b4b15;
+    --color-brown-800: #4e3710;
+    --color-brown-900: #34250b;
+    --color-brown-950: #1a1305;
 
     --color-blue-50: #cee0ed;
     --color-blue-100: #bdd6e6;
@@ -82,10 +82,10 @@
     --color-blue-400: #3984b5;
     --color-blue-500: #2377ad;
     --color-blue-600: #206b9c;
-    --color-blue-700: #195479;
-    --color-blue-800: #113b56;
-    --color-blue-900: #0b2434;
-    --color-blue-950: #040c12;
+    --color-blue-700: #19557b;
+    --color-blue-800: #133f5b;
+    --color-blue-900: #0d2a3d;
+    --color-blue-950: #07151f;
 
     /* Background colors */
     --background-color-subtle: var(--color-slate-50);
@@ -114,11 +114,11 @@
     --color-primary-darker: var(--color-teal-900);
 
     /* Secondary */
-    --color-secondary-lighter: var(--color-indigo-50);
-    --color-secondary-light: var(--color-indigo-300);
-    --color-secondary: var(--color-indigo-500);
-    --color-secondary-dark: var(--color-indigo-700);
-    --color-secondary-darker: var(--color-indigo-900);
+    --color-secondary-lighter: var(--color-violet-50);
+    --color-secondary-light: var(--color-violet-300);
+    --color-secondary: var(--color-violet-500);
+    --color-secondary-dark: var(--color-violet-700);
+    --color-secondary-darker: var(--color-violet-900);
 
     /* Danger */
     --color-danger-lighter: var(--color-red-50);
@@ -163,8 +163,7 @@
   }
 }
 
-[data-theme='arctic'].dark,
-[data-theme='arctic'] .dark {
+[data-theme='arctic'].dark {
   /* Background colors */
   --background-color-subtle: var(--color-slate-900);
   --background-color-muted: var(--color-slate-800);
@@ -185,42 +184,42 @@
   --color-contrast: var(--color-slate-950);
 
   /* primary */
-  --color-primary-lighter: var(--color-teal-950);
+  --color-primary-lighter: var(--color-teal-900);
   --color-primary-light: var(--color-teal-700);
   --color-primary: var(--color-teal-400);
   --color-primary-dark: var(--color-teal-300);
   --color-primary-darker: var(--color-teal-100);
 
   /* secondary */
-  --color-secondary-lighter: var(--color-indigo-950);
-  --color-secondary-light: var(--color-indigo-700);
-  --color-secondary: var(--color-indigo-400);
-  --color-secondary-dark: var(--color-indigo-300);
-  --color-secondary-darker: var(--color-indigo-100);
+  --color-secondary-lighter: var(--color-violet-900);
+  --color-secondary-light: var(--color-violet-700);
+  --color-secondary: var(--color-violet-400);
+  --color-secondary-dark: var(--color-violet-300);
+  --color-secondary-darker: var(--color-violet-100);
 
   /* danger */
-  --color-danger-lighter: var(--color-red-950);
+  --color-danger-lighter: var(--color-red-900);
   --color-danger-light: var(--color-red-600);
   --color-danger: var(--color-red-400);
   --color-danger-dark: var(--color-red-300);
   --color-danger-darker: var(--color-red-200);
 
   /* warning */
-  --color-warning-lighter: var(--color-brown-950);
+  --color-warning-lighter: var(--color-brown-900);
   --color-warning-light: var(--color-brown-800);
   --color-warning: var(--color-brown-400);
   --color-warning-dark: var(--color-brown-300);
   --color-warning-darker: var(--color-brown-200);
 
   /* success */
-  --color-success-lighter: var(--color-green-950);
+  --color-success-lighter: var(--color-green-900);
   --color-success-light: var(--color-green-700);
   --color-success: var(--color-green-400);
   --color-success-dark: var(--color-green-300);
   --color-success-darker: var(--color-green-200);
 
   /* info */
-  --color-info-lighter: var(--color-blue-950);
+  --color-info-lighter: var(--color-blue-900);
   --color-info-light: var(--color-blue-700);
   --color-info: var(--color-blue-400);
   --color-info-dark: var(--color-blue-300);
