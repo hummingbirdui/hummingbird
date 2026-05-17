@@ -142,6 +142,14 @@ const sitemap: Sitemap[] = [
         path: '/docs/customize/dark-mode',
       },
       {
+        name: 'Themes',
+        path: '/docs/customize/themes',
+        badge: {
+          label: 'New',
+          variant: 'primary',
+        },
+      },
+      {
         name: 'Reboot',
         path: '/docs/customize/reboot',
       },
