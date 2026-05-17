@@ -4,6 +4,7 @@ import gridLeftL from '@assets/images/landing/grids/grid-left-l.png';
 import gridLeftD from '@assets/images/landing/grids/grid-left-d.png';
 import CopyButton from '@components/sections/landing/common/CopyButton.astro';
 import { getVersionedPath } from '@libs/config';
+import Palette from '@components/icons/Palette.astro';
 ---
 
 <section
@@ -17,10 +18,13 @@ import { getVersionedPath } from '@libs/config';
 
   <div class="mx-auto flex justify-between gap-10 h-full max-w-8xl">
     <div class="my-auto py-24 sm:py-29 md:py-37 w-full xl:w-186 shrink-0">
+      <span class="badge badge-subtle-primary mb-6 text-sm gap-2 py-1.5 ps-2 pe-1"
+        >New color themes are live <Palette height="18" width="18" /></span
+      >
       <h1
         class="mb-6 text-5xl sm:text-7xl md:text-8xl lg:text-9xl text-center xl:text-left font-bold -tracking-[3px] md:-tracking-[5.25px]"
       >
-        <span class="bg-linear-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent pe-2"
+        <span class="bg-linear-to-r from-secondary to-primary bg-clip-text text-transparent pe-2"
           >The tailwind framework</span
         >
       </h1>

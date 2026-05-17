@@ -5,10 +5,12 @@
   "description": "Documentation site for Hummingbird UI",
   "type": "module",
   "scripts": {
-    "dev": "astro dev --host",
+    "dev": "concurrently \"npm run dev:astro\" \"npm run build:themes\"",
+    "dev:astro": "astro dev --host",
     "build": "astro build",
     "preview": "astro preview",
     "start:docs-js": "esbuild src/docs.ts --bundle --outfile=static/docs.js --watch",
+    "build:themes": "npx @tailwindcss/cli -i src/themes/themes.css -o public/themes.css --watch",
     "deploy": "node deployment.js production",
     "deploy:staging": "node deployment.js staging",
     "deploy:internal": "echo staging.hbui.dev > ./dist/CNAME && gh-pages -d dist -r https://github.com/hummingbirdui/staging.git"
@@ -16,9 +18,11 @@
   "dependencies": {
     "@hummingbirdui/browser": "workspace:*",
     "@hummingbirdui/hummingbird": "workspace:*",
+    "@tailwindcss/cli": "^4.2.2",
     "dedent": "^1.7.2",
     "sharp": "^0.34.5",
-    "shiki": "^3.23.0"
+    "shiki": "^3.23.0",
+    "swiper": "^12.1.4"
   },
   "devDependencies": {
     "@astrojs/mdx": "^4.3.14",
@@ -28,6 +32,7 @@
     "astro": "^5.18.1",
     "astro-auto-import": "^0.4.6",
     "choices.js": "^11.2.2",
+    "concurrently": "^9.2.1",
     "dropzone": "6.0.0-beta.2",
     "echarts": "^6.0.0",
     "esbuild": "^0.25.12",

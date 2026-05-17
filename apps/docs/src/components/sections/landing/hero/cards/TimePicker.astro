@@ -78,8 +78,8 @@ const infiniteMinutes = [...minutes, ...minutes, ...minutes];
     containerEl.scrollTop = middleIndex * itemHeight;
 
     function highlight(item: HTMLElement) {
-      items.forEach((el) => el.classList.remove('bg-blue-500', 'text-white'));
-      item.classList.add('bg-blue-500', 'text-white');
+      items.forEach((el) => el.classList.remove('bg-primary', 'text-white'));
+      item.classList.add('bg-primary', 'text-white');
     }
 
     function selectValue(item: HTMLElement) {

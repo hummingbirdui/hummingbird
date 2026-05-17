@@ -11,6 +11,7 @@
       "@layouts/*": ["src/layouts/*"],
       "@libs/*": ["src/libs/*"],
       "@data/*": ["src/data/*"],
+      "@scripts/*": ["src/scripts/*"],
       "apps/*": ["src/*"]
     }
   },

@@ -6,21 +6,40 @@ import GitHubIcon from '@components/icons/GithubIcon.astro';
 import BulbOffIcon from '@components/icons/BulbOffIcon.astro';
 import { getConfig, getVersionedPath } from '@libs/config';
 import { Image } from 'astro:assets';
-import '@docsearch/css';
+import '@docsearch/css/dist/style.css';
+import Palette from '@components/icons/Palette.astro';
 
 const { currentVersion } = getConfig();
 const currentPath = Astro.url.pathname;
+const hideMultipleTheming =
+  currentPath === getVersionedPath('/') || currentPath.startsWith(getVersionedPath('/blocks'));
+
+const themes = [
+  { value: 'default', label: 'Default' },
+  { value: 'luxury', label: 'Luxury' },
+  { value: 'retro', label: 'Retro' },
+  { value: 'arctic', label: 'Arctic' },
+  { value: 'nature', label: 'Nature' },
+  { value: 'ember', label: 'Ember' },
+  { value: 'dracula', label: 'Dracula' },
+  { value: 'midnight', label: 'Midnight' },
+];
+const navLinks = [
+  { href: getVersionedPath('/docs/getting-started/installation'), label: 'Docs' },
+  { href: getVersionedPath('/docs/components/overview'), label: 'Components' },
+  { href: getVersionedPath('/blocks'), label: 'Blocks' },
+  { href: 'https://hummingbirdui.medium.com/', label: 'Blog', external: true },
+];
 ---
 
-<nav class="navbar sticky top-0 px-6 md:px-10 py-3.75 border-b border-subtle bg-default z-1035">
-  <div class="container px-0 max-w-8xl">
-    <a class="navbar-brand flex items-center gap-2 me-1 sm:me-4" href={getVersionedPath('/')}>
+<nav class="sticky top-0 px-6 md:px-10 py-3.75 border-b border-subtle bg-default z-1035">
+  <div class="container flex flex-wrap items-center justify-between px-0 max-w-8xl">
+    <a class="navbar-brand flex items-center gap-2 me-1 sm:me-4 py-1.25" href={getVersionedPath('/')}>
       <Image src={logo} alt="Logo" class="w-10 h-10" />
       <h5 class="mb-0 text-muted font-semibold hidden sm:flex">hummingbird</h5>
     </a>
-    <span class="badge badge-subtle shrink-0">{currentVersion}</span>
+    <span class="badge badge-subtle shrink-0 hidden sm:inline-block">{currentVersion}</span>
     <div id="docsearch" class="hidden lg:block"></div>
-
     <div
       class="offcanvas-xl offcanvas-end ms-auto"
       tabindex="-1"
@@ -40,61 +59,74 @@ const currentPath = Astro.url.pathname;
           aria-label="Close"></button>
       </div>
       <ul class="navbar-nav px-6 xl:px-0 space-y-1 xl:flex-row">
-        <li class="nav-item">
-          <a
-            href={getVersionedPath('/docs/getting-started/installation')}
-            class={`nav-link px-4 py-2 text-default text-base xl:text-sm font-normal rounded-lg hover:bg-hover ${
-              currentPath.startsWith('/docs/getting-started/installation') ? 'text-primary' : ''
-            }`}
-          >
-            Docs
-          </a>
-        </li>
-        <li class="nav-item">
-          <a
-            href={getVersionedPath('/docs/components/overview')}
-            class={`nav-link px-4 py-2 text-default text-base xl:text-sm font-normal rounded-lg hover:bg-hover ${
-              currentPath.startsWith('/docs/components/overview') ? 'text-primary' : ''
-            }`}
-          >
-            Components
-          </a>
-        </li>
-        <li class="nav-item">
-          <a
-            href={getVersionedPath('/blocks')}
-            class={`nav-link px-4 py-2 text-default text-base xl:text-sm font-normal rounded-lg hover:bg-hover ${
-              currentPath.startsWith('/blocks') ? 'text-primary' : ''
-            }`}
-          >
-            Blocks
-            <span class="badge badge-warning size-2 p-0 -mt-2 animate-pulse"></span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a
-            href="https://hummingbirdui.medium.com/"
-            target="_blank"
-            class="nav-link px-4 py-2 text-default text-base xl:text-sm font-normal rounded-lg hover:bg-hover"
-          >
-            Blog
-          </a>
-        </li>
+        {
+          navLinks.map((link) => (
+            <li class="nav-item">
+              <a
+                href={link.href}
+                target={link.external ? '_blank' : '_self'}
+                class={`nav-link px-4 py-2 text-default text-base xl:text-sm font-normal rounded-lg hover:bg-hover ${
+                  currentPath.startsWith(link.href) ? 'text-primary' : ''
+                }`}
+              >
+                {link.label}
+                {link.label === 'Blocks' && <span class="badge badge-warning size-2 p-0 -mt-2 animate-pulse" />}
+              </a>
+            </li>
+          ))
+        }
       </ul>
     </div>
 
     <div id="docsearch-mobile" class="lg:hidden ml-auto"></div>
 
-    <div class="mx-2 xl:mx-4 my-auto border-l h-8 xl:h-10 border-default flex lg:hidden xl:flex"></div>
-
+    <div class="mx-2 xl:mx-4 my-auto border-l h-8 xl:h-10 border-subtle flex lg:hidden xl:flex"></div>
     <button class="lg:ml-auto xl:ml-0 btn btn-circle btn-subtle-neutral" data-theme-toggle-btn>
       <BulbIcon data-theme-toggle="dark" class="dark:hidden" />
       <BulbOffIcon data-theme-toggle="light" class="hidden dark:block" />
     </button>
+    {
+      !hideMultipleTheming && (
+        <div class="dropdown-center ml-1.5">
+          <button
+            class="btn btn-circle btn-subtle-neutral"
+            data-bs-toggle="dropdown"
+            data-bs-auto-close="outside"
+            aria-expanded="false"
+            data-theme-dropdown
+          >
+            <Palette />
+          </button>
+          <ul class="dropdown-menu min-w-66" role="menu">
+            <li>
+              <h6 class="dropdown-header text-default text-sm">Color Theme</h6>
+            </li>
+            {themes.map(({ value, label }) => (
+              <li>
+                <a
+                  class="dropdown-item flex items-center justify-between"
+                  href="#"
+                  data-global-theme-dropdown-item
+                  data-theme={value}
+                  role="menuitem"
+                >
+                  {label}
+                  <div class="flex gap-1">
+                    <div class="size-3.5 border border-default rounded bg-primary" />
+                    <div class="size-3.5 border border-default rounded bg-secondary" />
+                    <div class="size-3.5 border border-default rounded bg-default" />
+                  </div>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )
+    }
     <a
       href="https://github.com/hummingbirdui/hummingbird"
       target="_blank"
-      class="ml-2 btn max-lg:btn-circle btn-subtle-neutral lg:px-3"
+      class="ml-3 btn max-lg:btn-circle btn-subtle-neutral lg:px-3"
     >
       <GitHubIcon />
       <span class="stars-count hidden lg:flex">---</span>
@@ -104,7 +136,7 @@ const currentPath = Astro.url.pathname;
       href="#mainOffcanvas"
       role="button"
       aria-controls="mainOffcanvas"
-      class="ml-2 sm:ml-6 btn btn-circle btn-subtle-neutral flex xl:hidden"
+      class="ml-2 sm:ml-4 btn btn-circle btn-subtle-neutral flex xl:hidden"
     >
       <MenuIcon />
     </a>

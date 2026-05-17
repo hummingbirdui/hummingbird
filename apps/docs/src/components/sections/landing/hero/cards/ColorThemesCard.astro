@@ -1,0 +1,25 @@
+---
+import CardWrapper from '../CardWrapper.astro';
+
+const colors = ['bg-primary', 'bg-secondary', 'bg-success', 'bg-warning', 'bg-danger', 'bg-info'];
+const themes = ['default', 'dracula', 'retro'];
+---
+
+<CardWrapper color="primary" class="shadow-primary/5 dark:shadow-primary-darker/5 w-112! h-53!">
+  <h3 class="mb-4 text-base font-bold">Color Themes</h3>
+  {
+    themes.map((theme, index) => (
+      <div
+        class={`bg-subtle p-1.5 ps-3.5 rounded-3xl flex items-center justify-between ${index !== themes.length - 1 ? 'mb-0.5' : ''}`}
+        data-theme={theme}
+      >
+        <h6 class="text-sm font-medium text-muted mb-0">{theme.charAt(0).toUpperCase() + theme.slice(1)}</h6>
+        <div class="flex items-center gap-3.5">
+          {colors.map((color) => (
+            <div class={`size-7.5 rounded-full ${color}`} />
+          ))}
+        </div>
+      </div>
+    ))
+  }
+</CardWrapper>

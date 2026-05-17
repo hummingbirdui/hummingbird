@@ -1,13 +1,13 @@
 ---
+import { Component } from '@data/components.astro';
 import { getVersionedPath } from '@libs/config';
-import type { Component } from 'apps/data/components';
 
 interface Props {
   component: Component;
 }
 
 const { component } = Astro.props;
-const { url, image, title, count } = component;
+const { url, imgComponent: ImageComponent, title, count } = component;
 ---
 
 <a
@@ -15,8 +15,7 @@ const { url, image, title, count } = component;
   class="card card-action flex flex-col h-full w-full rounded-2xl bg-default overflow-hidden hover:border-primary"
 >
   <div class="grow flex items-center justify-center bg-subtle p-4 aspect-4/3">
-    <img src={image.light.src} class="dark:hidden" alt={title} />
-    <img src={image.dark.src} class="hidden dark:flex" alt={title} />
+    <ImageComponent />
   </div>
   <div class="px-4 py-3">
     <h6 class="card-title mb-0.5 text-base font-semibold">{title}</h6>

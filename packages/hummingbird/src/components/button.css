@@ -19,6 +19,7 @@
     --btn-height: unset;
 
     @apply inline-flex items-center justify-center gap-1.5
+    text-center
     transition-[background] duration-200
     cursor-pointer
     no-underline
