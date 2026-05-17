@@ -171,6 +171,10 @@ const sitemap: Sitemap[] = [
         path: '/docs/content/typography',
       },
       {
+        name: 'Blockquote',
+        path: '/docs/content/blockquote',
+      },
+      {
         name: 'Background',
         path: '/docs/content/background',
       },
