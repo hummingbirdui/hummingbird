@@ -2,9 +2,12 @@ name: Test & Build
 
 on:
   push:
-    branches: [main, develop, master]
+    branches: [main]
   pull_request:
-    branches: [main, develop, master]
+    branches: [main]
+  paths:
+    - 'packages/hummingbird/**'
+    - 'packages/create-hummingbird-app/**'
 
 permissions:
   contents: read
