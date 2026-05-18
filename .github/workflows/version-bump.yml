@@ -1,0 +1,82 @@
+name: Version Bump
+
+on:
+  workflow_dispatch:
+    inputs:
+      version_type:
+        description: 'Version bump type'
+        required: true
+        default: 'patch'
+        type: choice
+        options:
+          - patch
+          - minor
+          - major
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  bump-version:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: latest
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Calculate new version
+        id: bump
+        run: |
+          CURRENT=$(jq -r '.version' packages/hummingbird/package.json)
+          IFS='.' read -r MAJOR MINOR PATCH <<< "$CURRENT"
+          PATCH=${PATCH%%[-+]*}
+
+          case "${{ github.event.inputs.version_type }}" in
+            major) MAJOR=$((MAJOR + 1)); MINOR=0; PATCH=0 ;;
+            minor) MINOR=$((MINOR + 1)); PATCH=0 ;;
+            patch) PATCH=$((PATCH + 1)) ;;
+          esac
+
+          NEW_VERSION="$MAJOR.$MINOR.$PATCH"
+          echo "new_version=$NEW_VERSION" >> $GITHUB_OUTPUT
+
+      - name: Update package versions
+        run: |
+          NEW_VERSION="${{ steps.bump.outputs.new_version }}"
+          for pkg in packages/hummingbird packages/browser packages/create-hummingbird-app; do
+            jq ".version = \"$NEW_VERSION\"" "$pkg/package.json" > "$pkg/package.json.tmp"
+            mv "$pkg/package.json.tmp" "$pkg/package.json"
+          done
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v5
+        with:
+          commit-message: 'chore: bump version to ${{ steps.bump.outputs.new_version }}'
+          title: 'chore: bump version to ${{ steps.bump.outputs.new_version }}'
+          body: |
+            ## Version Bump to ${{ steps.bump.outputs.new_version }}
+
+            **Updated packages:**
+            - @hummingbirdui/hummingbird
+            - @hummingbirdui/browser
+            - create-hummingbird-app
+
+            **Next steps after merge:**
+            1. Create a GitHub Release with tag `v${{ steps.bump.outputs.new_version }}`
+            2. The publish workflow will trigger automatically
+          branch: version-bump/${{ steps.bump.outputs.new_version }}
+          delete-branch: true
+          labels: 'release'

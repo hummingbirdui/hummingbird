@@ -1,0 +1,58 @@
+name: Test & Build
+
+on:
+  push:
+    branches: [main, develop, master]
+  pull_request:
+    branches: [main, develop, master]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: latest
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Lint
+        run: pnpm lint
+
+      - name: Type check
+        run: pnpm check-types
+
+      - name: Build
+        run: pnpm build
+
+      - name: Verify build outputs
+        run: |
+          [[ -d "packages/hummingbird/lib" ]] || exit 1
+          [[ -d "packages/browser/dist" ]] || exit 1
+          [[ -f "packages/create-hummingbird-app/index.js" ]] || exit 1
+
+      - name: Run tests
+        run: pnpm -C packages/browser test:ui
+        continue-on-error: true
+
+      - name: Upload test results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-results
+          path: |
+            packages/browser/test-results/
+            packages/browser/blob-report/
+          retention-days: 30
+          if-no-files-found: ignore

@@ -1,0 +1,129 @@
+name: Publish Packages to NPM
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+    inputs:
+      publish_type:
+        description: 'Publish type'
+        required: true
+        default: 'stable'
+        type: choice
+        options:
+          - stable
+          - insider-preview
+      insider_suffix:
+        description: 'Insider version suffix (e.g., "insider.1", "rc.1", "beta.1")'
+        required: false
+        type: string
+
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: latest
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'pnpm'
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Validate NPM token
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          if [[ -z "$NODE_AUTH_TOKEN" ]]; then
+            echo "❌ NPM_TOKEN secret is not configured"
+            exit 1
+          fi
+
+      - name: Determine publish config
+        id: config
+        run: |
+          if [[ "${{ github.event_name }}" == "release" ]]; then
+            PUBLISH_TYPE="stable"
+            TAG_SUFFIX=""
+          else
+            PUBLISH_TYPE="${{ github.event.inputs.publish_type }}"
+            TAG_SUFFIX="${{ github.event.inputs.insider_suffix }}"
+            
+            if [[ "$PUBLISH_TYPE" == "insider-preview" && -z "$TAG_SUFFIX" ]]; then
+              echo "❌ insider_suffix is required for insider-preview"
+              exit 1
+            fi
+          fi
+
+          BASE_VERSION=$(jq -r '.version' packages/hummingbird/package.json)
+
+          if [[ "$PUBLISH_TYPE" == "insider-preview" ]]; then
+            PUBLISH_VERSION="${BASE_VERSION}-${TAG_SUFFIX}"
+            DIST_TAG="insider"
+          else
+            PUBLISH_VERSION="$BASE_VERSION"
+            DIST_TAG="latest"
+          fi
+
+          echo "publish_type=$PUBLISH_TYPE" >> $GITHUB_OUTPUT
+          echo "publish_version=$PUBLISH_VERSION" >> $GITHUB_OUTPUT
+          echo "dist_tag=$DIST_TAG" >> $GITHUB_OUTPUT
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Lint and type check
+        run: |
+          pnpm lint
+          pnpm check-types
+
+      - name: Build packages
+        run: pnpm build
+
+      - name: Verify build outputs
+        run: |
+          [[ -d "packages/hummingbird/lib" ]] || (echo "❌ hummingbird build failed" && exit 1)
+          [[ -d "packages/browser/dist" ]] || (echo "❌ browser build failed" && exit 1)
+          [[ -f "packages/create-hummingbird-app/index.js" ]] || (echo "❌ create-hummingbird-app build failed" && exit 1)
+
+      - name: Verify package versions are consistent
+        run: |
+          HUMMINGBIRD=$(jq -r '.version' packages/hummingbird/package.json)
+          BROWSER=$(jq -r '.version' packages/browser/package.json)
+          CREATE=$(jq -r '.version' packages/create-hummingbird-app/package.json)
+
+          if [[ "$HUMMINGBIRD" != "$BROWSER" ]] || [[ "$BROWSER" != "$CREATE" ]]; then
+            echo "❌ Version mismatch detected"
+            exit 1
+          fi
+
+      - name: Update versions for insider publish
+        if: steps.config.outputs.publish_type == 'insider-preview'
+        run: |
+          VERSION="${{ steps.config.outputs.publish_version }}"
+          for pkg in packages/hummingbird packages/browser packages/create-hummingbird-app; do
+            jq ".version = \"$VERSION\"" "$pkg/package.json" > "$pkg/package.json.tmp"
+            mv "$pkg/package.json.tmp" "$pkg/package.json"
+          done
+
+      - name: Publish to NPM
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          DIST_TAG="${{ steps.config.outputs.dist_tag }}"
+
+          for pkg in packages/hummingbird packages/browser packages/create-hummingbird-app; do
+            cd "$pkg"
+            pnpm publish --no-git-checks --tag "$DIST_TAG"
+            cd - > /dev/null
+          done
