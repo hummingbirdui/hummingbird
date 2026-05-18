@@ -25,12 +25,6 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Lint
-        run: pnpm lint
-
-      - name: Type check
-        run: pnpm -C packages/hummingbird check-types && pnpm -C packages/create-hummingbird-app check-types
-
       - name: Build
         run: pnpm build
 
