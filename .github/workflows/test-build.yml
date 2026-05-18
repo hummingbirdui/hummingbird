@@ -2,12 +2,9 @@ name: Test & Build
 
 on:
   push:
-    branches: [main]
+    branches: [main, develop, master]
   pull_request:
-    branches: [main]
-  paths:
-    - 'packages/hummingbird/**'
-    - 'packages/create-hummingbird-app/**'
+    branches: [main, develop, master]
 
 permissions:
   contents: read
@@ -32,7 +29,7 @@ jobs:
         run: pnpm lint
 
       - name: Type check
-        run: pnpm check-types
+        run: pnpm -C packages/hummingbird check-types && pnpm -C packages/create-hummingbird-app check-types
 
       - name: Build
         run: pnpm build
