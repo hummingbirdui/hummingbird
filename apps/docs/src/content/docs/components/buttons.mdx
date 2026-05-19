@@ -403,24 +403,26 @@ The button component is built using a set of CSS variables. These variables prov
 Global variables apply shared styles across buttons, inputs, and selects. Updating these will affect all related components.
 
 <Example lang='sass' showPreview={false}
-  code={`--input-btn-font-size: var(--text-sm);
-  --input-btn-border-radius: var(--radius-lg);
-  --input-btn-padding-x: --spacing(4);
-  --input-btn-padding-y: --spacing(1.75);
-  --input-btn-line-height: 1.5;
-  --input-btn-border-width: var(--border-width);
-  
-  --input-btn-font-size-sm: var(--text-sm);
-  --input-btn-padding-x-sm: --spacing(3);
-  --input-btn-padding-y-sm: --spacing(1.25);
-  --input-btn-border-radius-sm: var(--radius-sm);
-  --input-btn-line-height-sm: 1.25;
+  code={`@theme {
+    --input-btn-font-size: var(--text-sm);
+    --input-btn-border-radius: var(--radius-lg);
+    --input-btn-padding-x: --spacing(4);
+    --input-btn-padding-y: --spacing(1.75);
+    --input-btn-line-height: 1.5;
+    --input-btn-border-width: var(--border-width);
+    
+    --input-btn-font-size-sm: var(--text-sm);
+    --input-btn-padding-x-sm: --spacing(3);
+    --input-btn-padding-y-sm: --spacing(1.25);
+    --input-btn-border-radius-sm: var(--radius-sm);
+    --input-btn-line-height-sm: 1.25;
 
-  --input-btn-font-size-lg: var(--text-base);
-  --input-btn-padding-x-lg: --spacing(5);
-  --input-btn-padding-y-lg: --spacing(2.25);
-  --input-btn-border-radius-lg: var(--radius-lg);
-  --input-btn-line-height-lg: 1.5;`}
+    --input-btn-font-size-lg: var(--text-base);
+    --input-btn-padding-x-lg: --spacing(5);
+    --input-btn-padding-y-lg: --spacing(2.25);
+    --input-btn-border-radius-lg: var(--radius-lg);
+    --input-btn-line-height-lg: 1.5;
+  }`}
 />
 
 ### Local variables
