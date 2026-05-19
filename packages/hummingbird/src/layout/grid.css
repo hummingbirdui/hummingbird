@@ -300,6 +300,54 @@
   --grid-gutter-x: 3rem;
   --grid-gutter-y: 3rem;
 }
+@utility g-13 {
+  --grid-gutter-x: 3.25rem;
+  --grid-gutter-y: 3.25rem;
+}
+@utility g-14 {
+  --grid-gutter-x: 3.5rem;
+  --grid-gutter-y: 3.5rem;
+}
+@utility g-15 {
+  --grid-gutter-x: 3.75rem;
+  --grid-gutter-y: 3.75rem;
+}
+@utility g-16 {
+  --grid-gutter-x: 4rem;
+  --grid-gutter-y: 4rem;
+}
+@utility g-17 {
+  --grid-gutter-x: 4.25rem;
+  --grid-gutter-y: 4.25rem;
+}
+@utility g-18 {
+  --grid-gutter-x: 4.5rem;
+  --grid-gutter-y: 4.5rem;
+}
+@utility g-19 {
+  --grid-gutter-x: 4.75rem;
+  --grid-gutter-y: 4.75rem;
+}
+@utility g-20 {
+  --grid-gutter-x: 5rem;
+  --grid-gutter-y: 5rem;
+}
+@utility g-21 {
+  --grid-gutter-x: 5.25rem;
+  --grid-gutter-y: 5.25rem;
+}
+@utility g-22 {
+  --grid-gutter-x: 5.5rem;
+  --grid-gutter-y: 5.5rem;
+}
+@utility g-23 {
+  --grid-gutter-x: 5.75rem;
+  --grid-gutter-y: 5.75rem;
+}
+@utility g-24 {
+  --grid-gutter-x: 6rem;
+  --grid-gutter-y: 6rem;
+}
 
 @utility gx-0 {
   --grid-gutter-x: 0;
@@ -340,6 +388,42 @@
 @utility gx-12 {
   --grid-gutter-x: 3rem;
 }
+@utility gx-13 {
+  --grid-gutter-x: 3.25rem;
+}
+@utility gx-14 {
+  --grid-gutter-x: 3.5rem;
+}
+@utility gx-15 {
+  --grid-gutter-x: 3.75rem;
+}
+@utility gx-16 {
+  --grid-gutter-x: 4rem;
+}
+@utility gx-17 {
+  --grid-gutter-x: 4.25rem;
+}
+@utility gx-18 {
+  --grid-gutter-x: 4.5rem;
+}
+@utility gx-19 {
+  --grid-gutter-x: 4.75rem;
+}
+@utility gx-20 {
+  --grid-gutter-x: 5rem;
+}
+@utility gx-21 {
+  --grid-gutter-x: 5.25rem;
+}
+@utility gx-22 {
+  --grid-gutter-x: 5.5rem;
+}
+@utility gx-23 {
+  --grid-gutter-x: 5.75rem;
+}
+@utility gx-24 {
+  --grid-gutter-x: 6rem;
+}
 
 @utility gy-0 {
   --grid-gutter-y: 0;
@@ -379,4 +463,40 @@
 }
 @utility gy-12 {
   --grid-gutter-y: 3rem;
+}
+@utility gy-13 {
+  --grid-gutter-y: 3.25rem;
+}
+@utility gy-14 {
+  --grid-gutter-y: 3.5rem;
+}
+@utility gy-15 {
+  --grid-gutter-y: 3.75rem;
+}
+@utility gy-16 {
+  --grid-gutter-y: 4rem;
+}
+@utility gy-17 {
+  --grid-gutter-y: 4.25rem;
+}
+@utility gy-18 {
+  --grid-gutter-y: 4.5rem;
+}
+@utility gy-19 {
+  --grid-gutter-y: 4.75rem;
+}
+@utility gy-20 {
+  --grid-gutter-y: 5rem;
+}
+@utility gy-21 {
+  --grid-gutter-y: 5.25rem;
+}
+@utility gy-22 {
+  --grid-gutter-y: 5.5rem;
+}
+@utility gy-23 {
+  --grid-gutter-y: 5.75rem;
+}
+@utility gy-24 {
+  --grid-gutter-y: 6rem;
 }
