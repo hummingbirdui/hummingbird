@@ -90,9 +90,13 @@
 
   .heading-anchor {
     @apply opacity-0 transition-opacity duration-200;
+
     &::after {
-      @apply relative top-1 left-1;
-      content: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiMxRTkwRkYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIyIiBkPSJtOS4xNzIgMTQuODI5bDUuNjU3LTUuNjU3TTcuMDUgMTEuMjkzbC0xLjQxNCAxLjQxNGE0IDQgMCAxIDAgNS42NTcgNS42NTdsMS40MTItMS40MTRtLTEuNDEzLTkuOWwxLjQxNC0xLjQxNGE0IDQgMCAxIDEgNS42NTcgNS42NTdsLTEuNDE0IDEuNDE0Ii8+PC9zdmc+);
+      content: '';
+      @apply relative content-['']
+      top-1 left-1 inline-block size-5
+      bg-primary mask-contain mask-no-repeat mask-center;
+      mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='black' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m9.172 14.829 5.657-5.657M7.05 11.293l-1.414 1.414a4 4 0 1 0 5.657 5.657l1.412-1.414m-1.413-9.9l1.414-1.414a4 4 0 1 1 5.657 5.657l-1.414 1.414'/%3E%3C/svg%3E");
     }
 
     &:focus,
