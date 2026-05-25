@@ -12,7 +12,8 @@
     --badge-link-hover-bg: var(--color-dark);
     --badge-border-radius: calc(infinity * 1px);
 
-    @apply inline-flex items-center justify-center gap-1 align-middle
+    @apply inline-flex items-center justify-center gap-1
+    align-middle whitespace-nowrap
     bg-[var(--badge-bg)]
     text-[var(--badge-color)]
     text-[length:var(--badge-font-size)]

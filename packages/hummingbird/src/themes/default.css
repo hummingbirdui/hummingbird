@@ -137,6 +137,22 @@
   --input-disabled-border-color: var(--border-color-default);
   --input-disabled-opacity: 0.5;
 
+  /* Form validation */
+  --form-valid-bg: var(--color-success-lighter);
+  --form-valid-color: var(--color-success);
+  --form-valid-border-color: var(--color-success-light);
+  --form-valid-focus-border-color: var(--color-success);
+  --form-invalid-bg: var(--color-danger-lighter);
+  --form-invalid-color: var(--color-danger);
+  --form-invalid-border-color: var(--color-danger-light);
+  --form-invalid-focus-border-color: var(--color-danger);
+  --form-feedback-margin-top: --spacing(1);
+  --form-feedback-font-size: var(--text-sm);
+  --form-feedback-tooltip-padding-y: --spacing(1);
+  --form-feedback-tooltip-padding-x: --spacing(2);
+  --form-feedback-tooltip-color: var(--color-contrast);
+  --form-feedback-tooltip-border-radius: var(--radius-sm);
+
   /* grid */
   --grid-columns: 12;
   --grid-row-columns: 6;
@@ -267,6 +283,36 @@
       /* Shadows */
       --shadow-xl:
         0px 12px 51px 0px rgba(0, 0, 0, 0.6), 0px 3px 24px 0px rgba(0, 0, 0, 0.56), 0px 1px 16px 0px rgba(0, 0, 0, 0.1);
+
+      /* Input variables */
+      --input-bg: var(--background-color-default);
+      --input-color: var(--text-color-default);
+      --input-border-color: var(--border-color-default);
+      --input-hover-bg: var(--background-color-highlight);
+      --input-hover-border-color: var(--text-color-subtle);
+      --input-focus-bg: var(--color-primary-lighter);
+      --input-focus-border-color: var(--color-primary);
+      --input-disabled-color: var(--input-color);
+      --input-disabled-bg: var(--color-disabled);
+      --input-disabled-border-color: var(--border-color-default);
+
+      /* Form validation */
+      --form-valid-bg: var(--color-success-lighter);
+      --form-valid-color: var(--color-success);
+      --form-valid-border-color: var(--color-success-light);
+      --form-valid-focus-border-color: var(--color-success);
+      --form-invalid-bg: var(--color-danger-lighter);
+      --form-invalid-color: var(--color-danger);
+      --form-invalid-border-color: var(--color-danger-light);
+      --form-invalid-focus-border-color: var(--color-danger);
+      --form-feedback-tooltip-color: var(--color-contrast);
+
+      /* reboot variables */
+      --body-bg: var(--background-color-default);
+      --body-color: var(--text-color-default);
+      --hr-border-color: var(--border-color-default);
+      --anchor-color: var(--color-primary);
+      --anchor-hover-color: var(--color-primary-dark);
     }
   }
 }

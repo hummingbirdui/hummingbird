@@ -1,20 +1,3 @@
-:root {
-  --form-valid-bg: var(--color-success-lighter);
-  --form-valid-color: var(--color-success);
-  --form-valid-border-color: var(--color-success-light);
-  --form-valid-focus-border-color: var(--color-success);
-  --form-invalid-bg: var(--color-danger-lighter);
-  --form-invalid-color: var(--color-danger);
-  --form-invalid-border-color: var(--color-danger-light);
-  --form-invalid-focus-border-color: var(--color-danger);
-  --form-feedback-margin-top: --spacing(1);
-  --form-feedback-font-size: var(--text-sm);
-  --form-feedback-tooltip-padding-y: --spacing(1);
-  --form-feedback-tooltip-padding-x: --spacing(2);
-  --form-feedback-tooltip-color: var(--color-contrast);
-  --form-feedback-tooltip-border-radius: var(--radius-sm);
-}
-
 @utility valid-feedback {
   @layer base {
     @apply hidden w-full
