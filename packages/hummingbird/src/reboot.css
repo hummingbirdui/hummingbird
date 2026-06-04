@@ -151,4 +151,11 @@
   output {
     @apply inline-block;
   }
+
+  :root,
+  :host {
+    @variant dark {
+      color-scheme: dark;
+    }
+  }
 }
