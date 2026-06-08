@@ -28,11 +28,11 @@
   --color-primary-darker: var(--color-maroon-900);
 
   /* Secondary */
-  --color-secondary-lighter: var(--color-gold-50);
-  --color-secondary-light: var(--color-gold-300);
-  --color-secondary: var(--color-gold-500);
-  --color-secondary-dark: var(--color-gold-700);
-  --color-secondary-darker: var(--color-gold-900);
+  --color-secondary-lighter: var(--color-brown-50);
+  --color-secondary-light: var(--color-brown-300);
+  --color-secondary: var(--color-brown-500);
+  --color-secondary-dark: var(--color-brown-700);
+  --color-secondary-darker: var(--color-brown-900);
 
   /* Danger */
   --color-danger-lighter: var(--color-rose-50);
@@ -107,11 +107,11 @@
       --color-primary-darker: var(--color-maroon-100);
 
       /* secondary */
-      --color-secondary-lighter: var(--color-gold-900);
-      --color-secondary-light: var(--color-gold-700);
-      --color-secondary: var(--color-gold-400);
-      --color-secondary-dark: var(--color-gold-300);
-      --color-secondary-darker: var(--color-gold-100);
+      --color-secondary-lighter: var(--color-brown-900);
+      --color-secondary-light: var(--color-brown-700);
+      --color-secondary: var(--color-brown-400);
+      --color-secondary-dark: var(--color-brown-300);
+      --color-secondary-darker: var(--color-brown-100);
 
       /* danger */
       --color-danger-lighter: var(--color-rose-900);

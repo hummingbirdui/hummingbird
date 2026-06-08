@@ -4,6 +4,8 @@ description: Hummingbird provides a small set of semantic color variables, which
 toc: true
 ---
 
+import ColorPalette from '@components/docs/ColorPalette.astro';
+
 ## Overview
 
 Instead of applying fixed Tailwind palette classes like:
@@ -24,9 +26,9 @@ This approach prevents dependence on specific palette values (`blue-500`, `green
 
 Behind the scenes, each semantic color class points to a CSS variable. Updating or overriding that variable updates the color everywhere it’s used.
 
-## List of colors
+## List of semantic colors
 
-Hummingbird provides a minimal but complete set of color roles:
+Here is the list of semantic colors that will be generated as Tailwind utilities and also available as CSS variables.
 
 <HbTable className='table-sm text-nowrap'>
   <thead>
@@ -373,3 +375,9 @@ Override any color by redefining its CSS variable inside a `@theme` block after 
   --color-primary-dark: #001c38;
 }
 ```
+
+## Default color palette reference
+
+Each Hummingbird theme includes its own complete color palette, carefully designed to maintain a consistent visual tone. Use these palettes to customize existing themes or create entirely new ones with confidence.
+
+<ColorPalette/>

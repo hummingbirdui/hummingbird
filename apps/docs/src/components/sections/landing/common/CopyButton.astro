@@ -12,5 +12,5 @@ const { code, class: className = '', ...rest } = Astro.props;
 
 <button data-copy-btn data-code={code} class={`p-0.5 cursor-pointer ${className}`} {...rest}>
   <CopyIcon data-copy-icon />
-  <CheckIcon data-check-icon class="hidden text-success" />
+  <CheckIcon width="28" height="28" data-check-icon class="hidden text-success" />
 </button>

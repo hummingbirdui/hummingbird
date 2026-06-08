@@ -56,11 +56,11 @@
   --color-success-darker: var(--color-avocado-900);
 
   /* Info */
-  --color-info-lighter: var(--color-blue-50);
-  --color-info-light: var(--color-blue-300);
-  --color-info: var(--color-blue-500);
-  --color-info-dark: var(--color-blue-700);
-  --color-info-darker: var(--color-blue-900);
+  --color-info-lighter: var(--color-sky-50);
+  --color-info-light: var(--color-sky-300);
+  --color-info: var(--color-sky-500);
+  --color-info-dark: var(--color-sky-700);
+  --color-info-darker: var(--color-sky-900);
 
   /* Actions */
   --color-active: var(--color-taupe-500);
@@ -135,11 +135,11 @@
       --color-success-darker: var(--color-avocado-200);
 
       /* info */
-      --color-info-lighter: var(--color-blue-900);
-      --color-info-light: var(--color-blue-700);
-      --color-info: var(--color-blue-400);
-      --color-info-dark: var(--color-blue-300);
-      --color-info-darker: var(--color-blue-200);
+      --color-info-lighter: var(--color-sky-900);
+      --color-info-light: var(--color-sky-700);
+      --color-info: var(--color-sky-400);
+      --color-info-dark: var(--color-sky-300);
+      --color-info-darker: var(--color-sky-200);
 
       /* borders */
       --border-color-subtle: var(--color-taupe-800);
