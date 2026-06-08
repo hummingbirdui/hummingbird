@@ -14,17 +14,17 @@
   --color-taupe-900: oklch(0.292 0.009 97.647);
   --color-taupe-950: oklch(0.241 0.005 67.595);
 
-  --color-steel-50: oklch(0.904 0.012 252.095);
-  --color-steel-100: oklch(0.86 0.016 248.013);
-  --color-steel-200: oklch(0.765 0.03 254.716);
-  --color-steel-300: oklch(0.665 0.043 251.913);
-  --color-steel-400: oklch(0.567 0.056 252.37);
-  --color-steel-500: oklch(0.516 0.064 252.928);
-  --color-steel-600: oklch(0.482 0.059 254.191);
-  --color-steel-700: oklch(0.414 0.05 253.251);
-  --color-steel-800: oklch(0.348 0.038 256.169);
-  --color-steel-900: oklch(0.288 0.027 250.962);
-  --color-steel-950: oklch(0.244 0.018 251.983);
+  --color-blue-50: oklch(0.904 0.012 252.095);
+  --color-blue-100: oklch(0.86 0.016 248.013);
+  --color-blue-200: oklch(0.765 0.03 254.716);
+  --color-blue-300: oklch(0.665 0.043 251.913);
+  --color-blue-400: oklch(0.567 0.056 252.37);
+  --color-blue-500: oklch(0.516 0.064 252.928);
+  --color-blue-600: oklch(0.482 0.059 254.191);
+  --color-blue-700: oklch(0.414 0.05 253.251);
+  --color-blue-800: oklch(0.348 0.038 256.169);
+  --color-blue-900: oklch(0.288 0.027 250.962);
+  --color-blue-950: oklch(0.244 0.018 251.983);
 
   --color-pink-50: oklch(0.891 0.039 348.886);
   --color-pink-100: oklch(0.846 0.058 346.842);
@@ -74,17 +74,17 @@
   --color-orange-900: oklch(0.288 0.065 40.986);
   --color-orange-950: oklch(0.247 0.048 40.153);
 
-  --color-blue-50: oklch(0.906 0.02 240.749);
-  --color-blue-100: oklch(0.853 0.03 240.239);
-  --color-blue-200: oklch(0.758 0.052 242.122);
-  --color-blue-300: oklch(0.658 0.074 244.047);
-  --color-blue-400: oklch(0.562 0.094 243.237);
-  --color-blue-500: oklch(0.514 0.104 245.642);
-  --color-blue-600: oklch(0.483 0.095 244.775);
-  --color-blue-700: oklch(0.411 0.081 246.493);
-  --color-blue-800: oklch(0.341 0.063 245.993);
-  --color-blue-900: oklch(0.28 0.046 244.458);
-  --color-blue-950: oklch(0.244 0.034 242.823);
+  --color-sky-50: oklch(0.906 0.02 240.749);
+  --color-sky-100: oklch(0.853 0.03 240.239);
+  --color-sky-200: oklch(0.758 0.052 242.122);
+  --color-sky-300: oklch(0.658 0.074 244.047);
+  --color-sky-400: oklch(0.562 0.094 243.237);
+  --color-sky-500: oklch(0.514 0.104 245.642);
+  --color-sky-600: oklch(0.483 0.095 244.775);
+  --color-sky-700: oklch(0.411 0.081 246.493);
+  --color-sky-800: oklch(0.341 0.063 245.993);
+  --color-sky-900: oklch(0.28 0.046 244.458);
+  --color-sky-950: oklch(0.244 0.034 242.823);
 
   --color-amber-50: oklch(0.907 0.026 63.719);
   --color-amber-100: oklch(0.868 0.038 64.709);

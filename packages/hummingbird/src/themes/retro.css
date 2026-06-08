@@ -21,11 +21,11 @@
   --color-contrast: var(--color-white);
 
   /* Primary */
-  --color-primary-lighter: var(--color-steel-50);
-  --color-primary-light: var(--color-steel-400);
-  --color-primary: var(--color-steel-500);
-  --color-primary-dark: var(--color-steel-600);
-  --color-primary-darker: var(--color-steel-900);
+  --color-primary-lighter: var(--color-blue-50);
+  --color-primary-light: var(--color-blue-400);
+  --color-primary: var(--color-blue-500);
+  --color-primary-dark: var(--color-blue-600);
+  --color-primary-darker: var(--color-blue-900);
 
   /* Secondary */
   --color-secondary-lighter: var(--color-pink-50);
@@ -56,11 +56,11 @@
   --color-success-darker: var(--color-green-900);
 
   /* Info */
-  --color-info-lighter: var(--color-blue-50);
-  --color-info-light: var(--color-blue-400);
-  --color-info: var(--color-blue-500);
-  --color-info-dark: var(--color-blue-700);
-  --color-info-darker: var(--color-blue-900);
+  --color-info-lighter: var(--color-sky-50);
+  --color-info-light: var(--color-sky-400);
+  --color-info: var(--color-sky-500);
+  --color-info-dark: var(--color-sky-700);
+  --color-info-darker: var(--color-sky-900);
 
   /* Actions */
   --color-active: var(--color-taupe-500);
@@ -100,11 +100,11 @@
       --color-contrast: var(--color-taupe-950);
 
       /* primary */
-      --color-primary-lighter: var(--color-steel-900);
-      --color-primary-light: var(--color-steel-700);
-      --color-primary: var(--color-steel-400);
-      --color-primary-dark: var(--color-steel-300);
-      --color-primary-darker: var(--color-steel-100);
+      --color-primary-lighter: var(--color-blue-900);
+      --color-primary-light: var(--color-blue-700);
+      --color-primary: var(--color-blue-400);
+      --color-primary-dark: var(--color-blue-300);
+      --color-primary-darker: var(--color-blue-100);
 
       /* secondary */
       --color-secondary-lighter: var(--color-pink-900);
@@ -135,11 +135,11 @@
       --color-success-darker: var(--color-green-200);
 
       /* info */
-      --color-info-lighter: var(--color-blue-900);
-      --color-info-light: var(--color-blue-700);
-      --color-info: var(--color-blue-400);
-      --color-info-dark: var(--color-blue-300);
-      --color-info-darker: var(--color-blue-200);
+      --color-info-lighter: var(--color-sky-900);
+      --color-info-light: var(--color-sky-700);
+      --color-info: var(--color-sky-400);
+      --color-info-dark: var(--color-sky-300);
+      --color-info-darker: var(--color-sky-200);
 
       /* borders */
       --border-color-subtle: var(--color-taupe-800);
