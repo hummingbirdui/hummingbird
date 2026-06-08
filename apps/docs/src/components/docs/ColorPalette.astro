@@ -1,0 +1,98 @@
+---
+const colors = [
+  'red',
+  'maroon',
+  'brown',
+  'orange',
+  'amber',
+  'yellow',
+  'lime',
+  'green',
+  'emerald',
+  'teal',
+  'cyan',
+  'sky',
+  'blue',
+  'indigo',
+  'violet',
+  'purple',
+  'fuchsia',
+  'pink',
+  'rose',
+  'slate',
+  'gray',
+  'zinc',
+  'neutral',
+  'stone',
+  'taupe',
+  'mauve',
+  'mist',
+  'olive',
+];
+
+const shades = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950];
+---
+
+<div class="grid grid-cols-[auto_minmax(0,1fr)] items-center gap-1.5 lg:gap-4">
+  <div class="sticky max-lg:top-33.5 top-20 py-1 z-9 bg-default h-8"></div>
+  <div
+    class="max-lg:text-sm sticky max-lg:top-33.5 top-20 py-1 z-9 col-start-2 grid grid-cols-11 justify-items-center gap-1.5 bg-default font-medium text-default *:rotate-180 *:[writing-mode:vertical-lr] sm:gap-4 sm:*:rotate-0 sm:*:[writing-mode:horizontal-tb]"
+  >
+    <div>50</div><div>100</div><div>200</div><div>300</div><div>400</div><div>500</div><div>600</div><div>700</div><div>
+      800
+    </div><div>900</div><div>950</div>
+  </div>
+  {
+    colors.map((color) => (
+      <>
+        <p class="max-lg:text-sm font-medium text-default capitalize sm:pr-12 mb-0">{color}</p>
+        <div class="grid grid-cols-11 gap-1.5 lg:gap-4">
+          {shades.map((shade) => (
+            <div data-bs-toggle="tooltip" data-palette-tooltip>
+              <button
+                type="button"
+                class="aspect-square w-full rounded-sm outline -outline-offset-1 outline-black/10 sm:rounded-md dark:outline-white/10"
+                style={`background-color: var(--color-${color}-${shade});`}
+              />
+            </div>
+          ))}
+        </div>
+      </>
+    ))
+  }
+  <script>
+    import Tooltip from '@hummingbirdui/hummingbird/lib/esm/scripts/tooltip';
+    const divs = document.querySelectorAll('[data-palette-tooltip]') as NodeListOf<HTMLElement>;
+    divs.forEach((div) => {
+      const btn = div.querySelector('button');
+      if (!btn) return;
+      const style = btn.getAttribute('style') || '';
+      const varMatch = style.match(/var\(--color-([^)]*)\)/);
+      if (varMatch) {
+        const varName = `--color-${varMatch[1]}`;
+        const oklch = getComputedStyle(document.documentElement).getPropertyValue(varName).trim();
+
+        // Dispose the auto-initialized tooltip created by the module's side-effect
+        const autoTooltip = Tooltip.getInstance(div);
+        if (autoTooltip) {
+          autoTooltip.dispose();
+        }
+
+        // Create a single tooltip instance with oklch value, hover-only trigger
+        const tooltip = new Tooltip(div, {
+          title: oklch,
+          trigger: 'hover',
+        });
+
+        btn.addEventListener('click', () => {
+          navigator.clipboard.writeText(oklch).then(() => {
+            tooltip.setContent({ '.tooltip-inner': 'Copied!' });
+            setTimeout(() => {
+              tooltip.setContent({ '.tooltip-inner': oklch });
+            }, 1500);
+          });
+        });
+      }
+    });
+  </script>
+</div>
