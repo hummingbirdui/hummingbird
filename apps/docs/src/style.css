@@ -426,3 +426,7 @@
       linear-gradient(var(--gradient-angle), var(--color-danger-lighter) 0.36%, var(--color-danger-dark) 99.64%);
   }
 }
+
+.palette-tooltip {
+  @apply font-semibold;
+}

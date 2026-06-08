@@ -48,7 +48,7 @@ const shades = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950];
         <p class="max-lg:text-sm font-medium text-default capitalize sm:pr-12 mb-0">{color}</p>
         <div class="grid grid-cols-11 gap-1.5 lg:gap-4">
           {shades.map((shade) => (
-            <div data-bs-toggle="tooltip" data-palette-tooltip>
+            <div data-bs-toggle="tooltip" data-palette-tooltip data-bs-custom-class="palette-tooltip">
               <button
                 type="button"
                 class="aspect-square w-full rounded-sm outline -outline-offset-1 outline-black/10 sm:rounded-md dark:outline-white/10"
@@ -62,6 +62,22 @@ const shades = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950];
   }
   <script>
     import Tooltip from '@hummingbirdui/hummingbird/lib/esm/scripts/tooltip';
+
+    // Function to normalize OKLCH values and preserve leading zeros
+    function normalizeOklch(oklchValue: string): string {
+      // Match oklch(L% C h) pattern
+      const match = oklchValue.match(/oklch\(([^%]+)%\s+([^\s]+)\s+([^)]+)\)/);
+      if (!match) return oklchValue;
+
+      const [, lightness, chroma, hue] = match;
+      // Ensure chroma has proper formatting with leading zero if needed
+      const formattedChroma = parseFloat(chroma)
+        .toFixed(3)
+        .replace(/(\.\d*?)0+$/, '$1')
+        .replace(/\.$/, '');
+      return `oklch(${lightness}% ${formattedChroma} ${hue})`;
+    }
+
     const divs = document.querySelectorAll('[data-palette-tooltip]') as NodeListOf<HTMLElement>;
     divs.forEach((div) => {
       const btn = div.querySelector('button');
@@ -70,7 +86,8 @@ const shades = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950];
       const varMatch = style.match(/var\(--color-([^)]*)\)/);
       if (varMatch) {
         const varName = `--color-${varMatch[1]}`;
-        const oklch = getComputedStyle(document.documentElement).getPropertyValue(varName).trim();
+        let oklch = getComputedStyle(document.documentElement).getPropertyValue(varName).trim();
+        oklch = normalizeOklch(oklch);
 
         // Dispose the auto-initialized tooltip created by the module's side-effect
         const autoTooltip = Tooltip.getInstance(div);
