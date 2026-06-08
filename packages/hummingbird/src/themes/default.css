@@ -42,18 +42,18 @@
   --color-danger-darker: var(--color-red-900);
 
   /* warning */
-  --color-warning-lighter: var(--color-orange-50);
-  --color-warning-light: var(--color-orange-400);
-  --color-warning: var(--color-orange-500);
-  --color-warning-dark: var(--color-orange-700);
-  --color-warning-darker: var(--color-orange-900);
+  --color-warning-lighter: var(--color-amber-50);
+  --color-warning-light: var(--color-amber-400);
+  --color-warning: var(--color-amber-500);
+  --color-warning-dark: var(--color-amber-700);
+  --color-warning-darker: var(--color-amber-900);
 
   /* success */
-  --color-success-lighter: var(--color-green-50);
-  --color-success-light: var(--color-green-400);
-  --color-success: var(--color-green-500);
-  --color-success-dark: var(--color-green-700);
-  --color-success-darker: var(--color-green-900);
+  --color-success-lighter: var(--color-emerald-50);
+  --color-success-light: var(--color-emerald-400);
+  --color-success: var(--color-emerald-500);
+  --color-success-dark: var(--color-emerald-700);
+  --color-success-darker: var(--color-emerald-900);
 
   /* info */
   --color-info-lighter: var(--color-sky-50);
@@ -247,18 +247,18 @@
       --color-danger-darker: var(--color-red-200);
 
       /* warning */
-      --color-warning-lighter: var(--color-orange-900);
-      --color-warning-light: var(--color-orange-800);
-      --color-warning: var(--color-orange-400);
-      --color-warning-dark: var(--color-orange-300);
-      --color-warning-darker: var(--color-orange-200);
+      --color-warning-lighter: var(--color-amber-900);
+      --color-warning-light: var(--color-amber-800);
+      --color-warning: var(--color-amber-400);
+      --color-warning-dark: var(--color-amber-300);
+      --color-warning-darker: var(--color-amber-200);
 
       /* success */
-      --color-success-lighter: var(--color-green-900);
-      --color-success-light: var(--color-green-700);
-      --color-success: var(--color-green-400);
-      --color-success-dark: var(--color-green-300);
-      --color-success-darker: var(--color-green-200);
+      --color-success-lighter: var(--color-emerald-900);
+      --color-success-light: var(--color-emerald-700);
+      --color-success: var(--color-emerald-400);
+      --color-success-dark: var(--color-emerald-300);
+      --color-success-darker: var(--color-emerald-200);
 
       /* info */
       --color-info-lighter: var(--color-sky-900);
