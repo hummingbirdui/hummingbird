@@ -49,11 +49,11 @@
   --color-warning-darker: var(--color-orange-900);
 
   /* Success */
-  --color-success-lighter: var(--color-avocado-50);
-  --color-success-light: var(--color-avocado-400);
-  --color-success: var(--color-avocado-500);
-  --color-success-dark: var(--color-avocado-700);
-  --color-success-darker: var(--color-avocado-900);
+  --color-success-lighter: var(--color-olive-50);
+  --color-success-light: var(--color-olive-400);
+  --color-success: var(--color-olive-500);
+  --color-success-dark: var(--color-olive-700);
+  --color-success-darker: var(--color-olive-900);
 
   /* Info */
   --color-info-lighter: var(--color-sky-50);
@@ -128,11 +128,11 @@
       --color-warning-darker: var(--color-orange-200);
 
       /* success */
-      --color-success-lighter: var(--color-avocado-900);
-      --color-success-light: var(--color-avocado-700);
-      --color-success: var(--color-avocado-400);
-      --color-success-dark: var(--color-avocado-300);
-      --color-success-darker: var(--color-avocado-200);
+      --color-success-lighter: var(--color-olive-900);
+      --color-success-light: var(--color-olive-700);
+      --color-success: var(--color-olive-400);
+      --color-success-dark: var(--color-olive-300);
+      --color-success-darker: var(--color-olive-200);
 
       /* info */
       --color-info-lighter: var(--color-sky-900);

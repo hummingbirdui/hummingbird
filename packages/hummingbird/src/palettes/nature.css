@@ -50,17 +50,17 @@
   --color-red-900: oklch(27.9% 0.067 20.999);
   --color-red-950: oklch(20.3% 0.042 19.05);
 
-  --color-avocado-50: oklch(92.7% 0.026 121.195);
-  --color-avocado-100: oklch(86.5% 0.047 121.97);
-  --color-avocado-200: oklch(77.4% 0.078 121.95);
-  --color-avocado-300: oklch(68.2% 0.109 123.182);
-  --color-avocado-400: oklch(59% 0.131 125.241);
-  --color-avocado-500: oklch(54.4% 0.135 126.643);
-  --color-avocado-600: oklch(50.6% 0.125 126.667);
-  --color-avocado-700: oklch(43.2% 0.106 126.548);
-  --color-avocado-800: oklch(35.1% 0.083 125.895);
-  --color-avocado-900: oklch(27.6% 0.063 125.984);
-  --color-avocado-950: oklch(23.3% 0.054 126.504);
+  --color-olive-50: oklch(92.7% 0.026 121.195);
+  --color-olive-100: oklch(86.5% 0.047 121.97);
+  --color-olive-200: oklch(77.4% 0.078 121.95);
+  --color-olive-300: oklch(68.2% 0.109 123.182);
+  --color-olive-400: oklch(59% 0.131 125.241);
+  --color-olive-500: oklch(54.4% 0.135 126.643);
+  --color-olive-600: oklch(50.6% 0.125 126.667);
+  --color-olive-700: oklch(43.2% 0.106 126.548);
+  --color-olive-800: oklch(35.1% 0.083 125.895);
+  --color-olive-900: oklch(27.6% 0.063 125.984);
+  --color-olive-950: oklch(23.3% 0.054 126.504);
 
   --color-orange-50: oklch(91.4% 0.023 65.445);
   --color-orange-100: oklch(86.8% 0.038 64.709);
@@ -157,18 +157,6 @@
   --color-teal-800: oklch(35.9% 0.048 185.006);
   --color-teal-900: oklch(28.1% 0.036 186.611);
   --color-teal-950: oklch(21.5% 0.024 186.269);
-
-  --color-olive-50: oklch(93% 0.019 119.761);
-  --color-olive-100: oklch(87.2% 0.035 121.571);
-  --color-olive-200: oklch(79.1% 0.057 120.973);
-  --color-olive-300: oklch(70.1% 0.081 122.002);
-  --color-olive-400: oklch(61.2% 0.103 123.145);
-  --color-olive-500: oklch(56.9% 0.113 124.263);
-  --color-olive-600: oklch(52.8% 0.103 123.897);
-  --color-olive-700: oklch(45% 0.085 123.52);
-  --color-olive-800: oklch(36.8% 0.067 123.714);
-  --color-olive-900: oklch(28.8% 0.05 123.399);
-  --color-olive-950: oklch(22% 0.033 121.873);
 
   --color-lime-50: oklch(93.4% 0.021 124.668);
   --color-lime-100: oklch(88.2% 0.039 124.703);
