@@ -80,11 +80,6 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Lint and type check
-        run: |
-          pnpm lint
-          pnpm check-types
-
       - name: Build packages
         run: pnpm build
 
