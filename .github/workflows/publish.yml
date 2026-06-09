@@ -85,7 +85,8 @@ jobs:
 
       - name: Verify build outputs
         run: |
-          [[ -d "packages/hummingbird/lib" ]] || (echo "❌ hummingbird build failed" && exit 1)
+          [[ -d "packages/hummingbird/lib" ]] || (echo "❌ hummingbird lib build failed" && exit 1)
+          [[ -d "packages/hummingbird/dist" ]] || (echo "❌ hummingbird dist build failed" && exit 1)
           [[ -d "packages/browser/dist" ]] || (echo "❌ browser build failed" && exit 1)
           [[ -f "packages/create-hummingbird-app/index.js" ]] || (echo "❌ create-hummingbird-app build failed" && exit 1)
 
