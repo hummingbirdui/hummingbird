@@ -81,7 +81,7 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Build packages
-        run: pnpm build
+        run: pnpm build --filter="./packages/*"
 
       - name: Verify build outputs
         run: |
