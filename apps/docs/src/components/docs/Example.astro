@@ -1,5 +1,6 @@
 ---
 import AppCode from '@components/common/AppCode.astro';
+import File from '@components/icons/File.astro';
 
 interface Props {
   code: string | string[];
@@ -8,6 +9,7 @@ interface Props {
   lang?: any;
   showMarkup?: boolean;
   showPreview?: boolean;
+  filePath?: string;
 }
 
 const {
@@ -17,6 +19,7 @@ const {
   lang = 'html',
   showMarkup = true,
   showPreview = true,
+  filePath,
   ...rest
 } = Astro.props;
 
@@ -58,11 +61,17 @@ const original: string = normalizeCode(rawCode);
           </div>
         )}
         <AppCode
-          class={`${!showPreview ? 'py-7! px-4 max-h-full' : 'p-4 max-h-70'}`}
+          class={`${!showPreview ? 'py-7! px-4 max-h-full' : 'p-4 max-h-70'} ${filePath ? 'pt-14!' : ''}`}
           data-astro-code
           code={original}
           lang={lang}
         />
+        {filePath && (
+          <p class="absolute text-sm font-semibold mb-0 top-3 left-4 flex items-center gap-1">
+            <File />
+            <span>{filePath}</span>
+          </p>
+        )}
         {!showPreview && (
           <button class="btn btn-icon p-0 absolute top-3 right-3" data-btn-copy-secondary>
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">

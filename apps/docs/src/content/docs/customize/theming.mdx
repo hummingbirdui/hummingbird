@@ -6,16 +6,135 @@ toc: true
 
 ## Overview
 
-Hummingbird UI is built on Tailwind CSS v4 and exposes a set of theme variables (design tokens) for colors, typography, shadows, and more.
+Hummingbird UI is built on Tailwind CSS v4 and provides a comprehensive set of theme variables (design tokens) for colors, typography, shadows, and more.
+
+- Offers multiple prebuilt themes like luxury, retro, arctic etc. These themes are highly customizable, allowing individual tokens to be tweaked or entirely new color palettes to be created to match specific brand aesthetics.
 
 - Use the theme variables (like `--color-primary` and `--shadow-md`) via standard Tailwind utilities (for example, `bg-primary`, `text-primary`, `shadow-md`).
 
 - Override any theme variables globally by redefining them in an `@theme { ... }` block after importing the CSS.
 
-- Create multiple themes (e.g., light/dark/forest) by overriding the theme variables within a theme scope like `@variant dark{}`, or `[data-theme="dark"]{}`.
-
 - Reboot provides a base CSS reset with element-specific styles for consistent design across browsers.
 
+## Available Themes
+
+Here is a quick overview of the available prebuilt themes:
+
+<HbTable>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Preview</th>
+  </tr>
+  <tr>
+    <td class='py-3 text-default font-semibold'>Default</td>
+    <td class='py-3'>The signature Hummingbird theme with balanced neutrals and vibrant blue accents.</td>
+    <td class='py-3'>
+      <div class="flex gap-1" data-theme="default">
+        <div class="size-7 rounded border border-default bg-primary"></div>
+        <div class="size-7 rounded border border-default bg-secondary"></div>
+        <div class="size-7 rounded border border-default bg-default"></div>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td class='py-3 text-default font-semibold'>Luxury</td>
+    <td class='py-3'>Rich maroon and golden tones crafted for a refined, premium appearance.</td>
+    <td class='py-3'>
+      <div class="flex gap-1" data-theme="luxury">
+        <div class="size-7 rounded border border-default bg-primary"></div>
+        <div class="size-7 rounded border border-default bg-secondary"></div>
+        <div class="size-7 rounded border border-default bg-default"></div>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td class='py-3 text-default font-semibold'>Retro</td>
+    <td class='py-3'>Warm vintage-inspired colors that bring a classic and timeless feel.</td>
+    <td class='py-3'>
+      <div class="flex gap-1" data-theme="retro">
+        <div class="size-7 rounded border border-default bg-primary"></div>
+        <div class="size-7 rounded border border-default bg-secondary"></div>
+        <div class="size-7 rounded border border-default bg-default"></div>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td class='py-3 text-default font-semibold'>Arctic</td>
+    <td class='py-3'>Cool blues and frosty tones inspired by modern winter landscapes.</td>
+    <td class='py-3'>
+      <div class="flex gap-1" data-theme="arctic">
+        <div class="size-7 rounded border border-default bg-primary"></div>
+        <div class="size-7 rounded border border-default bg-secondary"></div>
+        <div class="size-7 rounded border border-default bg-default"></div>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td class='py-3 text-default font-semibold'>Nature</td>
+    <td class='py-3'>Fresh greens and earthy shades inspired by the natural world.</td>
+    <td class='py-3'>
+      <div class="flex gap-1" data-theme="nature">
+        <div class="size-7 rounded border border-default bg-primary"></div>
+        <div class="size-7 rounded border border-default bg-secondary"></div>
+        <div class="size-7 rounded border border-default bg-default"></div>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td class='py-3 text-default font-semibold'>Dracula</td>
+    <td class='py-3'>Deep purples and vivid pinks designed for bold, high-contrast interfaces.</td>
+    <td class='py-3'>
+      <div class="flex gap-1" data-theme="dracula">
+        <div class="size-7 rounded border border-default bg-primary"></div>
+        <div class="size-7 rounded border border-default bg-secondary"></div>
+        <div class="size-7 rounded border border-default bg-default"></div>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td class='py-3 text-default font-semibold'>Ember</td>
+    <td class='py-3'>Warm oranges and amber tones that create an energetic, glowing aesthetic.</td>
+    <td class='py-3'>
+      <div class="flex gap-1" data-theme="ember">
+        <div class="size-7 rounded border border-default bg-primary"></div>
+        <div class="size-7 rounded border border-default bg-secondary"></div>
+        <div class="size-7 rounded border border-default bg-default"></div>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td class='py-3 text-default font-semibold'>Midnight</td>
+    <td class='py-3'>Deep blues and indigos designed for calm, modern dark experiences.</td>
+    <td class='py-3'>
+      <div class="flex gap-1" data-theme="midnight">
+        <div class="size-7 rounded border border-default bg-primary"></div>
+        <div class="size-7 rounded border border-default bg-secondary"></div>
+        <div class="size-7 rounded border border-default bg-default"></div>
+      </div>
+    </td>
+  </tr>
+</HbTable>
+
+### How to use themes
+
+By default, Hummingbird UI includes the `default` theme. To use a different prebuilt theme, simply import the corresponding CSS file in the project. Each theme has built in [dark mode](/docs/customize/dark-mode) support, so dark mode will automatically work when the theme is imported.
+
+Only one theme should be imported at a time, as importing multiple themes will cause the last one to override the others.
+
+<Example lang="css" showPreview={false} 
+  code={`/* Import the desired theme */
+  @import "@hummingbirdui/hummingbird/src/themes/luxury.css";
+
+  /* @import "@hummingbirdui/hummingbird/src/themes/retro.css"; */
+  /* @import "@hummingbirdui/hummingbird/src/themes/arctic.css"; */
+  /* @import "@hummingbirdui/hummingbird/src/themes/nature.css"; */
+  /* @import "@hummingbirdui/hummingbird/src/themes/dracula.css"; */
+  /* @import "@hummingbirdui/hummingbird/src/themes/ember.css"; */
+  /* @import "@hummingbirdui/hummingbird/src/themes/midnight.css"; */
+`} />
+
+A complete set of Tailwind color palettes is available for every theme. See the [color palettes](/docs/customize/colors#default-color-palette-reference) reference for details.
 
 ## Customizing theme
 
@@ -26,7 +145,7 @@ Redefine theme variables by declaring them in `@theme` after importing Hummingbi
 @import "@hummingbirdui/hummingbird";
 
 @theme {
-  --color-primary: #0074e6;
+  --color-primary: oklch(65.2% 0.19 253.205);
   --font-sans: "Figtree", ui-sans-serif, system-ui, sans-serif;
 }
 ```
@@ -61,36 +180,9 @@ Customize and add new responsive breakpoints by overriding `--breakpoint-*` vari
 }
 ```
 
-## Multiple themes
+## List of theme variables
 
-Hummingbird uses a small set of theme variables. By overriding these variables within a new theme scope, multiple themes can be created.
-
-```sass
-@theme {
-  --color-primary: var(--color-blue-500);
-  --color-secondary: var(--color-purple-500);
-}
-
-@variant dark {
-  --color-primary: var(--color-blue-400);
-  --color-secondary: var(--color-purple-400);
-}
-
-@variant forest {
-  --color-primary: var(--color-blue-600);
-  --color-secondary: var(--color-purple-600);
-}
-```
-
-## Reboot
-
-Reboot is a foundational stylesheet that resets browser defaults and applies basic element styles. It provides a clean, consistent starting point for building interfaces and ensures visual consistency across browsers.
-
-For more details, follow the [Reboot](/docs/content/reboot) documentation.
-
-## Hummingbird theme variables
-
-Hummingbird UI provides a small, consistent set of semantic tokens as Tailwind theme variables. These variables create utilities and can be overridden later to change the look and feel without changing the HTML.
+Hummingbird UI provides a small, consistent set of semantic theme variables. These variables create utilities and can be overridden later to change the look and feel without changing the HTML. See dark mode variable overrides [ here](/docs/customize/dark-mode#dark-mode-variable-overrides).
 
 ```sass
 @theme {
@@ -181,6 +273,37 @@ Hummingbird UI provides a small, consistent set of semantic tokens as Tailwind t
   --shadow-2xl: 16px 39px 67px 0px rgba(0, 0, 0, 0.11), 1px 20px 65px 0px rgba(0, 0, 0, 0.02), 2px 10px 10px 0px rgba(0, 0, 0, 0.01), 0px -2px 6px 0px rgba(0, 0, 0, 0.03);
 }
 ```
+
+## How to use multiple themes at once
+
+Hummingbird uses a small set of theme variables. By overriding these variables within a new theme scope, multiple themes can be created.
+
+1. Create custom variant for the new themes.
+
+```css
+@custom-variant luxury (&:where(.luxury, .luxury *));
+@custom-variant retro (&:where(.retro, .retro *));
+```
+<br/>
+
+2. Define the theme variables within the new variant scope. If you want to use the existing theme’s color, simply copy all the variables from the corresponding Hummingbird theme file and paste them into the new variant scope.
+
+```sass
+@variant luxury {
+  --color-primary: var(--color-blue-600);
+  --color-secondary: var(--color-purple-600);
+}
+@variant retro {
+  --color-primary: var(--color-green-600);
+  --color-secondary: var(--color-yellow-600);
+}
+```
+
+## Reboot
+
+Reboot is a foundational stylesheet that resets browser defaults and applies basic element styles. It provides a clean, consistent starting point for building interfaces and ensures visual consistency across browsers.
+
+For more details, follow the [Reboot](/docs/content/reboot) documentation.
 
 ## Tailwind's helper functions
 
