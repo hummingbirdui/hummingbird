@@ -28,6 +28,6 @@
     "playwright": "^1.59.1",
     "tsup": "^6.7.0",
     "typescript": "^5.9.3",
-    "vitest": "^2.1.9"
+    "vitest": "^4.1.8"
   }
 }

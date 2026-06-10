@@ -11,48 +11,63 @@ const { color, class: className = '' } = Astro.props;
   <slot />
 </div>
 
-<script type="module">
+<script>
+  declare global {
+    interface Window {
+      __GradientCardHoverInit?: boolean;
+    }
+  }
+
   if (!window.__GradientCardHoverInit) {
     window.__GradientCardHoverInit = true;
 
     const DEFAULT_SPEED = 90;
     const RESET_DURATION = 1000;
 
-    function initElement(el) {
-      if (!el || el.dataset.gradientInit === true) return;
-      el.dataset.gradientInit = true;
+    function initElement(el: HTMLElement): void {
+      if (!el || el.dataset.gradientInit === 'true') return;
+      el.dataset.gradientInit = 'true';
 
       let angle = 118.65;
       const speedAttr = el.dataset.gradientSpeed;
       const speed = (speedAttr ? parseFloat(speedAttr) : NaN) || DEFAULT_SPEED;
 
       let running = false;
-      let rafId = null;
+      let rafId: number | null = null;
       let lastTime = 0;
 
-      function frame(now) {
+      function frame(now: number): void {
         if (!running) {
           rafId = null;
           return;
         }
+
         if (!lastTime) lastTime = now;
+
         const dt = (now - lastTime) / 1000;
         lastTime = now;
+
         angle = (angle + speed * dt) % 360;
-        el.style.setProperty('--gradient-angle', angle + 'deg');
+        el.style.setProperty('--gradient-angle', `${angle}deg`);
+
         rafId = requestAnimationFrame(frame);
       }
 
-      function start() {
+      function start(): void {
         if (running) return;
+
         running = true;
         lastTime = 0;
-        if (!rafId) rafId = requestAnimationFrame(frame);
+
+        if (!rafId) {
+          rafId = requestAnimationFrame(frame);
+        }
       }
 
-      function stop() {
+      function stop(): void {
         running = false;
         lastTime = 0;
+
         if (rafId) {
           cancelAnimationFrame(rafId);
           rafId = null;
@@ -62,13 +77,19 @@ const { color, class: className = '' } = Astro.props;
         const endAngle = 118.65;
         const startTime = performance.now();
 
-        function resetStep(now) {
+        function resetStep(now: number): void {
           const t = Math.min((now - startTime) / RESET_DURATION, 1);
           const newAngle = startAngle + (endAngle - startAngle) * t;
-          el.style.setProperty('--gradient-angle', newAngle + 'deg');
-          if (t < 1) requestAnimationFrame(resetStep);
-          else angle = endAngle;
+
+          el.style.setProperty('--gradient-angle', `${newAngle}deg`);
+
+          if (t < 1) {
+            requestAnimationFrame(resetStep);
+          } else {
+            angle = endAngle;
+          }
         }
+
         requestAnimationFrame(resetStep);
       }
 
@@ -79,17 +100,25 @@ const { color, class: className = '' } = Astro.props;
       el.addEventListener('blur', stop);
     }
 
-    document.querySelectorAll('.rotate-on-hover').forEach(initElement);
+    document.querySelectorAll<HTMLElement>('.rotate-on-hover').forEach(initElement);
 
-    const mo = new MutationObserver((mutations) => {
+    const mo = new MutationObserver((mutations: MutationRecord[]) => {
       for (const m of mutations) {
         for (const node of m.addedNodes) {
           if (!(node instanceof HTMLElement)) continue;
-          if (node.matches?.('.rotate-on-hover')) initElement(node);
-          node.querySelectorAll?.('.rotate-on-hover').forEach(initElement);
+
+          if (node.matches('.rotate-on-hover')) {
+            initElement(node);
+          }
+
+          node.querySelectorAll<HTMLElement>('.rotate-on-hover').forEach(initElement);
         }
       }
     });
-    mo.observe(document.documentElement || document.body, { childList: true, subtree: true });
+
+    mo.observe(document.documentElement, {
+      childList: true,
+      subtree: true,
+    });
   }
 </script>

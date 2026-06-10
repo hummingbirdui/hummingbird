@@ -29,7 +29,7 @@
     "@docsearch/css": "^3.9.0",
     "@docsearch/js": "^3.9.0",
     "@tailwindcss/vite": "^4.2.2",
-    "astro": "^5.18.1",
+    "astro": "^6.4.5",
     "astro-auto-import": "^0.4.6",
     "choices.js": "^11.2.2",
     "concurrently": "^9.2.1",
