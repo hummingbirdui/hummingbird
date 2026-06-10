@@ -1,35 +1,27 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="./hummingbird.svg" />
+    <link rel="icon" type="image/svg+xml" href="/hummingbird.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="./dist/style.css" rel="stylesheet" />
-    <title>PostCSS (TS) + Hummingbird</title>
+    <link href="./src/style.css" rel="stylesheet" />
+    <title>Vite (TS) + Hummingbird</title>
     <script>
       document.documentElement.classList.toggle(
-        "dark",
-        localStorage.theme === "dark" ||
-          (!("theme" in localStorage) &&
-            window.matchMedia("(prefers-color-scheme: dark)").matches)
+        'dark',
+        localStorage.theme === 'dark' ||
+          (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches),
       );
     </script>
   </head>
   <body>
-    <div class="p-8 min-h-screen flex items-center justify-center gap-8">
+    <div class="flex min-h-screen items-center justify-center gap-8 p-8">
       <div class="max-w-115">
-        <a
-          class="mb-12 navbar-brand flex items-center gap-2"
-          href="https://hbui.dev/"
-        >
-          <image
-            src="./src/assets/hbui-logo.svg"
-            alt="Logo"
-            class="size-10"
-          />
-          <h5 class="mb-0 text-muted font-semibold">hummingbird</h5>
+        <a class="navbar-brand mb-12 flex items-center gap-2" href="https://hbui.dev/">
+          <image src="./src/assets/hbui-logo.svg" alt="Logo" class="size-10" />
+          <h5 class="text-muted mb-0 font-semibold">hummingbird</h5>
         </a>
-        <button data-theme-toggle-btn class="mb-8 btn btn-outline-neutral">
+        <button data-theme-toggle-btn class="btn btn-outline-neutral mb-8">
           <svg
             width="20"
             height="20"
@@ -60,44 +52,125 @@
           <span class="dark:hidden">Light</span>
           <span class="hidden dark:block">Dark</span>
         </button>
-        <h2 class="mb-6 font-medium">
-          To get started, edit the index.html file.
-        </h2>
+        <h2 class="mb-6 font-medium">To get started, edit the index.html file.</h2>
         <p class="mb-12 max-w-100">
           Start customizing your project and make it your own. Explore the
-          <a href="https://hbui.dev/docs/customize/component/" target="_blank"
-            >customization doc</a
-          >
+          <a href="https://hbui.dev/docs/customize/component/" target="_blank">customization doc</a>
           to learn more.
         </p>
 
-        <div class="flex flex-col sm:flex-row gap-2">
-          <a
-            class="btn btn-primary"
-            href="https://hbui.dev/docs/getting-started/introduction/"
-            target="_blank"
+        <div class="flex flex-col gap-2 sm:flex-row">
+          <a class="btn btn-primary" href="https://hbui.dev/docs/getting-started/introduction/" target="_blank"
             >Documentation</a
           >
-          <a
-            class="btn"
-            href="https://hbui.dev/docs/components/overview/"
-            target="_blank"
-            >Component Overview</a
-          >
+          <a class="btn" href="https://hbui.dev/docs/components/overview/" target="_blank">Component Overview</a>
         </div>
       </div>
 
-      <img
-        class="size-125 rounded-2xl hidden lg:flex dark:hidden"
-        src="./src/assets/illustration-light.svg"
-      />
-      <img
-        class="size-125 rounded-2xl hidden dark:lg:flex"
-        src="./src/assets/illustration-dark.svg"
-      />
+      <svg
+        width="500"
+        height="500"
+        class="hidden lg:block"
+        viewBox="0 0 500 500"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <rect width="500" height="500" rx="24" fill="url(#paint0_linear_37847_36297)" />
+        <path
+          opacity="0.5"
+          d="M250.172 464.5C131.155 464.5 34.6719 368.017 34.6719 249C34.6718 129.983 131.154 33.5 250.172 33.5C369.189 33.5 465.672 129.983 465.672 249C465.672 368.017 369.189 464.5 250.172 464.5Z"
+          stroke="var(--color-contrast)"
+        />
+        <g opacity="0.5" filter="url(#filter0_f_37847_36297)">
+          <ellipse
+            cx="250.172"
+            cy="251"
+            rx="140"
+            ry="140"
+            transform="rotate(180 250.172 251)"
+            fill="url(#paint1_radial_37847_36297)"
+            fill-opacity="0.8"
+          />
+        </g>
+        <path
+          opacity="0.32"
+          d="M250.172 401.5C167.053 401.5 99.6719 334.119 99.6719 251C99.6719 167.881 167.053 100.5 250.172 100.5C333.291 100.5 400.672 167.881 400.672 251C400.672 334.119 333.291 401.5 250.172 401.5Z"
+          stroke="var(--color-contrast)"
+        />
+        <path
+          opacity="0.6"
+          d="M249.672 335.5C202.452 335.5 164.172 297.22 164.172 250C164.172 202.78 202.452 164.5 249.672 164.5C296.892 164.5 335.172 202.78 335.172 250C335.172 297.22 296.892 335.5 249.672 335.5Z"
+          fill="url(#paint2_linear_37847_36297)"
+          fill-opacity="0.44"
+          stroke="var(--color-contrast)"
+        />
+        <path
+          d="M226.997 220.901C232.943 217.204 242.509 214.964 249.682 227.169L282.089 291.387L266.148 278.157C262.828 275.401 258.793 273.689 254.729 272.237C245.944 269.096 234.495 261.945 231.548 248.768C230.42 243.725 228.799 233.715 224.867 229.408C223.884 228.33 222.487 227.781 221.108 227.303L201.027 220.345L221.236 222.435C223.266 222.645 225.264 221.978 226.997 220.901ZM255.762 233.882C261.148 228.659 277.013 219.089 297.027 222.699L264.359 250.92L255.762 233.882ZM232.252 222.662C230.382 222.662 228.865 224.179 228.865 226.049C228.865 227.92 230.382 229.436 232.252 229.436C234.122 229.436 235.638 227.919 235.638 226.049C235.638 224.179 234.122 222.663 232.252 222.662Z"
+          fill="url(#paint3_linear_37847_36297)"
+        />
+        <defs>
+          <filter
+            id="filter0_f_37847_36297"
+            x="1.78478"
+            y="2.61291"
+            width="496.774"
+            height="496.774"
+            filterUnits="userSpaceOnUse"
+            color-interpolation-filters="sRGB"
+          >
+            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+            <feGaussianBlur stdDeviation="54.1935" result="effect1_foregroundBlur_37847_36297" />
+          </filter>
+          <linearGradient
+            id="paint0_linear_37847_36297"
+            x1="404.088"
+            y1="57.5452"
+            x2="86.1668"
+            y2="443.455"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop offset="0.25" stop-color="var(--color-secondary-lighter)" />
+            <stop offset="0.75" stop-color="var(--color-primary-lighter)" />
+          </linearGradient>
+          <radialGradient
+            id="paint1_radial_37847_36297"
+            cx="0"
+            cy="0"
+            r="1"
+            gradientTransform="matrix(-169.68 227.36 -233.308 -27.4252 326.332 136.2)"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop stop-color="var(--color-primary-light)" />
+            <stop offset="1" stop-color="var(--color-secondary-light)" />
+          </radialGradient>
+          <linearGradient
+            id="paint2_linear_37847_36297"
+            x1="303.329"
+            y1="165"
+            x2="196.015"
+            y2="335"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop stop-color="var(--color-contrast)" />
+            <stop offset="1" stop-color="var(--color-primary-lighter)" />
+          </linearGradient>
+          <linearGradient
+            id="paint3_linear_37847_36297"
+            x1="243.678"
+            y1="191.812"
+            x2="304.621"
+            y2="336.174"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop stop-color="#1E90FF" />
+            <stop offset="0.5" stop-color="#0074E6" />
+            <stop offset="1" stop-color="#003970" />
+          </linearGradient>
+        </defs>
+      </svg>
     </div>
 
-    <script type="module" src="./dist/main.js"></script>
-    <script src="../path/to/@hummingbirdui/hummingbird/dist/hummingbird.bundle.min.js"></script>
+    <script type="module" src="./src/main.ts"></script>
   </body>
 </html>
