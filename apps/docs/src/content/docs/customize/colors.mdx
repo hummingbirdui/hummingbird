@@ -363,16 +363,19 @@ These classes use theme’s color variables, so the UI stays consistent when cus
 
 ## Customize color
 
-Override any color by redefining its CSS variable inside a `@theme` block after importing Hummingbird:
+Override any theme color or palette color by redefining its CSS variable inside a `@theme` block after importing Hummingbird
 
 ```css
 @import "tailwindcss";
 @import "@hummingbirdui/hummingbird";
 
 @theme {
+  --color-blue-500: oklch(65.2% 0.19 253.205);
+  --color-purple-500: oklch(62.1% 0.253 305.351);
+
   --background-color-subtle: oklch(98% 0.02 240);
   --color-primary: oklch(65.2% 0.19 253.205);
-  --color-primary-dark: oklch(57.2% 0.194 255.787);
+  --color-secondary: oklch(62.1% 0.253 305.351);
 }
 ```
 

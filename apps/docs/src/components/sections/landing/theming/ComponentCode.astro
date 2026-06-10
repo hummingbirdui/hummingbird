@@ -7,8 +7,8 @@ import { MembersHTML } from './Members.astro';
 import { MeetingExpensesHTML } from './MeetingExpenses.astro';
 
 export const themingMarkup = iframeMarkup(
-  `<div data-theming-container class="mx-auto relative rounded-3xl h-full overflow-hidden">
-    <div data-light-components class="card rounded-3xl h-full">
+  `<div data-theming-container class="mx-auto relative rounded-4xl h-full overflow-hidden">
+    <div data-light-components class="card rounded-4xl h-full">
       <div class='card-body p-6 min-[592px]:p-8'>
         <div class='row mb-4 g-4'>
           <div class='min-[944px]:col-5 min-[944px]:order-1'>${BannerHTML}</div>
@@ -23,7 +23,7 @@ export const themingMarkup = iframeMarkup(
     </div>
     <div
       data-dark-components
-      class="card dark absolute inset-0 rounded-3xl"
+      class="card dark absolute inset-0 rounded-4xl"
       style="clip-path: inset(0 0 0 50%);"
     >
       <div class='card-body p-6 min-[592px]:p-8'>
