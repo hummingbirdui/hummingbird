@@ -28,7 +28,8 @@ Switching themes requires no markup changes—only variable values update.
 
 Override variables after importing Hummingbird:
 
-<Example lang='sass' showPreview={false} code={`@import "@hummingbirdui/hummingbird";
+<Example lang='sass' showPreview={false} code={`@import "tailwindcss";
+@import "@hummingbirdui/hummingbird";
 
 @theme {
   --background-color-default: var(--color-white);
@@ -36,11 +37,13 @@ Override variables after importing Hummingbird:
   --color-primary: var(--color-blue-500);
 }
 
-:root, :host { 
-    @variant dark {
-      --background-color-default: var(--color-gray-950);
-      --text-color-default: var(--color-gray-100);
-      --color-primary: var(--color-blue-400);
+@layer theme {
+    :root, :host { 
+      @variant dark {
+        --background-color-default: var(--color-gray-950);
+        --text-color-default: var(--color-gray-100);
+        --color-primary: var(--color-blue-400);
+      }
     }
 }`} />
 
