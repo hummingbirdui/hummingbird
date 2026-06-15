@@ -1,0 +1,186 @@
+---
+title: Timeline
+description: A flexible timeline component for displaying chronological events in vertical or horizontal layouts.
+toc: true
+
+classNames:
+  component:
+    - class: timeline
+      desc: Timeline container
+  inner:
+    - class: timeline-item
+      desc: Timeline item
+  color:
+    - class: timeline-{color}
+      desc: Color variant
+  style:
+    - class: timeline-horizontal
+      desc: Horizontal layout
+    - class: timeline-centered
+      desc: Centered alignment
+    - class: timeline-opposite
+      desc: Opposite alignment
+    - class: timeline-flush
+      desc: Flush spacing
+---
+
+## Overview
+
+The Timeline component is used to display a sequence of events in chronological order. It supports vertical and horizontal layouts, color states, and custom indicators.
+
+---
+
+## Anatomy
+
+A timeline consists of:
+
+- `timeline` → root container
+- `timeline-item` → single event
+- `timeline-dot` → indicator node
+- optional start / end content
+
+---
+
+## Basic Timeline
+
+<Example code={`
+<ul class="timeline">
+  <li class="timeline-item">
+    <div class="timeline-start">1998</div>
+    <div class="timeline-indicator">
+      <div class="timeline-dot"></div>
+    </div>
+    <div class="timeline-end">iMac released</div>
+    <hr class="timeline-connector" />
+  </li>
+
+  <li class="timeline-item">
+    <div class="timeline-start">2001</div>
+    <div class="timeline-indicator">
+      <div class="timeline-dot"></div>
+    </div>
+    <div class="timeline-end">iPod launched</div>
+  </li>
+
+  <li class="timeline-item">
+    <div class="timeline-start">2007</div>
+    <div class="timeline-indicator">
+      <div class="timeline-dot"></div>
+    </div>
+    <div class="timeline-end">iPhone introduced</div>
+  </li>
+</ul>
+`} />
+
+---
+
+## With Icons
+
+<Example code={`
+<ul class="timeline timeline-icon">
+  <li class="timeline-item">
+    <div class="timeline-start">2007</div>
+    <div class="timeline-indicator">
+      <div class="timeline-dot">
+        ✓
+      </div>
+    </div>
+    <div class="timeline-end">Milestone completed</div>
+  </li>
+</ul>
+`} />
+
+---
+
+## Color Variants
+
+Use color utilities to indicate status.
+
+- `timeline-primary`
+- `timeline-success`
+- `timeline-warning`
+- `timeline-danger`
+
+---
+
+## States
+
+### Completed
+
+<Example code={`
+<ul class="timeline timeline-completed">
+  <li class="timeline-item">
+    <div class="timeline-indicator">
+      <div class="timeline-dot"></div>
+    </div>
+    <div class="timeline-end">Task completed</div>
+  </li>
+</ul>
+`} />
+
+### Active
+
+<Example code={`
+<ul class="timeline timeline-active">
+  <li class="timeline-item">
+    <div class="timeline-indicator">
+      <div class="timeline-dot"></div>
+    </div>
+    <div class="timeline-end">In progress</div>
+  </li>
+</ul>
+`} />
+
+---
+
+## Horizontal Timeline
+
+<Example code={`
+<ul class="timeline timeline-horizontal">
+  <li class="timeline-item">
+    <div class="timeline-start">Step 1</div>
+    <div class="timeline-indicator">
+      <div class="timeline-dot"></div>
+    </div>
+    <div class="timeline-end">Start</div>
+  </li>
+
+  <li class="timeline-item">
+    <div class="timeline-start">Step 2</div>
+    <div class="timeline-indicator">
+      <div class="timeline-dot"></div>
+    </div>
+    <div class="timeline-end">Process</div>
+  </li>
+
+  <li class="timeline-item">
+    <div class="timeline-start">Step 3</div>
+    <div class="timeline-indicator">
+      <div class="timeline-dot"></div>
+    </div>
+    <div class="timeline-end">Finish</div>
+  </li>
+</ul>
+`} />
+
+---
+
+## Variants
+
+### Centered
+Centers content around the timeline axis.
+
+### Opposite
+Places content on alternating sides.
+
+### Flush
+Removes spacing between items for compact layouts.
+
+---
+
+## Best Practices
+
+- Keep timeline items short and readable
+- Use icons sparingly for key milestones only
+- Prefer vertical layout for dense information
+- Use horizontal layout for step flows or onboarding
