@@ -17,12 +17,13 @@ const { title, description } = Astro.props;
 
 const isHome = Astro.url.pathname === '/';
 const pageTitle = isHome ? `${SITE_TITLE} · ${SITE_DESCRIPTION}` : `${title} · ${SITE_TITLE}`;
+const ogImage = new URL('/images/og/og-image.png', Astro.site);
 ---
 
 <!-- Global Metadata -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<meta name="robots" content="index, follow" />
 <link rel="sitemap" href="/sitemap-index.xml" />
 <link rel="alternate" type="application/rss+xml" title={SITE_TITLE} href={new URL('rss.xml', Astro.site)} />
 <meta name="generator" content={Astro.generator} />
@@ -31,20 +32,31 @@ const pageTitle = isHome ? `${SITE_TITLE} · ${SITE_DESCRIPTION}` : `${title} ·
 
 <!-- Primary Meta Tags -->
 <title>{pageTitle}</title>
-<meta name="title" content={title} />
+<meta name="title" content={pageTitle} />
 <meta name="description" content={description} />
 <Favicons />
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website" />
-<meta property="og:url" content={Astro.url} />
-<meta property="og:title" content={title} />
-<meta property="og:image" content="/images/logos/hummingbird-lg.svg" />
+<meta property="og:url" content={canonicalURL} />
+<meta property="og:title" content={pageTitle} />
+<meta property="og:image" content={ogImage} />
 <meta property="og:description" content={description} />
+<meta property="og:site_name" content={SITE_TITLE} />
+<meta property="og:locale" content="en_US" />
 
 <!-- Twitter -->
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:url" content={Astro.url} />
-<meta property="twitter:title" content={title} />
-<meta property="twitter:image" content="/images/logos/hummingbird-lg.svg" />
-<meta property="twitter:description" content={description} />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:url" content={canonicalURL} />
+<meta name="twitter:title" content={pageTitle} />
+<meta name="twitter:image" content={ogImage} />
+<meta name="twitter:description" content={description} />
+
+<!-- Structured Data -->
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": SITE_TITLE,
+  "url": Astro.site,
+  "description": SITE_DESCRIPTION
+})} />

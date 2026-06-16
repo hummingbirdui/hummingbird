@@ -16,6 +16,7 @@
     "deploy:internal": "echo staging.hbui.dev > ./dist/CNAME && gh-pages -d dist -r https://github.com/hummingbirdui/staging.git"
   },
   "dependencies": {
+    "@astrojs/sitemap": "^3.7.3",
     "@hummingbirdui/browser": "workspace:*",
     "@hummingbirdui/hummingbird": "workspace:*",
     "@tailwindcss/cli": "^4.2.2",
