@@ -24,7 +24,7 @@
   "devDependencies": {
     "@types/node": "^20.19.39",
     "h3": "^1.15.11",
-    "listhen": "^1.9.1",
+    "listhen": "^1.10.0",
     "playwright": "^1.59.1",
     "tsup": "^6.7.0",
     "typescript": "^5.9.3",
