@@ -19,11 +19,11 @@
     "@astrojs/sitemap": "^3.7.3",
     "@hummingbirdui/browser": "workspace:*",
     "@hummingbirdui/hummingbird": "workspace:*",
-    "@tailwindcss/cli": "^4.2.2",
+    "@tailwindcss/cli": "^4.3.1",
     "dedent": "^1.7.2",
     "sharp": "^0.34.5",
     "shiki": "^3.23.0",
-    "swiper": "^12.1.4"
+    "swiper": "^12.2.0"
   },
   "devDependencies": {
     "@astrojs/mdx": "^4.3.14",
