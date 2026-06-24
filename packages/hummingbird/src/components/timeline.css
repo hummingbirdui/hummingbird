@@ -13,7 +13,7 @@
 
 @utility timeline-item {
   @layer base {
-    @apply relative items-start grid;
+    @apply relative items-stretch grid;
 
     grid-template-columns:
       minmax(0, 1fr)
@@ -92,26 +92,44 @@
 
 @utility timeline-horizontal {
   @layer base {
-    @apply flex-row overflow-x-auto;
+    @apply flex flex-row overflow-x-auto;
   }
 
   .timeline-item {
-    @apply flex-1 pb-0;
+    @apply flex-1 pb-0 min-w-40 text-center;
     grid-template-columns: auto;
     grid-template-rows: auto auto auto;
   }
 
-  .timeline-dot::after {
-    left: 100%;
-    top: 50%;
-
-    transform: translateY(-50%);
-
-    width: calc(100% + var(--timeline-gap));
-    height: var(--timeline-line-width);
+  .timeline-start,
+  .timeline-end {
+    @apply text-center;
   }
 
-  .timeline-item:last-child .timeline-dot::after {
+  .timeline-middle {
+    @apply items-center w-full;
+  }
+
+  .timeline-middle::after {
+    content: '';
+
+    @apply absolute top-1/2 -translate-y-1/2 z-0;
+
+    left: calc(50% + (var(--timeline-dot-size) / 2));
+    right: calc(-50% + (var(--timeline-dot-size) / 2));
+    height: var(--timeline-line-width);
+    background: var(--timeline-line-color);
+  }
+
+  .timeline-dot::after {
+    display: none;
+  }
+
+  .timeline-dot {
+    @apply z-10;
+  }
+
+  .timeline-item:last-child .timeline-middle::after {
     display: none;
   }
 }
@@ -181,8 +199,30 @@
 
 @utility timeline-active {
   @layer base {
+    --timeline-dot-bg: var(--color-primary);
+
     .timeline-dot {
-      @apply ring-2 ring-offset-2 ring-primary/40;
+      @apply ring-2 ring-offset-2 ring-primary/40 shadow-sm;
+    }
+  }
+}
+
+@utility timeline-pending {
+  @layer base {
+    --timeline-dot-bg: var(--color-disabled);
+    --timeline-dot-color: var(--text-color-muted);
+  }
+}
+
+@utility timeline-disabled {
+  @layer base {
+    --timeline-dot-bg: var(--color-disabled);
+    --timeline-dot-color: var(--text-color-muted);
+    --timeline-line-color: var(--border-color-subtle);
+
+    .timeline-start,
+    .timeline-end {
+      @apply text-muted;
     }
   }
 }

@@ -16,12 +16,17 @@ classNames:
   style:
     - class: timeline-horizontal
       desc: Horizontal layout
-    - class: timeline-centered
-      desc: Centered alignment
-    - class: timeline-opposite
-      desc: Opposite alignment
-    - class: timeline-flush
-      desc: Flush spacing
+    - class: timeline-icon
+      desc: Icon indicator size
+  behavior:
+    - class: timeline-completed
+      desc: Completed item state
+    - class: timeline-active
+      desc: Active item state
+    - class: timeline-pending
+      desc: Pending item state
+    - class: timeline-disabled
+      desc: Disabled item state
 ---
 
 ## Overview
@@ -226,12 +231,50 @@ Use color utilities to indicate status.
 ### Active
 
 <Example code={`
-<ul class="timeline timeline-active">
-  <li class="timeline-item">
-    <div class="timeline-indicator">
+<ul class="timeline">
+  <li class="timeline-item timeline-completed">
+    <div class="timeline-start">
+      <span class="text-sm text-muted">10:30 AM</span>
+    </div>
+
+    <div class="timeline-middle">
       <div class="timeline-dot"></div>
     </div>
-    <div class="timeline-end">In progress</div>
+
+    <div class="timeline-end">
+      <div class="font-medium text-sm">Order confirmed</div>
+      <div class="text-sm text-muted">Payment and order details verified.</div>
+    </div>
+  </li>
+
+  <li class="timeline-item timeline-active">
+    <div class="timeline-start">
+      <span class="text-sm text-muted">Now</span>
+    </div>
+
+    <div class="timeline-middle">
+      <div class="timeline-dot"></div>
+    </div>
+
+    <div class="timeline-end">
+      <div class="font-medium text-sm">Preparing shipment</div>
+      <div class="text-sm text-muted">Your package is being packed.</div>
+    </div>
+  </li>
+
+  <li class="timeline-item timeline-pending">
+    <div class="timeline-start">
+      <span class="text-sm text-muted">Next</span>
+    </div>
+
+    <div class="timeline-middle">
+      <div class="timeline-dot"></div>
+    </div>
+
+    <div class="timeline-end">
+      <div class="font-medium text-sm">Out for delivery</div>
+      <div class="text-sm text-muted">Courier handoff is pending.</div>
+    </div>
   </li>
 </ul>
 `} />
@@ -242,44 +285,60 @@ Use color utilities to indicate status.
 
 <Example code={`
 <ul class="timeline timeline-horizontal">
-  <li class="timeline-item">
-    <div class="timeline-start">Step 1</div>
-    <div class="timeline-indicator">
+  <li class="timeline-item timeline-completed">
+    <div class="timeline-start">
+      <div class="font-medium text-sm">Step 1</div>
+    </div>
+
+    <div class="timeline-middle">
       <div class="timeline-dot"></div>
     </div>
-    <div class="timeline-end">Start</div>
+
+    <div class="timeline-end">
+      <div class="text-sm text-muted">Start</div>
+    </div>
   </li>
 
-  <li class="timeline-item">
-    <div class="timeline-start">Step 2</div>
-    <div class="timeline-indicator">
+  <li class="timeline-item timeline-active">
+    <div class="timeline-start">
+      <div class="font-medium text-sm">Step 2</div>
+    </div>
+
+    <div class="timeline-middle">
       <div class="timeline-dot"></div>
     </div>
-    <div class="timeline-end">Process</div>
+
+    <div class="timeline-end">
+      <div class="text-sm text-muted">Process</div>
+    </div>
   </li>
 
-  <li class="timeline-item">
-    <div class="timeline-start">Step 3</div>
-    <div class="timeline-indicator">
+  <li class="timeline-item timeline-pending">
+    <div class="timeline-start">
+      <div class="font-medium text-sm">Step 3</div>
+    </div>
+
+    <div class="timeline-middle">
       <div class="timeline-dot"></div>
     </div>
-    <div class="timeline-end">Finish</div>
+
+    <div class="timeline-end">
+      <div class="text-sm text-muted">Finish</div>
+    </div>
   </li>
 </ul>
 `} />
 
 ---
 
-## Variants
+## State Utilities
 
-### Centered
-Centers content around the timeline axis.
+Use state utilities on `timeline-item` to communicate progress.
 
-### Opposite
-Places content on alternating sides.
-
-### Flush
-Removes spacing between items for compact layouts.
+- `timeline-completed`
+- `timeline-active`
+- `timeline-pending`
+- `timeline-disabled`
 
 ---
 
