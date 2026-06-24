@@ -1,0 +1,37 @@
+---
+import TemplateCard from '@components/templates/TemplateCard.astro';
+import templates from '@data/templates';
+import BaseLayout from '@layouts/BaseLayout.astro';
+---
+
+<BaseLayout>
+  <div class="container px-6 md:px-10 max-w-5xl xl:max-w-7xl mx-auto my-10">
+    <div class="text-center mb-14">
+      <span
+        class="badge text-muted font-medium text-sm border-0 mb-6 rounded-full bg-linear-to-r from-secondary to-primary p-px"
+      >
+        <div class="p-1 bg-default pr-2 rounded-full">
+          <span class="badge badge-primary me-1"
+            >New
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"
+              ><path
+                fill="currentColor"
+                d="m11 14.5l-5.925-.75q-.625-.075-.813-.675t.263-1.025l10.225-9.8q.125-.125.3-.187T15.525 2q.5 0 .763.425t.012.875L13 9.5l5.925.75q.625.075.813.675t-.263 1.025L9.25 21.75q-.125.125-.3.188T8.475 22q-.5 0-.763-.425T7.7 20.7z"
+                stroke-width="0.5"
+                stroke="currentColor"></path></svg
+            ></span
+          >
+          Production-ready UI templates
+        </div>
+      </span>
+      <h1 class="text-4xl md:text-6xl -tracking-[6.5%]">
+        Complete Tailwind CSS templates <br class="hidden sm:block" /> for modern web projects.
+      </h1>
+      <p class="md:text-lg">
+        Beautiful starting points for modern web projects, built with all <br /> Hummingbird components and clean, optimized
+        code.
+      </p>
+    </div>
+    {templates.map((template, index) => <TemplateCard template={template} className={index % 2 === 0 ? 'mb-6' : ''} />)}
+  </div>
+</BaseLayout>

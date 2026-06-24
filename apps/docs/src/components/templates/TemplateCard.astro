@@ -1,0 +1,38 @@
+---
+import { Image } from 'astro:assets';
+
+const { template, className } = Astro.props;
+const { title, category, description, tags, previewLink, buyLink, previewImages } = template;
+---
+
+<div class={`card rounded-3xl ${className}`}>
+  <div class="card-body flex max-lg:flex-col gap-6 lg:gap-15 justify-between p-6 lg:p-8">
+    <div class="lg:max-w-75 flex flex-col items-start justify-between max-lg:order-1">
+      <div>
+        <h5 class="mb-0">{title}</h5>
+        <p class="text-base">{category}</p>
+        <p class="mb-4 text-default">{description}</p>
+        <div class="max-sm:hidden">
+          {tags.map((tag: string) => <span class="badge badge-subtle me-3 mb-3">{tag}</span>)}
+        </div>
+      </div>
+      <div class="flex gap-2 mt-2 sm:mt-5 w-full">
+        <a href={buyLink} target="_blank" class="btn btn-primary text-nowrap max-sm:flex-1">Get this template</a>
+        <a href={previewLink} target="_blank" class="btn btn-subtle-neutral text-nowrap max-sm:flex-1">Live preview</a>
+      </div>
+    </div>
+    <div class="grid sm:grid-cols-2 xl:grid-cols-3 gap-4">
+      {
+        previewImages.map((image: ImageMetadata, index: number) => (
+          <Image
+            src={image}
+            alt={title}
+            class={`object-cover border border-subtle rounded-lg ${
+              index > 3 ? 'hidden xl:block' : index > 1 ? 'hidden lg:block' : index > 0 ? 'hidden sm:block' : ''
+            }`}
+          />
+        ))
+      }
+    </div>
+  </div>
+</div>
