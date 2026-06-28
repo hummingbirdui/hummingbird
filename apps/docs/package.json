@@ -23,7 +23,7 @@
     "dedent": "^1.7.2",
     "sharp": "^0.34.5",
     "shiki": "^3.23.0",
-    "swiper": "^12.2.0"
+    "swiper": "^14.0.0"
   },
   "devDependencies": {
     "@astrojs/mdx": "^4.3.14",
