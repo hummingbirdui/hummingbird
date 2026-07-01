@@ -13,20 +13,13 @@ classNames:
   color:
     - class: timeline-{color}
       desc: Color variant
-  style:
-    - class: timeline-horizontal
-      desc: Horizontal layout
-    - class: timeline-icon
-      desc: Icon indicator size
-  behavior:
-    - class: timeline-completed
-      desc: Completed item state
-    - class: timeline-active
-      desc: Active item state
-    - class: timeline-pending
-      desc: Pending item state
-    - class: timeline-disabled
-      desc: Disabled item state
+style:
+     - class: timeline-horizontal
+       desc: Horizontal layout
+     - class: timeline-icon
+       desc: Icon indicator size
+     - class: timeline-horizontal-reverse
+       desc: Horizontal reverse layout
 ---
 
 ## Overview
@@ -341,6 +334,171 @@ Use state utilities on `timeline-item` to communicate progress.
 - `timeline-disabled`
 
 ---
+
+## Outline Timeline
+
+A minimal timeline variant with only the dot and content, no opposing columns.
+
+<Example code={`<ul class="timeline">
+    <li class="timeline-item">
+      <div class="timeline-middle">
+        <div class="timeline-dot"></div>
+      </div>
+
+      <div class="timeline-end">
+        <div class="font-medium text-sm">Order shipped</div>
+        <div class="text-sm text-muted">Your package is on the way.</div>
+      </div>
+    </li>
+
+    <li class="timeline-item">
+      <div class="timeline-middle">
+        <div class="timeline-dot"></div>
+      </div>
+
+      <div class="timeline-end">
+        <div class="font-medium text-sm">Payment processed</div>
+        <div class="text-sm text-muted">Transaction completed successfully.</div>
+      </div>
+    </li>
+
+    <li class="timeline-item">
+      <div class="timeline-middle">
+        <div class="timeline-dot"></div>
+      </div>
+
+      <div class="timeline-end">
+        <div class="font-medium text-sm">Order placed</div>
+        <div class="text-sm text-muted">We received your order request.</div>
+      </div>
+    </li>
+  </ul>
+`} />
+
+---
+
+## Centered Timeline
+
+Center timeline content for a more balanced layout using the `.timeline-center` class.
+
+<Example code={`<ul class="timeline timeline-center">
+    <li class="timeline-item">
+      <div class="timeline-middle">
+        <div class="timeline-dot"></div>
+      </div>
+
+      <div class="timeline-end max-w-60">
+        <div class="font-medium text-sm">Project Kickoff</div>
+        <div class="text-sm text-muted">Initial planning and requirements gathering.</div>
+      </div>
+    </li>
+
+    <li class="timeline-item">
+      <div class="timeline-middle">
+        <div class="timeline-dot timeline-success"></div>
+      </div>
+
+      <div class="timeline-end max-w-60">
+        <div class="font-medium text-sm">Design Phase</div>
+        <div class="text-sm text-muted">UI/UX design and prototyping.</div>
+      </div>
+    </li>
+
+    <li class="timeline-item">
+      <div class="timeline-middle">
+        <div class="timeline-dot timeline-warning"></div>
+      </div>
+
+      <div class="timeline-end max-w-60">
+        <div class="font-medium text-sm">Development</div>
+        <div class="text-sm text-muted">Frontend and backend implementation.</div>
+      </div>
+    </li>
+
+    <li class="timeline-item">
+      <div class="timeline-middle">
+        <div class="timeline-dot timeline-primary"></div>
+      </div>
+
+      <div class="timeline-end max-w-60">
+        <div class="font-medium text-sm">Launch</div>
+        <div class="text-sm text-muted">Product goes live.</div>
+      </div>
+    </li>
+  </ul>
+`} />
+
+---
+
+## With Cards
+
+Combine timeline with cards for richer content presentation.
+
+<Example code={`<ul class="timeline">
+    <li class="timeline-item">
+      <div class="timeline-middle">
+        <div class="timeline-dot"></div>
+      </div>
+
+      <div class="timeline-end">
+        <div class="card max-w-80">
+          <div class="card-header">
+            <p class="mb-0">Q1 2025</p>
+          </div>
+          <div class="card-body">
+            <h6 class="card-title mb-1">Product Launch</h6>
+            <p class="text-sm mb-0">Successfully launched our flagship product with 1000+ early adopters.</p>
+          </div>
+        </div>
+      </div>
+    </li>
+
+    <li class="timeline-item">
+      <div class="timeline-middle">
+        <div class="timeline-dot"></div>
+      </div>
+
+      <div class="timeline-end">
+        <div class="card max-w-80">
+          <div class="card-header">
+            <p class="mb-0">Q2 2025</p>
+          </div>
+          <div class="card-body">
+            <h6 class="card-title mb-1">Series A Funding</h6>
+            <p class="text-sm mb-0">Secured $10M in Series A funding to accelerate growth.</p>
+          </div>
+        </div>
+      </div>
+    </li>
+  </ul>
+`} />
+
+---
+
+## Class Overview
+
+A list of all available utility classes for the timeline component.
+
+export const { classNames } = frontmatter;
+
+<ClassTable classNames={classNames}/>
+
+---
+
+## CSS variables
+
+The timeline component is built using a set of CSS variables. These variables provide flexibility for customizing styles. Read more about customizing with CSS variables [here](/docs/customize/component#using-css-variables).
+
+<Example lang='sass' showPreview={false}
+  code={`.timeline {
+    --timeline-gap: --spacing(4);
+    --timeline-line-width: 2px;
+    --timeline-line-color: var(--border-color-default);
+    --timeline-dot-size: --spacing(4);
+    --timeline-dot-bg: var(--color-primary);
+    --timeline-dot-color: var(--color-white);
+  }`}
+/>
 
 ## Best Practices
 

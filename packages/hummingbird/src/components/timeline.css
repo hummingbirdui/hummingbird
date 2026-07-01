@@ -92,45 +92,64 @@
 
 @utility timeline-horizontal {
   @layer base {
-    @apply flex flex-row overflow-x-auto;
+    --timeline-gap: --spacing(4);
+    &.timeline {
+      @apply flex-row;
+    }
+
+    .timeline-item {
+      @apply flex-1 text-center relative;
+      display: flex !important;
+      flex-direction: column;
+      grid-template-columns: none;
+      min-width: var(--spacing(40));
+      padding-bottom: 0;
+    }
+
+    .timeline-start,
+    .timeline-end {
+      @apply text-center;
+    }
+
+    .timeline-middle {
+      @apply flex items-center justify-center w-full;
+      position: relative;
+      width: auto;
+    }
+
+    .timeline-middle::after {
+      content: '';
+
+      @apply absolute top-1/2 -translate-y-1/2;
+
+      left: calc(var(--timeline-dot-size) / 2);
+      right: 0;
+      height: var(--timeline-line-width);
+      background: var(--timeline-line-color);
+    }
+
+    .timeline-dot::after {
+      display: none !important;
+    }
+
+    .timeline-dot {
+      @apply z-10;
+    }
+
+    .timeline-item:last-child .timeline-middle::after {
+      display: none;
+    }
   }
+}
 
-  .timeline-item {
-    @apply flex-1 pb-0 min-w-40 text-center;
-    grid-template-columns: auto;
-    grid-template-rows: auto auto auto;
-  }
+@utility timeline-horizontal-reverse {
+  @layer base {
+    --timeline-direction: row-reverse;
 
-  .timeline-start,
-  .timeline-end {
-    @apply text-center;
-  }
-
-  .timeline-middle {
-    @apply items-center w-full;
-  }
-
-  .timeline-middle::after {
-    content: '';
-
-    @apply absolute top-1/2 -translate-y-1/2 z-0;
-
-    left: calc(50% + (var(--timeline-dot-size) / 2));
-    right: calc(-50% + (var(--timeline-dot-size) / 2));
-    height: var(--timeline-line-width);
-    background: var(--timeline-line-color);
-  }
-
-  .timeline-dot::after {
-    display: none;
-  }
-
-  .timeline-dot {
-    @apply z-10;
-  }
-
-  .timeline-item:last-child .timeline-middle::after {
-    display: none;
+    .timeline-middle::after {
+      left: 0;
+      right: calc(var(--timeline-dot-size) / 2);
+    }
   }
 }
 
@@ -223,6 +242,29 @@
     .timeline-start,
     .timeline-end {
       @apply text-muted;
+    }
+  }
+}
+
+@utility timeline-center {
+  @layer base {
+    .timeline-item {
+      grid-template-columns: auto minmax(0, 1fr);
+      justify-items: start;
+      column-gap: var(--timeline-gap);
+    }
+
+    .timeline-middle {
+      @apply order-1 justify-self-start;
+    }
+
+    .timeline-start {
+      display: none;
+    }
+
+    .timeline-dot::after {
+      left: var(--timeline-dot-size);
+      transform: translateX(0);
     }
   }
 }
