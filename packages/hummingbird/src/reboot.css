@@ -9,6 +9,10 @@
     text-[length:var(--body-font-size)]
     font-[var(--body-font-weight)]
     leading-[var(--body-line-height)];
+
+    * {
+      @apply text-(--body-color);
+    }
   }
 
   hr {
