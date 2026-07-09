@@ -118,6 +118,13 @@ jobs:
 
           for pkg in packages/hummingbird packages/browser packages/create-hummingbird-app; do
             cd "$pkg"
-            pnpm publish --no-git-checks --tag "$DIST_TAG"
+            NAME=$(jq -r '.name' package.json)
+            VERSION=$(jq -r '.version' package.json)
+
+            if npm view "$NAME@$VERSION" version > /dev/null 2>&1; then
+              echo "⏭️ $NAME@$VERSION is already published, skipping"
+            else
+              pnpm publish --no-git-checks --tag "$DIST_TAG"
+            fi
             cd - > /dev/null
           done
