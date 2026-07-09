@@ -9,10 +9,6 @@
     text-[length:var(--body-font-size)]
     font-[var(--body-font-weight)]
     leading-[var(--body-line-height)];
-
-    * {
-      @apply text-(--body-color);
-    }
   }
 
   hr {
@@ -160,6 +156,7 @@
   :host {
     @variant dark {
       color-scheme: dark;
+      color: var(--body-color);
     }
   }
 }
