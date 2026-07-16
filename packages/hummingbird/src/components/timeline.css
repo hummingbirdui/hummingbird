@@ -47,6 +47,7 @@
       width: var(--timeline-line-width);
       height: calc(100% + 1rem);
       background: var(--timeline-line-color);
+      top: --spacing(2);
     }
 
     .timeline-item:last-child &::before {
@@ -70,6 +71,7 @@
 
     background: var(--timeline-dot-bg);
     color: var(--timeline-dot-color);
+    transform: translateY(calc((1.25rem - var(--timeline-dot-size)) / 2));
   }
 }
 
@@ -266,6 +268,7 @@
     .timeline-middle::before {
       left: calc(1 / 2 * 100%);
       transform: translateX(0);
+      top: 8px;
     }
   }
 }
