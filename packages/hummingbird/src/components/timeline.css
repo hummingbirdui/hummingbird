@@ -105,6 +105,7 @@
       grid-template-columns: none;
       min-width: var(--spacing(40));
       padding-bottom: 0;
+      gap: --spacing(2);
     }
 
     .timeline-start,
@@ -121,7 +122,7 @@
     .timeline-middle::after {
       content: '';
 
-      @apply absolute top-1/2 -translate-y-1/2;
+      @apply absolute top-2/3 -translate-y-1/2;
 
       left: 50%;
       width: 100%;
