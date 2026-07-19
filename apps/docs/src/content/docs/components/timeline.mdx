@@ -20,6 +20,8 @@ style:
        desc: Icon indicator size
      - class: timeline-horizontal-reverse
        desc: Horizontal reverse layout
+     - class: timeline-reverse
+       desc: Reverse content sides
 ---
 
 ## Overview
@@ -52,7 +54,7 @@ A timeline consists of:
       </div>
 
       <div class="timeline-end">
-        <div class="grid grid-cols-2">
+        <div class="grid grid-cols-2 gap-1 w-full">
           <div class="font-medium text-sm">Main</div>
           <div class="text-subtle font-medium text-sm">Subtext 1</div>
           <div class="text-sm text-muted">
@@ -73,7 +75,7 @@ A timeline consists of:
       </div>
 
       <div class="timeline-end">
-        <div class="grid grid-cols-2">
+        <div class="grid grid-cols-2 gap-1 w-full">
           <div class="font-medium text-sm">Main</div>
           <div class="text-subtle font-medium text-sm">Subtext 1</div>
           <div class="text-sm text-muted">
@@ -101,7 +103,7 @@ A timeline consists of:
       </div>
 
       <div class="timeline-end">
-        <div class="grid grid-cols-2">
+        <div class="grid grid-cols-2 gap-1 w-full">
           <div class="font-medium text-sm">Main</div>
           <div class="text-subtle font-medium text-sm">Subtext 1</div>
           <div class="text-sm text-muted">
@@ -122,7 +124,7 @@ A timeline consists of:
       </div>
 
       <div class="timeline-end">
-        <div class="grid grid-cols-2">
+        <div class="grid grid-cols-2 gap-1 w-full">
           <div class="font-medium text-sm">Main</div>
           <div class="text-subtle font-medium text-sm">Subtext 1</div>
           <div class="text-sm text-muted">
@@ -150,7 +152,7 @@ A timeline consists of:
       </div>
 
       <div class="timeline-end">
-        <div class="grid grid-cols-2">
+        <div class="grid grid-cols-2 gap-1 w-full">
           <div class="text-subtle font-medium text-sm">Subtext 1</div>
           <div class="font-medium text-sm">Main</div>
           <div class="text-subtle font-medium text-sm">Subtext 2</div>
@@ -171,7 +173,7 @@ A timeline consists of:
       </div>
 
       <div class="timeline-end">
-        <div class="grid grid-cols-2">
+        <div class="grid grid-cols-2 gap-1 w-full">
           <div class="text-subtle font-medium text-sm">Subtext 1</div>
           <div class="font-medium text-sm">Main</div>
           <div class="text-subtle font-medium text-sm">Subtext 2</div>
@@ -357,11 +359,13 @@ Use state utilities on `timeline-item` to communicate progress.
 
 ---
 
-## Outline Timeline
+## Content on One Side
 
-A minimal timeline variant with only the dot and content, no opposing columns.
+Omit `timeline-start` or `timeline-end` to place content on a single side. The dot stays centered and the empty column collapses.
 
-<Example code={`<ul class="timeline timeline-center">
+### Content on the Right
+
+<Example code={`<ul class="timeline">
     <li class="timeline-item">
       <div class="timeline-middle">
         <div class="timeline-dot"></div>
@@ -403,23 +407,67 @@ A minimal timeline variant with only the dot and content, no opposing columns.
   </ul>
 `} />
 
----
+### Content on the Left
 
-## Centered Timeline
-
-Center timeline content for a more balanced layout using the `.timeline-center` class.
-
-<Example code={`<ul class="timeline timeline-center">
+<Example code={`<ul class="timeline">
     <li class="timeline-item">
+      <div class="timeline-start">
+        <div class="flex flex-col gap-0.5">
+          <div class="font-medium text-sm">Order shipped</div>
+          <div class="text-sm text-muted">Your package is on the way.</div>
+        </div>
+      </div>
+
       <div class="timeline-middle">
         <div class="timeline-dot"></div>
       </div>
+    </li>
 
-      <div class="timeline-end max-w-60">
+    <li class="timeline-item">
+      <div class="timeline-start">
         <div class="flex flex-col gap-0.5">
+          <div class="font-medium text-sm">Payment processed</div>
+          <div class="text-sm text-muted">Transaction completed successfully.</div>
+        </div>
+      </div>
+
+      <div class="timeline-middle">
+        <div class="timeline-dot"></div>
+      </div>
+    </li>
+
+    <li class="timeline-item">
+      <div class="timeline-start">
+        <div class="flex flex-col gap-0.5">
+          <div class="font-medium text-sm">Order placed</div>
+          <div class="text-sm text-muted">We received your order request.</div>
+        </div>
+      </div>
+
+      <div class="timeline-middle">
+        <div class="timeline-dot"></div>
+      </div>
+    </li>
+  </ul>
+`} />
+
+---
+
+## Alternate Sides
+
+Alternate between left and right content on successive items. Each item omits the column it doesn't need — the dot and line stay centered throughout.
+
+<Example code={`<ul class="timeline">
+    <li class="timeline-item">
+      <div class="timeline-start">
+        <div class="flex flex-col gap-0.5 max-w-60">
           <div class="font-medium text-sm">Project Kickoff</div>
           <div class="text-sm text-muted">Initial planning and requirements gathering.</div>
         </div>
+      </div>
+
+      <div class="timeline-middle">
+        <div class="timeline-dot"></div>
       </div>
     </li>
 
@@ -437,15 +485,15 @@ Center timeline content for a more balanced layout using the `.timeline-center` 
     </li>
 
     <li class="timeline-item">
-      <div class="timeline-middle">
-        <div class="timeline-dot timeline-warning"></div>
-      </div>
-
-      <div class="timeline-end max-w-60">
-        <div class="flex flex-col gap-0.5">
+      <div class="timeline-start">
+        <div class="flex flex-col gap-0.5 max-w-60">
           <div class="font-medium text-sm">Development</div>
           <div class="text-sm text-muted">Frontend and backend implementation.</div>
         </div>
+      </div>
+
+      <div class="timeline-middle">
+        <div class="timeline-dot timeline-warning"></div>
       </div>
     </li>
 
@@ -470,8 +518,10 @@ Center timeline content for a more balanced layout using the `.timeline-center` 
 
 Combine timeline with cards for richer content presentation.
 
-<Example code={`<ul class="timeline timeline-center">
+<Example code={`<ul class="timeline">
     <li class="timeline-item">
+      <div class="timeline-start"></div>
+
       <div class="timeline-middle">
         <div class="timeline-dot"></div>
       </div>
@@ -490,11 +540,7 @@ Combine timeline with cards for richer content presentation.
     </li>
 
     <li class="timeline-item">
-      <div class="timeline-middle">
-        <div class="timeline-dot"></div>
-      </div>
-
-      <div class="timeline-end">
+      <div class="timeline-start">
         <div class="card max-w-80">
           <div class="card-header">
             <p class="mb-0">Q2 2025</p>
@@ -504,6 +550,10 @@ Combine timeline with cards for richer content presentation.
             <p class="text-sm mb-0">Secured $10M in Series A funding to accelerate growth.</p>
           </div>
         </div>
+      </div>
+
+      <div class="timeline-middle">
+        <div class="timeline-dot"></div>
       </div>
     </li>
   </ul>
@@ -541,4 +591,5 @@ The timeline component is built using a set of CSS variables. These variables pr
 - Keep timeline items short and readable
 - Use icons sparingly for key milestones only
 - Prefer vertical layout for dense information
+- Omit `timeline-start` or `timeline-end` to place content on one side only
 - Use horizontal layout for step flows or onboarding

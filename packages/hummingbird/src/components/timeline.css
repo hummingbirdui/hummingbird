@@ -30,7 +30,9 @@
 
 @utility timeline-start {
   @layer base {
-    @apply text-right;
+    @apply flex justify-end text-right;
+    grid-column: 1;
+    grid-row: 1;
   }
 }
 
@@ -38,6 +40,8 @@
   @layer base {
     @apply relative flex justify-center;
     width: var(--timeline-dot-size);
+    grid-column: 2;
+    grid-row: 1;
 
     &::before {
       content: '';
@@ -58,7 +62,9 @@
 
 @utility timeline-end {
   @layer base {
-    @apply text-left;
+    @apply flex justify-start text-left;
+    grid-column: 3;
+    grid-row: 1;
   }
 }
 
@@ -78,15 +84,20 @@
 @utility timeline-reverse {
   @layer base {
     .timeline-start {
-      @apply order-3 text-left;
+      grid-column: 3;
+      grid-row: 1;
+      @apply flex justify-start text-left;
     }
 
     .timeline-middle {
-      @apply order-2;
+      grid-column: 2;
+      grid-row: 1;
     }
 
     .timeline-end {
-      @apply order-1 text-right;
+      grid-column: 1;
+      grid-row: 1;
+      @apply flex justify-end text-right;
     }
   }
 }
@@ -110,7 +121,7 @@
 
     .timeline-start,
     .timeline-end {
-      @apply text-center;
+      @apply justify-center text-center;
     }
 
     .timeline-middle {
@@ -246,30 +257,6 @@
     .timeline-start,
     .timeline-end {
       @apply text-muted;
-    }
-  }
-}
-
-@utility timeline-center {
-  @layer base {
-    .timeline-item {
-      grid-template-columns: auto minmax(0, 1fr);
-      justify-items: start;
-      column-gap: var(--timeline-gap);
-    }
-
-    .timeline-middle {
-      @apply justify-self-start;
-    }
-
-    .timeline-start {
-      display: none;
-    }
-
-    .timeline-middle::before {
-      left: calc(1 / 2 * 100%);
-      transform: translateX(0);
-      top: 8px;
     }
   }
 }
