@@ -199,151 +199,148 @@ Use color utilities to indicate status.
 
 ### Completed
 
-<Example code={`
-<ul class="timeline">
-  <li class="timeline-item timeline-success">
-    <div class="timeline-start">
-      <div class="font-medium">
-        Paid
+<Example code={`<ul class="timeline">
+    <li class="timeline-item timeline-success">
+      <div class="timeline-start">
+        <div class="font-medium">
+          Paid
+        </div>
       </div>
-    </div>
 
-    <div class="timeline-middle">
-      <div class="timeline-dot"></div>
-    </div>
-
-    <div class="timeline-end">
-      <div class="font-medium">
-        Invoice Settled
+      <div class="timeline-middle">
+        <div class="timeline-dot"></div>
       </div>
-    </div>
-  </li>
 
-  <li class="timeline-item timeline-warning">
-    <div class="timeline-start">
-      <div class="font-medium">
-        Paid
+      <div class="timeline-end">
+        <div class="font-medium">
+          Invoice Settled
+        </div>
       </div>
-    </div>
+    </li>
 
-    <div class="timeline-middle">
-      <div class="timeline-dot"></div>
-    </div>
-
-    <div class="timeline-end">
-      <div class="font-medium">
-        Invoice Settled
+    <li class="timeline-item timeline-warning">
+      <div class="timeline-start">
+        <div class="font-medium">
+          Paid
+        </div>
       </div>
-    </div>
-  </li>
-</ul>
+
+      <div class="timeline-middle">
+        <div class="timeline-dot"></div>
+      </div>
+
+      <div class="timeline-end">
+        <div class="font-medium">
+          Invoice Settled
+        </div>
+      </div>
+    </li>
+  </ul>
 `} />
 
 ### Active
 
-<Example code={`
-<ul class="timeline">
-  <li class="timeline-item timeline-completed">
-    <div class="timeline-start">
-      <div class="text-sm text-muted">10:30 AM</div>
-    </div>
-
-    <div class="timeline-middle">
-      <div class="timeline-dot"></div>
-    </div>
-
-    <div class="timeline-end">
-      <div class="flex flex-col gap-0.5">
-        <div class="font-medium text-sm">Order confirmed</div>
-        <div class="text-sm text-muted">Payment and order details verified.</div>
+<Example code={`<ul class="timeline">
+    <li class="timeline-item timeline-completed">
+      <div class="timeline-start">
+        <div class="text-sm text-muted">10:30 AM</div>
       </div>
-    </div>
-  </li>
 
-  <li class="timeline-item timeline-active">
-    <div class="timeline-start">
-      <div class="text-sm text-muted">Now</div>
-    </div>
-
-    <div class="timeline-middle">
-      <div class="timeline-dot"></div>
-    </div>
-
-    <div class="timeline-end">
-      <div class="flex flex-col gap-0.5">
-        <div class="font-medium text-sm">Preparing shipment</div>
-        <div class="text-sm text-muted">Your package is being packed.</div>
+      <div class="timeline-middle">
+        <div class="timeline-dot"></div>
       </div>
-    </div>
-  </li>
 
-  <li class="timeline-item timeline-pending">
-    <div class="timeline-start">
-      <div class="text-sm text-muted">Next</div>
-    </div>
-
-    <div class="timeline-middle">
-      <div class="timeline-dot"></div>
-    </div>
-
-    <div class="timeline-end">
-      <div class="flex flex-col gap-0.5">
-        <div class="font-medium text-sm">Out for delivery</div>
-        <div class="text-sm text-muted">Courier handoff is pending.</div>
+      <div class="timeline-end">
+        <div class="flex flex-col gap-0.5">
+          <div class="font-medium text-sm">Order confirmed</div>
+          <div class="text-sm text-muted">Payment and order details verified.</div>
+        </div>
       </div>
-    </div>
-  </li>
-</ul>
+    </li>
+
+    <li class="timeline-item timeline-active">
+      <div class="timeline-start">
+        <div class="text-sm text-muted">Now</div>
+      </div>
+
+      <div class="timeline-middle">
+        <div class="timeline-dot"></div>
+      </div>
+
+      <div class="timeline-end">
+        <div class="flex flex-col gap-0.5">
+          <div class="font-medium text-sm">Preparing shipment</div>
+          <div class="text-sm text-muted">Your package is being packed.</div>
+        </div>
+      </div>
+    </li>
+
+    <li class="timeline-item timeline-pending">
+      <div class="timeline-start">
+        <div class="text-sm text-muted">Next</div>
+      </div>
+
+      <div class="timeline-middle">
+        <div class="timeline-dot"></div>
+      </div>
+
+      <div class="timeline-end">
+        <div class="flex flex-col gap-0.5">
+          <div class="font-medium text-sm">Out for delivery</div>
+          <div class="text-sm text-muted">Courier handoff is pending.</div>
+        </div>
+      </div>
+    </li>
+  </ul>
 `} />
 
 ---
 
 ## Horizontal Timeline
 
-<Example code={`
-<ul class="timeline timeline-horizontal">
-  <li class="timeline-item timeline-completed">
-    <div class="timeline-start">
-      <div class="font-medium text-sm">Step 1</div>
-    </div>
+<Example code={`<ul class="timeline timeline-horizontal overflow-x-auto">
+    <li class="timeline-item timeline-completed">
+      <div class="timeline-start">
+        <div class="font-medium text-sm">Step 1</div>
+      </div>
 
-    <div class="timeline-middle">
-      <div class="timeline-dot"></div>
-    </div>
+      <div class="timeline-middle">
+        <div class="timeline-dot"></div>
+      </div>
 
-    <div class="timeline-end">
-      <div class="text-sm text-muted">Start</div>
-    </div>
-  </li>
+      <div class="timeline-end">
+        <div class="text-sm text-muted">Start</div>
+      </div>
+    </li>
 
-  <li class="timeline-item timeline-active">
-    <div class="timeline-start">
-      <div class="font-medium text-sm">Step 2</div>
-    </div>
+    <li class="timeline-item timeline-active">
+      <div class="timeline-start">
+        <div class="font-medium text-sm">Step 2</div>
+      </div>
 
-    <div class="timeline-middle">
-      <div class="timeline-dot"></div>
-    </div>
+      <div class="timeline-middle">
+        <div class="timeline-dot"></div>
+      </div>
 
-    <div class="timeline-end">
-      <div class="text-sm text-muted">Process</div>
-    </div>
-  </li>
+      <div class="timeline-end">
+        <div class="text-sm text-muted">Process</div>
+      </div>
+    </li>
 
-  <li class="timeline-item timeline-pending">
-    <div class="timeline-start">
-      <div class="font-medium text-sm">Step 3</div>
-    </div>
+    <li class="timeline-item timeline-pending">
+      <div class="timeline-start">
+        <div class="font-medium text-sm">Step 3</div>
+      </div>
 
-    <div class="timeline-middle">
-      <div class="timeline-dot"></div>
-    </div>
+      <div class="timeline-middle">
+        <div class="timeline-dot"></div>
+      </div>
 
-    <div class="timeline-end">
-      <div class="text-sm text-muted">Finish</div>
-    </div>
-  </li>
-</ul>
+      <div class="timeline-end">
+        <div class="text-sm text-muted">Finish</div>
+      </div>
+    </li>
+  </ul>
 `} />
 
 ---

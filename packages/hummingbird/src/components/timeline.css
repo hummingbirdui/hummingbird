@@ -111,20 +111,32 @@
 
     .timeline-item {
       @apply flex-1 text-center relative;
-      display: flex !important;
-      flex-direction: column;
-      grid-template-columns: none;
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr auto 1fr;
       min-width: var(--spacing(40));
       padding-bottom: 0;
       gap: --spacing(2);
+      &:not(:last-of-type) {
+        padding-bottom: 0;
+      }
     }
 
-    .timeline-start,
+    .timeline-start {
+      grid-column: 1;
+      grid-row: 1;
+      @apply justify-center text-center;
+    }
+
     .timeline-end {
+      grid-column: 1;
+      grid-row: 3;
       @apply justify-center text-center;
     }
 
     .timeline-middle {
+      grid-column: 1;
+      grid-row: 2;
       @apply flex items-center justify-center w-full;
       position: relative;
       width: auto;
