@@ -13,8 +13,15 @@ classNames:
       desc: Tree item content area
     - class: treeview-toggle
       desc: Expand / collapse toggle button
+    - class: treeview-toggle-plus
+      desc: Plus / minus toggle icon
+    - class: treeview-toggle-arrow
+      desc: Arrow right / down toggle icon
     - class: treeview-group
       desc: Nested sub-tree group
+  style:
+    - class: treeview-lines
+      desc: Show connector lines between items
   state:
     - class: treeview-selected
       desc: Selected state
@@ -44,8 +51,8 @@ A treeview consists of:
 
 <Example code={`<ul class="treeview">
     <li class="treeview-item">
-      <div class="treeview-content" data-bs-toggle="collapse" data-bs-target="#basic1" aria-expanded="true">
-        <button class="treeview-toggle"></button>
+      <div class="treeview-content">
+        <button class="treeview-toggle" data-bs-toggle="collapse" data-bs-target="#basic1" aria-expanded="true"></button>
         <span>Documents</span>
       </div>
       <ul class="treeview-group collapse show" id="basic1">
@@ -55,8 +62,8 @@ A treeview consists of:
           </div>
         </li>
         <li class="treeview-item">
-          <div class="treeview-content" data-bs-toggle="collapse" data-bs-target="#basic1-1" aria-expanded="false">
-            <button class="treeview-toggle"></button>
+          <div class="treeview-content">
+            <button class="treeview-toggle" data-bs-toggle="collapse" data-bs-target="#basic1-1" aria-expanded="false"></button>
             <span>Projects</span>
           </div>
           <ul class="treeview-group collapse" id="basic1-1">
@@ -80,8 +87,8 @@ A treeview consists of:
       </ul>
     </li>
     <li class="treeview-item">
-      <div class="treeview-content" data-bs-toggle="collapse" data-bs-target="#basic2" aria-expanded="false">
-        <button class="treeview-toggle"></button>
+      <div class="treeview-content">
+        <button class="treeview-toggle" data-bs-toggle="collapse" data-bs-target="#basic2" aria-expanded="false"></button>
         <span>Downloads</span>
       </div>
       <ul class="treeview-group collapse" id="basic2">
@@ -102,14 +109,302 @@ A treeview consists of:
 
 ---
 
+## Single Branch
+
+Use `data-bs-parent` on each `.treeview-group` to keep only one branch open at a time within the same parent container — like an accordion.
+
+<Example code={`<ul class="treeview" id="singleBranchTree">
+    <li class="treeview-item">
+      <div class="treeview-content">
+        <button class="treeview-toggle" data-bs-toggle="collapse" data-bs-target="#single1" aria-expanded="true"></button>
+        <span>Documents</span>
+      </div>
+      <ul class="treeview-group collapse show" id="single1" data-bs-parent="#singleBranchTree">
+        <li class="treeview-item">
+          <div class="treeview-content">
+            <span>Work</span>
+          </div>
+        </li>
+        <li class="treeview-item">
+          <div class="treeview-content">
+            <span>Personal</span>
+          </div>
+        </li>
+      </ul>
+    </li>
+    <li class="treeview-item">
+      <div class="treeview-content">
+        <button class="treeview-toggle" data-bs-toggle="collapse" data-bs-target="#single2" aria-expanded="false"></button>
+        <span>Downloads</span>
+      </div>
+      <ul class="treeview-group collapse" id="single2" data-bs-parent="#singleBranchTree">
+        <li class="treeview-item">
+          <div class="treeview-content">
+            <span>Images</span>
+          </div>
+        </li>
+        <li class="treeview-item">
+          <div class="treeview-content">
+            <span>Videos</span>
+          </div>
+        </li>
+      </ul>
+    </li>
+    <li class="treeview-item">
+      <div class="treeview-content">
+        <button class="treeview-toggle" data-bs-toggle="collapse" data-bs-target="#single3" aria-expanded="false"></button>
+        <span>Music</span>
+      </div>
+      <ul class="treeview-group collapse" id="single3" data-bs-parent="#singleBranchTree">
+        <li class="treeview-item">
+          <div class="treeview-content">
+            <span>Podcasts</span>
+          </div>
+        </li>
+        <li class="treeview-item">
+          <div class="treeview-content">
+            <span>Playlists</span>
+          </div>
+        </li>
+      </ul>
+    </li>
+  </ul>
+`} />
+
+---
+
+## With Lines
+
+Add `.treeview-lines` to draw connector lines between parent and child nodes.
+
+<Example code={`<ul class="treeview treeview-lines">
+    <li class="treeview-item">
+      <div class="treeview-content">
+        <button class="treeview-toggle" data-bs-toggle="collapse" data-bs-target="#lines1" aria-expanded="true"></button>
+        <span>src</span>
+      </div>
+      <ul class="treeview-group collapse show" id="lines1">
+        <li class="treeview-item">
+          <div class="treeview-content">
+            <button class="treeview-toggle" data-bs-toggle="collapse" data-bs-target="#lines1-1" aria-expanded="true"></button>
+            <span>components</span>
+          </div>
+          <ul class="treeview-group collapse show" id="lines1-1">
+            <li class="treeview-item">
+              <div class="treeview-content">
+                <span>Button.tsx</span>
+              </div>
+            </li>
+            <li class="treeview-item">
+              <div class="treeview-content">
+                <span>Card.tsx</span>
+              </div>
+            </li>
+            <li class="treeview-item">
+              <div class="treeview-content">
+                <span>Modal.tsx</span>
+              </div>
+            </li>
+          </ul>
+        </li>
+        <li class="treeview-item">
+          <div class="treeview-content">
+            <span>index.ts</span>
+          </div>
+        </li>
+        <li class="treeview-item">
+          <div class="treeview-content">
+            <span>utils.ts</span>
+          </div>
+        </li>
+      </ul>
+    </li>
+    <li class="treeview-item">
+      <div class="treeview-content">
+        <button class="treeview-toggle" data-bs-toggle="collapse" data-bs-target="#lines2" aria-expanded="false"></button>
+        <span>public</span>
+      </div>
+      <ul class="treeview-group collapse" id="lines2">
+        <li class="treeview-item">
+          <div class="treeview-content">
+            <span>favicon.ico</span>
+          </div>
+        </li>
+      </ul>
+    </li>
+  </ul>
+`} />
+
+---
+
+## Plus / Minus Toggle
+
+Use `.treeview-toggle-plus` on the toggle button to show a plus icon when collapsed and a minus icon when expanded.
+
+<Example code={`<ul class="treeview">
+    <li class="treeview-item">
+      <div class="treeview-content">
+        <button class="treeview-toggle treeview-toggle-plus" data-bs-toggle="collapse" data-bs-target="#plus1" aria-expanded="true"></button>
+        <span>Documents</span>
+      </div>
+      <ul class="treeview-group collapse show" id="plus1">
+        <li class="treeview-item">
+          <div class="treeview-content">
+            <button class="treeview-toggle treeview-toggle-plus" data-bs-toggle="collapse" data-bs-target="#plus1-1" aria-expanded="false"></button>
+            <span>Projects</span>
+          </div>
+          <ul class="treeview-group collapse" id="plus1-1">
+            <li class="treeview-item">
+              <div class="treeview-content">
+                <span>Alpha</span>
+              </div>
+            </li>
+            <li class="treeview-item">
+              <div class="treeview-content">
+                <span>Beta</span>
+              </div>
+            </li>
+          </ul>
+        </li>
+        <li class="treeview-item">
+          <div class="treeview-content">
+            <span>Notes</span>
+          </div>
+        </li>
+      </ul>
+    </li>
+    <li class="treeview-item">
+      <div class="treeview-content">
+        <button class="treeview-toggle treeview-toggle-plus" data-bs-toggle="collapse" data-bs-target="#plus2" aria-expanded="false"></button>
+        <span>Downloads</span>
+      </div>
+      <ul class="treeview-group collapse" id="plus2">
+        <li class="treeview-item">
+          <div class="treeview-content">
+            <span>Images</span>
+          </div>
+        </li>
+      </ul>
+    </li>
+  </ul>
+`} />
+
+---
+
+## Arrow Toggle
+
+Use `.treeview-toggle-arrow` on the toggle button to show an arrow pointing right when collapsed and down when expanded.
+
+<Example code={`<ul class="treeview">
+    <li class="treeview-item">
+      <div class="treeview-content">
+        <button class="treeview-toggle treeview-toggle-arrow" data-bs-toggle="collapse" data-bs-target="#arrow1" aria-expanded="true"></button>
+        <span>Documents</span>
+      </div>
+      <ul class="treeview-group collapse show" id="arrow1">
+        <li class="treeview-item">
+          <div class="treeview-content">
+            <button class="treeview-toggle treeview-toggle-arrow" data-bs-toggle="collapse" data-bs-target="#arrow1-1" aria-expanded="false"></button>
+            <span>Projects</span>
+          </div>
+          <ul class="treeview-group collapse" id="arrow1-1">
+            <li class="treeview-item">
+              <div class="treeview-content">
+                <span>Alpha</span>
+              </div>
+            </li>
+            <li class="treeview-item">
+              <div class="treeview-content">
+                <span>Beta</span>
+              </div>
+            </li>
+          </ul>
+        </li>
+        <li class="treeview-item">
+          <div class="treeview-content">
+            <span>Notes</span>
+          </div>
+        </li>
+      </ul>
+    </li>
+    <li class="treeview-item">
+      <div class="treeview-content">
+        <button class="treeview-toggle treeview-toggle-arrow" data-bs-toggle="collapse" data-bs-target="#arrow2" aria-expanded="false"></button>
+        <span>Downloads</span>
+      </div>
+      <ul class="treeview-group collapse" id="arrow2">
+        <li class="treeview-item">
+          <div class="treeview-content">
+            <span>Images</span>
+          </div>
+        </li>
+      </ul>
+    </li>
+  </ul>
+`} />
+
+---
+
+## With Checkboxes
+
+Place a checkbox between the toggle and the label to support multi-select in a tree.
+
+<Example code={`<ul class="treeview">
+    <li class="treeview-item">
+      <div class="treeview-content">
+        <button class="treeview-toggle" data-bs-toggle="collapse" data-bs-target="#check1" aria-expanded="true"></button>
+        <input type="checkbox" class="form-check-input" />
+        <span>Documents</span>
+      </div>
+      <ul class="treeview-group collapse show" id="check1">
+        <li class="treeview-item">
+          <div class="treeview-content">
+            <input type="checkbox" class="form-check-input" />
+            <span>Report.pdf</span>
+          </div>
+        </li>
+        <li class="treeview-item">
+          <div class="treeview-content">
+            <input type="checkbox" class="form-check-input" />
+            <span>Invoice.pdf</span>
+          </div>
+        </li>
+      </ul>
+    </li>
+    <li class="treeview-item">
+      <div class="treeview-content">
+        <button class="treeview-toggle collapsed" data-bs-toggle="collapse" data-bs-target="#check2" aria-expanded="false"></button>
+        <input type="checkbox" class="form-check-input" />
+        <span>Images</span>
+      </div>
+      <ul class="treeview-group collapse" id="check2">
+        <li class="treeview-item">
+          <div class="treeview-content">
+            <input type="checkbox" class="form-check-input" />
+            <span>Photo.jpg</span>
+          </div>
+        </li>
+        <li class="treeview-item">
+          <div class="treeview-content">
+            <input type="checkbox" class="form-check-input" />
+            <span>Screenshot.png</span>
+          </div>
+        </li>
+      </ul>
+    </li>
+  </ul>
+`} />
+
+---
+
 ## With Icons
 
 Add icons inside `.treeview-content` alongside the label.
 
 <Example code={`<ul class="treeview">
     <li class="treeview-item">
-      <div class="treeview-content" data-bs-toggle="collapse" data-bs-target="#icon1" aria-expanded="true">
-        <button class="treeview-toggle"></button>
+      <div class="treeview-content">
+        <button class="treeview-toggle" data-bs-toggle="collapse" data-bs-target="#icon1" aria-expanded="true"></button>
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
         <span>src</span>
       </div>
@@ -121,8 +416,8 @@ Add icons inside `.treeview-content` alongside the label.
           </div>
         </li>
         <li class="treeview-item">
-          <div class="treeview-content" data-bs-toggle="collapse" data-bs-target="#icon1-1" aria-expanded="false">
-            <button class="treeview-toggle"></button>
+          <div class="treeview-content">
+            <button class="treeview-toggle" data-bs-toggle="collapse" data-bs-target="#icon1-1" aria-expanded="false"></button>
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
             <span>components</span>
           </div>
@@ -173,8 +468,8 @@ Use `.treeview-disabled` on `.treeview-content` to disable a tree item.
 
 <Example code={`<ul class="treeview">
     <li class="treeview-item">
-      <div class="treeview-content" data-bs-toggle="collapse" data-bs-target="#disabled1" aria-expanded="true">
-        <button class="treeview-toggle"></button>
+      <div class="treeview-content">
+        <button class="treeview-toggle" data-bs-toggle="collapse" data-bs-target="#disabled1" aria-expanded="true"></button>
         <span>Available</span>
       </div>
       <ul class="treeview-group collapse show" id="disabled1">
@@ -238,4 +533,4 @@ The treeview component is built using a set of CSS variables. These variables pr
 - Leaf nodes can omit the toggle for a cleaner look.
 - Use `treeview-selected` to indicate the currently active item.
 - Nest `treeview-group` inside `treeview-item` to maintain proper indentation.
-- The collapse plugin handles expand/collapse — use `data-bs-toggle="collapse"` and `data-bs-target` on `.treeview-content`.
+- The collapse plugin handles expand/collapse — use `data-bs-toggle="collapse"` and `data-bs-target` on `.treeview-toggle`.
