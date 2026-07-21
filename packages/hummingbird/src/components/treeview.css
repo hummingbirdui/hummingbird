@@ -9,17 +9,10 @@
     --treeview-content-padding-x: --spacing(2.5);
     --treeview-content-padding-y: --spacing(1.5);
     --treeview-content-font-size: var(--text-sm);
-    --treeview-toggle-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%231B2124' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpath d='m6 4 4 4-4 4'/%3e%3c/svg%3e");
     --treeview-toggle-icon-width: 1rem;
-    --treeview-toggle-icon-transform: rotate(90deg);
-    --treeview-toggle-icon-transition: transform 0.2s ease-in-out;
     --treeview-border-radius: var(--radius-md);
 
     @apply list-none p-0 m-0 text-(--treeview-color) text-(length:--treeview-content-font-size);
-
-    @variant dark {
-      --treeview-toggle-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23EBF2F5' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpath d='m6 4 4 4-4 4'/%3e%3c/svg%3e");
-    }
   }
 }
 
@@ -48,56 +41,40 @@
     w-(--treeview-toggle-icon-width)
     h-(--treeview-toggle-icon-width);
 
-    &::after {
-      content: '';
-
-      @apply block;
-      width: var(--treeview-toggle-icon-width);
-      height: var(--treeview-toggle-icon-width);
-      background-image: var(--treeview-toggle-icon);
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: contain;
-      transition: var(--treeview-toggle-icon-transition);
+    > svg {
+      @apply block w-full h-full;
+      transition: transform 0.2s ease-in-out;
     }
 
-    &:not(.collapsed)::after {
-      background-image: var(--treeview-toggle-icon-active, var(--treeview-toggle-icon));
-      transform: var(--treeview-toggle-icon-transform);
+    &:not(.collapsed) > svg {
+      transform: rotate(90deg);
+    }
+
+    /* Multi-path SVG (plus/minus pattern): hide first path when expanded */
+    &:not(.collapsed) > svg:has(> path ~ path) > path:first-child {
+      display: none;
+    }
+
+    &:not(.collapsed) > svg:has(> path ~ path) {
+      transform: none;
     }
 
     @variant rtl {
-      &::after {
+      > svg {
         transform: scaleX(-1);
       }
 
-      &:not(.collapsed)::after {
-        background-image: var(--treeview-toggle-icon-active, var(--treeview-toggle-icon));
-        transform: scaleX(-1) var(--treeview-toggle-icon-transform);
+      &:not(.collapsed) > svg {
+        transform: scaleX(-1) rotate(90deg);
       }
-    }
-  }
-}
 
-@utility treeview-toggle-plus {
-  @layer base {
-    --treeview-toggle-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%231B2124' stroke-width='2' stroke-linecap='round'%3e%3cpath d='M8 2v12M2 8h12'/%3e%3c/svg%3e");
-    --treeview-toggle-icon-active: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%231B2124' stroke-width='2' stroke-linecap='round'%3e%3cpath d='M2 8h12'/%3e%3c/svg%3e");
-    --treeview-toggle-icon-transform: none;
+      > svg:has(> path ~ path) {
+        transform: none;
+      }
 
-    @variant dark {
-      --treeview-toggle-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23EBF2F5' stroke-width='2' stroke-linecap='round'%3e%3cpath d='M8 2v12M2 8h12'/%3e%3c/svg%3e");
-      --treeview-toggle-icon-active: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23EBF2F5' stroke-width='2' stroke-linecap='round'%3e%3cpath d='M2 8h12'/%3e%3c/svg%3e");
-    }
-  }
-}
-
-@utility treeview-toggle-arrow {
-  @layer base {
-    --treeview-toggle-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3e%3cpath fill='%231B2124' d='M10 17V7l5 5z'/%3e%3c/svg%3e");
-
-    @variant dark {
-      --treeview-toggle-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3e%3cpath fill='%23EBF2F5' d='M10 17V7l5 5z'/%3e%3c/svg%3e");
+      &:not(.collapsed) > svg:has(> path ~ path) {
+        transform: none;
+      }
     }
   }
 }

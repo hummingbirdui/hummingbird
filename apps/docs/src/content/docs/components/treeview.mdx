@@ -13,10 +13,6 @@ classNames:
       desc: Tree item content area
     - class: treeview-toggle
       desc: Expand / collapse toggle button
-    - class: treeview-toggle-plus
-      desc: Plus / minus toggle icon
-    - class: treeview-toggle-arrow
-      desc: Arrow right / down toggle icon
     - class: treeview-group
       desc: Nested sub-tree group
   style:
@@ -52,7 +48,9 @@ A treeview consists of:
 <Example code={`<ul class="treeview">
     <li class="treeview-item">
       <div class="treeview-content">
-        <button class="treeview-toggle" data-bs-toggle="collapse" data-bs-target="#basic1" aria-expanded="true"></button>
+        <button class="treeview-toggle" data-bs-toggle="collapse" data-bs-target="#basic1" aria-expanded="true">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 4 4 4-4 4"/></svg>
+        </button>
         <span>Documents</span>
       </div>
       <ul class="treeview-group collapse show" id="basic1">
@@ -63,7 +61,9 @@ A treeview consists of:
         </li>
         <li class="treeview-item">
           <div class="treeview-content">
-            <button class="treeview-toggle collapsed" data-bs-toggle="collapse" data-bs-target="#basic1-1" aria-expanded="false"></button>
+            <button class="treeview-toggle collapsed" data-bs-toggle="collapse" data-bs-target="#basic1-1" aria-expanded="false">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 4 4 4-4 4"/></svg>
+            </button>
             <span>Projects</span>
           </div>
           <ul class="treeview-group collapse" id="basic1-1">
@@ -88,7 +88,9 @@ A treeview consists of:
     </li>
     <li class="treeview-item">
       <div class="treeview-content">
-        <button class="treeview-toggle collapsed" data-bs-toggle="collapse" data-bs-target="#basic2" aria-expanded="false"></button>
+        <button class="treeview-toggle collapsed" data-bs-toggle="collapse" data-bs-target="#basic2" aria-expanded="false">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 4 4 4-4 4"/></svg>
+        </button>
         <span>Downloads</span>
       </div>
       <ul class="treeview-group collapse" id="basic2">
@@ -116,7 +118,9 @@ Use `data-bs-parent` on each `.treeview-group` to keep only one branch open at a
 <Example code={`<ul class="treeview" id="singleBranchTree">
     <li class="treeview-item">
       <div class="treeview-content">
-        <button class="treeview-toggle" data-bs-toggle="collapse" data-bs-target="#single1" aria-expanded="true"></button>
+        <button class="treeview-toggle" data-bs-toggle="collapse" data-bs-target="#single1" aria-expanded="true">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 4 4 4-4 4"/></svg>
+        </button>
         <span>Documents</span>
       </div>
       <ul class="treeview-group collapse show" id="single1" data-bs-parent="#singleBranchTree">
@@ -134,7 +138,9 @@ Use `data-bs-parent` on each `.treeview-group` to keep only one branch open at a
     </li>
     <li class="treeview-item">
       <div class="treeview-content">
-        <button class="treeview-toggle collapsed" data-bs-toggle="collapse" data-bs-target="#single2" aria-expanded="false"></button>
+        <button class="treeview-toggle collapsed" data-bs-toggle="collapse" data-bs-target="#single2" aria-expanded="false">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 4 4 4-4 4"/></svg>
+        </button>
         <span>Downloads</span>
       </div>
       <ul class="treeview-group collapse" id="single2" data-bs-parent="#singleBranchTree">
@@ -152,7 +158,9 @@ Use `data-bs-parent` on each `.treeview-group` to keep only one branch open at a
     </li>
     <li class="treeview-item">
       <div class="treeview-content">
-        <button class="treeview-toggle collapsed" data-bs-toggle="collapse" data-bs-target="#single3" aria-expanded="false"></button>
+        <button class="treeview-toggle collapsed" data-bs-toggle="collapse" data-bs-target="#single3" aria-expanded="false">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 4 4 4-4 4"/></svg>
+        </button>
         <span>Music</span>
       </div>
       <ul class="treeview-group collapse" id="single3" data-bs-parent="#singleBranchTree">
@@ -180,13 +188,17 @@ Add `.treeview-lines` to draw connector lines between parent and child nodes.
 <Example code={`<ul class="treeview treeview-lines">
     <li class="treeview-item">
       <div class="treeview-content">
-        <button class="treeview-toggle" data-bs-toggle="collapse" data-bs-target="#lines1" aria-expanded="true"></button>
+        <button class="treeview-toggle" data-bs-toggle="collapse" data-bs-target="#lines1" aria-expanded="true">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 4 4 4-4 4"/></svg>
+        </button>
         <span>src</span>
       </div>
       <ul class="treeview-group collapse show" id="lines1">
         <li class="treeview-item">
           <div class="treeview-content">
-            <button class="treeview-toggle" data-bs-toggle="collapse" data-bs-target="#lines1-1" aria-expanded="true"></button>
+            <button class="treeview-toggle" data-bs-toggle="collapse" data-bs-target="#lines1-1" aria-expanded="true">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 4 4 4-4 4"/></svg>
+            </button>
             <span>components</span>
           </div>
           <ul class="treeview-group collapse show" id="lines1-1">
@@ -221,7 +233,9 @@ Add `.treeview-lines` to draw connector lines between parent and child nodes.
     </li>
     <li class="treeview-item">
       <div class="treeview-content">
-        <button class="treeview-toggle collapsed" data-bs-toggle="collapse" data-bs-target="#lines2" aria-expanded="false"></button>
+        <button class="treeview-toggle collapsed" data-bs-toggle="collapse" data-bs-target="#lines2" aria-expanded="false">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 4 4 4-4 4"/></svg>
+        </button>
         <span>public</span>
       </div>
       <ul class="treeview-group collapse" id="lines2">
@@ -239,18 +253,28 @@ Add `.treeview-lines` to draw connector lines between parent and child nodes.
 
 ## Plus / Minus Toggle
 
-Use `.treeview-toggle-plus` on the toggle button to show a plus icon when collapsed and a minus icon when expanded.
+Place two `<path>` elements inside a single SVG — the first draws the vertical line, the second draws the horizontal. The CSS hides the vertical line when expanded.
 
 <Example code={`<ul class="treeview">
     <li class="treeview-item">
       <div class="treeview-content">
-        <button class="treeview-toggle treeview-toggle-plus" data-bs-toggle="collapse" data-bs-target="#plus1" aria-expanded="true"></button>
+        <button class="treeview-toggle" data-bs-toggle="collapse" data-bs-target="#plus1" aria-expanded="true">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <path d="M8 2v12"/>
+            <path d="M2 8h12"/>
+          </svg>
+        </button>
         <span>Documents</span>
       </div>
       <ul class="treeview-group collapse show" id="plus1">
         <li class="treeview-item">
           <div class="treeview-content">
-            <button class="treeview-toggle treeview-toggle-plus collapsed" data-bs-toggle="collapse" data-bs-target="#plus1-1" aria-expanded="false"></button>
+            <button class="treeview-toggle collapsed" data-bs-toggle="collapse" data-bs-target="#plus1-1" aria-expanded="false">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                <path d="M8 2v12"/>
+                <path d="M2 8h12"/>
+              </svg>
+            </button>
             <span>Projects</span>
           </div>
           <ul class="treeview-group collapse" id="plus1-1">
@@ -275,7 +299,12 @@ Use `.treeview-toggle-plus` on the toggle button to show a plus icon when collap
     </li>
     <li class="treeview-item">
       <div class="treeview-content">
-        <button class="treeview-toggle treeview-toggle-plus collapsed" data-bs-toggle="collapse" data-bs-target="#plus2" aria-expanded="false"></button>
+        <button class="treeview-toggle collapsed" data-bs-toggle="collapse" data-bs-target="#plus2" aria-expanded="false">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <path d="M8 2v12"/>
+            <path d="M2 8h12"/>
+          </svg>
+        </button>
         <span>Downloads</span>
       </div>
       <ul class="treeview-group collapse" id="plus2">
@@ -293,18 +322,22 @@ Use `.treeview-toggle-plus` on the toggle button to show a plus icon when collap
 
 ## Arrow Toggle
 
-Use `.treeview-toggle-arrow` on the toggle button to show an arrow pointing right when collapsed and down when expanded.
+Place a solid arrow SVG inside the toggle button — the default rotation (90deg) handles the collapsed-to-expanded state.
 
 <Example code={`<ul class="treeview">
     <li class="treeview-item">
       <div class="treeview-content">
-        <button class="treeview-toggle treeview-toggle-arrow" data-bs-toggle="collapse" data-bs-target="#arrow1" aria-expanded="true"></button>
+        <button class="treeview-toggle" data-bs-toggle="collapse" data-bs-target="#arrow1" aria-expanded="true">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill="currentColor" d="M4 12V4l8 4z"/></svg>
+        </button>
         <span>Documents</span>
       </div>
       <ul class="treeview-group collapse show" id="arrow1">
         <li class="treeview-item">
           <div class="treeview-content">
-            <button class="treeview-toggle treeview-toggle-arrow collapsed" data-bs-toggle="collapse" data-bs-target="#arrow1-1" aria-expanded="false"></button>
+            <button class="treeview-toggle collapsed" data-bs-toggle="collapse" data-bs-target="#arrow1-1" aria-expanded="false">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill="currentColor" d="M4 12V4l8 4z"/></svg>
+            </button>
             <span>Projects</span>
           </div>
           <ul class="treeview-group collapse" id="arrow1-1">
@@ -329,7 +362,9 @@ Use `.treeview-toggle-arrow` on the toggle button to show an arrow pointing righ
     </li>
     <li class="treeview-item">
       <div class="treeview-content">
-        <button class="treeview-toggle treeview-toggle-arrow collapsed" data-bs-toggle="collapse" data-bs-target="#arrow2" aria-expanded="false"></button>
+        <button class="treeview-toggle collapsed" data-bs-toggle="collapse" data-bs-target="#arrow2" aria-expanded="false">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill="currentColor" d="M4 12V4l8 4z"/></svg>
+        </button>
         <span>Downloads</span>
       </div>
       <ul class="treeview-group collapse" id="arrow2">
@@ -352,7 +387,9 @@ Place a checkbox between the toggle and the label to support multi-select in a t
 <Example code={`<ul class="treeview">
     <li class="treeview-item">
       <div class="treeview-content">
-        <button class="treeview-toggle" data-bs-toggle="collapse" data-bs-target="#check1" aria-expanded="true"></button>
+        <button class="treeview-toggle" data-bs-toggle="collapse" data-bs-target="#check1" aria-expanded="true">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 4 4 4-4 4"/></svg>
+        </button>
         <input type="checkbox" class="form-check-input" />
         <span>Documents</span>
       </div>
@@ -373,7 +410,9 @@ Place a checkbox between the toggle and the label to support multi-select in a t
     </li>
     <li class="treeview-item">
       <div class="treeview-content">
-        <button class="treeview-toggle collapsed" data-bs-toggle="collapse" data-bs-target="#check2" aria-expanded="false"></button>
+        <button class="treeview-toggle collapsed" data-bs-toggle="collapse" data-bs-target="#check2" aria-expanded="false">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 4 4 4-4 4"/></svg>
+        </button>
         <input type="checkbox" class="form-check-input" />
         <span>Images</span>
       </div>
@@ -404,7 +443,9 @@ Add icons inside `.treeview-content` alongside the label.
 <Example code={`<ul class="treeview">
     <li class="treeview-item">
       <div class="treeview-content">
-        <button class="treeview-toggle" data-bs-toggle="collapse" data-bs-target="#icon1" aria-expanded="true"></button>
+        <button class="treeview-toggle" data-bs-toggle="collapse" data-bs-target="#icon1" aria-expanded="true">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 4 4 4-4 4"/></svg>
+        </button>
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
         <span>src</span>
       </div>
@@ -417,7 +458,9 @@ Add icons inside `.treeview-content` alongside the label.
         </li>
         <li class="treeview-item">
           <div class="treeview-content">
-            <button class="treeview-toggle collapsed" data-bs-toggle="collapse" data-bs-target="#icon1-1" aria-expanded="false"></button>
+            <button class="treeview-toggle collapsed" data-bs-toggle="collapse" data-bs-target="#icon1-1" aria-expanded="false">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 4 4 4-4 4"/></svg>
+            </button>
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
             <span>components</span>
           </div>
@@ -469,7 +512,9 @@ Use `.treeview-disabled` on `.treeview-content` to disable a tree item.
 <Example code={`<ul class="treeview">
     <li class="treeview-item">
       <div class="treeview-content">
-        <button class="treeview-toggle" data-bs-toggle="collapse" data-bs-target="#disabled1" aria-expanded="true"></button>
+        <button class="treeview-toggle" data-bs-toggle="collapse" data-bs-target="#disabled1" aria-expanded="true">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 4 4 4-4 4"/></svg>
+        </button>
         <span>Available</span>
       </div>
       <ul class="treeview-group collapse show" id="disabled1">
