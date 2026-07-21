@@ -1,0 +1,99 @@
+@utility treeview {
+  @layer base {
+    --treeview-indent: --spacing(6);
+    --treeview-color: var(--text-color-default);
+    --treeview-hover-bg: var(--color-hover);
+    --treeview-selected-color: var(--color-primary);
+    --treeview-selected-bg: var(--color-primary-lighter);
+    --treeview-disabled-color: var(--color-disabled-color);
+    --treeview-content-padding-x: --spacing(2.5);
+    --treeview-content-padding-y: --spacing(1.5);
+    --treeview-content-font-size: var(--text-sm);
+    --treeview-toggle-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%231B2124' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpath d='m6 4 4 4-4 4'/%3e%3c/svg%3e");
+    --treeview-toggle-icon-width: 1rem;
+    --treeview-toggle-icon-transform: rotate(90deg);
+    --treeview-toggle-icon-transition: transform 0.2s ease-in-out;
+    --treeview-border-radius: var(--radius-md);
+
+    @apply list-none p-0 m-0 text-(--treeview-color) text-(length:--treeview-content-font-size);
+
+    @variant dark {
+      --treeview-toggle-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23EBF2F5' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpath d='m6 4 4 4-4 4'/%3e%3c/svg%3e");
+    }
+  }
+}
+
+@utility treeview-item {
+  @layer base {
+    @apply block;
+  }
+}
+
+@utility treeview-content {
+  @layer base {
+    @apply flex items-center gap-2 w-full cursor-pointer no-underline
+    px-(--treeview-content-padding-x)
+    py-(--treeview-content-padding-y)
+    rounded-(--treeview-border-radius);
+
+    @variant hover {
+      @apply bg-(--treeview-hover-bg);
+    }
+  }
+}
+
+@utility treeview-toggle {
+  @layer base {
+    @apply inline-flex items-center justify-center shrink-0 p-0 border-0 bg-transparent
+    w-(--treeview-toggle-icon-width)
+    h-(--treeview-toggle-icon-width);
+
+    &::after {
+      content: '';
+
+      @apply block;
+      width: var(--treeview-toggle-icon-width);
+      height: var(--treeview-toggle-icon-width);
+      background-image: var(--treeview-toggle-icon);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      transition: var(--treeview-toggle-icon-transition);
+    }
+
+    .treeview-content:not(.collapsed) &::after {
+      transform: var(--treeview-toggle-icon-transform);
+    }
+
+    @variant rtl {
+      &::after {
+        transform: scaleX(-1);
+      }
+
+      .treeview-content:not(.collapsed) &::after {
+        transform: scaleX(-1) var(--treeview-toggle-icon-transform);
+      }
+    }
+  }
+}
+
+@utility treeview-group {
+  @layer base {
+    @apply list-none p-0 m-0;
+    padding-inline-start: var(--treeview-indent);
+  }
+}
+
+/* States */
+
+@utility treeview-selected {
+  @layer base {
+    @apply text-(--treeview-selected-color) bg-(--treeview-selected-bg);
+  }
+}
+
+@utility treeview-disabled {
+  @layer base {
+    @apply pointer-events-none text-(--treeview-disabled-color);
+  }
+}

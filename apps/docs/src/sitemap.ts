@@ -385,6 +385,10 @@ const sitemap: Sitemap[] = [
         name: 'Tooltips',
         path: '/docs/components/tooltips',
       },
+      {
+        name: 'Treeview',
+        path: '/docs/components/treeview',
+      },
     ],
   },
 ];
