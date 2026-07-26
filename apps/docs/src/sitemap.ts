@@ -366,6 +366,10 @@ const sitemap: Sitemap[] = [
         path: '/docs/components/progress',
       },
       {
+        name: 'Rating',
+        path: '/docs/components/rating',
+      },
+      {
         name: 'Scrollspy',
         path: '/docs/components/scrollspy',
       },
