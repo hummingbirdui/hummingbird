@@ -8,8 +8,8 @@
     --card-border-radius: var(--radius-lg);
     --card-padding-x: --spacing(4);
     --card-padding-y: --spacing(4);
-    --card-cap-padding-x: --spacing(2);
-    --card-cap-padding-y: --spacing(2);
+    --card-cap-padding-x: --spacing(4);
+    --card-cap-padding-y: --spacing(4);
     --card-cap-bg: transparent;
     --card-cap-color: null;
     --card-title-color: var(--text-color-default);
@@ -93,8 +93,8 @@
 
 @utility card-footer {
   @layer base {
-    @apply px-(--card-padding-x)
-    py-(--card-padding-y)
+    @apply px-(--card-cap-padding-x)
+    py-(--card-cap-padding-y)
     text-(--card-cap-color)
     bg-(--card-cap-bg);
 
