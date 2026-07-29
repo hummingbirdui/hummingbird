@@ -1,16 +1,16 @@
-import django from '@assets/images/landing/frameworks/django.svg';
 import angular from '@assets/images/landing/frameworks/angular.svg';
-import laravel from '@assets/images/landing/frameworks/laravel.svg';
-import nextjsL from '@assets/images/landing/frameworks/nextjs.svg';
-import nextjsD from '@assets/images/landing/frameworks/nextjs-dark.svg';
-import astroL from '@assets/images/landing/frameworks/astro.svg';
 import astroD from '@assets/images/landing/frameworks/astro-dark.svg';
-import reactL from '@assets/images/landing/frameworks/react.svg';
-import reactD from '@assets/images/landing/frameworks/react-dark.svg';
-import svelte from '@assets/images/landing/frameworks/svelte.svg';
-import nuxt from '@assets/images/landing/frameworks/nuxt.svg';
-import vue from '@assets/images/landing/frameworks/vue.svg';
+import astroL from '@assets/images/landing/frameworks/astro.svg';
+import django from '@assets/images/landing/frameworks/django.svg';
 import gatsby from '@assets/images/landing/frameworks/gatsby.svg';
+import laravel from '@assets/images/landing/frameworks/laravel.svg';
+import nextjsD from '@assets/images/landing/frameworks/nextjs-dark.svg';
+import nextjsL from '@assets/images/landing/frameworks/nextjs.svg';
+import nuxt from '@assets/images/landing/frameworks/nuxt.svg';
+import reactD from '@assets/images/landing/frameworks/react-dark.svg';
+import reactL from '@assets/images/landing/frameworks/react.svg';
+import svelte from '@assets/images/landing/frameworks/svelte.svg';
+import vue from '@assets/images/landing/frameworks/vue.svg';
 
 export interface SitemapItem {
   name: string;
@@ -366,6 +366,10 @@ const sitemap: Sitemap[] = [
         path: '/docs/components/progress',
       },
       {
+        name: 'Rating',
+        path: '/docs/components/rating',
+      },
+      {
         name: 'Scrollspy',
         path: '/docs/components/scrollspy',
       },
@@ -374,12 +378,20 @@ const sitemap: Sitemap[] = [
         path: '/docs/components/tables',
       },
       {
+        name: 'Timeline',
+        path: '/docs/components/timeline',
+      },
+      {
         name: 'Toasts',
         path: '/docs/components/toasts',
       },
       {
         name: 'Tooltips',
         path: '/docs/components/tooltips',
+      },
+      {
+        name: 'Treeview',
+        path: '/docs/components/treeview',
       },
     ],
   },
