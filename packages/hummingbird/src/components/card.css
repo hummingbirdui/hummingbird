@@ -93,8 +93,8 @@
 
 @utility card-footer {
   @layer base {
-    @apply px-(--card-cap-padding-x) 
-    py-(--card-cap-padding-y)
+    @apply px-(--card-padding-x)
+    py-(--card-padding-y)
     text-(--card-cap-color)
     bg-(--card-cap-bg);
 
