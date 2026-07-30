@@ -10,8 +10,9 @@
 }
 @utility avatar {
   @layer base {
-    --avatar-width: --spacing(10);
-    --avatar-height: --spacing(10);
+    --avatar-width: --spacing(11);
+    --avatar-height: --spacing(11);
+    --avatar-status-size: calc(var(--avatar-width) / 4);
     --avatar-bg: var(--color-dark);
     --avatar-color: var(--color-white);
     --avatar-font-weight: var(--font-weight-medium);
@@ -25,7 +26,7 @@
     &[class*='avatar-status-']::before {
       @apply content-[''] 
       absolute end-[14%] bottom-[14%] 
-      rounded-full w-2 h-2 
+      rounded-full w-[var(--avatar-status-size)] h-[var(--avatar-status-size)]
       scale-100 translate-x-[50%] translate-y-[50%];
     }
     @variant rtl {
@@ -77,9 +78,6 @@
     --avatar-width: --spacing(6);
     --avatar-height: --spacing(6);
     --avatar-font-size: var(--text-sm);
-    &[class*='avatar-status-']::before {
-      @apply w-1.5 h-1.5;
-    }
   }
 }
 @utility avatar-sm {
