@@ -10,19 +10,19 @@
 
     @apply relative flex items-center gap-3
     p-[var(--alert-padding-y)_var(--alert-padding-x)]
-    text-[var(--alert-color)]
+    text-(--alert-color)
     font-medium
-    bg-[var(--alert-bg)]
+    bg-(--alert-bg)
     border-1
-    border-[var(--alert-border-color)]
-    rounded-[var(--alert-border-radius)]
+    border-(--alert-border-color)
+    rounded-(--alert-border-radius)
     leading-[1.5];
   }
 }
 
 @utility alert-icon {
   @layer base {
-    @apply text-[var(--alert-icon-color)] text-lg shrink-0;
+    @apply text-(--alert-icon-color) text-lg shrink-0;
   }
 }
 

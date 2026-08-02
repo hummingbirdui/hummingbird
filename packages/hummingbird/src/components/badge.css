@@ -14,15 +14,15 @@
 
     @apply inline-flex items-center justify-center gap-1
     align-middle whitespace-nowrap
-    bg-[var(--badge-bg)]
-    text-[var(--badge-color)]
-    text-[length:var(--badge-font-size)]
+    bg-(--badge-bg)
+    text-(--badge-color)
+    text-(length:--badge-font-size)
     p-[var(--badge-padding-y)_var(--badge-padding-x)]
-    leading-[var(--badge-line-height)]
-    font-[var(--badge-font-weight)]
-    rounded-[var(--badge-border-radius)]
+    leading-(--badge-line-height)
+    font-(--badge-font-weight)
+    rounded-(--badge-border-radius)
     border-(length:--badge-border-width)
-    border-[var(--badge-border-color)];
+    border-(--badge-border-color);
   }
 }
 
@@ -43,7 +43,7 @@
 @utility badge-link {
   @layer base {
     @apply cursor-pointer no-underline transition-[background] duration-200
-    hover:bg-[var(--badge-link-hover-bg)];
+    hover:bg-(--badge-link-hover-bg);
   }
 }
 
@@ -51,7 +51,7 @@
   @layer base {
     @apply cursor-pointer flex items-center justify-center rounded-full;
     & > * {
-      @apply transition-colors duration-200 text-[--alpha(var(--badge-color)/60%)] hover:text-[var(--badge-color)];
+      @apply transition-colors duration-200 text-[--alpha(var(--badge-color)/60%)] hover:text-(--badge-color);
     }
   }
 }

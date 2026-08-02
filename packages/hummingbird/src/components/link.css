@@ -5,12 +5,12 @@
     --link-active-color: var(--link-hover-color);
 
     @apply cursor-pointer underline appearance-none
-    text-[var(--link-color)]
-    hover:text-[var(--link-hover-color)];
+    text-(--link-color)
+    hover:text-(--link-hover-color);
 
     &.active,
     &.show {
-      @apply text-[var(--link-active-color)];
+      @apply text-(--link-active-color);
     }
   }
 }

@@ -13,9 +13,9 @@
       transition-transform duration-200
       cursor-text
       leading-[1.5]
-      ltr:translate-x-[var(--floating-label-translate-x)]
-      rtl:-translate-x-[var(--floating-label-translate-x)]
-      translate-y-[var(--floating-label-translate-y)]
+      ltr:translate-x-(--floating-label-translate-x)
+      rtl:-translate-x-(--floating-label-translate-x)
+      translate-y-(--floating-label-translate-y)
       [zoom:var(--floating-label-scale)];
     }
 
@@ -24,8 +24,8 @@
       --floating-label-padding-top: --spacing(5.25);
       --floating-label-padding-bottom: --spacing(1);
 
-      @apply pt-[var(--floating-label-padding-top)]
-      pb-[var(--floating-label-padding-bottom)];
+      @apply pt-(--floating-label-padding-top)
+      pb-(--floating-label-padding-bottom);
 
       &::placeholder {
         @apply text-transparent;
@@ -118,8 +118,8 @@
       --floating-label-padding-top: --spacing(5.25);
       --floating-label-padding-bottom: --spacing(1);
 
-      @apply pt-[var(--floating-label-padding-top)]
-      pb-[var(--floating-label-padding-bottom)];
+      @apply pt-(--floating-label-padding-top)
+      pb-(--floating-label-padding-bottom);
 
       &::placeholder {
         @apply text-transparent;

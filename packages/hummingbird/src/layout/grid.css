@@ -18,7 +18,7 @@
     & > * {
       @apply shrink-0 w-full max-w-full
       px-[calc(var(--grid-gutter-x)*0.5)]
-      mt-[var(--grid-gutter-y)];
+      mt-(--grid-gutter-y);
     }
   }
 }

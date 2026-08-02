@@ -64,7 +64,7 @@
     @apply relative hidden float-left w-full -mr-[100%]
     backface-hidden
     transition-transform
-    duration-[var(--carousel-transition-duration)]
+    duration-(--carousel-transition-duration)
     ease-in-out;
   }
 }
@@ -88,7 +88,7 @@
       @apply z-0 opacity-0
       transition-opacity
       duration-0
-      delay-[var(--carousel-transition-duration)];
+      delay-(--carousel-transition-duration);
     }
   }
 }
@@ -97,22 +97,22 @@
   @layer base {
     @apply absolute top-0 bottom-0 left-0 z-1
     flex items-center justify-center
-    w-[var(--carousel-control-width)]
+    w-(--carousel-control-width)
     p-0
-    text-[var(--carousel-control-color)]
+    text-(--carousel-control-color)
     text-center
     bg-none
     border-0
-    opacity-[var(--carousel-control-opacity)]
+    opacity-(--carousel-control-opacity)
     transition-opacity
     duration-150
     cursor-pointer;
     &:hover,
     &:focus {
-      @apply text-[var(--carousel-control-color)]
+      @apply text-(--carousel-control-color)
     no-underline
     outline-0
-    opacity-[var(--carousel-control-hover-opacity)];
+    opacity-(--carousel-control-hover-opacity);
     }
   }
 }
@@ -121,22 +121,22 @@
   @layer base {
     @apply absolute top-0 bottom-0 right-0 z-1
     flex items-center justify-center
-    w-[var(--carousel-control-width)]
+    w-(--carousel-control-width)
     p-0
-    text-[var(--carousel-control-color)]
+    text-(--carousel-control-color)
     text-center
     bg-none
     border-0
-    opacity-[var(--carousel-control-opacity)]
+    opacity-(--carousel-control-opacity)
     transition-opacity
     duration-150
     cursor-pointer;
     &:hover,
     &:focus {
-      @apply text-[var(--carousel-control-color)]
+      @apply text-(--carousel-control-color)
     no-underline
     outline-0
-    opacity-[var(--carousel-control-hover-opacity)];
+    opacity-(--carousel-control-hover-opacity);
     }
   }
 }
@@ -144,23 +144,23 @@
 @utility carousel-control-prev-icon {
   @layer base {
     @apply inline-block
-    w-[var(--carousel-control-icon-width)]
-    h-[var(--carousel-control-icon-width)]
+    w-(--carousel-control-icon-width)
+    h-(--carousel-control-icon-width)
     bg-no-repeat
     bg-position-[50%]
     bg-size-[100%_100%]
-    bg-[image:var(--carousel-control-prev-icon-bg)];
+    bg-(image:--carousel-control-prev-icon-bg);
   }
 }
 @utility carousel-control-next-icon {
   @layer base {
     @apply inline-block
-    w-[var(--carousel-control-icon-width)]
-    h-[var(--carousel-control-icon-width)]
+    w-(--carousel-control-icon-width)
+    h-(--carousel-control-icon-width)
     bg-no-repeat
     bg-position-[50%]
     bg-size-[100%_100%]
-    bg-[image:var(--carousel-control-next-icon-bg)];
+    bg-(image:--carousel-control-next-icon-bg);
   }
 }
 
@@ -169,34 +169,34 @@
     @apply absolute right-0 bottom-0 left-0 z-2
     flex justify-center
     p-0
-    mr-[var(--carousel-control-width)]
+    mr-(--carousel-control-width)
     mb-4
-    ml-[var(--carousel-control-width)];
+    ml-(--carousel-control-width);
 
     [data-bs-target] {
       @apply box-content
       flex-[0_1_auto]
-      w-[var(--carousel-indicator-width)]
-      h-[var(--carousel-indicator-height)]
+      w-(--carousel-indicator-width)
+      h-(--carousel-indicator-height)
       p-0
-      mr-[var(--carousel-indicator-spacer)]
-      ml-[var(--carousel-indicator-spacer)]
+      mr-(--carousel-indicator-spacer)
+      ml-(--carousel-indicator-spacer)
       -indent-[999px]
       cursor-pointer
-      bg-[var(--carousel-indicator-active-bg)]
+      bg-(--carousel-indicator-active-bg)
       bg-clip-padding
       border-0
       border-transparent
       border-solid
-      border-t-[var(--carousel-indicator-hit-area-height)]
-      border-b-[var(--carousel-indicator-hit-area-height)]
-      opacity-[var(--carousel-indicator-opacity)]
+      border-t-(--carousel-indicator-hit-area-height)
+      border-b-(--carousel-indicator-hit-area-height)
+      opacity-(--carousel-indicator-opacity)
       transition-opacity
-      duration-[var(--carousel-transition-duration)];
+      duration-(--carousel-transition-duration);
     }
 
     .active {
-      @apply opacity-[var(--carousel-indicator-active-opacity)];
+      @apply opacity-(--carousel-indicator-active-opacity);
     }
   }
 }
@@ -205,11 +205,11 @@
   @layer base {
     @apply absolute
     right-[calc((100%-var(--carousel-caption-width))*0.5)]
-    bottom-[var(--carousel-caption-spacer)]
+    bottom-(--carousel-caption-spacer)
     left-[calc((100%-var(--carousel-caption-width))*0.5)]
-    pt-[var(--carousel-caption-padding-y)]
-    pb-[var(--carousel-caption-padding-y)]
-    text-[var(--carousel-caption-color)]
+    pt-(--carousel-caption-padding-y)
+    pb-(--carousel-caption-padding-y)
+    text-(--carousel-caption-color)
     text-center;
   }
 }

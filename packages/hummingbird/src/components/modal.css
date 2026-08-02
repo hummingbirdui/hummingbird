@@ -27,13 +27,13 @@
     --modal-transition-duration: 0.3s;
 
     @apply fixed top-0 left-0
-    z-[var(--modal-zindex)]
+    z-(--modal-zindex)
     hidden
     w-full h-full
     overflow-x-hidden
     overflow-y-auto
     outline-0
-    text-[length:var(--modal-font-size)];
+    text-(length:--modal-font-size);
 
     @variant sm {
       --modal-margin: --spacing(7);
@@ -45,21 +45,21 @@
   @layer base {
     @apply relative
     w-auto
-    m-[var(--modal-margin)]
+    m-(--modal-margin)
     pointer-events-none;
 
     .modal.fade & {
-      @apply transform-[var(--modal-fade-transform)] transition-transform duration-[var(--modal-transition-duration)] ease-out;
+      @apply transform-(--modal-fade-transform) transition-transform duration-(--modal-transition-duration) ease-out;
     }
     .modal.show & {
-      @apply transform-[var(--modal-show-transform)];
+      @apply transform-(--modal-show-transform);
     }
     .modal.modal-static & {
-      @apply transform-[var(--modal-scale-transform)];
+      @apply transform-(--modal-scale-transform);
     }
 
     @variant sm {
-      @apply max-w-[var(--modal-width)] mx-auto;
+      @apply max-w-(--modal-width) mx-auto;
     }
   }
 }
@@ -89,13 +89,13 @@
     @apply relative
     flex flex-col
     w-full
-    text-[var(--modal-color)]
+    text-(--modal-color)
     pointer-events-auto
-    bg-[var(--modal-bg)]
+    bg-(--modal-bg)
     bg-clip-padding
-    dark:border-[length:var(--modal-border-width)]
-    border-[var(--modal-border-color)]
-    rounded-[var(--modal-border-radius)]
+    dark:border-(length:--modal-border-width)
+    border-(--modal-border-color)
+    rounded-(--modal-border-radius)
     outline-0;
   }
 }
@@ -104,17 +104,17 @@
   --backdrop-zindex: 1050;
   --backdrop-bg: --alpha(var(--color-gray-950) / 20%);
 
-  @apply fixed top-0 left-0 z-[var(--backdrop-zindex)] w-screen h-screen bg-[var(--backdrop-bg)];
+  @apply fixed top-0 left-0 z-(--backdrop-zindex) w-screen h-screen bg-(--backdrop-bg);
 }
 
 @utility modal-header {
   @layer base {
     @apply flex flex-shrink-0 items-center
-    px-[var(--modal-header-padding-x)]
-    py-[var(--modal-header-padding-y)]
-    border-b-[length:var(--modal-header-border-width)]
-    border-[var(--modal-header-border-color)]
-    rounded-t-[var(--modal-inner-border-radius)];
+    px-(--modal-header-padding-x)
+    py-(--modal-header-padding-y)
+    border-b-(length:--modal-header-border-width)
+    border-(--modal-header-border-color)
+    rounded-t-(--modal-inner-border-radius);
 
     .btn-close {
       @apply py-[calc(var(--modal-header-padding-y)*.5)]
@@ -129,25 +129,25 @@
 
 @utility modal-title {
   @layer base {
-    @apply mb-0 leading-[var(--modal-title-line-height)];
+    @apply mb-0 leading-(--modal-title-line-height);
   }
 }
 
 @utility modal-body {
   @layer base {
-    @apply relative flex-[1_1_auto] p-[var(--modal-padding)];
+    @apply relative flex-[1_1_auto] p-(--modal-padding);
   }
 }
 
 @utility modal-footer {
   @layer base {
     @apply flex flex-shrink-0 flex-wrap items-center justify-end
-    px-[var(--modal-footer-padding-x)]
-    py-[var(--modal-footer-padding-y)]
-    bg-[var(--modal-footer-bg)]
-    border-t-[length:var(--modal-footer-border-width)]
-    border-[var(--modal-footer-border-color)]
-    rounded-b-[var(--modal-inner-border-radius)];
+    px-(--modal-footer-padding-x)
+    py-(--modal-footer-padding-y)
+    bg-(--modal-footer-bg)
+    border-t-(length:--modal-footer-border-width)
+    border-(--modal-footer-border-color)
+    rounded-b-(--modal-inner-border-radius);
   }
 }
 

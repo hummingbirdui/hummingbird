@@ -4,61 +4,61 @@
   }
 
   body {
-    @apply bg-[var(--body-bg)]
-    text-[var(--body-color)]
-    text-[length:var(--body-font-size)]
-    font-[var(--body-font-weight)]
-    leading-[var(--body-line-height)];
+    @apply bg-(--body-bg)
+    text-(--body-color)
+    text-(length:--body-font-size)
+    font-(--body-font-weight)
+    leading-(--body-line-height);
   }
 
   hr {
-    @apply my-[var(--hr-margin-y)] mx-[var(--hr-margin-x)] border-t border-[var(--hr-border-color)];
+    @apply my-(--hr-margin-y) mx-(--hr-margin-x) border-t border-(--hr-border-color);
   }
 
   h1 {
-    @apply mb-[var(--headings-margin-bottom)]
-    font-[var(--headings-font-weight)]
-    text-[length:var(--h1-font-size)]
-    leading-[var(--h1-line-height)];
+    @apply mb-(--headings-margin-bottom)
+    font-(--headings-font-weight)
+    text-(length:--h1-font-size)
+    leading-(--h1-line-height);
   }
 
   h2 {
-    @apply mb-[var(--headings-margin-bottom)]
-    font-[var(--headings-font-weight)]
-    text-[length:var(--h2-font-size)]
-    leading-[var(--h2-line-height)];
+    @apply mb-(--headings-margin-bottom)
+    font-(--headings-font-weight)
+    text-(length:--h2-font-size)
+    leading-(--h2-line-height);
   }
 
   h3 {
-    @apply mb-[var(--headings-margin-bottom)]
-    font-[var(--headings-font-weight)]
-    text-[length:var(--h3-font-size)]
-    leading-[var(--h3-line-height)];
+    @apply mb-(--headings-margin-bottom)
+    font-(--headings-font-weight)
+    text-(length:--h3-font-size)
+    leading-(--h3-line-height);
   }
 
   h4 {
-    @apply mb-[var(--headings-margin-bottom)]
-    font-[var(--headings-font-weight)]
-    text-[length:var(--h4-font-size)]
-    leading-[var(--h4-line-height)];
+    @apply mb-(--headings-margin-bottom)
+    font-(--headings-font-weight)
+    text-(length:--h4-font-size)
+    leading-(--h4-line-height);
   }
 
   h5 {
-    @apply mb-[var(--headings-margin-bottom)]
-    font-[var(--headings-font-weight)]
-    text-[length:var(--h5-font-size)]
-    leading-[var(--h5-line-height)];
+    @apply mb-(--headings-margin-bottom)
+    font-(--headings-font-weight)
+    text-(length:--h5-font-size)
+    leading-(--h5-line-height);
   }
 
   h6 {
-    @apply mb-[var(--headings-margin-bottom)]
-    font-[var(--headings-font-weight)]
-    text-[length:var(--h6-font-size)]
-    leading-[var(--h6-line-height)];
+    @apply mb-(--headings-margin-bottom)
+    font-(--headings-font-weight)
+    text-(length:--h6-font-size)
+    leading-(--h6-line-height);
   }
 
   p {
-    @apply mb-[var(--paragraph-margin-bottom)] mt-0;
+    @apply mb-(--paragraph-margin-bottom) mt-0;
   }
 
   address {
@@ -93,7 +93,7 @@
   }
 
   dt {
-    @apply font-[var(--dt-font-weight)];
+    @apply font-(--dt-font-weight);
   }
 
   blockquote {
@@ -101,7 +101,7 @@
   }
 
   a {
-    @apply underline text-[var(--anchor-color)] hover:text-[var(--anchor-hover-color)];
+    @apply underline text-(--anchor-color) hover:text-(--anchor-hover-color);
   }
 
   a:not([href]):not([class]) {
@@ -112,7 +112,7 @@
   }
 
   code {
-    @apply text-[var(--code-color)] text-[length:var(--code-font-size)];
+    @apply text-(--code-color) text-(length:--code-font-size);
     a > & {
       @apply text-inherit;
     }
@@ -124,9 +124,9 @@
 
   caption {
     @apply text-left caption-bottom
-    font-[var(--caption-font-weight)]
-    px-[var(--caption-padding-x)]
-    py-[var(--caption-padding-y)];
+    font-(--caption-font-weight)
+    px-(--caption-padding-x)
+    py-(--caption-padding-y);
   }
 
   label {
@@ -142,10 +142,10 @@
 
   legend {
     @apply float-left w-full p-0
-    mb-[var(--legend-margin-bottom)]
-    font-[var(--legend-font-weight)]
+    mb-(--legend-margin-bottom)
+    font-(--legend-font-weight)
     leading-normal
-    text-[var(--legend-font-size)];
+    text-(--legend-font-size);
   }
 
   output {

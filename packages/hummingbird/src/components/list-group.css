@@ -18,12 +18,12 @@
 
     @apply relative flex flex-col
     ps-0 mb-0 list-none
-    py-[var(--list-group-padding-y)]
-    bg-[var(--list-group-bg)]
-    rounded-[var(--list-group-border-radius)];
+    py-(--list-group-padding-y)
+    bg-(--list-group-bg)
+    rounded-(--list-group-border-radius);
 
     hr {
-      @apply border-[var(--list-group-border-color)];
+      @apply border-(--list-group-border-color);
     }
     ul {
       @apply list-none p-0 m-0;
@@ -33,21 +33,21 @@
 
 @utility list-group-item {
   @layer base {
-    @apply px-[var(--list-group-item-padding-x)]
-    py-[var(--list-group-item-padding-y)]
-    text-[var(--list-group-color)]
-    text-[length:var(--list-group-item-font-size)]
+    @apply px-(--list-group-item-padding-x)
+    py-(--list-group-item-padding-y)
+    text-(--list-group-color)
+    text-(length:--list-group-item-font-size)
     no-underline
     leading-[1.5];
 
     &:is(:disabled, [disabled], .disabled) {
       @apply pointer-events-none
-    text-[var(--list-group-disabled-color)]
-    bg-[var(--list-group-disabled-bg)];
+    text-(--list-group-disabled-color)
+    bg-(--list-group-disabled-bg);
     }
     &.active {
-      @apply text-[var(--list-group-active-color)]
-    bg-[var(--list-group-active-bg)];
+      @apply text-(--list-group-active-color)
+    bg-(--list-group-active-bg);
     }
   }
 }
@@ -55,18 +55,18 @@
 @utility list-group-item-action {
   @layer base {
     @apply w-full text-left
-    text-[var(--list-group-action-color)];
+    text-(--list-group-action-color);
 
     &:not(.active) {
       &:hover,
       &:focus {
         @apply no-underline
-        text-[var(--list-group-hover-color)]
-        bg-[var(--list-group-hover-bg)];
+        text-(--list-group-hover-color)
+        bg-(--list-group-hover-bg);
       }
       &:active {
-        @apply text-[var(--list-group-active-color)]
-      bg-[var(--list-group-active-bg)];
+        @apply text-(--list-group-active-color)
+      bg-(--list-group-active-bg);
       }
     }
   }

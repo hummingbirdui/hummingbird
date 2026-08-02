@@ -18,8 +18,8 @@
     --table-hover-color: var(--text-color-muted);
 
     @apply w-full text-left rtl:text-right
-    text-[length:var(--table-font-size)]
-    leading-[var(--table-line-height)];
+    text-(length:--table-font-size)
+    leading-(--table-line-height);
 
     th {
       @apply font-medium;
@@ -27,12 +27,12 @@
 
     > :not(caption) > * > * {
       @apply align-middle
-      py-[var(--table-cell-padding-y)]
-      px-[var(--table-cell-padding-x)]
-      text-[var(--table-color)]
-      bg-[var(--table-bg)]
+      py-(--table-cell-padding-y)
+      px-(--table-cell-padding-x)
+      text-(--table-color)
+      bg-(--table-bg)
       border-b-(length:--table-border-width)
-      border-[var(--table-border-color)];
+      border-(--table-border-color);
     }
 
     thead,
@@ -46,7 +46,7 @@
     thead {
       td,
       th {
-        @apply text-[var(--table-head-color)];
+        @apply text-(--table-head-color);
       }
     }
   }
@@ -58,7 +58,7 @@
     tfoot {
       td,
       th {
-        @apply border-b-0 bg-[var(--table-head-bg)];
+        @apply border-b-0 bg-(--table-head-bg);
       }
     }
     &:has(tfoot) {
@@ -115,7 +115,7 @@
 @utility table-bordered {
   @layer base {
     > :not(caption) > * {
-      @apply border-y-(length:--table-border-width) border-x-0 border-[var(--table-border-color)];
+      @apply border-y-(length:--table-border-width) border-x-0 border-(--table-border-color);
       > * {
         @apply border-y-0 border-x-(length:--table-border-width);
       }
@@ -140,7 +140,7 @@
 @utility table-hover {
   @layer base {
     > tbody > tr:hover > * {
-      @apply bg-[var(--table-hover-bg)] text-[var(--table-hover-color)];
+      @apply bg-(--table-hover-bg) text-(--table-hover-color);
     }
   }
 }

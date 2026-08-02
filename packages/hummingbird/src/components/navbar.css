@@ -15,8 +15,8 @@
 
     @apply relative
     flex flex-wrap items-center justify-between
-    px-[var(--navbar-padding-x)]
-    py-[var(--navbar-padding-y)];
+    px-(--navbar-padding-x)
+    py-(--navbar-padding-y);
 
     > .container,
     > .sm\:container,
@@ -31,16 +31,16 @@
 
 @utility navbar-brand {
   @layer base {
-    @apply py-[var(--navbar-brand-padding-y)]
-    me-[var(--navbar-brand-margin-end)]
-    text-[length:var(--navbar-brand-font-size)]
-    text-[var(--navbar-brand-color)]
+    @apply py-(--navbar-brand-padding-y)
+    me-(--navbar-brand-margin-end)
+    text-(length:--navbar-brand-font-size)
+    text-(--navbar-brand-color)
     no-underline
     whitespace-nowrap leading-[1.5];
 
     &:hover,
     &:focus {
-      @apply text-[var(--navbar-brand-hover-color)]
+      @apply text-(--navbar-brand-hover-color)
       no-underline;
     }
   }
@@ -79,13 +79,13 @@
 
 @utility navbar-text {
   @layer base {
-    @apply py-[var(--navbar-padding-y)]
-    text-[var(--navbar-color)];
+    @apply py-(--navbar-padding-y)
+    text-(--navbar-color);
 
     a,
     a:hover,
     a:focus {
-      @apply text-[var(--navbar-active-color)];
+      @apply text-(--navbar-active-color);
     }
   }
 }
@@ -114,7 +114,7 @@
       }
 
       .nav-link {
-        @apply px-[var(--navbar-nav-link-padding-x)];
+        @apply px-(--navbar-nav-link-padding-x);
       }
     }
 

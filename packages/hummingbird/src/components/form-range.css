@@ -11,7 +11,7 @@
     --form-range-track-border-radius: var(--radius-sm);
 
     @apply w-full appearance-none
-    h-[var(--form-range-height)]
+    h-(--form-range-height)
     p-0
     bg-transparent;
 
@@ -19,10 +19,10 @@
     &:focus {
       @apply outline-0;
       &::-webkit-slider-thumb {
-        @apply shadow-[var(--form-range-thumb-box-shadow)];
+        @apply shadow-(--form-range-thumb-box-shadow);
       }
       &::-moz-range-thumb {
-        @apply shadow-[var(--form-range-thumb-box-shadow)];
+        @apply shadow-(--form-range-thumb-box-shadow);
       }
     }
 
@@ -32,38 +32,38 @@
 
     &::-webkit-slider-thumb {
       @apply appearance-none transition duration-200
-    w-[var(--form-range-thumb-width)]
-    h-[var(--form-range-thumb-height)]
+    w-(--form-range-thumb-width)
+    h-(--form-range-thumb-height)
     mt-[calc((var(--form-range-track-height)-var(--form-range-thumb-height))*0.5)]
     border-0
-    rounded-[var(--form-range-thumb-border-radius)]
-    bg-[var(--form-range-color)];
+    rounded-(--form-range-thumb-border-radius)
+    bg-(--form-range-color);
     }
 
     &::-webkit-slider-runnable-track {
       @apply cursor-pointer
-    w-[var(--form-range-track-width)]
-    h-[var(--form-range-track-height)]
+    w-(--form-range-track-width)
+    h-(--form-range-track-height)
     bg-[--alpha(var(--form-range-color)/30%)]
-    rounded-[var(--form-range-track-border-radius)];
+    rounded-(--form-range-track-border-radius);
     }
 
     &::-moz-range-thumb {
       @apply appearance-none transition duration-200
-    w-[var(--form-range-thumb-width)]
-    h-[var(--form-range-thumb-height)]
+    w-(--form-range-thumb-width)
+    h-(--form-range-thumb-height)
     mt-[calc((var(--form-range-track-height)-var(--form-range-thumb-height))*0.5)]
     border-0
-    rounded-[var(--form-range-thumb-border-radius)]
-    bg-[var(--form-range-color)];
+    rounded-(--form-range-thumb-border-radius)
+    bg-(--form-range-color);
     }
 
     &::-moz-range-track {
       @apply cursor-pointer
-    w-[var(--form-range-track-width)]
-    h-[var(--form-range-track-height)]
+    w-(--form-range-track-width)
+    h-(--form-range-track-height)
     bg-[--alpha(var(--form-range-color)/30%)]
-    rounded-[var(--form-range-track-border-radius)];
+    rounded-(--form-range-track-border-radius);
     }
 
     &:active {

@@ -61,7 +61,7 @@
     > :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(
         .invalid-feedback
       ) {
-      @apply rounded-s-none -ms-[var(--input-btn-border-width)];
+      @apply rounded-s-none -ms-(--input-btn-border-width);
     }
 
     > .form-floating:not(:first-child) {
@@ -88,17 +88,17 @@
     --input-group-addon-line-height: var(--input-btn-line-height);
 
     @apply flex items-center
-    py-[var(--input-group-addon-padding-y)] px-[var(--input-group-addon-padding-x)]
-    text-[length:var(--input-group-addon-font-size)]
-    font-[var(--input-group-addon-font-weight)]
-    leading-[var(--input-group-addon-line-height)]
-    text-[var(--input-group-addon-color)]
+    py-(--input-group-addon-padding-y) px-(--input-group-addon-padding-x)
+    text-(length:--input-group-addon-font-size)
+    font-(--input-group-addon-font-weight)
+    leading-(--input-group-addon-line-height)
+    text-(--input-group-addon-color)
     text-center
     whitespace-nowrap
-    bg-[var(--input-group-addon-bg)]
-    border-[length:var(--input-btn-border-width)]
-    border-[var(--input-group-addon-border-color)]
-    rounded-[var(--input-group-addon-border-radius)];
+    bg-(--input-group-addon-bg)
+    border-(length:--input-btn-border-width)
+    border-(--input-group-addon-border-color)
+    rounded-(--input-group-addon-border-radius);
   }
 }
 

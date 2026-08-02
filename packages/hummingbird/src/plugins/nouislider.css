@@ -21,7 +21,7 @@
   --ar-tooltip-bg: var(--color-dark);
   --ar-tooltip-font-size: var(--text-xs);
 
-  @apply relative bg-[--alpha(var(--ar-color)/30%)] rounded-[var(--ar-track-border-radius)];
+  @apply relative bg-[--alpha(var(--ar-color)/30%)] rounded-(--ar-track-border-radius);
 }
 .noUi-target,
 .noUi-target * {
@@ -34,7 +34,7 @@
 /* Wrapper for all connect elements.
  */
 .noUi-connects {
-  @apply overflow-hidden z-0 rounded-[var(--ar-track-border-radius)];
+  @apply overflow-hidden z-0 rounded-(--ar-track-border-radius);
 }
 .noUi-connect,
 .noUi-origin {
@@ -61,10 +61,10 @@
  */
 .noUi-handle {
   @apply absolute backface-hidden
-  rounded-full bg-[var(--ar-color)] cursor-pointer;
+  rounded-full bg-(--ar-color) cursor-pointer;
   &:hover,
   &:focus {
-    @apply shadow-[var(--ar-handle-box-shadow)];
+    @apply shadow-(--ar-handle-box-shadow);
   }
 }
 .noUi-touch-area {
@@ -88,11 +88,11 @@
 /* Slider size and handle placement;
  */
 .noUi-horizontal {
-  @apply h-[var(--ar-track-size)];
+  @apply h-(--ar-track-size);
   .noUi-handle {
-    @apply w-[var(--ar-handle-width)] h-[var(--ar-handle-width)] 
-    right-[var(--ar-horizontal-handle-right)]
-    top-[var(--ar-horizontal-handle-top)];
+    @apply w-(--ar-handle-width) h-(--ar-handle-width) 
+    right-(--ar-horizontal-handle-right)
+    top-(--ar-horizontal-handle-top);
   }
   .noUi-origin {
     @apply h-0;
@@ -106,11 +106,11 @@
 }
 
 .noUi-vertical {
-  @apply w-[var(--ar-track-size)];
+  @apply w-(--ar-track-size);
   .noUi-handle {
-    @apply w-[var(--ar-handle-width)] h-[var(--ar-handle-width)]
-    end-[var(--ar-vertical-handle-right)]
-    bottom-[var(--ar-vertical-handle-bottom)];
+    @apply w-(--ar-handle-width) h-(--ar-handle-width)
+    end-(--ar-vertical-handle-right)
+    bottom-(--ar-vertical-handle-bottom);
   }
   .noUi-origin {
     @apply -top-full w-0;
@@ -129,14 +129,14 @@
  * Giving the connect element a border radius causes issues with using transform: scale
  */
 .noUi-connect {
-  @apply bg-[var(--ar-color)];
+  @apply bg-(--ar-color);
 }
 
 .noUi-active {
-  @apply shadow-[var(--ar-handle-active-box-shadow)];
+  @apply shadow-(--ar-handle-active-box-shadow);
   &:hover,
   &:focus {
-    @apply shadow-[var(--ar-handle-active-box-shadow)];
+    @apply shadow-(--ar-handle-active-box-shadow);
   }
 }
 
@@ -144,14 +144,14 @@
  */
 [disabled] {
   .noUi-connect {
-    @apply bg-[var(--ar-connect-disabled-bg)];
+    @apply bg-(--ar-connect-disabled-bg);
   }
   &.noUi-target {
-    @apply bg-[var(--ar-disabled-bg)] cursor-not-allowed;
+    @apply bg-(--ar-disabled-bg) cursor-not-allowed;
   }
   &.noUi-handle,
   .noUi-handle {
-    @apply bg-[var(--ar-connect-disabled-bg)] cursor-not-allowed hover:shadow-none focus:shadow-none;
+    @apply bg-(--ar-connect-disabled-bg) cursor-not-allowed hover:shadow-none focus:shadow-none;
   }
 }
 /* Base;
@@ -234,9 +234,9 @@
 }
 .noUi-tooltip {
   @apply block absolute rounded-sm
-  bg-[var(--ar-tooltip-bg)]
-  text-[var(--ar-tooltip-color)]
-  text-[length:var(--ar-tooltip-font-size)]
+  bg-(--ar-tooltip-bg)
+  text-(--ar-tooltip-color)
+  text-(length:--ar-tooltip-font-size)
   px-2.5 py-2
   text-center whitespace-nowrap;
 }

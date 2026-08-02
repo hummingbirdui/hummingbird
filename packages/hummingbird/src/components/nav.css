@@ -12,10 +12,10 @@
     --nav-link-focus-ring-color: --alpha(var(--nav-link-active-color) / 30%);
 
     @apply flex flex-wrap ps-0 mb-0 list-none
-    bg-[var(--nav-bg)];
+    bg-(--nav-bg);
     .nav-link.active,
     .show > .nav-link {
-      @apply text-[var(--nav-link-active-color)];
+      @apply text-(--nav-link-active-color);
     }
   }
 }
@@ -23,12 +23,12 @@
 @utility nav-link {
   @layer base {
     @apply block
-    px-[var(--nav-link-padding-x)]
-    py-[var(--nav-link-padding-y)]
-    text-[length:var(--nav-link-font-size)]
-    font-[var(--nav-link-font-weight)]
-    text-[var(--nav-link-color)]
-    leading-[var(--nav-link-line-height)]
+    px-(--nav-link-padding-x)
+    py-(--nav-link-padding-y)
+    text-(length:--nav-link-font-size)
+    font-(--nav-link-font-weight)
+    text-(--nav-link-color)
+    leading-(--nav-link-line-height)
     no-underline
     bg-none
     border-0
@@ -36,12 +36,12 @@
     transition-colors duration-150 ease-in-out;
 
     @variant focus-visible {
-      @apply outline-0 ring-4 ring-[var(--nav-link-focus-ring-color)];
+      @apply outline-0 ring-4 ring-(--nav-link-focus-ring-color);
     }
 
     &.disabled,
     &:disabled {
-      @apply text-[var(--nav-link-disabled-color)]
+      @apply text-(--nav-link-disabled-color)
       pointer-events-none cursor-default;
     }
   }
@@ -53,10 +53,10 @@
     --nav-underline-border-width: calc(var(--border-width) * 2);
     --nav-link-active-color: var(--color-primary);
 
-    @apply gap-[var(--nav-underline-gap)];
+    @apply gap-(--nav-underline-gap);
 
     .nav-link {
-      @apply border-b-[length:var(--nav-underline-border-width)] border-transparent;
+      @apply border-b-(length:--nav-underline-border-width) border-transparent;
     }
 
     .nav-link.active,
@@ -77,25 +77,25 @@
     --nav-tabs-link-active-border-color: var(--border-color-default) var(--border-color-default)
       var(--nav-tabs-link-active-bg);
 
-    @apply border-b-[length:var(--nav-tabs-border-width)] border-[var(--nav-tabs-border-color)];
+    @apply border-b-(length:--nav-tabs-border-width) border-(--nav-tabs-border-color);
 
     .nav-link {
-      @apply -mb-[length:var(--nav-tabs-border-width)]
-      border-[length:var(--nav-tabs-border-width)]
+      @apply -mb-(length:--nav-tabs-border-width)
+      border-(length:--nav-tabs-border-width)
       border-transparent
-      rounded-t-[var(--nav-tabs-border-radius)];
+      rounded-t-(--nav-tabs-border-radius);
 
       &:hover,
       &:focus {
         @apply isolate
-        border-[var(--nav-tabs-link-hover-border-color)];
+        border-(--nav-tabs-link-hover-border-color);
       }
     }
 
     .nav-link.active,
     .show > .nav-link {
-      @apply border-[var(--nav-tabs-link-active-border-color)]
-      bg-[var(--nav-tabs-link-active-bg)];
+      @apply border-(--nav-tabs-link-active-border-color)
+      bg-(--nav-tabs-link-active-bg);
     }
   }
 }

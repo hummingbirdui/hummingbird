@@ -68,16 +68,16 @@
   --dtp-spinner-bg: transparent;
 
   @apply absolute
-  w-[var(--dtp-width)]
-  text-[length:var(--dtp-font-size)]
-  text-[var(--dtp-color)]
+  w-(--dtp-width)
+  text-(length:--dtp-font-size)
+  text-(--dtp-color)
   text-center
   leading-6
-  shadow-[var(--dtp-shadow)]
-  bg-[var(--dtp-bg)]
-  rounded-[var(--dtp-border-radius)]
-  border-[length:var(--dtp-border-width)]
-  border-[var(--dtp-border-color)]
+  shadow-(--dtp-shadow)
+  bg-(--dtp-bg)
+  rounded-(--dtp-border-radius)
+  border-(length:--dtp-border-width)
+  border-(--dtp-border-color)
   touch-manipulation
   overflow-hidden
   box-border
@@ -94,8 +94,8 @@
   }
 
   .flatpickr-months {
-    @apply px-[var(--dtp-months-padding-x)] 
-    py-[var(--dtp-months-padding-y)] 
+    @apply px-(--dtp-months-padding-x) 
+    py-(--dtp-months-padding-y) 
     flex items-center;
 
     .flatpickr-month {
@@ -112,9 +112,9 @@
         leading-none;
 
         .flatpickr-monthDropdown-months {
-          @apply p-[var(--dtp-month-padding)]
-          text-[length:var(--dtp-month-font-size)]
-          font-[var(--dtp-month-font-weight)]
+          @apply p-(--dtp-month-padding)
+          text-(length:--dtp-month-font-size)
+          font-(--dtp-month-font-weight)
           cursor-pointer
           leading-6
           align-[initial]
@@ -124,7 +124,7 @@
         }
 
         .numInputWrapper {
-          @apply w-[var(--dtp-year-width)]
+          @apply w-(--dtp-year-width)
           inline-block
           bg-transparent;
 
@@ -134,9 +134,9 @@
 
           input {
             &.cur-year {
-              @apply p-[var(--dtp-year-padding)]
-              text-[length:var(--dtp-year-font-size)]
-              font-[var(--dtp-year-font-weight)]
+              @apply p-(--dtp-year-padding)
+              text-(length:--dtp-year-font-size)
+              font-(--dtp-year-font-weight)
               inline-block
               cursor-text
               align-[initial]
@@ -149,12 +149,12 @@
 
               &[disabled],
               &[disabled]:hover {
-                @apply opacity-[var(--dtp-disabled-opacity)]
+                @apply opacity-(--dtp-disabled-opacity)
                 pointer-events-none;
               }
             }
             &:hover {
-              @apply bg-[var(--dtp-year-hover-bg)];
+              @apply bg-(--dtp-year-hover-bg);
             }
           }
         }
@@ -163,10 +163,10 @@
 
     .flatpickr-prev-month,
     .flatpickr-next-month {
-      @apply size-[var(--dtp-months-btn-size)]
-      text-[var(--dtp-months-btn-color)]
-      rounded-[var(--dtp-months-btn-radius)]
-      bg-[var(--dtp-months-btn-bg)]
+      @apply size-(--dtp-months-btn-size)
+      text-(--dtp-months-btn-color)
+      rounded-(--dtp-months-btn-radius)
+      bg-(--dtp-months-btn-bg)
       flex 
       items-center 
       justify-center
@@ -178,7 +178,7 @@
 
       svg {
         @apply fill-current
-        size-[var(--dtp-months-btn-icon-size)];
+        size-(--dtp-months-btn-icon-size);
 
         path {
           @apply fill-inherit transition-[fill] duration-100;
@@ -188,14 +188,14 @@
         @apply text-default;
       }
       &.flatpickr-disabled {
-        @apply opacity-[var(--dtp-disabled-opacity)] 
+        @apply opacity-(--dtp-disabled-opacity) 
         pointer-events-none;
       }
     }
   }
 
   .flatpickr-innerContainer {
-    @apply p-[var(--dtp-inner-padding)] 
+    @apply p-(--dtp-inner-padding) 
     pt-0 
     flex 
     box-border 
@@ -242,24 +242,24 @@
     .flatpickr-weekday {
       @apply block
       text-center 
-      text-[length:var(--dtp-weekday-font-size)]
-      text-[var(--dtp-weekday-color)]
-      font-[var(--dtp-weekday-font-weight)]
+      text-(length:--dtp-weekday-font-size)
+      text-(--dtp-weekday-color)
+      font-(--dtp-weekday-font-weight)
       leading-none
       cursor-default
-      bg-[var(--dtp-weekday-bg)];
+      bg-(--dtp-weekday-bg);
     }
 
     .flatpickr-day {
       @apply m-auto
       relative
       text-center 
-      text-[var(--dtp-day-color)]
-      font-[var(--dtp-day-font-weight)]
-      size-[var(--dtp-day-size)]
-      leading-[var(--dtp-day-size)]
-      bg-[var(--dtp-day-bg)] 
-      rounded-[var(--dtp-day-border-radius)]
+      text-(--dtp-day-color)
+      font-(--dtp-day-font-weight)
+      size-(--dtp-day-size)
+      leading-(--dtp-day-size)
+      bg-(--dtp-day-bg) 
+      rounded-(--dtp-day-border-radius)
       cursor-pointer
       inline-block
       box-border
@@ -267,11 +267,11 @@
       duration-200;
 
       &.today {
-        @apply text-[var(--dtp-today-color)] 
-        bg-[var(--dtp-today-bg)];
+        @apply text-(--dtp-today-color) 
+        bg-(--dtp-today-bg);
 
         &:hover {
-          @apply bg-[var(--dtp-today-hover-bg)];
+          @apply bg-(--dtp-today-hover-bg);
         }
       }
       &.inRange,
@@ -286,8 +286,8 @@
       &.prevMonthDay:focus,
       &.nextMonthDay:focus {
         @apply cursor-pointer 
-        text-[var(--dtp-day-range-color)]
-        bg-[var(--dtp-day-range-bg)];
+        text-(--dtp-day-range-color)
+        bg-(--dtp-day-range-bg);
       }
       &.inRange,
       &.prevMonthDay.inRange,
@@ -312,8 +312,8 @@
       &.selected.nextMonthDay,
       &.startRange.nextMonthDay,
       &.endRange.nextMonthDay {
-        @apply text-[var(--dtp-day-selected-color)]
-        bg-[var(--dtp-day-selected-bg)]
+        @apply text-(--dtp-day-selected-color)
+        bg-(--dtp-day-selected-bg)
         opacity-100;
       }
 
@@ -322,19 +322,19 @@
       &.notAllowed,
       &.notAllowed.prevMonthDay,
       &.notAllowed.nextMonthDay {
-        @apply opacity-[var(--dtp-muted-day-opacity)];
+        @apply opacity-(--dtp-muted-day-opacity);
       }
       &.weekend-day {
-        @apply text-[var(--dtp-weeknday-color)];
+        @apply text-(--dtp-weeknday-color);
       }
       &.flatpickr-disabled,
       &.flatpickr-disabled:hover {
-        @apply opacity-[var(--dtp-disabled-opacity)] 
+        @apply opacity-(--dtp-disabled-opacity) 
         bg-transparent 
         cursor-not-allowed;
       }
       &:hover {
-        @apply bg-[var(--dtp-day-hover-bg)];
+        @apply bg-(--dtp-day-hover-bg);
       }
       &.hidden {
         @apply invisible;
@@ -355,18 +355,18 @@
     span {
       @apply absolute
       right-0
-      w-[var(--dtp-spinner-width)] h-1/2
+      w-(--dtp-spinner-width) h-1/2
       py-0 pr-1 pl-0.5
       leading-[50%]
       opacity-0
       cursor-pointer
-      bg-[var(--dtp-spinner-bg)]
-      border-[length:var(--dtp-spinner-border-width)]
-      border-[var(--dtp-spinner-border-color)]
+      bg-(--dtp-spinner-bg)
+      border-(length:--dtp-spinner-border-width)
+      border-(--dtp-spinner-border-color)
       box-border;
 
       &:active {
-        @apply bg-[var(--dtp-spinner-active-bg)];
+        @apply bg-(--dtp-spinner-active-bg);
       }
       &::after {
         @apply absolute content-[''] block;
@@ -377,9 +377,9 @@
         &::after {
           @apply top-1/4 
           border-x-transparent 
-          border-x-[length:var(--dtp-spinner-arrow-size)] 
-          border-b-[length:var(--dtp-spinner-arrow-size)] 
-          border-b-[var(--dtp-spinner-color)];
+          border-x-(length:--dtp-spinner-arrow-size) 
+          border-b-(length:--dtp-spinner-arrow-size) 
+          border-b-(--dtp-spinner-color);
         }
       }
       &.arrowDown {
@@ -388,9 +388,9 @@
         &::after {
           @apply top-2/5
           border-x-transparent
-          border-x-[length:var(--dtp-spinner-arrow-size)]
-          border-t-[length:var(--dtp-spinner-arrow-size)]
-          border-t-[var(--dtp-spinner-color)];
+          border-x-(length:--dtp-spinner-arrow-size)
+          border-t-(length:--dtp-spinner-arrow-size)
+          border-t-(--dtp-spinner-color);
         }
       }
       svg {
@@ -438,8 +438,8 @@
   &.hasTime {
     .flatpickr-time {
       @apply h-10 
-      border-t-[length:var(--dtp-timepickr-border-width)] 
-      border-[var(--dtp-timepickr-border-color)];
+      border-t-(length:--dtp-timepickr-border-width) 
+      border-(--dtp-timepickr-border-color);
 
       @variant dark {
         --dtp-timepickr-border-color: var(--border-color-default);
@@ -458,8 +458,8 @@
 
 .flatpickr-time {
   @apply text-center
-  max-h-[var(--dtp-timepickr-height)]
-  leading-[var(--dtp-timepickr-height)]
+  max-h-(--dtp-timepickr-height)
+  leading-(--dtp-timepickr-height)
   outline-0
   flex
   box-border
@@ -468,7 +468,7 @@
   .numInputWrapper {
     @apply flex-1 
     w-2/5 
-    h-[var(--dtp-timepickr-height)] 
+    h-(--dtp-timepickr-height) 
     float-left;
 
     input {
@@ -493,7 +493,7 @@
   }
 
   .flatpickr-time-separator {
-    @apply text-[var(--dtp-time-separator-color)]
+    @apply text-(--dtp-time-separator-color)
     leading-[inherit]
     font-bold
     h-[inherit]
@@ -524,7 +524,7 @@
   .flatpickr-am-pm:hover,
   input:focus,
   .flatpickr-am-pm:focus {
-    @apply bg-[var(--dtp-timepickr-hover-bg)];
+    @apply bg-(--dtp-timepickr-hover-bg);
   }
 }
 

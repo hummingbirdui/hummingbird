@@ -6,11 +6,11 @@
     --placeholder-height: 1em;
 
     @apply inline-block
-    min-h-[var(--placeholder-height)]
+    min-h-(--placeholder-height)
     align-middle
     cursor-wait
-    bg-[var(--placeholder-bg)]
-    opacity-[var(--placeholder-opacity-max)];
+    bg-(--placeholder-bg)
+    opacity-(--placeholder-opacity-max);
 
     &.btn::before {
       @apply inline-block content-[''];

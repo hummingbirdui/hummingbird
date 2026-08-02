@@ -24,39 +24,39 @@
     appearance-none
     block
     transition duration-200
-    leading-[var(--form-select-line-height)]
-    bg-[var(--form-select-bg)]
-    text-[length:var(--form-select-font-size)]
-    text-[var(--form-select-color)]
-    font-[var(--form-select-font-weight)]
-    rounded-[var(--form-select-border-radius)]
-    border-[length:var(--form-select-border-width)]
-    border-[var(--form-select-border-color)]
-    ps-[var(--form-select-padding-x)]
-    pe-[var(--form-select-padding-right)]
-    py-[var(--form-select-padding-y)]
-    bg-[image:var(--form-select-indicator)]
+    leading-(--form-select-line-height)
+    bg-(--form-select-bg)
+    text-(length:--form-select-font-size)
+    text-(--form-select-color)
+    font-(--form-select-font-weight)
+    rounded-(--form-select-border-radius)
+    border-(length:--form-select-border-width)
+    border-(--form-select-border-color)
+    ps-(--form-select-padding-x)
+    pe-(--form-select-padding-right)
+    py-(--form-select-padding-y)
+    bg-(image:--form-select-indicator)
     bg-no-repeat
     ltr:bg-[position:right_var(--form-select-padding-x)_center]
     rtl:bg-[position:left_var(--form-select-padding-x)_center]
-    bg-[length:var(--form-select-bg-size)];
+    bg-(length:--form-select-bg-size);
 
     &:is(:disabled, [disabled]) {
-      @apply text-[var(--form-select-disabled-color)]
-      bg-[var(--form-select-disabled-bg)]
-      opacity-[var(--form-select-disabled-opacity)]
+      @apply text-(--form-select-disabled-color)
+      bg-(--form-select-disabled-bg)
+      opacity-(--form-select-disabled-opacity)
       pointer-events-none;
     }
 
     @variant hover {
-      @apply bg-[var(--form-select-hover-bg)];
+      @apply bg-(--form-select-hover-bg);
     }
 
     &:focus-within,
     &:focus {
       @apply outline-0
-      bg-[var(--form-select-focus-bg)]
-      border-[var(--form-select-focus-border-color)];
+      bg-(--form-select-focus-bg)
+      border-(--form-select-focus-border-color);
     }
 
     @variant dark {
@@ -88,35 +88,35 @@
     appearance-none
     block
     transition duration-200
-    leading-[var(--form-select-line-height)]
-    text-[length:var(--form-select-font-size)]
-    bg-[var(--form-select-bg)]
-    text-[var(--form-select-color)]
-    font-[var(--form-select-font-weight)]
-    rounded-[var(--form-select-border-radius)]
-    border-[length:var(--form-select-border-width)]
-    border-[var(--form-select-border-color)]
-    ps-[var(--form-select-padding-x)]
-    pe-[var(--form-select-padding-right)]
-    py-[var(--form-select-padding-y)]
-    bg-[image:var(--form-select-indicator)]
+    leading-(--form-select-line-height)
+    text-(length:--form-select-font-size)
+    bg-(--form-select-bg)
+    text-(--form-select-color)
+    font-(--form-select-font-weight)
+    rounded-(--form-select-border-radius)
+    border-(length:--form-select-border-width)
+    border-(--form-select-border-color)
+    ps-(--form-select-padding-x)
+    pe-(--form-select-padding-right)
+    py-(--form-select-padding-y)
+    bg-(image:--form-select-indicator)
     bg-no-repeat
     ltr:bg-[position:right_var(--form-select-padding-x)_center]
     rtl:bg-[position:left_var(--form-select-padding-x)_center]
-    bg-[length:var(--form-select-bg-size)];
+    bg-(length:--form-select-bg-size);
 
     &:is(:disabled, [disabled]) {
-      @apply opacity-[var(--form-select-disabled-opacity)]
+      @apply opacity-(--form-select-disabled-opacity)
       pointer-events-none;
     }
 
     @variant hover {
-      @apply border-[var(--form-select-hover-border-color)];
+      @apply border-(--form-select-hover-border-color);
     }
 
     &:focus-within,
     &:focus {
-      @apply outline-0 border-[var(--form-select-focus-border-color)];
+      @apply outline-0 border-(--form-select-focus-border-color);
     }
 
     @variant dark {

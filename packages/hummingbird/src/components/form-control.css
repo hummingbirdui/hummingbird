@@ -17,32 +17,32 @@
     appearance-none
     block
     transition duration-200
-    leading-[var(--input-line-height)]
-    bg-[var(--input-bg)]
-    text-[length:var(--input-font-size)]
-    text-[var(--input-color)]
-    font-[var(--input-font-weight)]
-    rounded-[var(--input-border-radius)]
-    border-[length:var(--input-border-width)]
-    border-[var(--input-border-color)]
-    px-[var(--input-padding-x)]
-    py-[var(--input-padding-y)];
+    leading-(--input-line-height)
+    bg-(--input-bg)
+    text-(length:--input-font-size)
+    text-(--input-color)
+    font-(--input-font-weight)
+    rounded-(--input-border-radius)
+    border-(length:--input-border-width)
+    border-(--input-border-color)
+    px-(--input-padding-x)
+    py-(--input-padding-y);
 
     &:is(:disabled, [disabled]) {
-      @apply text-[var(--input-disabled-color)]
-      bg-[var(--input-disabled-bg)]
-      opacity-[var(--input-disabled-opacity)]
+      @apply text-(--input-disabled-color)
+      bg-(--input-disabled-bg)
+      opacity-(--input-disabled-opacity)
       pointer-events-none;
     }
 
     @variant hover {
-      @apply bg-[var(--input-hover-bg)];
+      @apply bg-(--input-hover-bg);
     }
     &:focus-within,
     &:focus {
       @apply outline-0
-      bg-[var(--input-focus-bg)]
-      border-[var(--input-focus-border-color)];
+      bg-(--input-focus-bg)
+      border-(--input-focus-border-color);
     }
     &[type='file'] {
       overflow: hidden;
@@ -53,21 +53,21 @@
     }
     &::file-selector-button {
       @apply pointer-events-none transition-[background] duration-200
-      bg-[var(--file-selector-btn-bg)]
-      text-[var(--file-selector-btn-color)]
+      bg-(--file-selector-btn-bg)
+      text-(--file-selector-btn-color)
       font-semibold
-      px-[var(--input-padding-x)]
-      py-[var(--input-padding-y)]
-      -mx-[var(--input-padding-x)]
-      -my-[var(--input-padding-y)]
-      me-[var(--input-padding-x)];
+      px-(--input-padding-x)
+      py-(--input-padding-y)
+      -mx-(--input-padding-x)
+      -my-(--input-padding-y)
+      me-(--input-padding-x);
     }
     &:hover:not(:disabled):not([readonly])::file-selector-button {
       @apply bg-(--file-selector-btn-hover-bg);
     }
     &:is(:disabled, [disabled])::file-selector-button {
       @apply bg-(--file-selector-btn-disabled-bg)
-      opacity-[var(--input-disabled-opacity)]
+      opacity-(--input-disabled-opacity)
       pointer-events-none;
     }
   }
@@ -86,28 +86,28 @@
     block
     appearance-none
     transition duration-200
-    leading-[var(--input-line-height)]
-    text-[length:var(--input-font-size)]
-    text-[var(--input-color)]
-    font-[var(--input-btn-font-weight)]
-    rounded-[var(--input-border-radius)]
-    border-[length:var(--input-border-width)]
-    border-[var(--input-border-color)]
-    bg-[var(--input-bg)]
-    px-[var(--input-padding-x)]
-    py-[var(--input-padding-y)];
+    leading-(--input-line-height)
+    text-(length:--input-font-size)
+    text-(--input-color)
+    font-(--input-btn-font-weight)
+    rounded-(--input-border-radius)
+    border-(length:--input-border-width)
+    border-(--input-border-color)
+    bg-(--input-bg)
+    px-(--input-padding-x)
+    py-(--input-padding-y);
 
     @variant hover {
-      @apply border-[var(--input-hover-border-color)];
+      @apply border-(--input-hover-border-color);
     }
 
     &:focus-within,
     &:focus {
-      @apply outline-0 border-[var(--input-focus-border-color)];
+      @apply outline-0 border-(--input-focus-border-color);
     }
 
     &:is(:disabled, [disabled]) {
-      @apply opacity-[var(--input-disabled-opacity)]
+      @apply opacity-(--input-disabled-opacity)
       pointer-events-none;
     }
 
@@ -121,13 +121,13 @@
     &::file-selector-button {
       @apply pointer-events-none transition-[border] duration-200
       font-semibold
-      px-[var(--input-padding-x)]
-      py-[var(--input-padding-y)]
-      -mx-[var(--input-padding-x)]
-      -my-[var(--input-padding-y)]
-      me-[var(--input-padding-x)]
+      px-(--input-padding-x)
+      py-(--input-padding-y)
+      -mx-(--input-padding-x)
+      -my-(--input-padding-y)
+      me-(--input-padding-x)
       border-r
-      border-[var(--input-border-color)];
+      border-(--input-border-color);
     }
   }
 }
@@ -144,13 +144,13 @@
     &:has(> .form-control-icon-start) {
       .form-control-fill,
       .form-control {
-        @apply ps-[var(--input-icon-padding)];
+        @apply ps-(--input-icon-padding);
       }
     }
     &:has(> .form-control-icon-end) {
       .form-control-fill,
       .form-control {
-        @apply pe-[var(--input-icon-padding)];
+        @apply pe-(--input-icon-padding);
       }
     }
 
@@ -172,16 +172,16 @@
 
 @utility form-control-icon-start {
   @layer base {
-    @apply absolute z-1 top-[50%] start-[var(--input-icon-spacing)] translate-y-[-50%]
-    text-[length:var(--input-icon-font-size)]
-    text-[var(--input-icon-color)];
+    @apply absolute z-1 top-[50%] start-(--input-icon-spacing) translate-y-[-50%]
+    text-(length:--input-icon-font-size)
+    text-(--input-icon-color);
   }
 }
 @utility form-control-icon-end {
   @layer base {
-    @apply absolute z-1 top-[50%] end-[var(--input-icon-spacing)] translate-y-[-50%]
-    text-[length:var(--input-icon-font-size)]
-    text-[var(--input-icon-color)];
+    @apply absolute z-1 top-[50%] end-(--input-icon-spacing) translate-y-[-50%]
+    text-(length:--input-icon-font-size)
+    text-(--input-icon-color);
   }
 }
 
@@ -257,10 +257,10 @@
     --input-label-font-size: var(--text-xs);
     --input-label-font-weight: 600;
     --input-label-bg: transparent;
-    @apply font-[var(--input-label-font-weight)]
-    text-[var(--input-label-color)]
-    text-[length:var(--input-label-font-size)]
-    bg-[var(--input-label-bg)];
+    @apply font-(--input-label-font-weight)
+    text-(--input-label-color)
+    text-(length:--input-label-font-size)
+    bg-(--input-label-bg);
   }
 }
 
@@ -309,9 +309,9 @@
     --form-text-font-weight: 400;
     --form-text-color: var(--text-color-muted);
 
-    @apply mt-[var(--form-text-margin-top)]
-    text-[length:var(--form-text-font-size)]
-    font-[var(--form-text-font-weight)]
-    text-[var(--form-text-color)];
+    @apply mt-(--form-text-margin-top)
+    text-(length:--form-text-font-size)
+    font-(--form-text-font-weight)
+    text-(--form-text-color);
   }
 }

@@ -4,10 +4,10 @@
     --scrollbar-thumb-color: var(--background-color-emphasis);
     --scrollbar-track-color: var(--background-color-muted);
 
-    @apply [&::-webkit-scrollbar]:w-[var(--scrollbar-size)]
-    [&::-webkit-scrollbar]:h-[var(--scrollbar-size)]
-    [&::-webkit-scrollbar-track]:bg-[var(--scrollbar-track-color)]
-    [&::-webkit-scrollbar-thumb]:bg-[var(--scrollbar-thumb-color)]
+    @apply [&::-webkit-scrollbar]:w-(--scrollbar-size)
+    [&::-webkit-scrollbar]:h-(--scrollbar-size)
+    [&::-webkit-scrollbar-track]:bg-(--scrollbar-track-color)
+    [&::-webkit-scrollbar-thumb]:bg-(--scrollbar-thumb-color)
     [&::-webkit-scrollbar-corner]:bg-transparent;
   }
 }

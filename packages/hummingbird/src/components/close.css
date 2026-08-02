@@ -13,29 +13,29 @@
     --btn-close-border-radius: var(--radius-sm);
 
     @apply box-content 
-    w-[var(--btn-width)]
-    h-[var(--btn-height)]
-    p-[var(--btn-close-padding)]
-    bg-[image:var(--btn-close-bg)] bg-center bg-no-repeat bg-[length:--spacing(3)_auto]
-    text-[var(--btn-close-color)]
-    opacity-[var(--btn-close-opacity)]
+    w-(--btn-width)
+    h-(--btn-height)
+    p-(--btn-close-padding)
+    bg-(image:--btn-close-bg) bg-center bg-no-repeat bg-[length:--spacing(3)_auto]
+    text-(--btn-close-color)
+    opacity-(--btn-close-opacity)
     transition duration-200 ease-in-out
     shrink-0
     border-0 
     select-none
     cursor-pointer
-    rounded-[var(--btn-close-border-radius)];
+    rounded-(--btn-close-border-radius);
 
     @variant dark {
       --btn-close-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23FFF' viewBox='0 0 16 16'%3e%3cpath d='M.293 1.707a1 1 0 0 1 1.414-1.414L8 6.586l6.293-6.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293A1 1 0 0 1 .293 14.293L6.586 8 .293 1.707z'/%3e%3c/svg%3e");
     }
 
     &:hover {
-      @apply bg-[var(--btn-close-hover-bg)] opacity-[var(--btn-close-hover-opacity)];
+      @apply bg-(--btn-close-hover-bg) opacity-(--btn-close-hover-opacity);
     }
 
     &:focus {
-      @apply outline-0 opacity-[var(--btn-close-focus-opacity)];
+      @apply outline-0 opacity-(--btn-close-focus-opacity);
     }
 
     &:focus-visible {
@@ -44,7 +44,7 @@
 
     &:disabled,
     &.disabled {
-      @apply pointer-events-none opacity-[var(--btn-close-disabled-opacity)];
+      @apply pointer-events-none opacity-(--btn-close-disabled-opacity);
     }
   }
 }

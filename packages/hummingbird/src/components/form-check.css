@@ -16,10 +16,10 @@
     appearance-none
     p-2.5
     bg-transparent
-    hover:bg-[var(--form-check-input-wrapper-bg)];
+    hover:bg-(--form-check-input-wrapper-bg);
 
     @variant focus-within {
-      @apply bg-[var(--form-check-input-wrapper-bg)];
+      @apply bg-(--form-check-input-wrapper-bg);
     }
 
     input {
@@ -69,22 +69,22 @@
     @apply cursor-pointer 
     shrink-0
     appearance-none
-    w-[var(--form-check-input-with)]
-    h-[var(--form-check-input-height)]
+    w-(--form-check-input-with)
+    h-(--form-check-input-height)
     align-top
-    bg-[var(--form-check-input-bg)]
-    bg-[image:var(--form-check-bg-image)]
+    bg-(--form-check-input-bg)
+    bg-(image:--form-check-bg-image)
     bg-no-repeat
     bg-center
     bg-contain
-    border-[length:var(--form-check-input-border-width)]
-    border-[var(--form-check-input-border-color)]
-    rounded-[var(--form-check-input-border-radius)];
+    border-(length:--form-check-input-border-width)
+    border-(--form-check-input-border-color)
+    rounded-(--form-check-input-border-radius);
 
     @variant focus-visible {
       @apply outline-0
       ring-4 ring-[--alpha(var(--form-check-input-checked-bg)/50%)]
-      border-[var(--form-check-input-checked-bg)];
+      border-(--form-check-input-checked-bg);
     }
 
     &[type='radio'] {

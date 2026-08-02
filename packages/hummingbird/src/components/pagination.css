@@ -23,15 +23,15 @@
 @utility page-item {
   @layer base {
     &.active > .page-link {
-      @apply text-[var(--pagination-active-color)] 
-      bg-[var(--pagination-active-bg)]
+      @apply text-(--pagination-active-color) 
+      bg-(--pagination-active-bg)
       border-transparent 
       focus-visible:ring-[--alpha(var(--pagination-active-ring-color)/25%)];
     }
 
     &.disabled > .page-link,
     &.disabled > .btn {
-      @apply pointer-events-none opacity-[var(--pagination-disabled-opacity)] grayscale;
+      @apply pointer-events-none opacity-(--pagination-disabled-opacity) grayscale;
     }
     &.disabled > .btn {
       --pagination-disabled-opacity: 0.5;
@@ -42,17 +42,17 @@
 @utility page-link {
   @layer base {
     @apply flex items-center justify-center text-center
-    px-[var(--pagination-padding-x)]
-    py-[var(--pagination-padding-y)]
-    text-[var(--pagination-color)]
-    text-[length:var(--pagination-font-size)] font-normal
-    h-[var(--pagination-height)]
-    min-w-[var(--pagination-width)]
-    border-[length:var(--pagination-border-width)]
-    border-[var(--pagination-border-color)]
-    rounded-[var(--pagination-border-radius)]
+    px-(--pagination-padding-x)
+    py-(--pagination-padding-y)
+    text-(--pagination-color)
+    text-(length:--pagination-font-size) font-normal
+    h-(--pagination-height)
+    min-w-(--pagination-width)
+    border-(length:--pagination-border-width)
+    border-(--pagination-border-color)
+    rounded-(--pagination-border-radius)
     no-underline transition-[background,_color] duration-200
-    hover:bg-[var(--pagination-hover-bg)] focus:outline-0;
+    hover:bg-(--pagination-hover-bg) focus:outline-0;
 
     @variant focus-visible {
       @apply ring-4 ring-primary-lighter;
@@ -241,7 +241,7 @@
 /* table pagination */
 @utility pagination-info {
   @layer base {
-    @apply text-xs text-[var(--text-color-muted)] font-light;
+    @apply text-xs text-(--text-color-muted) font-light;
     & > p {
       @apply mb-0;
     }
@@ -254,10 +254,10 @@
 }
 @utility pagination-link {
   @layer base {
-    @apply ml-1 text-[var(--color-primary)] font-semibold no-underline;
+    @apply ml-1 text-(--color-primary) font-semibold no-underline;
 
     @variant hover {
-      @apply text-[var(--color-primary)] underline;
+      @apply text-(--color-primary) underline;
     }
   }
 }

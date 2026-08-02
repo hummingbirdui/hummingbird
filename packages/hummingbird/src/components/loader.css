@@ -8,12 +8,12 @@
     --spinner-animation-name: spinner-border;
 
     @apply inline-block
-    size-[var(--spinner-size)]
+    size-(--spinner-size)
     align-middle
     rounded-full
     shrink-0
-    border-[length:var(--spinner-border-width)]
-    border-[var(--spinner-color)]
+    border-(length:--spinner-border-width)
+    border-(--spinner-color)
     border-r-transparent
     animate-[var(--spinner-animation-name)_var(--spinner-animation-speed)_linear_infinite];
   }
@@ -42,7 +42,7 @@
     @apply spinner-border
     border-0
     opacity-0
-    bg-[var(--spinner-color)]
+    bg-(--spinner-color)
     animate-[var(--spinner-animation-name)_var(--spinner-animation-speed)_linear_infinite];
   }
   @variant motion-reduce {
@@ -78,7 +78,7 @@
     --loader-bar-animation-speed: 2.1s;
     --loader-bar-animation-delay: 1.15s;
 
-    @apply relative h-[var(--loader-bar-height)] bg-[var(--loader-bar-bg)] overflow-hidden;
+    @apply relative h-(--loader-bar-height) bg-(--loader-bar-bg) overflow-hidden;
 
     &::before {
       @apply absolute
@@ -87,7 +87,7 @@
       left-0
       origin-left
       h-full
-      bg-[var(--loader-bar-animate-bg)]
+      bg-(--loader-bar-animate-bg)
       animate-[loader-bar1_var(--loader-bar-animation-speed)_cubic-bezier(0.65,0.815,0.735,0.395)_infinite];
     }
 
@@ -98,7 +98,7 @@
       left-0
       origin-left
       h-full
-      bg-[var(--loader-bar-animate-bg)]
+      bg-(--loader-bar-animate-bg)
       animate-[loader-bar2_var(--loader-bar-animation-speed)_cubic-bezier(0.165,0.84,0.44,1)_var(--loader-bar-animation-delay)_infinite];
     }
   }

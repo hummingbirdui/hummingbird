@@ -9,20 +9,20 @@
     --progress-stripe-size: 0.75rem;
 
     @apply flex overflow-hidden items-stretch
-    h-[var(--progress-height)]
-    bg-[var(--progress-bg)]
-    text-[length:var(--progress-font-size)]
-    rounded-[var(--progress-border-radius)];
+    h-(--progress-height)
+    bg-(--progress-bg)
+    text-(length:--progress-font-size)
+    rounded-(--progress-border-radius);
   }
 }
 
 @utility progress-bar {
   @layer base {
     @apply flex flex-col justify-center
-    text-[var(--progress-bar-color)]
+    text-(--progress-bar-color)
     text-center
     whitespace-nowrap
-    bg-[var(--progress-bar-bg)];
+    bg-(--progress-bar-bg);
   }
 }
 

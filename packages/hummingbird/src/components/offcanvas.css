@@ -14,17 +14,17 @@
     --offcanvas-title-line-height: 1.5;
 
     @apply fixed bottom-0
-    z-[var(--offcanvas-zindex)]
+    z-(--offcanvas-zindex)
     flex flex-col
     max-w-full
-    text-[var(--offcanvas-color)]
+    text-(--offcanvas-color)
     invisible
-    bg-[var(--offcanvas-bg)]
+    bg-(--offcanvas-bg)
     bg-clip-padding
     outline-0
-    shadow-[var(--offcanvas-box-shadow)]
+    shadow-(--offcanvas-box-shadow)
     transition-transform
-    duration-[var(--offcanvas-transition-duration)];
+    duration-(--offcanvas-transition-duration);
 
     &.showing,
     &.show:not(.hiding) {
@@ -42,38 +42,38 @@
 @utility offcanvas-start {
   @layer base {
     @apply top-0 start-0
-    w-[var(--offcanvas-width)]
-    dark:border-e-[length:var(--offcanvas-border-width)]
-    border-[var(--offcanvas-border-color)]
+    w-(--offcanvas-width)
+    dark:border-e-(length:--offcanvas-border-width)
+    border-(--offcanvas-border-color)
     ltr:-translate-x-full rtl:translate-x-full;
   }
 }
 @utility offcanvas-end {
   @layer base {
     @apply top-0 end-0
-    w-[var(--offcanvas-width)]
-    dark:border-s-[length:var(--offcanvas-border-width)]
-    border-[var(--offcanvas-border-color)]
+    w-(--offcanvas-width)
+    dark:border-s-(length:--offcanvas-border-width)
+    border-(--offcanvas-border-color)
     ltr:translate-x-full rtl:-translate-x-full;
   }
 }
 @utility offcanvas-top {
   @layer base {
     @apply top-0 right-0 left-0
-    h-[var(--offcanvas-height)]
+    h-(--offcanvas-height)
     max-h-full
-    dark:border-b-[length:var(--offcanvas-border-width)]
-    border-b-[var(--offcanvas-border-color)]
+    dark:border-b-(length:--offcanvas-border-width)
+    border-b-(--offcanvas-border-color)
     -translate-y-full;
   }
 }
 @utility offcanvas-bottom {
   @layer base {
     @apply right-0 left-0
-    h-[var(--offcanvas-height)]
+    h-(--offcanvas-height)
     max-h-full
-    dark:border-t-[length:var(--offcanvas-border-width)]
-    border-t-[var(--offcanvas-border-color)]
+    dark:border-t-(length:--offcanvas-border-width)
+    border-t-(--offcanvas-border-color)
     translate-y-full;
   }
 }
@@ -81,13 +81,13 @@
 .offcanvas-backdrop {
   --backdrop-zindex: 1040;
   --backdrop-bg: --alpha(var(--color-gray-950) / 20%);
-  @apply fixed top-0 left-0 z-[var(--backdrop-zindex)] w-screen h-screen bg-[var(--backdrop-bg)];
+  @apply fixed top-0 left-0 z-(--backdrop-zindex) w-screen h-screen bg-(--backdrop-bg);
 }
 
 @utility offcanvas-header {
   @layer base {
     @apply flex items-center
-    px-[var(--offcanvas-padding-x)] py-[var(--offcanvas-padding-y)];
+    px-(--offcanvas-padding-x) py-(--offcanvas-padding-y);
     .btn-close {
       @apply shrink-0
       py-[calc(var(--offcanvas-padding-y)*0.5)]
@@ -102,15 +102,15 @@
 
 @utility offcanvas-title {
   @layer base {
-    @apply mb-0 leading-[var(--offcanvas-title-line-height)];
+    @apply mb-0 leading-(--offcanvas-title-line-height);
   }
 }
 
 @utility offcanvas-body {
   @layer base {
     @apply grow 
-    px-[var(--offcanvas-padding-x)] 
-    py-[var(--offcanvas-padding-y)]
+    px-(--offcanvas-padding-x) 
+    py-(--offcanvas-padding-y)
     overflow-y-auto;
   }
 }
