@@ -7,7 +7,7 @@
     --nav-link-color: var(--text-color-muted);
     --nav-link-font-size: var(--text-base);
     --nav-link-line-height: 1.5;
-    --nav-link-disabled-color: var(--color-disabled-color);
+    --nav-link-disabled-color: var(--text-color-subtle);
     --nav-link-active-color: unset;
     --nav-link-focus-ring-color: --alpha(var(--nav-link-active-color) / 30%);
 

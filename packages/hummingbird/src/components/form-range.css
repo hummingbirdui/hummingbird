@@ -77,7 +77,7 @@
 
     &:disabled {
       @apply pointer-events-none;
-      --form-range-color: var(--color-disabled-color);
+      --form-range-color: var(--text-color-subtle);
     }
   }
 }

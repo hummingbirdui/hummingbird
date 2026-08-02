@@ -10,7 +10,7 @@
     --pagination-border-color: transparent;
     --pagination-border-radius: var(--radius-md);
 
-    --pagination-hover-bg: var(--color-hover);
+    --pagination-hover-bg: var(--background-color-muted);
     --pagination-active-bg: var(--color-primary);
     --pagination-active-color: var(--color-white);
     --pagination-active-ring-color: var(--color-primary);

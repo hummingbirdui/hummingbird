@@ -233,7 +233,7 @@ Local variables apply only to form-control, allowing fine-grained control over t
 ### Icon input variables
 
 <Example lang='sass' showPreview={false} code={`.input-group-icon {
-    --input-icon-color: var(--color-active);
+    --input-icon-color: --alpha(var(--text-color-muted) / 80%);
     --input-icon-font-size: var(--text-xl);
     --input-icon-padding: --spacing(11);
     --input-icon-spacing: var(--input-btn-padding-x);

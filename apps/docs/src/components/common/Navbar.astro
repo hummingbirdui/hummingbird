@@ -66,7 +66,7 @@ const navLinks = [
               <a
                 href={link.href}
                 target={link.external ? '_blank' : '_self'}
-                class={`nav-link px-4 py-2 text-default text-base xl:text-sm font-normal rounded-lg hover:bg-hover ${
+                class={`nav-link px-4 py-2 text-default text-base xl:text-sm font-normal rounded-lg hover:bg-muted ${
                   currentPath.startsWith(link.href) ? 'text-primary' : ''
                 }`}
               >
