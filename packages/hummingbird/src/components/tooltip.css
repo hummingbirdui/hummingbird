@@ -14,7 +14,7 @@
   --tooltip-arrow-border-radius: --spacing(0.5);
   @apply z-(--tooltip-zindex) block
   text-(length:--tooltip-font-size)
-  break-words
+  wrap-break-word
   leading-[1.2]
   opacity-0
   transition-opacity duration-200;
@@ -41,7 +41,7 @@
     .tooltip-arrow {
       @apply bottom-0 -mb-(--tooltip-arrow-height);
       &::before {
-        @apply origin-[100%_0]
+        @apply origin-top-right
         rounded-br-(--tooltip-arrow-border-radius);
       }
     }
@@ -53,7 +53,7 @@
     .tooltip-arrow {
       @apply left-0 -ml-(--tooltip-arrow-width);
       &::before {
-        @apply origin-[100%_100%]
+        @apply origin-bottom-right
         rounded-bl-(--tooltip-arrow-border-radius);
       }
     }
@@ -63,7 +63,7 @@
     .tooltip-arrow {
       @apply top-0 -mt-(--tooltip-arrow-height);
       &::before {
-        @apply origin-[0px_100%]
+        @apply origin-bottom-left
         rounded-tl-(--tooltip-arrow-border-radius);
       }
     }
@@ -75,7 +75,7 @@
     .tooltip-arrow {
       @apply right-0 -mr-(--tooltip-arrow-width);
       &::before {
-        @apply origin-[0_0]
+        @apply origin-top-left
         rounded-tr-(--tooltip-arrow-border-radius);
       }
     }

@@ -37,9 +37,9 @@
     py-(--form-select-padding-y)
     bg-(image:--form-select-indicator)
     bg-no-repeat
-    ltr:bg-[position:right_var(--form-select-padding-x)_center]
-    rtl:bg-[position:left_var(--form-select-padding-x)_center]
-    bg-(length:--form-select-bg-size);
+    ltr:bg-position-[right_var(--form-select-padding-x)_center]
+    rtl:bg-position-[left_var(--form-select-padding-x)_center]
+    bg-size-(--form-select-bg-size);
 
     &:is(:disabled, [disabled]) {
       @apply text-(--form-select-disabled-color)
@@ -101,9 +101,9 @@
     py-(--form-select-padding-y)
     bg-(image:--form-select-indicator)
     bg-no-repeat
-    ltr:bg-[position:right_var(--form-select-padding-x)_center]
-    rtl:bg-[position:left_var(--form-select-padding-x)_center]
-    bg-(length:--form-select-bg-size);
+    ltr:bg-position-[right_var(--form-select-padding-x)_center]
+    rtl:bg-position-[left_var(--form-select-padding-x)_center]
+    bg-size-(--form-select-bg-size);
 
     &:is(:disabled, [disabled]) {
       @apply opacity-(--form-select-disabled-opacity)

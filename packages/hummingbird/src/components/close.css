@@ -16,7 +16,7 @@
     w-(--btn-width)
     h-(--btn-height)
     p-(--btn-close-padding)
-    bg-(image:--btn-close-bg) bg-center bg-no-repeat bg-[length:--spacing(3)_auto]
+    bg-(image:--btn-close-bg) bg-center bg-no-repeat bg-size-[--spacing(3)_auto]
     text-(--btn-close-color)
     opacity-(--btn-close-opacity)
     transition duration-200 ease-in-out

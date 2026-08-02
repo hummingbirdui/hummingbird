@@ -80,7 +80,7 @@
     @apply border-b-(length:--nav-tabs-border-width) border-(--nav-tabs-border-color);
 
     .nav-link {
-      @apply -mb-(length:--nav-tabs-border-width)
+      @apply -mb-(--nav-tabs-border-width)
       border-(length:--nav-tabs-border-width)
       border-transparent
       rounded-t-(--nav-tabs-border-radius);

@@ -43,7 +43,7 @@
 @utility progress-bar-striped {
   @layer base {
     @apply bg-[linear-gradient(45deg,rgba(255,255,255,0.15)_25%,transparent_25%,transparent_50%,rgba(255,255,255,0.15)_50%,rgba(255,255,255,0.15)_75%,transparent_75%,transparent)]
-    bg-[length:var(--progress-stripe-size)_var(--progress-stripe-size)];
+    bg-size-[var(--progress-stripe-size)_var(--progress-stripe-size)];
   }
 }
 

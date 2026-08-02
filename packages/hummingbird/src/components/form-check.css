@@ -191,10 +191,10 @@
       --form-check-input-height: --spacing(6);
       --form-check-input-border-radius: calc(infinity * 1px);
       --form-check-bg-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e");
-      @apply transition-[background] duration-150 ease-in-out border-0 bg-[position:left_center];
+      @apply transition-[background] duration-150 ease-in-out border-0 bg-position-[left_center];
       &:checked {
         --form-check-input-bg: var(--form-check-input-checked-bg);
-        @apply bg-[position:right_center];
+        @apply bg-position-[right_center];
         &[type='checkbox'] {
           --form-check-bg-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e");
           @variant dark {
@@ -231,7 +231,7 @@
 
 @utility btn-check {
   @layer base {
-    @apply absolute w-[1px] h-[1px] p-0 -m-[1px] overflow-hidden whitespace-nowrap border-0;
+    @apply absolute w-px h-px p-0 -m-px overflow-hidden whitespace-nowrap border-0;
     clip-path: inset(50%);
 
     &[disabled],

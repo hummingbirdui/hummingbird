@@ -109,7 +109,7 @@
 
 @utility modal-header {
   @layer base {
-    @apply flex flex-shrink-0 items-center
+    @apply flex shrink-0 items-center
     px-(--modal-header-padding-x)
     py-(--modal-header-padding-y)
     border-b-(length:--modal-header-border-width)
@@ -141,7 +141,7 @@
 
 @utility modal-footer {
   @layer base {
-    @apply flex flex-shrink-0 flex-wrap items-center justify-end
+    @apply flex shrink-0 flex-wrap items-center justify-end
     px-(--modal-footer-padding-x)
     py-(--modal-footer-padding-y)
     bg-(--modal-footer-bg)

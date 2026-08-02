@@ -36,7 +36,7 @@
     text-(length:--navbar-brand-font-size)
     text-(--navbar-brand-color)
     no-underline
-    whitespace-nowrap leading-[1.5];
+    whitespace-nowrap leading-normal;
 
     &:hover,
     &:focus {
@@ -98,7 +98,7 @@
 
 @utility navbar-nav-scroll {
   @layer base {
-    @apply max-h-[var(--scroll-height,_75vh)] overflow-y-auto;
+    @apply max-h-(--scroll-height,75vh) overflow-y-auto;
   }
 }
 

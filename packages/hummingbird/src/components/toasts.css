@@ -72,5 +72,5 @@
 }
 
 @utility toast-body {
-  @apply p-(--toast-padding-x) break-words;
+  @apply p-(--toast-padding-x) wrap-break-word;
 }

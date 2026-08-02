@@ -55,7 +55,7 @@
     .popover-arrow {
       @apply bottom-0 -mb-(--popover-arrow-height);
       &::before {
-        @apply origin-[100%_0]
+        @apply origin-top-right
         rounded-br-(--popover-arrow-border-radius);
       }
     }
@@ -67,7 +67,7 @@
     .popover-arrow {
       @apply left-0 -ml-(--popover-arrow-width);
       &::before {
-        @apply origin-[100%_100%]
+        @apply origin-bottom-right
         rounded-bl-(--popover-arrow-border-radius);
       }
     }
@@ -77,7 +77,7 @@
     .popover-arrow {
       @apply top-0 -mt-(--popover-arrow-height);
       &::before {
-        @apply origin-[0px_100%]
+        @apply origin-bottom-left
         rounded-tl-(--popover-arrow-border-radius);
       }
     }
@@ -89,7 +89,7 @@
     .popover-arrow {
       @apply right-0 -mr-(--popover-arrow-width);
       &::before {
-        @apply origin-[0_0]
+        @apply origin-top-left
         rounded-tr-(--popover-arrow-border-radius);
       }
     }
