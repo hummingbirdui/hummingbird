@@ -134,7 +134,7 @@
 
 @utility input-group-icon {
   @layer base {
-    --input-icon-color: var(--color-active);
+    --input-icon-color: --alpha(var(--text-color-muted) / 80%);
     --input-icon-font-size: var(--text-xl);
     --input-icon-padding: --spacing(11);
     --input-icon-spacing: var(--input-btn-padding-x);
@@ -294,7 +294,7 @@
     }
     &:has(input[disabled]) {
       .form-label {
-        --input-label-color: var(--color-disabled-color);
+        --input-label-color: var(--text-color-subtle);
 
         @apply cursor-default;
       }

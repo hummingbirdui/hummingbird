@@ -68,9 +68,9 @@ Override the theme variables globally under `@theme`. This will apply the change
   code={`@theme {
     --background-color-highlight: var(--color-gray-100);
     --text-color-default: var(--color-gray-900);
-    --color-hover: var(--color-gray-200);
-    --color-disabled: var(--color-gray-300);
-    --color-disabled-color: var(--color-gray-500);
+    --background-color-muted: var(--color-gray-200);
+    --background-color-highlight: var(--color-gray-300);
+    --text-color-subtle: var(--color-gray-500);
   }`}/>
 
 #### Option 2: Local variables
@@ -81,8 +81,8 @@ Override the component variables locally under specific component classes or in 
   code={`.btn {
     --btn-bg: var(--background-color-highlight);
     --btn-color: var(--text-color-default);
-    --btn-hover-bg: var(--color-hover);
-    --btn-disabled-bg: var(--color-disabled);
-    --btn-disabled-color: var(--color-disabled-color);
+    --btn-hover-bg: var(--background-color-muted);
+    --btn-disabled-bg: var(--background-color-highlight);
+    --btn-disabled-color: var(--text-color-subtle);
   }`}
 />

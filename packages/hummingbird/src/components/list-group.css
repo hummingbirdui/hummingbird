@@ -9,12 +9,12 @@
     --list-group-item-padding-y: --spacing(2.5);
     --list-group-item-font-size: var(--text-base);
     --list-group-action-color: var(--text-color-muted);
-    --list-group-hover-bg: var(--color-hover);
+    --list-group-hover-bg: var(--background-color-muted);
     --list-group-hover-color: var(--text-color-muted);
     --list-group-active-bg: var(--color-primary-lighter);
     --list-group-active-color: var(--color-primary);
     --list-group-disabled-bg: inherit;
-    --list-group-disabled-color: var(--color-disabled-color);
+    --list-group-disabled-color: var(--text-color-subtle);
 
     @apply relative flex flex-col
     ps-0 mb-0 list-none

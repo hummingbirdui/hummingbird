@@ -32,7 +32,7 @@
     &:has(input[type='radio'][disabled]) {
       @apply cursor-default pointer-events-none;
       ~ .form-check-label {
-        @apply cursor-default text-disabled;
+        @apply cursor-default text-(--background-color-highlight);
       }
     }
     &:has(.form-check-secondary) {
@@ -128,8 +128,8 @@
       filter: none;
       --form-check-input-border-color: var(--border-color-subtle);
       &:checked {
-        --form-check-input-border-color: var(--color-disabled-color);
-        --form-check-input-bg: var(--color-disabled-color);
+        --form-check-input-border-color: var(--text-color-subtle);
+        --form-check-input-bg: var(--text-color-subtle);
       }
     }
   }
@@ -208,7 +208,7 @@
           --form-check-input-bg: var(--form-check-input-checked-bg);
         }
         ~ .form-check-label {
-          @apply cursor-default text-disabled;
+          @apply cursor-default text-(--background-color-highlight);
         }
       }
       &.form-check-sm {

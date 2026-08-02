@@ -2,7 +2,7 @@
   @layer base {
     --progress-height: --spacing(1);
     --progress-font-size: var(--text-xs);
-    --progress-bg: var(--color-light);
+    --progress-bg: var(--background-color-muted);
     --progress-border-radius: var(--radius-md);
     --progress-bar-color: var(--color-contrast);
     --progress-bar-bg: var(--color-primary);
