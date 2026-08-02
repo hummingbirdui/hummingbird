@@ -3,29 +3,27 @@
     @apply flex;
     :where(.avatar) {
       @apply rounded-full border-2 border-contrast -ms-3
-      w-[calc(var(--avatar-width)+4px)]
-      h-[calc(var(--avatar-height)+4px)] overflow-hidden;
+      size-[calc(var(--avatar-size)+4px)] overflow-hidden;
     }
   }
 }
 @utility avatar {
   @layer base {
-    --avatar-width: --spacing(10);
-    --avatar-height: --spacing(10);
+    --avatar-size: --spacing(10);
+    --avatar-status-size: calc(var(--avatar-size) / 4);
     --avatar-bg: var(--color-dark);
     --avatar-color: var(--color-white);
     --avatar-font-weight: var(--font-weight-medium);
     --avatar-font-size: var(--text-lg);
 
     @apply relative inline-block
-    w-[var(--avatar-width)]
-    h-[var(--avatar-height)]
+    size-(--avatar-size)
     align-middle;
 
     &[class*='avatar-status-']::before {
       @apply content-[''] 
       absolute end-[14%] bottom-[14%] 
-      rounded-full w-2 h-2 
+      rounded-full w-(--avatar-status-size) h-(--avatar-status-size)
       scale-100 translate-x-[50%] translate-y-[50%];
     }
     @variant rtl {
@@ -38,10 +36,10 @@
 @utility avatar-name {
   @layer base {
     @apply flex items-center justify-center h-full w-full 
-    font-[var(--avatar-font-weight)] 
-    text-[length:var(--avatar-font-size)] 
-    text-[var(--avatar-color)] 
-    bg-[var(--avatar-bg)];
+    font-(--avatar-font-weight) 
+    text-(length:--avatar-font-size) 
+    text-(--avatar-color) 
+    bg-(--avatar-bg);
   }
 }
 @utility avatar-status-online {
@@ -74,25 +72,19 @@
 }
 @utility avatar-xs {
   @layer base {
-    --avatar-width: --spacing(6);
-    --avatar-height: --spacing(6);
+    --avatar-size: --spacing(6);
     --avatar-font-size: var(--text-sm);
-    &[class*='avatar-status-']::before {
-      @apply w-1.5 h-1.5;
-    }
   }
 }
 @utility avatar-sm {
   @layer base {
-    --avatar-width: --spacing(8);
-    --avatar-height: --spacing(8);
+    --avatar-size: --spacing(8);
     --avatar-font-size: var(--text-base);
   }
 }
 @utility avatar-lg {
   @layer base {
-    --avatar-width: --spacing(12.5);
-    --avatar-height: --spacing(12.5);
+    --avatar-size: --spacing(12.5);
     --avatar-font-size: var(--text-xl);
   }
 }
