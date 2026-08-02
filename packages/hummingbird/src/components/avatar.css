@@ -23,7 +23,7 @@
     &[class*='avatar-status-']::before {
       @apply content-[''] 
       absolute end-[14%] bottom-[14%] 
-      rounded-full w-(--avatar-status-size) h-(--avatar-status-size)
+      rounded-full size-(--avatar-status-size)
       scale-100 translate-x-[50%] translate-y-[50%];
     }
     @variant rtl {
