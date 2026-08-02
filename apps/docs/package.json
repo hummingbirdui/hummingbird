@@ -27,7 +27,7 @@
   },
   "devDependencies": {
     "@astrojs/mdx": "^7.0.5",
-    "@docsearch/css": "^3.9.0",
+    "@docsearch/css": "^4.7.0",
     "@docsearch/js": "^3.9.0",
     "@tailwindcss/vite": "^4.3.3",
     "astro": "^7.1.6",
