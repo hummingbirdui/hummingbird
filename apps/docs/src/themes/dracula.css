@@ -425,7 +425,7 @@
   --text-color-emphasis: var(--color-white);
 
   /* Neutral */
-  --color-light: var(--color-stone-800);
+  --color-light: var(--color-stone-100);
   --color-dark: var(--color-stone-700);
   --color-contrast: var(--color-stone-950);
 

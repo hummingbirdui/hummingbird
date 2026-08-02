@@ -89,7 +89,7 @@
       --text-color-emphasis: var(--color-white);
 
       /* neutral */
-      --color-light: var(--color-slate-800);
+      --color-light: var(--color-slate-100);
       --color-dark: var(--color-slate-700);
       --color-contrast: var(--color-slate-950);
 
