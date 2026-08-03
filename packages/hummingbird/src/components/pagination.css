@@ -176,7 +176,7 @@
   @layer base {
     --pagination-active-bg: var(--background-color-muted);
     --pagination-active-color: var(--text-color-emphasis);
-    --pagination-active-ring-color: var(--color-neutral);
+    --pagination-active-ring-color: var(--color-dark);
   }
 }
 
@@ -234,12 +234,12 @@
     --pagination-border-color: var(--background-color-emphasis);
     --pagination-active-color: var(--color-white);
     --pagination-active-bg: var(--color-dark);
-    --pagination-active-ring-color: var(--color-neutral);
+    --pagination-active-ring-color: var(--color-dark);
   }
 }
 
 /* table pagination */
-@utility pagination-info {
+@utility pagination-summary {
   @layer base {
     @apply text-xs text-(--text-color-muted) font-light;
     & > p {
