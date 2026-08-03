@@ -27,10 +27,22 @@
     "umd"
   ],
   "license": "MIT",
-  "main": "lib/cjs/index.js",
+  "main": "lib/cjs/index.cjs",
   "module": "lib/esm/index.js",
   "types": "lib/esm/index.d.ts",
   "style": "src/index.css",
+  "exports": {
+    ".": {
+      "types": "./lib/esm/index.d.ts",
+      "style": "./src/index.css",
+      "import": "./lib/esm/index.js",
+      "require": "./lib/cjs/index.cjs"
+    },
+    "./src/*": "./src/*",
+    "./lib/*": "./lib/*",
+    "./dist/*": "./dist/*",
+    "./package.json": "./package.json"
+  },
   "homepage": "https://hbui.dev",
   "repository": {
     "type": "git",
@@ -40,8 +52,8 @@
   "bugs": "https://github.com/hummingbirdui/hummingbird/issues",
   "files": [
     "dist/*.{js,css,js.map,css.map}",
-    "lib/esm/**/*.{js,js.map,d.ts}",
-    "lib/cjs/**/*.{js,js.map,d.ts}",
+    "lib/esm/**/*.{js,js.map,d.ts,d.ts.map}",
+    "lib/cjs/**/*.{cjs,cjs.map,d.cts,d.cts.map}",
     "src/index.css",
     "src/reboot.css",
     "src/components/**/*.css",
@@ -55,7 +67,8 @@
     "dev": "vite build --mode bundle --outDir=static --emptyOutDir=false --watch",
     "build:css": "cross-env NODE_ENV=production npx @tailwindcss/cli -i src/index.build.css -o dist/hummingbird.css",
     "build:css:min": "cross-env NODE_ENV=production npx @tailwindcss/cli -i src/index.build.css -o dist/hummingbird.min.css --minify",
-    "build:styles": "npm-run-all -s build:css build:css:min",
+    "build:safelist": "node tools/generate-safelist.mjs",
+    "build:styles": "npm-run-all -s build:safelist build:css build:css:min",
     "build:dist:default": "vite build",
     "build:dist:bundle": "vite build --mode bundle",
     "build:dist": "npm-run-all -s build:dist:default build:dist:bundle build:styles",

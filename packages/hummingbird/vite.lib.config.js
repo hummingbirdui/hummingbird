@@ -25,8 +25,8 @@ const scriptEntries = fs
 
 const entries = { ...rootEntries, ...scriptEntries };
 
-const getEntryFileName = (chunkInfo) => {
-  return rootEntries[chunkInfo.name] ? '[name].js' : 'scripts/[name].js';
+const getEntryFileName = (ext) => (chunkInfo) => {
+  return rootEntries[chunkInfo.name] ? `[name].${ext}` : `scripts/[name].${ext}`;
 };
 
 export default defineConfig({
@@ -44,15 +44,15 @@ export default defineConfig({
         {
           format: 'cjs',
           dir: 'lib/cjs',
-          entryFileNames: getEntryFileName,
-          chunkFileNames: 'utils/[name].js',
+          entryFileNames: getEntryFileName('cjs'),
+          chunkFileNames: 'utils/[name].cjs',
           exports: 'named',
           preserveModules: false,
         },
         {
           format: 'es',
           dir: 'lib/esm',
-          entryFileNames: getEntryFileName,
+          entryFileNames: getEntryFileName('js'),
           chunkFileNames: 'utils/[name].js',
           exports: 'named',
           preserveModules: false,
@@ -62,7 +62,9 @@ export default defineConfig({
   },
   plugins: [
     dts({
-      outDir: ['lib/cjs', 'lib/esm'],
+      // vite-plugin-dts v5 (unplugin-dts) renamed `outDir` to `outDirs`;
+      // `moduleFormat: 'cjs'` emits .d.cts to pair with the .cjs build.
+      outDirs: ['lib/esm', { dir: 'lib/cjs', moduleFormat: 'cjs' }],
       include: ['src'],
     }),
   ],
