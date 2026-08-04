@@ -53,6 +53,9 @@ importers:
       '@tailwindcss/cli':
         specifier: ^4.3.3
         version: 4.3.3
+      astro-swiper:
+        specifier: ^2.9.0
+        version: 2.9.0
       dedent:
         specifier: ^1.7.2
         version: 1.7.2
@@ -62,9 +65,6 @@ importers:
       shiki:
         specifier: ^4.4.1
         version: 4.4.1
-      swiper:
-        specifier: ^14.0.7
-        version: 14.0.7
     devDependencies:
       '@astrojs/mdx':
         specifier: ^7.0.5
@@ -1917,6 +1917,10 @@ packages:
     engines: {node: '>=20.0.0'}
     peerDependencies:
       astro: ^5.0.0 || ^6.0.0 || ^7.0.0
+
+  astro-swiper@2.9.0:
+    resolution: {integrity: sha512-g2Wywa9w5U5hCmbIqpHxhz6/SHivJHeJTzHlV9KFCLUxoECZ9x5byl6pJn6baTnUyljNsZ1Nu+xO6Zkl4lUj5g==}
+    engines: {node: '>=18', npm: '>=9.6.5', pnpm: '>=7.1.0'}
 
   astro@7.1.6:
     resolution: {integrity: sha512-83x9rYbHazMaZkYrAFRVZXSQx2moFkz0F7cjTDUF3GWfS0a3p2vZXG1ZdhV86rStHApQCodBJW+XTD37xISIrQ==}
@@ -6090,6 +6094,10 @@ snapshots:
     dependencies:
       acorn: 8.18.0
       astro: 7.1.6(@astrojs/markdown-remark@7.2.2)(@emnapi/core@2.0.0-alpha.3)(@emnapi/runtime@2.0.0-alpha.3)(@types/node@26.1.2)(jiti@2.7.0)(rollup@4.62.4)(terser@5.49.0)
+
+  astro-swiper@2.9.0:
+    dependencies:
+      swiper: 14.0.7
 
   astro@7.1.6(@astrojs/markdown-remark@7.2.2)(@emnapi/core@2.0.0-alpha.3)(@emnapi/runtime@2.0.0-alpha.3)(@types/node@26.1.2)(jiti@2.7.0)(rollup@4.62.4)(terser@5.49.0):
     dependencies:
