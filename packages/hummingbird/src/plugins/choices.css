@@ -275,7 +275,7 @@
 .choices__list--multiple {
   @apply inline-flex flex-wrap gap-y-0.75;
   .choices__item {
-    @apply badge badge-subtle align-middle break-all me-0.75;
+    @apply badge badge-subtle-neutral align-middle break-all me-0.75;
 
     .choices__inner:has(.form-select-sm) & {
       @apply py-0.5;
