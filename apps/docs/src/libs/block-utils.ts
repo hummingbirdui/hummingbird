@@ -1,5 +1,6 @@
 import * as prettier from 'prettier';
 import pkg from '@hummingbirdui/hummingbird/package.json';
+import browserPkg from '@hummingbirdui/browser/package.json';
 
 export const iframeMarkup = (
   code: string,
@@ -7,7 +8,7 @@ export const iframeMarkup = (
 ) => {
   return `<html>
     <head>
-      <script src="https://cdn.jsdelivr.net/npm/@hummingbirdui/browser@${pkg.version}/dist/index.global.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@hummingbirdui/browser@${browserPkg.version}/dist/index.global.js"></script>
       <link rel="stylesheet" href="/themes.css">
       <style type="text/tailwindcss">
         @custom-variant dark (&:where(.dark, .dark *), .dark);
