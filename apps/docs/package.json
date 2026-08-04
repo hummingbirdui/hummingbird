@@ -5,12 +5,13 @@
   "description": "Documentation site for Hummingbird UI",
   "type": "module",
   "scripts": {
-    "dev": "concurrently \"npm run dev:astro\" \"npm run build:themes\"",
+    "dev": "concurrently \"npm run dev:astro\" \"npm run watch:themes\"",
     "dev:astro": "astro dev --host",
-    "build": "astro build",
+    "build": "npm run build:themes && astro build",
     "preview": "astro preview",
     "start:docs-js": "esbuild src/docs.ts --bundle --outfile=static/docs.js --watch",
-    "build:themes": "npx @tailwindcss/cli -i src/themes/themes.css -o public/themes.css --watch",
+    "build:themes": "npx @tailwindcss/cli -i src/themes/themes.css -o public/themes.css",
+    "watch:themes": "npx @tailwindcss/cli -i src/themes/themes.css -o public/themes.css --watch",
     "deploy": "node deployment.js production",
     "deploy:staging": "node deployment.js staging",
     "deploy:internal": "echo staging.hbui.dev > ./dist/CNAME && gh-pages -d dist -r https://github.com/hummingbirdui/staging.git"
