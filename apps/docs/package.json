@@ -21,10 +21,10 @@
     "@hummingbirdui/browser": "workspace:*",
     "@hummingbirdui/hummingbird": "workspace:*",
     "@tailwindcss/cli": "^4.3.3",
+    "astro-swiper": "^2.10.0",
     "dedent": "^1.7.2",
     "sharp": "^0.35.3",
-    "shiki": "^4.4.2",
-    "swiper": "^14.0.7"
+    "shiki": "^4.4.2"
   },
   "devDependencies": {
     "@astrojs/mdx": "^7.0.5",
