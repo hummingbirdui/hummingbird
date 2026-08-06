@@ -11,7 +11,7 @@
   @layer base {
     --avatar-size: --spacing(10);
     --avatar-status-size: calc(var(--avatar-size) / 4);
-    --avatar-bg: var(--color-dark);
+    --avatar-bg: var(--color-neutral);
     --avatar-color: var(--color-white);
     --avatar-font-weight: var(--font-weight-medium);
     --avatar-font-size: var(--text-lg);
@@ -52,7 +52,7 @@
 @utility avatar-status-offline {
   @layer base {
     &::before {
-      @apply bg-dark;
+      @apply bg-neutral;
     }
   }
 }

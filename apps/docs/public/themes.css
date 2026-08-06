@@ -319,8 +319,7 @@
     --text-color-default: var(--color-gray-800);
     --text-color-highlight: var(--color-gray-900);
     --text-color-emphasis: var(--color-gray-950);
-    --color-light: var(--color-gray-100);
-    --color-dark: var(--color-gray-950);
+    --color-neutral: var(--color-neutral-950);
     --color-contrast: var(--color-white);
     --color-primary-lighter: var(--color-blue-50);
     --color-primary-light: var(--color-blue-400);
@@ -376,8 +375,7 @@
   --text-color-default: var(--color-gray-100);
   --text-color-highlight: var(--color-gray-50);
   --text-color-emphasis: var(--color-white);
-  --color-light: var(--color-gray-100);
-  --color-dark: var(--color-gray-700);
+  --color-neutral: var(--color-neutral-700);
   --color-contrast: var(--color-gray-950);
   --color-primary-lighter: var(--color-blue-900);
   --color-primary-light: var(--color-blue-700);
@@ -743,8 +741,7 @@
     --text-color-default: var(--color-stone-800);
     --text-color-highlight: var(--color-stone-900);
     --text-color-emphasis: var(--color-stone-950);
-    --color-light: var(--color-stone-100);
-    --color-dark: var(--color-stone-950);
+    --color-neutral: var(--color-neutral-950);
     --color-contrast: var(--color-white);
     --color-primary-lighter: var(--color-maroon-50);
     --color-primary-light: var(--color-maroon-400);
@@ -800,8 +797,7 @@
   --text-color-default: var(--color-stone-100);
   --text-color-highlight: var(--color-stone-50);
   --text-color-emphasis: var(--color-white);
-  --color-light: var(--color-stone-100);
-  --color-dark: var(--color-stone-700);
+  --color-neutral: var(--color-neutral-700);
   --color-contrast: var(--color-stone-950);
   --color-primary-lighter: var(--color-maroon-900);
   --color-primary-light: var(--color-maroon-700);
@@ -1167,8 +1163,7 @@
     --text-color-default: var(--color-taupe-800);
     --text-color-highlight: var(--color-taupe-900);
     --text-color-emphasis: var(--color-taupe-950);
-    --color-light: var(--color-taupe-100);
-    --color-dark: var(--color-taupe-950);
+    --color-neutral: var(--color-neutral-950);
     --color-contrast: var(--color-white);
     --color-primary-lighter: var(--color-blue-50);
     --color-primary-light: var(--color-blue-400);
@@ -1224,8 +1219,7 @@
   --text-color-default: var(--color-taupe-100);
   --text-color-highlight: var(--color-taupe-50);
   --text-color-emphasis: var(--color-white);
-  --color-light: var(--color-taupe-100);
-  --color-dark: var(--color-taupe-700);
+  --color-neutral: var(--color-neutral-700);
   --color-contrast: var(--color-taupe-950);
   --color-primary-lighter: var(--color-blue-900);
   --color-primary-light: var(--color-blue-700);
@@ -1591,8 +1585,7 @@
     --text-color-default: var(--color-slate-800);
     --text-color-highlight: var(--color-slate-900);
     --text-color-emphasis: var(--color-slate-950);
-    --color-light: var(--color-slate-100);
-    --color-dark: var(--color-slate-950);
+    --color-neutral: var(--color-neutral-950);
     --color-contrast: var(--color-white);
     --color-primary-lighter: var(--color-teal-50);
     --color-primary-light: var(--color-teal-400);
@@ -1648,8 +1641,7 @@
   --text-color-default: var(--color-slate-100);
   --text-color-highlight: var(--color-slate-50);
   --text-color-emphasis: var(--color-white);
-  --color-light: var(--color-slate-100);
-  --color-dark: var(--color-slate-700);
+  --color-neutral: var(--color-neutral-700);
   --color-contrast: var(--color-slate-950);
   --color-primary-lighter: var(--color-teal-900);
   --color-primary-light: var(--color-teal-700);
@@ -2015,8 +2007,7 @@
     --text-color-default: var(--color-taupe-800);
     --text-color-highlight: var(--color-taupe-900);
     --text-color-emphasis: var(--color-taupe-950);
-    --color-light: var(--color-taupe-100);
-    --color-dark: var(--color-taupe-950);
+    --color-neutral: var(--color-neutral-950);
     --color-contrast: var(--color-white);
     --color-primary-lighter: var(--color-green-50);
     --color-primary-light: var(--color-green-400);
@@ -2072,8 +2063,7 @@
   --text-color-default: var(--color-taupe-100);
   --text-color-highlight: var(--color-taupe-50);
   --text-color-emphasis: var(--color-white);
-  --color-light: var(--color-taupe-100);
-  --color-dark: var(--color-taupe-700);
+  --color-neutral: var(--color-neutral-700);
   --color-contrast: var(--color-taupe-950);
   --color-primary-lighter: var(--color-green-900);
   --color-primary-light: var(--color-green-700);
@@ -2439,8 +2429,7 @@
     --text-color-default: var(--color-zinc-800);
     --text-color-highlight: var(--color-zinc-900);
     --text-color-emphasis: var(--color-zinc-950);
-    --color-light: var(--color-zinc-100);
-    --color-dark: var(--color-zinc-950);
+    --color-neutral: var(--color-neutral-950);
     --color-contrast: var(--color-white);
     --color-primary-lighter: var(--color-orange-50);
     --color-primary-light: var(--color-orange-400);
@@ -2496,8 +2485,7 @@
   --text-color-default: var(--color-zinc-100);
   --text-color-highlight: var(--color-zinc-50);
   --text-color-emphasis: var(--color-white);
-  --color-light: var(--color-zinc-100);
-  --color-dark: var(--color-zinc-700);
+  --color-neutral: var(--color-neutral-700);
   --color-contrast: var(--color-zinc-950);
   --color-primary-lighter: var(--color-orange-900);
   --color-primary-light: var(--color-orange-700);
@@ -2863,8 +2851,7 @@
     --text-color-default: var(--color-stone-800);
     --text-color-highlight: var(--color-stone-900);
     --text-color-emphasis: var(--color-stone-950);
-    --color-light: var(--color-stone-100);
-    --color-dark: var(--color-stone-950);
+    --color-neutral: var(--color-neutral-950);
     --color-contrast: var(--color-white);
     --color-primary-lighter: var(--color-violet-50);
     --color-primary-light: var(--color-violet-400);
@@ -2920,8 +2907,7 @@
   --text-color-default: var(--color-stone-100);
   --text-color-highlight: var(--color-stone-50);
   --text-color-emphasis: var(--color-white);
-  --color-light: var(--color-stone-100);
-  --color-dark: var(--color-stone-700);
+  --color-neutral: var(--color-neutral-700);
   --color-contrast: var(--color-stone-950);
   --color-primary-lighter: var(--color-violet-900);
   --color-primary-light: var(--color-violet-700);
@@ -3287,8 +3273,7 @@
     --text-color-default: var(--color-gray-800);
     --text-color-highlight: var(--color-gray-900);
     --text-color-emphasis: var(--color-gray-950);
-    --color-light: var(--color-gray-100);
-    --color-dark: var(--color-gray-950);
+    --color-neutral: var(--color-neutral-950);
     --color-contrast: var(--color-white);
     --color-primary-lighter: var(--color-blue-50);
     --color-primary-light: var(--color-blue-400);
@@ -3344,8 +3329,7 @@
   --text-color-default: var(--color-gray-100);
   --text-color-highlight: var(--color-gray-50);
   --text-color-emphasis: var(--color-white);
-  --color-light: var(--color-gray-100);
-  --color-dark: var(--color-gray-700);
+  --color-neutral: var(--color-neutral-700);
   --color-contrast: var(--color-gray-950);
   --color-primary-lighter: var(--color-blue-900);
   --color-primary-light: var(--color-blue-700);

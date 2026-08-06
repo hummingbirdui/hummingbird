@@ -3,7 +3,7 @@
   --tooltip-max-width: 12.5rem;
   --tooltip-padding-x: --spacing(2.5);
   --tooltip-padding-y: --spacing(2);
-  --tooltip-bg: var(--color-dark);
+  --tooltip-bg: var(--color-neutral);
   --tooltip-color: var(--color-white);
   --tooltip-font-size: var(--text-xs);
   --tooltip-margin: --spacing(1);

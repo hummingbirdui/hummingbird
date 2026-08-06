@@ -124,8 +124,8 @@
 }
 @utility pagination-neutral {
   @layer base {
-    --pagination-active-bg: var(--color-dark);
-    --pagination-active-ring-color: var(--color-dark);
+    --pagination-active-bg: var(--color-neutral);
+    --pagination-active-ring-color: var(--color-neutral);
   }
 }
 
@@ -176,7 +176,7 @@
   @layer base {
     --pagination-active-bg: var(--background-color-muted);
     --pagination-active-color: var(--text-color-emphasis);
-    --pagination-active-ring-color: var(--color-dark);
+    --pagination-active-ring-color: var(--color-neutral);
   }
 }
 
@@ -233,8 +233,8 @@
   @layer base {
     --pagination-border-color: var(--background-color-emphasis);
     --pagination-active-color: var(--color-white);
-    --pagination-active-bg: var(--color-dark);
-    --pagination-active-ring-color: var(--color-dark);
+    --pagination-active-bg: var(--color-neutral);
+    --pagination-active-ring-color: var(--color-neutral);
   }
 }
 

@@ -1,6 +1,6 @@
 @utility alert {
   @layer base {
-    --alert-bg: var(--color-dark);
+    --alert-bg: var(--color-neutral);
     --alert-padding-x: --spacing(4);
     --alert-padding-y: --spacing(3.5);
     --alert-color: var(--color-white);

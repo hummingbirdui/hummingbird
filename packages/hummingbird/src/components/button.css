@@ -123,9 +123,9 @@
 }
 @utility btn-neutral {
   @layer base {
-    --btn-bg: var(--color-dark);
+    --btn-bg: --alpha(var(--color-neutral) / 90%);
     --btn-color: var(--color-white);
-    --btn-hover-bg: --alpha(var(--color-dark) / 80%);
+    --btn-hover-bg: var(--color-neutral);
   }
 }
 

@@ -178,7 +178,7 @@
 }
 @utility form-check-neutral {
   @layer base {
-    --form-check-input-checked-bg: var(--color-dark);
+    --form-check-input-checked-bg: var(--color-neutral);
   }
 }
 

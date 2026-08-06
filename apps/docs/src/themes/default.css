@@ -351,8 +351,7 @@
     --text-color-emphasis: var(--color-gray-950);
 
     /* neutral */
-    --color-light: var(--color-gray-100);
-    --color-dark: var(--color-gray-950);
+    --color-neutral: var(--color-neutral-950);
     --color-contrast: var(--color-white);
 
     /* primary */
@@ -421,8 +420,7 @@
   --text-color-emphasis: var(--color-white);
 
   /* neutral */
-  --color-light: var(--color-gray-100);
-  --color-dark: var(--color-gray-700);
+  --color-neutral: var(--color-neutral-700);
   --color-contrast: var(--color-gray-950);
 
   /* primary */

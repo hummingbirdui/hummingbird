@@ -16,8 +16,7 @@
   --text-color-emphasis: var(--color-slate-950);
 
   /* Neutral */
-  --color-light: var(--color-slate-100);
-  --color-dark: var(--color-slate-950);
+  --color-neutral: var(--color-neutral-950);
   --color-contrast: var(--color-white);
 
   /* Primary */
@@ -89,8 +88,7 @@
       --text-color-emphasis: var(--color-white);
 
       /* neutral */
-      --color-light: var(--color-slate-100);
-      --color-dark: var(--color-slate-700);
+      --color-neutral: var(--color-neutral-700);
       --color-contrast: var(--color-slate-950);
 
       /* primary */
