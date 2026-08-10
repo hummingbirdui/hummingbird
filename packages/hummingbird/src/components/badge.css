@@ -1,7 +1,7 @@
 @utility badge {
   @layer base {
     --badge-bg: var(--color-neutral);
-    --badge-color: var(--color-contrast);
+    --badge-color: var(--color-inverse);
     --badge-font-size: var(--text-xs);
     --badge-font-weight: var(--font-weight-semibold);
     --badge-line-height: 1;

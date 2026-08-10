@@ -17,7 +17,7 @@
 
   /* Neutral */
   --color-neutral: var(--color-neutral-950);
-  --color-contrast: var(--color-white);
+  --color-inverse: var(--color-white);
 
   /* Primary */
   --color-primary-lighter: var(--color-maroon-50);
@@ -89,7 +89,7 @@
 
       /* neutral */
       --color-neutral: var(--color-neutral-700);
-      --color-contrast: var(--color-stone-950);
+      --color-inverse: var(--color-black);
 
       /* primary */
       --color-primary-lighter: var(--color-maroon-900);

@@ -6,7 +6,7 @@
     --alert-color: var(--color-white);
     --alert-border-color: transparent;
     --alert-border-radius: var(--radius-lg);
-    --alert-icon-color: var(--color-contrast);
+    --alert-icon-color: var(--color-inverse);
 
     @apply relative flex items-center gap-3
     p-[var(--alert-padding-y)_var(--alert-padding-x)]
@@ -30,37 +30,37 @@
 @utility alert-primary {
   @layer base {
     --alert-bg: var(--color-primary);
-    --alert-color: var(--color-contrast);
+    --alert-color: var(--color-inverse);
   }
 }
 @utility alert-secondary {
   @layer base {
     --alert-bg: var(--color-secondary);
-    --alert-color: var(--color-contrast);
+    --alert-color: var(--color-inverse);
   }
 }
 @utility alert-info {
   @layer base {
     --alert-bg: var(--color-info);
-    --alert-color: var(--color-contrast);
+    --alert-color: var(--color-inverse);
   }
 }
 @utility alert-success {
   @layer base {
     --alert-bg: var(--color-success);
-    --alert-color: var(--color-contrast);
+    --alert-color: var(--color-inverse);
   }
 }
 @utility alert-warning {
   @layer base {
     --alert-bg: var(--color-warning);
-    --alert-color: var(--color-contrast);
+    --alert-color: var(--color-inverse);
   }
 }
 @utility alert-danger {
   @layer base {
     --alert-bg: var(--color-danger);
-    --alert-color: var(--color-contrast);
+    --alert-color: var(--color-inverse);
   }
 }
 

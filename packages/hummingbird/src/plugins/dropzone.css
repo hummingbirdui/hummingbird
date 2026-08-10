@@ -10,7 +10,7 @@
   --uploader-border-radius: var(--radius-xl);
   --uploader-hover-border-color: var(--color-primary);
   --uploader-hover-bg: --alpha(var(--color-primary) / 5%);
-  --uploader-avatar-overlay: --alpha(var(--color-contrast) / 70%);
+  --uploader-avatar-overlay: --alpha(var(--color-inverse) / 70%);
   --uploader-avatar-size: --spacing(40);
 
   --uploader-preview-margin: --spacing(4);

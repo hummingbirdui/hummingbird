@@ -93,13 +93,13 @@
       &:invalid {
         &::file-selector-button {
           @apply bg-(--form-invalid-color)
-        text-contrast;
+        text-inverse;
         }
       }
       &:valid {
         &::file-selector-button {
           @apply bg-(--form-valid-color)
-        text-contrast;
+        text-inverse;
         }
       }
     }
@@ -196,7 +196,7 @@
       }
       &::file-selector-button {
         @apply bg-(--form-valid-color)
-      text-contrast;
+      text-inverse;
       }
     }
     &.is-invalid {
@@ -206,7 +206,7 @@
       }
       &::file-selector-button {
         @apply bg-(--form-invalid-color)
-      text-contrast;
+      text-inverse;
       }
     }
   }

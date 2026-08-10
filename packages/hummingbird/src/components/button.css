@@ -82,42 +82,42 @@
 @utility btn-primary {
   @layer base {
     --btn-bg: var(--color-primary);
-    --btn-color: var(--color-contrast);
+    --btn-color: var(--color-inverse);
     --btn-hover-bg: var(--color-primary-dark);
   }
 }
 @utility btn-secondary {
   @layer base {
     --btn-bg: var(--color-secondary);
-    --btn-color: var(--color-contrast);
+    --btn-color: var(--color-inverse);
     --btn-hover-bg: var(--color-secondary-dark);
   }
 }
 @utility btn-info {
   @layer base {
     --btn-bg: var(--color-info);
-    --btn-color: var(--color-contrast);
+    --btn-color: var(--color-inverse);
     --btn-hover-bg: var(--color-info-dark);
   }
 }
 @utility btn-success {
   @layer base {
     --btn-bg: var(--color-success);
-    --btn-color: var(--color-contrast);
+    --btn-color: var(--color-inverse);
     --btn-hover-bg: var(--color-success-dark);
   }
 }
 @utility btn-warning {
   @layer base {
     --btn-bg: var(--color-warning);
-    --btn-color: var(--color-contrast);
+    --btn-color: var(--color-inverse);
     --btn-hover-bg: var(--color-warning-dark);
   }
 }
 @utility btn-danger {
   @layer base {
     --btn-bg: var(--color-danger);
-    --btn-color: var(--color-contrast);
+    --btn-color: var(--color-inverse);
     --btn-hover-bg: var(--color-danger-dark);
   }
 }
