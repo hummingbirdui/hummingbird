@@ -4,7 +4,7 @@
     --progress-font-size: var(--text-xs);
     --progress-bg: var(--background-color-muted);
     --progress-border-radius: var(--radius-md);
-    --progress-bar-color: var(--color-contrast);
+    --progress-bar-color: var(--color-inverse);
     --progress-bar-bg: var(--color-primary);
     --progress-stripe-size: 0.75rem;
 

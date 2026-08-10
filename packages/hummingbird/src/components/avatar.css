@@ -2,7 +2,7 @@
   @layer base {
     @apply flex;
     :where(.avatar) {
-      @apply rounded-full border-2 border-contrast -ms-3
+      @apply rounded-full border-2 border-inverse -ms-3
       size-[calc(var(--avatar-size)+4px)] overflow-hidden;
     }
   }

@@ -3,6 +3,22 @@ title: Changelog
 description: See what's new in Hummingbird. This page lists all the changes and updates made to the Hummingbird framework, including new features, bug fixes, and improvements.
 ---
 
+## v1.4.0
+<span class="text-sm text-muted relative -top-3">10 August, 2026</span>
+
+Updates and Fixes:
+
+- **Update:** Removed `.btn-light` and `.btn-dark` button variants.
+- **Update:** Removed `--color-light` variable.
+- **Update:** Updated `--color-dark` variable name to `--color-neutral` by using color from neutral palette for all themes.
+- **Update:** Updated `--color-contrast` variable name to `--color-inverse` by updating the dark mode color to `--color-black`.
+- **Update:** Rebalanced the color palettes of Luxury, Retro, Arctic, Nature, Ember, Dracula, and Midnight themes. In every theme, the `secondary`, `info`, `success`, `warning`, and `danger` colors now match the tone of the theme's `primary` color. Before, some buttons and badges looked too light or too dull next to each other. Now they all feel like one set, in both light and dark mode.
+- **Update:** Improved dark mode backgrounds for the `arctic`, `midnight`, and `ember` themes. The dark shades (`600` to `950`) are now deeper and evenly spaced.
+- **Update:** Changed the pagination summery class name from `.pagination-info` to `.pagination-summary`.
+- **Update:** Introduced badge neutral variants by adding `.badge-neutral`, `.badge-subtle-neutral`, `.badge-outline-neutral` classes.
+- **Fix:** Fixed default badge color issue.
+- **Fix:** Fixed wrong color values in some palettes where a shade was lighter than the one before it, or two shades had the same value: `green` in `arctic`, `olive` in the default palette, `purple` in `luxury`, and `brown` in `nature`. Every color scale now goes from light to dark in the correct order.
+
 ## v1.3.1
 <span class="text-sm text-muted relative -top-3">04 August, 2026</span>
 
