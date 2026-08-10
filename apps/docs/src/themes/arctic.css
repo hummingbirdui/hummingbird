@@ -9,11 +9,11 @@
     --color-slate-300: oklch(81.7% 0.018 187.8);
     --color-slate-400: oklch(72.9% 0.012 182.744);
     --color-slate-500: oklch(61.3% 0.011 154.95);
-    --color-slate-600: oklch(51.3% 0.016 173.654);
-    --color-slate-700: oklch(39.3% 0.018 191.113);
-    --color-slate-800: oklch(33.3% 0.019 201.718);
-    --color-slate-900: oklch(26.5% 0.019 207.103);
-    --color-slate-950: oklch(23.3% 0.023 200.526);
+    --color-slate-600: oklch(49% 0.017 173.654);
+    --color-slate-700: oklch(38.5% 0.02 191.113);
+    --color-slate-800: oklch(31.5% 0.023 201.718);
+    --color-slate-900: oklch(25.5% 0.027 207.103);
+    --color-slate-950: oklch(0.2 0.03 200.38);
 
     --color-teal-50: oklch(91% 0.026 199.63);
     --color-teal-100: oklch(85.4% 0.04 206.483);
@@ -31,8 +31,8 @@
     --color-violet-100: oklch(85.4% 0.04 290.271);
     --color-violet-200: oklch(75.6% 0.069 290.388);
     --color-violet-300: oklch(65.4% 0.1 288.695);
-    --color-violet-400: oklch(55.3% 0.13 286.635);
-    --color-violet-500: oklch(50.3% 0.147 285.02);
+    --color-violet-400: oklch(57.5% 0.135 286.635);
+    --color-violet-500: oklch(52.5% 0.15 285.02);
     --color-violet-600: oklch(46.8% 0.134 285.253);
     --color-violet-700: oklch(39.8% 0.112 285.372);
     --color-violet-800: oklch(32.4% 0.088 285.782);
@@ -43,8 +43,8 @@
     --color-red-100: oklch(84.7% 0.048 18.144);
     --color-red-200: oklch(77.5% 0.075 18.916);
     --color-red-300: oklch(68.8% 0.109 20.273);
-    --color-red-400: oklch(60.6% 0.145 22.353);
-    --color-red-500: oklch(57% 0.16 23.696);
+    --color-red-400: oklch(59.5% 0.142 22.353);
+    --color-red-500: oklch(55.5% 0.155 23.696);
     --color-red-600: oklch(52.9% 0.148 23.625);
     --color-red-700: oklch(44.9% 0.122 23.359);
     --color-red-800: oklch(36.3% 0.095 23.096);
@@ -55,8 +55,8 @@
     --color-green-100: oklch(85.6% 0.044 162.275);
     --color-green-200: oklch(76.3% 0.073 159.797);
     --color-green-300: oklch(66.6% 0.101 157.911);
-    --color-green-400: oklch(74.3% 0.158 154.844);
-    --color-green-500: oklch(63.2% 0.141 154.52);
+    --color-green-400: oklch(59% 0.132 154.844);
+    --color-green-500: oklch(54.5% 0.125 154.52);
     --color-green-600: oklch(49.5% 0.122 152.736);
     --color-green-700: oklch(41.9% 0.101 153.217);
     --color-green-800: oklch(34.5% 0.082 153.391);
