@@ -1,7 +1,7 @@
 @utility badge {
   @layer base {
-    --badge-bg: var(--color-neutral);
-    --badge-color: var(--color-inverse);
+    --badge-bg: var(--background-color-highlight);
+    --badge-color: var(--text-color-default);
     --badge-font-size: var(--text-xs);
     --badge-font-weight: var(--font-weight-semibold);
     --badge-line-height: 1;
@@ -58,42 +58,49 @@
 
 @utility badge-neutral {
   @layer base {
+    --badge-bg: var(--color-neutral);
     --badge-color: var(--color-white);
   }
 }
 @utility badge-primary {
   @layer base {
     --badge-bg: var(--color-primary);
+    --badge-color: var(--color-inverse);
     --badge-link-hover-bg: var(--color-primary-dark);
   }
 }
 @utility badge-secondary {
   @layer base {
     --badge-bg: var(--color-secondary);
+    --badge-color: var(--color-inverse);
     --badge-link-hover-bg: var(--color-secondary-dark);
   }
 }
 @utility badge-info {
   @layer base {
     --badge-bg: var(--color-info);
+    --badge-color: var(--color-inverse);
     --badge-link-hover-bg: var(--color-info-dark);
   }
 }
 @utility badge-success {
   @layer base {
     --badge-bg: var(--color-success);
+    --badge-color: var(--color-inverse);
     --badge-link-hover-bg: var(--color-success-dark);
   }
 }
 @utility badge-warning {
   @layer base {
     --badge-bg: var(--color-warning);
+    --badge-color: var(--color-inverse);
     --badge-link-hover-bg: var(--color-warning-dark);
   }
 }
 @utility badge-danger {
   @layer base {
     --badge-bg: var(--color-danger);
+    --badge-color: var(--color-inverse);
     --badge-link-hover-bg: var(--color-danger-dark);
   }
 }
