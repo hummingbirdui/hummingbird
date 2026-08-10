@@ -18,3 +18,4 @@ pnpm-debug.log*
 
 # generated build-time safelist (tools/generate-safelist.mjs)
 packages/hummingbird/src/safelist.txt
+apps/docs/public/themes.css
