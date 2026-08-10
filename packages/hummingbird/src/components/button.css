@@ -123,24 +123,9 @@
 }
 @utility btn-neutral {
   @layer base {
-    --btn-bg: var(--color-dark);
+    --btn-bg: --alpha(var(--color-neutral) / 90%);
     --btn-color: var(--color-white);
-    --btn-hover-bg: --alpha(var(--color-dark) / 80%);
-  }
-}
-@utility btn-light {
-  @layer base {
-    --btn-bg: var(--color-gray-100);
-    --btn-color: var(--color-gray-800);
-    --btn-hover-bg: var(--color-gray-300);
-  }
-}
-
-@utility btn-dark {
-  @layer base {
-    --btn-bg: var(--color-gray-950);
-    --btn-color: var(--color-white);
-    --btn-hover-bg: --alpha(var(--color-gray-950) / 80%);
+    --btn-hover-bg: var(--color-neutral);
   }
 }
 
@@ -192,20 +177,6 @@
     --btn-bg: var(--background-color-muted);
     --btn-color: var(--text-color-emphasis);
     --btn-hover-bg: var(--background-color-highlight);
-  }
-}
-@utility btn-subtle-light {
-  @layer base {
-    --btn-bg: var(--color-gray-50);
-    --btn-color: var(--color-gray-800);
-    --btn-hover-bg: var(--color-gray-100);
-  }
-}
-@utility btn-subtle-dark {
-  @layer base {
-    --btn-bg: var(--color-gray-700);
-    --btn-color: var(--color-white);
-    --btn-hover-bg: var(--color-gray-950);
   }
 }
 
@@ -266,24 +237,6 @@
     --btn-border-color: var(--background-color-emphasis);
   }
 }
-@utility btn-outline-light {
-  @layer base {
-    --btn-bg: transparent;
-    --btn-color: var(--color-white);
-    --btn-hover-color: var(--color-gray-800);
-    --btn-hover-bg: var(--color-gray-100);
-    --btn-border-color: --alpha(var(--color-gray-300) / 60%);
-  }
-}
-@utility btn-outline-dark {
-  @layer base {
-    --btn-bg: transparent;
-    --btn-color: var(--color-gray-800);
-    --btn-hover-color: var(--color-gray-100);
-    --btn-hover-bg: var(--color-gray-700);
-    --btn-border-color: var(--color-gray-600);
-  }
-}
 
 /* variant text */
 @utility btn-text-primary {
@@ -333,22 +286,6 @@
     --btn-bg: transparent;
     --btn-color: var(--text-color-default);
     --btn-hover-bg: var(--background-color-muted);
-  }
-}
-@utility btn-text-light {
-  @layer base {
-    --btn-bg: transparent;
-    --btn-color: var(--color-white);
-    --btn-hover-color: var(--color-gray-800);
-    --btn-hover-bg: var(--color-gray-100);
-  }
-}
-@utility btn-text-dark {
-  @layer base {
-    --btn-bg: transparent;
-    --btn-color: var(--color-gray-800);
-    --btn-hover-color: var(--color-white);
-    --btn-hover-bg: var(--color-gray-950);
   }
 }
 

@@ -18,7 +18,7 @@
   --ar-disabled-bg: var(--background-color-highlight);
   --ar-connect-disabled-bg: var(--text-color-subtle);
   --ar-tooltip-color: var(--color-white);
-  --ar-tooltip-bg: var(--color-dark);
+  --ar-tooltip-bg: var(--color-neutral);
   --ar-tooltip-font-size: var(--text-xs);
 
   @apply relative bg-[--alpha(var(--ar-color)/30%)] rounded-(--ar-track-border-radius);

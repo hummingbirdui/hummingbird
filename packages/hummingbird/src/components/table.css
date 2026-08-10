@@ -147,15 +147,15 @@
 
 @utility table-neutral {
   @layer base {
-    --table-bg: var(--color-dark);
+    --table-bg: var(--color-neutral);
     --table-color: var(--color-white);
     --table-head-color: var(--color-white);
     --table-border-color: var(--border-color-subtle);
-    --table-striped-bg: --alpha(var(--color-dark) / 90%);
+    --table-striped-bg: --alpha(var(--color-neutral) / 90%);
     --table-striped-color: var(--color-white);
-    --table-hover-bg: --alpha(var(--color-dark) / 80%);
+    --table-hover-bg: --alpha(var(--color-neutral) / 80%);
     --table-hover-color: var(--color-white);
-    --table-active-bg: --alpha(var(--color-dark) / 80%);
+    --table-active-bg: --alpha(var(--color-neutral) / 80%);
     --table-active-color: var(--color-white);
   }
 }

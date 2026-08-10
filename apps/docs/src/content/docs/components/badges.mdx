@@ -41,9 +41,9 @@ classNames:
 
 ## Basic badges
 
-<Example class='flex justify-center gap-2' code={`<span class="badge">Neutral</span>
-  <span class="badge badge-subtle">Neutral</span>
-  <span class="badge badge-outline">Neutral</span>`} />
+<Example class='flex justify-center gap-2' code={`<span class="badge badge-neutral">Neutral</span>
+  <span class="badge badge-subtle-neutral">Neutral</span>
+  <span class="badge badge-outline-neutral">Neutral</span>`} />
 
 ## Notification badge
 
@@ -185,7 +185,7 @@ The badge component is built using a set of CSS variables. These variables provi
 
 <Example lang='sass' showPreview={false}
   code={`.badge {
-    --badge-bg: var(--color-dark);
+    --badge-bg: var(--color-neutral);
     --badge-color: var(--color-contrast);
     --badge-font-size: var(--text-xs);
     --badge-font-weight: var(--font-weight-semibold);
@@ -193,7 +193,7 @@ The badge component is built using a set of CSS variables. These variables provi
     --badge-padding-y: --spacing(0.75);
     --badge-padding-x: --spacing(1.5);
     --badge-border-color: transparent;
-    --badge-link-hover-bg: var(--color-dark);
+    --badge-link-hover-bg: var(--color-neutral);
     --badge-border-radius: calc(infinity * 1px);
   }`}
 />

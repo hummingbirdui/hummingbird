@@ -3,7 +3,8 @@
   "tasks": {
     "build": {
       "dependsOn": ["^build"],
-      "outputs": ["dist/**", "lib/**", "build/**"]
+      "outputs": ["dist/**", "lib/**", "build/**", ".astro/**", "public/themes.css"],
+      "env": ["PUBLIC_SITE_URL", "PUBLIC_STAGING_SITE_URL", "NODE_ENV"]
     },
     "dev": {
       "cache": false,

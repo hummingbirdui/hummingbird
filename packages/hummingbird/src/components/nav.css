@@ -169,10 +169,10 @@
 }
 @utility nav-neutral {
   @layer base {
-    --nav-bg: var(--color-dark);
+    --nav-bg: var(--color-neutral);
     --nav-link-color: --alpha(var(--color-white) / 70%);
     --nav-link-disabled-color: --alpha(var(--color-white) / 30%);
     --nav-link-active-color: var(--color-white);
-    --nav-link-focus-ring-color: --alpha(var(--color-dark) / 80%);
+    --nav-link-focus-ring-color: --alpha(var(--color-neutral) / 80%);
   }
 }

@@ -18,8 +18,8 @@ classNames:
     desc: Subtle style
   - class: pagination-outlined-{color}
     desc: Outlined style
-  - class: pagination-info
-    desc: Info text
+  - class: pagination-summary
+    desc: Summary text
   - class: pagination-count
     desc: Page count
   - class: pagination-link
@@ -953,7 +953,7 @@ The Table Pagination variant is designed for data tables, enabling users to navi
 <Example class="flex flex-col gap-3 [&>div]:min-w-160 overflow-scroll"
   code={`<!-- table pagination -->
   <div class="w-full flex items-center justify-between px-6 py-2 bg-(--background-color-subtle) rounded-lg">
-    <div class="pagination-info">
+    <div class="pagination-summary">
       Showing <span class="pagination-count">5 out of 12</span> items
       <a href="#" class="pagination-link">Show all</a>
     </div>
@@ -1005,7 +1005,7 @@ The Table Pagination variant is designed for data tables, enabling users to navi
   
   <!-- table next/prev button pagination -->
   <div class="w-full flex items-center justify-between px-6 py-2 bg-(--background-color-subtle) rounded-lg">
-    <div class="pagination-info">
+    <div class="pagination-summary">
       Showing <span class="pagination-count">5 out of 12</span> items
       <a href="#" class="pagination-link">Show all</a>
     </div>

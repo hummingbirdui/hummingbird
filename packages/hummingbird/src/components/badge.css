@@ -1,6 +1,6 @@
 @utility badge {
   @layer base {
-    --badge-bg: var(--color-dark);
+    --badge-bg: var(--color-neutral);
     --badge-color: var(--color-contrast);
     --badge-font-size: var(--text-xs);
     --badge-font-weight: var(--font-weight-semibold);
@@ -9,7 +9,7 @@
     --badge-padding-x: --spacing(1.5);
     --badge-border-width: var(--border-width);
     --badge-border-color: transparent;
-    --badge-link-hover-bg: var(--color-dark);
+    --badge-link-hover-bg: var(--color-neutral);
     --badge-border-radius: calc(infinity * 1px);
 
     @apply inline-flex items-center justify-center gap-1
@@ -56,6 +56,11 @@
   }
 }
 
+@utility badge-neutral {
+  @layer base {
+    --badge-color: var(--color-white);
+  }
+}
 @utility badge-primary {
   @layer base {
     --badge-bg: var(--color-primary);
@@ -94,7 +99,7 @@
 }
 
 /* subtle variant */
-@utility badge-subtle {
+@utility badge-subtle-neutral {
   @layer base {
     --badge-bg: var(--background-color-muted);
     --badge-color: var(--text-color-default);
@@ -152,7 +157,7 @@
 }
 
 /* outline variant */
-@utility badge-outline {
+@utility badge-outline-neutral {
   @layer base {
     --badge-bg: transparent;
     --badge-color: var(--text-color-default);
