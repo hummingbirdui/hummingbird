@@ -31,7 +31,7 @@
     "@docsearch/css": "^3.9.0",
     "@docsearch/js": "^3.9.0",
     "@tailwindcss/vite": "^4.3.3",
-    "astro": "^7.1.6",
+    "astro": "^7.2.0",
     "astro-auto-import": "^0.5.2",
     "choices.js": "^11.2.3",
     "concurrently": "^10.0.4",
