@@ -1,0 +1,67 @@
+@utility rating {
+  @layer base {
+    --rating-star-size: 24px;
+    --rating-star-color: var(--color-gray-300);
+    --rating-star-filled: var(--color-warning);
+
+    @apply inline-flex;
+  }
+}
+
+@utility rating-input {
+  @layer base {
+    @apply appearance-none cursor-pointer;
+    width: var(--rating-star-size);
+    height: var(--rating-star-size);
+    background-color: var(--rating-star-color);
+    mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3e%3cpath fill='%23000' d='M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z'/%3e%3c/svg%3e");
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    transition: background-color 0.15s ease-in-out;
+
+    &:checked {
+      background-color: var(--rating-star-filled);
+    }
+  }
+}
+
+.rating:has(.rating-input:checked) .rating-input:has(~ .rating-input:checked) {
+  background-color: var(--rating-star-filled);
+}
+
+@utility rating-mask-half-1 {
+  @layer base {
+    mask-size: 200% 100%;
+    mask-position: left;
+  }
+}
+
+@utility rating-mask-half-2 {
+  @layer base {
+    mask-size: 200% 100%;
+    mask-position: right;
+  }
+}
+
+/* Sizes */
+
+@utility rating-sm {
+  @layer base {
+    --rating-star-size: 18px;
+  }
+}
+
+@utility rating-lg {
+  @layer base {
+    --rating-star-size: 30px;
+  }
+}
+
+/* States */
+
+@utility rating-disabled {
+  @layer base {
+    @apply pointer-events-none opacity-60;
+  }
+}

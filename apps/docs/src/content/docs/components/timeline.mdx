@@ -1,0 +1,592 @@
+---
+title: Timeline
+description: A flexible timeline component for displaying chronological events in vertical or horizontal layouts.
+toc: true
+
+classNames:
+  component:
+    - class: timeline
+      desc: Timeline container
+  inner:
+    - class: timeline-item
+      desc: Timeline item
+  color:
+    - class: timeline-{color}
+      desc: Color variant
+  style:
+    - class: timeline-horizontal
+      desc: Horizontal layout
+    - class: timeline-icon
+      desc: Icon indicator size
+    - class: timeline-horizontal-reverse
+      desc: Horizontal reverse layout
+    - class: timeline-reverse
+      desc: Reverse content sides
+---
+
+## Overview
+
+The Timeline component is used to display a sequence of events in chronological order. It supports vertical and horizontal layouts, color states, and custom indicators.
+
+---
+
+## Anatomy
+
+A timeline consists of:
+
+- `timeline` → root container
+- `timeline-item` → single event
+- `timeline-dot` → indicator node
+- optional start / end content
+
+---
+
+## Basic Timeline
+
+<Example code={`<ul class="timeline">
+    <li class="timeline-item">
+      <div class="timeline-start">
+        <div class="text-sm text-muted">Opposing</div>
+      </div>
+
+      <div class="timeline-middle">
+        <div class="timeline-dot"></div>
+      </div>
+
+      <div class="timeline-end">
+        <div class="grid sm:grid-cols-2 gap-1 w-full">
+          <div class="font-medium text-sm">Main</div>
+          <div class="text-subtle font-medium text-sm">Subtext 1</div>
+          <div class="text-sm text-muted">
+            Description
+          </div>
+          <div class="text-subtle font-medium text-sm">Subtext 2</div>
+        </div>
+      </div>
+    </li>
+
+    <li class="timeline-item">
+      <div class="timeline-start">
+        <div class="text-sm text-muted">Opposing</div>
+      </div>
+
+      <div class="timeline-middle">
+        <div class="timeline-dot"></div>
+      </div>
+
+      <div class="timeline-end">
+        <div class="grid sm:grid-cols-2 gap-1 w-full">
+          <div class="font-medium text-sm">Main</div>
+          <div class="text-subtle font-medium text-sm">Subtext 1</div>
+          <div class="text-sm text-muted">
+            Description
+          </div>
+          <div class="text-subtle font-medium text-sm">Subtext 2</div>
+        </div>
+      </div>
+    </li>
+  </ul>
+`} />
+
+---
+
+## With Icons
+
+<Example code={`<ul class="timeline timeline-icon">
+    <li class="timeline-item">
+      <div class="timeline-start">
+        <div class="text-sm text-muted">Opposing</div>
+      </div>
+
+      <div class="timeline-middle">
+        <div class="timeline-dot">$</div>
+      </div>
+
+      <div class="timeline-end">
+        <div class="grid sm:grid-cols-2 gap-1 w-full">
+          <div class="font-medium text-sm">Main</div>
+          <div class="text-subtle font-medium text-sm">Subtext 1</div>
+          <div class="text-sm text-muted">
+            Description
+          </div>
+          <div class="text-subtle font-medium text-sm">Subtext 2</div>
+        </div>
+      </div>
+    </li>
+
+    <li class="timeline-item">
+      <div class="timeline-start">
+        <div class="text-sm text-muted">Opposing</div>
+      </div>
+
+      <div class="timeline-middle">
+        <div class="timeline-dot timeline-info">$</div>
+      </div>
+
+      <div class="timeline-end">
+        <div class="grid sm:grid-cols-2 gap-1 w-full">
+          <div class="font-medium text-sm">Main</div>
+          <div class="text-subtle font-medium text-sm">Subtext 1</div>
+          <div class="text-sm text-muted">
+            Description
+          </div>
+          <div class="text-subtle font-medium text-sm">Subtext 2</div>
+        </div>
+      </div>
+    </li>
+  </ul>
+`} />
+
+---
+
+## Reversed
+
+<Example code={`<ul class="timeline timeline-reverse">
+    <li class="timeline-item">
+      <div class="timeline-start">
+        <div class="text-sm text-muted">Opposing</div>
+      </div>
+
+      <div class="timeline-middle">
+        <div class="timeline-dot"></div>
+      </div>
+
+      <div class="timeline-end">
+        <div class="grid sm:grid-cols-2 gap-1 w-full">
+          <div class="text-subtle font-medium text-sm">Subtext 1</div>
+          <div class="font-medium text-sm">Main</div>
+          <div class="text-subtle font-medium text-sm">Subtext 2</div>
+          <div class="text-sm text-muted">
+            Description
+          </div>
+        </div>
+      </div>
+    </li>
+
+    <li class="timeline-item">
+      <div class="timeline-start">
+        <div class="text-sm text-muted">Opposing</div>
+      </div>
+
+      <div class="timeline-middle">
+        <div class="timeline-dot"></div>
+      </div>
+
+      <div class="timeline-end">
+        <div class="grid sm:grid-cols-2 gap-1 w-full">
+          <div class="text-subtle font-medium text-sm">Subtext 1</div>
+          <div class="font-medium text-sm">Main</div>
+          <div class="text-subtle font-medium text-sm">Subtext 2</div>
+          <div class="text-sm text-muted">
+            Description
+          </div>
+        </div>
+      </div>
+    </li>
+  </ul>
+`} />
+
+Use color utilities to indicate status.
+
+- `timeline-primary`
+- `timeline-success`
+- `timeline-warning`
+- `timeline-danger`
+
+---
+
+## States
+
+### Completed
+
+<Example code={`<ul class="timeline">
+    <li class="timeline-item timeline-success">
+      <div class="timeline-start">
+        <div class="font-medium">
+          Paid
+        </div>
+      </div>
+
+      <div class="timeline-middle">
+        <div class="timeline-dot"></div>
+      </div>
+
+      <div class="timeline-end">
+        <div class="font-medium">
+          Invoice Settled
+        </div>
+      </div>
+    </li>
+
+    <li class="timeline-item timeline-warning">
+      <div class="timeline-start">
+        <div class="font-medium">
+          Paid
+        </div>
+      </div>
+
+      <div class="timeline-middle">
+        <div class="timeline-dot"></div>
+      </div>
+
+      <div class="timeline-end">
+        <div class="font-medium">
+          Invoice Settled
+        </div>
+      </div>
+    </li>
+  </ul>
+`} />
+
+### Active
+
+<Example code={`<ul class="timeline">
+    <li class="timeline-item timeline-completed">
+      <div class="timeline-start">
+        <div class="text-sm text-muted">10:30 AM</div>
+      </div>
+
+      <div class="timeline-middle">
+        <div class="timeline-dot"></div>
+      </div>
+
+      <div class="timeline-end">
+        <div class="flex flex-col gap-0.5">
+          <div class="font-medium text-sm">Order confirmed</div>
+          <div class="text-sm text-muted">Payment and order details verified.</div>
+        </div>
+      </div>
+    </li>
+
+    <li class="timeline-item timeline-active">
+      <div class="timeline-start">
+        <div class="text-sm text-muted">Now</div>
+      </div>
+
+      <div class="timeline-middle">
+        <div class="timeline-dot"></div>
+      </div>
+
+      <div class="timeline-end">
+        <div class="flex flex-col gap-0.5">
+          <div class="font-medium text-sm">Preparing shipment</div>
+          <div class="text-sm text-muted">Your package is being packed.</div>
+        </div>
+      </div>
+    </li>
+
+    <li class="timeline-item timeline-pending">
+      <div class="timeline-start">
+        <div class="text-sm text-muted">Next</div>
+      </div>
+
+      <div class="timeline-middle">
+        <div class="timeline-dot"></div>
+      </div>
+
+      <div class="timeline-end">
+        <div class="flex flex-col gap-0.5">
+          <div class="font-medium text-sm">Out for delivery</div>
+          <div class="text-sm text-muted">Courier handoff is pending.</div>
+        </div>
+      </div>
+    </li>
+  </ul>
+`} />
+
+---
+
+## Horizontal Timeline
+
+<Example code={`<ul class="timeline timeline-horizontal overflow-x-auto">
+    <li class="timeline-item timeline-completed">
+      <div class="timeline-start">
+        <div class="font-medium text-sm">Step 1</div>
+      </div>
+
+      <div class="timeline-middle">
+        <div class="timeline-dot"></div>
+      </div>
+
+      <div class="timeline-end">
+        <div class="text-sm text-muted">Start</div>
+      </div>
+    </li>
+
+    <li class="timeline-item timeline-active">
+      <div class="timeline-start">
+        <div class="font-medium text-sm">Step 2</div>
+      </div>
+
+      <div class="timeline-middle">
+        <div class="timeline-dot"></div>
+      </div>
+
+      <div class="timeline-end">
+        <div class="text-sm text-muted">Process</div>
+      </div>
+    </li>
+
+    <li class="timeline-item timeline-pending">
+      <div class="timeline-start">
+        <div class="font-medium text-sm">Step 3</div>
+      </div>
+
+      <div class="timeline-middle">
+        <div class="timeline-dot"></div>
+      </div>
+
+      <div class="timeline-end">
+        <div class="text-sm text-muted">Finish</div>
+      </div>
+    </li>
+  </ul>
+`} />
+
+---
+
+## State Utilities
+
+Use state utilities on `timeline-item` to communicate progress.
+
+- `timeline-completed`
+- `timeline-active`
+- `timeline-pending`
+- `timeline-disabled`
+
+---
+
+## Content on One Side
+
+Omit `timeline-start` or `timeline-end` to place content on a single side. The dot stays centered and the empty column collapses.
+
+### Content on the Right
+
+<Example code={`<ul class="timeline">
+    <li class="timeline-item">
+      <div class="timeline-middle">
+        <div class="timeline-dot"></div>
+      </div>
+
+      <div class="timeline-end">
+        <div class="flex flex-col gap-0.5">
+          <div class="font-medium text-sm">Order shipped</div>
+          <div class="text-sm text-muted">Your package is on the way.</div>
+        </div>
+      </div>
+    </li>
+
+    <li class="timeline-item">
+      <div class="timeline-middle">
+        <div class="timeline-dot"></div>
+      </div>
+
+      <div class="timeline-end">
+        <div class="flex flex-col gap-0.5">
+          <div class="font-medium text-sm">Payment processed</div>
+          <div class="text-sm text-muted">Transaction completed successfully.</div>
+        </div>
+      </div>
+    </li>
+
+    <li class="timeline-item">
+      <div class="timeline-middle">
+        <div class="timeline-dot"></div>
+      </div>
+
+      <div class="timeline-end">
+        <div class="flex flex-col gap-0.5">
+          <div class="font-medium text-sm">Order placed</div>
+          <div class="text-sm text-muted">We received your order request.</div>
+        </div>
+      </div>
+    </li>
+  </ul>
+`} />
+
+### Content on the Left
+
+<Example code={`<ul class="timeline">
+    <li class="timeline-item">
+      <div class="timeline-start">
+        <div class="flex flex-col gap-0.5">
+          <div class="font-medium text-sm">Order shipped</div>
+          <div class="text-sm text-muted">Your package is on the way.</div>
+        </div>
+      </div>
+
+      <div class="timeline-middle">
+        <div class="timeline-dot"></div>
+      </div>
+    </li>
+
+    <li class="timeline-item">
+      <div class="timeline-start">
+        <div class="flex flex-col gap-0.5">
+          <div class="font-medium text-sm">Payment processed</div>
+          <div class="text-sm text-muted">Transaction completed successfully.</div>
+        </div>
+      </div>
+
+      <div class="timeline-middle">
+        <div class="timeline-dot"></div>
+      </div>
+    </li>
+
+    <li class="timeline-item">
+      <div class="timeline-start">
+        <div class="flex flex-col gap-0.5">
+          <div class="font-medium text-sm">Order placed</div>
+          <div class="text-sm text-muted">We received your order request.</div>
+        </div>
+      </div>
+
+      <div class="timeline-middle">
+        <div class="timeline-dot"></div>
+      </div>
+    </li>
+  </ul>
+`} />
+
+---
+
+## Alternate Sides
+
+Alternate between left and right content on successive items. Each item omits the column it doesn't need — the dot and line stay centered throughout.
+
+<Example code={`<ul class="timeline">
+    <li class="timeline-item">
+      <div class="timeline-start">
+        <div class="flex flex-col gap-0.5 max-w-60">
+          <div class="font-medium text-sm">Project Kickoff</div>
+          <div class="text-sm text-muted">Initial planning and requirements gathering.</div>
+        </div>
+      </div>
+
+      <div class="timeline-middle">
+        <div class="timeline-dot"></div>
+      </div>
+    </li>
+
+    <li class="timeline-item">
+      <div class="timeline-middle">
+        <div class="timeline-dot timeline-success"></div>
+      </div>
+
+      <div class="timeline-end max-w-60">
+        <div class="flex flex-col gap-0.5">
+          <div class="font-medium text-sm">Design Phase</div>
+          <div class="text-sm text-muted">UI/UX design and prototyping.</div>
+        </div>
+      </div>
+    </li>
+
+    <li class="timeline-item">
+      <div class="timeline-start">
+        <div class="flex flex-col gap-0.5 max-w-60">
+          <div class="font-medium text-sm">Development</div>
+          <div class="text-sm text-muted">Frontend and backend implementation.</div>
+        </div>
+      </div>
+
+      <div class="timeline-middle">
+        <div class="timeline-dot timeline-warning"></div>
+      </div>
+    </li>
+
+    <li class="timeline-item">
+      <div class="timeline-middle">
+        <div class="timeline-dot timeline-primary"></div>
+      </div>
+
+      <div class="timeline-end max-w-60">
+        <div class="flex flex-col gap-0.5">
+          <div class="font-medium text-sm">Launch</div>
+          <div class="text-sm text-muted">Product goes live.</div>
+        </div>
+      </div>
+    </li>
+  </ul>
+`} />
+
+---
+
+## With Cards
+
+Combine timeline with cards for richer content presentation.
+
+<Example code={`<ul class="timeline">
+    <li class="timeline-item">
+      <div class="timeline-start"></div>
+
+      <div class="timeline-middle">
+        <div class="timeline-dot"></div>
+      </div>
+
+      <div class="timeline-end">
+        <div class="card max-w-80">
+          <div class="card-header">
+            <p class="mb-0">Q1 2025</p>
+          </div>
+          <div class="card-body">
+            <h6 class="card-title mb-1">Product Launch</h6>
+            <p class="text-sm mb-0">Successfully launched our flagship product with 1000+ early adopters.</p>
+          </div>
+        </div>
+      </div>
+    </li>
+
+    <li class="timeline-item">
+      <div class="timeline-start">
+        <div class="card max-w-80">
+          <div class="card-header">
+            <p class="mb-0">Q2 2025</p>
+          </div>
+          <div class="card-body">
+            <h6 class="card-title mb-1">Series A Funding</h6>
+            <p class="text-sm mb-0">Secured $10M in Series A funding to accelerate growth.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-middle">
+        <div class="timeline-dot"></div>
+      </div>
+    </li>
+  </ul>
+`} />
+
+---
+
+## Class Overview
+
+A list of all available utility classes for the timeline component.
+
+export const { classNames } = frontmatter;
+
+<ClassTable classNames={classNames}/>
+
+---
+
+## CSS variables
+
+The timeline component is built using a set of CSS variables. These variables provide flexibility for customizing styles. Read more about customizing with CSS variables [here](/docs/customize/component#using-css-variables).
+
+<Example lang='sass' showPreview={false}
+  code={`.timeline {
+    --timeline-gap: --spacing(4);
+    --timeline-line-width: 2px;
+    --timeline-line-color: var(--border-color-default);
+    --timeline-dot-size: --spacing(4);
+    --timeline-dot-bg: var(--color-primary);
+    --timeline-dot-color: var(--color-white);
+  }`}
+/>
+
+## Best Practices
+
+- Keep timeline items short and readable
+- Use icons sparingly for key milestones only
+- Prefer vertical layout for dense information
+- Omit `timeline-start` or `timeline-end` to place content on one side only
+- Use horizontal layout for step flows or onboarding

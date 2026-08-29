@@ -28,8 +28,11 @@
 @import './placeholders.css';
 @import './popover.css';
 @import './progress.css';
+@import './rating.css';
 @import './table.css';
+@import './timeline.css';
 @import './toasts.css';
+@import './treeview.css';
 @import './tooltip.css';
 @import './transitions.css';
 @import './validation.css';

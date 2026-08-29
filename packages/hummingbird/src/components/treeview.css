@@ -1,0 +1,130 @@
+@utility treeview {
+  @layer base {
+    --treeview-indent: --spacing(6);
+    --treeview-color: var(--text-color-default);
+    --treeview-hover-bg: var(--color-hover);
+    --treeview-selected-color: var(--color-primary);
+    --treeview-selected-bg: var(--color-primary-lighter);
+    --treeview-disabled-color: var(--color-disabled-color);
+    --treeview-content-padding-x: --spacing(2.5);
+    --treeview-content-padding-y: --spacing(1.5);
+    --treeview-content-font-size: var(--text-sm);
+    --treeview-toggle-icon-width: 1rem;
+    --treeview-border-radius: var(--radius-md);
+
+    @apply list-none p-0 m-0 text-(--treeview-color) text-(length:--treeview-content-font-size);
+  }
+}
+
+@utility treeview-item {
+  @layer base {
+    @apply block;
+  }
+}
+
+@utility treeview-content {
+  @layer base {
+    @apply flex items-center gap-2 w-full cursor-pointer no-underline
+    px-(--treeview-content-padding-x)
+    py-(--treeview-content-padding-y)
+    rounded-(--treeview-border-radius);
+
+    @variant hover {
+      @apply bg-(--treeview-hover-bg);
+    }
+  }
+}
+
+@utility treeview-toggle {
+  @layer base {
+    @apply inline-flex items-center justify-center shrink-0 p-0 border-0 bg-transparent
+    w-(--treeview-toggle-icon-width)
+    h-(--treeview-toggle-icon-width);
+
+    > svg {
+      @apply block w-full h-full;
+      transition: transform 0.2s ease-in-out;
+    }
+
+    &:not(.collapsed) > svg {
+      transform: rotate(90deg);
+    }
+
+    /* Multi-path SVG (plus/minus pattern): hide first path when expanded */
+    &:not(.collapsed) > svg:has(> path ~ path) > path:first-child {
+      display: none;
+    }
+
+    &:not(.collapsed) > svg:has(> path ~ path) {
+      transform: none;
+    }
+
+    @variant rtl {
+      > svg {
+        transform: scaleX(-1);
+      }
+
+      &:not(.collapsed) > svg {
+        transform: scaleX(-1) rotate(90deg);
+      }
+
+      > svg:has(> path ~ path) {
+        transform: none;
+      }
+
+      &:not(.collapsed) > svg:has(> path ~ path) {
+        transform: none;
+      }
+    }
+  }
+}
+
+@utility treeview-group {
+  @layer base {
+    @apply list-none p-0 m-0;
+    padding-inline-start: var(--treeview-indent);
+  }
+}
+
+/* Lines */
+
+@utility treeview-lines {
+  @layer base {
+    .treeview-group > .treeview-item {
+      @apply relative;
+    }
+
+    .treeview-group > .treeview-item::before {
+      content: '';
+
+      @apply absolute inset-s-[calc(-0.25*var(--treeview-indent))] top-0 bottom-0 w-px
+      bg-(--border-color-default) pointer-events-none;
+    }
+
+    .treeview-group > .treeview-item:first-child::before {
+      top: 0%;
+    }
+
+    .treeview-group > .treeview-item:last-child::before {
+      bottom: 0%;
+    }
+
+    .treeview-group > .treeview-item:only-child::before {
+      display: none;
+    }
+  }
+}
+
+/* States */
+
+@utility treeview-selected {
+  @layer base {
+    @apply text-(--treeview-selected-color) bg-(--treeview-selected-bg);
+  }
+}
+
+@utility treeview-disabled {
+  @layer base {
+    @apply pointer-events-none text-(--treeview-disabled-color);
+  }
+}

@@ -1,0 +1,151 @@
+---
+title: Rating
+description: A star rating component using hidden radio inputs for accessible value selection.
+toc: true
+classNames:
+  component:
+    - class: rating
+      desc: Rating container
+  inner:
+    - class: rating-input
+      desc: Star input
+    - class: rating-mask-half-1
+      desc: Left half of a star
+    - class: rating-mask-half-2
+      desc: Right half of a star
+  size:
+    - class: rating-sm
+      desc: Small (18px)
+    - class: default
+      desc: Medium (24px)
+    - class: rating-lg
+      desc: Large (30px)
+  state:
+    - class: rating-disabled
+      desc: Disabled state
+---
+
+## Overview
+
+The Rating component uses radio inputs to capture a numeric value. Stars before and including the selected value are filled via CSS.
+
+---
+
+## Anatomy
+
+A rating consists of:
+
+- `rating` → flex container
+- `rating-input` → star-shaped radio inputs
+
+---
+
+## Basic Rating
+
+The number of star inputs determines the maximum rating. Add `checked` to one to set a default value.
+
+<Example code={`<div class="rating">
+    <input type="radio" name="rating-basic" value="1" class="rating-input" />
+    <input type="radio" name="rating-basic" value="2" class="rating-input" />
+    <input type="radio" name="rating-basic" value="3" class="rating-input" checked />
+    <input type="radio" name="rating-basic" value="4" class="rating-input" />
+    <input type="radio" name="rating-basic" value="5" class="rating-input" />
+  </div>
+`} />
+
+---
+
+## Sizes
+
+Use `rating-sm`, default, or `rating-lg` for different star sizes.
+
+<Example code={`<div class="flex flex-col gap-2">
+    <div class="rating rating-sm">
+      <input type="radio" name="size-sm" value="1" class="rating-input" />
+      <input type="radio" name="size-sm" value="2" class="rating-input" checked />
+      <input type="radio" name="size-sm" value="3" class="rating-input" />
+      <input type="radio" name="size-sm" value="4" class="rating-input" />
+      <input type="radio" name="size-sm" value="5" class="rating-input" />
+    </div>
+    <div class="rating">
+      <input type="radio" name="size-md" value="1" class="rating-input" />
+      <input type="radio" name="size-md" value="2" class="rating-input" checked />
+      <input type="radio" name="size-md" value="3" class="rating-input" />
+      <input type="radio" name="size-md" value="4" class="rating-input" />
+      <input type="radio" name="size-md" value="5" class="rating-input" />
+    </div>
+    <div class="rating rating-lg">
+      <input type="radio" name="size-lg" value="1" class="rating-input" />
+      <input type="radio" name="size-lg" value="2" class="rating-input" checked />
+      <input type="radio" name="size-lg" value="3" class="rating-input" />
+      <input type="radio" name="size-lg" value="4" class="rating-input" />
+      <input type="radio" name="size-lg" value="5" class="rating-input" />
+    </div>
+</div>
+`} />
+
+---
+
+## Half Stars
+
+Use `rating-mask-half-1` and `rating-mask-half-2` on consecutive inputs to enable half-star precision. Each pair of half inputs forms one visual star.
+
+<Example code={`<div class="rating">
+    <input type="radio" name="rating-half" value="0.5" class="rating-input rating-mask-half-1" />
+    <input type="radio" name="rating-half" value="1" class="rating-input rating-mask-half-2" />
+    <input type="radio" name="rating-half" value="1.5" class="rating-input rating-mask-half-1" />
+    <input type="radio" name="rating-half" value="2" class="rating-input rating-mask-half-2" />
+    <input type="radio" name="rating-half" value="2.5" class="rating-input rating-mask-half-1" />
+    <input type="radio" name="rating-half" value="3" class="rating-input rating-mask-half-2" checked />
+    <input type="radio" name="rating-half" value="3.5" class="rating-input rating-mask-half-1" />
+    <input type="radio" name="rating-half" value="4" class="rating-input rating-mask-half-2" />
+    <input type="radio" name="rating-half" value="4.5" class="rating-input rating-mask-half-1" />
+    <input type="radio" name="rating-half" value="5" class="rating-input rating-mask-half-2" />
+  </div>
+`} />
+
+---
+
+## Disabled
+
+Use `.rating-disabled` on the wrapper to prevent interaction.
+
+<Example code={`<div class="rating rating-disabled">
+    <input type="radio" name="rating-disabled" value="1" class="rating-input" checked />
+    <input type="radio" name="rating-disabled" value="2" class="rating-input" />
+    <input type="radio" name="rating-disabled" value="3" class="rating-input" />
+  </div>
+`} />
+
+---
+
+## Class Overview
+
+A list of all available utility classes for the rating component.
+
+export const { classNames } = frontmatter;
+
+<ClassTable classNames={classNames}/>
+
+---
+
+## CSS variables
+
+The rating component is built using a set of CSS variables. These variables provide flexibility for customizing styles. Read more about customizing with CSS variables [here](/docs/customize/component#using-css-variables).
+
+<Example lang='sass' showPreview={false}
+  code={`.rating {
+    --rating-star-size: 24px;
+    --rating-star-color: var(--color-gray-300);
+    --rating-star-filled: var(--color-warning);
+  }`}
+/>
+
+---
+
+## Best Practices
+
+- Each group of stars must share the same `name` attribute
+- Use `rating-mask-half-1` / `rating-mask-half-2` consecutively for half-star precision (each pair is one visual star)
+- Add `checked` to a star input to preselect a value
+- The number of inputs directly matches the star count (or twice that for half-stars)
