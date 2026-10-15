@@ -1,4 +1,4 @@
-import docsearch from '@docsearch/js';
+import docsearch from '@docsearch/js/docsearch';
 import { getConfig } from '@libs/config';
 import themeControlInit from '@scripts/theme-control';
 import flatpickrInit from '@scripts/plugins/flatpickr';
@@ -8,21 +8,16 @@ import choicesInit from '@scripts/plugins/choices';
 import toastInit from '@scripts/plugins/toast';
 import formValidationInit from '@scripts/form-validation';
 
-docsearch({
-  container: '#docsearch',
-  appId: getConfig().algolia.appId,
-  indexName: getConfig().algolia.indexName,
-  apiKey: getConfig().algolia.apiKey,
-  placeholder: 'Search',
-  maxResultsPerGroup: 15,
-});
-docsearch({
-  container: '#docsearch-mobile',
-  appId: getConfig().algolia.appId,
-  indexName: getConfig().algolia.indexName,
-  apiKey: getConfig().algolia.apiKey,
-  placeholder: 'Search',
-  maxResultsPerGroup: 15,
+const { appId, apiKey, indexName } = getConfig().algolia;
+['#docsearch', '#docsearch-mobile'].forEach((container) => {
+  docsearch({
+    container,
+    appId,
+    apiKey,
+    indices: [indexName],
+    placeholder: 'Search',
+    maxResultsPerGroup: 15,
+  });
 });
 
 document.addEventListener('DOMContentLoaded', () => {

@@ -167,7 +167,20 @@
 
 /* Search */
 .DocSearch {
+  /* v5 defaults reset to match the v3 look */
+  --docsearch-font-family: inherit;
+  --docsearch-primary-color: #5468ff;
+  --docsearch-highlight-color: var(--docsearch-primary-color);
+  --docsearch-modal-width: 560px;
+  --docsearch-modal-radius: var(--radius-lg);
+  --docsearch-modal-variable-height: auto;
+  --docsearch-subtle-color: var(--border-color-subtle);
+  --docsearch-secondary-text-color: var(--text-color-subtle);
+  --docsearch-icon-color: var(--text-color-subtle);
+  --docsearch-hit-focus-background: var(--background-color-subtle);
+
   --docsearch-key-shadow: none;
+  --docsearch-key-pressed-shadow: none;
   --docsearch-container-background: --alpha(var(--color-gray-950) / 20%);
   --docsearch-modal-background: var(--background-color-default);
   --docsearch-modal-shadow: none;
@@ -183,14 +196,14 @@
 }
 
 .DocSearch-Container {
-  @apply z-2000!;
+  @apply z-2000! backdrop-blur-none!;
 }
 
 .DocSearch.DocSearch-Button {
-  @apply ml-2 sm:ml-8 2xl:ml-15 size-9.25 lg:w-70 bg-muted lg:px-4 lg:rounded-lg hover:shadow-none focus:shadow-none hover:bg-highlight;
+  @apply box-border border-0 rounded-full font-medium ml-2 sm:ml-8 2xl:ml-15 size-9.25 lg:w-70 bg-muted lg:px-4 lg:rounded-lg hover:shadow-none focus:shadow-none hover:bg-highlight;
 }
 .DocSearch-Button-Placeholder {
-  @apply text-sm! font-normal! text-muted hidden lg:block;
+  @apply text-sm! font-normal! text-muted! pl-1.5! pr-3! hidden! lg:block!;
 }
 .DocSearch-Search-Icon {
   @apply size-5! lg:mr-1! text-transparent!;
@@ -203,20 +216,14 @@
   @apply items-center! min-w-0! gap-0.5 hidden! lg:flex!;
 }
 .DocSearch-Button-Key {
-  @apply bg-none! shadow-none! top-0! size-auto! text-muted! mr-0.5! text-sm! font-sans!;
+  @apply bg-transparent! border-0! rounded-none! shadow-none! top-0! size-auto! text-muted! mr-0.5! text-sm! font-sans!;
 }
-:root[data-os='windows'] {
-  .DocSearch-Button-Key {
-    @apply text-xs!;
-    &:first-child {
-      &::after {
-        @apply content-['CTRL'];
-      }
-      > svg {
-        @apply hidden;
-      }
-    }
-  }
+/* v5 renders "Ctrl" as text on non-Apple platforms (v3 rendered an icon) */
+.DocSearch-Button-Key.DocSearch-Button-Key--ctrl {
+  @apply text-xs! uppercase;
+}
+.DocSearch-Button-Key.DocSearch-Button-Key--pressed {
+  @apply shadow-none!;
 }
 .DocSearch-Modal {
   @apply rounded-lg! max-md:max-w-[calc(100%-48px)]! max-md:max-h-[calc(100vh-48px)]! mx-auto! mt-6!;
@@ -224,23 +231,46 @@
     @apply border border-default;
   }
 }
-.DocSearch-Cancel {
+.DocSearch-Close,
+.DocSearch-Divider {
   @apply hidden!;
 }
 .DocSearch-SearchBar {
   @apply p-0!;
 }
 .DocSearch-Form {
-  @apply rounded-lg! rounded-b-none! ring-1! ring-primary!;
+  @apply rounded-lg! rounded-b-none! ring-1! ring-primary! border-0! py-0!;
+}
+.DocSearch-MagnifierLabel {
+  @apply size-auto! m-0!;
 }
 .DocSearch-Input {
-  @apply text-base!;
+  @apply text-base! pl-2!;
+}
+.DocSearch-Actions {
+  @apply w-auto! h-auto! p-0!;
+}
+/* v3 showed an "x" reset icon instead of the v5 "Clear" text button */
+.DocSearch-Clear {
+  @apply size-6! ms-0! p-0.5! rounded-full! text-[0px]! text-subtle! hover:text-primary! bg-current!;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10 10l5.09-5.09L10 10l5.09 5.09L10 10zm0 0L4.91 4.91 10 10l-5.09 5.09L10 10z' stroke='black' fill='none' fill-rule='evenodd' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.4'/%3E%3C/svg%3E")
+    center / 20px 20px no-repeat;
 }
 .DocSearch-Dropdown {
-  @apply mt-1;
+  @apply mt-1 overflow-y-auto;
+  scrollbar-gutter: auto;
+}
+.DocSearch-Label {
+  @apply text-[.75em]! font-normal!;
+}
+.DocSearch-Hit {
+  @apply first-of-type:mt-0!;
 }
 .DocSearch-Hit-source {
-  @apply text-subtle!;
+  @apply text-subtle! text-[.85em]! font-semibold! pt-2! pb-0!;
+}
+.DocSearch-Hit a {
+  @apply pl-4!;
 }
 .DocSearch-Footer {
   @apply border-t border-subtle max-md:rounded-b-lg!;
@@ -249,23 +279,28 @@
   @apply hidden!;
 }
 .DocSearch-Hit-icon {
-  @apply hidden;
+  @apply hidden!;
+}
+.DocSearch-Hit-content-wrapper {
+  @apply font-medium! gap-0! overflow-x-hidden text-ellipsis whitespace-nowrap;
 }
 .DocSearch-Hit-title {
+  @apply max-w-full!;
   --docsearch-hit-active-color: var(--text-color-default);
 }
 .DocSearch-Hit-path {
+  @apply max-w-full! text-subtle!;
   --docsearch-hit-active-color: var(--text-color-subtle);
   --docsearch-muted-color: var(--text-color-subtle);
 }
 .DocSearch-Hit-action-button {
-  @apply text-subtle! hover:bg-highlight!;
+  @apply block! text-subtle! hover:bg-highlight!;
 }
 .DocSearch-Hit[aria-selected='true'] a {
   @apply bg-subtle!;
 }
 .DocSearch-Hit-Container {
-  @apply text-default;
+  @apply text-default pr-4!;
 }
 .DocSearch-Hit-Tree {
   --docsearch-hit-active-color: var(--text-color-subtle);
@@ -275,12 +310,28 @@
 .DocSearch-Hits mark {
   --docsearch-hit-active-color: var(--color-primary);
   --docsearch-highlight-color: var(--color-primary);
+  @apply no-underline!;
+}
+.DocSearch-Hit[aria-selected='true'] mark {
+  @apply underline!;
 }
 
+.DocSearch-NoResults,
+.DocSearch-StartScreen,
+.DocSearch-ErrorScreen {
+  @apply block! h-auto! text-[.9em]! py-9! text-subtle!;
+}
+.DocSearch-NoResults .DocSearch-Title {
+  @apply text-[1.2em]! font-normal!;
+}
+.DocSearch-Help {
+  @apply text-[.9em]! font-normal!;
+}
 .DocSearch-NoResults-Prefill-List {
   @apply hidden!;
 }
 .DocSearch-Screen-Icon {
+  @apply pb-3;
   svg {
     @apply mx-auto;
   }
