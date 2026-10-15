@@ -3,6 +3,15 @@ title: Changelog
 description: See what's new in Hummingbird. This page lists all the changes and updates made to the Hummingbird framework, including new features, bug fixes, and improvements.
 ---
 
+## v1.4.1
+<span class="text-sm text-muted relative -top-3">15 October, 2026</span>
+
+Fixes and Updates:
+
+- **Fix:** Fixed `hummingbird.js`, `hummingbird.min.js`, and `hummingbird.esm.js` failing to load in the browser with `require is not defined`, which left every component (`Toast`, `Tooltip`, etc.) undefined. The `bundle` builds were not affected.
+- **Update:** The `hummingbird.js` and `hummingbird.bundle.js` builds are now smaller, as unused code is no longer included.
+- **Update:** Updated docs search to DocSearch v5.
+
 ## v1.4.0
 <span class="text-sm text-muted relative -top-3">10 August, 2026</span>
 
