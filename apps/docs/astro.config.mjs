@@ -4,13 +4,18 @@ import tailwindcss from '@tailwindcss/vite';
 import { defineConfig } from 'astro/config';
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
+import { unified } from '@astrojs/markdown-remark';
 import AutoImport from 'astro-auto-import';
 import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import { loadEnv } from 'vite';
 import { getBasePath } from './deploy-config.js';
 import { remarkBasePath } from './src/libs/remark.ts';
-const { PUBLIC_STAGING_SITE_URL, PUBLIC_SITE_URL } = loadEnv(process.env.NODE_ENV, process.cwd(), '');
+// Fallbacks keep local builds working without a .env file; env values still take precedence.
+const {
+  PUBLIC_STAGING_SITE_URL = 'https://staging.hbui.dev',
+  PUBLIC_SITE_URL = 'https://hbui.dev',
+} = loadEnv(process.env.NODE_ENV, process.cwd(), '');
 
 const isDev = process.env.NODE_ENV === 'development';
 const isStaging = process.env.NODE_ENV === 'staging';
@@ -41,7 +46,24 @@ export default defineConfig({
     sitemap(),
   ],
   markdown: {
-    remarkPlugins: [[remarkBasePath, base]],
+    processor: unified({
+      remarkPlugins: [[remarkBasePath, base]],
+      rehypePlugins: [
+        rehypeSlug,
+        [
+          rehypeAutolinkHeadings,
+          {
+            behavior: 'append',
+            test: ['h2', 'h3', 'h4', 'h5', 'h6'],
+            properties: {
+              className: ['heading-anchor no-underline'],
+              'aria-label': 'Link to section',
+            },
+            content: [],
+          },
+        ],
+      ],
+    }),
     shikiConfig: {
       themes: {
         light: 'github-light',
@@ -60,20 +82,5 @@ export default defineConfig({
         },
       ],
     },
-    rehypePlugins: [
-      rehypeSlug,
-      [
-        rehypeAutolinkHeadings,
-        {
-          behavior: 'append',
-          test: ['h2', 'h3', 'h4', 'h5', 'h6'],
-          properties: {
-            className: ['heading-anchor no-underline'],
-            'aria-label': 'Link to section',
-          },
-          content: [],
-        },
-      ],
-    ],
   },
 });
