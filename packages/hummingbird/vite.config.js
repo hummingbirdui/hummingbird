@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 import path from 'path';
 import { defineConfig } from 'vite';
 import tailwindcss from '@tailwindcss/vite';
@@ -9,17 +8,25 @@ export default defineConfig(({ mode }) => {
 
   return {
     publicDir: false,
+    resolve: {
+      alias: [
+        // `bootstrap/js/dist/*` are UMD files. Rolldown (Vite 8) wraps them as CommonJS,
+        // so their `require('@popperjs/core')` survives into the browser build and throws.
+        // Point at Bootstrap's ESM sources instead so Popper becomes a real import.
+        { find: /^bootstrap\/js\/dist\/(.*)$/, replacement: 'bootstrap/js/src/$1.js' },
+      ],
+    },
     build: {
       emptyOutDir: !isBundle,
       sourcemap: true,
       outDir: 'dist',
       minify: false,
       lib: {
-        entry: path.resolve(__dirname, isBundle ? 'src/index.umd.ts' : 'src/index.ts'),
+        entry: path.resolve(import.meta.dirname, isBundle ? 'src/index.umd.ts' : 'src/index.ts'),
         name: 'hummingbird',
         fileName: 'hummingbird',
       },
-      rollupOptions: {
+      rolldownOptions: {
         external: isBundle ? [] : ['@popperjs/core'],
         output: isBundle
           ? [

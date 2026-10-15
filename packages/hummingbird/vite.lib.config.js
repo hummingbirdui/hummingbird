@@ -1,10 +1,9 @@
-/* eslint-disable no-undef */
 import { resolve } from 'path';
 import { defineConfig } from 'vite';
 import dts from 'vite-plugin-dts';
 import fs from 'fs';
 
-const srcDir = resolve(__dirname, 'src');
+const srcDir = resolve(import.meta.dirname, 'src');
 const scriptsDir = resolve(srcDir, 'scripts');
 
 // root-level entries
@@ -31,6 +30,12 @@ const getEntryFileName = (ext) => (chunkInfo) => {
 
 export default defineConfig({
   publicDir: false,
+  resolve: {
+    alias: [
+      // Same as vite.config.js: use Bootstrap's ESM sources, not its UMD dist files.
+      { find: /^bootstrap\/js\/dist\/(.*)$/, replacement: 'bootstrap/js/src/$1.js' },
+    ],
+  },
   build: {
     emptyOutDir: true,
     minify: false,
@@ -38,7 +43,7 @@ export default defineConfig({
     lib: {
       entry: entries,
     },
-    rollupOptions: {
+    rolldownOptions: {
       external: [],
       output: [
         {
