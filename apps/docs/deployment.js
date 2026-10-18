@@ -4,7 +4,10 @@ import path from 'path';
 import fs from 'fs';
 import { loadEnv } from 'vite';
 import { docVersions } from './deploy-config.js';
-const { PUBLIC_STAGING_SITE_URL, PUBLIC_SITE_URL } = loadEnv(process.env.NODE_ENV, process.cwd(), '');
+const {
+  PUBLIC_STAGING_SITE_URL = 'https://staging.hbui.dev',
+  PUBLIC_SITE_URL = 'https://hbui.dev',
+} = loadEnv(process.env.NODE_ENV, process.cwd(), '');
 
 const deployTargets = {
   production: {
@@ -61,8 +64,9 @@ function getVersionFromBranch(branch) {
 
 function createCNAME(domain, buildPath) {
   const cnamePath = path.join(buildPath, 'CNAME');
-  fs.writeFileSync(cnamePath, domain);
-  console.log(`✓ Created CNAME file with domain: ${domain}`);
+  const hostname = new URL(domain).hostname;
+  fs.writeFileSync(cnamePath, hostname);
+  console.log(`✓ Created CNAME file with domain: ${hostname}`);
 }
 
 function deployVersion(targetBranch, environment) {
@@ -158,7 +162,7 @@ function deployAll(environment) {
   console.log('Versions to deploy:\n');
   Object.keys(docVersions).forEach((branch) => {
     const info = getVersionFromBranch(branch);
-    const url = info.base === '/' ? `https://${target.domain}` : `https://${target.domain}${info.base}`;
+    const url = info.base === '/' ? target.domain : `${target.domain}${info.base}`;
     console.log(`  ✓ ${branch} → ${url}`);
   });
 
