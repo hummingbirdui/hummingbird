@@ -42,8 +42,8 @@ importers:
   apps/docs:
     dependencies:
       '@astrojs/markdown-remark':
-        specifier: ^7.2.4
-        version: 7.2.4
+        specifier: ^7.3.2
+        version: 7.3.2
       '@astrojs/sitemap':
         specifier: ^3.7.3
         version: 3.7.4
@@ -71,7 +71,7 @@ importers:
     devDependencies:
       '@astrojs/mdx':
         specifier: ^7.0.5
-        version: 7.0.8(astro@7.3.8(@astrojs/markdown-remark@7.2.4)(@types/node@26.6.5)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.1))
+        version: 7.0.8(astro@7.3.8(@astrojs/markdown-remark@7.3.2)(@types/node@26.6.5)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.1))
       '@docsearch/css':
         specifier: ^5.0.1
         version: 5.1.2
@@ -83,10 +83,10 @@ importers:
         version: 4.3.3(vite@8.3.4(@types/node@26.6.5)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.1))
       astro:
         specifier: ^7.2.1
-        version: 7.3.8(@astrojs/markdown-remark@7.2.4)(@types/node@26.6.5)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.1)
+        version: 7.3.8(@astrojs/markdown-remark@7.3.2)(@types/node@26.6.5)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.1)
       astro-auto-import:
         specifier: ^0.6.0
-        version: 0.6.0(astro@7.3.8(@astrojs/markdown-remark@7.2.4)(@types/node@26.6.5)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.1))
+        version: 0.6.0(astro@7.3.8(@astrojs/markdown-remark@7.3.2)(@types/node@26.6.5)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.1))
       choices.js:
         specifier: ^11.2.3
         version: 11.2.4
@@ -94,8 +94,8 @@ importers:
         specifier: ^10.0.4
         version: 10.0.6
       dropzone:
-        specifier: 6.0.0-beta.2
-        version: 6.0.0-beta.2
+        specifier: 6.3.5
+        version: 6.3.5
       echarts:
         specifier: ^6.1.0
         version: 6.1.0
@@ -155,11 +155,11 @@ importers:
         specifier: ^26.1.2
         version: 26.6.5
       h3:
-        specifier: ^1.15.11
-        version: 1.15.11
+        specifier: ^2.0.2
+        version: 2.0.2(crossws@0.4.15(srvx@1.0.5))
       listhen:
         specifier: ^1.10.1
-        version: 1.10.1
+        version: 1.10.1(srvx@1.0.5)
       tsup:
         specifier: ^8.5.1
         version: 8.5.1(jiti@2.7.0)(postcss@8.5.30)(typescript@6.0.3)(yaml@2.9.1)
@@ -317,6 +317,9 @@ packages:
 
   '@astrojs/markdown-remark@7.2.4':
     resolution: {integrity: sha512-MvspGMynWKAjTe4/lTUdmBPHIFKNVLTCF6UlyWGogTGzNrTvjD+D4n48k7h8swxsEPKHK2TwxkZO7uoaCv1Pow==}
+
+  '@astrojs/markdown-remark@7.3.2':
+    resolution: {integrity: sha512-ubszw8SVEI4OHR5Y+0jTbkmzG8xatrW47iAkQNqH7wUM1bky7DOnr51FGgoUdXt/fmKpUl7sRRX9talmU64Y+g==}
 
   '@astrojs/markdown-satteri@0.4.3':
     resolution: {integrity: sha512-PFbEHPnwUlLvpXd7RXrrKM+j12akF4bG+DSuNuoN+3eiwjOwp4HaPi+QQdbkBV7QEYXmzyKca50OJsmGxhNIUA==}
@@ -1483,6 +1486,8 @@ packages:
 
   '@swc/helpers@0.2.14':
     resolution: {integrity: sha512-wpCQMhf5p5GhNg2MmGKXzUNwxe7zRiCsmqYsamez2beP7mKPCSiu+BjZcdN95yYSzO857kr0VfQewmGpS77nqA==}
+  '@standard-schema/spec@1.1.0':
+    resolution: {integrity: sha512-l2aFy5jALhniG5HgqrD6jXLi/rUWrKvqN/qJx6yoJsgKhblVd+iqqU4RCXavm/jPityDo5TCvKMnpjKnOriy0w==}
 
   '@tailwindcss/cli@4.3.3':
     resolution: {integrity: sha512-ZvS/n1ZHOBKcVlhkt8l5NNr1EDXk1NboYO5CYDOs6NUmvT9z6bzkwsosaJftY57T/3gWNzWMJzIXLodZC8ssdw==}
@@ -2177,8 +2182,9 @@ packages:
   domutils@3.2.2:
     resolution: {integrity: sha512-6kZKyUajlDuqlHKVX1w7gyslj9MPIXzIFiz/rGu35uC1wMi+kMhQwGhl4lt9unC9Vb9INnY9Z3/ZA3+FhASLaw==}
 
-  dropzone@6.0.0-beta.2:
-    resolution: {integrity: sha512-k44yLuFFhRk53M8zP71FaaNzJYIzr99SKmpbO/oZKNslDjNXQsBTdfLs+iONd0U0L94zzlFzRnFdqbLcs7h9fQ==}
+  dropzone@6.3.5:
+    resolution: {integrity: sha512-voAoyVj3ZyFwoUVkKMmtfCrp7gbjqKJv3gNCsz0lW1lApcmKILBCbCgBU64hJF4LC4+cs6+peXhsn122fPQqsw==}
+    engines: {node: '>=20.19.0'}
 
   dset@3.1.4:
     resolution: {integrity: sha512-2QF/g9/zTaPDc3BjNcVTGoBbXBgYfMTTceLaYcFJ/W9kggFUkhxD/hMEeuLKbugyef9SqAx8cpgwlIP/jinUTA==}
@@ -2554,6 +2560,19 @@ packages:
   h3@1.15.11:
     resolution: {integrity: sha512-L3THSe2MPeBwgIZVSH5zLdBBU90TOxarvhK9d04IDY2AmVS8j2Jz2LIWtwsGOU3lu2I5jCN7FNvVfY2+XyF+mg==}
 
+  h3@2.0.2:
+    resolution: {integrity: sha512-+/zvHSNldYpNURuUUG+y1KzdASUhNnSd1VpqxYFVY40ov3YzuBnCETaUQaT+QbKkoxhh9LRa6AEQdB14LALwdA==}
+    engines: {node: '>=20.19.0'}
+    hasBin: true
+    peerDependencies:
+      crossws: ^0.4.12
+      ocache: '>=0.3.0'
+    peerDependenciesMeta:
+      crossws:
+        optional: true
+      ocache:
+        optional: true
+
   has-bigints@1.1.0:
     resolution: {integrity: sha512-R3pbpkcIqv2Pm3dUwgjclDRVmWpTJW2DcMzcIhEXEx1oh/CEMObMm3KLmRJOdvhM7o4uQBnwr8pzRK2sJWIqfg==}
     engines: {node: '>= 0.4'}
@@ -2850,9 +2869,6 @@ packages:
 
   jsonfile@6.2.1:
     resolution: {integrity: sha512-zwOTdL3rFQ/lRdBnntKVOX6k5cKJwEc1HdilT71BWEu7J41gXIB2MRp+vxduPSwZJPWBxEzv4yH1wYLJGUHX4Q==}
-
-  just-extend@5.1.1:
-    resolution: {integrity: sha512-b+z6yF1d4EOyDgylzQo5IminlUmzSeqR1hs/bzjBNjuGras4FXq/6TrzjxfN0j+TmI0ltJzTNlqXUMCniciwKQ==}
 
   keyv@5.6.0:
     resolution: {integrity: sha512-CYDD3SOtsHtyXeEORYRx2qBtpDJFjRTGXUtmNEMGyzYOKj1TE3tycdlho7kA1Ufx9OYWZzg52QFBGALTirzDSw==}
@@ -3775,6 +3791,10 @@ packages:
     engines: {node: '>=18.0.0', npm: '>=8.0.0'}
     hasBin: true
 
+  rou3@1.0.0:
+    resolution: {integrity: sha512-ySeaQkSrua+ut9g+65I7FHqOFBaY8tV0FmccXItoq0q21se32Q3u4YiW7/RqXSosWgYJaaKwRHXy3BST9PeCNQ==}
+    engines: {node: '>=20.19.0'}
+
   run-parallel@1.2.0:
     resolution: {integrity: sha512-5l4VyZR86LZ/lDxZTR6jqL8AFE2S0IFLMP26AbjsLVADxHdhB/c0GUsH+y39UfCi3dzz8OlQuPmnaJOMoDHQBA==}
 
@@ -3950,6 +3970,14 @@ packages:
 
   spdx-license-ids@3.0.24:
     resolution: {integrity: sha512-cLS9TtWkIQFyLkJ3/5aFQAOHOSKTlOs/7WDut/XPSdjom1fJhUdkepeJAKXa9Y05+FabHd0sti+Et559vDtkpQ==}
+
+  srvx@1.0.5:
+    resolution: {integrity: sha512-KvSKRpgPG/oaq3cyT614OQ2bAa7DynuGamivCZeoZzIUULOdbQz6wUtnnVuC4+DCx2Zglzo8v5gBYmWIWYhDxA==}
+    engines: {node: '>=20.16.0'}
+    hasBin: true
+
+  stackback@0.0.2:
+    resolution: {integrity: sha512-1XMJE5fQo1jGH6Y/7ebnwPOBEkIEnT4QF32d5R1+VXdXveM0IBMJt8zfaxX1P3QhVwrYe+576+jkANtSS2mBbw==}
 
   std-env@4.3.0:
     resolution: {integrity: sha512-OtU/EgQ1kIm5KwqQpBC6ZEMXrZRui11w8zgfTWp8cdO9B8OaPsbA8bTHO2P+HNo1VlUTGMVBwPhydu6poeXiag==}
@@ -4654,6 +4682,33 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
+  '@astrojs/markdown-remark@7.3.2':
+    dependencies:
+      '@astrojs/internal-helpers': 0.12.0
+      '@astrojs/prism': 4.0.2
+      '@mdx-js/mdx': 3.1.1
+      acorn: 8.19.0
+      estree-util-visit: 2.0.0
+      github-slugger: 2.0.0
+      hast-util-from-html: 2.0.3
+      hast-util-to-html: 9.0.5
+      hast-util-to-text: 4.0.2
+      mdast-util-definitions: 6.0.0
+      rehype-raw: 7.0.0
+      rehype-stringify: 10.0.1
+      remark-gfm: 4.0.1
+      remark-parse: 11.0.0
+      remark-rehype: 11.1.2
+      remark-smartypants: 3.0.3
+      source-map: 0.7.6
+      unified: 11.0.5
+      unist-util-remove-position: 5.0.0
+      unist-util-visit: 5.1.0
+      unist-util-visit-parents: 6.0.2
+      vfile: 6.0.3
+    transitivePeerDependencies:
+      - supports-color
+
   '@astrojs/markdown-satteri@0.4.3':
     dependencies:
       '@astrojs/internal-helpers': 0.12.0
@@ -4661,13 +4716,13 @@ snapshots:
       github-slugger: 2.0.0
       satteri: 0.10.5
 
-  '@astrojs/mdx@7.0.8(astro@7.3.8(@astrojs/markdown-remark@7.2.4)(@types/node@26.6.5)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.1))':
+  '@astrojs/mdx@7.0.8(astro@7.3.8(@astrojs/markdown-remark@7.3.2)(@types/node@26.6.5)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.1))':
     dependencies:
       '@astrojs/internal-helpers': 0.10.4
       '@astrojs/markdown-remark': 7.2.4
       '@mdx-js/mdx': 3.1.1
       acorn: 8.19.0
-      astro: 7.3.8(@astrojs/markdown-remark@7.2.4)(@types/node@26.6.5)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.1)
+      astro: 7.3.8(@astrojs/markdown-remark@7.3.2)(@types/node@26.6.5)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.1)
       es-module-lexer: 2.3.2
       estree-util-visit: 2.0.0
       hast-util-to-html: 9.0.5
@@ -5500,6 +5555,7 @@ snapshots:
   '@shikijs/vscode-textmate@10.0.2': {}
 
   '@swc/helpers@0.2.14': {}
+  '@standard-schema/spec@1.1.0': {}
 
   '@tailwindcss/cli@4.3.3':
     dependencies:
@@ -5836,12 +5892,12 @@ snapshots:
 
   astring@1.9.0: {}
 
-  astro-auto-import@0.6.0(astro@7.3.8(@astrojs/markdown-remark@7.2.4)(@types/node@26.6.5)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.1)):
+  astro-auto-import@0.6.0(astro@7.3.8(@astrojs/markdown-remark@7.3.2)(@types/node@26.6.5)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.1)):
     dependencies:
       acorn: 8.19.0
-      astro: 7.3.8(@astrojs/markdown-remark@7.2.4)(@types/node@26.6.5)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.1)
+      astro: 7.3.8(@astrojs/markdown-remark@7.3.2)(@types/node@26.6.5)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.1)
 
-  astro@7.3.8(@astrojs/markdown-remark@7.2.4)(@types/node@26.6.5)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.1):
+  astro@7.3.8(@astrojs/markdown-remark@7.3.2)(@types/node@26.6.5)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.1):
     dependencies:
       '@astrojs/compiler-rs': 0.5.2
       '@astrojs/internal-helpers': 0.12.0
@@ -5896,7 +5952,7 @@ snapshots:
       yargs-parser: 22.0.0
       zod: 4.6.7
     optionalDependencies:
-      '@astrojs/markdown-remark': 7.2.4
+      '@astrojs/markdown-remark': 7.3.2
       sharp: 0.35.5(@types/node@26.6.5)
     transitivePeerDependencies:
       - '@azure/app-configuration'
@@ -6124,7 +6180,9 @@ snapshots:
     dependencies:
       uncrypto: 0.1.3
 
-  crossws@0.4.15: {}
+  crossws@0.4.15(srvx@1.0.5):
+    optionalDependencies:
+      srvx: 1.0.5
 
   css-select@6.0.0:
     dependencies:
@@ -6232,10 +6290,7 @@ snapshots:
       domelementtype: 2.3.0
       domhandler: 5.0.3
 
-  dropzone@6.0.0-beta.2:
-    dependencies:
-      '@swc/helpers': 0.2.14
-      just-extend: 5.1.1
+  dropzone@6.3.5: {}
 
   dset@3.1.4: {}
 
@@ -6779,6 +6834,13 @@ snapshots:
       ufo: 1.6.4
       uncrypto: 0.1.3
 
+  h3@2.0.2(crossws@0.4.15(srvx@1.0.5)):
+    dependencies:
+      rou3: 1.0.0
+      srvx: 1.0.5
+    optionalDependencies:
+      crossws: 0.4.15(srvx@1.0.5)
+
   has-bigints@1.1.0: {}
 
   has-flag@3.0.0: {}
@@ -7136,8 +7198,6 @@ snapshots:
     optionalDependencies:
       graceful-fs: 4.2.11
 
-  just-extend@5.1.1: {}
-
   keyv@5.6.0:
     dependencies:
       '@keyv/serialize': 1.1.1
@@ -7251,12 +7311,12 @@ snapshots:
 
   lines-and-columns@1.2.4: {}
 
-  listhen@1.10.1:
+  listhen@1.10.1(srvx@1.0.5):
     dependencies:
       '@parcel/watcher-wasm': 2.6.0
       citty: 0.2.2
       consola: 3.4.2
-      crossws: 0.4.15
+      crossws: 0.4.15(srvx@1.0.5)
       defu: 6.1.7
       get-port-please: 3.2.0
       h3: 1.15.11
@@ -8358,6 +8418,8 @@ snapshots:
       '@rollup/rollup-win32-x64-msvc': 4.64.6
       fsevents: 2.3.3
 
+  rou3@1.0.0: {}
+
   run-parallel@1.2.0:
     dependencies:
       queue-microtask: 1.2.3
@@ -8583,6 +8645,10 @@ snapshots:
       spdx-license-ids: 3.0.24
 
   spdx-license-ids@3.0.24: {}
+
+  srvx@1.0.5: {}
+
+  stackback@0.0.2: {}
 
   std-env@4.3.0: {}
 

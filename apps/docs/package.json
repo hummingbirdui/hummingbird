@@ -17,7 +17,7 @@
     "deploy:internal": "echo staging.hbui.dev > ./dist/CNAME && gh-pages -d dist -r https://github.com/hummingbirdui/staging.git"
   },
   "dependencies": {
-    "@astrojs/markdown-remark": "^7.2.4",
+    "@astrojs/markdown-remark": "^7.3.2",
     "@astrojs/sitemap": "^3.7.3",
     "@hummingbirdui/browser": "workspace:*",
     "@hummingbirdui/hummingbird": "workspace:*",
@@ -36,7 +36,7 @@
     "astro-auto-import": "^0.6.0",
     "choices.js": "^11.2.3",
     "concurrently": "^10.0.4",
-    "dropzone": "6.0.0-beta.2",
+    "dropzone": "6.3.5",
     "echarts": "^6.1.0",
     "esbuild": "^0.28.1",
     "flatpickr": "^4.6.13",
