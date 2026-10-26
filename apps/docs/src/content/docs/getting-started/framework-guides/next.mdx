@@ -1,146 +1,94 @@
 ---
 title: Next
-description: This guide explains how to set up Hummingbird with Next.js using Tailwind CSS. It covers project setup, configuration, and usage for quickly building and styling components in a Next.js app.
+description: This guide explains how to set up Hummingbird in a Next.js project with Hummingbird React, the official React component library. It covers Tailwind CSS setup, components and dark mode.
 redirects: true
 ---
+
+<HbAlert type="info">React projects use <a href="https://react.hbui.dev" target="_blank" rel="noopener noreferrer">Hummingbird React</a>, the official React component library for Hummingbird. It includes the Hummingbird styles and replaces the JavaScript plugins with React components, so there is no need to install <code>@hummingbirdui/hummingbird</code> or initialize any scripts.</HbAlert>
+
+## Quick start
+
+Create a new Next.js project with Hummingbird React, Tailwind CSS and dark mode already set up:
+
+<Example lang='bash' showPreview={false} code={`npx create-hummingbird-react-app@latest my-app --template nextjs`} />
+
+With pnpm, yarn or bun, run `pnpm create hummingbird-react-app`, `yarn create hummingbird-react-app` or `bun create hummingbird-react-app` instead. See the <a href="https://react.hbui.dev/docs/getting-started/cli" target="_blank" rel="noopener noreferrer">CLI documentation</a> for all options.
+
+To add Hummingbird React to an existing project, follow the steps below.
 
 ## Installation
 
 #### 1. Install Tailwind CSS
 
-Follow the <a href="https://tailwindcss.com/docs/installation/framework-guides/nextjs" target="_blank" rel="noopener noreferrer">official installation guide</a> to install Tailwind CSS in a Next.js project.
+Follow the <a href="https://tailwindcss.com/docs/installation/framework-guides/nextjs" target="_blank" rel="noopener noreferrer">official installation guide</a> to install Tailwind CSS in a Next.js project. Projects created with `create-next-app` include it by default.
 
-#### 2. Install Hummingbird
+#### 2. Install Hummingbird React
 
-Install Hummingbird via preferred package manager:
+Install Hummingbird React via preferred package manager:
 
-<Example lang='bash' showPreview={false} code={`npm install @hummingbirdui/hummingbird`} />
+<Example lang='bash' showPreview={false} code={`npm install @hummingbirdui/react`} />
 
 #### 3. Import CSS
 
-Import Hummingbird styles in the main CSS file (e.g., `globals.css`).
+Import Tailwind CSS and Hummingbird React in the main CSS file. No Tailwind configuration is needed, because the package registers its own source paths.
 
-<Example lang='css' showPreview={false} 
-  code={`@import "tailwindcss";
-  @import "@hummingbirdui/hummingbird";`} />
+<Example lang='css' showPreview={false} filePath="app/globals.css" code={`@import "tailwindcss";
+  @import "@hummingbirdui/react";`} />
 
-#### 4. Initialize JS plugins
+#### 4. Use components
 
-Create a wrapper component that dynamically imports Hummingbird whenever the route changes. This ensures the library is loaded only on the client side.
+Import any component and use it in the application. All components work in React Server Components. Interactive components are client components internally, so there is no need to add `"use client"` to use them.
 
-<Example lang='js' showPreview={false}
-  code={`"use client";
+<Example lang='js' showPreview={false} filePath="app/page.tsx" code={`import { Button } from "@hummingbirdui/react";
 
-  import { useEffect } from "react";
-  import dynamic from "next/dynamic";
-  import { usePathname } from "next/navigation";
+  export default function Home() {
+    return <Button color="primary">Click me</Button>;
+  }`} />
 
-  function HummingbirdWrapper() {
-    const path = usePathname();
-    useEffect(() => {
-      const loadHummingbird = async () => {
-        await import("@hummingbirdui/hummingbird");
-      };
+## Dark mode
 
-      loadHummingbird();
-    }, [path]);
+#### 1. Add the dark variant
 
-    return null;
-  }
+Hummingbird uses class-based dark mode: a `dark` class on `<html>` switches the theme. Register the variant after the style imports.
 
-  const HummingbirdUI = dynamic(() => Promise.resolve(HummingbirdWrapper), {
-    ssr: false,
-  });
+<Example lang='css' showPreview={false} filePath="app/globals.css" code={`@custom-variant dark (&:where(.dark, .dark *), .dark);`} />
 
-  export default HummingbirdUI;`} />
+#### 2. Set the initial theme
 
-Add the wrapper to `layout.tsx` so Hummingbird scripts are included globally, making components available across all pages.
+Render `ThemeModeScript` inside `<head>`. It applies the saved theme before the page renders, so there is no flash of the wrong theme. Add `suppressHydrationWarning` to `<html>`, because the script updates it before React hydrates.
 
-<Example lang='js' showPreview={false}
-  code={`import HummingbirdUI from "./components/HummingbirdUI";
+<Example lang='js' showPreview={false} filePath="app/layout.tsx" code={`import { ThemeModeScript } from "@hummingbirdui/react";
+  import "./globals.css";
 
-  export default function RootLayout({children,}: Readonly<{children: React.ReactNode;}>) {
+  export default function RootLayout({
+    children,
+  }: Readonly<{
+    children: React.ReactNode;
+  }>) {
     return (
-      <html lang="en">
-        <body
-          className={...}
-        >
-          {children}
-          <HummingbirdUI />
-        </body>
+      <html lang="en" suppressHydrationWarning>
+        <head>
+          <ThemeModeScript />
+        </head>
+        <body>{children}</body>
       </html>
     );
   }`} />
 
-## Optimization
+#### 3. Add a theme toggle
 
-To reduce the final bundle size, import only the specific JavaScript plugins required. The example below demonstrates importing only the `modal` script.
+`DarkThemeToggle` switches between light and dark mode, saves the choice and keeps browser tabs in sync. For a custom control, use the <a href="https://react.hbui.dev/docs/customize/dark-mode" target="_blank" rel="noopener noreferrer">useThemeMode hook</a>.
 
-<Example lang='js' showPreview={false}
-  code={`function HummingbirdWrapper() {
-    const path = usePathname();
-    useEffect(() => {
-      const loadHummingbird = async () => {
-        // await import('@hummingbirdui/hummingbird/lib/esm/scripts/alert');
-        // await import('@hummingbirdui/hummingbird/lib/esm/scripts/button');
-        // await import('@hummingbirdui/hummingbird/lib/esm/scripts/carousel');
-        // await import('@hummingbirdui/hummingbird/lib/esm/scripts/collapse');
-        // await import('@hummingbirdui/hummingbird/lib/esm/scripts/dropdown');
-        await import('@hummingbirdui/hummingbird/lib/esm/scripts/modal');
-        // await import('@hummingbirdui/hummingbird/lib/esm/scripts/offcanvas');
-        // await import('@hummingbirdui/hummingbird/lib/esm/scripts/popover');
-        // await import('@hummingbirdui/hummingbird/lib/esm/scripts/scrollspy');
-        // await import('@hummingbirdui/hummingbird/lib/esm/scripts/tab');
-        // await import('@hummingbirdui/hummingbird/lib/esm/scripts/toast');
-        // await import('@hummingbirdui/hummingbird/lib/esm/scripts/tooltip');
-      };
+<Example lang='js' showPreview={false} filePath="components/Navbar.tsx" code={`"use client";
 
-      loadHummingbird();
-    }, [path]);
+  import { DarkThemeToggle } from "@hummingbirdui/react";
 
-    return null;
+  export function Navbar() {
+    return <DarkThemeToggle />;
   }`} />
 
+## Next steps
 
-## JavaScript API
-
-Hummingbird also provides a JavaScript API for programmatic control of components. For example, a modal can be toggled manually using the API.
-
-Here’s how to initialize and use the `Modal` component:
-
-<Example lang='js' showPreview={false}
-  code={`"use client";
-
-  import { useEffect, useState } from "react";
-  import { usePathname } from "next/navigation";
-  import type { ModalInstance } from "@hummingbirdui/hummingbird";
-
-  async function loadHummingbird() {
-    return import("@hummingbirdui/hummingbird");
-  }
-
-  function Component() {
-    const path = usePathname();
-    const [myModal, setMyModal] = useState<ModalInstance>();
-
-    useEffect(() => {
-      const initModal = async () => {
-        const { Modal } = await loadHummingbird();
-        setMyModal(new Modal(".modal"));
-      };
-      initModal();
-    }, [path]);
-
-    const handleClick = () => {
-      myModal?.toggle();
-    };
-
-    return (
-      <div>
-        <button className="btn btn-primary" onClick={handleClick}>Open</button>
-        <div className="modal">...</div>
-      </div>
-    );
-  }
-
-  export default Component;`} />
+- <a href="https://react.hbui.dev/docs/getting-started/framework-guides/nextjs" target="_blank" rel="noopener noreferrer">Next.js guide for Hummingbird React</a>
+- <a href="https://react.hbui.dev/docs/components/overview" target="_blank" rel="noopener noreferrer">Components</a>
+- <a href="https://react.hbui.dev/docs/customize/theming" target="_blank" rel="noopener noreferrer">Theming</a> and <a href="https://react.hbui.dev/docs/customize/dark-mode" target="_blank" rel="noopener noreferrer">dark mode</a>
