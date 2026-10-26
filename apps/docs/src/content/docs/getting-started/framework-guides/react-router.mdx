@@ -1,0 +1,98 @@
+---
+title: React Router
+description: This guide explains how to set up Hummingbird in a React Router (framework mode) project with Hummingbird React, the official React component library. It covers Tailwind CSS setup, components and dark mode.
+redirects: true
+---
+
+<HbAlert type="info">React projects use <a href="https://react.hbui.dev" target="_blank" rel="noopener noreferrer">Hummingbird React</a>, the official React component library for Hummingbird. It includes the Hummingbird styles and replaces the JavaScript plugins with React components, so there is no need to install <code>@hummingbirdui/hummingbird</code> or initialize any scripts.</HbAlert>
+
+This guide covers React Router in framework mode. For a single-page app that uses React Router as a library, follow the [React guide](/docs/getting-started/framework-guides/react) instead.
+
+## Quick start
+
+Create a new React Router project with Hummingbird React, Tailwind CSS and dark mode already set up:
+
+<Example lang='bash' showPreview={false} code={`npx create-hummingbird-react-app@latest my-app --template react-router`} />
+
+With pnpm, yarn or bun, run `pnpm create hummingbird-react-app`, `yarn create hummingbird-react-app` or `bun create hummingbird-react-app` instead. See the <a href="https://react.hbui.dev/docs/getting-started/cli" target="_blank" rel="noopener noreferrer">CLI documentation</a> for all options.
+
+To add Hummingbird React to an existing project, follow the steps below.
+
+## Installation
+
+#### 1. Install Tailwind CSS
+
+Projects created with `create-react-router` include Tailwind CSS by default. Otherwise, follow the <a href="https://tailwindcss.com/docs/installation/framework-guides/react-router" target="_blank" rel="noopener noreferrer">official installation guide</a> to install it.
+
+#### 2. Install Hummingbird React
+
+Install Hummingbird React via preferred package manager:
+
+<Example lang='bash' showPreview={false} code={`npm install @hummingbirdui/react`} />
+
+#### 3. Import CSS
+
+Import Tailwind CSS and Hummingbird React in the main CSS file. No Tailwind configuration is needed, because the package registers its own source paths.
+
+<Example lang='css' showPreview={false} filePath="app/app.css" code={`@import "tailwindcss";
+  @import "@hummingbirdui/react";`} />
+
+#### 4. Use components
+
+Import any component and use it in a route.
+
+<Example lang='js' showPreview={false} filePath="app/routes/home.tsx" code={`import { Button } from "@hummingbirdui/react";
+
+  export default function Home() {
+    return <Button color="primary">Click me</Button>;
+  }`} />
+
+## Dark mode
+
+#### 1. Add the dark variant
+
+Hummingbird uses class-based dark mode: a `dark` class on `<html>` switches the theme. Register the variant after the style imports.
+
+<Example lang='css' showPreview={false} filePath="app/app.css" code={`@custom-variant dark (&:where(.dark, .dark *), .dark);`} />
+
+#### 2. Set the initial theme
+
+Render `ThemeModeScript` in the `<head>` of the `Layout` export, after `<Links />`. It applies the saved theme before the page renders, so there is no flash of the wrong theme. Add `suppressHydrationWarning` to `<html>`, because the script updates it before React hydrates.
+
+<Example lang='js' showPreview={false} filePath="app/root.tsx" code={`import { ThemeModeScript } from "@hummingbirdui/react";
+  import { Links, Meta, Scripts, ScrollRestoration } from "react-router";
+
+  export function Layout({ children }: { children: React.ReactNode }) {
+    return (
+      <html lang="en" suppressHydrationWarning>
+        <head>
+          <meta charSet="utf-8" />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <Meta />
+          <Links />
+          <ThemeModeScript />
+        </head>
+        <body>
+          {children}
+          <ScrollRestoration />
+          <Scripts />
+        </body>
+      </html>
+    );
+  }`} />
+
+#### 3. Add a theme toggle
+
+`DarkThemeToggle` switches between light and dark mode, saves the choice and keeps browser tabs in sync. For a custom control, use the <a href="https://react.hbui.dev/docs/customize/dark-mode" target="_blank" rel="noopener noreferrer">useThemeMode hook</a>.
+
+<Example lang='js' showPreview={false} filePath="app/components/Navbar.tsx" code={`import { DarkThemeToggle } from "@hummingbirdui/react";
+
+  export function Navbar() {
+    return <DarkThemeToggle />;
+  }`} />
+
+## Next steps
+
+- <a href="https://react.hbui.dev/docs/getting-started/framework-guides/react-router" target="_blank" rel="noopener noreferrer">React Router guide for Hummingbird React</a>
+- <a href="https://react.hbui.dev/docs/components/overview" target="_blank" rel="noopener noreferrer">Components</a>
+- <a href="https://react.hbui.dev/docs/customize/theming" target="_blank" rel="noopener noreferrer">Theming</a> and <a href="https://react.hbui.dev/docs/customize/dark-mode" target="_blank" rel="noopener noreferrer">dark mode</a>

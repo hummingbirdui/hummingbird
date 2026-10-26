@@ -7,6 +7,7 @@ import astroL from '@assets/images/landing/frameworks/astro.svg';
 import astroD from '@assets/images/landing/frameworks/astro-dark.svg';
 import reactL from '@assets/images/landing/frameworks/react.svg';
 import reactD from '@assets/images/landing/frameworks/react-dark.svg';
+import reactRouter from '@assets/images/landing/frameworks/react-router.svg';
 import svelte from '@assets/images/landing/frameworks/svelte.svg';
 import nuxt from '@assets/images/landing/frameworks/nuxt.svg';
 import vue from '@assets/images/landing/frameworks/vue.svg';
@@ -48,6 +49,11 @@ const sitemap: Sitemap[] = [
             name: 'React',
             icon: { light: reactL, dark: reactD },
             path: '/docs/getting-started/framework-guides/react',
+          },
+          {
+            name: 'React Router',
+            icon: { light: reactRouter, dark: reactRouter },
+            path: '/docs/getting-started/framework-guides/react-router',
           },
           {
             name: 'Next',
