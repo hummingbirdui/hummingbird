@@ -1,136 +1,87 @@
 ---
-title: React & React Router Framework mode
-description: This guide explains how to set up Hummingbird with React + Vite using Tailwind CSS. It covers project setup, configuration, and usage for quickly building and styling components in a React app.
+title: React
+description: This guide explains how to set up Hummingbird in a React project with Hummingbird React, the official React component library. It covers a Vite project with Tailwind CSS setup, components and dark mode.
 redirects: true
 ---
+
+<HbAlert type="info">React projects use <a href="https://react.hbui.dev" target="_blank" rel="noopener noreferrer">Hummingbird React</a>, the official React component library for Hummingbird. It includes the Hummingbird styles and replaces the JavaScript plugins with React components, so there is no need to install <code>@hummingbirdui/hummingbird</code> or initialize any scripts.</HbAlert>
+<br/>
+Using React Router in framework mode? Follow the [React Router guide](/docs/getting-started/framework-guides/react-router) instead.
+
+## Quick start
+
+Create a new React (Vite) project with Hummingbird React, Tailwind CSS and dark mode already set up:
+
+<Example lang='bash' showPreview={false} code={`npx create-hummingbird-react-app@latest my-app --template vite`} />
+
+To add Hummingbird React to an existing project, follow the steps below.
 
 ## Installation
 
 #### 1. Install Tailwind CSS
-Follow the <a href="https://tailwindcss.com/docs/installation" target="_blank" rel="noopener noreferrer">official installation guide</a> to install Tailwind CSS in a React project.
 
-#### 2. Install Hummingbird
-Install Hummingbird via preferred package manager:
+Follow the <a href="https://tailwindcss.com/docs/installation/using-vite" target="_blank" rel="noopener noreferrer">official installation guide</a> to install Tailwind CSS in a Vite project.
 
-<Example lang='bash' showPreview={false} code={`npm install @hummingbirdui/hummingbird`} />
+#### 2. Install Hummingbird React
+
+Install Hummingbird React via preferred package manager:
+
+<Example lang='bash' showPreview={false} code={`npm install @hummingbirdui/react`} />
 
 #### 3. Import CSS
 
-Import Hummingbird styles in the main CSS file (e.g., `index.css` or `app.css`).
+Import Tailwind CSS and Hummingbird React in the main CSS file. No Tailwind configuration is needed, because the package registers its own source paths.
 
-<Example lang='css' showPreview={false} 
-  code={`@import "tailwindcss";
-  @import "@hummingbirdui/hummingbird";`} />
+<Example lang='css' showPreview={false} filePath="src/index.css" code={`@import "tailwindcss";
+  @import "@hummingbirdui/react";`} />
 
-#### 4. Initialize JS plugins
+#### 4. Use components
 
-Initialize hummingbird at the root of the application, for example in `App.js` or `App.tsx`.
+Import any component and use it in the application.
 
-<Example lang='js' showPreview={false}
-  code={`import { useEffect } from "react";
-  import { useLocation } from "react-router";
+<Example lang='js' showPreview={false} filePath="src/App.tsx" code={`import { Button } from "@hummingbirdui/react";
 
-  async function loadHummingbird() {
-    return import("@hummingbirdui/hummingbird");
-  }
+  export default function App() {
+    return <Button color="primary">Click me</Button>;
+  }`} />
 
-  function App() {
-    const location = useLocation();
+## Dark mode
 
-    useEffect(() => {
-      const initHummingbird = async () => {
-        await loadHummingbird();
-      };
-      initHummingbird();
-    }, [location.pathname]);
+#### 1. Add the dark variant
 
-    return (
-      ...
-    );
-  }
+Hummingbird uses class-based dark mode: a `dark` class on `<html>` switches the theme. Register the variant after the style imports.
 
-  export default App;`} />
+<Example lang='css' showPreview={false} filePath="src/index.css" code={`@custom-variant dark (&:where(.dark, .dark *), .dark);`} />
 
-## Optimization
+#### 2. Set the initial theme
 
-To reduce the final bundle size, import only the specific JavaScript plugins that are needed. The example below demonstrates how to import only the `modal` script.
+Add this script to the `<head>` of `index.html`. It applies the saved theme before the page renders, so there is no flash of the wrong theme.
 
-<Example lang='js' showPreview={false}
-  code={`import { useEffect } from "react";
-  import { useLocation } from "react-router";
+<Example lang='html' showPreview={false} filePath="index.html" code={`<head>
+    <!-- ... -->
+    <script>
+      const theme = localStorage.getItem("theme");
+      document.documentElement.classList.toggle(
+        "dark",
+        theme === "dark" ||
+          (theme !== "light" &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches),
+      );
+    </script>
+  </head>`} />
 
-  function loadHummingbird() {
-    return Promise.all([
-      // import('@hummingbirdui/hummingbird/lib/esm/scripts/alert'),
-      // import('@hummingbirdui/hummingbird/lib/esm/scripts/button'),
-      // import('@hummingbirdui/hummingbird/lib/esm/scripts/carousel'),
-      // import('@hummingbirdui/hummingbird/lib/esm/scripts/collapse'),
-      // import('@hummingbirdui/hummingbird/lib/esm/scripts/dropdown'),
-      import('@hummingbirdui/hummingbird/lib/esm/scripts/modal'),
-      // import('@hummingbirdui/hummingbird/lib/esm/scripts/offcanvas'),
-      // import('@hummingbirdui/hummingbird/lib/esm/scripts/popover'),
-      // import('@hummingbirdui/hummingbird/lib/esm/scripts/scrollspy'),
-      // import('@hummingbirdui/hummingbird/lib/esm/scripts/tab'),
-      // import('@hummingbirdui/hummingbird/lib/esm/scripts/toast'),
-      // import('@hummingbirdui/hummingbird/lib/esm/scripts/tooltip')
-    ]);
-  }
+#### 3. Add a theme toggle
 
-  function App() {
-    const location = useLocation();
+`DarkThemeToggle` switches between light and dark mode, saves the choice and keeps browser tabs in sync. For a custom control, use the <a href="https://react.hbui.dev/docs/customize/dark-mode" target="_blank" rel="noopener noreferrer">useThemeMode hook</a>.
 
-    useEffect(() => {
-      const initHummingbird = async () => {
-        await loadHummingbird();
-      };
-      initHummingbird();
-    }, [location.pathname]);
+<Example lang='js' showPreview={false} filePath="src/components/Navbar.tsx" code={`import { DarkThemeToggle } from "@hummingbirdui/react";
 
-    return (
-      ...
-    );
-  }
+  export function Navbar() {
+    return <DarkThemeToggle />;
+  }`} />
 
-  export default App;`} />
+## Next steps
 
-
-## JavaScript API
-
-Hummingbird also provides a JavaScript API for programmatic control of components. For example, a modal can be toggled manually using the API.
-
-Here’s how to initialize and use the [Modal](/docs/components/modal) component:
-
-<Example lang='js' showPreview={false}
-  code={`import { useEffect, useState } from "react";
-  import { useLocation } from "react-router";
-  import type { ModalInstance } from "@hummingbirdui/hummingbird";
-
-  async function loadHummingbird() {
-    return import("@hummingbirdui/hummingbird");
-  }
-
-  function Component() {
-    const location = useLocation();
-    const [myModal, setMyModal] = useState<ModalInstance>();
-
-    useEffect(() => {
-      const initModal = async () => {
-        const { Modal } = await loadHummingbird();
-        setMyModal(new Modal(".modal"));
-      };
-      initModal();
-    }, [location.pathname]);
-
-    const handleClick = () => {
-      myModal?.toggle();
-    };
-
-    return (
-      <div>
-        <button className="btn btn-primary" onClick={handleClick}>Open</button>
-        <div className="modal">...</div>
-      </div>
-    );
-  }
-
-  export default Component;`} />
+- <a href="https://react.hbui.dev/docs/getting-started/framework-guides/vite" target="_blank" rel="noopener noreferrer">Vite guide for Hummingbird React</a>
+- <a href="https://react.hbui.dev/docs/components/overview" target="_blank" rel="noopener noreferrer">Components</a>
+- <a href="https://react.hbui.dev/docs/customize/theming" target="_blank" rel="noopener noreferrer">Theming</a> and <a href="https://react.hbui.dev/docs/customize/dark-mode" target="_blank" rel="noopener noreferrer">dark mode</a>

@@ -1,92 +1,84 @@
 ---
 title: Gatsby
-description:  This guide explains how to set up Hummingbird with Gatsby using Tailwind CSS. It covers project setup, configuration, and usage for quickly building and styling components in a Gatsby app.
+description: This guide explains how to set up Hummingbird in a Gatsby project with Hummingbird React, the official React component library. It covers Tailwind CSS setup, components and dark mode.
 redirects: true
 ---
+
+<HbAlert type="info">React projects use <a href="https://react.hbui.dev" target="_blank" rel="noopener noreferrer">Hummingbird React</a>, the official React component library for Hummingbird. It includes the Hummingbird styles and replaces the JavaScript plugins with React components, so there is no need to install <code>@hummingbirdui/hummingbird</code> or initialize any scripts.</HbAlert>
+
+## Quick start
+
+Create a new Gatsby project with Hummingbird React, Tailwind CSS and dark mode already set up:
+
+<Example lang='bash' showPreview={false} code={`npx create-hummingbird-react-app@latest my-app --template gatsby`} />
+
+To add Hummingbird React to an existing project, follow the steps below.
+
+<HbAlert type="info">Gatsby 5 supports Node.js versions below 26. With pnpm, Gatsby also needs <code>nodeLinker: hoisted</code> in <code>pnpm-workspace.yaml</code>, and pnpm 11 or later needs its dependency build scripts approved under <code>allowBuilds</code>. Projects created with the CLI include both.</HbAlert>
 
 ## Installation
 
 #### 1. Install Tailwind CSS
 
-Follow the <a href="https://tailwindcss.com/docs/installation/framework-guides/gatsby" target="_blank" rel="noopener noreferrer">official installation guide</a> to install Tailwind CSS in a Gatsby project.
+Follow the <a href="https://tailwindcss.com/docs/installation/framework-guides/gatsby" target="_blank" rel="noopener noreferrer">official installation guide</a> to install Tailwind CSS in a Gatsby project with `gatsby-plugin-postcss`.
 
-#### 2. Install Hummingbird
+#### 2. Install Hummingbird React
 
-Install Hummingbird via preferred package manager:
+Install Hummingbird React via preferred package manager:
 
-<Example lang='bash' showPreview={false} code={`npm install @hummingbirdui/hummingbird`} />
+<Example lang='bash' showPreview={false} code={`npm install @hummingbirdui/react`} />
 
 #### 3. Import CSS
 
-Import Hummingbird styles in the main CSS file (e.g., `global.css`).
+Import Tailwind CSS and Hummingbird React in the main CSS file. No Tailwind configuration is needed, because the package registers its own source paths.
 
-<Example lang='css' showPreview={false} 
-  code={`@import "tailwindcss";
-  @import "@hummingbirdui/hummingbird";
-  `} />
+<Example lang='css' showPreview={false} filePath="src/styles/global.css" code={`@import "tailwindcss";
+  @import "@hummingbirdui/react";`} />
 
-#### 4. Initialize JS plugins
+Then import the CSS file in `gatsby-browser.js`.
 
-Set up a wrapper component to load Hummingbird scripts dynamically on route changes.
+<Example lang='js' showPreview={false} filePath="gatsby-browser.js" code={`import "./src/styles/global.css";`} />
 
-<Example lang='js' showPreview={false} 
-  code={`// src/components/HummingbirdUI.tsx
-  import React, { PropsWithChildren, useEffect } from "react";
-  import { useLocation } from "@reach/router";
+#### 4. Use components
 
-  const HummingbirdUI = ({ children }: PropsWithChildren) => {
-    const location = useLocation();
+Import any component and use it in a page.
 
-    useEffect(() => {
-      import("@hummingbirdui/hummingbird");
-    }, [location.pathname]);
+<Example lang='js' showPreview={false} filePath="src/pages/index.js" code={`import { Button } from "@hummingbirdui/react";
 
-    return <>{children}</>;
-  };
-
-  export default HummingbirdUI;`} />
-
-Configure Gatsby to wrap every page with the Hummingbird provider for global availability.
-
-Edit `gatsby-browser.js`:
-
-<Example lang='js' showPreview={false}
-  code={`// gatsby-browser.js
-  import React from "react";
-  import HummingbirdUI from "./src/components/HummingbirdUI";
-
-  export function wrapPageElement({ element, props }) {
-    return <HummingbirdUI {...props}>{element}</HummingbirdUI>;
+  export default function IndexPage() {
+    return <Button color="primary">Click me</Button>;
   }`} />
 
-## Optimization
+## Dark mode
 
-To reduce the final bundle size, import only the specific JavaScript plugins required. The example below demonstrates importing only the `modal` script.
+#### 1. Add the dark variant
 
-<Example lang='js' showPreview={false}
-  code={`// src/components/HummingbirdUI.tsx
-  import React, { PropsWithChildren, useEffect } from "react";
-  import { useLocation } from "@reach/router";
+Hummingbird uses class-based dark mode: a `dark` class on `<html>` switches the theme. Register the variant after the style imports.
 
-  const HummingbirdUI = ({ children }: PropsWithChildren) => {
-    const location = useLocation();
+<Example lang='css' showPreview={false} filePath="src/styles/global.css" code={`@custom-variant dark (&:where(.dark, .dark *), .dark);`} />
 
-    useEffect(() => {
-      // import('@hummingbirdui/hummingbird/lib/esm/scripts/alert');
-      // import('@hummingbirdui/hummingbird/lib/esm/scripts/button');
-      // import('@hummingbirdui/hummingbird/lib/esm/scripts/carousel');
-      // import('@hummingbirdui/hummingbird/lib/esm/scripts/collapse');
-      // import('@hummingbirdui/hummingbird/lib/esm/scripts/dropdown');
-      import('@hummingbirdui/hummingbird/lib/esm/scripts/modal');
-      // import('@hummingbirdui/hummingbird/lib/esm/scripts/offcanvas');
-      // import('@hummingbirdui/hummingbird/lib/esm/scripts/popover');
-      // import('@hummingbirdui/hummingbird/lib/esm/scripts/scrollspy');
-      // import('@hummingbirdui/hummingbird/lib/esm/scripts/tab');
-      // import('@hummingbirdui/hummingbird/lib/esm/scripts/toast');
-      // import('@hummingbirdui/hummingbird/lib/esm/scripts/tooltip');
-    }, [location.pathname]);
+#### 2. Set the initial theme
 
-    return <>{children}</>;
-  };
+Add `ThemeModeScript` to the document `<head>` in `gatsby-ssr.js`. It applies the saved theme before the page renders, so there is no flash of the wrong theme.
 
-  export default HummingbirdUI;`} />
+<Example lang='js' showPreview={false} filePath="gatsby-ssr.js" code={`import { ThemeModeScript } from "@hummingbirdui/react";
+
+  export const onRenderBody = ({ setHeadComponents }) => {
+    setHeadComponents([<ThemeModeScript key="theme-mode-script" />]);
+  };`} />
+
+#### 3. Add a theme toggle
+
+`DarkThemeToggle` switches between light and dark mode, saves the choice and keeps browser tabs in sync. For a custom control, use the <a href="https://react.hbui.dev/docs/customize/dark-mode" target="_blank" rel="noopener noreferrer">useThemeMode hook</a>.
+
+<Example lang='js' showPreview={false} filePath="src/components/Navbar.js" code={`import { DarkThemeToggle } from "@hummingbirdui/react";
+
+  export function Navbar() {
+    return <DarkThemeToggle />;
+  }`} />
+
+## Next steps
+
+- <a href="https://react.hbui.dev/docs/getting-started/framework-guides/gatsby" target="_blank" rel="noopener noreferrer">Gatsby guide for Hummingbird React</a>
+- <a href="https://react.hbui.dev/docs/components/overview" target="_blank" rel="noopener noreferrer">Components</a>
+- <a href="https://react.hbui.dev/docs/customize/theming" target="_blank" rel="noopener noreferrer">Theming</a> and <a href="https://react.hbui.dev/docs/customize/dark-mode" target="_blank" rel="noopener noreferrer">dark mode</a>
