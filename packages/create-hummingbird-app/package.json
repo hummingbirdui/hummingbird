@@ -31,7 +31,7 @@
   "license": "MIT",
   "dependencies": {
     "@inquirer/input": "^5.1.2",
-    "@inquirer/select": "^5.2.1",
+    "@inquirer/select": "^5.2.8",
     "chalk": "^6.0.0",
     "commander": "^15.0.0",
     "fs-extra": "^11.4.0",
