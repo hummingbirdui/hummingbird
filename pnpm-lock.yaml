@@ -73,8 +73,8 @@ importers:
         specifier: ^7.0.5
         version: 7.0.8(astro@7.3.8(@astrojs/markdown-remark@7.3.4)(@types/node@26.6.5)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.1))
       '@docsearch/css':
-        specifier: ^5.0.1
-        version: 5.1.2
+        specifier: ^5.2.0
+        version: 5.2.0
       '@docsearch/js':
         specifier: ^5.0.1
         version: 5.1.2
@@ -504,8 +504,8 @@ packages:
     resolution: {integrity: sha512-dlT1m5e/0yUL0kRNcQn7yGLVThkgbB0Ga/1AmfDDC/8ik6AIiSf2QLQO2zPYvefsHP0aFgxO93cVLCCfDp7kzQ==}
     engines: {node: '>= 20.12.0'}
 
-  '@docsearch/css@5.1.2':
-    resolution: {integrity: sha512-zPkSBM8y6XbMfRwq4DeDSRyE0Jsx/phd2KYRgug7PvoZd9cYLqwf6nb2na4whprxCYe4NB6M5RL84C7NgRv0XA==}
+  '@docsearch/css@5.2.0':
+    resolution: {integrity: sha512-KqJjLYMniiiKgZFdK+f7LTy3ZTL5r13buvxagNjDnYVGfa0NR+bb9BnjZq3FTl3VvsmkeW3aSr9AGIZsiQXY/A==}
 
   '@docsearch/js@5.1.2':
     resolution: {integrity: sha512-ZScgB1upT5i4Ob1EYfp964lc5Xx0w9VUMLTeH099LPAU7v01STDIgIMu31rhYcLRi4RHIr0UtfB2VvcRPKvNWQ==}
@@ -4972,7 +4972,7 @@ snapshots:
       fast-wrap-ansi: 0.2.2
       sisteransi: 1.0.5
 
-  '@docsearch/css@5.1.2': {}
+  '@docsearch/css@5.2.0': {}
 
   '@docsearch/js@5.1.2': {}
 
